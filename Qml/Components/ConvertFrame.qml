@@ -8,8 +8,8 @@ Item {
     GridLayout {
         id: zoneSaisie
         anchors.fill: parent
-        Layout.leftMargin: 24
-        Layout.rightMargin: 24
+        columnSpacing: 0
+        rowSpacing: 0
         columns: 2
 
         FieldInput {
@@ -79,6 +79,12 @@ Item {
         }
         FieldLabel {
             text: "day + HMSI"
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+        }
+        TiButton {
+            id: btClear
+            buttonText: "Clear"
             Layout.fillHeight: true
             Layout.fillWidth: true
         }

@@ -10,10 +10,10 @@ Item {
             id: input
             text: qsTr("Text")
             anchors.fill: parent
-            font.pixelSize: 15
             horizontalAlignment: Text.AlignRight
             verticalAlignment: Text.AlignVCenter
             rightPadding: 8
+            font.pixelSize: 15
             font.family: "Courier"
             font.bold: false
             color: "grey"

@@ -11,7 +11,7 @@ Item {
         verticalAlignment: Text.AlignVCenter
         leftPadding: 8
         font.pixelSize: 14
-        font.bold: false
+        font.bold: true
         color: "black"
     }
 }

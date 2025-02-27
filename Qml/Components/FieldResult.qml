@@ -3,12 +3,20 @@ import QtQuick.Controls.Universal
 
 Item {
     property alias text: result.text
-    Text {
-        id: result
-        text: qsTr("Text")
+    Rectangle {
         anchors.fill: parent
-        font.pixelSize: 15
-        font.bold: true
-        color: "grey"
+        color: "#c8e6ca"
+        Text {
+            id: result
+            text: qsTr("Text")
+            anchors.fill: parent
+            horizontalAlignment: Text.AlignLeft
+            verticalAlignment: Text.AlignVCenter
+            leftPadding: 8
+            font.pixelSize: 15
+            font.family: "Courier"
+            font.bold: true
+            color: "grey"
+        }
     }
 }

@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/qt/qml/TiCalcul">
-    <file alias="qmldir">D:/Mes Programmes/Windows/TiCalcul/build/Desktop_Qt_6_6_1_MSVC2019_64bit-Debug/TiCalcul/qmldir</file>
-  </qresource>
-</RCC>
-

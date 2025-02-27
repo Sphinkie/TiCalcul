@@ -1,9 +1,12 @@
 import QtQuick
 import "../Vues"
 
-TiButtonForm {
+// Il faut mettre un Item en premier niveau sinon les Layout ne se gèrent pas bien.
+Item {
+    property string buttonText
 
-    property string filter
+    TiButtonForm {
 
-    onClicked: console.log("TiButton clicked !")
+        onClicked: console.log("TiButton clicked !")
+    }
 }

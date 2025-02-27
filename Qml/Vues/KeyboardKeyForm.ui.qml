@@ -5,7 +5,7 @@ import "../Components"
 // On customise un Button avec deux propriétés : Display et Background
 Button {
     id: button
-    //    property alias buttonText: button.text
+    // property alias buttonText: button.text
     property string buttonText
 
     display: AbstractButton.TextOnly
