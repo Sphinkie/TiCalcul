@@ -1,0 +1,5 @@
+# Fichiers à ne pas mettre dans Git
+
+/build*
+/Generate/*
+*.user
