@@ -1,5 +1,5 @@
 import QtQuick
-import QtQuick.Controls.Material
+import QtQuick.Controls.Universal
 
 Item {
     property alias text: input.text

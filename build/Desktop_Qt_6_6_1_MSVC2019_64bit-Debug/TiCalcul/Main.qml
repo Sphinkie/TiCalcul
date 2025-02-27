@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
-import QtQuick.Controls.Material
+import QtQuick.Controls.Universal
 
 import "./Qml/Components"
 
@@ -13,12 +13,10 @@ Window {
     visible: true
     title: "TiCalcul"
 
-    Material.theme: Material.light
-    Material.accent: Material.Orange
-    //    Material.variant: Material.Normal // Dense
-    Material.primary: Material.Red
-    Material.foreground: Material.Teal
-    Material.background: Material.Green
+    Universal.theme: Universal.light
+    Universal.accent: Universal.Orange
+    Universal.foreground: Universal.Amber
+    Universal.background: Universal.Green
 
     // ----------------------------------------------------------------
     // Page principale
