@@ -13,7 +13,7 @@ Window {
     visible: true
     title: "TiCalcul"
 
-    Universal.theme: Universal.light
+    Universal.theme: Universal.Light
     Universal.accent: Universal.Orange
     Universal.foreground: Universal.Amber
     Universal.background: Universal.Green

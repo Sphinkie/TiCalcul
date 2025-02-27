@@ -2,13 +2,6 @@ import QtQuick
 import QtQuick.Controls.Universal
 
 
-/*
-//import QtQuick.Controls.Material    // pas de hovering sur les boutons
-//import QtQuick.Controls.Windows     // avec hovering (looks native on Windows) - see Using Styles in Qt Quick Controls. - non custmisable. en cours de dev.
-// import QtQuick.Controls.Universal  // sans hovering ( Microsoft Universal Design)
-//import QtQuick.Controls.Fusion      // The Fusion style is a desktop-oriented style.
-// import QtQuick.Controls.Styles     // nécessite des styles
-*/
 Button {
     id: button
     anchors.fill: parent
