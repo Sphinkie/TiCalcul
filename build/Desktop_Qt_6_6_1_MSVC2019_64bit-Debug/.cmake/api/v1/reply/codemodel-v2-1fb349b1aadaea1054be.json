@@ -1,0 +1,169 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-35d47ef8cf2e1d1d9201.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "TiCalcul",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint-Debug-354d8447438c72e1d70a.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_json-Debug-5ec7f94eeff43cb7c2d5.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_module-Debug-468183b2c4f66488ee75.json",
+					"name" : "all_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmltyperegistrations-Debug-35b9c8e9a9ae4367645f.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appTiCalcul::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appTiCalcul-Debug-ef0f863b747028a815c4.json",
+					"name" : "appTiCalcul",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appTiCalcul_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appTiCalcul_autogen-Debug-11fd9ae5626b306fe88f.json",
+					"name" : "appTiCalcul_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appTiCalcul_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appTiCalcul_autogen_timestamp_deps-Debug-2a612ca04ef951baa3d3.json",
+					"name" : "appTiCalcul_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appTiCalcul_qmlimportscan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appTiCalcul_qmlimportscan-Debug-21a4094c3f266e043a8d.json",
+					"name" : "appTiCalcul_qmlimportscan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appTiCalcul_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appTiCalcul_qmllint-Debug-676dd96245862db9fe04.json",
+					"name" : "appTiCalcul_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appTiCalcul_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appTiCalcul_qmllint_json-Debug-8a9fae7057c8e54f08fe.json",
+					"name" : "appTiCalcul_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appTiCalcul_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appTiCalcul_qmllint_module-Debug-6d88fb9c9354ab6c1969.json",
+					"name" : "appTiCalcul_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appTiCalcul_qmltyperegistration::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appTiCalcul_qmltyperegistration-Debug-8b32f902847acb408dbd.json",
+					"name" : "appTiCalcul_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appTiCalcul_tooling::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appTiCalcul_tooling-Debug-698021bdd473a1e8a6ad.json",
+					"name" : "appTiCalcul_tooling",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/Mes Programmes/Windows/TiCalcul/build/Desktop_Qt_6_6_1_MSVC2019_64bit-Debug",
+		"source" : "D:/Mes Programmes/Windows/TiCalcul"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

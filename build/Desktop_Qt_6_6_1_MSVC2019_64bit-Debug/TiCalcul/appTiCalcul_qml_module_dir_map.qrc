@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="/qt/qml/TiCalcul">D:/Mes Programmes/Windows/TiCalcul/build/Desktop_Qt_6_6_1_MSVC2019_64bit-Debug/TiCalcul</file>
+
+  </qresource>
+</RCC>

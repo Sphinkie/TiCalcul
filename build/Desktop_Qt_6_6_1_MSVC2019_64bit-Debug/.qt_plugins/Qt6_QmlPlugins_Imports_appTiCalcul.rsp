@@ -1,0 +1,14 @@
+-rootPath
+D:/Mes Programmes/Windows/TiCalcul
+-cmake-output
+-output-file
+D:/Mes Programmes/Windows/TiCalcul/build/Desktop_Qt_6_6_1_MSVC2019_64bit-Debug/.qt_plugins/Qt6_QmlPlugins_Imports_appTiCalcul.cmake
+-importPath
+D:/Mes Programmes/Windows/TiCalcul/build/Desktop_Qt_6_6_1_MSVC2019_64bit-Debug/TiCalcul
+-importPath
+D:/Mes Programmes/Windows/TiCalcul/build/Desktop_Qt_6_6_1_MSVC2019_64bit-Debug
+-importPath
+C:/Qt/6.6.1/msvc2019_64/./qml
+-qrcFiles
+D:/Mes Programmes/Windows/TiCalcul/build/Desktop_Qt_6_6_1_MSVC2019_64bit-Debug/.rcc/qmake_TiCalcul.qrc
+D:/Mes Programmes/Windows/TiCalcul/build/Desktop_Qt_6_6_1_MSVC2019_64bit-Debug/.rcc/appTiCalcul_raw_qml_0.qrc

@@ -1,0 +1,12 @@
+/qt/qml/TiCalcul/Main.qml
+/qt/qml/TiCalcul/Qml/Controllers/TiButton.qml
+/qt/qml/TiCalcul/Qml/Vues/TiButtonForm.ui.qml
+/qt/qml/TiCalcul/Qml/Controllers/KeyboardKey.qml
+/qt/qml/TiCalcul/Qml/Vues/KeyboardKeyForm.ui.qml
+/qt/qml/TiCalcul/Qml/Components/Keyboard.qml
+/qt/qml/TiCalcul/Qml/Components/ConvertTab.qml
+/qt/qml/TiCalcul/Qml/Components/CalculTab.qml
+/qt/qml/TiCalcul/Qml/Components/TiStyle.qml
+/qt/qml/TiCalcul/Qml/Components/FieldResult.qml
+/qt/qml/TiCalcul/Qml/Components/FieldInput.qml
+/qt/qml/TiCalcul/Qml/Components/FieldLabel.qml

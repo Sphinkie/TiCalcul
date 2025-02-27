@@ -1,0 +1,16 @@
+module TiCalcul
+typeinfo appTiCalcul.qmltypes
+prefer :/qt/qml/TiCalcul/
+Main 1.0 Main.qml
+TiButton 1.0 Qml/Controllers/TiButton.qml
+TiButtonForm 1.0 Qml/Vues/TiButtonForm.ui.qml
+KeyboardKey 1.0 Qml/Controllers/KeyboardKey.qml
+KeyboardKeyForm 1.0 Qml/Vues/KeyboardKeyForm.ui.qml
+Keyboard 1.0 Qml/Components/Keyboard.qml
+ConvertTab 1.0 Qml/Components/ConvertTab.qml
+CalculTab 1.0 Qml/Components/CalculTab.qml
+TiStyle 1.0 Qml/Components/TiStyle.qml
+FieldResult 1.0 Qml/Components/FieldResult.qml
+FieldInput 1.0 Qml/Components/FieldInput.qml
+FieldLabel 1.0 Qml/Components/FieldLabel.qml
+
