@@ -1,2 +1,6 @@
 # TiCalcul
- Calculatrice de timecodes
+
+Calculatrice de timecodes
+
+
+![screenshot](./Medias/screenshot.jpg)
