@@ -7,6 +7,9 @@ Item {
         id: label
         text: qsTr("Text")
         anchors.fill: parent
+        horizontalAlignment: Text.AlignLeft
+        verticalAlignment: Text.AlignVCenter
+        leftPadding: 8
         font.pixelSize: 14
         font.bold: false
         color: "black"

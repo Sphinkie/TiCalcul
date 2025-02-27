@@ -6,12 +6,12 @@
     <file alias="Qml/Controllers/KeyboardKey.qml">D:/Mes Programmes/Windows/TiCalcul/Qml/Controllers/KeyboardKey.qml</file>
     <file alias="Qml/Vues/KeyboardKeyForm.ui.qml">D:/Mes Programmes/Windows/TiCalcul/Qml/Vues/KeyboardKeyForm.ui.qml</file>
     <file alias="Qml/Components/Keyboard.qml">D:/Mes Programmes/Windows/TiCalcul/Qml/Components/Keyboard.qml</file>
-    <file alias="Qml/Components/ConvertTab.qml">D:/Mes Programmes/Windows/TiCalcul/Qml/Components/ConvertTab.qml</file>
-    <file alias="Qml/Components/CalculTab.qml">D:/Mes Programmes/Windows/TiCalcul/Qml/Components/CalculTab.qml</file>
+    <file alias="Qml/Components/CalculFrame.qml">D:/Mes Programmes/Windows/TiCalcul/Qml/Components/CalculFrame.qml</file>
     <file alias="Qml/Components/TiStyle.qml">D:/Mes Programmes/Windows/TiCalcul/Qml/Components/TiStyle.qml</file>
     <file alias="Qml/Components/FieldResult.qml">D:/Mes Programmes/Windows/TiCalcul/Qml/Components/FieldResult.qml</file>
     <file alias="Qml/Components/FieldInput.qml">D:/Mes Programmes/Windows/TiCalcul/Qml/Components/FieldInput.qml</file>
     <file alias="Qml/Components/FieldLabel.qml">D:/Mes Programmes/Windows/TiCalcul/Qml/Components/FieldLabel.qml</file>
+    <file alias="Qml/Components/ConvertFrame.qml">D:/Mes Programmes/Windows/TiCalcul/Qml/Components/ConvertFrame.qml</file>
     <file alias="TiCalcul.qrc">D:/Mes Programmes/Windows/TiCalcul/TiCalcul.qrc</file>
     <file alias="Resources/images/TiCalcul.ico">D:/Mes Programmes/Windows/TiCalcul/Resources/images/TiCalcul.ico</file>
     <file alias="Resources/images/TiCalcul_black.ico">D:/Mes Programmes/Windows/TiCalcul/Resources/images/TiCalcul_black.ico</file>

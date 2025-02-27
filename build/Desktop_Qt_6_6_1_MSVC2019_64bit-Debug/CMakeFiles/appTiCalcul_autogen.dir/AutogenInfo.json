@@ -743,8 +743,8 @@
 	"MOC_SKIP" : 
 	[
 		"D:/Mes Programmes/Windows/TiCalcul/build/Desktop_Qt_6_6_1_MSVC2019_64bit-Debug/.rcc/qmlcache/appTiCalcul_Main_qml.cpp",
-		"D:/Mes Programmes/Windows/TiCalcul/build/Desktop_Qt_6_6_1_MSVC2019_64bit-Debug/.rcc/qmlcache/appTiCalcul_Qml/Components/CalculTab_qml.cpp",
-		"D:/Mes Programmes/Windows/TiCalcul/build/Desktop_Qt_6_6_1_MSVC2019_64bit-Debug/.rcc/qmlcache/appTiCalcul_Qml/Components/ConvertTab_qml.cpp",
+		"D:/Mes Programmes/Windows/TiCalcul/build/Desktop_Qt_6_6_1_MSVC2019_64bit-Debug/.rcc/qmlcache/appTiCalcul_Qml/Components/CalculFrame_qml.cpp",
+		"D:/Mes Programmes/Windows/TiCalcul/build/Desktop_Qt_6_6_1_MSVC2019_64bit-Debug/.rcc/qmlcache/appTiCalcul_Qml/Components/ConvertFrame_qml.cpp",
 		"D:/Mes Programmes/Windows/TiCalcul/build/Desktop_Qt_6_6_1_MSVC2019_64bit-Debug/.rcc/qmlcache/appTiCalcul_Qml/Components/FieldInput_qml.cpp",
 		"D:/Mes Programmes/Windows/TiCalcul/build/Desktop_Qt_6_6_1_MSVC2019_64bit-Debug/.rcc/qmlcache/appTiCalcul_Qml/Components/FieldLabel_qml.cpp",
 		"D:/Mes Programmes/Windows/TiCalcul/build/Desktop_Qt_6_6_1_MSVC2019_64bit-Debug/.rcc/qmlcache/appTiCalcul_Qml/Components/FieldResult_qml.cpp",
@@ -780,8 +780,8 @@
 	"UIC_SKIP" : 
 	[
 		"D:/Mes Programmes/Windows/TiCalcul/build/Desktop_Qt_6_6_1_MSVC2019_64bit-Debug/.rcc/qmlcache/appTiCalcul_Main_qml.cpp",
-		"D:/Mes Programmes/Windows/TiCalcul/build/Desktop_Qt_6_6_1_MSVC2019_64bit-Debug/.rcc/qmlcache/appTiCalcul_Qml/Components/CalculTab_qml.cpp",
-		"D:/Mes Programmes/Windows/TiCalcul/build/Desktop_Qt_6_6_1_MSVC2019_64bit-Debug/.rcc/qmlcache/appTiCalcul_Qml/Components/ConvertTab_qml.cpp",
+		"D:/Mes Programmes/Windows/TiCalcul/build/Desktop_Qt_6_6_1_MSVC2019_64bit-Debug/.rcc/qmlcache/appTiCalcul_Qml/Components/CalculFrame_qml.cpp",
+		"D:/Mes Programmes/Windows/TiCalcul/build/Desktop_Qt_6_6_1_MSVC2019_64bit-Debug/.rcc/qmlcache/appTiCalcul_Qml/Components/ConvertFrame_qml.cpp",
 		"D:/Mes Programmes/Windows/TiCalcul/build/Desktop_Qt_6_6_1_MSVC2019_64bit-Debug/.rcc/qmlcache/appTiCalcul_Qml/Components/FieldInput_qml.cpp",
 		"D:/Mes Programmes/Windows/TiCalcul/build/Desktop_Qt_6_6_1_MSVC2019_64bit-Debug/.rcc/qmlcache/appTiCalcul_Qml/Components/FieldLabel_qml.cpp",
 		"D:/Mes Programmes/Windows/TiCalcul/build/Desktop_Qt_6_6_1_MSVC2019_64bit-Debug/.rcc/qmlcache/appTiCalcul_Qml/Components/FieldResult_qml.cpp",

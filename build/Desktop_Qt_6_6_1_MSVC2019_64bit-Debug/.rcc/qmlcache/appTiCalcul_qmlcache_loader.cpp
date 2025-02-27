@@ -47,14 +47,7 @@ namespace _qt_qml_TiCalcul_Qml_Components_Keyboard_qml {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
     };
 }
-namespace _qt_qml_TiCalcul_Qml_Components_ConvertTab_qml { 
-    extern const unsigned char qmlData[];
-    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
-    const QQmlPrivate::CachedQmlUnit unit = {
-        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
-    };
-}
-namespace _qt_qml_TiCalcul_Qml_Components_CalculTab_qml { 
+namespace _qt_qml_TiCalcul_Qml_Components_CalculFrame_qml { 
     extern const unsigned char qmlData[];
     extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
     const QQmlPrivate::CachedQmlUnit unit = {
@@ -89,6 +82,13 @@ namespace _qt_qml_TiCalcul_Qml_Components_FieldLabel_qml {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
     };
 }
+namespace _qt_qml_TiCalcul_Qml_Components_ConvertFrame_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
 
 }
 namespace {
@@ -109,12 +109,12 @@ Registry::Registry() {
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/TiCalcul/Qml/Controllers/KeyboardKey.qml"), &QmlCacheGeneratedCode::_qt_qml_TiCalcul_Qml_Controllers_KeyboardKey_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/TiCalcul/Qml/Vues/KeyboardKeyForm.ui.qml"), &QmlCacheGeneratedCode::_qt_qml_TiCalcul_Qml_Vues_KeyboardKeyForm_ui_0x2e_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/TiCalcul/Qml/Components/Keyboard.qml"), &QmlCacheGeneratedCode::_qt_qml_TiCalcul_Qml_Components_Keyboard_qml::unit);
-    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/TiCalcul/Qml/Components/ConvertTab.qml"), &QmlCacheGeneratedCode::_qt_qml_TiCalcul_Qml_Components_ConvertTab_qml::unit);
-    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/TiCalcul/Qml/Components/CalculTab.qml"), &QmlCacheGeneratedCode::_qt_qml_TiCalcul_Qml_Components_CalculTab_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/TiCalcul/Qml/Components/CalculFrame.qml"), &QmlCacheGeneratedCode::_qt_qml_TiCalcul_Qml_Components_CalculFrame_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/TiCalcul/Qml/Components/TiStyle.qml"), &QmlCacheGeneratedCode::_qt_qml_TiCalcul_Qml_Components_TiStyle_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/TiCalcul/Qml/Components/FieldResult.qml"), &QmlCacheGeneratedCode::_qt_qml_TiCalcul_Qml_Components_FieldResult_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/TiCalcul/Qml/Components/FieldInput.qml"), &QmlCacheGeneratedCode::_qt_qml_TiCalcul_Qml_Components_FieldInput_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/TiCalcul/Qml/Components/FieldLabel.qml"), &QmlCacheGeneratedCode::_qt_qml_TiCalcul_Qml_Components_FieldLabel_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/TiCalcul/Qml/Components/ConvertFrame.qml"), &QmlCacheGeneratedCode::_qt_qml_TiCalcul_Qml_Components_ConvertFrame_qml::unit);
     QQmlPrivate::RegisterQmlUnitCacheHook registration;
     registration.structVersion = 0;
     registration.lookupCachedQmlUnit = &lookupCachedUnit;

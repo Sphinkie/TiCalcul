@@ -4,9 +4,9 @@
 /qt/qml/TiCalcul/Qml/Controllers/KeyboardKey.qml
 /qt/qml/TiCalcul/Qml/Vues/KeyboardKeyForm.ui.qml
 /qt/qml/TiCalcul/Qml/Components/Keyboard.qml
-/qt/qml/TiCalcul/Qml/Components/ConvertTab.qml
-/qt/qml/TiCalcul/Qml/Components/CalculTab.qml
+/qt/qml/TiCalcul/Qml/Components/CalculFrame.qml
 /qt/qml/TiCalcul/Qml/Components/TiStyle.qml
 /qt/qml/TiCalcul/Qml/Components/FieldResult.qml
 /qt/qml/TiCalcul/Qml/Components/FieldInput.qml
 /qt/qml/TiCalcul/Qml/Components/FieldLabel.qml
+/qt/qml/TiCalcul/Qml/Components/ConvertFrame.qml
