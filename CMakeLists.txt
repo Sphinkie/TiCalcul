@@ -15,23 +15,15 @@ qt_add_executable(appTiCalcul
 qt_add_qml_module(appTiCalcul
     URI TiCalcul
     VERSION 1.0
-    QML_FILES
-        Main.qml
         RESOURCES TiCalcul.qrc
         RESOURCES Resources/images/TiCalcul.ico
-        QML_FILES
-        QML_FILES
-        QML_FILES
-        QML_FILES
-        QML_FILES Qml/Controllers/TiButton.qml
-        QML_FILES Qml/Vues/TiButtonForm.ui.qml
-        QML_FILES Qml/Controllers/KeyboardKey.qml
-        QML_FILES
-        QML_FILES
-        QML_FILES Qml/Vues/KeyboardKeyForm.ui.qml
         RESOURCES Resources/images/TiCalcul_black.ico
+		QML_FILES Qml/Main.qml
+        QML_FILES Qml/Vues/TiButtonForm.ui.qml
+        QML_FILES Qml/Vues/KeyboardKeyForm.ui.qml
+        QML_FILES Qml/Controllers/KeyboardKey.qml
+        QML_FILES Qml/Controllers/TiButton.qml
         QML_FILES Qml/Components/Keyboard.qml
-        QML_FILES
         QML_FILES Qml/Components/CalculFrame.qml
         QML_FILES Qml/Components/TiStyle.qml
         QML_FILES Qml/Components/FieldResult.qml
@@ -39,7 +31,6 @@ qt_add_qml_module(appTiCalcul
         QML_FILES Qml/Components/FieldLabel.qml
         QML_FILES Qml/Components/ConvertFrame.qml
         SOURCES Sources/afficheur.h Sources/afficheur.cpp
-        SOURCES Sources/Unites.h
         SOURCES Sources/unites.h Sources/unites.cpp
         SOURCES Sources/converter.h Sources/converter.cpp
 )

@@ -4,12 +4,13 @@
 #include "unites.h"
 #include <QObject>
 
-class Afficheur
+class Afficheur : public QObject
 {
+    Q_OBJECT
+
 // ------------------------------------------------------------
 // variables membres
 // ------------------------------------------------------------
-
 private:
     QString mName;          // Le nom de l'afficheur
     long mMaxValue;        // Valeur maximale autorisée
@@ -20,10 +21,8 @@ protected:
     int mDecimals;             // Nombre de chiffres après la virgule
     double mFrameRate;         // Framerate utilisé (pour les afficheurs FRAMES et HMSI)
 
-
-
 public:
-    Afficheur(Unites unit);
+    explicit Afficheur(QObject *parent = nullptr, Unites::Units unit= Unites::HMSI);
     void setFrameRate(double framerate);
     QString getStringValue();
     double getFrameRate();
@@ -31,8 +30,8 @@ public:
     QString name();
 
 protected:
-    long _addDigit(QString digit);
-    long _removeLastDigit();
+    qint32 _addDigit(QString digit);
+    qint32 _removeLastDigit();
     void clear();
     bool isIncorrect(QString rawHmsi);
 
