@@ -3,7 +3,7 @@ import QtQuick.Layouts
 import QtQuick.Controls
 import QtQuick.Controls.Universal
 
-import "./Qml/Components"
+import "./Components"
 
 Window {
     width: 800

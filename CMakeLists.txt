@@ -33,6 +33,7 @@ qt_add_qml_module(appTiCalcul
         SOURCES Sources/afficheur.h Sources/afficheur.cpp
         SOURCES Sources/unites.h Sources/unites.cpp
         SOURCES Sources/converter.h Sources/converter.cpp
+        SOURCES Sources/operande.h Sources/operande.cpp
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

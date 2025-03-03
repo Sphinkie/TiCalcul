@@ -2,13 +2,14 @@
 
 /** **************************************************************************
  * @brief Constructeur.
- * On initialise le NTSC à 30 fps.
  */
 Converter::Converter()
 {
+/*
+ *  * On initialise le NTSC à 30 fps.
     NtscFramePerSec = 30.0;    // 30 ou 29.97 images par seconde
     us_PerFrameNTSC = us_PerSecond / NtscFramePerSec;
-}
+*/}
 
 /** **************************************************************************
  * Convertit un HMSI (même incomplet) en un nombre de micro-secondes.
@@ -51,7 +52,8 @@ qint64 Converter::HMSItoMicroseconds(QString hmsi_string, double framerate)
  ****************************************************************************/
 qint64 Converter::convertRawHMSItoMicroseconds(QString hmsi, double framerate)
     {
-        qint64 microsecs;
+        // FIXME : completement no sense
+        qint64 microsecs = 0;
         QString hmsi_num = QString::number(microsecs).leftJustified(8,' ');   // on complete avec des espaces
         hmsi_num = hmsi_num.replace(' ', '0');  // on remplace les espaces par des '0'
         microsecs = hmsi_num.left(2).toInt() * us_PerHour;                  // [0..1] hours
@@ -245,7 +247,7 @@ QString Converter::microsecsToHMSI(qint64 microsecs, double framerate)
         long quotient;
         long reste;
         QString hmsi = "";
-        if (microsecs == null) return "..:..:..:..";
+        if (microsecs == NULL) return "..:..:..:..";    // TODO : A vérifier
         if (microsecs == 0) return "00:00:00:00";
         if (microsecs < 0) {
             hmsi += "-";
@@ -279,7 +281,7 @@ QString Converter::microsecsToHMSM(qint64 microsecs)
         long quotient;
         long reste;
         QString hmsi = "";
-        if (microsecs == null) return "..:..:..,...";
+        if (microsecs == NULL) return "..:..:..,...";   // TODO : A vérifier
         if (microsecs == 0) return "00:00:00,000";
         if (microsecs < 0) {
             hmsi += "-";
@@ -313,7 +315,7 @@ QString Converter::microsecsToHMSM(qint64 microsecs)
         long quotient;
         long reste;
         QString hmsi = "";
-        if (microsecs == null) return "";
+        if (microsecs == NULL) return "";  // TODO : A vérifier
         if (microsecs == 0) return "00000000";
         if (microsecs < 0) {
             hmsi += "-";
@@ -343,7 +345,7 @@ QString Converter::microsecsToHMSM(qint64 microsecs)
      ****************************************************************************/
  QString Converter::microsecsToDHMSM(qint64 microsecs)
     {
-        if (microsecs == null) return "";
+        if (microsecs == NULL) return "";    // TODO : A vérifier
         // si microsecs est inférieur à 24h, alors on retourne le HMSM
         if (microsecs < us_PerDay)
             return microsecsToHMSM(microsecs);
@@ -353,18 +355,22 @@ QString Converter::microsecsToHMSM(qint64 microsecs)
             long nb_days = microsecs / us_PerDay;
             long day_time =  microsecs % us_PerDay;
             QString day = (nb_days == 1)? " day + " : " days + ";
-            return nb_days + day + microsecsToHMSM(day_time);
+            return QString::number(nb_days) + day + microsecsToHMSM(day_time);
         }
     }
 
- /** *************************************************************************
+
+    /** *************************************************************************
   * Change le framerate du NTSC.
   * @param framerate : the new NTSC framerate.
   ****************************************************************************/
- void Converter::setNtscFramePerSec(double framerate)
+    void Converter::setNtscFramePerSec(double framerate)
     {
+    /*
+      * TODO A voir si ca a un sens de faire du NTSC variable ...
         Converter::NtscFramePerSec = framerate;
         Converter::us_PerFrameNTSC = Converter::us_PerSecond / framerate;
+    */
     }
 
 /** *************************************************************************

@@ -12,9 +12,9 @@
      * Constructeur
      * @param unit : l'unité correspondante à cet afficheur
      *****************************************************************/
-    Afficheur::Afficheur(QObject *parent, Unites::Units unit)
+    Afficheur::Afficheur(Unites::Units unit, QObject *parent)
         {
-            this->mStringValue = "";
+            this->mValue = "";
             this->mName = Unites::name.value(unit);
             this->mDecimals = Unites::nbDecimals.value(unit);   // nombre de chiffres après la virgule
             this->mMaxValue = Unites::maxValue.value(unit);     // valeur max : 99 heures.
@@ -43,43 +43,46 @@
             // ------------------------------------------------------------
             // Controles
             // ------------------------------------------------------------
-            int len = mStringValue.length();
+            int len = mValue.length();
             // ------------------------------------------------------------
             // Si c'est un un point et qu'il y en a déjà un: on l'ignore
-            if ((digit == ".") && mStringValue.contains(".")) return NULL;
+            if ((digit == ".") && mValue.contains(".")) return NULL;
             // ------------------------------------------------------------
             // Si c'est un point et qu'on est au début: on traite comme "0."
-            if ((digit == ".") && mStringValue.isEmpty()) this->mStringValue ="0";
+            if ((digit == ".") && mValue.isEmpty()) this->mValue ="0";
             // ------------------------------------------------------------
             // Si c'est un zéro et qu'on est au début: on l'ignore
             // Sauf pour HMSI et SECONDS qui ont le droit de commencer par un "0"
             if ((this->mName != "HMSI") && (this->mName != "SECONDS"))
-                if ((digit == "0") && mStringValue.isEmpty()) return NULL;
+                if ((digit == "0") && mValue.isEmpty()) return NULL;
             // ------------------------------------------------------------
             // Si c'est un 00 et qu'on est au début: on l'ignore (Sauf pour HMSI)
-            if ((this->mName != "HMSI") && (digit == "00") && mStringValue.isEmpty()) return NULL;
+            if ((this->mName != "HMSI") && (digit == "00") && mValue.isEmpty()) return NULL;
             // ------------------------------------------------------------
             // S'il y a dejà 3 décimales: on n'en ajoute plus
-            int pointPos = mStringValue.indexOf('.');
+            int pointPos = mValue.indexOf('.');
             if ((pointPos>-1) && (pointPos < len-3)) return NULL;
             // ------------------------------------------------------------
             // S'il y a déjà 8 chiffres dans le HMSI: on l'ignore
             if ((this->mName == "HMSI") && (len>=8)) return NULL;
             // ------------------------------------------------------------
             // s'il y a deja un trailing zero, on enleve le zéro (sauf si digit="." et sauf pour HMSI)
-            if ((mStringValue == "0") && (digit != ".") && (this->mName != "HMSI"))
+            if ((mValue == "0") && (digit != ".") && (this->mName != "HMSI"))
             {
-                mStringValue = "";
+                mValue = "";
                 len = 0;
             }
             // ------------------------------------------------------------------------
             // On ajoute le digit à stringValue
             // ------------------------------------------------------------------------
-            QString newStringValue = mStringValue + digit;
+            QString newStringValue = mValue + digit;
             qint32 numericValue = newStringValue.toULong();
             // On vérifie qu'on ne dépasse pas la valeur max autorisée
             if (numericValue > mMaxValue)
             {
+                // TODO Afficher une erreur "msg_max_reached"
+                // console.warning ("msg_max_reached")
+                /*
                 // Si dépassement: Alarme et on ne touche pas aux valeurs
                 // Si le toast est deja affiché, on ne le ré-affiche pas.
                 if (!PopupMessage.isShown())
@@ -87,6 +90,7 @@
                     //PopupMessage.showToast(R.string.msg_max_reached, true);
                     PopupMessage.showSnack(R.string.msg_max_reached, true);
                 }
+*/
                 return NULL;
             }
             // ------------------------------------------------------------------------
@@ -97,7 +101,7 @@
             else if (this->mName == "HMSI")
             {
                 // Valeur MAX non atteinte: on met à jour la valeur pivot.
-                this->mStringValue = newStringValue;
+                this->mValue = newStringValue;
                 return Converter::HMSItoMicroseconds(newStringValue, mFrameRate);
             }
             // ------------------------------------------------------------------------
@@ -106,7 +110,7 @@
             else
             {
                 // Valeur MAX non atteinte: on met à jour la valeur pivot.
-                this->mStringValue = newStringValue;
+                this->mValue = newStringValue;
                 // voir si on utilise floor() pour être sûr de prendre la valeur entière
                 return (long)(numericValue * this->mConversionFacteur);
             }
@@ -118,29 +122,29 @@
      ******************************************************************/
     qint32 Afficheur::_removeLastDigit()
         {
-            int len = this->mStringValue.length();
+            int len = this->mValue.length();
             if (len == 0)
             {
-                this->mStringValue = "";
+                this->mValue = "";
                 return NULL;
             }
             else if (len == 1)
             {
-                this->mStringValue = "";
+                this->mValue = "";
                 return 0L;
             }
             else
             {
-                this->mStringValue.chop(1);  // Enleve le dernier caractère
+                this->mValue.chop(1);  // Enleve le dernier caractère
                 if (this->mName == "HMSI")
                 {
                     // Format HMSI
-                    return Converter::convertRawHMSItoMicroseconds(this->mStringValue, this->mFrameRate);
+                    return Converter::convertRawHMSItoMicroseconds(this->mValue, this->mFrameRate);
                 }
                 else
                 {
                     // Autres formats: on applique simplement le facteur de convertion
-                    double numericValue = this->mStringValue.toDouble();
+                    double numericValue = this->mValue.toDouble();
                     return (long)(numericValue * this->mConversionFacteur);
                 }
             }
@@ -151,7 +155,7 @@
      ******************************************************************/
     void Afficheur::clear()
         {
-            this->mStringValue ="";
+            this->mValue = "";
         }
 
     /** ***************************************************************
@@ -160,8 +164,8 @@
      ******************************************************************/
     QString Afficheur::getStringValue()
         {
-            QString rawValue = this->mStringValue;
-            if (this->mName == "HMSI")
+            QString rawValue = this->mValue;
+            if (this->mValue == "HMSI")
                 // pour le HMSI: on doit compléter avec des .. et des :
                 return Converter::completeRawHMSIWithDots(rawValue);
             else
@@ -183,7 +187,7 @@
      ******************************************************************/
     int Afficheur::length()
         {
-            return this->mStringValue.length();
+            return this->mValue.length();
         }
 
     /** ***************************************************************
@@ -242,12 +246,22 @@
             return false;
         }
 
-    /* ****************************************************************
-     * Renvoie le nom de l'instance, qui indique l'unité correspondante.
-     * @return the name of the instance
+    /** ***************************************************************
+     * Renvoie le nom de l'unité correspondante.
+     * @return the name of the unit
      ******************************************************************/
     QString Afficheur::name()
         {
             return mName;
+        }
+
+    /** ***************************************************************
+     * Renvoie le nom de l'unité correspondante.
+     * @return the name of the unit
+     ******************************************************************/
+        void Afficheur::setValue(qint64 value)
+        {
+            // TODO : gérer ici les conversions
+            this->mValue.setNum(value);
         }
 

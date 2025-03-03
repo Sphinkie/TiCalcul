@@ -20,9 +20,9 @@ class Converter
         static const qint32 us_PerMillisec = 1000L;
         static const qint32 us_PerFrame25 = us_PerSecond / 25;
         static const qint32 us_PerFrame50 = us_PerSecond / 50;
-        // Cas du NTSC (ce n'est pas forcemement une constante)
-        static double NtscFramePerSec;    // 30 ou 29.97 images par seconde
-        static double us_PerFrameNTSC;
+
+        static const inline double NtscFramePerSec = 29.97;
+        static const inline double us_PerFrameNTSC = us_PerSecond / NtscFramePerSec;
 
     public:
         Converter();

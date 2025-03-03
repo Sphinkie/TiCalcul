@@ -1,5 +1,4 @@
 #include "unites.h"
-#include "converter.h"
 
 
 /***************************************************************************
@@ -12,21 +11,22 @@
  * Constructeur. On remplit les maps.
  ******************************************************************/
 Unites::Unites()
-{
-    this->InitUsPerUnit();
-    this->InitframeRate();
-    this->InitframeRate();
-    this->InitMaxValue();
-    this->InitNames();
+{/*
+    InitUsPerUnit();
+    InitframeRate();
+    InitframeRate();
+    InitMaxValue();
+    InitNames();
+*/
 }
 
 
 /** *****************************************************************
  * @brief Unites::InitUsPerUnit
  * initialise la map usPerUnit qui fournit le nombre de microseconds par unité.
- */
+ ******************************************************************/
 void Unites::InitUsPerUnit()
-{
+{/*
     usPerUnit[HMSI]=Converter::us_PerFrame25;
     usPerUnit[DHMSM]=Converter::us_PerFrame25;
     usPerUnit[SECONDS]=Converter::us_PerSecond;
@@ -35,15 +35,15 @@ void Unites::InitUsPerUnit()
     usPerUnit[FRAMES_NTSC]=Converter::us_PerFrameNTSC;
     usPerUnit[MILLISECONDS]=1000;
     usPerUnit[MICROSECONDS]=1;
-}
+*/}
 
 /** *****************************************************************
  * @brief Unites::InitMaxValue
  * initialise la map maxValue qui fournit la valeur max autorisée pour l'unité.
  * (99 heures)
- */
+ ********************************************************************/
 void Unites::InitMaxValue()
-{
+{/*
     maxValue[HMSI] = 99999999;                                      //      99 999 999
     maxValue[DHMSM] = 99999999;                                     //      99 999 999
     maxValue[SECONDS] = 99 * 60 * 60;                               //         356 400
@@ -52,6 +52,7 @@ void Unites::InitMaxValue()
     maxValue[FRAMES_NTSC] = 99 * 60 * 60 * 30;
     maxValue[MILLISECONDS] = 99 * 60 * 60 * 1000;                   //     356 400 000
     maxValue[MICROSECONDS] = 99 * 60 * 60 * (qint64)(1000000);      // 356 400 000 000
+*/
 }
 
 /** *****************************************************************
@@ -59,7 +60,7 @@ void Unites::InitMaxValue()
  * initialise la map frameRate qui fournit le nombre d'unités par seconde. Doit être cohérent avec us_per_unit..
  */
 void Unites::InitframeRate()
-{
+{/*
     frameRate[HMSI] = 25.0;
     frameRate[DHMSM] = 25.0;
     frameRate[SECONDS] = 1.0;
@@ -68,14 +69,14 @@ void Unites::InitframeRate()
     frameRate[FRAMES_NTSC] = 30.0;
     frameRate[MILLISECONDS] = 1000.0;
     frameRate[MICROSECONDS] = 1000000.0;
-}
+*/}
 
 /** *****************************************************************
  * @brief Unites::InitNbDecimals
  * initialise la map nbDecimals qui fournit le nombre de chiffres après la virgule.
  */
 void Unites::InitNbDecimals()
-{
+{/*
     nbDecimals[HMSI] =0 ;
     nbDecimals[DHMSM] = 0;
     nbDecimals[SECONDS] = 3;
@@ -84,20 +85,21 @@ void Unites::InitNbDecimals()
     nbDecimals[FRAMES_NTSC] = 0;
     nbDecimals[MILLISECONDS] = 0;
     nbDecimals[MICROSECONDS] = 0;
-}
+*/}
 
 /** *****************************************************************
  * @brief Unites::InitNames
  * initialise la map name qui fournit le nom de l'unité sous forme de string.
  */
 void Unites::InitNames()
-{
+{/*
     name[HMSI]="HMSI";
-    name[DHMSM]="DHMSI";
+    name[DHMSM]="DHMSM";
     name[SECONDS]="SECONDS";
     name[FRAMES_25]="FRAMES_25";
     name[FRAMES_50]="FRAMES_50";
     name[FRAMES_NTSC]="FRAMES_NTSC";
     name[MILLISECONDS]="MILLISECONDS";
     name[MICROSECONDS]="MICROSECONDS";
+*/
 }
