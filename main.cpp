@@ -1,7 +1,9 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
 #include <QIcon>
 
+#include "Sources/operande.h"
 
 /* ********************************************************************************* */
 /*!
@@ -9,7 +11,7 @@
  * \param argc
  * \param argv
  * \return
- */
+ * ******************************************************************************** */
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
@@ -20,9 +22,22 @@ int main(int argc, char *argv[])
     app.setWindowIcon(QIcon(":/images/TiCalcul.ico"));
 
     // --------------------------------------
+    // On initialise nos classes
+    // --------------------------------------
+    Operande operande_tc1;
+    //Operande operande_tc2();
+
+    // --------------------------------------
     // Initialisation du moteur:
     // --------------------------------------
     QQmlApplicationEngine engine;
+    QQmlContext* context = engine.rootContext();
+
+    // --------------------------------------
+    // On ajoute au contexte les classes qui ont des property QML
+    // --------------------------------------
+    context->setContextProperty("operandeTC1", &operande_tc1);
+    operande_tc1.registerContext(context);
 
     // --------------------------------------
     // Connexion des signaux
@@ -32,6 +47,8 @@ int main(int argc, char *argv[])
                      {
                          QCoreApplication::exit(-1);
                      }, Qt::QueuedConnection);
+
+    operande_tc1.setValeurPivot(28650);
 
     // --------------------------------------
     // Démarrage du moteur.

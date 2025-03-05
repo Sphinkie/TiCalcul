@@ -14,7 +14,8 @@
      *****************************************************************/
     Afficheur::Afficheur(Unites::Units unit, QObject *parent)
         {
-            this->mValue = "";
+            this->mValue = "UNDEFINED";
+            this->mUnit = unit;
             this->mName = Unites::name.value(unit);
             this->mDecimals = Unites::nbDecimals.value(unit);   // nombre de chiffres après la virgule
             this->mMaxValue = Unites::maxValue.value(unit);     // valeur max : 99 heures.
@@ -256,12 +257,42 @@
         }
 
     /** ***************************************************************
-     * Renvoie le nom de l'unité correspondante.
-     * @return the name of the unit
+     * SLOT. Recoit la valeur numérique à afficher.
+     * @param value La valeur pivot en microsecondes.
      ******************************************************************/
-        void Afficheur::setValue(qint64 value)
+        void Afficheur::setValue(qint64 microsecs)
         {
-            // TODO : gérer ici les conversions
-            this->mValue.setNum(value);
+            QString value = "NONE";
+            switch (mUnit)
+            {
+                case Unites::HMSI:
+                value = Converter::microsecsToHMSI(microsecs, mFrameRate);
+                    break;
+                case Unites::DHMSM:
+                    value = Converter::microsecsToDHMSM(microsecs);
+                    break;
+                case Unites::FRAMES_25:
+                    value = Converter::microsecsToFrames(microsecs, 25);
+                    break;
+                case Unites::FRAMES_50:
+                    value = Converter::microsecsToFrames(microsecs, 50);
+                    break;
+                case Unites::FRAMES_NTSC:
+                    value = Converter::microsecsToFrames(microsecs, 30);
+                    break;
+                case Unites::SECONDS:
+                    value = Converter::microsecsToSeconds(microsecs);
+                    break;
+                case Unites::MILLISECONDS:
+                    value = Converter::microsecsToMillis(microsecs);
+                    break;
+                case Unites::MICROSECONDS:
+                    value.setNum(microsecs);
+                    break;
+                default:
+                    value="UNKNOWN UNIT";
+            }
+
+            this->mValue= value;
         }
 

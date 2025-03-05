@@ -18,7 +18,7 @@ qt_add_qml_module(appTiCalcul
         RESOURCES TiCalcul.qrc
         RESOURCES Resources/images/TiCalcul.ico
         RESOURCES Resources/images/TiCalcul_black.ico
-		QML_FILES Qml/Main.qml
+        QML_FILES Qml/Main.qml
         QML_FILES Qml/Vues/TiButtonForm.ui.qml
         QML_FILES Qml/Vues/KeyboardKeyForm.ui.qml
         QML_FILES Qml/Controllers/KeyboardKey.qml

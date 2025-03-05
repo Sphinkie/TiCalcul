@@ -2,6 +2,9 @@
 #define OPERANDE_H
 
 #include <QObject>
+#include <QQmlContext>
+#include "afficheur.h"
+
 
 class Operande : public QObject
 {
@@ -12,12 +15,17 @@ public:
 
     qint64 valeurPivot() const;
     void setValeurPivot(qint64 newValeurPivot);
+    void registerContext(QQmlContext* context);
+
+signals:
+    void valeurPivotChanged(qint64);
 
 private:
     qint64 mValeurPivot;
 
-signals:
-    void valeurPivotChanged(qint64);
+    Afficheur* a1;
+    Afficheur* a2;
+    Afficheur* a3;
 };
 
 #endif // OPERANDE_H

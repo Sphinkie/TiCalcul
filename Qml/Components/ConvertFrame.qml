@@ -13,7 +13,8 @@ Item {
         columns: 2
 
         FieldInput {
-            text: "SECONDS"
+            // text: "SECONDS"
+            text: aff_1.value
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -23,7 +24,8 @@ Item {
             Layout.fillWidth: true
         }
         FieldInput {
-            text: "MILLISECONDS"
+            //text: "MILLISECONDS"
+            text: aff_2.value
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -33,7 +35,8 @@ Item {
             Layout.fillWidth: true
         }
         FieldInput {
-            text: "MICROSECS"
+            // text: "MICROSECS"
+            text: aff_3.value
             Layout.fillHeight: true
             Layout.fillWidth: true
         }

@@ -7,7 +7,6 @@
 class Afficheur : public QObject
 {
     Q_OBJECT
-
     Q_PROPERTY(QString value MEMBER mValue NOTIFY valueChanged)
 
     // ------------------------------------------------------------
@@ -17,11 +16,13 @@ private:
     QString mName;         // Le nom de l'afficheur
     long mMaxValue;        // Valeur maximale autorisée
     QString mValue;        // La valeur à afficher (String)
+    Unites::Units mUnit;
 
 protected:
     double mConversionFacteur; // Nombre de microseconds par unité
     int mDecimals;             // Nombre de chiffres après la virgule
     double mFrameRate;         // Framerate utilisé (pour les afficheurs FRAMES et HMSI)
+
 
     // ------------------------------------------------------------
     // Méthodes
