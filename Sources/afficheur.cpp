@@ -262,7 +262,7 @@
      ******************************************************************/
         void Afficheur::setValue(qint64 microsecs)
         {
-            QString value = "NONE";
+            QString value = "DEFAULT VALUE";
             switch (mUnit)
             {
                 case Unites::HMSI:

@@ -11,7 +11,7 @@ class Operande : public QObject
     Q_OBJECT
 
 public:
-    Operande(QObject *parent = nullptr);
+    Operande(QString name, QObject *parent = nullptr);
 
     qint64 valeurPivot() const;
     void setValeurPivot(qint64 newValeurPivot);
@@ -22,10 +22,14 @@ signals:
 
 private:
     qint64 mValeurPivot;
+    QString mName;
 
     Afficheur* a1;
     Afficheur* a2;
     Afficheur* a3;
+    Afficheur* a4;
+    Afficheur* a5;
+
 };
 
 #endif // OPERANDE_H

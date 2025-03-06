@@ -14,7 +14,7 @@ Item {
 
         FieldInput {
             // text: "SECONDS"
-            text: aff_1.value
+            text: TC1aff_1.value
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -25,7 +25,7 @@ Item {
         }
         FieldInput {
             //text: "MILLISECONDS"
-            text: aff_2.value
+            text: TC1aff_2.value
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -36,7 +36,7 @@ Item {
         }
         FieldInput {
             // text: "MICROSECS"
-            text: aff_3.value
+            text: TC1aff_3.value
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -66,22 +66,24 @@ Item {
             Layout.fillWidth: true
         }
         FieldInput {
-            text: "HH:MM:SS:II"
+            //text: "HH:MM:SS:II"
+            text: TC1aff_4.value
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
         FieldLabel {
-            text: "HMSI"
+            text: "HMSI (25fps)"
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
         FieldInput {
-            text: "DD + HH:MM:SS:II"
+            //text: "DD + HH:MM:SS:II"
+            text: TC1aff_5.value
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
         FieldLabel {
-            text: "day + HMSI"
+            text: "day + HMSm"
             Layout.fillHeight: true
             Layout.fillWidth: true
         }

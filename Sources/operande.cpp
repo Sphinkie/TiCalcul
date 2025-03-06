@@ -2,17 +2,22 @@
 // #include <QQmlContext>
 #include "operande.h"
 
-Operande::Operande(QObject *parent)
+Operande::Operande(QString name, QObject *parent)
 {
+    this->mName = name;
 
     a1 = new Afficheur(Unites::SECONDS);
     a2 = new Afficheur(Unites::MILLISECONDS);
     a3 = new Afficheur(Unites::MICROSECONDS);
+    a4 = new Afficheur(Unites::HMSI);
+    a5 = new Afficheur(Unites::DHMSM);
 
     // Connexions
     QObject::connect(this, SIGNAL(valeurPivotChanged(qint64)), a1, SLOT(setValue(qint64)));
     QObject::connect(this, SIGNAL(valeurPivotChanged(qint64)), a2, SLOT(setValue(qint64)));
     QObject::connect(this, SIGNAL(valeurPivotChanged(qint64)), a3, SLOT(setValue(qint64)));
+    QObject::connect(this, SIGNAL(valeurPivotChanged(qint64)), a4, SLOT(setValue(qint64)));
+    QObject::connect(this, SIGNAL(valeurPivotChanged(qint64)), a5, SLOT(setValue(qint64)));
 
 }
 
@@ -37,9 +42,11 @@ void Operande::setValeurPivot(qint64 newValeurPivot)
  */
 void Operande::registerContext(QQmlContext* context)
 {
-    context->setContextProperty("aff_1", a1);
-    context->setContextProperty("aff_2", a2);
-    context->setContextProperty("aff_3", a3);
+    context->setContextProperty(mName+"aff_1", a1);
+    context->setContextProperty(mName+"aff_2", a2);
+    context->setContextProperty(mName+"aff_3", a3);
+    context->setContextProperty(mName+"aff_4", a4);
+    context->setContextProperty(mName+"aff_5", a5);
 }
 
 

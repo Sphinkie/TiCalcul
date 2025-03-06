@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
     // --------------------------------------
     // On initialise nos classes
     // --------------------------------------
-    Operande operande_tc1;
+    Operande operande_tc1("TC1");
     //Operande operande_tc2();
 
     // --------------------------------------
@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
                          QCoreApplication::exit(-1);
                      }, Qt::QueuedConnection);
 
-    operande_tc1.setValeurPivot(28650);
+    operande_tc1.setValeurPivot(2865000);
 
     // --------------------------------------
     // Démarrage du moteur.
