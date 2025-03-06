@@ -7,6 +7,11 @@ Item {
 
     TiButtonForm {
 
-        onClicked: console.log("TiButton clicked !")
+        onClicked: {
+
+            console.log("TiButton clicked ! ")
+            operandeTC1.clear();
     }
 }
+}
+

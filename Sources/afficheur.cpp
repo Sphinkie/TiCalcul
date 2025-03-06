@@ -2,15 +2,9 @@
 
 #include "converter.h"
 
-/*****************************************************************
- * Ne pas utiliser cette classe, mais des classes filles
- * (ex: AfficheurCalcul) qui contient une valeur pivot commune.
- * Cette classe offre les méthodes pour ajouter les digits un à un.
- ***************************************************************** */
-
-    /** ***************************************************************
+    /*! ***************************************************************
      * Constructeur
-     * @param unit : l'unité correspondante à cet afficheur
+     * \param unit : l'unité correspondante à cet afficheur
      *****************************************************************/
     Afficheur::Afficheur(Unites::Units unit, QObject *parent)
         {
@@ -23,10 +17,10 @@
             this->mConversionFacteur = Unites::usPerUnit.value(unit);
         }
 
-    /** ***************************************************************
+    /*!
      * Permet de changer dynamiquement le framerate des afficheurs HMSI.
      * Attention: voir aussi recalculateValeurPivot() de la classe fille.
-     * @param framerate : le nouveau framerate pour cet afficheur (ex: 25.0)
+     * \param framerate: le nouveau framerate pour cet afficheur (ex: 25.0)
      *****************************************************************/
     void Afficheur::setFrameRate(double framerate)
         {
@@ -34,10 +28,10 @@
             this->mConversionFacteur = Converter::us_PerSecond / framerate;
         }
 
-    /** ***************************************************************
+    /*!
      * Ajoute un digit à la fin de la chaine de caractères
-     * @param digit : le caractère digit à ajouter
-     * @return Retourne la nouvelle valeur Pivot, ou 'null' si elle ne change pas
+     * \param digit: le caractère digit à ajouter
+     * \returns Retourne la nouvelle valeur Pivot, ou 'null' si elle ne change pas
      ******************************************************************/
     qint32 Afficheur::_addDigit(QString digit)
         {
@@ -117,9 +111,9 @@
             }
         }
 
-    /** ***************************************************************
+    /*! ***************************************************************
      * Enlève un digit à la fin de la chaine de caractères.
-     * @return : la nouvelle valeur pivot
+     * \returns la nouvelle valeur pivot
      ******************************************************************/
     qint32 Afficheur::_removeLastDigit()
         {
@@ -151,7 +145,7 @@
             }
         }
 
-    /** ***************************************************************
+    /*! ***************************************************************
      * Vide la valeur.
      ******************************************************************/
     void Afficheur::clear()
@@ -159,9 +153,9 @@
             this->mValue = "";
         }
 
-    /** ***************************************************************
+    /*! ***************************************************************
      * Renvoie le champ textuel en cours de saisie.
-     * @return the currently edited text field.
+     * \returns the currently edited text field.
      ******************************************************************/
     QString Afficheur::getStringValue()
         {
@@ -173,29 +167,29 @@
                 return Converter::addSpaceSeparator(rawValue);
         }
 
-    /** ***************************************************************
+    /*! ***************************************************************
      * Retourne le framerate (utile pour les afficheurs HMSI).
-     * @return framerate utilisé pour cet afficheur (ex: 25.0)
+     * \returns framerate utilisé pour cet afficheur (ex: 25.0)
      *****************************************************************/
     double Afficheur::getFrameRate()
         {
             return this->mFrameRate;
         }
 
-     /** ***************************************************************
+     /*! ***************************************************************
      * Renvoie le nombre de digits déjà présents dans la string.
-     * @return the number of digits in the string.
+     * \returns the number of digits in the string.
      ******************************************************************/
     int Afficheur::length()
         {
             return this->mValue.length();
         }
 
-    /** ***************************************************************
+    /*! ***************************************************************
      * Indique si le HMSI a besoin d'être rectifié
      * cad si minutes > 59 ou secondes > 59 ou images > 24.
-     * @param rawHmsi : un RAW HMSI du type HHMMSSII
-     * @return true if HMSI needs to be rectified
+     * \param rawHmsi : un RAW HMSI du type HHMMSSII
+     * \returns true if HMSI needs to be rectified
      ***************************************************************** */
     bool Afficheur::isIncorrect(QString rawHmsi)
         {
@@ -247,21 +241,22 @@
             return false;
         }
 
-    /** ***************************************************************
+    /*! ***************************************************************
      * Renvoie le nom de l'unité correspondante.
-     * @return the name of the unit
+     * \returns the name of the unit
      ******************************************************************/
     QString Afficheur::name()
         {
             return mName;
         }
 
-    /** ***************************************************************
+    /*! ***************************************************************
      * SLOT. Recoit la valeur numérique à afficher.
-     * @param value La valeur pivot en microsecondes.
+     * \param value: La valeur pivot en microsecondes.
      ******************************************************************/
         void Afficheur::setValue(qint64 microsecs)
         {
+            qDebug("received");
             QString value = "DEFAULT VALUE";
             switch (mUnit)
             {

@@ -3,6 +3,7 @@ import QtQuick.Controls.Universal
 
 Item {
     property alias text: input.text
+
     Rectangle {
         anchors.fill: parent
         color: "#c8e6ca"

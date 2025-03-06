@@ -23,6 +23,7 @@ Item {
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
+        // ---------------------------------------
         FieldInput {
             //text: "MILLISECONDS"
             text: TC1aff_2.value
@@ -34,6 +35,7 @@ Item {
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
+        // ---------------------------------------
         FieldInput {
             // text: "MICROSECS"
             text: TC1aff_3.value
@@ -45,8 +47,10 @@ Item {
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
+        // ---------------------------------------
         FieldInput {
-            text: "FRAMES"
+            //text: "FRAMES"
+            text: TC1aff_6.value
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -55,8 +59,10 @@ Item {
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
+        // ---------------------------------------
         FieldInput {
-            text: "FRAMES"
+            //text: "FRAMES"
+            text: TC1aff_7.value
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -65,6 +71,7 @@ Item {
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
+        // ---------------------------------------
         FieldInput {
             //text: "HH:MM:SS:II"
             text: TC1aff_4.value
@@ -76,6 +83,7 @@ Item {
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
+        // ---------------------------------------
         FieldInput {
             //text: "DD + HH:MM:SS:II"
             text: TC1aff_5.value
@@ -87,9 +95,16 @@ Item {
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
+        // ---------------------------------------
         TiButton {
             id: btClear
-            buttonText: "Clear"
+            buttonText: "clear"
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+        }
+        TiButton {
+            id: btFrameRate
+            buttonText: "framerate"
             Layout.fillHeight: true
             Layout.fillWidth: true
         }

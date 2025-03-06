@@ -34,8 +34,8 @@ Window {
             // ----------------------------------------------------------------
             // ------------------ Valeurs Converties 1 ------------------------
             // ----------------------------------------------------------------
-            ConvertFrame {
-                id: convertFrame1
+            LeftFrame {
+                id: leftFrame
                 Layout.fillWidth: true
                 Layout.fillHeight: true
             }
@@ -50,8 +50,8 @@ Window {
             // ----------------------------------------------------------------
             // ------------------ Valeurs Converties 2 ------------------------
             // ----------------------------------------------------------------
-            ConvertFrame {
-                id: convertFrame2
+            RightFrame {
+                id: rightFrame
                 Layout.fillWidth: true
                 Layout.fillHeight: true
             }

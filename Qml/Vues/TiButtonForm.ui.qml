@@ -1,11 +1,12 @@
 import QtQuick
 import QtQuick.Controls.Universal
 
-
 Button {
     id: button
     anchors.fill: parent
     anchors.topMargin: 8
+    anchors.leftMargin: 4
+    anchors.rightMargin: 4
 
     contentItem: Text {
         text: buttonText

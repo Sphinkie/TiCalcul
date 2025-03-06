@@ -15,7 +15,7 @@ qt_add_executable(appTiCalcul
 qt_add_qml_module(appTiCalcul
     URI TiCalcul
     VERSION 1.0
-        RESOURCES TiCalcul.qrc
+        RESOURCES Resources/TiCalcul.qrc
         RESOURCES Resources/images/TiCalcul.ico
         RESOURCES Resources/images/TiCalcul_black.ico
         QML_FILES Qml/Main.qml
@@ -29,7 +29,8 @@ qt_add_qml_module(appTiCalcul
         QML_FILES Qml/Components/FieldResult.qml
         QML_FILES Qml/Components/FieldInput.qml
         QML_FILES Qml/Components/FieldLabel.qml
-        QML_FILES Qml/Components/ConvertFrame.qml
+        QML_FILES Qml/Components/LeftFrame.qml
+        QML_FILES Qml/Components/RightFrame.qml
         SOURCES Sources/afficheur.h Sources/afficheur.cpp
         SOURCES Sources/unites.h Sources/unites.cpp
         SOURCES Sources/converter.h Sources/converter.cpp

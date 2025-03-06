@@ -2,6 +2,16 @@
 // #include <QQmlContext>
 #include "operande.h"
 
+
+
+/* ********************************************************************************************************** */
+/*!
+ * \brief Constructeur: crée les 8 afficheurs de cet opérande, et les connecte pour leur envoyer un signal
+ *        à chaque modification de la valeur pivot.
+ * \note L'afficheur NTSC est désactivé pour le moment.
+ * \param name: Le nom de l'operande: "TC1" ou "TC2".
+ * \param parent: Paramètre classique pour les QObject.
+ */
 Operande::Operande(QString name, QObject *parent)
 {
     this->mName = name;
@@ -11,6 +21,9 @@ Operande::Operande(QString name, QObject *parent)
     a3 = new Afficheur(Unites::MICROSECONDS);
     a4 = new Afficheur(Unites::HMSI);
     a5 = new Afficheur(Unites::DHMSM);
+    a6 = new Afficheur(Unites::FRAMES_25);
+    a7 = new Afficheur(Unites::FRAMES_50);
+    //a8 = new Afficheur(Unites::FRAMES_NTSC);
 
     // Connexions
     QObject::connect(this, SIGNAL(valeurPivotChanged(qint64)), a1, SLOT(setValue(qint64)));
@@ -18,27 +31,47 @@ Operande::Operande(QString name, QObject *parent)
     QObject::connect(this, SIGNAL(valeurPivotChanged(qint64)), a3, SLOT(setValue(qint64)));
     QObject::connect(this, SIGNAL(valeurPivotChanged(qint64)), a4, SLOT(setValue(qint64)));
     QObject::connect(this, SIGNAL(valeurPivotChanged(qint64)), a5, SLOT(setValue(qint64)));
-
+    QObject::connect(this, SIGNAL(valeurPivotChanged(qint64)), a6, SLOT(setValue(qint64)));
+    QObject::connect(this, SIGNAL(valeurPivotChanged(qint64)), a7, SLOT(setValue(qint64)));
+    //QObject::connect(this, SIGNAL(valeurPivotChanged(qint64)), a8, SLOT(setValue(qint64)));
 }
 
+/* ********************************************************************************************************** */
+ /*!
+ * \brief Renvoie la valeur Pivot (en microsecondes).
+ * \returns the value in microseconds.
+ */
 qint64 Operande::valeurPivot() const
 {
     return mValeurPivot;
 }
 
-/*! ********************************************************************************************
+/* ********************************************************************************************************** */
+ /*!
  * \brief Reçoit et propage la nouvelle valeur pivot aux afficheurs.
- * \param newValeurPivot Timecode en microsecondes.
+ * \param newValeurPivot: Timecode en microsecondes.
  */
 void Operande::setValeurPivot(qint64 newValeurPivot)
 {
     mValeurPivot = newValeurPivot;
+    qDebug("send");
     emit valeurPivotChanged(mValeurPivot);
 }
 
-/*! ********************************************************************************************
+/* ********************************************************************************************************** */
+/*!
+ * \brief Vide la valeur pivot.
+ */
+void Operande::clear()
+{
+    qDebug("clear");
+    setValeurPivot(90000);
+}
+
+/* ********************************************************************************************************** */
+/*!
  * \brief Enregistre les afficheurs dans le contexte QML, pour pouvoir les afficher.
- * \param context Le root context de l'application.
+ * \param context: Le root context de l'application.
  */
 void Operande::registerContext(QQmlContext* context)
 {
@@ -47,6 +80,9 @@ void Operande::registerContext(QQmlContext* context)
     context->setContextProperty(mName+"aff_3", a3);
     context->setContextProperty(mName+"aff_4", a4);
     context->setContextProperty(mName+"aff_5", a5);
+    context->setContextProperty(mName+"aff_6", a6);
+    context->setContextProperty(mName+"aff_7", a7);
+    //context->setContextProperty(mName+"aff_8", a8);
 }
 
 

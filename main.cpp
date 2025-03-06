@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
     // On initialise nos classes
     // --------------------------------------
     Operande operande_tc1("TC1");
-    //Operande operande_tc2();
+    Operande operande_tc2("TC2");
 
     // --------------------------------------
     // Initialisation du moteur:
@@ -38,6 +38,7 @@ int main(int argc, char *argv[])
     // --------------------------------------
     context->setContextProperty("operandeTC1", &operande_tc1);
     operande_tc1.registerContext(context);
+    operande_tc2.registerContext(context);
 
     // --------------------------------------
     // Connexion des signaux
@@ -48,7 +49,8 @@ int main(int argc, char *argv[])
                          QCoreApplication::exit(-1);
                      }, Qt::QueuedConnection);
 
-    operande_tc1.setValeurPivot(2865000);
+    operande_tc1.setValeurPivot(28650000);
+    operande_tc2.setValeurPivot(87545412880);
 
     // --------------------------------------
     // Démarrage du moteur.
