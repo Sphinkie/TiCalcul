@@ -943,8 +943,8 @@ WARN_LOGFILE           =
 # Note: If this tag is empty the current directory is searched.
 
 INPUT                  = .
-INPUT                 += ../readme.md
-INPUT                 += ../readme.md ../docs/about_tags.md ../docs/compilation.md
+INPUT                 += ./readme.md
+INPUT                 += ./docs/compilation.md
 
 
 # This tag can be used to specify the character encoding of the source files

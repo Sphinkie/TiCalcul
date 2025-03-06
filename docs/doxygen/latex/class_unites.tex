@@ -1,0 +1,201 @@
+\doxysection{Référence de la classe Unites}
+\label{class_unites}\index{Unites@{Unites}}
+\doxysubsubsection*{Types publics}
+\begin{DoxyCompactItemize}
+\item 
+\label{class_unites_a3098f2a735b7f844d02108d90b9ea258} 
+enum {\bfseries Units} \{ \newline
+{\bfseries HMSI}
+, {\bfseries DHMSM}
+, {\bfseries FRAMES\+\_\+25}
+, {\bfseries FRAMES\+\_\+50}
+, \newline
+{\bfseries FRAMES\+\_\+\+NTSC}
+, {\bfseries SECONDS}
+, {\bfseries MILLISECONDS}
+, {\bfseries MICROSECONDS}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Unites} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Attributs publics statiques}
+\begin{DoxyCompactItemize}
+\item 
+static const QMap$<$ Units, qint32 $>$ \textbf{ us\+Per\+Unit}
+\item 
+static const QMap$<$ Units, qint64 $>$ \textbf{ max\+Value}
+\item 
+static const QMap$<$ Units, double $>$ \textbf{ frame\+Rate}
+\item 
+static const QMap$<$ Units, qint8 $>$ \textbf{ nb\+Decimals}
+\item 
+static const QMap$<$ Units, QString $>$ \textbf{ name}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Fonctions membres privées statiques}
+\begin{DoxyCompactItemize}
+\item 
+static void \textbf{ Init\+Max\+Value} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Unites\+::\+Init\+Max\+Value}{p.}{class_unites_aa8b45b906a36f995d988504ff60fead3} initialise la map max\+Value qui fournit la valeur max autorisée pour l\textquotesingle{}unité. (99 heures) \end{DoxyCompactList}\item 
+static void \textbf{ Init\+Us\+Per\+Unit} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Unites\+::\+Init\+Us\+Per\+Unit}{p.}{class_unites_af05c4e9a6ba704f4056a3c3ecbc37aa1} initialise la map us\+Per\+Unit qui fournit le nombre de microseconds par unité. \end{DoxyCompactList}\item 
+static void \textbf{ Initframe\+Rate} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Unites\+::\+Initframe\+Rate}{p.}{class_unites_aed3c993fbc2987aa5a93158749eb0157} initialise la map frame\+Rate qui fournit le nombre d\textquotesingle{}unités par seconde. Doit être cohérent avec us\+\_\+per\+\_\+unit.. \end{DoxyCompactList}\item 
+static void \textbf{ Init\+Nb\+Decimals} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Unites\+::\+Init\+Nb\+Decimals}{p.}{class_unites_aeb707677d0aa3d675f151402d1e430cc} initialise la map nb\+Decimals qui fournit le nombre de chiffres après la virgule. \end{DoxyCompactList}\item 
+static void \textbf{ Init\+Names} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Unites\+::\+Init\+Names}{p.}{class_unites_a9688ccb84c28a74c9eb97ee6a7019701} initialise la map name qui fournit le nom de l\textquotesingle{}unité sous forme de string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\label{class_unites_aafc84f362a1b78bd6f2276ee04d249c8} 
+\index{Unites@{Unites}!Unites@{Unites}}
+\index{Unites@{Unites}!Unites@{Unites}}
+\doxysubsubsection{Unites()}
+{\footnotesize\ttfamily Unites\+::\+Unites (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\DoxyHorRuler{0}
+ Constructeur. On remplit les maps. 
+
+\doxysubsection{Documentation des fonctions membres}
+\label{class_unites_aed3c993fbc2987aa5a93158749eb0157} 
+\index{Unites@{Unites}!InitframeRate@{InitframeRate}}
+\index{InitframeRate@{InitframeRate}!Unites@{Unites}}
+\doxysubsubsection{InitframeRate()}
+{\footnotesize\ttfamily void Unites\+::\+Initframe\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+\doxyref{Unites\+::\+Initframe\+Rate}{p.}{class_unites_aed3c993fbc2987aa5a93158749eb0157} initialise la map frame\+Rate qui fournit le nombre d\textquotesingle{}unités par seconde. Doit être cohérent avec us\+\_\+per\+\_\+unit.. 
+
+\DoxyHorRuler{0}
+ \label{class_unites_aa8b45b906a36f995d988504ff60fead3} 
+\index{Unites@{Unites}!InitMaxValue@{InitMaxValue}}
+\index{InitMaxValue@{InitMaxValue}!Unites@{Unites}}
+\doxysubsubsection{InitMaxValue()}
+{\footnotesize\ttfamily void Unites\+::\+Init\+Max\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+\doxyref{Unites\+::\+Init\+Max\+Value}{p.}{class_unites_aa8b45b906a36f995d988504ff60fead3} initialise la map max\+Value qui fournit la valeur max autorisée pour l\textquotesingle{}unité. (99 heures) 
+
+\DoxyHorRuler{0}
+  \label{class_unites_a9688ccb84c28a74c9eb97ee6a7019701} 
+\index{Unites@{Unites}!InitNames@{InitNames}}
+\index{InitNames@{InitNames}!Unites@{Unites}}
+\doxysubsubsection{InitNames()}
+{\footnotesize\ttfamily void Unites\+::\+Init\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+\doxyref{Unites\+::\+Init\+Names}{p.}{class_unites_a9688ccb84c28a74c9eb97ee6a7019701} initialise la map name qui fournit le nom de l\textquotesingle{}unité sous forme de string. 
+
+\DoxyHorRuler{0}
+ \label{class_unites_aeb707677d0aa3d675f151402d1e430cc} 
+\index{Unites@{Unites}!InitNbDecimals@{InitNbDecimals}}
+\index{InitNbDecimals@{InitNbDecimals}!Unites@{Unites}}
+\doxysubsubsection{InitNbDecimals()}
+{\footnotesize\ttfamily void Unites\+::\+Init\+Nb\+Decimals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+\doxyref{Unites\+::\+Init\+Nb\+Decimals}{p.}{class_unites_aeb707677d0aa3d675f151402d1e430cc} initialise la map nb\+Decimals qui fournit le nombre de chiffres après la virgule. 
+
+\DoxyHorRuler{0}
+ \label{class_unites_af05c4e9a6ba704f4056a3c3ecbc37aa1} 
+\index{Unites@{Unites}!InitUsPerUnit@{InitUsPerUnit}}
+\index{InitUsPerUnit@{InitUsPerUnit}!Unites@{Unites}}
+\doxysubsubsection{InitUsPerUnit()}
+{\footnotesize\ttfamily void Unites\+::\+Init\+Us\+Per\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+\doxyref{Unites\+::\+Init\+Us\+Per\+Unit}{p.}{class_unites_af05c4e9a6ba704f4056a3c3ecbc37aa1} initialise la map us\+Per\+Unit qui fournit le nombre de microseconds par unité. 
+
+\DoxyHorRuler{0}
+  
+
+\doxysubsection{Documentation des données membres}
+\label{class_unites_a0812ea4f896be35c95aeef0feab145a7} 
+\index{Unites@{Unites}!frameRate@{frameRate}}
+\index{frameRate@{frameRate}!Unites@{Unites}}
+\doxysubsubsection{frameRate}
+{\footnotesize\ttfamily const QMap$<$Units, double$>$ Unites\+::frame\+Rate\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+{\bfseries Valeur initiale \+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{HMSI,25.0\},\ \{DHMSM,25.0\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_25,\ 25.0\}\ ,\ \{FRAMES\_50,\ 50.0\},\ \{FRAMES\_NTSC,\ 30.0\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{SECONDS,1.0\},\ \{MILLISECONDS,\ 1000.0\},\ \{MICROSECONDS,\ 1000000.0\}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\label{class_unites_ac216e3d813796ea67136196ce9fe1ddd} 
+\index{Unites@{Unites}!maxValue@{maxValue}}
+\index{maxValue@{maxValue}!Unites@{Unites}}
+\doxysubsubsection{maxValue}
+{\footnotesize\ttfamily const QMap$<$Units, qint64$>$ Unites\+::max\+Value\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+{\bfseries Valeur initiale \+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{HMSI,99999999\},\ \{DHMSM,99999999\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_25,\ 99\ *\ 60\ *\ 60\ *\ 25\}\ ,\ \{FRAMES\_50,\ 99\ *\ 60\ *\ 60\ *\ 50\},\ \{FRAMES\_NTSC,\ 99\ *\ 60\ *\ 60\ *\ 30\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{SECONDS,\ 99\ *\ 60\ *\ 60\},\ \{MILLISECONDS,\ 99\ *\ 60\ *\ 60\ *\ 1000\},\ \{MICROSECONDS,\ 99\ *\ 60\ *\ 60\ *\ (qint64)(1000000)\}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\label{class_unites_ab0e232a8872e790e27fcebde3b32d515} 
+\index{Unites@{Unites}!name@{name}}
+\index{name@{name}!Unites@{Unites}}
+\doxysubsubsection{name}
+{\footnotesize\ttfamily const QMap$<$Units, QString$>$ Unites\+::name\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+{\bfseries Valeur initiale \+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{HMSI,\textcolor{stringliteral}{"{}HMSI"{}}\},\ \{DHMSM,\textcolor{stringliteral}{"{}DHMSM"{}}\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_25,\ \textcolor{stringliteral}{"{}FRAMES\_25"{}}\}\ ,\ \{FRAMES\_50,\ \textcolor{stringliteral}{"{}FRAMES\_50"{}}\},\ \{FRAMES\_NTSC,\ \textcolor{stringliteral}{"{}FRAMES\_NTSC"{}}\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{SECONDS,\ \textcolor{stringliteral}{"{}SECONDS"{}}\},\ \{MILLISECONDS,\ \textcolor{stringliteral}{"{}MILLISECONDS"{}}\},\ \{MICROSECONDS,\ \textcolor{stringliteral}{"{}MICROSECONDS"{}}\}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\label{class_unites_a98f90919bdf05a627fc8df1390dc50d9} 
+\index{Unites@{Unites}!nbDecimals@{nbDecimals}}
+\index{nbDecimals@{nbDecimals}!Unites@{Unites}}
+\doxysubsubsection{nbDecimals}
+{\footnotesize\ttfamily const QMap$<$Units, qint8$>$ Unites\+::nb\+Decimals\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+{\bfseries Valeur initiale \+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{HMSI,\ 0\},\ \{DHMSM,\ 0\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_25,\ 0\}\ ,\ \{FRAMES\_50,\ 0\},\ \{FRAMES\_NTSC,\ 0\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{SECONDS,\ 3\},\ \{MILLISECONDS,\ 0\},\ \{MICROSECONDS,\ 0\}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\label{class_unites_a7477c60b8824f67e73532604a41ac8a0} 
+\index{Unites@{Unites}!usPerUnit@{usPerUnit}}
+\index{usPerUnit@{usPerUnit}!Unites@{Unites}}
+\doxysubsubsection{usPerUnit}
+{\footnotesize\ttfamily const QMap$<$Units, qint32$>$ Unites\+::us\+Per\+Unit\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+{\bfseries Valeur initiale \+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{HMSI,\ Converter::us\_PerFrame25\},\ \{DHMSM,\ Converter::us\_PerFrame25\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_25,\ Converter::us\_PerFrame25\}\ ,\ \{FRAMES\_50,Converter::us\_PerFrame50\},\ \{FRAMES\_NTSC,\ Converter::us\_PerFrameNTSC\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{SECONDS,\ Converter::us\_PerSecond\},\ \{MILLISECONDS,1000\},\ \{MICROSECONDS,1\}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+Sources/unites.\+h\item 
+Sources/unites.\+cpp\end{DoxyCompactItemize}

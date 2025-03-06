@@ -1,0 +1,212 @@
+\doxysection{Référence de la classe Afficheur}
+\label{class_afficheur}\index{Afficheur@{Afficheur}}
+Graphe d\textquotesingle{}héritage de Afficheur\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_afficheur}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Connecteurs publics}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ set\+Value} (qint64 value)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Signaux}
+\begin{DoxyCompactItemize}
+\item 
+\label{class_afficheur_ae1db740fbdbefe64b2b2c9446c1f8832} 
+void {\bfseries value\+Changed} (qint64)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Afficheur} (Unites\+::\+Units unit, QObject $\ast$parent=nullptr)
+\item 
+void \textbf{ set\+Frame\+Rate} (double framerate)
+\item 
+QString \textbf{ get\+String\+Value} ()
+\item 
+double \textbf{ get\+Frame\+Rate} ()
+\item 
+int \textbf{ length} ()
+\item 
+QString \textbf{ name} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Fonctions membres protégées}
+\begin{DoxyCompactItemize}
+\item 
+qint32 \textbf{ \+\_\+add\+Digit} (QString digit)
+\item 
+qint32 \textbf{ \+\_\+remove\+Last\+Digit} ()
+\item 
+void \textbf{ clear} ()
+\item 
+bool \textbf{ is\+Incorrect} (QString raw\+Hmsi)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+\label{class_afficheur_aa224221fbabd195c9283e3320b6987fd} 
+double {\bfseries m\+Conversion\+Facteur}
+\item 
+\label{class_afficheur_a7f7f3675bdd84facdafcc5d12a1d2f5e} 
+int {\bfseries m\+Decimals}
+\item 
+\label{class_afficheur_a57358410a9700e9a63a2a1eb2af0b275} 
+double {\bfseries m\+Frame\+Rate}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Propriétés}
+\begin{DoxyCompactItemize}
+\item 
+\label{class_afficheur_a37d85eac187d99290671451319cda8b7} 
+QString {\bfseries value}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+\label{class_afficheur_a8ecde2d43572490c141f08ac1a823680} 
+QString {\bfseries m\+Name}
+\item 
+\label{class_afficheur_ab4a880ad6352f46770ca42338ba4e65a} 
+long {\bfseries m\+Max\+Value}
+\item 
+\label{class_afficheur_a8358fa004f32f4da0695dceb94ad22c6} 
+QString {\bfseries m\+Value}
+\item 
+\label{class_afficheur_abf62ef7d11ce13b233fd7edd33d820d1} 
+Unites\+::\+Units {\bfseries m\+Unit}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\label{class_afficheur_a00774166e578f9dd4312c52700d0a48e} 
+\index{Afficheur@{Afficheur}!Afficheur@{Afficheur}}
+\index{Afficheur@{Afficheur}!Afficheur@{Afficheur}}
+\doxysubsubsection{Afficheur()}
+{\footnotesize\ttfamily Afficheur\+::\+Afficheur (\begin{DoxyParamCaption}\item[{Unites\+::\+Units}]{unit,  }\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\DoxyHorRuler{0}
+ Constructeur 
+\begin{DoxyParams}{Paramètres}
+{\em unit} & \+: l\textquotesingle{}unité correspondante à cet afficheur \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentation des fonctions membres}
+\label{class_afficheur_ac80cbbcac9a27e7a18ec760f87778d27} 
+\index{Afficheur@{Afficheur}!\_addDigit@{\_addDigit}}
+\index{\_addDigit@{\_addDigit}!Afficheur@{Afficheur}}
+\doxysubsubsection{\_addDigit()}
+{\footnotesize\ttfamily qint32 Afficheur\+::\+\_\+add\+Digit (\begin{DoxyParamCaption}\item[{QString}]{digit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Ajoute un digit à la fin de la chaine de caractères 
+\begin{DoxyParams}{Paramètres}
+{\em digit} & le caractère digit à ajouter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Retourne la nouvelle valeur Pivot, ou \textquotesingle{}null\textquotesingle{} si elle ne change pas 
+\end{DoxyReturn}
+\label{class_afficheur_a67e1353edeba675150b95541d6205dcf} 
+\index{Afficheur@{Afficheur}!\_removeLastDigit@{\_removeLastDigit}}
+\index{\_removeLastDigit@{\_removeLastDigit}!Afficheur@{Afficheur}}
+\doxysubsubsection{\_removeLastDigit()}
+{\footnotesize\ttfamily qint32 Afficheur\+::\+\_\+remove\+Last\+Digit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\DoxyHorRuler{0}
+ Enlève un digit à la fin de la chaine de caractères. \begin{DoxyReturn}{Renvoie}
+la nouvelle valeur pivot 
+\end{DoxyReturn}
+\label{class_afficheur_a0feadb6e8d90699bcf58ef6f37e6ba75} 
+\index{Afficheur@{Afficheur}!clear@{clear}}
+\index{clear@{clear}!Afficheur@{Afficheur}}
+\doxysubsubsection{clear()}
+{\footnotesize\ttfamily void Afficheur\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\DoxyHorRuler{0}
+ Vide la valeur. \label{class_afficheur_a6b2fe22af7c6cb03cdd7af8d4c127ad4} 
+\index{Afficheur@{Afficheur}!getFrameRate@{getFrameRate}}
+\index{getFrameRate@{getFrameRate}!Afficheur@{Afficheur}}
+\doxysubsubsection{getFrameRate()}
+{\footnotesize\ttfamily double Afficheur\+::get\+Frame\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\DoxyHorRuler{0}
+ Retourne le framerate (utile pour les afficheurs HMSI). \begin{DoxyReturn}{Renvoie}
+framerate utilisé pour cet afficheur (ex\+: 25.\+0) 
+\end{DoxyReturn}
+\label{class_afficheur_ae9aea83faa8bcad2ae6e18aa7f8b2aa5} 
+\index{Afficheur@{Afficheur}!getStringValue@{getStringValue}}
+\index{getStringValue@{getStringValue}!Afficheur@{Afficheur}}
+\doxysubsubsection{getStringValue()}
+{\footnotesize\ttfamily QString Afficheur\+::get\+String\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\DoxyHorRuler{0}
+ Renvoie le champ textuel en cours de saisie. \begin{DoxyReturn}{Renvoie}
+the currently edited text field. 
+\end{DoxyReturn}
+\label{class_afficheur_aad454ea19d00612c44757421e77cc92a} 
+\index{Afficheur@{Afficheur}!isIncorrect@{isIncorrect}}
+\index{isIncorrect@{isIncorrect}!Afficheur@{Afficheur}}
+\doxysubsubsection{isIncorrect()}
+{\footnotesize\ttfamily bool Afficheur\+::is\+Incorrect (\begin{DoxyParamCaption}\item[{QString}]{raw\+Hmsi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\DoxyHorRuler{0}
+ Indique si le HMSI a besoin d\textquotesingle{}être rectifié cad si minutes $>$ 59 ou secondes $>$ 59 ou images $>$ 24. 
+\begin{DoxyParams}{Paramètres}
+{\em raw\+Hmsi} & \+: un RAW HMSI du type HHMMSSII \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+true if HMSI needs to be rectified 
+\end{DoxyReturn}
+\label{class_afficheur_a4c23afc166196f8243caeffba994b52b} 
+\index{Afficheur@{Afficheur}!length@{length}}
+\index{length@{length}!Afficheur@{Afficheur}}
+\doxysubsubsection{length()}
+{\footnotesize\ttfamily int Afficheur\+::length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\DoxyHorRuler{0}
+ Renvoie le nombre de digits déjà présents dans la string. \begin{DoxyReturn}{Renvoie}
+the number of digits in the string. 
+\end{DoxyReturn}
+\label{class_afficheur_adf62f0dbee2536991e0e613f35e11007} 
+\index{Afficheur@{Afficheur}!name@{name}}
+\index{name@{name}!Afficheur@{Afficheur}}
+\doxysubsubsection{name()}
+{\footnotesize\ttfamily QString Afficheur\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\DoxyHorRuler{0}
+ Renvoie le nom de l\textquotesingle{}unité correspondante. \begin{DoxyReturn}{Renvoie}
+the name of the unit 
+\end{DoxyReturn}
+\label{class_afficheur_aa8eba90a62be548ab4fd6f24a2130591} 
+\index{Afficheur@{Afficheur}!setFrameRate@{setFrameRate}}
+\index{setFrameRate@{setFrameRate}!Afficheur@{Afficheur}}
+\doxysubsubsection{setFrameRate()}
+{\footnotesize\ttfamily void Afficheur\+::set\+Frame\+Rate (\begin{DoxyParamCaption}\item[{double}]{framerate }\end{DoxyParamCaption})}
+
+Permet de changer dynamiquement le framerate des afficheurs HMSI. Attention\+: voir aussi recalculate\+Valeur\+Pivot() de la classe fille. 
+\begin{DoxyParams}{Paramètres}
+{\em framerate} & le nouveau framerate pour cet afficheur (ex\+: 25.\+0) \\
+\hline
+\end{DoxyParams}
+\label{class_afficheur_ab6bb1428f0e05a16f71441d522747fff} 
+\index{Afficheur@{Afficheur}!setValue@{setValue}}
+\index{setValue@{setValue}!Afficheur@{Afficheur}}
+\doxysubsubsection{setValue}
+{\footnotesize\ttfamily void Afficheur\+::set\+Value (\begin{DoxyParamCaption}\item[{qint64}]{microsecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\DoxyHorRuler{0}
+ SLOT. Recoit la valeur numérique à afficher. 
+\begin{DoxyParams}{Paramètres}
+{\em value} & La valeur pivot en microsecondes. \\
+\hline
+\end{DoxyParams}
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+Sources/afficheur.\+h\item 
+build/\+Desktop\+\_\+\+Qt\+\_\+6\+\_\+6\+\_\+1\+\_\+\+MSVC2019\+\_\+64bit-\/\+Debug/app\+Ti\+Calcul\+\_\+autogen/\+ZMID6\+KYQSC/moc\+\_\+afficheur.\+cpp\item 
+Sources/afficheur.\+cpp\end{DoxyCompactItemize}

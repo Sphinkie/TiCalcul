@@ -1,0 +1,149 @@
+\doxysection{Référence de la classe Operande}
+\label{class_operande}\index{Operande@{Operande}}
+
+
+La class \doxyref{Operande}{p.}{class_operande} gère la "{}valeur pivot"{} (cad en microsecondes) de l\textquotesingle{}opérande TC1 ou de TC2.  
+
+
+
+
+{\ttfamily \#include $<$operande.\+h$>$}
+
+Graphe d\textquotesingle{}héritage de Operande\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_operande}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signaux}
+\begin{DoxyCompactItemize}
+\item 
+\label{class_operande_ac428c56d48cce672a5bd34b6d1949387} 
+void {\bfseries valeur\+Pivot\+Changed} (qint64)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Operande} (QString name, QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructeur\+: crée les 8 afficheurs de cet opérande, et les connecte pour leur envoyer un signal à chaque modification de la valeur pivot. \end{DoxyCompactList}\item 
+qint64 \textbf{ valeur\+Pivot} () const
+\begin{DoxyCompactList}\small\item\em Renvoie la valeur Pivot (en microsecondes). \end{DoxyCompactList}\item 
+void \textbf{ set\+Valeur\+Pivot} (qint64 new\+Valeur\+Pivot)
+\begin{DoxyCompactList}\small\item\em Reçoit et propage la nouvelle valeur pivot aux afficheurs. \end{DoxyCompactList}\item 
+void \textbf{ register\+Context} (QQml\+Context $\ast$context)
+\begin{DoxyCompactList}\small\item\em Enregistre les afficheurs dans le contexte QML, pour pouvoir les afficher. \end{DoxyCompactList}\item 
+\label{class_operande_a78e5d567866e99f235880ba70122a5c8} 
+Q\+\_\+\+INVOKABLE void {\bfseries clear} ()
+\begin{DoxyCompactList}\small\item\em Vide la valeur pivot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+\label{class_operande_a3b1ebec95f0109ff35fb9d2fe30f3f87} 
+qint64 {\bfseries m\+Valeur\+Pivot}
+\begin{DoxyCompactList}\small\item\em Valeur pivot en microsecondes. \end{DoxyCompactList}\item 
+\label{class_operande_ae227137bd368c38b738f4f55937bc491} 
+QString {\bfseries m\+Name}
+\begin{DoxyCompactList}\small\item\em Vaut TC1 ou TC2. \end{DoxyCompactList}\item 
+\label{class_operande_aee4c22583af3683272f29e2da113f582} 
+\textbf{ Afficheur} $\ast$ {\bfseries a1}
+\begin{DoxyCompactList}\small\item\em \doxyref{Afficheur}{p.}{class_afficheur} en secondes. \end{DoxyCompactList}\item 
+\label{class_operande_a3b7aaef13d72c01b24ab8ec001947597} 
+\textbf{ Afficheur} $\ast$ {\bfseries a2}
+\begin{DoxyCompactList}\small\item\em \doxyref{Afficheur}{p.}{class_afficheur} en millisecondes. \end{DoxyCompactList}\item 
+\label{class_operande_a87e850c47510cc6ca5e43d31122007f4} 
+\textbf{ Afficheur} $\ast$ {\bfseries a3}
+\begin{DoxyCompactList}\small\item\em \doxyref{Afficheur}{p.}{class_afficheur} en microsecondes. \end{DoxyCompactList}\item 
+\label{class_operande_ab47a800d6761b30c81b41b554961a6a5} 
+\textbf{ Afficheur} $\ast$ {\bfseries a4}
+\begin{DoxyCompactList}\small\item\em \doxyref{Afficheur}{p.}{class_afficheur} en HMSI. \end{DoxyCompactList}\item 
+\label{class_operande_ae3773732bdce314a2234390a0841dc42} 
+\textbf{ Afficheur} $\ast$ {\bfseries a5}
+\begin{DoxyCompactList}\small\item\em \doxyref{Afficheur}{p.}{class_afficheur} en Day + HSMm. \end{DoxyCompactList}\item 
+\label{class_operande_aa920dd0451ab913df955351ec07ebf76} 
+\textbf{ Afficheur} $\ast$ {\bfseries a6}
+\begin{DoxyCompactList}\small\item\em \doxyref{Afficheur}{p.}{class_afficheur} en Frames (25 fps) \end{DoxyCompactList}\item 
+\label{class_operande_a23764a7e739264acb90d28da17529454} 
+\textbf{ Afficheur} $\ast$ {\bfseries a7}
+\begin{DoxyCompactList}\small\item\em \doxyref{Afficheur}{p.}{class_afficheur} en Frames (50 fps) \end{DoxyCompactList}\item 
+\label{class_operande_ae1712f194122c4d8fa41f40429e10c4f} 
+\textbf{ Afficheur} $\ast$ {\bfseries a8}
+\begin{DoxyCompactList}\small\item\em \doxyref{Afficheur}{p.}{class_afficheur} en Frames (NTSC) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+La class \doxyref{Operande}{p.}{class_operande} gère la "{}valeur pivot"{} (cad en microsecondes) de l\textquotesingle{}opérande TC1 ou de TC2. 
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\label{class_operande_a3de12c26069d9af1e3b5b69273013c4c} 
+\index{Operande@{Operande}!Operande@{Operande}}
+\index{Operande@{Operande}!Operande@{Operande}}
+\doxysubsubsection{Operande()}
+{\footnotesize\ttfamily Operande\+::\+Operande (\begin{DoxyParamCaption}\item[{QString}]{name,  }\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Constructeur\+: crée les 8 afficheurs de cet opérande, et les connecte pour leur envoyer un signal à chaque modification de la valeur pivot. 
+
+\begin{DoxyNote}{Note}
+L\textquotesingle{}afficheur NTSC est désactivé pour le moment. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Paramètres}
+{\em name} & Le nom de l\textquotesingle{}operande\+: "{}\+TC1"{} ou "{}\+TC2"{}. \\
+\hline
+{\em parent} & Paramètre classique pour les QObject. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentation des fonctions membres}
+\label{class_operande_a8fd5799d50aa994d23700b09a9fd74fb} 
+\index{Operande@{Operande}!registerContext@{registerContext}}
+\index{registerContext@{registerContext}!Operande@{Operande}}
+\doxysubsubsection{registerContext()}
+{\footnotesize\ttfamily void Operande\+::register\+Context (\begin{DoxyParamCaption}\item[{QQml\+Context $\ast$}]{context }\end{DoxyParamCaption})}
+
+
+
+Enregistre les afficheurs dans le contexte QML, pour pouvoir les afficher. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em context} & Le root context de l\textquotesingle{}application. \\
+\hline
+\end{DoxyParams}
+\label{class_operande_ab520957674371f6bc0fc7c0b25207a4f} 
+\index{Operande@{Operande}!setValeurPivot@{setValeurPivot}}
+\index{setValeurPivot@{setValeurPivot}!Operande@{Operande}}
+\doxysubsubsection{setValeurPivot()}
+{\footnotesize\ttfamily void Operande\+::set\+Valeur\+Pivot (\begin{DoxyParamCaption}\item[{qint64}]{new\+Valeur\+Pivot }\end{DoxyParamCaption})}
+
+
+
+Reçoit et propage la nouvelle valeur pivot aux afficheurs. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em new\+Valeur\+Pivot} & Timecode en microsecondes. \\
+\hline
+\end{DoxyParams}
+\label{class_operande_ae3f3a7950d8382daaf3c93cc1228e575} 
+\index{Operande@{Operande}!valeurPivot@{valeurPivot}}
+\index{valeurPivot@{valeurPivot}!Operande@{Operande}}
+\doxysubsubsection{valeurPivot()}
+{\footnotesize\ttfamily qint64 Operande\+::valeur\+Pivot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Renvoie la valeur Pivot (en microsecondes). 
+
+\begin{DoxyReturn}{Renvoie}
+the value in microseconds. 
+\end{DoxyReturn}
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+Sources/operande.\+h\item 
+build/\+Desktop\+\_\+\+Qt\+\_\+6\+\_\+6\+\_\+1\+\_\+\+MSVC2019\+\_\+64bit-\/\+Debug/app\+Ti\+Calcul\+\_\+autogen/\+ZMID6\+KYQSC/moc\+\_\+operande.\+cpp\item 
+Sources/operande.\+cpp\end{DoxyCompactItemize}

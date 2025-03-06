@@ -1,0 +1,280 @@
+\doxysection{Référence de la classe Converter}
+\label{class_converter}\index{Converter@{Converter}}
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Converter} ()
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Fonctions membres publiques statiques}
+\begin{DoxyCompactItemize}
+\item 
+static qint64 \textbf{ HMSIto\+Microseconds} (QString hmsi\+\_\+string, double framerate)
+\item 
+static qint64 \textbf{ convert\+Raw\+HMSIto\+Microseconds} (QString hmsi, double framerate)
+\item 
+static QString \textbf{ complete\+Raw\+HMSIWith\+Dots} (QString raw\+\_\+hmsi)
+\item 
+static QString \textbf{ microsecs\+To\+Seconds} (qint64 microsecs)
+\item 
+static QString \textbf{ microsecs\+To\+Frames} (qint64 microsecs, double framerate)
+\item 
+static QString \textbf{ microsecs\+To\+Millis} (qint64 microsecs)
+\item 
+static QString \textbf{ microseconds} (qint64 microsecs)
+\item 
+static QString \textbf{ add\+Space\+Separator} (QString value)
+\item 
+\label{class_converter_a825b25f0b8ba64537a3aaf4dbf4daf0d} 
+static QString {\bfseries microsecs\+To\+HMSI} (qint64 microsecs, double framerate)
+\item 
+\label{class_converter_a99bc2ec78dd27117f0d6c77db1d58344} 
+static QString {\bfseries microsecs\+To\+HMSM} (qint64 microsecs)
+\item 
+\label{class_converter_a979923f4ddda391e436346c92090225e} 
+static QString {\bfseries microsecs\+To\+Raw\+HMSI} (qint64 microsecs, double framerate)
+\item 
+\label{class_converter_ad5a753f5cd009033d8a216ed4300fc73} 
+static QString {\bfseries microsecs\+To\+DHMSM} (qint64 microsecs)
+\item 
+static void \textbf{ set\+Ntsc\+Frame\+Per\+Sec} (double framerate)
+\item 
+static double \textbf{ get\+Ntsc\+Frame\+Per\+Sec} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Attributs publics statiques}
+\begin{DoxyCompactItemize}
+\item 
+\label{class_converter_a5de14d43d9f9592a0728bd18f0148647} 
+static const qint64 {\bfseries us\+\_\+\+Per\+Hour} = 3600000000
+\item 
+\label{class_converter_a8f0407db3de9dbdb8850251335ea2027} 
+static const qint64 {\bfseries us\+\_\+\+Per\+Day} = us\+\_\+\+Per\+Hour $\ast$ 24
+\item 
+\label{class_converter_a836f528abf4c6d07ca0c78f9119769f8} 
+static const qint32 {\bfseries us\+\_\+\+Per\+Minute} = 60000000L
+\item 
+\label{class_converter_af38ea10c4f93d5c9b68c650fe7702815} 
+static const qint32 {\bfseries us\+\_\+\+Per\+Second} = 1000000L
+\item 
+\label{class_converter_add4f8bfd306185b0e5c7ecf8a9372cda} 
+static const qint32 {\bfseries us\+\_\+\+Per\+Millisec} = 1000L
+\item 
+\label{class_converter_a2a925455d03b333abe6b2fbdb70e782f} 
+static const qint32 {\bfseries us\+\_\+\+Per\+Frame25} = us\+\_\+\+Per\+Second / 25
+\item 
+\label{class_converter_ab90155cc689976bc5bf84b8edd0e54c7} 
+static const qint32 {\bfseries us\+\_\+\+Per\+Frame50} = us\+\_\+\+Per\+Second / 50
+\item 
+\label{class_converter_a85d55cfa414e8c67add5a1dd667ed65a} 
+static const double {\bfseries Ntsc\+Frame\+Per\+Sec} = 29.\+97
+\item 
+\label{class_converter_a0ca8609dca404d4a477d28636b44ae7b} 
+static const double {\bfseries us\+\_\+\+Per\+Frame\+NTSC} = us\+\_\+\+Per\+Second / Ntsc\+Frame\+Per\+Sec
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Fonctions membres privées statiques}
+\begin{DoxyCompactItemize}
+\item 
+static QString \textbf{ adjust\+Length\+To3} (long value)
+\item 
+static QString \textbf{ adjust\+Length\+To2} (long value)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\label{class_converter_a1de81f3e06093411e5d27ce882bc010f} 
+\index{Converter@{Converter}!Converter@{Converter}}
+\index{Converter@{Converter}!Converter@{Converter}}
+\doxysubsubsection{Converter()}
+{\footnotesize\ttfamily Converter\+::\+Converter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructeur. 
+
+\DoxyHorRuler{0}
+ 
+
+\doxysubsection{Documentation des fonctions membres}
+\label{class_converter_a2481c5d464aa13fec577575b8f2da786} 
+\index{Converter@{Converter}!addSpaceSeparator@{addSpaceSeparator}}
+\index{addSpaceSeparator@{addSpaceSeparator}!Converter@{Converter}}
+\doxysubsubsection{addSpaceSeparator()}
+{\footnotesize\ttfamily QString Converter\+::add\+Space\+Separator (\begin{DoxyParamCaption}\item[{QString}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\DoxyHorRuler{0}
+ Ajoute des séparateurs de milliers sur la partie entière et la partie décimale. 
+\begin{DoxyParams}{Paramètres}
+{\em value} & \+: a numeric value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+a readable string with space separators. 
+\end{DoxyReturn}
+\label{class_converter_abb1fad2f562c975b4a5da34da44c0d36} 
+\index{Converter@{Converter}!adjustLengthTo2@{adjustLengthTo2}}
+\index{adjustLengthTo2@{adjustLengthTo2}!Converter@{Converter}}
+\doxysubsubsection{adjustLengthTo2()}
+{\footnotesize\ttfamily QString Converter\+::adjust\+Length\+To2 (\begin{DoxyParamCaption}\item[{long}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\DoxyHorRuler{0}
+ Transforme une valeur en une string de 2 chars. Transforme 5 en "{}05"{}. 
+\begin{DoxyParams}{Paramètres}
+{\em value} & \+: numeric value to complete. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the value completed with 0s (string size 2 chars). 
+\end{DoxyReturn}
+\label{class_converter_ad80daac17168c6609196c21791aa8aab} 
+\index{Converter@{Converter}!adjustLengthTo3@{adjustLengthTo3}}
+\index{adjustLengthTo3@{adjustLengthTo3}!Converter@{Converter}}
+\doxysubsubsection{adjustLengthTo3()}
+{\footnotesize\ttfamily QString Converter\+::adjust\+Length\+To3 (\begin{DoxyParamCaption}\item[{long}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\DoxyHorRuler{0}
+ Transforme une valeur en une string de 3 chars. Complète avec des zéro, et ne garde que les 3 chiffres les plus significatifs. Exemples\+: 25 devient "{}025"{}, 4512 devient "{}451"{}. 
+\begin{DoxyParams}{Paramètres}
+{\em value} & \+: numeric value to complete. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the value completed with 0s (string size 3 chars). 
+\end{DoxyReturn}
+\label{class_converter_aa271cba436c39da2b8925267689e9ec9} 
+\index{Converter@{Converter}!completeRawHMSIWithDots@{completeRawHMSIWithDots}}
+\index{completeRawHMSIWithDots@{completeRawHMSIWithDots}!Converter@{Converter}}
+\doxysubsubsection{completeRawHMSIWithDots()}
+{\footnotesize\ttfamily QString Converter\+::complete\+Raw\+HMSIWith\+Dots (\begin{DoxyParamCaption}\item[{QString}]{raw\+\_\+hmsi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\DoxyHorRuler{0}
+ Transforme "{}123"{} en "{}12\+:3.\+:..\+:.."{}. 
+\begin{DoxyParams}{Paramètres}
+{\em raw\+\_\+hmsi} & \+: raw hmsi to convert. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the hmsi formatted with \+: and dots. 
+\end{DoxyReturn}
+\label{class_converter_ad92418cec1dea708d7268fbeeb588a02} 
+\index{Converter@{Converter}!convertRawHMSItoMicroseconds@{convertRawHMSItoMicroseconds}}
+\index{convertRawHMSItoMicroseconds@{convertRawHMSItoMicroseconds}!Converter@{Converter}}
+\doxysubsubsection{convertRawHMSItoMicroseconds()}
+{\footnotesize\ttfamily qint64 Converter\+::convert\+Raw\+HMSIto\+Microseconds (\begin{DoxyParamCaption}\item[{QString}]{hmsi,  }\item[{double}]{framerate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\DoxyHorRuler{0}
+ Convertit un Raw HMSI en un nombre de micro-\/secondes. Ex\+: "{}0245"{} pour 2h45m. 
+\begin{DoxyParams}{Paramètres}
+{\em hmsi} & \+: raw hmsi to convert. \\
+\hline
+{\em framerate} & \+: the framerate used for raw hmsi \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the value converted in microseconds. 
+\end{DoxyReturn}
+\label{class_converter_a51839af9207be73f6a191bd0ea61d567} 
+\index{Converter@{Converter}!getNtscFramePerSec@{getNtscFramePerSec}}
+\index{getNtscFramePerSec@{getNtscFramePerSec}!Converter@{Converter}}
+\doxysubsubsection{getNtscFramePerSec()}
+{\footnotesize\ttfamily double Converter\+::get\+Ntsc\+Frame\+Per\+Sec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\DoxyHorRuler{0}
+ Retourne le framerate courant du NTSC. \begin{DoxyReturn}{Renvoie}
+the current NTSC framerate. 
+\end{DoxyReturn}
+\label{class_converter_a7783ad9f7a35730a45b7c64e36f274d2} 
+\index{Converter@{Converter}!HMSItoMicroseconds@{HMSItoMicroseconds}}
+\index{HMSItoMicroseconds@{HMSItoMicroseconds}!Converter@{Converter}}
+\doxysubsubsection{HMSItoMicroseconds()}
+{\footnotesize\ttfamily qint64 Converter\+::\+HMSIto\+Microseconds (\begin{DoxyParamCaption}\item[{QString}]{hmsi\+\_\+string,  }\item[{double}]{framerate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\DoxyHorRuler{0}
+ Convertit un HMSI (même incomplet) en un nombre de micro-\/secondes. Ex\+: "{}02\+:45\+:00\+:00"{} pour 2h45m. Attention\+: digit\+Value() renvoie -\/1 si ce n\textquotesingle{}est pas une valeur numérique... 
+\begin{DoxyParams}{Paramètres}
+{\em hmsi\+\_\+string} & \+: hmsi to convert. \\
+\hline
+{\em framerate} & \+: le framerate utilisé dans le hmsi \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the value converted in microseconds. 
+\end{DoxyReturn}
+\label{class_converter_a109a980de80e57be6c7f9589ae58b16f} 
+\index{Converter@{Converter}!microseconds@{microseconds}}
+\index{microseconds@{microseconds}!Converter@{Converter}}
+\doxysubsubsection{microseconds()}
+{\footnotesize\ttfamily QString Converter\+::microseconds (\begin{DoxyParamCaption}\item[{qint64}]{microsecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\DoxyHorRuler{0}
+ On transforme une valeur numérique (ex\+:"{}1234000000"{}) en un texte avec des espaces (ex\+: "{}1 234 000 000"{}). 
+\begin{DoxyParams}{Paramètres}
+{\em microsecs} & \+: microsecs value to convert. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+a readable string with space separators. 
+\end{DoxyReturn}
+\label{class_converter_a60aa41dfc1c8dc243c5a77b0a7b028cd} 
+\index{Converter@{Converter}!microsecsToFrames@{microsecsToFrames}}
+\index{microsecsToFrames@{microsecsToFrames}!Converter@{Converter}}
+\doxysubsubsection{microsecsToFrames()}
+{\footnotesize\ttfamily QString Converter\+::microsecs\+To\+Frames (\begin{DoxyParamCaption}\item[{qint64}]{microsecs,  }\item[{double}]{framerate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\DoxyHorRuler{0}
+ Convertit un nombre de microsecondes en un nombre de frames (selon un certains framerate) Ex\+: "{}1\+\_\+234\+\_\+000\+\_\+000"{} ms en 25fps donne "{}30\+\_\+850"{} frames. Ex; "{}1\+\_\+234\+\_\+000\+\_\+000"{} ms en 50 fps donne "{}61\+\_\+700"{} frames. 
+\begin{DoxyParams}{Paramètres}
+{\em microsecs} & \+: microsecs value to convert. \\
+\hline
+{\em framerate} & \+: framerate to use for conversion (ex\+: 25.\+0) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the value converted in frames. 
+\end{DoxyReturn}
+\label{class_converter_a86dee168a90505a4c062d3e20513fa64} 
+\index{Converter@{Converter}!microsecsToMillis@{microsecsToMillis}}
+\index{microsecsToMillis@{microsecsToMillis}!Converter@{Converter}}
+\doxysubsubsection{microsecsToMillis()}
+{\footnotesize\ttfamily QString Converter\+::microsecs\+To\+Millis (\begin{DoxyParamCaption}\item[{qint64}]{microsecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\DoxyHorRuler{0}
+ On transforme "{}1\+\_\+234\+\_\+000\+\_\+000"{} en "{}1\+\_\+1234\+\_\+000"{}. 
+\begin{DoxyParams}{Paramètres}
+{\em microsecs} & \+: microsecs value to convert. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the value converted in milliseconds. 
+\end{DoxyReturn}
+\label{class_converter_a37fc12a03265e9200c1fd329b2a03b85} 
+\index{Converter@{Converter}!microsecsToSeconds@{microsecsToSeconds}}
+\index{microsecsToSeconds@{microsecsToSeconds}!Converter@{Converter}}
+\doxysubsubsection{microsecsToSeconds()}
+{\footnotesize\ttfamily QString Converter\+::microsecs\+To\+Seconds (\begin{DoxyParamCaption}\item[{qint64}]{microsecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\DoxyHorRuler{0}
+ On transforme "{}1234000000"{} en "{}1 234"{}. 
+\begin{DoxyParams}{Paramètres}
+{\em microsecs} & \+: microsecs value to convert. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the value converted in seconds. 
+\end{DoxyReturn}
+\label{class_converter_ab67107bcb71a3a0876607cd964b32094} 
+\index{Converter@{Converter}!setNtscFramePerSec@{setNtscFramePerSec}}
+\index{setNtscFramePerSec@{setNtscFramePerSec}!Converter@{Converter}}
+\doxysubsubsection{setNtscFramePerSec()}
+{\footnotesize\ttfamily void Converter\+::set\+Ntsc\+Frame\+Per\+Sec (\begin{DoxyParamCaption}\item[{double}]{framerate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\DoxyHorRuler{0}
+ Change le framerate du NTSC. 
+\begin{DoxyParams}{Paramètres}
+{\em framerate} & \+: the new NTSC framerate. \\
+\hline
+\end{DoxyParams}
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+Sources/converter.\+h\item 
+Sources/converter.\+cpp\end{DoxyCompactItemize}
