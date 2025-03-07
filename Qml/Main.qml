@@ -4,6 +4,7 @@ import QtQuick.Controls
 import QtQuick.Controls.Universal
 
 import "./Components"
+import "./Controllers"
 
 Window {
     width: 800

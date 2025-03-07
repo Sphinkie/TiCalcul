@@ -2,9 +2,12 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls.Universal
 
-import "../Controllers"
+import "../Components"
 
 Item {
+    property alias btClear: btClear
+    property alias btFramerate: btFramerate
+
     GridLayout {
         id: zoneSaisie
         anchors.fill: parent
@@ -104,7 +107,7 @@ Item {
         }
         // ---------------------------------------
         TiButton {
-            id: btFrameRate
+            id: btFramerate
             buttonText: "framerate"
             Layout.fillHeight: true
             Layout.fillWidth: true

@@ -37,6 +37,7 @@ int main(int argc, char* argv[])
     // On ajoute au contexte les classes qui ont des property QML
     // --------------------------------------
     context->setContextProperty("operandeTC1", &operande_tc1);
+    context->setContextProperty("operandeTC2", &operande_tc2);
     operande_tc1.registerContext(context);
     operande_tc2.registerContext(context);
 

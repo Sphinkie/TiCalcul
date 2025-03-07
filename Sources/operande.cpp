@@ -54,7 +54,6 @@ qint64 Operande::valeurPivot() const
 void Operande::setValeurPivot(qint64 newValeurPivot)
 {
     mValeurPivot = newValeurPivot;
-    qDebug("send");
     emit valeurPivotChanged(mValeurPivot);
 }
 
@@ -64,8 +63,7 @@ void Operande::setValeurPivot(qint64 newValeurPivot)
  */
 void Operande::clear()
 {
-    qDebug("clear");
-    setValeurPivot(90000);
+    setValeurPivot(9000000);
 }
 
 /* ********************************************************************************************************** */

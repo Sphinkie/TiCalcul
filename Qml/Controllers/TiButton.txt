@@ -6,9 +6,7 @@ Item {
     property string buttonText
 
     TiButtonForm {
-
         onClicked: {
-
             console.log("TiButton clicked ! ")
             operandeTC1.clear()
         }

@@ -3,11 +3,13 @@ import QtQuick.Controls.Universal
 
 Button {
     id: button
-    anchors.fill: parent
+	property string buttonText
+	
+/*    anchors.fill: parent
     anchors.topMargin: 8
     anchors.leftMargin: 4
     anchors.rightMargin: 4
-
+*/
     contentItem: Text {
         text: buttonText
         // color: button.down ? "black" : "white"
