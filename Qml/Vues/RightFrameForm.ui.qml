@@ -108,14 +108,20 @@ Item {
         // ---------------------------------------
         TiButton {
             id: btFramerate
+            Layout.topMargin: 4
+            Layout.rightMargin: 4
+            Layout.leftMargin: 4
             buttonText: "framerate"
-            Layout.fillHeight: true
+            Layout.fillHeight: false
             Layout.fillWidth: true
         }
         TiButton {
             id: btClear
+            Layout.topMargin: 4
+            Layout.rightMargin: 0
+            Layout.leftMargin: 4
             buttonText: "clear"
-            Layout.fillHeight: true
+            Layout.fillHeight: false
             Layout.fillWidth: true
         }
     }

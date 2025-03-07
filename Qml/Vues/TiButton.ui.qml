@@ -3,9 +3,10 @@ import QtQuick.Controls.Universal
 
 Button {
     id: button
-	property string buttonText
-	
-/*    anchors.fill: parent
+    property string buttonText
+
+
+    /*    anchors.fill: parent
     anchors.topMargin: 8
     anchors.leftMargin: 4
     anchors.rightMargin: 4
@@ -22,6 +23,8 @@ Button {
     }
 
     background: Rectangle {
+        implicitWidth: 86
+        implicitHeight: 40
         color: button.down ? Universal.foreground.lighter(
                                  1.1) : Universal.foreground
         radius: 6

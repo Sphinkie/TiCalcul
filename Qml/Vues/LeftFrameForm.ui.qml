@@ -101,14 +101,20 @@ Item {
         // ---------------------------------------
         TiButton {
             id: btClear
+            Layout.rightMargin: 4
+            Layout.leftMargin: 0
+            Layout.topMargin: 4
             buttonText: "clear"
-            Layout.fillHeight: true
+            Layout.fillHeight: false
             Layout.fillWidth: true
         }
         TiButton {
             id: btFramerate
+            Layout.rightMargin: 4
+            Layout.leftMargin: 4
+            Layout.topMargin: 4
             buttonText: "framerate"
-            Layout.fillHeight: true
+            Layout.fillHeight: false
             Layout.fillWidth: true
         }
     }
