@@ -14,7 +14,7 @@ Item {
 
         FieldInput {
             // text: "SECONDS"
-            text: TC1aff_1.value
+            text: TC1aff_1.displayValue
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -26,7 +26,7 @@ Item {
         // ---------------------------------------
         FieldInput {
             //text: "MILLISECONDS"
-            text: TC1aff_2.value
+            text: TC1aff_2.displayValue
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -38,7 +38,7 @@ Item {
         // ---------------------------------------
         FieldInput {
             // text: "MICROSECS"
-            text: TC1aff_3.value
+            text: TC1aff_3.displayValue
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -50,7 +50,7 @@ Item {
         // ---------------------------------------
         FieldInput {
             //text: "FRAMES"
-            text: TC1aff_6.value
+            text: TC1aff_6.displayValue
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -62,7 +62,7 @@ Item {
         // ---------------------------------------
         FieldInput {
             //text: "FRAMES"
-            text: TC1aff_7.value
+            text: TC1aff_7.displayValue
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -74,7 +74,7 @@ Item {
         // ---------------------------------------
         FieldInput {
             //text: "HH:MM:SS:II"
-            text: TC1aff_4.value
+            text: TC1aff_4.displayValue
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -86,7 +86,7 @@ Item {
         // ---------------------------------------
         FieldInput {
             //text: "DD + HH:MM:SS:II"
-            text: TC1aff_5.value
+            text: TC1aff_5.displayValue
             Layout.fillHeight: true
             Layout.fillWidth: true
         }

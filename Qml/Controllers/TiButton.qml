@@ -10,8 +10,7 @@ Item {
         onClicked: {
 
             console.log("TiButton clicked ! ")
-            operandeTC1.clear();
+            operandeTC1.clear()
+        }
     }
 }
-}
-

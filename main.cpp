@@ -8,18 +8,18 @@
 /* ********************************************************************************* */
 /*!
  * \brief Programme principal
- * \param argc
- * \param argv
+ * \param argc (argument count): nombre de paramètres pointés par argv +1
+ * \param argv (argument vector)
  * \return
  * ******************************************************************************** */
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
     QGuiApplication app(argc, argv);
 
     app.setApplicationName("TiCalcul");
     app.setOrganizationName("Sphinkie");
     app.setOrganizationDomain("de-lorenzo.fr");
-    app.setWindowIcon(QIcon(":/images/TiCalcul.ico"));
+    app.setWindowIcon(QIcon(":/Resources/images/TiCalcul.ico"));   // FIXME
 
     // --------------------------------------
     // On initialise nos classes
