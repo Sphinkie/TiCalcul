@@ -27,6 +27,7 @@ qt_add_qml_module(appTiCalcul
         QML_FILES Qml/Controllers/Keyboard.qml
         QML_FILES Qml/Controllers/LeftFrame.qml
         QML_FILES Qml/Controllers/RightFrame.qml
+        QML_FILES Qml/Components/ActiveDisplay.qml
         QML_FILES Qml/Components/CalculFrame.qml
         QML_FILES Qml/Components/TiStyle.qml
         QML_FILES Qml/Components/FieldResult.qml

@@ -10,7 +10,7 @@ RightFrameForm {
 
     btFramerate.onClicked: {
         console.log("TiButton btFramerate clicked ! ")
-        operandeTC2.setFramerate(50)
+        TC2aff_4.setFrameRate(50) // afficheur HMSI
     }
 
     btClear.onClicked: {
