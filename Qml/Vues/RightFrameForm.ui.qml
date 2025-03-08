@@ -23,7 +23,7 @@ Item {
         }
         FieldInput {
             // text: "SECONDS"
-            text: TC2aff_1.displayValue
+            fieldText: TC2_aff_1.displayValue
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -36,7 +36,7 @@ Item {
         }
         FieldInput {
             //text: "MILLISECONDS"
-            text: TC2aff_2.displayValue
+            fieldText: TC2_aff_2.displayValue
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -49,7 +49,7 @@ Item {
         }
         FieldInput {
             // text: "MICROSECS"
-            text: TC2aff_3.displayValue
+            fieldText: TC2_aff_3.displayValue
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -62,7 +62,7 @@ Item {
         }
         FieldInput {
             //text: "FRAMES"
-            text: TC2aff_6.displayValue
+            fieldText: TC2_aff_6.displayValue
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -75,7 +75,7 @@ Item {
         }
         FieldInput {
             //text: "FRAMES"
-            text: TC2aff_7.displayValue
+            fieldText: TC2_aff_7.displayValue
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -88,7 +88,7 @@ Item {
         }
         FieldInput {
             //text: "HH:MM:SS:II"
-            text: TC2aff_4.displayValue
+            fieldText: TC2_aff_4.displayValue
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -101,7 +101,7 @@ Item {
         }
         FieldInput {
             //text: "DD + HH:MM:SS:II"
-            text: TC2aff_5.displayValue
+            fieldText: TC2_aff_5.displayValue
             Layout.fillHeight: true
             Layout.fillWidth: true
         }

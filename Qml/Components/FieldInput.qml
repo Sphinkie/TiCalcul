@@ -1,23 +1,27 @@
 import QtQuick
 import QtQuick.Controls.Universal
 
-Item {
-    property alias text: input.text
+Button {
+    property string fieldText
 
-    Rectangle {
-        anchors.fill: parent
+    contentItem: Text {
+        id: input // utile ?
+        text: fieldText
+        // color: button.down ? "black" : "white"
+        anchors.fill: parent // utile ?
+        horizontalAlignment: Text.AlignRight
+        verticalAlignment: Text.AlignVCenter
+        rightPadding: 8 // utile ?
+        font.pixelSize: 15
+        font.family: "Courier"
+        font.bold: false
+        color: "grey"
+    }
+
+    background: Rectangle {
+        anchors.fill: parent // utile ?
+        implicitWidth: 400
+        implicitHeight: 40
         color: "#c8e6ca"
-        Text {
-            id: input
-            text: qsTr("Text")
-            anchors.fill: parent
-            horizontalAlignment: Text.AlignRight
-            verticalAlignment: Text.AlignVCenter
-            rightPadding: 8
-            font.pixelSize: 15
-            font.family: "Courier"
-            font.bold: false
-            color: "grey"
-        }
     }
 }

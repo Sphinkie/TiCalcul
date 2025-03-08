@@ -73,14 +73,14 @@ void Operande::clear()
  */
 void Operande::registerContext(QQmlContext* context)
 {
-    context->setContextProperty(mName+"aff_1", a1);
-    context->setContextProperty(mName+"aff_2", a2);
-    context->setContextProperty(mName+"aff_3", a3);
-    context->setContextProperty(mName+"aff_4", a4);
-    context->setContextProperty(mName+"aff_5", a5);
-    context->setContextProperty(mName+"aff_6", a6);
-    context->setContextProperty(mName+"aff_7", a7);
-    //context->setContextProperty(mName+"aff_8", a8);
+    context->setContextProperty(mName+"_aff_1", a1);
+    context->setContextProperty(mName+"_aff_2", a2);
+    context->setContextProperty(mName+"_aff_3", a3);
+    context->setContextProperty(mName+"_aff_4", a4);
+    context->setContextProperty(mName+"_aff_5", a5);
+    context->setContextProperty(mName+"_aff_6", a6);
+    context->setContextProperty(mName+"_aff_7", a7);
+    //context->setContextProperty(mName+"_aff_8", a8);
 }
 
 

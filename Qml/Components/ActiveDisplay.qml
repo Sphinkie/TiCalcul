@@ -11,6 +11,6 @@ import QtQuick
 Item {
     id: afficheurActif
 
-    property string name
-    // A remplacer par un type Afficheur
+    property Afficheur name: TC1_aff_1
+
 }

@@ -17,7 +17,7 @@ Item {
 
         FieldInput {
             // text: "SECONDS"
-            text: TC1aff_1.displayValue
+            fieldText: TC1_aff_1.displayValue
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -29,7 +29,7 @@ Item {
         // ---------------------------------------
         FieldInput {
             //text: "MILLISECONDS"
-            text: TC1aff_2.displayValue
+            fieldText: TC1_aff_2.displayValue
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -41,7 +41,7 @@ Item {
         // ---------------------------------------
         FieldInput {
             // text: "MICROSECS"
-            text: TC1aff_3.displayValue
+            fieldText: TC1_aff_3.displayValue
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -53,7 +53,7 @@ Item {
         // ---------------------------------------
         FieldInput {
             //text: "FRAMES"
-            text: TC1aff_6.displayValue
+            fieldText: TC1_aff_6.displayValue
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -65,7 +65,7 @@ Item {
         // ---------------------------------------
         FieldInput {
             //text: "FRAMES"
-            text: TC1aff_7.displayValue
+            fieldText: TC1_aff_7.displayValue
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -77,7 +77,7 @@ Item {
         // ---------------------------------------
         FieldInput {
             //text: "HH:MM:SS:II"
-            text: TC1aff_4.displayValue
+            fieldText: TC1_aff_4.displayValue
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -89,7 +89,7 @@ Item {
         // ---------------------------------------
         FieldInput {
             //text: "DD + HH:MM:SS:II"
-            text: TC1aff_5.displayValue
+            fieldText: TC1_aff_5.displayValue
             Layout.fillHeight: true
             Layout.fillWidth: true
         }

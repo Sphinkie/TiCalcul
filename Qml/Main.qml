@@ -1,15 +1,14 @@
 import QtQuick
 import QtQuick.Layouts
-import QtQuick.Controls
 import QtQuick.Controls.Universal
 
 import "./Components"
 import "./Controllers"
 
 Window {
-    width: 800
+    width: 920
     height: 680
-    minimumWidth: 600
+    minimumWidth: 720
     minimumHeight: 580
     visible: true
     title: "TiCalcul"
@@ -33,7 +32,7 @@ Window {
             columns: 3
             rows: 2
             // ----------------------------------------------------------------
-            // ------------------ Valeurs Converties 1 ------------------------
+            // ------------------ Timecode TC 1 dans différentes unités -------
             // ----------------------------------------------------------------
             LeftFrame {
                 id: leftFrame
@@ -49,7 +48,7 @@ Window {
                 Layout.fillHeight: true
             }
             // ----------------------------------------------------------------
-            // ------------------ Valeurs Converties 2 ------------------------
+            // ------------------ Timecode TC 2 dans différentes unités -------
             // ----------------------------------------------------------------
             RightFrame {
                 id: rightFrame

@@ -10,7 +10,7 @@ LeftFrameForm {
 
     btFramerate.onClicked: {
         console.log("TiButton btFramerate clicked ! ")
-        TC1aff_4.setFrameRate(50) // afficheur HMSI
+        TC1_aff_4.setFrameRate(50) // afficheur HMSI
     }
 
     btClear.onClicked: {
