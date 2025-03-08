@@ -8,7 +8,7 @@ import "./Controllers"
 Window {
     width: 920
     height: 680
-    minimumWidth: 720
+    minimumWidth: 820
     minimumHeight: 580
     visible: true
     title: "TiCalcul"

@@ -8,7 +8,7 @@
 /* ********************************************************************************* */
 /*!
  * \brief Programme principal
- * \param argc (argument count): nombre de paramètres pointés par argv +1
+ * \param argc (argument count): nombre +1 de paramètres de argv
  * \param argv (argument vector)
  * \return
  * ******************************************************************************** */

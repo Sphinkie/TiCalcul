@@ -3,6 +3,7 @@ import QtQuick.Layouts
 import QtQuick.Controls.Universal
 
 import "../Components"
+import "../Controllers"
 
 Item {
     property alias btClear: btClear

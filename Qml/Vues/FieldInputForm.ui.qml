@@ -5,13 +5,10 @@ Button {
     property string fieldText
 
     contentItem: Text {
-        id: input // utile ?
         text: fieldText
-        // color: button.down ? "black" : "white"
-        anchors.fill: parent // utile ?
         horizontalAlignment: Text.AlignRight
         verticalAlignment: Text.AlignVCenter
-        rightPadding: 8 // utile ?
+        // rightPadding: 8 // utile ?
         font.pixelSize: 15
         font.family: "Courier"
         font.bold: false
@@ -19,9 +16,8 @@ Button {
     }
 
     background: Rectangle {
-        anchors.fill: parent // utile ?
-        implicitWidth: 400
+        implicitWidth: 200
         implicitHeight: 40
-        color: "#c8e6ca"
+        color: parent.pressed ? "white" : "#c8e6ca"
     }
 }
