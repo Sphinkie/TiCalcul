@@ -10,7 +10,7 @@ RightFrameForm {
 
     btFramerate.onClicked: {
         console.log("TiButton btFramerate clicked ! ")
-        operandeTC2.clear()
+        operandeTC2.setFramerate(50)
     }
 
     btClear.onClicked: {

@@ -1,21 +1,29 @@
 import QtQuick
-import QtQuick.Controls
-import "../Components"
+import QtQuick.Controls.Universal
 
-// On customise un Button avec deux propriétés : Display et Background
+
+/*!
+  * Le type KeyboardForm fournit un bouton customisé pour les touches du clavier virtuel.
+  */
 Button {
     id: button
-    // property alias buttonText: button.text
     property string buttonText
 
     display: AbstractButton.TextOnly
-    text: buttonText
-    font.pointSize: 16
-    font.bold: true
+
+    contentItem: Text {
+        text: buttonText
+        // color: button.down ? "black" : "white"
+        color: "black"
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+        font.pointSize: 16
+        font.bold: true
+    }
 
     background: Rectangle {
-        //color: "#8bc34a" // TiStyle.buttonIdleColor
-        //border.color: TiStyle.buttonPressedColor
+        color: button.down ? "#d0d0d0" : "#e0e0e0"
+        // border.color: "purple"
         implicitWidth: 100
         implicitHeight: 80
         radius: 6

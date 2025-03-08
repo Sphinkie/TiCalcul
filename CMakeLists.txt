@@ -23,10 +23,10 @@ qt_add_qml_module(appTiCalcul
         QML_FILES Qml/Vues/KeyboardKeyForm.ui.qml
         QML_FILES Qml/Vues/LeftFrameForm.ui.qml
         QML_FILES Qml/Vues/RightFrameForm.ui.qml
-        QML_FILES Qml/Controllers/KeyboardKey.qml
+        QML_FILES Qml/Vues/KeyboardForm.ui.qml
+        QML_FILES Qml/Controllers/Keyboard.qml
         QML_FILES Qml/Controllers/LeftFrame.qml
         QML_FILES Qml/Controllers/RightFrame.qml
-        QML_FILES Qml/Components/Keyboard.qml
         QML_FILES Qml/Components/CalculFrame.qml
         QML_FILES Qml/Components/TiStyle.qml
         QML_FILES Qml/Components/FieldResult.qml
