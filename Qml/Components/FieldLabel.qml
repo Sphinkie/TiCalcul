@@ -7,7 +7,7 @@ Item {
 
     Text {
         id: label
-        text: qsTr("Text")
+        text: "label"
         anchors.fill: parent
         horizontalAlignment: Text.AlignLeft
         verticalAlignment: Text.AlignVCenter

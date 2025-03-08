@@ -1,4 +1,5 @@
 import QtQuick
+import TiCalcul
 
 
 /*!
@@ -9,8 +10,5 @@ import QtQuick
   * On change d'afficheur actif en cliquant sur un afficheur (cad un FieldInput).
   */
 Item {
-    id: afficheurActif
-
     property Afficheur name: TC1_aff_1
-
 }

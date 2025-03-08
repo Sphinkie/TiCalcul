@@ -25,6 +25,10 @@ Window {
         anchors.top: parent.top
         anchors.fill: parent
         color: Universal.background
+        // ----------------------------------------------------------------
+        ActiveDisplay {
+            id: afficheurActif
+        }
         GridLayout {
             id: mainGrid
             anchors.fill: parent

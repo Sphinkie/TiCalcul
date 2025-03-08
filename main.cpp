@@ -10,7 +10,7 @@
  * \brief Programme principal
  * \param argc (argument count): nombre +1 de paramètres de argv
  * \param argv (argument vector)
- * \return
+ * \return 0 si sortie normale, -1 sinon.
  * ******************************************************************************** */
 int main(int argc, char* argv[])
 {
@@ -19,7 +19,7 @@ int main(int argc, char* argv[])
     app.setApplicationName("TiCalcul");
     app.setOrganizationName("Sphinkie");
     app.setOrganizationDomain("de-lorenzo.fr");
-    app.setWindowIcon(QIcon(":/Resources/images/TiCalcul.ico"));   // FIXME
+    app.setWindowIcon(QIcon(":images/TiCalcul.ico"));   // FIXME
 
     // --------------------------------------
     // On initialise nos classes
@@ -33,13 +33,18 @@ int main(int argc, char* argv[])
     QQmlApplicationEngine engine;
     QQmlContext* context = engine.rootContext();
 
-    // --------------------------------------
+    // ------------------------------------------------------------
     // On ajoute au contexte les classes qui ont des property QML
-    // --------------------------------------
+    // ------------------------------------------------------------
     context->setContextProperty("operandeTC1", &operande_tc1);
     context->setContextProperty("operandeTC2", &operande_tc2);
     operande_tc1.registerContext(context);
     operande_tc2.registerContext(context);
+
+    // ------------------------------------------------------------
+    // On ajoute le type Afficheur au contexte QML
+    // ------------------------------------------------------------
+    qmlRegisterType<Afficheur>("TiCalcul", 1, 0, "Afficheur");
 
     // --------------------------------------
     // Connexion des signaux
