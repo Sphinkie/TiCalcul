@@ -43,7 +43,7 @@ private:
     QString mDisplayValue;      //!< La valeur à afficher (String)
     QString mName;              //!< Le nom de l'unité utilisée par cet afficheur
     Unites::Units mUnit;        //!< Unité utilisée par cet afficheur
-    long mMaxValue;             //!< Valeur numérique maximale autorisée
+//    qint64 mMaxValue;             //!< Valeur numérique maximale autorisée
     int mDecimals;              //!< Nombre de chiffres après la virgule
     double mFrameRate;          //!< Framerate utilisé (pour les afficheurs FRAMES et HMSI)
     double mConversionFacteur;  //!< Nombre de microseconds par unité

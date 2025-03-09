@@ -29,11 +29,14 @@ class Unites
             {FRAMES_25, Converter::us_PerFrame25} , {FRAMES_50,Converter::us_PerFrame50}, {FRAMES_NTSC, Converter::us_PerFrameNTSC},
             {SECONDS, Converter::us_PerSecond}, {MILLISECONDS,1000}, {MICROSECONDS,1}
         };
+        /*
+        //! TODO Ne sert plus à rien
         static const inline QMap<Units, qint64> maxValue = {
             {HMSI,99999999}, {DHMSM,99999999},
             {FRAMES_25, 99 * 60 * 60 * 25} , {FRAMES_50, 99 * 60 * 60 * 50}, {FRAMES_NTSC, 99 * 60 * 60 * 30},
             {SECONDS, 99 * 60 * 60}, {MILLISECONDS, 99 * 60 * 60 * 1000}, {MICROSECONDS, 99 * 60 * 60 * (qint64)(1000000)}
         };
+        */
         static const inline QMap<Units, double> frameRate = {
             {HMSI,25.0}, {DHMSM,25.0},
             {FRAMES_25, 25.0} , {FRAMES_50, 50.0}, {FRAMES_NTSC, 30.0},

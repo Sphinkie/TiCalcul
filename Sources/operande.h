@@ -30,8 +30,10 @@ signals:
     void valeurPivotChanged(qint64);
 
 private:
-    qint64 mValeurPivot;  //!< Valeur pivot en microsecondes
     QString mName;        //!< Vaut TC1 ou TC2
+    qint64 mValeurPivot;  //!< Valeur pivot en microsecondes
+    const qint64 mMaxValue = 356400000000; //!< Valeur pivot maximale autorisée (en microsecondes) = 99 heures.
+                                           //!> A noter que le uint32 est limité à 4.294.967.295. D'où l'utilisation du qint64 (long long)
 
     Afficheur* a1;        //!< Afficheur en secondes
     Afficheur* a2;        //!< Afficheur en millisecondes

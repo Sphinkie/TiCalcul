@@ -31,6 +31,7 @@ Operande::Operande(QString name, QObject *parent)
     QObject::connect(this, SIGNAL(valeurPivotChanged(qint64)), a6, SLOT(setValue(qint64)));
     QObject::connect(this, SIGNAL(valeurPivotChanged(qint64)), a7, SLOT(setValue(qint64)));
     //QObject::connect(this, SIGNAL(valeurPivotChanged(qint64)), a8, SLOT(setValue(qint64)));
+
     // Connexions: Réception des modifications de la valeur pivot.
     QObject::connect(a1, SIGNAL(setValeurPivot(qint64)), this, SLOT(setValeurPivot(qint64)));
     QObject::connect(a2, SIGNAL(setValeurPivot(qint64)), this, SLOT(setValeurPivot(qint64)));
@@ -57,11 +58,20 @@ qint64 Operande::valeurPivot() const
  /*!
  * \brief Reçoit et propage la nouvelle valeur pivot aux afficheurs.
  * \param newValeurPivot: Timecode en microsecondes.
+ * TODO remplacer le qint64 en quint64
  */
 void Operande::setValeurPivot(qint64 newValeurPivot)
 {
-    mValeurPivot = newValeurPivot;
-    emit valeurPivotChanged(mValeurPivot);
+    if (newValeurPivot > this->mMaxValue)
+    {
+        qDebug("ERROR: msg_max_reached: discard candidate %d ! ", newValeurPivot);
+    }
+    else if (mValeurPivot != newValeurPivot)
+    {
+        qDebug("received: %d", newValeurPivot);
+        mValeurPivot = newValeurPivot;
+        emit valeurPivotChanged(mValeurPivot);
+    }
 }
 
 /* ********************************************************************************************************** */
