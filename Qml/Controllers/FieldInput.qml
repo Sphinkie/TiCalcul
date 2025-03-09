@@ -3,11 +3,13 @@ import TiCalcul
 
 import "../Vues"
 
+
+/*!
+ * \brief Mémorise l'afficheur actif, lors d'un click sur un afficheur FieldInput.
+ */
 FieldInputForm {
 
-    property Afficheur afficheur
     onClicked: {
-        afficheurActif.name = TC1_aff_2
-        console.log("FieldInput clicked - set TC1_aff_2")
+        afficheurActif.name = afficheur
     }
 }

@@ -3,12 +3,10 @@ import QtQuick.Controls.Universal
 import TiCalcul
 
 Button {
-    property string fieldText
-    property bool fieldActive
+    required property Afficheur afficheur
 
-    // required property Afficheur afficheur
     contentItem: Text {
-        text: fieldText
+        text: afficheur.displayValue
         horizontalAlignment: Text.AlignRight
         verticalAlignment: Text.AlignVCenter
         // rightPadding: 8 // utile ?
@@ -22,6 +20,6 @@ Button {
         implicitWidth: 200
         implicitHeight: 40
         //color: parent.pressed ? "white" : "#c8e6ca"
-        color: parent.fieldActive ? "white" : "#c8e6ca"
+        color: (afficheurActif.name == afficheur) ? "white" : "#c8e6ca"
     }
 }

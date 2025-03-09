@@ -19,8 +19,6 @@ Item {
 
         FieldInput {
             // text: "SECONDS"
-            fieldText: TC1_aff_1.displayValue
-            fieldActive: (afficheurActif == TC1_aff_1)
             afficheur: TC1_aff_1
             Layout.fillHeight: true
             Layout.fillWidth: true
@@ -33,8 +31,6 @@ Item {
         // ---------------------------------------
         FieldInput {
             //text: "MILLISECONDS"
-            fieldText: TC1_aff_2.displayValue
-            fieldActive: (afficheurActif == TC1_aff_2)
             afficheur: TC1_aff_2
             Layout.fillHeight: true
             Layout.fillWidth: true
@@ -47,8 +43,7 @@ Item {
         // ---------------------------------------
         FieldInput {
             // text: "MICROSECS"
-            fieldText: TC1_aff_3.displayValue
-            fieldActive: (afficheurActif == TC1_aff_3)
+            afficheur: TC1_aff_3
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -60,8 +55,7 @@ Item {
         // ---------------------------------------
         FieldInput {
             //text: "FRAMES"
-            fieldText: TC1_aff_6.displayValue
-            fieldActive: (afficheurActif == TC1_aff_6)
+            afficheur: TC1_aff_6
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -73,7 +67,7 @@ Item {
         // ---------------------------------------
         FieldInput {
             //text: "FRAMES"
-            fieldText: TC1_aff_7.displayValue
+            afficheur: TC1_aff_7
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -85,7 +79,7 @@ Item {
         // ---------------------------------------
         FieldInput {
             //text: "HH:MM:SS:II"
-            fieldText: TC1_aff_4.displayValue
+            afficheur: TC1_aff_4
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -97,7 +91,7 @@ Item {
         // ---------------------------------------
         FieldInput {
             //text: "DD + HH:MM:SS:II"
-            fieldText: TC1_aff_5.displayValue
+            afficheur: TC1_aff_5
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
