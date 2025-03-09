@@ -60,10 +60,11 @@ void Operande::setValeurPivot(qint64 newValeurPivot)
 /* ********************************************************************************************************** */
 /*!
  * \brief Vide la valeur pivot.
+ * \todo Mettre une valeur NULL
  */
 void Operande::clear()
 {
-    setValeurPivot(9000000);
+    setValeurPivot(0);
 }
 
 /* ********************************************************************************************************** */

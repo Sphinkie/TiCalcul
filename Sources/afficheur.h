@@ -16,6 +16,8 @@ public:
     explicit Afficheur(Unites::Units unit, QObject *parent = nullptr);
 
     Q_INVOKABLE void setFrameRate(double framerate);
+    Q_INVOKABLE void addDigit(QString digit);
+    Q_INVOKABLE void removeLastDigit();
 
     QString displayValue() const;
     QString getName();
@@ -31,8 +33,6 @@ signals:
 protected:
     void setDisplayValue(QString value);
     void clearDisplayValue();
-    qint32 _addDigit(QString digit);
-    qint32 _removeLastDigit();
     bool isIncorrect(QString rawHmsi);
 
 // ------------------------------------------------------------

@@ -20,6 +20,6 @@ Button {
         implicitWidth: 200
         implicitHeight: 40
         //color: parent.pressed ? "white" : "#c8e6ca"
-        color: (afficheurActif.name == afficheur) ? "white" : "#c8e6ca"
+        color: (afficheurActif.name === afficheur) ? "white" : "#c8e6ca"
     }
 }
