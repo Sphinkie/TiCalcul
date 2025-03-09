@@ -4,5 +4,6 @@
 /build*
 /Generated
 *.user
+*.bkp
 
 Thumbs.db 
