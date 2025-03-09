@@ -25,12 +25,10 @@
 var NAVTREE =
 [
   [ "TiCalcul", "index.html", [
-    [ "TiCalcul", "md__r_e_a_d_m_e.html", [
-      [ "Couleurs", "md__r_e_a_d_m_e.html#autotoc_md1", null ]
-    ] ],
+    [ "TiCalcul", "md__r_e_a_d_m_e.html", null ],
     [ "Compilation", "md_docs_2compilation.html", [
-      [ "Installation of the developpement environnement", "md_docs_2compilation.html#autotoc_md3", null ],
-      [ "Documentation", "md_docs_2compilation.html#autotoc_md4", null ]
+      [ "Installation of the developpement environnement", "md_docs_2compilation.html#autotoc_md2", null ],
+      [ "Documentation", "md_docs_2compilation.html#autotoc_md3", null ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Liste des classes", "annotated.html", "annotated_dup" ],

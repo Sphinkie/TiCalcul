@@ -22,13 +22,13 @@ void {\bfseries display\+Value\+Changed} (QString)
 \item 
 \textbf{ Afficheur} (Unites\+::\+Units unit, QObject $\ast$parent=nullptr)
 \item 
+Q\+\_\+\+INVOKABLE void \textbf{ set\+Frame\+Rate} (double framerate)
+\item 
 QString \textbf{ display\+Value} () const
 \item 
 QString \textbf{ get\+Name} ()
 \item 
 double \textbf{ get\+Frame\+Rate} ()
-\item 
-void \textbf{ set\+Frame\+Rate} (double framerate)
 \item 
 int \textbf{ length} ()
 \end{DoxyCompactItemize}
@@ -45,18 +45,6 @@ qint32 \textbf{ \+\_\+remove\+Last\+Digit} ()
 \item 
 bool \textbf{ is\+Incorrect} (QString raw\+Hmsi)
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Attributs protégés}
-\begin{DoxyCompactItemize}
-\item 
-\label{class_afficheur_a7f7f3675bdd84facdafcc5d12a1d2f5e} 
-int {\bfseries m\+Decimals}
-\begin{DoxyCompactList}\small\item\em Nombre de chiffres après la virgule. \end{DoxyCompactList}\item 
-\label{class_afficheur_a57358410a9700e9a63a2a1eb2af0b275} 
-double {\bfseries m\+Frame\+Rate}
-\begin{DoxyCompactList}\small\item\em Framerate utilisé (pour les afficheurs FRAMES et HMSI) \end{DoxyCompactList}\item 
-\label{class_afficheur_aa224221fbabd195c9283e3320b6987fd} 
-double {\bfseries m\+Conversion\+Facteur}
-\begin{DoxyCompactList}\small\item\em Nombre de microseconds par unité \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Propriétés}
 \begin{DoxyCompactItemize}
 \item 
@@ -66,6 +54,9 @@ QString {\bfseries display\+Value}
 \doxysubsubsection*{Attributs privés}
 \begin{DoxyCompactItemize}
 \item 
+\label{class_afficheur_ab496c5b654c9b507ee2c744bc25e031f} 
+QString {\bfseries m\+Display\+Value}
+\begin{DoxyCompactList}\small\item\em La valeur à afficher (String) \end{DoxyCompactList}\item 
 \label{class_afficheur_a8ecde2d43572490c141f08ac1a823680} 
 QString {\bfseries m\+Name}
 \begin{DoxyCompactList}\small\item\em Le nom de l\textquotesingle{}afficheur. \end{DoxyCompactList}\item 
@@ -75,9 +66,15 @@ Unites\+::\+Units {\bfseries m\+Unit}
 \label{class_afficheur_ab4a880ad6352f46770ca42338ba4e65a} 
 long {\bfseries m\+Max\+Value}
 \begin{DoxyCompactList}\small\item\em Valeur numérique maximale autorisée. \end{DoxyCompactList}\item 
-\label{class_afficheur_ab496c5b654c9b507ee2c744bc25e031f} 
-QString {\bfseries m\+Display\+Value}
-\begin{DoxyCompactList}\small\item\em La valeur à afficher (String) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\label{class_afficheur_a7f7f3675bdd84facdafcc5d12a1d2f5e} 
+int {\bfseries m\+Decimals}
+\begin{DoxyCompactList}\small\item\em Nombre de chiffres après la virgule. \end{DoxyCompactList}\item 
+\label{class_afficheur_a57358410a9700e9a63a2a1eb2af0b275} 
+double {\bfseries m\+Frame\+Rate}
+\begin{DoxyCompactList}\small\item\em Framerate utilisé (pour les afficheurs FRAMES et HMSI) \end{DoxyCompactList}\item 
+\label{class_afficheur_aa224221fbabd195c9283e3320b6987fd} 
+double {\bfseries m\+Conversion\+Facteur}
+\begin{DoxyCompactList}\small\item\em Nombre de microseconds par unité \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Documentation des constructeurs et destructeur}
