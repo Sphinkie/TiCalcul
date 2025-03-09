@@ -1,7 +1,4 @@
-// #include <QQmlApplicationEngine>
-// #include <QQmlContext>
 #include "operande.h"
-
 
 
 /* ********************************************************************************************************** */
@@ -25,7 +22,7 @@ Operande::Operande(QString name, QObject *parent)
     a7 = new Afficheur(Unites::FRAMES_50);
     //a8 = new Afficheur(Unites::FRAMES_NTSC);
 
-    // Connexions
+    // Connexions: Envoi de la valeur pivot aux afficheurs.
     QObject::connect(this, SIGNAL(valeurPivotChanged(qint64)), a1, SLOT(setValue(qint64)));
     QObject::connect(this, SIGNAL(valeurPivotChanged(qint64)), a2, SLOT(setValue(qint64)));
     QObject::connect(this, SIGNAL(valeurPivotChanged(qint64)), a3, SLOT(setValue(qint64)));
@@ -34,6 +31,16 @@ Operande::Operande(QString name, QObject *parent)
     QObject::connect(this, SIGNAL(valeurPivotChanged(qint64)), a6, SLOT(setValue(qint64)));
     QObject::connect(this, SIGNAL(valeurPivotChanged(qint64)), a7, SLOT(setValue(qint64)));
     //QObject::connect(this, SIGNAL(valeurPivotChanged(qint64)), a8, SLOT(setValue(qint64)));
+    // Connexions: Réception des modifications de la valeur pivot.
+    QObject::connect(a1, SIGNAL(setValeurPivot(qint64)), this, SLOT(setValeurPivot(qint64)));
+    QObject::connect(a2, SIGNAL(setValeurPivot(qint64)), this, SLOT(setValeurPivot(qint64)));
+    QObject::connect(a3, SIGNAL(setValeurPivot(qint64)), this, SLOT(setValeurPivot(qint64)));
+    QObject::connect(a4, SIGNAL(setValeurPivot(qint64)), this, SLOT(setValeurPivot(qint64)));
+    QObject::connect(a5, SIGNAL(setValeurPivot(qint64)), this, SLOT(setValeurPivot(qint64)));
+    QObject::connect(a6, SIGNAL(setValeurPivot(qint64)), this, SLOT(setValeurPivot(qint64)));
+    QObject::connect(a7, SIGNAL(setValeurPivot(qint64)), this, SLOT(setValeurPivot(qint64)));
+    //QObject::connect(a8, SIGNAL(setValeurPivot(qint64)), this, SLOT(setValeurPivot(qint64)));
+
 }
 
 /* ********************************************************************************************************** */

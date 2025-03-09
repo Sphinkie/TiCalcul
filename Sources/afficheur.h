@@ -28,7 +28,8 @@ public slots:
     void setValue(qint64 value);
 
 signals:
-    void displayValueChanged(QString);
+    void displayValueChanged(QString);  //!< Envoi au QML d'une nouvelle valeur à afficher.
+    void setValeurPivot(qint64);        //!< Envoi à l'opérande d'une nouvelle valeur pivot.
 
 protected:
     void setDisplayValue(QString value);

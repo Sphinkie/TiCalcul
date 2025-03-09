@@ -100,8 +100,8 @@ void Afficheur::addDigit(QString digit)
     {
         // Valeur MAX non atteinte: on met à jour la valeur pivot.
         this->mDisplayValue = newStringValue;
-        // return Converter::HMSItoMicroseconds(newStringValue, mFrameRate);
-        operande.setValeurPivot(57955);
+        emit setValeurPivot(Converter::HMSItoMicroseconds(newStringValue, mFrameRate));
+        return;
     }
     // ------------------------------------------------------------------------
     // Autres cas: valeurs numériques
@@ -112,8 +112,8 @@ void Afficheur::addDigit(QString digit)
         // Valeur MAX non atteinte: on met à jour la valeur pivot.
         this->mDisplayValue = newStringValue;
         // voir si on utilise floor() pour être sûr de prendre la valeur entière
-        // return (long)(numericValue * this->mConversionFacteur);
-        operande.setValeurPivot(58748755);
+        emit setValeurPivot((qint64)(numericValue * this->mConversionFacteur));
+        return;
     }
 }
 
@@ -132,7 +132,8 @@ void Afficheur::removeLastDigit()
     else if (len == 1)
     {
         this->mDisplayValue = "";
-        return 0L;
+        emit setValeurPivot(0);
+        return;
     }
     else
     {
@@ -140,13 +141,15 @@ void Afficheur::removeLastDigit()
         if (this->mName == "HMSI")
         {
             // Format HMSI
-            return Converter::convertRawHMSItoMicroseconds(this->mDisplayValue, this->mFrameRate);
+            emit setValeurPivot(Converter::convertRawHMSItoMicroseconds(this->mDisplayValue, this->mFrameRate));
+            return;
         }
         else
         {
             // Autres formats: on applique simplement le facteur de convertion
             double numericValue = this->mDisplayValue.toDouble();
-            return (long)(numericValue * this->mConversionFacteur);
+            emit setValeurPivot((qint64)(numericValue * this->mConversionFacteur));
+            return;
         }
     }
 }
@@ -297,7 +300,7 @@ void Afficheur::setValue(qint64 microsecs)
 }
 
 /*!
- * Mémorise et propage la string à afficher.
+ * Mémorise et propage la string à afficher vers le QML .
  * \param value: La valeur exprimée dans l'unité de cet afficheur.
  */
 void Afficheur::setDisplayValue(QString value)

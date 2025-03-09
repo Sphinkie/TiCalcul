@@ -20,9 +20,11 @@ public:
     Operande(QString name, QObject *parent = nullptr);
 
     qint64 valeurPivot() const;
-    void setValeurPivot(qint64 newValeurPivot);
     void registerContext(QQmlContext* context);
     Q_INVOKABLE void clear();
+
+public slots:
+    void setValeurPivot(qint64 newValeurPivot);
 
 signals:
     void valeurPivotChanged(qint64);
