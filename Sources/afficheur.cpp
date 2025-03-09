@@ -12,7 +12,6 @@ Afficheur::Afficheur(Unites::Units unit, QObject *parent)
     this->mUnit = unit;
     this->mName = Unites::name.value(unit);
     this->mDecimals = Unites::nbDecimals.value(unit);   // nombre de chiffres après la virgule
-//    this->mMaxValue = Unites::maxValue.value(unit);     // valeur max : 99 heures.
     this->mFrameRate = Unites::frameRate.value(unit);
     this->mConversionFacteur = Unites::usPerUnit.value(unit);
 }
@@ -41,15 +40,22 @@ void Afficheur::addDigit(QString digit)
     // ------------------------------------------------------------
     qDebug(qPrintable("addDigit: " + mDisplayValue + " + " + digit));
     // ------------------------------------------------------------
-    // Si c'est un un point et qu'il y en a déjà un: on l'ignore
+    // Si c'est un point et qu'il y en a déjà un: on l'ignore
     if ((digit == ".") && mDisplayValue.contains(".")) return;
     // ------------------------------------------------------------
     // Si c'est un point et qu'on est au début: on traite comme "0."
-    if ((digit == ".") && mDisplayValue.isEmpty())     digit="0.";
+    if ((digit == ".") && mDisplayValue.isEmpty())     digit="0";
+    // ------------------------------------------------------------
+    // Si c'est un point, on n'a pas encore de chiffre derrière, on le met de coté pour l'afficher.
+    mAddDot =  (digit == ".");
+
+    // test
+    if ((digit == "6") && (this->mUnit == Unites::SECONDS))     digit=".6";
+
     // ------------------------------------------------------------
     // Si c'est un zéro et qu'on est au début: on l'ignore
     // Sauf pour HMSI et SECONDS qui ont le droit de commencer par un "0"
-    if ((this->mName != "HMSI") && (this->mName != "SECONDS"))
+    if ((this->mUnit != Unites::HMSI) && (this->mUnit != Unites::SECONDS))
         if ((digit == "0") && mDisplayValue.isEmpty()) return;
     // ------------------------------------------------------------
     // Si c'est un 00 et qu'on est au début: on l'ignore (Sauf pour HMSI)
@@ -62,17 +68,17 @@ void Afficheur::addDigit(QString digit)
     // ------------------------------------------------------------
     // S'il y a déjà 8 chiffres dans le HMSI: on l'ignore
     if ((this->mName == "HMSI") && (len>=8)) return;
+
     // ------------------------------------------------------------------------
     // On ajoute le digit à stringValue
     // ------------------------------------------------------------------------
     QString newStringValue = mDisplayValue + digit;
     qDebug(qPrintable("candidate: " + newStringValue));
-
     // ------------------------------------------------------------------------
     // On convertit la StringValue en microsecondes (ValeurPivot)
     // ------------------------------------------------------------------------
     // Cas du HMSI:
-    // TODO : cas du D+HMSM
+    // TODO : ajouter le cas du D+HMSM
     // ------------------------------------------------------------------------
     if (this->mName == "HMSI")
     {
@@ -87,17 +93,17 @@ void Afficheur::addDigit(QString digit)
         bool flag;
         // Valeur MAX non atteinte: on met à jour la valeur pivot.
         // On enleve les espaces qui font échouer la conversion.
-        qint64 numericValue = newStringValue.remove(' ').toLongLong(&flag);
+        double numericValue = newStringValue.remove(' ').toDouble(&flag);
         if (flag){
-        qint64 microsecValue = numericValue * this->mConversionFacteur;
+            qint64 microsecValue = (qint64)(numericValue * this->mConversionFacteur);
 
-        qDebug("to send (unit) : %d", numericValue);
-        qDebug("to send (us) : %d", numericValue);
-        qDebug(qPrintable(newStringValue + " sent!"));
+            qDebug("to send (unit) : %f", numericValue);
+            qDebug("to send (us) : %d", microsecValue);
+            qDebug("sending %d", microsecValue);
 
-        // TODO voir si on utilise floor() pour être sûr de prendre la valeur entière
-        emit setValeurPivot(microsecValue);
-        return;
+            // TODO voir si on utilise floor() pour être sûr de prendre la valeur entière
+            emit setValeurPivot(microsecValue);
+            return;
         }
         else
             qDebug(qPrintable("ERROR: addDigit: converting '" + newStringValue + "' to numeric failed !"));
@@ -113,18 +119,17 @@ void Afficheur::removeLastDigit()
     int len = this->mDisplayValue.length();
     if (len == 0)
     {
-        //this->mDisplayValue = "";
         return ;
     }
     else if (len == 1)
     {
-        //this->mDisplayValue = "";
         emit setValeurPivot(0);
         return;
     }
     else
     {
         QString newStringValue = this->mDisplayValue.chopped(1);  // Enleve le dernier caractère
+        qDebug(qPrintable("candidate: " + newStringValue));
         if (this->mUnit == Unites::HMSI)
         {
             // Format HMSI
@@ -134,16 +139,21 @@ void Afficheur::removeLastDigit()
         else if (this->mUnit == Unites::DHMSM)
         {
             // Format D+HMSm
-            // TODO A regrouper avec le précedent
             emit setValeurPivot(Converter::convertRawHMSItoMicroseconds(newStringValue, this->mFrameRate));
             return;
         }
         else
         {
             // Autres formats: on applique simplement le facteur de convertion
-            qint64 numericValue = newStringValue.toDouble();
-            emit setValeurPivot((qint64)(numericValue * this->mConversionFacteur));
-            return;
+            bool flag;
+            double numericValue = newStringValue.remove(' ').toDouble(&flag);
+            if (flag){
+                qint64 microsecValue = (qint64)(numericValue * this->mConversionFacteur);
+                emit setValeurPivot(microsecValue);
+                return;
+            }
+            else
+                qDebug(qPrintable("ERROR: removeLastDigit: converting '" + newStringValue + "' to numeric failed !"));
         }
     }
 }
@@ -157,9 +167,9 @@ void Afficheur::clearDisplayValue()
 }
 
 /*! ***************************************************************
-     * Renvoie le champ textuel en cours de saisie.
-     * \returns the currently edited text field.
-     ******************************************************************/
+ * Renvoie le champ textuel en cours de saisie.
+ * \returns the currently edited text field.
+ ******************************************************************/
 QString Afficheur::displayValue() const
 {
     QString rawValue = this->mDisplayValue;
@@ -189,11 +199,11 @@ int Afficheur::length()
 }
 
 /*! ***************************************************************
-     * Indique si le HMSI a besoin d'être rectifié
-     * cad si minutes > 59 ou secondes > 59 ou images > 24.
-     * \param rawHmsi : un RAW HMSI du type HHMMSSII
-     * \returns true if HMSI needs to be rectified
-     ***************************************************************** */
+ * Indique si le HMSI a besoin d'être rectifié
+ * cad si minutes > 59 ou secondes > 59 ou images > 24.
+ * \param rawHmsi : un RAW HMSI du type HHMMSSII
+ * \returns true if HMSI needs to be rectified
+ ***************************************************************** */
 bool Afficheur::isIncorrect(QString rawHmsi)
 {
     QString MM = "00";
@@ -245,18 +255,18 @@ bool Afficheur::isIncorrect(QString rawHmsi)
 }
 
 /*! ***************************************************************
-     * Renvoie le libellé de l'unité correspondant à cet afficheur.
-     * \returns the name of the unit
-     ******************************************************************/
+ * Renvoie le libellé de l'unité correspondant à cet afficheur. NOT USED
+ * \returns the name of the unit
+ ******************************************************************/
 QString Afficheur::getName()
 {
     return mName;
 }
 
 /*! ***************************************************************
-     * SLOT. Recoit la valeur numérique à afficher.
-     * \param microsecs: La valeur pivot en microsecondes.
-     ******************************************************************/
+ * SLOT. Recoit la valeur numérique à afficher.
+ * \param microsecs: La valeur pivot en microsecondes.
+ ******************************************************************/
 void Afficheur::setValue(qint64 microsecs)
 {
     QString value = "DEFAULT VALUE";
@@ -289,17 +299,17 @@ void Afficheur::setValue(qint64 microsecs)
     default:
         value="UNKNOWN UNIT";
     }
-
     setDisplayValue(value);
 }
 
-/*!
+/*! ***************************************************************
  * Mémorise et propage la string à afficher vers le QML .
  * \param value: La valeur exprimée dans l'unité de cet afficheur.
- */
+ ******************************************************************/
 void Afficheur::setDisplayValue(QString value)
 {
     mDisplayValue = value;
-    emit displayValueChanged(value);
+    if (mAddDot) mDisplayValue.append(' ');
+    emit displayValueChanged(mDisplayValue);
 }
 
