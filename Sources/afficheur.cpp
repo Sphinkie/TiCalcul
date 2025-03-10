@@ -46,12 +46,12 @@ void Afficheur::addDigit(QString digit)
     // Si c'est un point et qu'on est au début: on traite comme "0."
     if ((digit == ".") && mDisplayValue.isEmpty())     digit="0";
     // ------------------------------------------------------------
-    // Si c'est un point, on n'a pas encore de chiffre derrière, on le met de coté pour l'afficher.
-    mAddDot =  (digit == ".");
-
-    // test
-    if ((digit == "6") && (this->mUnit == Unites::SECONDS))     digit=".6";
-
+    // Si c'est un point, on n'a pas encore de chiffre derrière, on l'affiche aussitot.
+    if (digit == ".")
+    {
+        this->setDisplayValue(mDisplayValue.append('.'));
+        return;
+    }
     // ------------------------------------------------------------
     // Si c'est un zéro et qu'on est au début: on l'ignore
     // Sauf pour HMSI et SECONDS qui ont le droit de commencer par un "0"
@@ -123,9 +123,11 @@ void Afficheur::removeLastDigit()
     }
     else if (len == 1)
     {
+        // TODO emit (clearValeurPivot),
         emit setValeurPivot(0);
         return;
     }
+    // TODO : si on efface la permière décimale, il faut laisser le point
     else
     {
         QString newStringValue = this->mDisplayValue.chopped(1);  // Enleve le dernier caractère
@@ -309,7 +311,6 @@ void Afficheur::setValue(qint64 microsecs)
 void Afficheur::setDisplayValue(QString value)
 {
     mDisplayValue = value;
-    if (mAddDot) mDisplayValue.append(' ');
-    emit displayValueChanged(mDisplayValue);
+    emit displayValueChanged(value);
 }
 

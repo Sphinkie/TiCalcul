@@ -4,9 +4,7 @@ import "../Vues"
 KeyboardForm {
 
     key0.onClicked: afficheurActif.name.addDigit("0")
-    //console.log("KeyboardKey 0 clicked !")
     key1.onClicked: afficheurActif.name.addDigit("1")
-    // console.log("KeyboardKey 1 clicked !")
     key2.onClicked: afficheurActif.name.addDigit("2")
     key3.onClicked: afficheurActif.name.addDigit("3")
     key4.onClicked: afficheurActif.name.addDigit("4")

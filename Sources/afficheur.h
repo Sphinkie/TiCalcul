@@ -46,7 +46,6 @@ private:
     int mDecimals;              //!< Nombre de chiffres après la virgule
     double mFrameRate;          //!< Framerate utilisé (pour les afficheurs FRAMES et HMSI)
     double mConversionFacteur;  //!< Nombre de microseconds par unité
-    bool mAddDot = false;       //!< Indique si un point doit être affiché en dernier.
 
 };
 
