@@ -13,8 +13,7 @@ Button {
 
     contentItem: Text {
         text: buttonText
-        // color: button.down ? "black" : "white"
-        color: "black"
+        color: parent.enabled ? "black" : Universal.chromeDisabledHighColor 
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         font.pointSize: 16
@@ -22,8 +21,9 @@ Button {
     }
 
     background: Rectangle {
-        color: button.down ? "#d0d0d0" : "#e0e0e0"
-        // border.color: "purple"
+	id: rec
+        color: parent.down ? Universal.chromeHighColor: Universal.chromeMediumColor
+        // border.color: Universal.accent
         implicitWidth: 100
         implicitHeight: 80
         radius: 6

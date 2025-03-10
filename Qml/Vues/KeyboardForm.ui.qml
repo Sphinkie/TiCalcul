@@ -40,6 +40,7 @@ GridLayout {
     KeyboardKeyForm {
         id: keyPlus
         buttonText: "+"
+        enabled: false
         Layout.fillWidth: true
     }
     KeyboardKeyForm {
@@ -60,6 +61,7 @@ GridLayout {
     KeyboardKeyForm {
         id: keyMinus
         buttonText: "-"
+        enabled: false
         Layout.fillWidth: true
     }
     KeyboardKeyForm {
@@ -75,11 +77,12 @@ GridLayout {
     KeyboardKeyForm {
         id: key9
         buttonText: "9"
-        Layout.fillWidth: true
+        Layout.fillWidth: true 
     }
     KeyboardKeyForm {
         id: keyComplt
         buttonText: "24'C"
+        enabled: false
         Layout.fillWidth: true
     }
     KeyboardKeyForm {
@@ -95,6 +98,7 @@ GridLayout {
     KeyboardKeyForm {
         id: keyDot
         buttonText: "."
+        enabled: (afficheurActif.name.name === "SECOND") ? true : false
         Layout.fillWidth: true
     }
     KeyboardKeyForm {

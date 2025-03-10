@@ -5,10 +5,10 @@ Item {
     property alias text: result.text
     Rectangle {
         anchors.fill: parent
-        color: "#c8e6ca"
+        color: Universal.altMediumColor
         Text {
             id: result
-            text: qsTr("Text")
+            text: "result"
             anchors.fill: parent
             horizontalAlignment: Text.AlignLeft
             verticalAlignment: Text.AlignVCenter
@@ -16,7 +16,7 @@ Item {
             font.pixelSize: 15
             font.family: "Courier"
             font.bold: true
-            color: "grey"
+            color: Universal.chromeAltLowColor
         }
     }
 }

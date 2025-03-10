@@ -13,13 +13,13 @@ Button {
         font.pixelSize: 15
         font.family: "Courier"
         font.bold: false
-        color: "grey"
+        color: Universal.chromeAltLowColor
     }
 
     background: Rectangle {
         implicitWidth: 200
         implicitHeight: 40
         //color: parent.pressed ? "white" : "#c8e6ca"
-        color: (afficheurActif.name === afficheur) ? "white" : "#c8e6ca"
+        color: (afficheurActif.name === afficheur) ? Universal.altHighColor: Universal.altMediumHighColor
     }
 }

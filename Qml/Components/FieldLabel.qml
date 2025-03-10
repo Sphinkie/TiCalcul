@@ -15,6 +15,6 @@ Item {
         rightPadding: 8
         font.pixelSize: 14
         font.bold: true
-        color: "black"
+        color:  Universal.baseMediumColor
     }
 }
