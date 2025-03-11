@@ -2,9 +2,10 @@ import QtQuick
 import QtQuick.Controls.Universal
 
 
-/*!
-  * Le type KeyboardForm fournit un bouton customisé pour les touches du clavier virtuel.
-  */
+/*! *****************************************************************
+  * Le type KeyboardKeyForm fournit un bouton customisé pour les touches du clavier virtuel.
+  * Les clickes sur les bourton sont gérés par le controlleur parent Keyboard.
+  ******************************************************************* */
 Button {
     id: button
     property string buttonText
@@ -13,7 +14,7 @@ Button {
 
     contentItem: Text {
         text: buttonText
-        color: parent.enabled ? "black" : Universal.chromeDisabledHighColor 
+        color: parent.enabled ? "black" : Universal.chromeDisabledHighColor
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         font.pointSize: 16
@@ -21,8 +22,8 @@ Button {
     }
 
     background: Rectangle {
-	id: rec
-        color: parent.down ? Universal.chromeHighColor: Universal.chromeMediumColor
+        id: rec
+        color: parent.down ? Universal.chromeHighColor : Universal.chromeMediumColor
         // border.color: Universal.accent
         implicitWidth: 100
         implicitHeight: 80

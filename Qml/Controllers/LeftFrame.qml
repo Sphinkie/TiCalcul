@@ -4,7 +4,7 @@ import "../Vues"
 
 
 /*! *****************************************************************
- *  Controlleur pour le panel de gauche
+ * \brief Controlleur pour le panel de gauche.
  * ***************************************************************** */
 LeftFrameForm {
 

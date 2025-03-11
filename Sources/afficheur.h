@@ -18,9 +18,9 @@ public:
     Q_INVOKABLE void setFrameRate(double framerate);
     Q_INVOKABLE void addDigit(QString digit);
     Q_INVOKABLE void removeLastDigit();
+    Q_INVOKABLE QString getName();
 
     QString displayValue() const;
-    QString getName();
     double getFrameRate();
     int length();
 
@@ -31,7 +31,7 @@ signals:
     void displayValueChanged(QString);  //!< Envoi au QML d'une nouvelle valeur à afficher.
     void setValeurPivot(qint64);        //!< Envoi à l'opérande d'une nouvelle valeur pivot.
 
-protected:
+private:
     void setDisplayValue(QString value);
     void clearDisplayValue();
     bool isIncorrect(QString rawHmsi);

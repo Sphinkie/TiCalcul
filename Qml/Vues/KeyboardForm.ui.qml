@@ -1,6 +1,12 @@
 import QtQuick
 import QtQuick.Layouts
 
+
+/*! *****************************************************************
+ * \brief Le KeyboardForm est un ensemble de 18 boutons de type KeyboardKey.
+ *        Cette Form est attachée à un controleur Keyboard qui gère
+ *        les actions suite à un appui sur un bouton.
+ * ******************************************************************* */
 GridLayout {
     property alias key0: key0
     property alias key1: key1
@@ -77,7 +83,7 @@ GridLayout {
     KeyboardKeyForm {
         id: key9
         buttonText: "9"
-        Layout.fillWidth: true 
+        Layout.fillWidth: true
     }
     KeyboardKeyForm {
         id: keyComplt
@@ -88,6 +94,7 @@ GridLayout {
     KeyboardKeyForm {
         id: key00
         buttonText: "00"
+        enabled: (afficheurActif.unit === "HMSI") ? true : false
         Layout.fillWidth: true
     }
     KeyboardKeyForm {
@@ -98,7 +105,7 @@ GridLayout {
     KeyboardKeyForm {
         id: keyDot
         buttonText: "."
-        enabled: (afficheurActif.name.name === "SECOND") ? true : false
+        enabled: (afficheurActif.unit === "SECONDS") ? true : false
         Layout.fillWidth: true
     }
     KeyboardKeyForm {

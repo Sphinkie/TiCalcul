@@ -4,7 +4,7 @@ import "../Vues"
 
 
 /*! *****************************************************************
- *  Controlleur pour le panel de droite
+ * \brief Controlleur pour le panel de droite.
  * ***************************************************************** */
 RightFrameForm {
 

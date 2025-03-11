@@ -165,7 +165,7 @@ void Afficheur::removeLastDigit()
  ******************************************************************/
 void Afficheur::clearDisplayValue()
 {
-    setDisplayValue("");
+    this->setDisplayValue("");
 }
 
 /*! ***************************************************************
@@ -301,7 +301,7 @@ void Afficheur::setValue(qint64 microsecs)
     default:
         value="UNKNOWN UNIT";
     }
-    setDisplayValue(value);
+    this->setDisplayValue(value);
 }
 
 /*! ***************************************************************

@@ -2,7 +2,15 @@ import QtQuick
 import QtQuick.Controls.Universal
 import TiCalcul
 
+
+/*! *****************************************************************
+ * Le FieldInputForm est associé à un objet C++ Afficheur.
+ * Il affiche une valeur (string) qui est une propriété partagée de l'objet.
+ * Il hérite d'un Button car un click permet de le sélectionner.
+ * Cette Form est associée à un controlleur FieldInput.
+ ******************************************************************** */
 Button {
+    //! Cet afficheur doit être fourni par le parent lors de la création du Field input.
     required property Afficheur afficheur
 
     contentItem: Text {
@@ -20,6 +28,7 @@ Button {
         implicitWidth: 200
         implicitHeight: 40
         //color: parent.pressed ? "white" : "#c8e6ca"
-        color: (afficheurActif.name === afficheur) ? Universal.altHighColor: Universal.altMediumHighColor
+        color: (afficheurActif.afficheur
+                === afficheur) ? Universal.altHighColor : Universal.altMediumHighColor
     }
 }
