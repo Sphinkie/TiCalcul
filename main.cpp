@@ -19,7 +19,7 @@ int main(int argc, char* argv[])
     app.setApplicationName("TiCalcul");
     app.setOrganizationName("Sphinkie");
     app.setOrganizationDomain("de-lorenzo.fr");
-    app.setWindowIcon(QIcon(":images/TiCalcul.ico"));   // FIXME
+    app.setWindowIcon(QIcon(":images/TiCalcul.ico"));   // FIXME : l'icone n'apparait pas
 
     // --------------------------------------
     // On initialise nos classes

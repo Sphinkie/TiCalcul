@@ -82,7 +82,9 @@ Item {
             Layout.fillWidth: true
         }
         // ---------------------------------------
-        FieldLabel {
+
+
+        /*        FieldLabel {
             text: "HMSI (25fps)"
             justify: Text.AlignRight
             Layout.fillHeight: true
@@ -94,9 +96,10 @@ Item {
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
+*/
         // ---------------------------------------
         FieldLabel {
-            text: "day + HMSm"
+            text: "HMS,ms"
             justify: Text.AlignRight
             Layout.fillHeight: true
             Layout.fillWidth: true

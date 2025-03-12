@@ -77,6 +77,9 @@ Item {
             Layout.fillWidth: true
         }
         // ---------------------------------------
+
+
+        /*
         FieldInput {
             //text: "HH:MM:SS:II"
             afficheur: TC1_aff_4
@@ -88,6 +91,7 @@ Item {
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
+*/
         // ---------------------------------------
         FieldInput {
             //text: "DD + HH:MM:SS:II"
@@ -96,7 +100,7 @@ Item {
             Layout.fillWidth: true
         }
         FieldLabel {
-            text: "day + HMSm"
+            text: "HMS,ms"
             Layout.fillHeight: true
             Layout.fillWidth: true
         }

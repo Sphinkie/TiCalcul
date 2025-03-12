@@ -45,17 +45,6 @@ class Unites
             {SECONDS, "SECONDS"}, {MILLISECONDS, "MILLISECONDS"}, {MICROSECONDS, "MICROSECONDS"}
         };
 
-
-    /* ****************************************************************
-     * Fonction d'initialisation des tables
-     * NOTE : A supprimer
-     * **************************************************************** */
-    private :
-        static void InitMaxValue();
-        static void InitUsPerUnit();
-        static void InitframeRate();
-        static void InitNbDecimals();
-        static void InitNames();
 };
 
 #endif // UNITES_H
