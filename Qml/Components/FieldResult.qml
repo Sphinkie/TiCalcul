@@ -3,15 +3,19 @@ import QtQuick.Controls.Universal
 
 Item {
     property alias text: result.text
+    property alias color: bg.color
+    implicitWidth: 120
+    implicitHeight: 40
 
     Rectangle {
-        implicitWidth: 100
-        implicitHeight: 40
+        id: bg
         color: Universal.altMediumColor
+        anchors.fill: parent
 
         Text {
             id: result
             text: "result"
+            anchors.fill: parent
             horizontalAlignment: Text.AlignLeft
             verticalAlignment: Text.AlignVCenter
             leftPadding: 8
@@ -21,23 +25,4 @@ Item {
             color: Universal.chromeAltLowColor
         }
     }
-
-
-    /*
-    Label {
-        id: result
-        anchors.fill: parent
-        text: "result"
-        horizontalAlignment: Text.AlignLeft
-        verticalAlignment: Text.AlignVCenter
-        font.pixelSize: 15
-        font.family: "Courier"
-        font.bold: true
-        color: Universal.chromeAltLowColor
-
-        background: Rectangle {
-            color: "red"
-            // Universal.altMediumColor
-        }
-    }*/
 }

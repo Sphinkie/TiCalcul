@@ -14,7 +14,7 @@ Window {
     title: "TiCalcul"
 
     Universal.theme: Universal.Light
-    Universal.accent: Universal.Cobalt //
+    Universal.accent: Universal.Cobalt
     Universal.foreground: Universal.Amber // Couleur forcée des boutons. Par défaut, ils sont en background foncé.
     Universal.background: Universal.Green // Couleur de fond
 
@@ -105,11 +105,11 @@ Window {
             // ------------------ Clavier -------------------------------------
             // ----------------------------------------------------------------
             Keyboard {
-                Layout.rowSpan: 1
-                Layout.columnSpan: 3
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 Layout.topMargin: 20
+                Layout.rowSpan: 1
+                Layout.columnSpan: 3
             }
         }
     }

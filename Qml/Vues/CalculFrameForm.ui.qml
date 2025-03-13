@@ -1,10 +1,12 @@
 import QtQuick
 import QtQuick.Layouts
+import QtQuick.Controls.Universal
+
 import "../Components"
 import "../Controllers"
 
 Item {
-    id: _item
+    //    id: _item
     property alias tc1: tc1
     property alias tc2: tc2
 
@@ -20,11 +22,12 @@ Item {
         // 1ere ligne
         // ------------------------------------------------------------
         FieldResult {
-            id: lbTc1
-            width: 0
+            id: labelTC1
             text: "TC1"
+            color: Universal.altMediumHighColor
+            Layout.preferredWidth: 80
             Layout.fillHeight: false
-            Layout.fillWidth: true
+            Layout.fillWidth: false
         }
         FieldInput {
             id: tc1
@@ -37,7 +40,7 @@ Item {
             id: bFramerateTc1
             buttonText: "25fps"
             Layout.fillHeight: false
-            Layout.fillWidth: true
+            Layout.fillWidth: false
         }
 
         // ------------------------------------------------------------
@@ -46,7 +49,7 @@ Item {
         FieldResult {
             id: lbOperande
             text: "+"
-            Layout.fillHeight: true
+            Layout.fillHeight: false
             Layout.fillWidth: true
             Layout.rowSpan: 1
             Layout.columnSpan: 3
@@ -56,23 +59,24 @@ Item {
         // 2eme ligne
         // ------------------------------------------------------------
         FieldResult {
-            id: lbTc2
+            id: labelTC2
             text: "TC2"
-            Layout.fillHeight: true
-            Layout.fillWidth: true
+            Layout.preferredWidth: 80
+            Layout.fillHeight: false
+            Layout.fillWidth: false
         }
         FieldInput {
             id: tc2
             // text: "..:..:..:.."
             afficheur: TC2_aff_4
             Layout.fillHeight: false
-            Layout.fillWidth: false
+            Layout.fillWidth: true
         }
         TiButton {
             id: bFramerateTc2
             buttonText: "25fps"
             Layout.fillHeight: false
-            Layout.fillWidth: true
+            Layout.fillWidth: false
         }
 
         // ------------------------------------------------------------
@@ -80,14 +84,26 @@ Item {
         // ------------------------------------------------------------
         FieldResult {
             text: "RESULT"
-            Layout.fillHeight: true
-            Layout.fillWidth: true
+            Layout.preferredWidth: 80
+            Layout.fillHeight: false
+            Layout.fillWidth: false
         }
         FieldResult {
             id: result
             text: "..:..:..:.."
-            Layout.fillHeight: true
+            Layout.fillHeight: false
             Layout.fillWidth: true
+        }
+        // ------------------------------------------------------------
+        // Zone vide en bas
+        // ------------------------------------------------------------
+        Item {
+            Layout.preferredHeight: 85
+            Layout.fillWidth: true
+            Layout.fillHeight: false
+            Layout.rowSpan: 1
+            Layout.columnSpan: 3
+            Layout.row: 7
         }
     }
 }

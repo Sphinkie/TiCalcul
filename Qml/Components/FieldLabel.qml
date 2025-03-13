@@ -1,11 +1,12 @@
 import QtQuick
 import QtQuick.Controls.Universal
 
-Item {
-    property alias text: label.text
-    property alias justify: label.horizontalAlignment
+//Item {
+//  property alias text: label.text
+//property alias justify: label.horizontalAlignment
 
-    Text {
+
+/*    Text {
         id: label
         text: "label"
         anchors.fill: parent
@@ -17,4 +18,16 @@ Item {
         font.bold: true
         color:  Universal.baseMediumColor
     }
-}
+*/
+Label {
+    id: label
+    text: "label"
+    horizontalAlignment: Text.AlignRight
+    verticalAlignment: Text.AlignVCenter
+    leftPadding: 8
+    rightPadding: 8
+    font.pixelSize: 14
+    font.bold: true
+    color: Universal.baseMediumColor
+    //implicitHeight: 40
+} //}

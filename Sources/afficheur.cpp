@@ -36,7 +36,8 @@ void Afficheur::addDigit(QString digit)
 {
     // ------------------------------------------------------------
     // Controles
-    // TODO faire le tests sur le Unit
+    // TODO faire le tests sur le Unit lutot qe lka string
+    // FIXME: on ne peut pas ajouter un 0 après la virgule
     // ------------------------------------------------------------
     qDebug(qPrintable("addDigit: " + mDisplayValue + " + " + digit));
     // ------------------------------------------------------------

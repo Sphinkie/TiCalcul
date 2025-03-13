@@ -13,6 +13,7 @@ Button {
     //! Cet afficheur doit être fourni par le parent lors de la création du Field input.
     required property Afficheur afficheur
 
+    //! Le texte affiché est la String envoyée par l'afficheur
     contentItem: Text {
         text: afficheur.displayValue
         horizontalAlignment: Text.AlignRight
@@ -24,8 +25,9 @@ Button {
         color: Universal.chromeAltLowColor
     }
 
+    //! La couleur de fond est blanche quand l'afficheur est sélectioné
     background: Rectangle {
-        implicitWidth: 200
+        implicitWidth: 160
         implicitHeight: 40
         //color: parent.pressed ? "white" : "#c8e6ca"
         color: (afficheurActif.afficheur
