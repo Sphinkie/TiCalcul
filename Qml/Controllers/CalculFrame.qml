@@ -13,6 +13,8 @@ CalculFrameForm {
     }
 
     tc2.onClicked: {
-        console.log("TiButton btSwap clicked ! ")
+        console.log("TiButton btFramerate TC2 clicked ! ")
     }
+
+    // TODO : Ajouter un bouton SWAP au nivea de la deuxième ligne
 }

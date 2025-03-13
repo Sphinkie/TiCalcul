@@ -26,6 +26,7 @@ int main(int argc, char* argv[])
     // --------------------------------------
     Operande operande_tc1("TC1");
     Operande operande_tc2("TC2");
+    Operande operande_res("RESULT");
 
     // --------------------------------------
     // Initialisation du moteur:
@@ -38,8 +39,10 @@ int main(int argc, char* argv[])
     // ------------------------------------------------------------
     context->setContextProperty("operandeTC1", &operande_tc1);
     context->setContextProperty("operandeTC2", &operande_tc2);
+    context->setContextProperty("operandeRES", &operande_res);
     operande_tc1.registerContext(context);
     operande_tc2.registerContext(context);
+    operande_res.registerContext(context);
 
     // ------------------------------------------------------------
     // On ajoute le type Afficheur au contexte QML
@@ -57,6 +60,7 @@ int main(int argc, char* argv[])
 
     operande_tc1.setValeurPivot(28650000);
     operande_tc2.setValeurPivot(87545412880);
+    operande_res.setValeurPivot(120000000);
 
     // --------------------------------------
     // Démarrage du moteur.

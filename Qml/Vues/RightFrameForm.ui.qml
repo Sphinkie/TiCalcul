@@ -24,6 +24,7 @@ Item {
         }
         FieldLabel {
             text: "seconds"
+            horizontalAlignment: Text.AlignLeft
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -36,6 +37,7 @@ Item {
         }
         FieldLabel {
             text: "milliseconds"
+            horizontalAlignment: Text.AlignLeft
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -48,6 +50,7 @@ Item {
         }
         FieldLabel {
             text: "microseconds"
+            horizontalAlignment: Text.AlignLeft
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -60,6 +63,7 @@ Item {
         }
         FieldLabel {
             text: "frames (25fps)"
+            horizontalAlignment: Text.AlignLeft
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -72,25 +76,10 @@ Item {
         }
         FieldLabel {
             text: "frames (50fps)"
+            horizontalAlignment: Text.AlignLeft
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
-        // ---------------------------------------
-
-
-        /*
-        FieldInput {
-            //text: "HH:MM:SS:II"
-            afficheur: TC1_aff_4
-            Layout.fillHeight: true
-            Layout.fillWidth: true
-        }
-        FieldLabel {
-            text: "HMSI (25fps)"
-            Layout.fillHeight: true
-            Layout.fillWidth: true
-        }
-*/
         // ---------------------------------------
         FieldInput {
             //text: "DD + HH:MM:SS:II"
@@ -100,6 +89,7 @@ Item {
         }
         FieldLabel {
             text: "HMS,ms"
+            horizontalAlignment: Text.AlignLeft
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -115,6 +105,8 @@ Item {
         }
         Item {
             id: emptySpace
+            Layout.fillHeight: false
+            Layout.fillWidth: true
         }
     }
 }

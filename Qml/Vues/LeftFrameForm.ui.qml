@@ -18,7 +18,6 @@ Item {
 
         FieldLabel {
             text: "seconds"
-            //justify: Text.AlignRight
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -31,7 +30,6 @@ Item {
         // ---------------------------------------
         FieldLabel {
             text: "milliseconds"
-            //justify: Text.AlignRight
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -81,23 +79,6 @@ Item {
             Layout.fillWidth: true
         }
         // ---------------------------------------
-
-
-        /*
-        FieldLabel {
-            text: "HMSI (25fps)"
-            justify: Text.AlignRight
-            Layout.fillHeight: true
-            Layout.fillWidth: true
-        }
-        FieldInput {
-            //text: "HH:MM:SS:II"
-            afficheur: TC1_aff_4
-            Layout.fillHeight: true
-            Layout.fillWidth: true
-        }
-*/
-        // ---------------------------------------
         FieldLabel {
             text: "HMS,ms"
             //justify: Text.AlignRight
@@ -116,8 +97,8 @@ Item {
             // Layout.topMargin: 4
             // Layout.rightMargin: 4
             // Layout.leftMargin: 4
-            // Layout.fillHeight: false
-            // Layout.fillWidth: true
+            Layout.fillHeight: false
+            Layout.fillWidth: true
         }
         TiButton {
             id: btClear

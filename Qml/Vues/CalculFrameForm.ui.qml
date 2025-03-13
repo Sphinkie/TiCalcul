@@ -54,6 +54,7 @@ Item {
             Layout.rowSpan: 1
             Layout.columnSpan: 3
         }
+        // TODO : ajouter un bouton swap
 
         // ------------------------------------------------------------
         // 2eme ligne
@@ -88,9 +89,10 @@ Item {
             Layout.fillHeight: false
             Layout.fillWidth: false
         }
-        FieldResult {
+        FieldInput {
             id: result
             text: "..:..:..:.."
+            afficheur: RESULT_aff_4
             Layout.fillHeight: false
             Layout.fillWidth: true
         }
