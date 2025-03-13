@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['clear_0',['clear',['../class_operande.html#a78e5d567866e99f235880ba70122a5c8',1,'Operande']]],
-  ['cleardisplayvalue_1',['clearDisplayValue',['../class_afficheur.html#a1ea55697a9f4d9564f97c7f2166b8b59',1,'Afficheur']]],
-  ['compilation_2',['Compilation',['../md_docs_2compilation.html',1,'']]],
-  ['completerawhmsiwithdots_3',['completeRawHMSIWithDots',['../class_converter.html#aa271cba436c39da2b8925267689e9ec9',1,'Converter']]],
-  ['converter_4',['converter',['../class_converter.html',1,'Converter'],['../class_converter.html#a1de81f3e06093411e5d27ce882bc010f',1,'Converter::Converter()']]],
-  ['convertrawhmsitomicroseconds_5',['convertRawHMSItoMicroseconds',['../class_converter.html#ad92418cec1dea708d7268fbeeb588a02',1,'Converter']]]
+  ['des_20choses_20à_20faire_0',['Liste des choses à faire',['../todo.html',1,'']]],
+  ['developpement_20environnement_1',['Installation of the developpement environnement',['../md_docs_2compilation.html#autotoc_md2',1,'']]],
+  ['displayvalue_2',['displayValue',['../class_afficheur.html#a93fe4df4b0930bb7ff765eb4b8ced871',1,'Afficheur']]],
+  ['displayvaluechanged_3',['displayValueChanged',['../class_afficheur.html#ae45395415367793477d2513c3ff93c1e',1,'Afficheur']]],
+  ['documentation_4',['Documentation',['../md_docs_2compilation.html#autotoc_md3',1,'']]]
 ];

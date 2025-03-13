@@ -3,7 +3,8 @@
 /build
 /build*
 /Generated
-*.user
 *.bkp
+*.user
+*.txt.user
 
 Thumbs.db 

@@ -20,33 +20,33 @@
 \DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{explicit}\ Afficheur(Unites::Units\ unit,\ QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
 \DoxyCodeLine{00017\ }
 \DoxyCodeLine{00018\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ setFrameRate(\textcolor{keywordtype}{double}\ framerate);}
-\DoxyCodeLine{00019\ }
-\DoxyCodeLine{00020\ \ \ \ \ QString\ displayValue()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00021\ \ \ \ \ QString\ getName();}
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{double}\ getFrameRate();}
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ length();}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \textcolor{keyword}{public}\ slots:}
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ setValue(qint64\ value);}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ signals:}
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ displayValueChanged(QString);}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ setDisplayValue(QString\ value);}
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ clearDisplayValue();}
-\DoxyCodeLine{00034\ \ \ \ \ qint32\ \_addDigit(QString\ digit);}
-\DoxyCodeLine{00035\ \ \ \ \ qint32\ \_removeLastDigit();}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ isIncorrect(QString\ rawHmsi);}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00039\ \textcolor{comment}{//\ Variables\ membres}}
-\DoxyCodeLine{00040\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00041\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00042\ \ \ \ \ QString\ mDisplayValue;\ \ \ \ \ \ }
-\DoxyCodeLine{00043\ \ \ \ \ QString\ mName;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00044\ \ \ \ \ Unites::Units\ mUnit;\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{long}\ mMaxValue;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00019\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ addDigit(QString\ digit);}
+\DoxyCodeLine{00020\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ removeLastDigit();}
+\DoxyCodeLine{00021\ \ \ \ \ Q\_INVOKABLE\ QString\ getName();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ QString\ displayValue()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{double}\ getFrameRate();}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ length();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ setValue(qint64\ value);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ signals:}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ displayValueChanged(QString);\ \ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ setValeurPivot(qint64);\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ setDisplayValue(QString\ value);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ clearDisplayValue();}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{bool}\ isIncorrect(QString\ rawHmsi);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00040\ \textcolor{comment}{//\ Variables\ membres}}
+\DoxyCodeLine{00041\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00042\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ \ \ QString\ mDisplayValue;\ \ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ QString\ mName;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ Unites::Units\ mUnit;\ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ mDecimals;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{double}\ mFrameRate;\ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{double}\ mConversionFacteur;\ \ }

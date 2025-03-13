@@ -16,40 +16,43 @@ void \textbf{ set\+Value} (qint64 value)
 \item 
 \label{class_afficheur_ae45395415367793477d2513c3ff93c1e} 
 void {\bfseries display\+Value\+Changed} (QString)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Envoi au QML d\textquotesingle{}une nouvelle valeur à afficher. \end{DoxyCompactList}\item 
+\label{class_afficheur_a7e46f335aef2788e724a1f8960fc7e3a} 
+void {\bfseries set\+Valeur\+Pivot} (qint64)
+\begin{DoxyCompactList}\small\item\em Envoi à l\textquotesingle{}opérande d\textquotesingle{}une nouvelle valeur pivot. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
 \textbf{ Afficheur} (Unites\+::\+Units unit, QObject $\ast$parent=nullptr)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
 Q\+\_\+\+INVOKABLE void \textbf{ set\+Frame\+Rate} (double framerate)
+\begin{DoxyCompactList}\small\item\em Permet de changer dynamiquement le framerate des afficheurs HMSI. \end{DoxyCompactList}\item 
+Q\+\_\+\+INVOKABLE void \textbf{ add\+Digit} (QString digit)
+\begin{DoxyCompactList}\small\item\em Ajoute un digit à la fin de la chaine de caractères. La nouvelle valeur Pivot, si elle a changé. \end{DoxyCompactList}\item 
+Q\+\_\+\+INVOKABLE void \textbf{ remove\+Last\+Digit} ()
+\item 
+Q\+\_\+\+INVOKABLE QString \textbf{ get\+Name} ()
 \item 
 QString \textbf{ display\+Value} () const
-\item 
-QString \textbf{ get\+Name} ()
 \item 
 double \textbf{ get\+Frame\+Rate} ()
 \item 
 int \textbf{ length} ()
-\end{DoxyCompactItemize}
-\doxysubsubsection*{Fonctions membres protégées}
-\begin{DoxyCompactItemize}
-\item 
-void \textbf{ set\+Display\+Value} (QString value)
-\item 
-void \textbf{ clear\+Display\+Value} ()
-\item 
-qint32 \textbf{ \+\_\+add\+Digit} (QString digit)
-\item 
-qint32 \textbf{ \+\_\+remove\+Last\+Digit} ()
-\item 
-bool \textbf{ is\+Incorrect} (QString raw\+Hmsi)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Propriétés}
 \begin{DoxyCompactItemize}
 \item 
 \label{class_afficheur_a267e4cc8fb819202e04465d244c4d3d8} 
 QString {\bfseries display\+Value}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Fonctions membres privées}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ set\+Display\+Value} (QString value)
+\item 
+void \textbf{ clear\+Display\+Value} ()
+\item 
+bool \textbf{ is\+Incorrect} (QString raw\+Hmsi)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Attributs privés}
 \begin{DoxyCompactItemize}
@@ -59,13 +62,10 @@ QString {\bfseries m\+Display\+Value}
 \begin{DoxyCompactList}\small\item\em La valeur à afficher (String) \end{DoxyCompactList}\item 
 \label{class_afficheur_a8ecde2d43572490c141f08ac1a823680} 
 QString {\bfseries m\+Name}
-\begin{DoxyCompactList}\small\item\em Le nom de l\textquotesingle{}afficheur. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Le nom de l\textquotesingle{}unité utilisée par cet afficheur. \end{DoxyCompactList}\item 
 \label{class_afficheur_abf62ef7d11ce13b233fd7edd33d820d1} 
 Unites\+::\+Units {\bfseries m\+Unit}
 \begin{DoxyCompactList}\small\item\em Unité utilisée par cet afficheur. \end{DoxyCompactList}\item 
-\label{class_afficheur_ab4a880ad6352f46770ca42338ba4e65a} 
-long {\bfseries m\+Max\+Value}
-\begin{DoxyCompactList}\small\item\em Valeur numérique maximale autorisée. \end{DoxyCompactList}\item 
 \label{class_afficheur_a7f7f3675bdd84facdafcc5d12a1d2f5e} 
 int {\bfseries m\+Decimals}
 \begin{DoxyCompactList}\small\item\em Nombre de chiffres après la virgule. \end{DoxyCompactList}\item 
@@ -84,44 +84,40 @@ double {\bfseries m\+Conversion\+Facteur}
 \doxysubsubsection{Afficheur()}
 {\footnotesize\ttfamily Afficheur\+::\+Afficheur (\begin{DoxyParamCaption}\item[{Unites\+::\+Units}]{unit,  }\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
+
+
+Constructeur. 
+
 \DoxyHorRuler{0}
- Constructeur 
+ 
 \begin{DoxyParams}{Paramètres}
-{\em unit} & \+: l\textquotesingle{}unité correspondante à cet afficheur \\
+{\em unit} & \+: l\textquotesingle{}unité correspondante à cet afficheur. \\
 \hline
 \end{DoxyParams}
 
 
 \doxysubsection{Documentation des fonctions membres}
-\label{class_afficheur_ac80cbbcac9a27e7a18ec760f87778d27} 
-\index{Afficheur@{Afficheur}!\_addDigit@{\_addDigit}}
-\index{\_addDigit@{\_addDigit}!Afficheur@{Afficheur}}
-\doxysubsubsection{\_addDigit()}
-{\footnotesize\ttfamily qint32 Afficheur\+::\+\_\+add\+Digit (\begin{DoxyParamCaption}\item[{QString}]{digit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+\label{class_afficheur_a41a7fd306f2aca734d7d82829b7ba000} 
+\index{Afficheur@{Afficheur}!addDigit@{addDigit}}
+\index{addDigit@{addDigit}!Afficheur@{Afficheur}}
+\doxysubsubsection{addDigit()}
+{\footnotesize\ttfamily void Afficheur\+::add\+Digit (\begin{DoxyParamCaption}\item[{QString}]{digit }\end{DoxyParamCaption})}
 
-Ajoute un digit à la fin de la chaine de caractères 
-\begin{DoxyParams}{Paramètres}
-{\em digit} & le caractère digit à ajouter \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Renvoie}
-Retourne la nouvelle valeur Pivot, ou \textquotesingle{}null\textquotesingle{} si elle ne change pas 
-\end{DoxyReturn}
-\label{class_afficheur_a67e1353edeba675150b95541d6205dcf} 
-\index{Afficheur@{Afficheur}!\_removeLastDigit@{\_removeLastDigit}}
-\index{\_removeLastDigit@{\_removeLastDigit}!Afficheur@{Afficheur}}
-\doxysubsubsection{\_removeLastDigit()}
-{\footnotesize\ttfamily qint32 Afficheur\+::\+\_\+remove\+Last\+Digit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+Ajoute un digit à la fin de la chaine de caractères. La nouvelle valeur Pivot, si elle a changé. 
 
 \DoxyHorRuler{0}
- Enlève un digit à la fin de la chaine de caractères. \begin{DoxyReturn}{Renvoie}
-la nouvelle valeur pivot 
-\end{DoxyReturn}
+ 
+\begin{DoxyParams}{Paramètres}
+{\em digit} & Le caractère digit à ajouter. \\
+\hline
+\end{DoxyParams}
 \label{class_afficheur_a1ea55697a9f4d9564f97c7f2166b8b59} 
 \index{Afficheur@{Afficheur}!clearDisplayValue@{clearDisplayValue}}
 \index{clearDisplayValue@{clearDisplayValue}!Afficheur@{Afficheur}}
 \doxysubsubsection{clearDisplayValue()}
-{\footnotesize\ttfamily void Afficheur\+::clear\+Display\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily void Afficheur\+::clear\+Display\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 \DoxyHorRuler{0}
  Vide la chaine à afficher. \label{class_afficheur_a93fe4df4b0930bb7ff765eb4b8ced871} 
@@ -151,14 +147,14 @@ framerate utilisé pour cet afficheur (ex\+: 25.\+0)
 {\footnotesize\ttfamily QString Afficheur\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 \DoxyHorRuler{0}
- Renvoie le libellé de l\textquotesingle{}unité correspondant à cet afficheur. \begin{DoxyReturn}{Renvoie}
+ Renvoie le libellé de l\textquotesingle{}unité correspondant à cet afficheur. NOT USED \begin{DoxyReturn}{Renvoie}
 the name of the unit 
 \end{DoxyReturn}
 \label{class_afficheur_aad454ea19d00612c44757421e77cc92a} 
 \index{Afficheur@{Afficheur}!isIncorrect@{isIncorrect}}
 \index{isIncorrect@{isIncorrect}!Afficheur@{Afficheur}}
 \doxysubsubsection{isIncorrect()}
-{\footnotesize\ttfamily bool Afficheur\+::is\+Incorrect (\begin{DoxyParamCaption}\item[{QString}]{raw\+Hmsi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily bool Afficheur\+::is\+Incorrect (\begin{DoxyParamCaption}\item[{QString}]{raw\+Hmsi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 \DoxyHorRuler{0}
  Indique si le HMSI a besoin d\textquotesingle{}être rectifié cad si minutes $>$ 59 ou secondes $>$ 59 ou images $>$ 24. 
@@ -179,13 +175,21 @@ true if HMSI needs to be rectified
  Renvoie le nombre de digits déjà présents dans la string. \begin{DoxyReturn}{Renvoie}
 the number of digits in the string. 
 \end{DoxyReturn}
-\label{class_afficheur_a1febcab84022b164924aa0c31a61982a} 
+\label{class_afficheur_a148f1edabb9e6b7e22e3219896c3696e} 
+\index{Afficheur@{Afficheur}!removeLastDigit@{removeLastDigit}}
+\index{removeLastDigit@{removeLastDigit}!Afficheur@{Afficheur}}
+\doxysubsubsection{removeLastDigit()}
+{\footnotesize\ttfamily void Afficheur\+::remove\+Last\+Digit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\DoxyHorRuler{0}
+ Enlève un digit à la fin de la chaine de caractères. La nouvelle valeur pivot est envoyée à l\textquotesingle{}opérande (si elle a changé). \label{class_afficheur_a1febcab84022b164924aa0c31a61982a} 
 \index{Afficheur@{Afficheur}!setDisplayValue@{setDisplayValue}}
 \index{setDisplayValue@{setDisplayValue}!Afficheur@{Afficheur}}
 \doxysubsubsection{setDisplayValue()}
-{\footnotesize\ttfamily void Afficheur\+::set\+Display\+Value (\begin{DoxyParamCaption}\item[{QString}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily void Afficheur\+::set\+Display\+Value (\begin{DoxyParamCaption}\item[{QString}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Mémorise et propage la string à afficher. 
+\DoxyHorRuler{0}
+ Mémorise et propage la string à afficher vers le QML . 
 \begin{DoxyParams}{Paramètres}
 {\em value} & La valeur exprimée dans l\textquotesingle{}unité de cet afficheur. \\
 \hline
@@ -196,7 +200,15 @@ Mémorise et propage la string à afficher.
 \doxysubsubsection{setFrameRate()}
 {\footnotesize\ttfamily void Afficheur\+::set\+Frame\+Rate (\begin{DoxyParamCaption}\item[{double}]{framerate }\end{DoxyParamCaption})}
 
-Permet de changer dynamiquement le framerate des afficheurs HMSI. Attention\+: voir aussi recalculate\+Valeur\+Pivot() de la classe fille. 
+
+
+Permet de changer dynamiquement le framerate des afficheurs HMSI. 
+
+\DoxyHorRuler{0}
+ \begin{DoxyNote}{Note}
+Attention\+: voir aussi recalculate\+Valeur\+Pivot() de la classe fille. 
+\end{DoxyNote}
+
 \begin{DoxyParams}{Paramètres}
 {\em framerate} & le nouveau framerate pour cet afficheur (ex\+: 25.\+0) \\
 \hline

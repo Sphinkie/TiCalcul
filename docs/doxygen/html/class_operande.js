@@ -13,6 +13,7 @@ var class_operande =
     [ "a6", "class_operande.html#aa920dd0451ab913df955351ec07ebf76", null ],
     [ "a7", "class_operande.html#a23764a7e739264acb90d28da17529454", null ],
     [ "a8", "class_operande.html#ae1712f194122c4d8fa41f40429e10c4f", null ],
+    [ "mMaxValue", "class_operande.html#a70e3f32a53ef431ef6d7f9ba89ee84c9", null ],
     [ "mName", "class_operande.html#ae227137bd368c38b738f4f55937bc491", null ],
     [ "mValeurPivot", "class_operande.html#a3b1ebec95f0109ff35fb9d2fe30f3f87", null ]
 ];

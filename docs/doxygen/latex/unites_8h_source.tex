@@ -33,40 +33,24 @@
 \DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_25,\ Converter::us\_PerFrame25\}\ ,\ \{FRAMES\_50,Converter::us\_PerFrame50\},\ \{FRAMES\_NTSC,\ Converter::us\_PerFrameNTSC\},}
 \DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \{SECONDS,\ Converter::us\_PerSecond\},\ \{MILLISECONDS,1000\},\ \{MICROSECONDS,1\}}
 \DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{inline}\ QMap<Units,\ qint64>\ maxValue\ =\ \{}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \{HMSI,99999999\},\ \{DHMSM,99999999\},}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_25,\ 99\ *\ 60\ *\ 60\ *\ 25\}\ ,\ \{FRAMES\_50,\ 99\ *\ 60\ *\ 60\ *\ 50\},\ \{FRAMES\_NTSC,\ 99\ *\ 60\ *\ 60\ *\ 30\},}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \{SECONDS,\ 99\ *\ 60\ *\ 60\},\ \{MILLISECONDS,\ 99\ *\ 60\ *\ 60\ *\ 1000\},\ \{MICROSECONDS,\ 99\ *\ 60\ *\ 60\ *\ (qint64)(1000000)\}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{inline}\ QMap<Units,\ double>\ frameRate\ =\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \{HMSI,25.0\},\ \{DHMSM,25.0\},}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_25,\ 25.0\}\ ,\ \{FRAMES\_50,\ 50.0\},\ \{FRAMES\_NTSC,\ 30.0\},}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \{SECONDS,1.0\},\ \{MILLISECONDS,\ 1000.0\},\ \{MICROSECONDS,\ 1000000.0\}}
 \DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{inline}\ QMap<Units,\ double>\ frameRate\ =\ \{}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \{HMSI,25.0\},\ \{DHMSM,25.0\},}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_25,\ 25.0\}\ ,\ \{FRAMES\_50,\ 50.0\},\ \{FRAMES\_NTSC,\ 30.0\},}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \{SECONDS,1.0\},\ \{MILLISECONDS,\ 1000.0\},\ \{MICROSECONDS,\ 1000000.0\}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{inline}\ QMap<Units,\ qint8>\ nbDecimals\ =\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \{HMSI,\ 0\},\ \{DHMSM,\ 0\},}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_25,\ 0\}\ ,\ \{FRAMES\_50,\ 0\},\ \{FRAMES\_NTSC,\ 0\},}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \{SECONDS,\ 3\},\ \{MILLISECONDS,\ 0\},\ \{MICROSECONDS,\ 0\}}
 \DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{inline}\ QMap<Units,\ qint8>\ nbDecimals\ =\ \{}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \{HMSI,\ 0\},\ \{DHMSM,\ 0\},}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_25,\ 0\}\ ,\ \{FRAMES\_50,\ 0\},\ \{FRAMES\_NTSC,\ 0\},}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \{SECONDS,\ 3\},\ \{MILLISECONDS,\ 0\},\ \{MICROSECONDS,\ 0\}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{inline}\ QMap<Units,\ QString>\ name\ =\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \{HMSI,\textcolor{stringliteral}{"{}HMSI"{}}\},\ \{DHMSM,\textcolor{stringliteral}{"{}DHMSM"{}}\},}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_25,\ \textcolor{stringliteral}{"{}FRAMES\_25"{}}\}\ ,\ \{FRAMES\_50,\ \textcolor{stringliteral}{"{}FRAMES\_50"{}}\},\ \{FRAMES\_NTSC,\ \textcolor{stringliteral}{"{}FRAMES\_NTSC"{}}\},}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \{SECONDS,\ \textcolor{stringliteral}{"{}SECONDS"{}}\},\ \{MILLISECONDS,\ \textcolor{stringliteral}{"{}MILLISECONDS"{}}\},\ \{MICROSECONDS,\ \textcolor{stringliteral}{"{}MICROSECONDS"{}}\}}
 \DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{inline}\ QMap<Units,\ QString>\ name\ =\ \{}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \{HMSI,\textcolor{stringliteral}{"{}HMSI"{}}\},\ \{DHMSM,\textcolor{stringliteral}{"{}DHMSM"{}}\},}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_25,\ \textcolor{stringliteral}{"{}FRAMES\_25"{}}\}\ ,\ \{FRAMES\_50,\ \textcolor{stringliteral}{"{}FRAMES\_50"{}}\},\ \{FRAMES\_NTSC,\ \textcolor{stringliteral}{"{}FRAMES\_NTSC"{}}\},}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \{SECONDS,\ \textcolor{stringliteral}{"{}SECONDS"{}}\},\ \{MILLISECONDS,\ \textcolor{stringliteral}{"{}MILLISECONDS"{}}\},\ \{MICROSECONDS,\ \textcolor{stringliteral}{"{}MICROSECONDS"{}}\}}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00052\ }
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{/*\ ****************************************************************}}
-\DoxyCodeLine{00055\ \textcolor{comment}{\ \ \ \ \ *\ Fonction\ d'initialisation\ des\ tables}}
-\DoxyCodeLine{00056\ \textcolor{comment}{\ \ \ \ \ *\ NOTE\ :\ A\ supprimer}}
-\DoxyCodeLine{00057\ \textcolor{comment}{\ \ \ \ \ *\ ****************************************************************\ */}}
-\DoxyCodeLine{00058\ \ \ \ \ private\ :}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ InitMaxValue();}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ InitUsPerUnit();}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ InitframeRate();}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ InitNbDecimals();}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ InitNames();}
-\DoxyCodeLine{00064\ \};}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UNITES\_H}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UNITES\_H}}
 
 \end{DoxyCode}

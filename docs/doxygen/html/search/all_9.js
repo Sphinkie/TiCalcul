@@ -8,7 +8,7 @@ var searchData=
   ['microsecstoframes_5',['microsecsToFrames',['../class_converter.html#a60aa41dfc1c8dc243c5a77b0a7b028cd',1,'Converter']]],
   ['microsecstomillis_6',['microsecsToMillis',['../class_converter.html#a86dee168a90505a4c062d3e20513fa64',1,'Converter']]],
   ['microsecstoseconds_7',['microsecsToSeconds',['../class_converter.html#a37fc12a03265e9200c1fd329b2a03b85',1,'Converter']]],
-  ['mmaxvalue_8',['mMaxValue',['../class_afficheur.html#ab4a880ad6352f46770ca42338ba4e65a',1,'Afficheur']]],
+  ['mmaxvalue_8',['mMaxValue',['../class_operande.html#a70e3f32a53ef431ef6d7f9ba89ee84c9',1,'Operande']]],
   ['mname_9',['mname',['../class_afficheur.html#a8ecde2d43572490c141f08ac1a823680',1,'Afficheur::mName'],['../class_operande.html#ae227137bd368c38b738f4f55937bc491',1,'Operande::mName']]],
   ['munit_10',['mUnit',['../class_afficheur.html#abf62ef7d11ce13b233fd7edd33d820d1',1,'Afficheur']]],
   ['mvaleurpivot_11',['mValeurPivot',['../class_operande.html#a3b1ebec95f0109ff35fb9d2fe30f3f87',1,'Operande']]]

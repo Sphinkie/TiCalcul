@@ -17,30 +17,32 @@
 \DoxyCodeLine{00017\ \ \ \ \ Q\_OBJECT}
 \DoxyCodeLine{00018\ }
 \DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00020\ \ \ \ \ Operande(QString\ name,\ QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \ \ \ \ qint64\ valeurPivot()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ setValeurPivot(qint64\ newValeurPivot);}
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ registerContext(QQmlContext*\ context);}
-\DoxyCodeLine{00025\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ clear();}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ signals:}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ valeurPivotChanged(qint64);}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00031\ \ \ \ \ qint64\ mValeurPivot;\ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{explicit}\ Operande(QString\ name,\ QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00021\ \ \ \ \ qint64\ valeurPivot()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ registerContext(QQmlContext*\ context);}
+\DoxyCodeLine{00023\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ clear();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ setValeurPivot(qint64\ newValeurPivot);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ signals:}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ valeurPivotChanged(qint64);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{private}:}
 \DoxyCodeLine{00032\ \ \ \ \ QString\ mName;\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \ \ \ \ Afficheur*\ a1;\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00035\ \ \ \ \ Afficheur*\ a2;\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00036\ \ \ \ \ Afficheur*\ a3;\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00037\ \ \ \ \ Afficheur*\ a4;\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00038\ \ \ \ \ Afficheur*\ a5;\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00039\ \ \ \ \ Afficheur*\ a6;\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00040\ \ \ \ \ Afficheur*\ a7;\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00041\ \ \ \ \ Afficheur*\ a8;\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00042\ \};}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ OPERANDE\_H}}
+\DoxyCodeLine{00033\ \ \ \ \ qint64\ mValeurPivot;\ \ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{const}\ qint64\ mMaxValue\ =\ 356400000000;\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ Afficheur*\ a1;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ Afficheur*\ a2;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ Afficheur*\ a3;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ Afficheur*\ a4;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00041\ \ \ \ \ Afficheur*\ a5;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00042\ \ \ \ \ Afficheur*\ a6;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00043\ \ \ \ \ Afficheur*\ a7;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ Afficheur*\ a8;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00045\ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ OPERANDE\_H}}
 
 \end{DoxyCode}

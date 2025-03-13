@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['length_0',['length',['../class_afficheur.html#a4c23afc166196f8243caeffba994b52b',1,'Afficheur']]]
+  ['microseconds_0',['microseconds',['../class_converter.html#a109a980de80e57be6c7f9589ae58b16f',1,'Converter']]],
+  ['microsecstoframes_1',['microsecsToFrames',['../class_converter.html#a60aa41dfc1c8dc243c5a77b0a7b028cd',1,'Converter']]],
+  ['microsecstomillis_2',['microsecsToMillis',['../class_converter.html#a86dee168a90505a4c062d3e20513fa64',1,'Converter']]],
+  ['microsecstoseconds_3',['microsecsToSeconds',['../class_converter.html#a37fc12a03265e9200c1fd329b2a03b85',1,'Converter']]]
 ];

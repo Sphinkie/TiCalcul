@@ -124,56 +124,34 @@ $(document).ready(function(){initNavTree('unites_8h_source.html',''); initResiza
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        };</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <a class="code hl_function" href="class_unites.html#aafc84f362a1b78bd6f2276ee04d249c8">Unites</a>();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <a class="code hl_class" href="class_unites.html">Unites</a>();</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">inline</span> QMap&lt;Units, qint32&gt; usPerUnit ={</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            {HMSI, Converter::us_PerFrame25}, {DHMSM, Converter::us_PerFrame25},</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            {FRAMES_25, Converter::us_PerFrame25} , {FRAMES_50,Converter::us_PerFrame50}, {FRAMES_NTSC, Converter::us_PerFrameNTSC},</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            {SECONDS, Converter::us_PerSecond}, {MILLISECONDS,1000}, {MICROSECONDS,1}</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        };</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">inline</span> QMap&lt;Units, qint64&gt; maxValue = {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            {HMSI,99999999}, {DHMSM,99999999},</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            {FRAMES_25, 99 * 60 * 60 * 25} , {FRAMES_50, 99 * 60 * 60 * 50}, {FRAMES_NTSC, 99 * 60 * 60 * 30},</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            {SECONDS, 99 * 60 * 60}, {MILLISECONDS, 99 * 60 * 60 * 1000}, {MICROSECONDS, 99 * 60 * 60 * (qint64)(1000000)}</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">inline</span> QMap&lt;Units, double&gt; frameRate = {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            {HMSI,25.0}, {DHMSM,25.0},</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            {FRAMES_25, 25.0} , {FRAMES_50, 50.0}, {FRAMES_NTSC, 30.0},</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            {SECONDS,1.0}, {MILLISECONDS, 1000.0}, {MICROSECONDS, 1000000.0}</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        };</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">inline</span> QMap&lt;Units, double&gt; frameRate = {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            {HMSI,25.0}, {DHMSM,25.0},</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            {FRAMES_25, 25.0} , {FRAMES_50, 50.0}, {FRAMES_NTSC, 30.0},</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            {SECONDS,1.0}, {MILLISECONDS, 1000.0}, {MICROSECONDS, 1000000.0}</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">inline</span> QMap&lt;Units, qint8&gt; nbDecimals = {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            {HMSI, 0}, {DHMSM, 0},</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            {FRAMES_25, 0} , {FRAMES_50, 0}, {FRAMES_NTSC, 0},</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            {SECONDS, 3}, {MILLISECONDS, 0}, {MICROSECONDS, 0}</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        };</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">inline</span> QMap&lt;Units, qint8&gt; nbDecimals = {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            {HMSI, 0}, {DHMSM, 0},</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            {FRAMES_25, 0} , {FRAMES_50, 0}, {FRAMES_NTSC, 0},</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            {SECONDS, 3}, {MILLISECONDS, 0}, {MICROSECONDS, 0}</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">inline</span> QMap&lt;Units, QString&gt; name = {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            {HMSI,<span class="stringliteral">&quot;HMSI&quot;</span>}, {DHMSM,<span class="stringliteral">&quot;DHMSM&quot;</span>},</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            {FRAMES_25, <span class="stringliteral">&quot;FRAMES_25&quot;</span>} , {FRAMES_50, <span class="stringliteral">&quot;FRAMES_50&quot;</span>}, {FRAMES_NTSC, <span class="stringliteral">&quot;FRAMES_NTSC&quot;</span>},</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            {SECONDS, <span class="stringliteral">&quot;SECONDS&quot;</span>}, {MILLISECONDS, <span class="stringliteral">&quot;MILLISECONDS&quot;</span>}, {MICROSECONDS, <span class="stringliteral">&quot;MICROSECONDS&quot;</span>}</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        };</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">inline</span> QMap&lt;Units, QString&gt; name = {</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            {HMSI,<span class="stringliteral">&quot;HMSI&quot;</span>}, {DHMSM,<span class="stringliteral">&quot;DHMSM&quot;</span>},</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            {FRAMES_25, <span class="stringliteral">&quot;FRAMES_25&quot;</span>} , {FRAMES_50, <span class="stringliteral">&quot;FRAMES_50&quot;</span>}, {FRAMES_NTSC, <span class="stringliteral">&quot;FRAMES_NTSC&quot;</span>},</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            {SECONDS, <span class="stringliteral">&quot;SECONDS&quot;</span>}, {MILLISECONDS, <span class="stringliteral">&quot;MILLISECONDS&quot;</span>}, {MICROSECONDS, <span class="stringliteral">&quot;MICROSECONDS&quot;</span>}</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        };</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="comment">/* ****************************************************************</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">     * Fonction d&#39;initialisation des tables</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">     * NOTE : A supprimer</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">     * **************************************************************** */</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    private :</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_unites.html#aa8b45b906a36f995d988504ff60fead3">InitMaxValue</a>();</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_unites.html#af05c4e9a6ba704f4056a3c3ecbc37aa1">InitUsPerUnit</a>();</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_unites.html#aed3c993fbc2987aa5a93158749eb0157">InitframeRate</a>();</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_unites.html#aeb707677d0aa3d675f151402d1e430cc">InitNbDecimals</a>();</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_unites.html#a9688ccb84c28a74c9eb97ee6a7019701">InitNames</a>();</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>};</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>};</div>
 </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">#endif </span><span class="comment">// UNITES_H</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#endif </span><span class="comment">// UNITES_H</span></div>
 <div class="ttc" id="aclass_unites_html"><div class="ttname"><a href="class_unites.html">Unites</a></div><div class="ttdef"><b>Definition</b> unites.h:8</div></div>
-<div class="ttc" id="aclass_unites_html_a9688ccb84c28a74c9eb97ee6a7019701"><div class="ttname"><a href="class_unites.html#a9688ccb84c28a74c9eb97ee6a7019701">Unites::InitNames</a></div><div class="ttdeci">static void InitNames()</div><div class="ttdoc">Unites::InitNames initialise la map name qui fournit le nom de l'unité sous forme de string.</div><div class="ttdef"><b>Definition</b> unites.cpp:94</div></div>
-<div class="ttc" id="aclass_unites_html_aa8b45b906a36f995d988504ff60fead3"><div class="ttname"><a href="class_unites.html#aa8b45b906a36f995d988504ff60fead3">Unites::InitMaxValue</a></div><div class="ttdeci">static void InitMaxValue()</div><div class="ttdoc">Unites::InitMaxValue initialise la map maxValue qui fournit la valeur max autorisée pour l'unité....</div><div class="ttdef"><b>Definition</b> unites.cpp:45</div></div>
-<div class="ttc" id="aclass_unites_html_aafc84f362a1b78bd6f2276ee04d249c8"><div class="ttname"><a href="class_unites.html#aafc84f362a1b78bd6f2276ee04d249c8">Unites::Unites</a></div><div class="ttdeci">Unites()</div><div class="ttdef"><b>Definition</b> unites.cpp:13</div></div>
-<div class="ttc" id="aclass_unites_html_aeb707677d0aa3d675f151402d1e430cc"><div class="ttname"><a href="class_unites.html#aeb707677d0aa3d675f151402d1e430cc">Unites::InitNbDecimals</a></div><div class="ttdeci">static void InitNbDecimals()</div><div class="ttdoc">Unites::InitNbDecimals initialise la map nbDecimals qui fournit le nombre de chiffres après la virgul...</div><div class="ttdef"><b>Definition</b> unites.cpp:78</div></div>
-<div class="ttc" id="aclass_unites_html_aed3c993fbc2987aa5a93158749eb0157"><div class="ttname"><a href="class_unites.html#aed3c993fbc2987aa5a93158749eb0157">Unites::InitframeRate</a></div><div class="ttdeci">static void InitframeRate()</div><div class="ttdoc">Unites::InitframeRate initialise la map frameRate qui fournit le nombre d'unités par seconde....</div><div class="ttdef"><b>Definition</b> unites.cpp:62</div></div>
-<div class="ttc" id="aclass_unites_html_af05c4e9a6ba704f4056a3c3ecbc37aa1"><div class="ttname"><a href="class_unites.html#af05c4e9a6ba704f4056a3c3ecbc37aa1">Unites::InitUsPerUnit</a></div><div class="ttdeci">static void InitUsPerUnit()</div><div class="ttdoc">Unites::InitUsPerUnit initialise la map usPerUnit qui fournit le nombre de microseconds par unité.</div><div class="ttdef"><b>Definition</b> unites.cpp:28</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

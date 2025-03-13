@@ -15,6 +15,11 @@ Graphe d\textquotesingle{}héritage de Operande\+:\begin{figure}[H]
 \includegraphics[height=2.000000cm]{class_operande}
 \end{center}
 \end{figure}
+\doxysubsubsection*{Connecteurs publics}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ set\+Valeur\+Pivot} (qint64 new\+Valeur\+Pivot)
+\begin{DoxyCompactList}\small\item\em Reçoit et propage la nouvelle valeur pivot aux afficheurs. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Signaux}
 \begin{DoxyCompactItemize}
 \item 
@@ -28,22 +33,21 @@ void {\bfseries valeur\+Pivot\+Changed} (qint64)
 \begin{DoxyCompactList}\small\item\em Constructeur\+: crée les 8 afficheurs de cet opérande, et les connecte pour leur envoyer un signal à chaque modification de la valeur pivot. \end{DoxyCompactList}\item 
 qint64 \textbf{ valeur\+Pivot} () const
 \begin{DoxyCompactList}\small\item\em Renvoie la valeur Pivot (en microsecondes). \end{DoxyCompactList}\item 
-void \textbf{ set\+Valeur\+Pivot} (qint64 new\+Valeur\+Pivot)
-\begin{DoxyCompactList}\small\item\em Reçoit et propage la nouvelle valeur pivot aux afficheurs. \end{DoxyCompactList}\item 
 void \textbf{ register\+Context} (QQml\+Context $\ast$context)
 \begin{DoxyCompactList}\small\item\em Enregistre les afficheurs dans le contexte QML, pour pouvoir les afficher. \end{DoxyCompactList}\item 
-\label{class_operande_a78e5d567866e99f235880ba70122a5c8} 
-Q\+\_\+\+INVOKABLE void {\bfseries clear} ()
+Q\+\_\+\+INVOKABLE void \textbf{ clear} ()
 \begin{DoxyCompactList}\small\item\em Vide la valeur pivot. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Attributs privés}
 \begin{DoxyCompactItemize}
 \item 
-\label{class_operande_a3b1ebec95f0109ff35fb9d2fe30f3f87} 
-qint64 {\bfseries m\+Valeur\+Pivot}
-\begin{DoxyCompactList}\small\item\em Valeur pivot en microsecondes. \end{DoxyCompactList}\item 
 \label{class_operande_ae227137bd368c38b738f4f55937bc491} 
 QString {\bfseries m\+Name}
 \begin{DoxyCompactList}\small\item\em Vaut TC1 ou TC2. \end{DoxyCompactList}\item 
+\label{class_operande_a3b1ebec95f0109ff35fb9d2fe30f3f87} 
+qint64 {\bfseries m\+Valeur\+Pivot}
+\begin{DoxyCompactList}\small\item\em Valeur pivot en microsecondes. \end{DoxyCompactList}\item 
+const qint64 \textbf{ m\+Max\+Value} = 356400000000
+\item 
 \label{class_operande_aee4c22583af3683272f29e2da113f582} 
 \textbf{ Afficheur} $\ast$ {\bfseries a1}
 \begin{DoxyCompactList}\small\item\em \doxyref{Afficheur}{p.}{class_afficheur} en secondes. \end{DoxyCompactList}\item 
@@ -78,7 +82,7 @@ La class \doxyref{Operande}{p.}{class_operande} gère la "{}valeur pivot"{} (cad
 \index{Operande@{Operande}!Operande@{Operande}}
 \index{Operande@{Operande}!Operande@{Operande}}
 \doxysubsubsection{Operande()}
-{\footnotesize\ttfamily Operande\+::\+Operande (\begin{DoxyParamCaption}\item[{QString}]{name,  }\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Operande\+::\+Operande (\begin{DoxyParamCaption}\item[{QString}]{name,  }\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
@@ -97,6 +101,18 @@ L\textquotesingle{}afficheur NTSC est désactivé pour le moment.
 
 
 \doxysubsection{Documentation des fonctions membres}
+\label{class_operande_a78e5d567866e99f235880ba70122a5c8} 
+\index{Operande@{Operande}!clear@{clear}}
+\index{clear@{clear}!Operande@{Operande}}
+\doxysubsubsection{clear()}
+{\footnotesize\ttfamily void Operande\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Vide la valeur pivot. 
+
+\begin{DoxyRefDesc}{A faire}
+\item[\textbf{ A faire}]Mettre une valeur NULL \end{DoxyRefDesc}
 \label{class_operande_a8fd5799d50aa994d23700b09a9fd74fb} 
 \index{Operande@{Operande}!registerContext@{registerContext}}
 \index{registerContext@{registerContext}!Operande@{Operande}}
@@ -115,8 +131,8 @@ Enregistre les afficheurs dans le contexte QML, pour pouvoir les afficher.
 \label{class_operande_ab520957674371f6bc0fc7c0b25207a4f} 
 \index{Operande@{Operande}!setValeurPivot@{setValeurPivot}}
 \index{setValeurPivot@{setValeurPivot}!Operande@{Operande}}
-\doxysubsubsection{setValeurPivot()}
-{\footnotesize\ttfamily void Operande\+::set\+Valeur\+Pivot (\begin{DoxyParamCaption}\item[{qint64}]{new\+Valeur\+Pivot }\end{DoxyParamCaption})}
+\doxysubsubsection{setValeurPivot}
+{\footnotesize\ttfamily void Operande\+::set\+Valeur\+Pivot (\begin{DoxyParamCaption}\item[{qint64}]{new\+Valeur\+Pivot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
 
@@ -124,7 +140,7 @@ Reçoit et propage la nouvelle valeur pivot aux afficheurs.
 
 
 \begin{DoxyParams}{Paramètres}
-{\em new\+Valeur\+Pivot} & Timecode en microsecondes. \\
+{\em new\+Valeur\+Pivot} & Timecode en microsecondes. TODO remplacer le qint64 en quint64 \\
 \hline
 \end{DoxyParams}
 \label{class_operande_ae3f3a7950d8382daaf3c93cc1228e575} 
@@ -141,6 +157,15 @@ Renvoie la valeur Pivot (en microsecondes).
 the value in microseconds. 
 \end{DoxyReturn}
 
+
+\doxysubsection{Documentation des données membres}
+\label{class_operande_a70e3f32a53ef431ef6d7f9ba89ee84c9} 
+\index{Operande@{Operande}!mMaxValue@{mMaxValue}}
+\index{mMaxValue@{mMaxValue}!Operande@{Operande}}
+\doxysubsubsection{mMaxValue}
+{\footnotesize\ttfamily const qint64 Operande\+::m\+Max\+Value = 356400000000\hspace{0.3cm}{\ttfamily [private]}}
+
+Valeur pivot maximale autorisée (en microsecondes) = 99 heures. $>$ A noter que le uint32 est limité à 4.\+294.\+967.\+295. D\textquotesingle{}où l\textquotesingle{}utilisation du qint64 (long long) 
 
 La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
 \item 
