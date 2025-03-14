@@ -52,16 +52,14 @@ qint64 Converter::HMSItoMicroseconds(QString hmsi_string, double framerate)
  ****************************************************************************/
 qint64 Converter::convertRawHMSItoMicroseconds(QString hmsi, double framerate)
     {
-        // FIXME : completement no sense
-        qint64 microsecs = 0;
-        QString hmsi_num = QString::number(microsecs).leftJustified(8,' ');   // on complete avec des espaces
-        hmsi_num = hmsi_num.replace(' ', '0');  // on remplace les espaces par des '0'
+        qint64 microsecs;
+        QString hmsi_num = hmsi.leftJustified(8,'0');   // on complete avec des "0"
+        qDebug(qPrintable("filled Raw HMSI: " + hmsi_num));
         microsecs = hmsi_num.left(2).toInt() * us_PerHour;                  // [0..1] hours
         microsecs += hmsi_num.mid(2, 2).toInt() * us_PerMinute;             // [2..3] minutes
         microsecs += hmsi_num.mid(4, 2).toInt() * us_PerSecond;             // [4..5] seconds
         microsecs += hmsi_num.mid(6, 2).toInt() * (us_PerSecond/framerate); // [6..7] frames
         return microsecs;
-        // TODO: vérifier que le toInt fonctionne bien s'il y a des espaces
     }
 
  /** *************************************************************************

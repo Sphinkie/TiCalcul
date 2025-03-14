@@ -20,13 +20,13 @@ public:
     Q_INVOKABLE void removeLastDigit();
     Q_INVOKABLE QString getUnit() const;
 
-    QString displayValue() const;
     double getFrameRate() const;
     int length() const;
 
 public slots:
     void setValue(const qint64 microsecs);
     void clearValue();
+    void activeDisplay(Afficheur* afficheur);
 
 signals:
     void displayValueChanged();         //!< Indique au QML que la valeur à afficher a changé.
@@ -49,6 +49,7 @@ private:
     int mDecimals;              //!< Nombre de chiffres après la virgule
     double mFrameRate;          //!< Framerate utilisé (pour les afficheurs FRAMES et HMSI)
     double mConversionFacteur;  //!< Nombre de microseconds par unité
+    bool mIsActive;             //!< Indique si cet afficheur est en cours d'edition. Positionné par le QML.
 
 };
 

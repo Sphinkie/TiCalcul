@@ -1,10 +1,11 @@
+#include <QVariant>
 #include "afficheur.h"
 #include "converter.h"
 
-/*! ***************************************************************
+/*! **********************************************************************************************************
  * \brief Constructeur.
  * \param unit : l'unité correspondante à cet afficheur.
- *****************************************************************/
+ * ***********************************************************************************************************/
 Afficheur::Afficheur(Unites::Units unit, QObject *parent)
 {
     this->mDisplayValue = "UNDEFINED";
@@ -15,22 +16,22 @@ Afficheur::Afficheur(Unites::Units unit, QObject *parent)
     this->mConversionFacteur = Unites::usPerUnit.value(unit);
 }
 
-/*! ***************************************************************
+/*! **********************************************************************************************************
  * \brief Permet de changer dynamiquement le framerate des afficheurs HMSI.
  * \note Attention: voir aussi recalculateValeurPivot() de la classe fille.
  * \param framerate: le nouveau framerate pour cet afficheur (ex: 25.0)
- *****************************************************************/
+ * ***********************************************************************************************************/
 void Afficheur::setFrameRate(double framerate)
 {
     this->mFrameRate = framerate;
     this->mConversionFacteur = Converter::us_PerSecond / framerate;
 }
 
-/*! ***************************************************************
+/*! **********************************************************************************************************
  * \brief Ajoute un digit à la fin de la chaine de caractères.
  * \note  Met à jour la nouvelle valeur Pivot, si elle a changé.
  * \param digit: Le caractère digit à ajouter.
- ******************************************************************/
+ * ***********************************************************************************************************/
 void Afficheur::addDigit(QString digit)
 {
     // FIXME: on ne peut pas ajouter un (ou plusieurs) 0 après le point.
@@ -51,7 +52,8 @@ void Afficheur::addDigit(QString digit)
         // ------------------------------------------------------------------------
         // On convertit la string en microsecondes (ValeurPivot)
         // ------------------------------------------------------------------------
-        emit setValeurPivot(Converter::convertRawHMSItoMicroseconds(mRawHMSI, mFrameRate));
+        qint64 numericvalue = Converter::convertRawHMSItoMicroseconds(mRawHMSI, mFrameRate);
+        emit setValeurPivot(numericvalue);
         break;
     }
     case Unites::SECONDS:
@@ -123,20 +125,14 @@ void Afficheur::addDigit(QString digit)
     }
 }
 
-/*! ***************************************************************
+/*! **********************************************************************************************************
  * Enlève un digit à la fin de la chaine de caractères.
  * La nouvelle valeur pivot est envoyée à l'opérande (si elle a changé).
- ******************************************************************/
+ * ***********************************************************************************************************/
 void Afficheur::removeLastDigit()
 {
     int len = this->mDisplayValue.length();
     if (len == 0)     return ;
-    if (len == 1)
-    {
-        // TODO : emit (clearValeurPivot),
-        emit setValeurPivot(0);
-        return;
-    }
     // TODO : si on efface la première décimale, il faut laisser le point
     QString newStringValue;
     switch (mUnit)
@@ -158,26 +154,35 @@ void Afficheur::removeLastDigit()
     default:
     {
         // Autres units: on applique simplement le facteur de convertion
-        newStringValue = this->mRawNUM.chopped(1);  // Enleve le dernier caractère
-        qDebug(qPrintable("candidate: " + newStringValue));
-        bool flag;
+        this->mRawNUM.chop(1);  // Enleve le dernier caractère
+        qDebug(qPrintable("candidate: " + mRawNUM));
+        bool ok;
         // normalement, il n'y a pas d'espaces dans le RawNUM, mais par securité, on les enlève.
-        double numericValue = newStringValue.remove(' ').toDouble(&flag);
-        if (flag){
+        double numericValue = this->mRawNUM.remove(' ').toDouble(&ok);
+        if (ok){
             qint64 microsecValue = (qint64)(numericValue * this->mConversionFacteur);
             emit setValeurPivot(microsecValue);
-            return;
         }
-        else
-            qDebug(qPrintable("ERROR: removeLastDigit: converting '" + newStringValue + "' to numeric failed !"));
+        else {
+            qDebug(qPrintable("ERROR: removeLastDigit: converting '" + mRawNUM + "' to numeric failed. Replace with 0"));
+            emit setValeurPivot(0);        }
         break;
     }
     }
 }
 
-/*! ***************************************************************
- * Vide la chaine à afficher.
- ******************************************************************/
+/*! **********************************************************************************************************
+ * \brief retourne le nom de l'unité de cet afficheur.
+ * \returns the unit name.
+ * ***********************************************************************************************************/
+QString Afficheur::getUnit() const
+{
+    return mUnitName;
+}
+
+/*! **********************************************************************************************************
+ * \brief Vide la chaine à afficher.
+ * ***********************************************************************************************************/
 void Afficheur::clearDisplayValue()
 {
     this->setDisplayValue("");
@@ -185,32 +190,17 @@ void Afficheur::clearDisplayValue()
     mRawNUM.clear();
 }
 
-/*! ***************************************************************
- * Renvoie le champ textuel en cours de saisie.
- * \returns the currently edited text field.
- ******************************************************************/
-QString Afficheur::displayValue() const
-{/*
-    QString rawValue = this->mDisplayValue;
-    if (this->mUnit == Unites::HMSI)
-        // pour le HMSI: on doit compléter avec des .. et des :
-        return Converter::completeRawHMSIWithDots(rawValue);
-    else
-        return Converter::addSpaceSeparator(rawValue);
-*/
-    return "";
-}
 
-/*! ***************************************************************
+/*! **********************************************************************************************************
  * Retourne le framerate (utile pour les afficheurs HMSI).
  * \returns framerate utilisé pour cet afficheur (ex: 25.0)
- *****************************************************************/
+ * ***********************************************************************************************************/
 double Afficheur::getFrameRate() const
 {
     return this->mFrameRate;
 }
 
-/*! ***************************************************************
+/*! **********************************************************************************************************
  * Renvoie le nombre de digits déjà présents dans la string.
  * \returns the number of digits in the string.
  ******************************************************************/
@@ -219,7 +209,7 @@ int Afficheur::length() const
     return this->mDisplayValue.length();
 }
 
-/*! ***************************************************************
+/*! **********************************************************************************************************
  * Indique si le HMSI a besoin d'être rectifié
  * cad si minutes > 59 ou secondes > 59 ou images > 24.
  * \param rawHmsi : un RAW HMSI du type HHMMSSII
@@ -275,20 +265,10 @@ bool Afficheur::isIncorrect(const QString rawHmsi)
     return false;
 }
 
-/*! ***************************************************************
- * Renvoie le libellé de l'unité correspondant à cet afficheur. NOT USED
- * \returns the name of the unit
- ******************************************************************/
-QString Afficheur::getUnit() const
-{
-    return mUnitName;
-}
-
-/*! ***************************************************************
- * SLOT. Recoit la nouvelle valeur pivot de l'opérande, pour la connvertir
- * et l'envoyer à l'affichage.
+/*! **********************************************************************************************************
+ * \brief SLOT. Recoit la nouvelle valeur pivot de l'opérande, pour la convertir et l'envoyer à l'affichage.
  * \param microsecs: La valeur pivot en microsecondes.
- ******************************************************************/
+ * ***********************************************************************************************************/
 void Afficheur::setValue(const qint64 microsecs)
 {
     QString value = "DEFAULT VALUE";
@@ -321,29 +301,46 @@ void Afficheur::setValue(const qint64 microsecs)
     default:
         value="UNKNOWN UNIT";
     }
+    // On mémorise et on envoie à l'affichage QML.
     this->setDisplayValue(value);
 }
 
-/*!
- * \brief SLOT: Afficheur::clearValue
- */
+/*! **********************************************************************************************************
+ * \brief SLOT: Efface la valeur de l'afficheur, et ses variables privées.
+ * ***********************************************************************************************************/
 void Afficheur::clearValue()
 {
-    qDebug("clearValue received from Operande");
     mRawHMSI.clear();
     mRawNUM.clear();
     mDisplayValue.clear();
     emit displayValueChanged();
 }
 
-/*! ***************************************************************
- * Mémorise et propage la string à afficher vers le QML .
+/*! **********************************************************************************************************
+ * \brief SLOT: Actualise la variable isActive en cas de changement
+ * ***********************************************************************************************************/
+void Afficheur::activeDisplay(Afficheur* afficheur)
+{
+    mIsActive = (afficheur == this);
+    qDebug(qPrintable( mUnitName + " is active? " + QVariant(mIsActive).toString() ));
+}
+
+/*! **********************************************************************************************************
+ * \brief Mémorise et propage la string à afficher vers le QML.
  * \param value: La valeur exprimée dans l'unité de cet afficheur.
- ******************************************************************/
+ * ***********************************************************************************************************/
 void Afficheur::setDisplayValue(const QString value)
 {
     if (mUnit == Unites::HMSI)
-        mDisplayValue = Converter::completeRawHMSIWithDots(value);
+    {
+        if (mIsActive)
+            // On affiche la valeur en cours d'edition (mRawHMSi)
+            mDisplayValue = Converter::completeRawHMSIWithDots(mRawHMSI);
+        else {
+            // on affiche la valeur recue (complete)
+            mDisplayValue = Converter::completeRawHMSIWithDots(value);
+        }
+    }
     else
         mDisplayValue = Converter::addSpaceSeparator(value);
     emit displayValueChanged();

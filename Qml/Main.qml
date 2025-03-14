@@ -18,6 +18,8 @@ Window {
     Universal.foreground: Universal.Amber // Couleur forcée des boutons. Par défaut, ils sont en background foncé.
     Universal.background: Universal.Green // Couleur de fond
 
+    // signal activeDisplay(Afficheur afficheur)
+
 
     /*
       5 Nuances claires de la couleur de background

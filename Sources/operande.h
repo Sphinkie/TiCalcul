@@ -20,7 +20,7 @@ public:
     explicit Operande(const QString name, QObject *parent = nullptr);
     qint64 valeurPivot() const;
     void registerContext(QQmlContext* context);
-    Q_INVOKABLE void clear();
+    Q_INVOKABLE void clearValeurPivot();
 
 public slots:
     void setValeurPivot(const qint64 newValeurPivot);

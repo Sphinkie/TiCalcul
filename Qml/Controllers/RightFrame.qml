@@ -9,6 +9,7 @@ import "../Vues"
 RightFrameForm {
 
     btClear.onClicked: {
-        operandeTC2.clear()
+        console.log("TiButton btClear TC2 clicked ! ")
+        operandeTC2.clearValeurPivot()
     }
 }

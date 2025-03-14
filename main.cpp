@@ -58,9 +58,9 @@ int main(int argc, char* argv[])
                          QCoreApplication::exit(-1);
                      }, Qt::QueuedConnection);
 
-    operande_tc1.setValeurPivot(28650000);
-    operande_tc2.setValeurPivot(87545412880);
-    operande_res.setValeurPivot(120000000);
+//    operande_tc1.setValeurPivot(28650000);
+//    operande_tc2.setValeurPivot(87545412880);
+//    operande_res.setValeurPivot(120000000);
 
     // --------------------------------------
     // Démarrage du moteur.
