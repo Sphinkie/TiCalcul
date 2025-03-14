@@ -26,6 +26,7 @@ public:
 
 public slots:
     void setValue(const qint64 microsecs);
+    void clearValue();
 
 signals:
     void displayValueChanged();         //!< Indique au QML que la valeur à afficher a changé.

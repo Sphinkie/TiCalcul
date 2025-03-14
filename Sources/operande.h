@@ -27,6 +27,7 @@ public slots:
 
 signals:
     void valeurPivotChanged(qint64);
+    void valeurPivotCleared();
 
 private:
     QString mName;        //!< Vaut TC1 ou TC2 ou RESULT

@@ -28,36 +28,17 @@ void Afficheur::setFrameRate(double framerate)
 
 /*! ***************************************************************
  * \brief Ajoute un digit à la fin de la chaine de caractères.
- * La nouvelle valeur Pivot, si elle a changé.
+ * \note  Met à jour la nouvelle valeur Pivot, si elle a changé.
  * \param digit: Le caractère digit à ajouter.
  ******************************************************************/
 void Afficheur::addDigit(QString digit)
 {
     // FIXME: on ne peut pas ajouter un (ou plusieurs) 0 après le point.
-    // ------------------------------------------------------------
-    // Controles
-    // ------------------------------------------------------------
-    qDebug(qPrintable("addDigit: " + mDisplayValue + " + " + digit));
-    // ------------------------------------------------------------
-    // Si c'est un point et qu'il y en a déjà un: on l'ignore
-    if ((digit == ".") && mDisplayValue.contains("."))
-        return;
-    // ------------------------------------------------------------
-    // Si c'est un point et qu'on est au début: on traite comme "0."
-    if ((digit == ".") && mDisplayValue.isEmpty())
-        digit="0";
-    // ------------------------------------------------------------
-    // Si c'est un point, on n'a pas encore de chiffre derrière, on l'affiche aussitot.
-    if (digit == ".")
-    {
-        this->setDisplayValue(mDisplayValue.append('.'));
-        return;
-    }
-
-    QString newStringValue;
     switch (mUnit)
     {
     case Unites::HMSI:
+    {
+        qDebug(qPrintable("addDigit: " + mRawHMSI + " + " + digit));
         // ------------------------------------------------------------------------
         // S'il y a déjà 8 chiffres dans le HMSI: on n'en ajoute plus
         // ------------------------------------------------------------------------
@@ -65,114 +46,81 @@ void Afficheur::addDigit(QString digit)
         // ------------------------------------------------------------------------
         // On ajoute le digit à la string
         // ------------------------------------------------------------------------
-        newStringValue = mRawHMSI + digit;
-        qDebug(qPrintable("Raw HMSI candidate: " + newStringValue));
+        mRawHMSI.append(digit);
+        qDebug(qPrintable("Raw HMSI candidate: " + mRawHMSI));
         // ------------------------------------------------------------------------
         // On convertit la string en microsecondes (ValeurPivot)
         // ------------------------------------------------------------------------
-        emit setValeurPivot(Converter::convertRawHMSItoMicroseconds(newStringValue, mFrameRate));
+        emit setValeurPivot(Converter::convertRawHMSItoMicroseconds(mRawHMSI, mFrameRate));
         break;
+    }
     case Unites::SECONDS:
     {
+        qDebug(qPrintable("addDigit: " + mRawNUM + " + " + digit));
         // ------------------------------------------------------------------------
         // Si c'est un 00 et qu'on est au début: on l'ignore (Sauf pour HMSI)
         // ------------------------------------------------------------------------
-        if ((digit == "00") && mDisplayValue.isEmpty()) return;
+        if ((digit == "00") && mRawNUM.isEmpty()) return;
+        // ------------------------------------------------------------
+        // Si c'est un point et qu'il y en a déjà un: on l'ignore
+        // ------------------------------------------------------------
+        if ((digit == ".") && mRawNUM.contains("."))  return;
+        // ------------------------------------------------------------
+        // Si c'est un point et qu'on est au début: on traite comme "0."
+        // ------------------------------------------------------------
+        if ((digit == ".") && mRawNUM.isEmpty())      digit="0";
+        // ------------------------------------------------------------
+        // Si c'est un point, on n'a pas encore de chiffre derrière, on l'affiche aussitot.
+        // et on ne modifiepas la valeur pivot.
+        // ------------------------------------------------------------
+        if (digit == ".")
+        {
+            mDisplayValue.append('.');
+            mRawNUM.append('.');
+            this->setDisplayValue(mRawNUM);
+            return;
+        }
         // ------------------------------------------------------------------------
         // S'il y a dejà 3 décimales: on n'en ajoute plus
         // ------------------------------------------------------------------------
-        int pointPos = mDisplayValue.indexOf('.');
-        if ((pointPos > -1) && (pointPos < mDisplayValue.length()-3)) return;
+        int pointPos = mRawNUM.indexOf('.');
+        if ((pointPos > -1) && (pointPos < mRawNUM.length()-3)) return;
         // ------------------------------------------------------------------------
         // On ajoute le digit à la string
         // ------------------------------------------------------------------------
-        newStringValue = mDisplayValue + digit;
-        qDebug(qPrintable("candidate: " + newStringValue));
+        // newStringValue = mRawNUM + digit;
+        mRawNUM.append(digit);
+        qDebug(qPrintable("candidate: " + mRawNUM));
         // ------------------------------------------------------------------------
         // On convertit la string en microsecondes (ValeurPivot)
         // ------------------------------------------------------------------------
-        qint64 microsecValue = Converter::toMicroseconds(newStringValue, mConversionFacteur);
+        qint64 microsecValue = Converter::toMicroseconds(mRawNUM, mConversionFacteur);
         emit setValeurPivot(microsecValue);
         break;
     }
     default:
+        qDebug(qPrintable("addDigit: " + mRawNUM + " + " + digit));
         // ------------------------------------------------------------------------
         // Si c'est un zéro et qu'on est au début: on l'ignore
         // Sauf pour HMSI et SECONDS qui ont le droit de commencer par un "0"
         // ------------------------------------------------------------------------
-        if ((digit == "0") && mDisplayValue.isEmpty())            return;
+        if ((digit == "0") && mRawNUM.isEmpty())  return;
         // ------------------------------------------------------------
         // Si c'est un 00 et qu'on est au début: on l'ignore (Sauf pour HMSI)
         // ------------------------------------------------------------------------
-        if ((digit == "00") && mDisplayValue.isEmpty()) return;
+        if ((digit == "00") && mRawNUM.isEmpty()) return;
         // ------------------------------------------------------------------------
         // On ajoute le digit à la string
         // ------------------------------------------------------------------------
-        newStringValue = mDisplayValue + digit;
-        qDebug(qPrintable("candidate: " + newStringValue));
+        mRawNUM.append(digit);
+        qDebug(qPrintable("candidate: " + mRawNUM));
         // ------------------------------------------------------------------------
         // On convertit la string en microsecondes (ValeurPivot)
         // ------------------------------------------------------------------------
-        qint64 microsecValue = Converter::toMicroseconds(newStringValue, mConversionFacteur);
+        qint64 microsecValue = Converter::toMicroseconds(mRawNUM, mConversionFacteur);
         emit setValeurPivot(microsecValue);
         break;
     }
-
-
-    /*
-    // ------------------------------------------------------------
-    // Si c'est un zéro et qu'on est au début: on l'ignore
-    // Sauf pour HMSI et SECONDS qui ont le droit de commencer par un "0"
-    if ((this->mUnit != Unites::HMSI) && (this->mUnit != Unites::SECONDS))
-        if ((digit == "0") && mDisplayValue.isEmpty())            return;
-    // ------------------------------------------------------------
-    // Si c'est un 00 et qu'on est au début: on l'ignore (Sauf pour HMSI)
-    if ((this->mUnit != Unites::HMSI) && (digit == "00") && mDisplayValue.isEmpty()) return;
-    // ------------------------------------------------------------
-    // S'il y a dejà 3 décimales: on n'en ajoute plus
-    int len = mDisplayValue.length();
-    int pointPos = mDisplayValue.indexOf('.');
-    if ((pointPos > -1) && (pointPos < len-3)) return;
-    // ------------------------------------------------------------
-    // S'il y a déjà 8 chiffres dans le HMSI: on n'en ajoute plus
-    if ((this->mUnit == Unites::HMSI) && (mRawHMSI.length() >= 8)) return;
-
-    // ------------------------------------------------------------------------
-    // On ajoute le digit à la string
-    // ------------------------------------------------------------------------
-    QString newStringValue = mDisplayValue + digit;
-    qDebug(qPrintable("candidate: " + newStringValue));
-    // ------------------------------------------------------------------------
-    // On convertit la string en microsecondes (ValeurPivot)
-    // ------------------------------------------------------------------------
-    // Cas du HMSI:
-    // TODO : ajouter le cas du D+HMSM
-    // ------------------------------------------------------------------------
-    if (this->mUnit == Unites::HMSI)
-    {
-        emit setValeurPivot(Converter::HMSItoMicroseconds(newStringValue, mFrameRate));
-        return;
-    }
-    // ------------------------------------------------------------------------
-    // Autres cas: valeurs numériques
-    // ------------------------------------------------------------------------
-    else
-    {
-        bool flag;
-        // On enleve les espaces qui font échouer la conversion.
-        double numericValue = newStringValue.remove(' ').toDouble(&flag);
-        if (flag){
-            qint64 microsecValue = (qint64)(numericValue * this->mConversionFacteur);
-            qDebug("to send (unit) : %f", numericValue);
-            qDebug("sending %d us", microsecValue);
-            // TODO voir si on utilise floor() pour être sûr de prendre la valeur entière
-            emit setValeurPivot(microsecValue);
-            return;
-        }
-        else
-            qDebug(qPrintable("ERROR: addDigit: converting '" + newStringValue + "' to numeric failed !"));
-    }
-    */
 }
 
 /*! ***************************************************************
@@ -182,46 +130,48 @@ void Afficheur::addDigit(QString digit)
 void Afficheur::removeLastDigit()
 {
     int len = this->mDisplayValue.length();
-    if (len == 0)
+    if (len == 0)     return ;
+    if (len == 1)
     {
-        return ;
-    }
-    else if (len == 1)
-    {
-        // TODO emit (clearValeurPivot),
-        emit setValeurPivot(NULL);
+        // TODO : emit (clearValeurPivot),
+        emit setValeurPivot(0);
         return;
     }
     // TODO : si on efface la première décimale, il faut laisser le point
-    else
+    QString newStringValue;
+    switch (mUnit)
     {
-        QString newStringValue = this->mDisplayValue.chopped(1);  // Enleve le dernier caractère
+    case Unites::HMSI:
+    {
+        // Format HMSI
+        newStringValue = this->mRawHMSI.chopped(1);  // Enleve le dernier caractère
+        emit setValeurPivot(Converter::convertRawHMSItoMicroseconds(newStringValue, this->mFrameRate));
+        break;
+    }
+    case Unites::DHMSM:
+    {
+        // TODO : Format D+HMSm  (si nécéssaire - V2)
+        newStringValue = this->mRawHMSI.chopped(1);  // Enleve le dernier caractère
+        emit setValeurPivot(Converter::convertRawHMSItoMicroseconds(newStringValue, this->mFrameRate));
+        break;
+    }
+    default:
+    {
+        // Autres units: on applique simplement le facteur de convertion
+        newStringValue = this->mRawNUM.chopped(1);  // Enleve le dernier caractère
         qDebug(qPrintable("candidate: " + newStringValue));
-        if (this->mUnit == Unites::HMSI)
-        {
-            // Format HMSI
-            emit setValeurPivot(Converter::convertRawHMSItoMicroseconds(newStringValue, this->mFrameRate));
-            return;
-        }
-        else if (this->mUnit == Unites::DHMSM)
-        {
-            // Format D+HMSm
-            emit setValeurPivot(Converter::convertRawHMSItoMicroseconds(newStringValue, this->mFrameRate));
+        bool flag;
+        // normalement, il n'y a pas d'espaces dans le RawNUM, mais par securité, on les enlève.
+        double numericValue = newStringValue.remove(' ').toDouble(&flag);
+        if (flag){
+            qint64 microsecValue = (qint64)(numericValue * this->mConversionFacteur);
+            emit setValeurPivot(microsecValue);
             return;
         }
         else
-        {
-            // Autres formats: on applique simplement le facteur de convertion
-            bool flag;
-            double numericValue = newStringValue.remove(' ').toDouble(&flag);
-            if (flag){
-                qint64 microsecValue = (qint64)(numericValue * this->mConversionFacteur);
-                emit setValeurPivot(microsecValue);
-                return;
-            }
-            else
-                qDebug(qPrintable("ERROR: removeLastDigit: converting '" + newStringValue + "' to numeric failed !"));
-        }
+            qDebug(qPrintable("ERROR: removeLastDigit: converting '" + newStringValue + "' to numeric failed !"));
+        break;
+    }
     }
 }
 
@@ -231,6 +181,8 @@ void Afficheur::removeLastDigit()
 void Afficheur::clearDisplayValue()
 {
     this->setDisplayValue("");
+    mRawHMSI.clear();
+    mRawNUM.clear();
 }
 
 /*! ***************************************************************
@@ -370,6 +322,18 @@ void Afficheur::setValue(const qint64 microsecs)
         value="UNKNOWN UNIT";
     }
     this->setDisplayValue(value);
+}
+
+/*!
+ * \brief SLOT: Afficheur::clearValue
+ */
+void Afficheur::clearValue()
+{
+    qDebug("clearValue received from Operande");
+    mRawHMSI.clear();
+    mRawNUM.clear();
+    mDisplayValue.clear();
+    emit displayValueChanged();
 }
 
 /*! ***************************************************************
