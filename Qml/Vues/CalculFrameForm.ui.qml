@@ -6,7 +6,6 @@ import "../Components"
 import "../Controllers"
 
 Item {
-    //    id: _item
     property alias tc1: tc1
     property alias tc2: tc2
 
@@ -100,6 +99,7 @@ Item {
         // Zone vide en bas
         // ------------------------------------------------------------
         Item {
+            id: emptySpace
             Layout.preferredHeight: 85
             Layout.fillWidth: true
             Layout.fillHeight: false

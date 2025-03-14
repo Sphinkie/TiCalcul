@@ -6,7 +6,7 @@ import "./Components"
 import "./Controllers"
 
 Window {
-    width: 920
+    width: 940
     height: 680
     minimumWidth: 820
     minimumHeight: 580

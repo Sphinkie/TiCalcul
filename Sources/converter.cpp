@@ -1,8 +1,8 @@
 #include "converter.h"
 
-/** **************************************************************************
- * @brief Constructeur.
- */
+/*! **************************************************************************
+ * \brief Constructeur.
+ * ****************************************************************************/
 Converter::Converter()
 {
 /*
@@ -131,24 +131,24 @@ QString Converter::completeRawHMSIWithDots(QString raw_hmsi)
         return hmsi;
     }
 
-/** *************************************************************************
+/*! *************************************************************************
  * On transforme "1234000000" en "1 234".
- * @param microsecs : microsecs value to convert.
- * @return the value converted in seconds.
- ****************************************************************************/
+ * \param microsecs : microsecs value to convert.
+ * \return the value converted in seconds.
+ * ***************************************************************************/
 QString Converter::microsecsToSeconds(qint64 microsecs)
-    {
-        QString formattedValue;
-        double numericValue = (double) microsecs / us_PerSecond;
-        /*
-        DecimalFormat df = new DecimalFormat("0");
-        df.setMaximumFractionDigits(3);
-        QString formattedValue = df.format(numericValue);
-        */
-        formattedValue.setNum(numericValue);
-        formattedValue = formattedValue.replace(',','.');    // replace le , par .
-        return addSpaceSeparator(formattedValue);
-    }
+{
+    QString formattedValue;
+    double numericValue = (double) microsecs / us_PerSecond;
+    /*
+    DecimalFormat df = new DecimalFormat("0");
+    df.setMaximumFractionDigits(3);
+    QString formattedValue = df.format(numericValue);
+    */
+    formattedValue.setNum(numericValue);
+    formattedValue = formattedValue.replace(',','.');    // replace le , par .
+    return formattedValue;
+}
 
 /** *************************************************************************
  * Convertit un nombre de microsecondes en un nombre de frames (selon un certains framerate)
@@ -163,39 +163,37 @@ QString Converter::microsecsToFrames(qint64 microsecs, double framerate)
     QString stringValue;
         long numericValue = (long)ceil(microsecs / 1000000.0 * framerate);
         stringValue.setNum(numericValue);
-        return addSpaceSeparator(stringValue);
+        return stringValue;
     }
 
-/** *************************************************************************
+/*! **************************************************************************
  * On transforme "1_234_000_000" en "1_1234_000".
- * @param microsecs : microsecs value to convert.
- * @return the value converted in milliseconds.
- ****************************************************************************/
+ * \param microsecs : microsecs value to convert.
+ * \return the value converted in milliseconds.
+ * ***************************************************************************/
 QString Converter::microsecsToMillis(qint64 microsecs)
     {
         QString stringValue;
         stringValue.setNum(microsecs / 1000);
-        return addSpaceSeparator(stringValue);
+        return stringValue;
     }
 
- /** *************************************************************************
- * On transforme une valeur numérique (ex:"1234000000") en un texte avec des espaces
- * (ex: "1 234 000 000").
- * @param microsecs : microsecs value to convert.
- * @return a readable string with space separators.
- ****************************************************************************/
+/*! *************************************************************************
+ * On transforme une valeur numérique (ex: 1234000000) en un texte
+ * (ex: "1234000000").
+ * \param microsecs : microsecs value to convert.
+ * \return a readable string
+ * ***************************************************************************/
 QString Converter::microseconds(qint64 microsecs)
     {
-        QString value;
-        value.setNum(microsecs);
-        return addSpaceSeparator(value);
+        return QString::number(microsecs);
     }
 
- /** *************************************************************************
-  * Ajoute des séparateurs de milliers sur la partie entière et la partie décimale.
-  * @param value : a numeric value.
-  * @return a readable string with space separators.
-  ****************************************************************************/
+/*! **************************************************************************
+ * Ajoute des séparateurs de milliers sur la partie entière et la partie décimale.
+ * \param value : a numeric value.
+ * \return a readable string with space separators.
+ * ***************************************************************************/
 QString Converter::addSpaceSeparator(QString value)
     {
         // 12 345.678 9
@@ -236,18 +234,18 @@ QString Converter::addSpaceSeparator(QString value)
         return formattedValue;
     }
 
-    /***************************************************************************
-     * On transforme "1234000000" en "00:20:34:00".
-     * @param microsecs : microsecs value to convert.
-     * @param framerate : the framerate to use for the 2 last digits.
-     * @return a readable HMSI value (HH:MM:SS:II).
-     ****************************************************************************/
+/*! **************************************************************************
+ * On transforme "1234000000" en "00:20:34:00".
+ * \param microsecs : microsecs value to convert.
+ * \param framerate : the framerate to use for the 2 last digits.
+ * \return a readable HMSI value (HH:MM:SS:II).
+ * ***************************************************************************/
 QString Converter::microsecsToHMSI(qint64 microsecs, double framerate)
     {
         long quotient;
         long reste;
         QString hmsi = "";
-        if (microsecs == NULL) return "..:..:..:..";    // TODO : A vérifier
+        if (microsecs == -1) return "..:..:..:..";    // TODO : A vérifier
         if (microsecs == 0) return "00:00:00:00";
         if (microsecs < 0) {
             hmsi += "-";
@@ -271,11 +269,11 @@ QString Converter::microsecsToHMSI(qint64 microsecs, double framerate)
         return hmsi;
     }
 
-    /***************************************************************************
-     * On transforme "1234000000" en "00:20:34,000".
-     * @param microsecs : microsecs value to convert.
-     * @return a readable HMSm value (HH:MM:SS,mmm).
-     ****************************************************************************/
+/*! **************************************************************************
+ * On transforme "1234000000" en "00:20:34,000".
+ * \param microsecs : microsecs value to convert.
+ * \return a readable HMSm value (HH:MM:SS,mmm).
+ * ***************************************************************************/
 QString Converter::microsecsToHMSM(qint64 microsecs)
     {
         long quotient;
@@ -304,12 +302,12 @@ QString Converter::microsecsToHMSM(qint64 microsecs)
         return hmsi;
     }
 
-    /***************************************************************************
-     * On transforme 1234000000 en "00203400".
-     * @param microsecs : microsecs value to convert.
-     * @param framerate : framerate for raw hmsi
-     * @return a raw HMSI value ("HHMMSSII").
-     ****************************************************************************/
+/*! **************************************************************************
+ * On transforme 1234000000 en "00203400".
+ * @param microsecs : microsecs value to convert.
+ * @param framerate : framerate for raw hmsi
+ * @return a raw HMSI value ("HHMMSSII").
+ * ***************************************************************************/
   QString Converter::microsecsToRawHMSI(qint64 microsecs, double framerate)
     {
         long quotient;
@@ -356,6 +354,23 @@ QString Converter::microsecsToHMSM(qint64 microsecs)
             long day_time =  microsecs % us_PerDay;
             QString day = (nb_days == 1)? " day + " : " days + ";
             return QString::number(nb_days) + day + microsecsToHMSM(day_time);
+        }
+    }
+
+    qint64 Converter::toMicroseconds(QString value, double conversionFacteur)
+    {
+        bool flag;
+        // On enleve les espaces qui font échouer la conversion.
+        double numericValue = value.remove(' ').toDouble(&flag);
+        if (flag){
+            qint64 microsecValue = (qint64)(numericValue * conversionFacteur);
+            // TODO voir si on utilise floor() pour être sûr de prendre la valeur entière
+            return microsecValue;
+        }
+        else
+        {
+            qDebug(qPrintable("ERROR: addDigit: converting '" + value + "' to numeric failed !"));
+            return -1;
         }
     }
 

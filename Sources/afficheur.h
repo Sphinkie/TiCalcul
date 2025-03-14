@@ -18,30 +18,32 @@ public:
     Q_INVOKABLE void setFrameRate(double framerate);
     Q_INVOKABLE void addDigit(QString digit);
     Q_INVOKABLE void removeLastDigit();
-    Q_INVOKABLE QString getName();
+    Q_INVOKABLE QString getUnit() const;
 
     QString displayValue() const;
-    double getFrameRate();
-    int length();
+    double getFrameRate() const;
+    int length() const;
 
 public slots:
-    void setValue(qint64 value);
+    void setValue(const qint64 microsecs);
 
 signals:
-    void displayValueChanged(QString);  //!< Envoi au QML d'une nouvelle valeur à afficher.
+    void displayValueChanged();         //!< Indique au QML que la valeur à afficher a changé.
     void setValeurPivot(qint64);        //!< Envoi à l'opérande d'une nouvelle valeur pivot.
 
 private:
-    void setDisplayValue(QString value);
+    void setDisplayValue(const QString value);
     void clearDisplayValue();
-    bool isIncorrect(QString rawHmsi);
+    bool isIncorrect(const QString rawHmsi);
 
 // ------------------------------------------------------------
 // Variables membres
 // ------------------------------------------------------------
 private:
     QString mDisplayValue;      //!< La valeur à afficher (String)
-    QString mName;              //!< Le nom de l'unité utilisée par cet afficheur
+    QString mRawHMSI;           //!< utilisé par les afficheurs HMSI
+    QString mRawNUM;            //!< utilisé par les afficheurs Numériques
+    QString mUnitName;          //!< Le nom de l'unité utilisée par cet afficheur
     Unites::Units mUnit;        //!< Unité utilisée par cet afficheur
     int mDecimals;              //!< Nombre de chiffres après la virgule
     double mFrameRate;          //!< Framerate utilisé (pour les afficheurs FRAMES et HMSI)

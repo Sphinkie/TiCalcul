@@ -10,11 +10,10 @@ import TiCalcul
   * On change d'afficheur actif en cliquant sur un afficheur (cad un FieldInput).
   * *************************************************************************** */
 Item {
-    property Afficheur afficheur: TC1_aff_1
-    property string unit: afficheur.getName()
+    property Afficheur afficheur: TC1_aff_4
+    property string unit: afficheur.getUnit()
 
     onAfficheurChanged: {
-        unit: afficheur.getName()
-        // console.log("onAfficheurChanged")
+        unit: afficheur.getUnit()
     }
 }

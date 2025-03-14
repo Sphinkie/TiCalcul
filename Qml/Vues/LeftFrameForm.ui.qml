@@ -86,7 +86,8 @@ Item {
             Layout.fillWidth: true
         }
         FieldInput {
-            //text: "DD + HH:MM:SS:II"
+            //text: "DD + HH:MM:SS:mmm"
+            // TODO: rendre non éditable
             afficheur: TC1_aff_5
             Layout.fillHeight: true
             Layout.fillWidth: true

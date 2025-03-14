@@ -9,7 +9,7 @@
  * \param name: Le nom de l'operande: "TC1" ou "TC2".
  * \param parent: Paramètre classique pour les QObject.
  */
-Operande::Operande(QString name, QObject *parent)
+Operande::Operande(const QString name, QObject *parent)
 {
     this->mName = name;
 
@@ -56,11 +56,11 @@ qint64 Operande::valeurPivot() const
 
 /* ********************************************************************************************************** */
  /*!
- * \brief Reçoit et propage la nouvelle valeur pivot aux afficheurs.
+ * \brief SLOT : Reçoit et propage la nouvelle valeur pivot aux afficheurs.
  * \param newValeurPivot: Timecode en microsecondes.
  * TODO remplacer le qint64 en quint64
  */
-void Operande::setValeurPivot(qint64 newValeurPivot)
+void Operande::setValeurPivot(const qint64 newValeurPivot)
 {
     if (newValeurPivot > this->mMaxValue)
     {
@@ -70,7 +70,7 @@ void Operande::setValeurPivot(qint64 newValeurPivot)
     {
         qDebug("received: %d", newValeurPivot);
         mValeurPivot = newValeurPivot;
-        emit valeurPivotChanged(mValeurPivot);
+        emit valeurPivotChanged(newValeurPivot);
     }
 }
 
