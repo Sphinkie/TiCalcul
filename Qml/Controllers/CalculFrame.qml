@@ -9,11 +9,11 @@ import "../Vues"
 CalculFrameForm {
 
     tc1.onClicked: {
-        console.log("TiButton btFramerate TC1 clicked ! ")
+        console.log("TiButton  TC1 clicked ! ")
     }
 
     tc2.onClicked: {
-        console.log("TiButton btFramerate TC2 clicked ! ")
+        console.log("TiButton  TC2 clicked ! ")
     }
 
     // TODO : Gestion du bouton SWAP

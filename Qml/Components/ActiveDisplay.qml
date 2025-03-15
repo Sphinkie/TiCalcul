@@ -13,11 +13,10 @@ Item {
     property Afficheur afficheur: TC1_aff_4
     property string unit: afficheur.getUnit()
 
-    signal activeDisplay(Afficheur afficheur)
     onAfficheurChanged: {
         unit: afficheur.getUnit()
         // On envoie un signal à tous les afficheurs pour dire lequel est actif
-        activeDisplay(afficheur)
+        activeDisplay(afficheur.objectName)
         // window.activeDisplay(afficheur)
     }
 }

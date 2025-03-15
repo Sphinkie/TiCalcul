@@ -111,6 +111,7 @@ GridLayout {
     KeyboardKeyForm {
         id: keyDel
         buttonText: "\u232b"
+        texte.font.pointSize: 28
         Layout.fillWidth: true
     }
 }

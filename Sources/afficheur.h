@@ -13,7 +13,7 @@ class Afficheur : public QObject
 // Méthodes
 // ------------------------------------------------------------
 public:
-    explicit Afficheur(Unites::Units unit, QObject *parent = nullptr);
+    explicit Afficheur(Unites::Units unit, QString parentName, QObject *parent = nullptr);
 
     Q_INVOKABLE void setFrameRate(double framerate);
     Q_INVOKABLE void addDigit(QString digit);
@@ -26,7 +26,8 @@ public:
 public slots:
     void setValue(const qint64 microsecs);
     void clearValue();
-    void activeDisplay(Afficheur* afficheur);
+//    void activeDisplay(Afficheur* afficheur);
+    void activeDisplay(QString afficheur);
 
 signals:
     void displayValueChanged();         //!< Indique au QML que la valeur à afficher a changé.

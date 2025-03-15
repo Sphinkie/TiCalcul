@@ -3,6 +3,8 @@
 
 #include <QObject>
 #include <QQmlContext>
+#include <qqmlapplicationengine.h>
+
 #include "afficheur.h"
 
 
@@ -20,6 +22,7 @@ public:
     explicit Operande(const QString name, QObject *parent = nullptr);
     qint64 valeurPivot() const;
     void registerContext(QQmlContext* context);
+    Q_INVOKABLE void connectActiveDisplay(QQmlApplicationEngine* engine);
     Q_INVOKABLE void clearValeurPivot();
 
 public slots:
@@ -43,6 +46,7 @@ private:
     Afficheur* a6;        //!< Afficheur en Frames (25 fps)
     Afficheur* a7;        //!< Afficheur en Frames (50 fps)
     Afficheur* a8;        //!< Afficheur en Frames (NTSC)
+    QQmlContext* mContext;
 };
 
 #endif // OPERANDE_H

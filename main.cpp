@@ -45,7 +45,7 @@ int main(int argc, char* argv[])
     operande_res.registerContext(context);
 
     // ------------------------------------------------------------
-    // On ajoute le type Afficheur au contexte QML
+    // On ajoute le type Afficheur au contexte QML.
     // ------------------------------------------------------------
     qmlRegisterType<Afficheur>("TiCalcul", 1, 0, "Afficheur");
 
@@ -58,16 +58,13 @@ int main(int argc, char* argv[])
                          QCoreApplication::exit(-1);
                      }, Qt::QueuedConnection);
 
-//    operande_tc1.setValeurPivot(28650000);
-//    operande_tc2.setValeurPivot(87545412880);
-//    operande_res.setValeurPivot(120000000);
-
     // --------------------------------------
     // Démarrage du moteur.
     // Load "Main.qml" from the module "TCcalcul".
     // --------------------------------------
     engine.loadFromModule("TiCalcul", "Main");
 
+    operande_tc1.connectActiveDisplay(&engine);
     // --------------------------------------
     // Exécution de QML
     // --------------------------------------

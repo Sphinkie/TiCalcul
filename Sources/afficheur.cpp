@@ -6,7 +6,7 @@
  * \brief Constructeur.
  * \param unit : l'unité correspondante à cet afficheur.
  * ***********************************************************************************************************/
-Afficheur::Afficheur(Unites::Units unit, QObject *parent)
+Afficheur::Afficheur(Unites::Units unit, QString parentName, QObject *parent)
 {
     this->mDisplayValue = "UNDEFINED";
     this->mUnit = unit;
@@ -14,6 +14,7 @@ Afficheur::Afficheur(Unites::Units unit, QObject *parent)
     this->mDecimals = Unites::nbDecimals.value(unit);   // TODO: nombre de chiffres après la virgule
     this->mFrameRate = Unites::frameRate.value(unit);
     this->mConversionFacteur = Unites::usPerUnit.value(unit);
+    setObjectName(parentName+'_'+mUnitName);
 }
 
 /*! **********************************************************************************************************
@@ -319,9 +320,10 @@ void Afficheur::clearValue()
 /*! **********************************************************************************************************
  * \brief SLOT: Actualise la variable isActive en cas de changement
  * ***********************************************************************************************************/
-void Afficheur::activeDisplay(Afficheur* afficheur)
+void Afficheur::activeDisplay(QString afficheur)
 {
-    mIsActive = (afficheur == this);
+    mIsActive = (afficheur == this->objectName());
+    qDebug() << "recu = " << afficheur;
     qDebug(qPrintable( mUnitName + " is active? " + QVariant(mIsActive).toString() ));
 }
 

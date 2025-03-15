@@ -4,8 +4,10 @@ import QtQuick.Controls.Universal
 
 import "./Components"
 import "./Controllers"
+import TiCalcul
 
 Window {
+    id: window
     width: 940
     height: 680
     minimumWidth: 820
@@ -61,17 +63,21 @@ Window {
     Universal.chromeDisabledLowColor    = gris soutenu
 
     */
+    signal activeDisplay(string afficheur)
 
     // ----------------------------------------------------------------
     // Page principale
     // ----------------------------------------------------------------
     Rectangle {
+        id: pagePrincipale
+
         anchors.top: parent.top
         anchors.fill: parent
         color: Universal.background
         // ----------------------------------------------------------------
         ActiveDisplay {
             id: afficheurActif
+            objectName: "afficheurActif"
         }
         GridLayout {
             id: mainGrid
