@@ -90,7 +90,7 @@ void Operande::registerContext(QQmlContext* context)
     context->setContextProperty(mName+"_aff_7", a7);
     //context->setContextProperty(mName+"_aff_8", a8);
 
-    QObject* qmlItem = context->findChild<QObject*>("afficheurActif");
+    QObject* qmlItem = context->objectForName("afficheurActif");
     QObject::connect(qmlItem, SIGNAL(activeDisplay(Afficheur)), a1, SLOT(activeDisplay(Afficheur)));
 
 }

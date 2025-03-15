@@ -110,7 +110,7 @@ GridLayout {
     }
     KeyboardKeyForm {
         id: keyDel
-        buttonText: "&#9003;"
+        buttonText: "\u232b"
         Layout.fillWidth: true
     }
 }
