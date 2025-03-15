@@ -191,7 +191,6 @@ void Afficheur::clearDisplayValue()
     mRawNUM.clear();
 }
 
-
 /*! **********************************************************************************************************
  * Retourne le framerate (utile pour les afficheurs HMSI).
  * \returns framerate utilisé pour cet afficheur (ex: 25.0)
@@ -318,13 +317,13 @@ void Afficheur::clearValue()
 }
 
 /*! **********************************************************************************************************
- * \brief SLOT: Actualise la variable isActive en cas de changement
+ * \brief SLOT: Actualise la variable mIsActive en cas de changement
+ * \param afficheur: Le nom (objectName) de l'afficheur sélectionné dans le QML.
  * ***********************************************************************************************************/
 void Afficheur::activeDisplay(QString afficheur)
 {
     mIsActive = (afficheur == this->objectName());
-    qDebug() << "recu = " << afficheur;
-    qDebug(qPrintable( mUnitName + " is active? " + QVariant(mIsActive).toString() ));
+    // qDebug() << "recu = " << afficheur;
 }
 
 /*! **********************************************************************************************************
@@ -333,16 +332,20 @@ void Afficheur::activeDisplay(QString afficheur)
  * ***********************************************************************************************************/
 void Afficheur::setDisplayValue(const QString value)
 {
+    // pour les HMSI, on travaille avec le RawHMSI
     if (mUnit == Unites::HMSI)
     {
+        // Si le champ est en cours d'édition:
         if (mIsActive)
             // On affiche la valeur en cours d'edition (mRawHMSi)
             mDisplayValue = Converter::completeRawHMSIWithDots(mRawHMSI);
+        // Sinon:
         else {
             // on affiche la valeur recue (complete)
             mDisplayValue = Converter::completeRawHMSIWithDots(value);
         }
     }
+    // Pour les autres unités, on travaille avec la valeur reçue
     else
         mDisplayValue = Converter::addSpaceSeparator(value);
     emit displayValueChanged();

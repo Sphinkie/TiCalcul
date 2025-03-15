@@ -31,7 +31,7 @@ Item {
         FieldInput {
             id: tc1
             //text: "..:..:..:.."
-            afficheur: TC1_aff_4
+            afficheur: tc1_aff_4
             Layout.fillHeight: false
             Layout.fillWidth: true
         }
@@ -68,7 +68,7 @@ Item {
         FieldInput {
             id: tc2
             // text: "..:..:..:.."
-            afficheur: TC2_aff_4
+            afficheur: tc2_aff_4
             Layout.fillHeight: false
             Layout.fillWidth: true
         }
@@ -91,7 +91,7 @@ Item {
         FieldInput {
             id: result
             text: "..:..:..:.."
-            afficheur: RESULT_aff_4
+            afficheur: result_aff_4
             Layout.fillHeight: false
             Layout.fillWidth: true
         }

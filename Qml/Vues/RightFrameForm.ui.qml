@@ -18,7 +18,7 @@ Item {
 
         FieldInput {
             // text: "SECONDS"
-            afficheur: TC2_aff_1
+            afficheur: tc2_aff_1
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -31,7 +31,7 @@ Item {
         // ---------------------------------------
         FieldInput {
             //text: "MILLISECONDS"
-            afficheur: TC2_aff_2
+            afficheur: tc2_aff_2
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -44,7 +44,7 @@ Item {
         // ---------------------------------------
         FieldInput {
             // text: "MICROSECS"
-            afficheur: TC2_aff_3
+            afficheur: tc2_aff_3
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -57,7 +57,7 @@ Item {
         // ---------------------------------------
         FieldInput {
             //text: "FRAMES"
-            afficheur: TC2_aff_6
+            afficheur: tc2_aff_6
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -70,7 +70,7 @@ Item {
         // ---------------------------------------
         FieldInput {
             //text: "FRAMES"
-            afficheur: TC2_aff_7
+            afficheur: tc2_aff_7
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -83,7 +83,7 @@ Item {
         // ---------------------------------------
         FieldInput {
             //text: "DD + HH:MM:SS:II"
-            afficheur: TC2_aff_5
+            afficheur: tc2_aff_5
             Layout.fillHeight: true
             Layout.fillWidth: true
         }

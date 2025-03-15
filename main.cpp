@@ -24,9 +24,9 @@ int main(int argc, char* argv[])
     // --------------------------------------
     // On initialise nos classes
     // --------------------------------------
-    Operande operande_tc1("TC1");
-    Operande operande_tc2("TC2");
-    Operande operande_res("RESULT");
+    Operande operande_tc1("tc1");
+    Operande operande_tc2("tc2");
+    Operande operande_res("result");
 
     // --------------------------------------
     // Initialisation du moteur:
@@ -65,6 +65,7 @@ int main(int argc, char* argv[])
     engine.loadFromModule("TiCalcul", "Main");
 
     operande_tc1.connectActiveDisplay(&engine);
+    operande_tc2.connectActiveDisplay(&engine);
     // --------------------------------------
     // Exécution de QML
     // --------------------------------------

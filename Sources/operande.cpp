@@ -6,7 +6,7 @@
  * \brief Constructeur: crée les 8 afficheurs de cet opérande, et les connecte pour leur envoyer un signal
  *        à chaque modification de la valeur pivot.
  * \note L'afficheur NTSC est désactivé pour le moment.
- * \param name: Le nom de l'operande: "TC1" ou "TC2" ou eRESULT".
+ * \param name: Le nom de l'operande: "tc1" ou "tc2" ou "result".
  * \param parent: Paramètre classique pour les QObject.
  * ***********************************************************************************************************/
 Operande::Operande(const QString name, QObject *parent)
@@ -25,6 +25,7 @@ Operande::Operande(const QString name, QObject *parent)
     QList<Afficheur*> afficheurs = {a1, a2, a3, a3, a4, a5, a6, a7};
     QList<Afficheur*>::iterator it;
 
+    // Connexions pour les afficheurs instanciées
     for (it=afficheurs.begin(); it != afficheurs.end();  it++)
     {
         // Connexions: Envoi de la valeur pivot aux afficheurs.
@@ -77,6 +78,7 @@ void Operande::clearValeurPivot()
 
 /*! **********************************************************************************************************
  * \brief Enregistre les afficheurs dans le contexte QML, pour pouvoir les afficher.
+ * \note Les property names seront du type "tc1_aff_1"
  * \param context: Le root context de l'application.
  * ***********************************************************************************************************/
 void Operande::registerContext(QQmlContext* context)
@@ -89,12 +91,6 @@ void Operande::registerContext(QQmlContext* context)
     context->setContextProperty(mName+"_aff_6", a6);
     context->setContextProperty(mName+"_aff_7", a7);
     //context->setContextProperty(mName+"_aff_8", a8);
-    //qDebug() << context->metaObject()->propertyCount();  // renvoie 1
-    //qDebug() << context->dynamicPropertyNames();         // renvoie la liste des setProperty, donc ici: liste vide
-    //qDebug() << context->objectName();                   // vide car non défini explicitement
-    //qDebug() << context->contextProperty("TC2_aff_4");   // trouvé, car défini avec setContextProperty()
-
-    mContext = context;
 }
 
 /*! **********************************************************************************************************
@@ -104,34 +100,14 @@ void Operande::registerContext(QQmlContext* context)
  * ***********************************************************************************************************/
 void Operande::connectActiveDisplay(QQmlApplicationEngine* engine)
 {
-   QQmlContext* context = mContext;
-
-    qDebug() << "connectActiveDisplay -- context";
-    qDebug() << context->objectForName("afficheurActif");
-    qDebug() << context->metaObject()->propertyCount();             // renvoie 1
-    qDebug() << context->dynamicPropertyNames();                    // renvoie la liste des setProperty, donc ici: liste vide
-    qDebug() << context->contextProperty("afficheurActif");         // vide - QVariant(Invalid)
-    qDebug() << context->contextProperty("TC2_aff_4");              // trouvé
-
-     qDebug() << "connectActiveDisplay -- engine";
-     qDebug() << engine->property("afficheurActif");                // vide - QVariant(Invalid)
-     qDebug() << engine->dynamicPropertyNames();                    // QList("_q_QQuickUniversalStyle")
-     qDebug() << engine->rootObjects();                             // QList(Main_QMLTYPE_18)
-     qDebug() << engine->rootObjects().first();
-     qDebug() << engine->rootObjects().first()->children();         // QList(QQuickRootItem(0x25065539b60), QQuickRectangle(0x2506557d560,name = "pagePrincipale"), QQuickUniversalStyle(0x250658a9830))
-     qDebug() << engine->rootObjects().first()->objectName();                // vide
-     qDebug() << engine->rootObjects().first()->dynamicPropertyNames();      // vide
-     qDebug() << engine->rootObjects().first()->property("window");          //  QVariant(Invalid)
-     qDebug() << engine->rootObjects().first()->property("pagePrincipale");  //  QVariant(Invalid)
-     qDebug() << engine->rootObjects().first()->property("afficheurActif");  // QVariant(Invalid)
-     qDebug() << engine->rootObjects().first()->children()[1]->objectName(); // "pagePrincipale"
-     qDebug() << engine->rootObjects().first()->children()[1]->children();   // QList(ActiveDisplay_QMLTYPE_1(0x201aeaebe10, name = "afficheurActif"), QQuickGridLayout(0x201ae9434a0), QQuickUniversalStyle(0x201aed5e920))
-     //qDebug() << view.rootObject();
-     qDebug() << engine->rootObjects().first()->findChild<QObject*>("afficheurActif");  // ActiveDisplay_QMLTYPE_17(0x23acd5f0780, name = "afficheurActif")
-     qDebug() << engine->rootObjects().first()->findChildren<QObject*>("afficheurActif");  //QList(ActiveDisplay_QMLTYPE_17(0x23acd5f0780, name = "afficheurActif"))
-
-     QObject* qmlItem;
-    // qmlItem = engine->rootObjects().constFirst()->findChild<QObject*>("afficheurActif");
-    qmlItem = engine->rootObjects().first();
+    // On trove l'objet QML nommé "afficheurActif"
+    QObject* qmlItem = engine->rootObjects().constFirst()->findChild<QObject*>("afficheurActif");
+    // On le connecet à tous les afficheurs.
     QObject::connect(qmlItem, SIGNAL(activeDisplay(QString)), a1, SLOT(activeDisplay(QString)));
+    QObject::connect(qmlItem, SIGNAL(activeDisplay(QString)), a2, SLOT(activeDisplay(QString)));
+    QObject::connect(qmlItem, SIGNAL(activeDisplay(QString)), a3, SLOT(activeDisplay(QString)));
+    QObject::connect(qmlItem, SIGNAL(activeDisplay(QString)), a4, SLOT(activeDisplay(QString)));
+    QObject::connect(qmlItem, SIGNAL(activeDisplay(QString)), a5, SLOT(activeDisplay(QString)));
+    QObject::connect(qmlItem, SIGNAL(activeDisplay(QString)), a6, SLOT(activeDisplay(QString)));
+    QObject::connect(qmlItem, SIGNAL(activeDisplay(QString)), a7, SLOT(activeDisplay(QString)));
 }

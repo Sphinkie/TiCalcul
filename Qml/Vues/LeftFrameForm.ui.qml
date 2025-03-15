@@ -23,7 +23,7 @@ Item {
         }
         FieldInput {
             // text: "SECONDS"
-            afficheur: TC1_aff_1
+            afficheur: tc1_aff_1
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -35,69 +35,62 @@ Item {
         }
         FieldInput {
             //text: "MILLISECONDS"
-            afficheur: TC1_aff_2
+            afficheur: tc1_aff_2
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
         // ---------------------------------------
         FieldLabel {
             text: "microseconds"
-            //justify: Text.AlignRight
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
         FieldInput {
             // text: "MICROSECS"
-            afficheur: TC1_aff_3
+            afficheur: tc1_aff_3
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
         // ---------------------------------------
         FieldLabel {
             text: "frames (25fps)"
-            //justify: Text.AlignRight
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
         FieldInput {
             //text: "FRAMES"
-            afficheur: TC1_aff_6
+            afficheur: tc1_aff_6
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
         // ---------------------------------------
         FieldLabel {
             text: "frames (50fps)"
-            //justify: Text.AlignRight
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
         FieldInput {
             //text: "FRAMES"
-            afficheur: TC1_aff_7
+            afficheur: tc1_aff_7
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
         // ---------------------------------------
         FieldLabel {
             text: "HMS,ms"
-            //justify: Text.AlignRight
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
         FieldInput {
             //text: "DD + HH:MM:SS:mmm"
             // TODO: rendre non éditable
-            afficheur: TC1_aff_5
+            afficheur: tc1_aff_5
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
         // ---------------------------------------
         Item {
             id: emptySpace
-            // Layout.topMargin: 4
-            // Layout.rightMargin: 4
-            // Layout.leftMargin: 4
             Layout.fillHeight: false
             Layout.fillWidth: true
         }
