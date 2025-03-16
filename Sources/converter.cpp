@@ -42,13 +42,13 @@ qint64 Converter::HMSItoMicroseconds(QString hmsi_string, double framerate)
 }
 
 /*! *************************************************************************
- * \brief Convertit un HMSI en un RAW HMSI. Exemple: "25:48:12:51' en "25481251"
- * \param hmsi: une string HMSI avec les ":"
+ * \brief Convertit un HMSI en un RAW HMSI. Exemple: "25:48:12:..' en "254812"
+ * \param hmsi: une string HMSI avec des ":" et des ".."
  * \returns the corresponding RAW HMSI
  **************************************************************************** */
 QString Converter::HMSItoRawHMSI(QString hmsi)
 {
-    return hmsi.remove(':');
+    return hmsi.remove(':').remove('.');
 }
 
  /*! *************************************************************************
