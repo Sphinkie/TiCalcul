@@ -1,4 +1,4 @@
-#include <QVariant>
+#include <QRegularExpression>
 #include "afficheur.h"
 #include "converter.h"
 
@@ -10,11 +10,12 @@ Afficheur::Afficheur(Unites::Units unit, QString parentName, QObject *parent)
 {
     this->mDisplayValue = "";
     this->mUnit = unit;
+    this->mHint = Unites::hint.value(unit);
     this->mUnitName = Unites::name.value(unit);
     this->mDecimals = Unites::nbDecimals.value(unit);   // TODO: nombre de chiffres après la virgule
     this->mFrameRate = Unites::frameRate.value(unit);
     this->mConversionFacteur = Unites::usPerUnit.value(unit);
-    setObjectName(parentName+'_' + mUnitName);
+    setObjectName(parentName + '_' + mUnitName);
 }
 
 /*! **********************************************************************************************************
@@ -38,7 +39,7 @@ void Afficheur::addDigit(QString digit)
     switch (mUnit)
     {
     case Unites::HMSI:
-    {
+        {
         qDebug(qPrintable("addDigit: " + mRawHMSI + " + " + digit));
         // ------------------------------------------------------------------------
         // S'il y a déjà 8 chiffres dans le HMSI: on n'en ajoute plus
@@ -137,19 +138,15 @@ void Afficheur::removeLastDigit()
     switch (mUnit)
     {
     case Unites::HMSI:
-    {
         // Format HMSI
         this->mRawHMSI.chop(1);  // Enleve le dernier caractère
         emit setValeurPivot(Converter::convertRawHMSItoMicroseconds(mRawHMSI, this->mFrameRate));
         break;
-    }
     case Unites::DHMSM:
-    {
         // TODO : Format D+HMSmm  (si nécéssaire - en V2)
         this->mRawHMSI.chop(1);  // Enleve le dernier caractère
         emit setValeurPivot(Converter::convertRawHMSItoMicroseconds(mRawHMSI, this->mFrameRate));
         break;
-    }
     default:
     {
         // Autres units: on applique simplement le facteur de convertion
@@ -171,15 +168,6 @@ void Afficheur::removeLastDigit()
     }
 }
 
-/*! **********************************************************************************************************
- * \brief Vide la chaine à afficher.
- * ***********************************************************************************************************/
-void Afficheur::clearDisplayValue()
-{
-    this->setDisplayValue("");
-    mRawHMSI.clear();
-    mRawNUM.clear();
-}
 
 /*! **********************************************************************************************************
  * Retourne le framerate (utile pour les afficheurs HMSI).
@@ -246,10 +234,11 @@ bool Afficheur::isIncorrect(const QString rawHmsi)
     return false;
 }
 
+
 /*! **********************************************************************************************************
  * \brief SLOT. Recoit la nouvelle valeur pivot de l'opérande, pour la convertir et l'envoyer à l'affichage.
  * \param microsecs: La valeur pivot en microsecondes.
- * ***********************************************************************************************************/
+ * *********************************************************************************************************** */
 void Afficheur::setValue(const qint64 microsecs)
 {
     // qDebug() << mUnitName << "::setValue()" << microsecs;
@@ -292,6 +281,7 @@ void Afficheur::setValue(const qint64 microsecs)
  * ***********************************************************************************************************/
 void Afficheur::clearValue()
 {
+    qDebug() << objectName() << "::clearValue()";
     mRawHMSI.clear();
     mRawNUM.clear();
     mDisplayValue.clear();
@@ -310,7 +300,11 @@ void Afficheur::activeDisplay(QString afficheur)
     if (mIsActive)
     {
         mRawHMSI = Converter::HMSItoRawHMSI(mDisplayValue);
-        mRawNUM  = mDisplayValue;
+        // on enlève les 0 et les espaces du debut
+        qDebug() << "regex <<" << mDisplayValue;
+        static QRegularExpression regex = QRegularExpression("^[0\\s]*");
+        mRawNUM  = mDisplayValue.remove(regex);
+        qDebug() << "regex >>" << mRawNUM;
     }
 }
 
@@ -328,36 +322,35 @@ void Afficheur::setDisplayValue(const QString value)
     {
         switch (mUnit)
         {
-        case Unites::HMSI:
-            // On affiche la valeur en cours d'edition (mRawHMSi)
-            mDisplayValue = Converter::completeRawHMSIWithDots(mRawHMSI);
-            break;
-        default:
-            // Pour les autres unités, on affichera la valeur en cours d'édition, avec des separateurs
-            mDisplayValue = Converter::addSpaceSeparator(mRawNUM);
-            break;
+            case Unites::HMSI:
+                // On affiche la valeur en cours d'edition (mRawHMSi)
+                mDisplayValue = Converter::completeRawHMSIWithDots(mRawHMSI);
+                break;
+            default:
+                // Pour les autres unités, on affichera la valeur en cours d'édition, avec des separateurs
+                mDisplayValue = Converter::addSpaceSeparator(mRawNUM);
+                break;
         }
     }
+    // Sinon: la cellule est en affichage uniquement
     else
-    // Sinon: cellule en affichage
     {
         switch (mUnit)
         {
-        case Unites::HMSI:
-            // on affiche la valeur recue (complete)
-            mDisplayValue = Converter::completeRawHMSIWithDots(value);
-            break;
-        case Unites::DHMSM:
-            // Pour le D+HMSm, on affichera telle quelle la valeur reçue (qui est complete)
-            mDisplayValue = value;
-            break;
-        default:
-            // Pour les autres unités, on affichera la valeur reçue, avec des separateurs
-            mDisplayValue = Converter::addSpaceSeparator(value);
-            break;
+            case Unites::HMSI:
+                // on affiche la valeur recue (complete)
+                mDisplayValue = Converter::completeRawHMSIWithDots(value);
+                break;
+            case Unites::DHMSM:
+                // Pour le D+HMSm, on affichera telle quelle la valeur reçue (qui est complete)
+                mDisplayValue = value;
+                break;
+            default:
+                // Pour les autres unités, on affichera la valeur reçue, avec des separateurs
+                mDisplayValue = Converter::addSpaceSeparator(value);
+                break;
         }
     }
-
     emit displayValueChanged();
 }
 

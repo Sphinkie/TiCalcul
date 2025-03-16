@@ -9,6 +9,7 @@ class Afficheur : public QObject
     Q_OBJECT
     Q_PROPERTY(QString displayValue MEMBER mDisplayValue NOTIFY displayValueChanged)
     Q_PROPERTY(QString unit MEMBER mUnitName NOTIFY unitChanged)
+    Q_PROPERTY(QString hint MEMBER mHint NOTIFY hintChanged)
 
 // ------------------------------------------------------------
 // Méthodes
@@ -29,26 +30,29 @@ public slots:
 signals:
     void displayValueChanged();         //!< Indique au QML que la valeur à afficher a changé.
     void setValeurPivot(qint64);        //!< Envoi à l'opérande d'une nouvelle valeur pivot.
-    void unitChanged();
+    void unitChanged();                 //!< En fait, l'unité d'un afficheur ne change jamais.
+    void hintChanged();                 //!< En fait, le hint d'un afficheur ne change jamais.
 
 private:
     void setDisplayValue(const QString value);
-    void clearDisplayValue();
     bool isIncorrect(const QString rawHmsi);
 
 // ------------------------------------------------------------
 // Variables membres
 // ------------------------------------------------------------
 private:
-    QString mDisplayValue;      //!< La valeur à afficher (String)
+    QString mDisplayValue;      //!< QML Property: La valeur à afficher (String)
+    QString mUnitName;          //!< QML Property: Le nom de l'unité utilisée par cet afficheur
+    QString mHint;              //!< QML Property: Le texte à afficher si mDisplayValue est vide.
+
+    bool mIsActive = false;     //!< Indique si cet afficheur est en cours d'edition. Positionné par le QML.
+
     QString mRawHMSI;           //!< utilisé par les afficheurs HMSI
     QString mRawNUM;            //!< utilisé par les afficheurs Numériques
-    QString mUnitName;          //!< Le nom de l'unité utilisée par cet afficheur
     Unites::Units mUnit;        //!< Unité utilisée par cet afficheur
     int mDecimals;              //!< Nombre de chiffres après la virgule
     double mFrameRate;          //!< Framerate utilisé (pour les afficheurs FRAMES et HMSI)
     double mConversionFacteur;  //!< Nombre de microseconds par unité
-    bool mIsActive = false;     //!< Indique si cet afficheur est en cours d'edition. Positionné par le QML.
 
 };
 

@@ -75,7 +75,7 @@ void Operande::setValeurPivot(const qint64 newValeurPivot)
  * ***********************************************************************************************************/
 void Operande::clearValeurPivot()
 {
-    qDebug("clear valeur Pivot");
+    qDebug()<< mName << "::clearValeurPivot";
     mValeurPivot = 0;
     emit valeurPivotCleared();
 }

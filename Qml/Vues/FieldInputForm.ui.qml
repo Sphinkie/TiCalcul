@@ -15,7 +15,7 @@ Button {
 
     //! Le texte affiché est la String envoyée par l'afficheur
     contentItem: Text {
-        text: afficheur.displayValue
+        text: afficheur.displayValue ? afficheur.displayValue : afficheur.hint
         horizontalAlignment: Text.AlignRight
         verticalAlignment: Text.AlignVCenter
         // rightPadding: 8 // utile ?

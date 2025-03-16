@@ -44,7 +44,11 @@ class Unites
             {FRAMES_25, "FRAMES_25"} , {FRAMES_50, "FRAMES_50"}, {FRAMES_NTSC, "FRAMES_NTSC"},
             {SECONDS, "SECONDS"}, {MILLISECONDS, "MILLISECONDS"}, {MICROSECONDS, "MICROSECONDS"}
         };
-
+        static const inline QMap<Units, QString> hint = {
+            {HMSI,"HH:MM:SS:FF"}, {DHMSM,"HH:MM:SS,mmm"},
+            {FRAMES_25, "FRAMES"} , {FRAMES_50, "FRAMES"}, {FRAMES_NTSC, "FRAMES"},
+            {SECONDS, "SECONDS"}, {MILLISECONDS, "MILLISECONDS"}, {MICROSECONDS, "MICROSECONDS"}
+        };
 };
 
 #endif // UNITES_H

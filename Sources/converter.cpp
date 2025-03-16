@@ -251,7 +251,6 @@ QString Converter::microsecsToHMSI(qint64 microsecs, double framerate)
         long quotient;
         long reste;
         QString hmsi = "";
-        if (microsecs == -1) return "..:..:..:..";    // TODO : A vérifier
         if (microsecs == 0) return "00:00:00:00";
         if (microsecs < 0) {
             hmsi += "-";
@@ -285,7 +284,6 @@ QString Converter::microsecsToHMSM(qint64 microsecs)
         long quotient;
         long reste;
         QString hmsi = "";
-        if (microsecs == NULL) return "..:..:..,...";   // TODO : A vérifier
         if (microsecs == 0) return "00:00:00,000";
         if (microsecs < 0) {
             hmsi += "-";
@@ -319,7 +317,6 @@ QString Converter::microsecsToHMSM(qint64 microsecs)
     long quotient;
     long reste;
     QString hmsi = "";
-    if (microsecs == NULL) return "";  // TODO : A vérifier
     if (microsecs == 0) return "00000000";
     if (microsecs < 0) {
         hmsi += "-";
@@ -349,8 +346,7 @@ QString Converter::microsecsToHMSM(qint64 microsecs)
  ***************************************************************************** */
  QString Converter::microsecsToDHMSM(qint64 microsecs)
     {
-        if (microsecs == NULL) return "";    // TODO : A vérifier
-        // si microsecs est inférieur à 24h, alors on retourne le HMSM
+        // si microsecs est inférieur à 24h, alors on retourne "HH:MM:SS,mmm"
         if (microsecs < us_PerDay)
             return microsecsToHMSM(microsecs);
         // Sinon, on retourne "x days" + "HH:MM:SS,mmm"
