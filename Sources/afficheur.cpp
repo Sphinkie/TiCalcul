@@ -300,11 +300,10 @@ void Afficheur::activeDisplay(QString afficheur)
     if (mIsActive)
     {
         mRawHMSI = Converter::HMSItoRawHMSI(mDisplayValue);
-        // on enlève les 0 et les espaces du debut
-        qDebug() << "regex <<" << mDisplayValue;
+        // on enlève les 0 et les espaces du début
         static QRegularExpression regex = QRegularExpression("^[0\\s]*");
         mRawNUM  = mDisplayValue.remove(regex);
-        qDebug() << "regex >>" << mRawNUM;
+        qDebug() << "mRawNUM" << mRawNUM;
     }
 }
 

@@ -14,11 +14,11 @@ class Converter
     public:
         static const qint64 us_PerHour = 3600000000;
         static const qint64 us_PerDay = us_PerHour * 24;
-        static const qint32 us_PerMinute = 60000000L;
-        static const qint32 us_PerSecond = 1000000L;
-        static const qint32 us_PerMillisec = 1000L;
-        static const qint32 us_PerFrame25 = us_PerSecond / 25;
-        static const qint32 us_PerFrame50 = us_PerSecond / 50;
+        static const qint64 us_PerMinute = 60000000;
+        static const qint64 us_PerSecond =  1000000;
+        static const qint64 us_PerMillisec =   1000;
+        static const qint64 us_PerFrame25 = us_PerSecond / 25;
+        static const qint64 us_PerFrame50 = us_PerSecond / 50;
 
         static const inline double NtscFramePerSec = 29.97;
         static const inline double us_PerFrameNTSC = us_PerSecond / NtscFramePerSec;
@@ -49,8 +49,8 @@ class Converter
         static double getNtscFramePerSec();
 
     private:
-        static QString adjustLengthTo3(long value);
-        static QString adjustLengthTo2(long value);
+        static QString adjustLengthTo3(qint64 value);
+        static QString adjustLengthTo2(qint64 value);
 
 };
 
