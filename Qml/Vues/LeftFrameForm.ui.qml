@@ -83,7 +83,7 @@ Item {
         }
         FieldInput {
             //text: "DD + HH:MM:SS:mmm"
-            // TODO: rendre non éditable
+            enabled: false
             afficheur: tc1_aff_5
             Layout.fillHeight: true
             Layout.fillWidth: true

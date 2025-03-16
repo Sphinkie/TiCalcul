@@ -83,6 +83,7 @@ Item {
         // ---------------------------------------
         FieldInput {
             //text: "DD + HH:MM:SS:II"
+            enabled: false
             afficheur: tc2_aff_5
             Layout.fillHeight: true
             Layout.fillWidth: true

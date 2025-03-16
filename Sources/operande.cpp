@@ -87,7 +87,7 @@ void Operande::registerContext(QQmlContext* context)
     context->setContextProperty(mName+"_aff_2", a2);
     context->setContextProperty(mName+"_aff_3", a3);
     context->setContextProperty(mName+"_aff_4", a4);
-    context->setContextProperty(mName+"_aff_5", a5);
+    context->setContextProperty(mName+"_aff_5", a5);  // D+HMSmm
     context->setContextProperty(mName+"_aff_6", a6);
     context->setContextProperty(mName+"_aff_7", a7);
     //context->setContextProperty(mName+"_aff_8", a8);
