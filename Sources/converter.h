@@ -3,10 +3,9 @@
 #include <QObject>
 
 
-/********************************************************************************
- * Classe statique contenant des fonctions de conversion de timecodes
- * Il s'agit de HMSI bruts (de la forme HHHMMSSII)
- ********************************************************************************/
+/*! *******************************************************************************
+ * \class Classe statique contenant des fonctions de conversion de timecodes.
+ ********************************************************************************** */
 class Converter
 {
     /***************************************************************************
@@ -24,11 +23,16 @@ class Converter
         static const inline double NtscFramePerSec = 29.97;
         static const inline double us_PerFrameNTSC = us_PerSecond / NtscFramePerSec;
 
+
+    /***************************************************************************
+     * Les méthodes de conversion.
+     ****************************************************************************/
     public:
         Converter();
 
         static QString addSpaceSeparator(QString value);
         static qint64 HMSItoMicroseconds(QString hmsi_string, double framerate);
+        static QString HMSItoRawHMSI(const QString hmsi);
         static qint64 convertRawHMSItoMicroseconds(QString hmsi, double framerate);
         static QString completeRawHMSIWithDots(QString raw_hmsi);
         static QString microsecsToSeconds(qint64 microsecs);

@@ -17,37 +17,47 @@ Converter::Converter()
  * \param hmsi_string : hmsi to convert.
  * \param framerate : le framerate utilisé dans le hmsi
  * \return the value converted in microseconds.
- ****************************************************************************/
+ ***************************************************************************** */
 qint64 Converter::HMSItoMicroseconds(QString hmsi_string, double framerate)
-    {
-        int len = hmsi_string.length();
-        qint64 microsecs = 0L;
-        if (len > 0)
-            microsecs += hmsi_string.at(0).digitValue() * 10 * Converter::us_PerHour;  // 10 H
-        if (len > 1)
-            microsecs += hmsi_string.at(1).digitValue() * Converter::us_PerHour;  // 1 H
-        if (len > 2)
-            microsecs += hmsi_string.at(2).digitValue() * 10 * Converter::us_PerMinute;  // 10 min
-        if (len > 3)
-            microsecs += hmsi_string.at(3).digitValue() * Converter::us_PerMinute;  // 1 min
-        if (len > 4)
-            microsecs += hmsi_string.at(4).digitValue() * 10 * Converter::us_PerSecond;  // 10 sec
-        if (len > 5)
-            microsecs += hmsi_string.at(5).digitValue() * Converter::us_PerSecond;  // 1 sec
-        if (len > 6)
-            microsecs += hmsi_string.at(6).digitValue() * 10 * Converter::us_PerSecond/framerate;  // 10 img
-        if (len > 7)
-            microsecs += hmsi_string.at(7).digitValue() * Converter::us_PerSecond/framerate;  // 1 img
-        return microsecs;
-    }
+{
+    int len = hmsi_string.length();
+    qint64 microsecs = 0L;
+    if (len > 0)
+        microsecs += hmsi_string.at(0).digitValue() * 10 * Converter::us_PerHour;  // 10 H
+    if (len > 1)
+        microsecs += hmsi_string.at(1).digitValue() * Converter::us_PerHour;  // 1 H
+    if (len > 2)
+        microsecs += hmsi_string.at(2).digitValue() * 10 * Converter::us_PerMinute;  // 10 min
+    if (len > 3)
+        microsecs += hmsi_string.at(3).digitValue() * Converter::us_PerMinute;  // 1 min
+    if (len > 4)
+        microsecs += hmsi_string.at(4).digitValue() * 10 * Converter::us_PerSecond;  // 10 sec
+    if (len > 5)
+        microsecs += hmsi_string.at(5).digitValue() * Converter::us_PerSecond;  // 1 sec
+    if (len > 6)
+        microsecs += hmsi_string.at(6).digitValue() * 10 * Converter::us_PerSecond/framerate;  // 10 img
+    if (len > 7)
+        microsecs += hmsi_string.at(7).digitValue() * Converter::us_PerSecond/framerate;  // 1 img
+    return microsecs;
+}
+
+/*! *************************************************************************
+ * \brief Convertit un HMSI en un RAW HMSI. Exemple: "25:48:12:51' en "25481251"
+ * \param hmsi: une string HMSI avec les ":"
+ * \returns the corresponding RAW HMSI
+ **************************************************************************** */
+QString Converter::HMSItoRawHMSI(QString hmsi)
+{
+    return hmsi.remove(':');
+}
 
  /*! *************************************************************************
- * Convertit un Raw HMSI en un nombre de micro-secondes.
- * Ex:  "0245" pour 2h45m.
+ * \brief Convertit un Raw HMSI en un nombre de micro-secondes.
+ *        Exemple:  "0245" pour 2h45m.
  * \param hmsi : raw hmsi to convert.
  * \param framerate : the framerate used for raw hmsi
  * \return the value converted in microseconds.
- ****************************************************************************/
+ ***************************************************************************** */
 qint64 Converter::convertRawHMSItoMicroseconds(QString hmsi, double framerate)
     {
         qint64 microsecs;

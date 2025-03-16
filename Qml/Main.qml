@@ -75,5 +75,5 @@ Window {
                 Layout.columnSpan: 3
             }
         }
-    }
+    }    
 }

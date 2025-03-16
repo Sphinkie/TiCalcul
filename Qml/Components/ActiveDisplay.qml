@@ -10,12 +10,17 @@ import TiCalcul
   * On change d'afficheur actif en cliquant sur un afficheur (cad un FieldInput).
   * *************************************************************************** */
 Item {
-    property Afficheur afficheur: tc1_aff_4
-    property string unit: afficheur.getUnit()
+    property Afficheur afficheur
+    property string unit
 
     onAfficheurChanged: {
         unit: afficheur.getUnit()
         // On envoie un signal à tous les afficheurs pour dire lequel est actif
         activeDisplay(afficheur.objectName)
+    }
+
+    Component.onCompleted: {
+        console.log("Initialisation de l'afficheur actif")
+        afficheurActif.afficheur = tc1_aff_4
     }
 }

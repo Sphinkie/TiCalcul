@@ -8,7 +8,7 @@
  * ***********************************************************************************************************/
 Afficheur::Afficheur(Unites::Units unit, QString parentName, QObject *parent)
 {
-    this->mDisplayValue = "UNDEFINED";
+    this->mDisplayValue = "";
     this->mUnit = unit;
     this->mUnitName = Unites::name.value(unit);
     this->mDecimals = Unites::nbDecimals.value(unit);   // TODO: nombre de chiffres après la virgule
@@ -314,8 +314,14 @@ void Afficheur::clearValue()
  * ***********************************************************************************************************/
 void Afficheur::activeDisplay(QString afficheur)
 {
+    // qDebug() << "activeDisplay = " << afficheur;
     mIsActive = (afficheur == this->objectName());
-    // qDebug() << "recu = " << afficheur;
+    // Quand l'afficheur passe actif, on recharge les valeurs éditables avec les valeurs en cours.
+    if (mIsActive)
+    {
+        mRawHMSI = Converter::HMSItoRawHMSI(mDisplayValue);
+        mRawNUM  = mDisplayValue;
+    }
 }
 
 /*! **********************************************************************************************************
