@@ -58,7 +58,7 @@ void Operande::setValeurPivot(const qint64 newValeurPivot)
     {
         qDebug("ERROR: msg_max_reached: discard candidate %d ! ", newValeurPivot);
     }
-    else if (mValeurPivot != newValeurPivot)
+    else // if (mValeurPivot != newValeurPivot)
     {
         qDebug("received new pivot: %d us", newValeurPivot);
         mValeurPivot = newValeurPivot;
