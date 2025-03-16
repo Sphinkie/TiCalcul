@@ -35,7 +35,6 @@ void Afficheur::setFrameRate(double framerate)
  * ***********************************************************************************************************/
 void Afficheur::addDigit(QString digit)
 {
-    // FIXME: on ne peut pas ajouter un (ou plusieurs) 0 après le point.
     switch (mUnit)
     {
     case Unites::HMSI:
@@ -154,7 +153,6 @@ void Afficheur::removeLastDigit()
     default:
     {
         // Autres units: on applique simplement le facteur de convertion
-        // TODO : si on efface la première décimale, il faut laisser le point
         this->mRawNUM.chop(1);  // Enleve le dernier caractère
         qDebug(qPrintable("candidate: " + mRawNUM));
         bool ok;
@@ -171,15 +169,6 @@ void Afficheur::removeLastDigit()
         break;
     }
     }
-}
-
-/*! **********************************************************************************************************
- * \brief retourne le nom de l'unité de cet afficheur.
- * \returns the unit name.
- * ***********************************************************************************************************/
-QString Afficheur::getUnit() const
-{
-    return mUnitName;
 }
 
 /*! **********************************************************************************************************

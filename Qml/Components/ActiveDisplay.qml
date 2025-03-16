@@ -11,10 +11,8 @@ import TiCalcul
   * *************************************************************************** */
 Item {
     property Afficheur afficheur
-    property string unit
 
     onAfficheurChanged: {
-        unit: afficheur.getUnit()
         // On envoie un signal à tous les afficheurs pour dire lequel est actif
         activeDisplay(afficheur.objectName)
     }
@@ -22,6 +20,5 @@ Item {
     Component.onCompleted: {
         console.log("Initialisation de l'afficheur actif")
         afficheurActif.afficheur = tc1_aff_4
-        unit: afficheur.getUnit()
     }
 }

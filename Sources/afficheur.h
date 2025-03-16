@@ -8,6 +8,7 @@ class Afficheur : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QString displayValue MEMBER mDisplayValue NOTIFY displayValueChanged)
+    Q_PROPERTY(QString unit MEMBER mUnitName NOTIFY unitChanged)
 
 // ------------------------------------------------------------
 // Méthodes
@@ -19,7 +20,6 @@ public:
     Q_INVOKABLE double getFrameRate() const;
     Q_INVOKABLE void addDigit(QString digit);
     Q_INVOKABLE void removeLastDigit();
-    Q_INVOKABLE QString getUnit() const;
 
 public slots:
     void setValue(const qint64 microsecs);
@@ -29,6 +29,7 @@ public slots:
 signals:
     void displayValueChanged();         //!< Indique au QML que la valeur à afficher a changé.
     void setValeurPivot(qint64);        //!< Envoi à l'opérande d'une nouvelle valeur pivot.
+    void unitChanged();
 
 private:
     void setDisplayValue(const QString value);

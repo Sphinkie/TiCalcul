@@ -94,7 +94,9 @@ GridLayout {
     KeyboardKeyForm {
         id: key00
         buttonText: "00"
-        enabled: (afficheurActif.unit === "HMSI") ? true : false
+        enabled: (afficheurActif.afficheur.unit === "HMSI"
+                  || afficheurActif.afficheur.unit === "MICROSECONDS"
+                  || afficheurActif.afficheur.unit === "MILLISECONDS") ? true : false
         Layout.fillWidth: true
     }
     KeyboardKeyForm {
@@ -105,7 +107,7 @@ GridLayout {
     KeyboardKeyForm {
         id: keyDot
         buttonText: "."
-        enabled: (afficheurActif.unit === "SECONDS") ? true : false
+        enabled: (afficheurActif.afficheur.unit === "SECONDS") ? true : false
         Layout.fillWidth: true
     }
     KeyboardKeyForm {
