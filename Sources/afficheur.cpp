@@ -345,7 +345,10 @@ void Afficheur::setDisplayValue(const QString value)
             mDisplayValue = Converter::completeRawHMSIWithDots(value);
         }
     }
-    // Pour les autres unités, on travaille avec la valeur reçue
+    // Pour le D+HMSm, on affichera telle quelle la valeur reçue (qui est complete)
+    else if (mUnit == Unites::DHMSM)
+        mDisplayValue = value;
+    // Pour les autres unités, on affichera la valeur reçue, avec des separateurs
     else
         mDisplayValue = Converter::addSpaceSeparator(value);
     emit displayValueChanged();
