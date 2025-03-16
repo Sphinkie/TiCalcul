@@ -47,7 +47,7 @@ private:
     int mDecimals;              //!< Nombre de chiffres après la virgule
     double mFrameRate;          //!< Framerate utilisé (pour les afficheurs FRAMES et HMSI)
     double mConversionFacteur;  //!< Nombre de microseconds par unité
-    bool mIsActive;             //!< Indique si cet afficheur est en cours d'edition. Positionné par le QML.
+    bool mIsActive = false;     //!< Indique si cet afficheur est en cours d'edition. Positionné par le QML.
 
 };
 

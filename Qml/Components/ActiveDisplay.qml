@@ -22,5 +22,6 @@ Item {
     Component.onCompleted: {
         console.log("Initialisation de l'afficheur actif")
         afficheurActif.afficheur = tc1_aff_4
+        unit: afficheur.getUnit()
     }
 }

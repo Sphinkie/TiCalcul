@@ -22,6 +22,10 @@ Operande::Operande(const QString name, QObject *parent)
     a7 = new Afficheur(Unites::FRAMES_50, name);
     //a8 = new Afficheur(Unites::FRAMES_NTSC);
 
+    // On signale à l'afficheur HMSI qu'il a le focus.
+    // (Ce serait mieux via le QML, mais il semble instancié trop tot).
+    a4->activeDisplay("tc1_HMSI");
+
     QList<Afficheur*> afficheurs = {a1, a2, a3, a3, a4, a5, a6, a7};
     QList<Afficheur*>::iterator it;
 

@@ -14,7 +14,7 @@ Afficheur::Afficheur(Unites::Units unit, QString parentName, QObject *parent)
     this->mDecimals = Unites::nbDecimals.value(unit);   // TODO: nombre de chiffres après la virgule
     this->mFrameRate = Unites::frameRate.value(unit);
     this->mConversionFacteur = Unites::usPerUnit.value(unit);
-    setObjectName(parentName+'_'+mUnitName);
+    setObjectName(parentName+'_' + mUnitName);
 }
 
 /*! **********************************************************************************************************
@@ -263,7 +263,8 @@ bool Afficheur::isIncorrect(const QString rawHmsi)
  * ***********************************************************************************************************/
 void Afficheur::setValue(const qint64 microsecs)
 {
-    QString value = "DEFAULT VALUE";
+    // qDebug() << mUnitName << "::setValue()" << microsecs;
+    QString value = "";
     switch (mUnit)
     {
     case Unites::HMSI:
@@ -331,10 +332,13 @@ void Afficheur::activeDisplay(QString afficheur)
  * ***********************************************************************************************************/
 void Afficheur::setDisplayValue(const QString value)
 {
+    // qDebug() << mUnitName << "::setDisplayValue" << value << (mIsActive? "active": "passive");
+
     // Si le champ est en cours d'édition:
     if (mIsActive)
     {
-        switch (mUnit) {
+        switch (mUnit)
+        {
         case Unites::HMSI:
             // On affiche la valeur en cours d'edition (mRawHMSi)
             mDisplayValue = Converter::completeRawHMSIWithDots(mRawHMSI);
@@ -348,7 +352,8 @@ void Afficheur::setDisplayValue(const QString value)
     else
     // Sinon: cellule en affichage
     {
-        switch (mUnit) {
+        switch (mUnit)
+        {
         case Unites::HMSI:
             // on affiche la valeur recue (complete)
             mDisplayValue = Converter::completeRawHMSIWithDots(value);
