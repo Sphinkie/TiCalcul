@@ -128,33 +128,33 @@ void Afficheur::addDigit(QString digit)
 
 /*! **********************************************************************************************************
  * Enlève un digit à la fin de la chaine de caractères.
- * La nouvelle valeur pivot est envoyée à l'opérande (si elle a changé).
+ * La nouvelle valeur pivot est envoyée à l'opérande.
  * ***********************************************************************************************************/
 void Afficheur::removeLastDigit()
 {
-    int len = this->mDisplayValue.length();
-    if (len == 0)     return ;
-    // TODO : si on efface la première décimale, il faut laisser le point
-    QString newStringValue;
+    // si la chaine est dejà vide , on sort.
+    if ( this->mDisplayValue.length() == 0)  return;
+    // Sinon, on efface le dernier caractère.
     switch (mUnit)
     {
     case Unites::HMSI:
     {
         // Format HMSI
-        newStringValue = this->mRawHMSI.chopped(1);  // Enleve le dernier caractère
-        emit setValeurPivot(Converter::convertRawHMSItoMicroseconds(newStringValue, this->mFrameRate));
+        this->mRawHMSI.chop(1);  // Enleve le dernier caractère
+        emit setValeurPivot(Converter::convertRawHMSItoMicroseconds(mRawHMSI, this->mFrameRate));
         break;
     }
     case Unites::DHMSM:
     {
-        // TODO : Format D+HMSm  (si nécéssaire - V2)
-        newStringValue = this->mRawHMSI.chopped(1);  // Enleve le dernier caractère
-        emit setValeurPivot(Converter::convertRawHMSItoMicroseconds(newStringValue, this->mFrameRate));
+        // TODO : Format D+HMSmm  (si nécéssaire - en V2)
+        this->mRawHMSI.chop(1);  // Enleve le dernier caractère
+        emit setValeurPivot(Converter::convertRawHMSItoMicroseconds(mRawHMSI, this->mFrameRate));
         break;
     }
     default:
     {
         // Autres units: on applique simplement le facteur de convertion
+        // TODO : si on efface la première décimale, il faut laisser le point
         this->mRawNUM.chop(1);  // Enleve le dernier caractère
         qDebug(qPrintable("candidate: " + mRawNUM));
         bool ok;
@@ -166,7 +166,8 @@ void Afficheur::removeLastDigit()
         }
         else {
             qDebug(qPrintable("ERROR: removeLastDigit: converting '" + mRawNUM + "' to numeric failed. Replace with 0"));
-            emit setValeurPivot(0);        }
+            emit setValeurPivot(0);
+        }
         break;
     }
     }
@@ -198,15 +199,6 @@ void Afficheur::clearDisplayValue()
 double Afficheur::getFrameRate() const
 {
     return this->mFrameRate;
-}
-
-/*! **********************************************************************************************************
- * Renvoie le nombre de digits déjà présents dans la string.
- * \returns the number of digits in the string.
- ******************************************************************/
-int Afficheur::length() const
-{
-    return this->mDisplayValue.length();
 }
 
 /*! **********************************************************************************************************
@@ -328,29 +320,44 @@ void Afficheur::activeDisplay(QString afficheur)
 
 /*! **********************************************************************************************************
  * \brief Mémorise et propage la string à afficher vers le QML.
+ * \note On distingue le cas où la cellule est active (cad en cours d'édition), ou pas.
  * \param value: La valeur exprimée dans l'unité de cet afficheur.
  * ***********************************************************************************************************/
 void Afficheur::setDisplayValue(const QString value)
 {
-    // pour les HMSI, on travaille avec le RawHMSI
-    if (mUnit == Unites::HMSI)
+    // Si le champ est en cours d'édition:
+    if (mIsActive)
     {
-        // Si le champ est en cours d'édition:
-        if (mIsActive)
+        switch (mUnit) {
+        case Unites::HMSI:
             // On affiche la valeur en cours d'edition (mRawHMSi)
             mDisplayValue = Converter::completeRawHMSIWithDots(mRawHMSI);
-        // Sinon:
-        else {
-            // on affiche la valeur recue (complete)
-            mDisplayValue = Converter::completeRawHMSIWithDots(value);
+            break;
+        default:
+            // Pour les autres unités, on affichera la valeur en cours d'édition, avec des separateurs
+            mDisplayValue = Converter::addSpaceSeparator(mRawNUM);
+            break;
         }
     }
-    // Pour le D+HMSm, on affichera telle quelle la valeur reçue (qui est complete)
-    else if (mUnit == Unites::DHMSM)
-        mDisplayValue = value;
-    // Pour les autres unités, on affichera la valeur reçue, avec des separateurs
     else
-        mDisplayValue = Converter::addSpaceSeparator(value);
+    // Sinon: cellule en affichage
+    {
+        switch (mUnit) {
+        case Unites::HMSI:
+            // on affiche la valeur recue (complete)
+            mDisplayValue = Converter::completeRawHMSIWithDots(value);
+            break;
+        case Unites::DHMSM:
+            // Pour le D+HMSm, on affichera telle quelle la valeur reçue (qui est complete)
+            mDisplayValue = value;
+            break;
+        default:
+            // Pour les autres unités, on affichera la valeur reçue, avec des separateurs
+            mDisplayValue = Converter::addSpaceSeparator(value);
+            break;
+        }
+    }
+
     emit displayValueChanged();
 }
 

@@ -16,17 +16,14 @@ public:
     explicit Afficheur(Unites::Units unit, QString parentName, QObject *parent = nullptr);
 
     Q_INVOKABLE void setFrameRate(double framerate);
+    Q_INVOKABLE double getFrameRate() const;
     Q_INVOKABLE void addDigit(QString digit);
     Q_INVOKABLE void removeLastDigit();
     Q_INVOKABLE QString getUnit() const;
 
-    double getFrameRate() const;
-    int length() const;
-
 public slots:
     void setValue(const qint64 microsecs);
     void clearValue();
-//    void activeDisplay(Afficheur* afficheur);
     void activeDisplay(QString afficheur);
 
 signals:
