@@ -60,16 +60,61 @@ QString Converter::HMSItoRawHMSI(QString hmsi)
  * \return the value converted in microseconds.
  ***************************************************************************** */
 qint64 Converter::convertRawHMSItoMicroseconds(QString hmsi, double framerate)
+{
+    qint64 microsecs;
+    QString hmsi_num = hmsi.leftJustified(8,'0');   // on complete avec des "0"
+    qDebug(qPrintable("filled RawHMSI: " + hmsi_num));
+    microsecs = hmsi_num.left(2).toInt() * us_PerHour;                  // [0..1] hours
+    microsecs += hmsi_num.mid(2, 2).toInt() * us_PerMinute;             // [2..3] minutes
+    microsecs += hmsi_num.mid(4, 2).toInt() * us_PerSecond;             // [4..5] seconds
+    microsecs += hmsi_num.mid(6, 2).toInt() * (us_PerSecond/framerate); // [6..7] frames
+    return microsecs;
+}
+
+/*! **************************************************************************
+ * Ajoute des séparateurs de milliers sur la partie entière et la partie décimale.
+ * \param value : a numeric value.
+ * \return a readable string with space separators.
+ * ***************************************************************************/
+QString Converter::addSpaceSeparator(QString value)
+{
+    // 12 345.678 9
+    QString formattedValue;
+    int nbDigits = value.length();
+    if (nbDigits == 0) return "0";
+    int pointPos = value.indexOf('.');
+    int lastUnit;
+    // ----------------------------------------------------
+    // Partie entière: 12 345
+    // ----------------------------------------------------
+    bool nombreEntier = (pointPos==-1);
+    if (nombreEntier) lastUnit = nbDigits-1;
+    else lastUnit = pointPos-1;
+    // La partie entière va de 0 à lastUnit
+    for (int i = lastUnit; i >= 0; i--)
     {
-        qint64 microsecs;
-        QString hmsi_num = hmsi.leftJustified(8,'0');   // on complete avec des "0"
-        qDebug(qPrintable("filled RawHMSI: " + hmsi_num));
-        microsecs = hmsi_num.left(2).toInt() * us_PerHour;                  // [0..1] hours
-        microsecs += hmsi_num.mid(2, 2).toInt() * us_PerMinute;             // [2..3] minutes
-        microsecs += hmsi_num.mid(4, 2).toInt() * us_PerSecond;             // [4..5] seconds
-        microsecs += hmsi_num.mid(6, 2).toInt() * (us_PerSecond/framerate); // [6..7] frames
-        return microsecs;
+        // formattedValue = value.charAt(i) + formattedValue;
+        // on ajoute au début
+        formattedValue.insert(0, value.at(i));
+        if ((lastUnit - i+1) % 3 == 0)
+            formattedValue.insert(0, " ");
     }
+    // ----------------------------------------------------
+    // Cas où il n'y a pas de Partie décimale:
+    // ----------------------------------------------------
+    if (nombreEntier) return formattedValue;
+    // ----------------------------------------------------
+    // Cas avec Partie décimale: .678 9
+    // ----------------------------------------------------
+    formattedValue.append(".");
+    // La partie décimale va de pointPos+1 à nbDigits-1
+    for (int i = pointPos+1; i <= nbDigits-1; i++)
+    {
+        // if ((i-pointPos+1) % 3 == 0) formattedValue = formattedValue + " ";
+        formattedValue.append(value.at(i));
+    }
+    return formattedValue;
+}
 
  /*! *************************************************************************
  * Transforme une valeur en une string de 3 chars.
@@ -79,21 +124,21 @@ qint64 Converter::convertRawHMSItoMicroseconds(QString hmsi, double framerate)
  * \return the value completed with 0s (string size 3 chars).
  ****************************************************************************/
 QString Converter::adjustLengthTo3(qint64 value)
+{
+    QString str_value = QString::number(value);
+    switch (str_value.length())
     {
-        QString str_value = QString::number(value);
-        switch (str_value.length())
-        {
-        case 0:
-            return "000";
-        case 1:
-            return "00" + str_value;
-        case 2:
-            return "0" + str_value;
-        default:
-            // Transforme aussi 4512 en 451
-            return str_value.left(3);
-        }
+    case 0:
+        return "000";
+    case 1:
+        return "00" + str_value;
+    case 2:
+        return "0" + str_value;
+    default:
+        // Transforme aussi 4512 en 451
+        return str_value.left(3);
     }
+}
 
  /*! *************************************************************************
  * Transforme une valeur en une string de 2 chars. Transforme 5 en "05".
@@ -101,14 +146,14 @@ QString Converter::adjustLengthTo3(qint64 value)
  * \return the value completed with 0s (string size 2 chars).
  *************************************************************************** */
 QString Converter::adjustLengthTo2(qint64 value)
-    {
-        QString str_value;
-        str_value.setNum(value);
-        if (str_value.length() == 1)
-            return "0" + str_value;
-        else
-            return str_value;
-    }
+{
+    QString str_value;
+    str_value.setNum(value);
+    if (str_value.length() == 1)
+        return "0" + str_value;
+    else
+        return str_value;
+}
 
  /*! *************************************************************************
  * Transforme "123" en "12:3.:..:..".
@@ -116,27 +161,27 @@ QString Converter::adjustLengthTo2(qint64 value)
  * \return the hmsi formatted with : and dots.
  ****************************************************************************/
 QString Converter::completeRawHMSIWithDots(QString raw_hmsi)
-    {
-        QString hmsi = "..:..:..:..";
-        int len = raw_hmsi.length();
-        if (len > 0)
-            hmsi[0] = raw_hmsi.at(0);
-        if (len > 1)
-            hmsi[1] = raw_hmsi.at(1);
-        if (len > 2)
-            hmsi[3] = raw_hmsi.at(2);
-        if (len > 3)
-            hmsi[4] = raw_hmsi.at(3);
-        if (len > 4)
-            hmsi[6] = raw_hmsi.at(4);
-        if (len > 5)
-            hmsi[7] = raw_hmsi.at(5);
-        if (len > 6)
-            hmsi[9] = raw_hmsi.at(6);
-        if (len > 7)
-            hmsi[10] = raw_hmsi.at(7);
-        return hmsi;
-    }
+{
+    QString hmsi = "..:..:..:..";
+    int len = raw_hmsi.length();
+    if (len > 0)
+        hmsi[0] = raw_hmsi.at(0);
+    if (len > 1)
+        hmsi[1] = raw_hmsi.at(1);
+    if (len > 2)
+        hmsi[3] = raw_hmsi.at(2);
+    if (len > 3)
+        hmsi[4] = raw_hmsi.at(3);
+    if (len > 4)
+        hmsi[6] = raw_hmsi.at(4);
+    if (len > 5)
+        hmsi[7] = raw_hmsi.at(5);
+    if (len > 6)
+        hmsi[9] = raw_hmsi.at(6);
+    if (len > 7)
+        hmsi[10] = raw_hmsi.at(7);
+    return hmsi;
+}
 
 /*! *************************************************************************
  * On transforme "1234000000" en "1234".
@@ -147,7 +192,7 @@ QString Converter::completeRawHMSIWithDots(QString raw_hmsi)
  * ***************************************************************************/
 QString Converter::microsecsToSeconds(qint64 microsecs)
 {
-    qDebug() << "microsecsToSeconds" << microsecs;
+    //qDebug() << "microsecsToSeconds" << microsecs;
     QString stringValue;
     stringValue.setNum(microsecs);
 
@@ -155,15 +200,15 @@ QString Converter::microsecsToSeconds(qint64 microsecs)
     if (microsecs < 1000000)
     {
         stringValue.chop(3);
-        // TODO éviter le 0.000
         return ("0." + stringValue.rightJustified(3,'0') );
     }
     // Autres cas: (supérieur à 1 seconde)
-    // TODO éviter le XXX.000
     stringValue.chop(3);
     QString decimales = stringValue.last(3);
+    if (decimales == "000") decimales = "";
+    else decimales.prepend('.');
     stringValue.chop(3);
-    return stringValue + "." + decimales;
+    return stringValue + decimales;
 }
 
 /*! *************************************************************************
@@ -176,10 +221,11 @@ QString Converter::microsecsToSeconds(qint64 microsecs)
  ****************************************************************************/
 QString Converter::microsecsToFrames(qint64 microsecs, double framerate)
 {
-    QString stringValue;
-    qint64 numericValue = (qint64)ceil(microsecs / 1000000.0 * framerate);
-    stringValue.setNum(numericValue);
-    return stringValue;
+    // qDebug() << "microsecsToFrames" << microsecs;
+    qint64 numericValue = microsecs / 1000;  // millisecondes
+    numericValue *= framerate;               // milliframes
+    QString stringValue = QString::number(numericValue);
+    return stringValue.chopped(3);           // frames (on enleve les 3 derniers chiffres: arrondi vers le bas)
 }
 
 /*! **************************************************************************
@@ -189,8 +235,8 @@ QString Converter::microsecsToFrames(qint64 microsecs, double framerate)
  * ***************************************************************************/
 QString Converter::microsecsToMillis(qint64 microsecs)
 {
-    QString stringValue;
-    stringValue.setNum(microsecs / 1000);
+    QString stringValue = QString::number(microsecs);
+    stringValue.chop(3);
     return stringValue;
 }
 
@@ -205,50 +251,6 @@ QString Converter::microseconds(qint64 microsecs)
     return QString::number(microsecs);
 }
 
-/*! **************************************************************************
- * Ajoute des séparateurs de milliers sur la partie entière et la partie décimale.
- * \param value : a numeric value.
- * \return a readable string with space separators.
- * ***************************************************************************/
-QString Converter::addSpaceSeparator(QString value)
-    {
-        // 12 345.678 9
-        QString formattedValue;
-        int nbDigits = value.length();
-        if (nbDigits == 0) return "0";
-        int pointPos = value.indexOf('.');
-        int lastUnit;
-        // ----------------------------------------------------
-        // Partie entière: 12 345
-        // ----------------------------------------------------
-        bool nombreEntier = (pointPos==-1);
-        if (nombreEntier) lastUnit = nbDigits-1;
-        else lastUnit = pointPos-1;
-        // La partie entière va de 0 à lastUnit
-        for (int i = lastUnit; i >= 0; i--)
-        {
-            // formattedValue = value.charAt(i) + formattedValue;
-            // on ajoute au début
-            formattedValue.insert(0, value.at(i));
-            if ((lastUnit - i+1) % 3 == 0)
-                formattedValue.insert(0, " ");
-        }
-        // ----------------------------------------------------
-        // Cas où il n'y a pas de Partie décimale:
-        // ----------------------------------------------------
-        if (nombreEntier) return formattedValue;
-        // ----------------------------------------------------
-        // Cas avec Partie décimale: .678 9
-        // ----------------------------------------------------
-        formattedValue.append(".");
-        // La partie décimale va de pointPos+1 à nbDigits-1
-        for (int i = pointPos+1; i <= nbDigits-1; i++)
-        {
-            // if ((i-pointPos+1) % 3 == 0) formattedValue = formattedValue + " ";
-            formattedValue.append(value.at(i));
-        }
-        return formattedValue;
-    }
 
 /*! **************************************************************************
  * On transforme "1234000000" en "00:20:34:00".
@@ -258,30 +260,33 @@ QString Converter::addSpaceSeparator(QString value)
  * ***************************************************************************/
 QString Converter::microsecsToHMSI(qint64 microsecs, double framerate)
 {
-        qint64 quotient;
-        qint64 reste;
-        QString hmsi = "";
-        if (microsecs == 0) return "00:00:00:00";
-        if (microsecs < 0) {
-            hmsi += "-";
-            microsecs = abs(microsecs);
-        }
-        quotient = microsecs / us_PerHour;
-        hmsi += adjustLengthTo2(quotient);
-        hmsi += ":";
-        reste = microsecs % us_PerHour;
-        quotient = reste / us_PerMinute;
-        hmsi += adjustLengthTo2(quotient);
-        hmsi += ":";
-        reste = reste % us_PerMinute;
-        quotient = reste / us_PerSecond;
-        hmsi += adjustLengthTo2(quotient);
-        hmsi += ":";
-        reste = reste % us_PerSecond;
-        // quotient = reste / us_PerFrame;
-        quotient = (qint64)ceil(reste / 1000000.0 * framerate);
-        hmsi += adjustLengthTo2(quotient);
-        return hmsi;
+    qint64 quotient;
+    qint64 reste;
+    QString hmsi = "";
+    if (microsecs == 0) return "00:00:00:00";
+    if (microsecs < 0) {
+        hmsi += "-";
+        microsecs = abs(microsecs);
+    }
+    quotient = microsecs / us_PerHour;
+    reste = microsecs % us_PerHour;
+    hmsi += adjustLengthTo2(quotient);
+    hmsi += ":";
+
+    quotient = reste / us_PerMinute;
+    reste = reste % us_PerMinute;
+    hmsi += adjustLengthTo2(quotient);
+    hmsi += ":";
+
+    quotient = reste / us_PerSecond;
+    reste = reste % us_PerSecond;
+    hmsi += adjustLengthTo2(quotient);
+    hmsi += ":";
+
+    // quotient = reste / us_PerFrame;
+    quotient = (qint64)ceil(reste / 1000000.0 * framerate);
+    hmsi += adjustLengthTo2(quotient);
+    return hmsi;
 }
 
 /*! **************************************************************************
@@ -290,32 +295,35 @@ QString Converter::microsecsToHMSI(qint64 microsecs, double framerate)
  * \return a readable HMSm value (HH:MM:SS,mmm).
  * ***************************************************************************/
 QString Converter::microsecsToHMSM(qint64 microsecs)
-    {
-        qint64 quotient;
-        qint64 reste;
-        QString hmsi = "";
-        qDebug() << "microsecsToHMSM()" << microsecs;
-        if (microsecs == 0) return "00:00:00,000";
-        if (microsecs < 0) {
-            hmsi += "-";
-            microsecs = abs(microsecs);
-        }
-        quotient = microsecs / us_PerHour;
-        hmsi += adjustLengthTo2(quotient);
-        hmsi += ":";
-        reste = microsecs % us_PerHour;
-        quotient = reste / us_PerMinute;
-        hmsi += adjustLengthTo2(quotient);
-        hmsi += ":";
-        reste = reste % us_PerMinute;
-        quotient = reste / us_PerSecond;
-        hmsi += adjustLengthTo2(quotient);
-        hmsi += ",";
-        reste = reste % us_PerSecond;
-        quotient = reste / us_PerMillisec;
-        hmsi += adjustLengthTo3(quotient);
-        return hmsi;
+{
+    qint64 quotient;
+    qint64 reste;
+    QString hmsi = "";
+    qDebug() << "microsecsToHMSM()" << microsecs;
+    if (microsecs == 0) return "00:00:00,000";
+    if (microsecs < 0) {
+        hmsi += "-";
+        microsecs = abs(microsecs);
     }
+    quotient = microsecs / us_PerHour;
+    reste = microsecs % us_PerHour;
+    hmsi += adjustLengthTo2(quotient);
+    hmsi += ":";
+
+    quotient = reste / us_PerMinute;
+    reste = reste % us_PerMinute;
+    hmsi += adjustLengthTo2(quotient);
+    hmsi += ":";
+
+    quotient = reste / us_PerSecond;
+    reste = reste % us_PerSecond;
+    hmsi += adjustLengthTo2(quotient);
+    hmsi += ",";
+
+    quotient = reste / us_PerMillisec;
+    hmsi += adjustLengthTo3(quotient);
+    return hmsi;
+}
 
 /*! **************************************************************************
  * On transforme 1234000000 en "00203400".
@@ -323,7 +331,7 @@ QString Converter::microsecsToHMSM(qint64 microsecs)
  * \param framerate : framerate for raw hmsi
  * \return a raw HMSI value ("HHMMSSII").
  ***************************************************************************** */
-  QString Converter::microsecsToRawHMSI(qint64 microsecs, double framerate)
+QString Converter::microsecsToRawHMSI(qint64 microsecs, double framerate)
 {
     qint64 quotient;
     qint64 reste;
@@ -336,17 +344,17 @@ QString Converter::microsecsToHMSM(qint64 microsecs)
         microsecs = abs(microsecs);
     }
     quotient = microsecs / us_PerHour;
+    reste = microsecs % us_PerHour;
     hmsi += adjustLengthTo2(quotient);
 
-     reste = microsecs % us_PerHour;
     quotient = reste / us_PerMinute;
-    hmsi += adjustLengthTo2(quotient);
-
     reste = reste % us_PerMinute;
-    quotient = reste / us_PerSecond;
     hmsi += adjustLengthTo2(quotient);
 
+    quotient = reste / us_PerSecond;
     reste = reste % us_PerSecond;
+    hmsi += adjustLengthTo2(quotient);
+
     quotient = reste / conv;
     hmsi += adjustLengthTo2(quotient);
     return hmsi;
@@ -358,19 +366,19 @@ QString Converter::microsecsToHMSM(qint64 microsecs)
  * \return a readable HMSI value with days ("N days HH:MM:SS:II").
  ***************************************************************************** */
  QString Converter::microsecsToDHMSM(qint64 microsecs)
+{
+    // si microsecs est inférieur à 24h, alors on retourne "HH:MM:SS,mmm"
+    if (microsecs < us_PerDay)
+        return microsecsToHMSM(microsecs);
+    // Sinon, on retourne "x days" + "HH:MM:SS,mmm"
+    else
     {
-        // si microsecs est inférieur à 24h, alors on retourne "HH:MM:SS,mmm"
-        if (microsecs < us_PerDay)
-            return microsecsToHMSM(microsecs);
-        // Sinon, on retourne "x days" + "HH:MM:SS,mmm"
-        else
-        {
-            qint64 nb_days = microsecs / us_PerDay;
-            qint64 day_time =  microsecs % us_PerDay;
-            QString day = (nb_days == 1)? " day + " : " days + ";
-            return QString::number(nb_days) + day + microsecsToHMSM(day_time);
-        }
+        qint64 nb_days = microsecs / us_PerDay;
+        qint64 day_time =  microsecs % us_PerDay;
+        QString day = (nb_days == 1)? " day + " : " days + ";
+        return QString::number(nb_days) + day + microsecsToHMSM(day_time);
     }
+}
 
 /*! **************************************************************************
  * \brief Transforme une unité quelconque (string) en microsecondes (numerique).

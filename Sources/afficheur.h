@@ -50,10 +50,8 @@ private:
     QString mRawHMSI;           //!< utilisé par les afficheurs HMSI
     QString mRawNUM;            //!< utilisé par les afficheurs Numériques
     Unites::Units mUnit;        //!< Unité utilisée par cet afficheur
-    int mDecimals;              //!< Nombre de chiffres après la virgule
     double mFrameRate;          //!< Framerate utilisé (pour les afficheurs FRAMES et HMSI)
     double mConversionFacteur;  //!< Nombre de microseconds par unité
-
 };
 
 #endif // AFFICHEUR_H

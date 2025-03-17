@@ -12,7 +12,6 @@ Afficheur::Afficheur(Unites::Units unit, QString parentName, QObject *parent)
     this->mUnit = unit;
     this->mHint = Unites::hint.value(unit);
     this->mUnitName = Unites::name.value(unit);
-    this->mDecimals = Unites::nbDecimals.value(unit);   // TODO: nombre de chiffres après la virgule
     this->mFrameRate = Unites::frameRate.value(unit);
     this->mConversionFacteur = Unites::usPerUnit.value(unit);
     setObjectName(parentName + '_' + mUnitName);
