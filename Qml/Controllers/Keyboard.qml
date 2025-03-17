@@ -1,6 +1,12 @@
 import QtQuick
 import "../Vues"
 
+
+/*! **************************************************************************
+ * Le Keyboard est composé d'un ensemble de boutons KeyboardKey.
+ * Le controleur détermine l'action déclenchée par chaque bouton, en
+ * appelant une méthode C++ de l'afficheur actif.
+ ***************************************************************************** */
 KeyboardForm {
 
     key0.onClicked: afficheurActif.afficheur.addDigit("0")

@@ -12,20 +12,21 @@ Afficheur::Afficheur(Unites::Units unit, QString parentName, QObject *parent)
     this->mUnit = unit;
     this->mHint = Unites::hint.value(unit);
     this->mUnitName = Unites::name.value(unit);
-    this->mFrameRate = Unites::frameRate.value(unit);
+    this->mFramerate = Unites::frameRate.value(unit);
     this->mConversionFacteur = Unites::usPerUnit.value(unit);
     setObjectName(parentName + '_' + mUnitName);
 }
 
 /*! **********************************************************************************************************
  * \brief Permet de changer dynamiquement le framerate des afficheurs HMSI.
- * \note Attention: voir aussi recalculateValeurPivot() de la classe fille.
  * \param framerate: le nouveau framerate pour cet afficheur (ex: 25.0)
  * ***********************************************************************************************************/
-void Afficheur::setFrameRate(double framerate)
+void Afficheur::setFramerate(double framerate)
 {
-    this->mFrameRate = framerate;
+    qDebug() << this->objectName() << "setFramerate" << framerate;
+    this->mFramerate = framerate;
     this->mConversionFacteur = Converter::us_PerSecond / framerate;
+    emit framerateChanged();
 }
 
 /*! **********************************************************************************************************
@@ -52,7 +53,7 @@ void Afficheur::addDigit(QString digit)
         // ------------------------------------------------------------------------
         // On convertit la string en microsecondes (ValeurPivot)
         // ------------------------------------------------------------------------
-        qint64 numericvalue = Converter::convertRawHMSItoMicroseconds(mRawHMSI, mFrameRate);
+        qint64 numericvalue = Converter::convertRawHMSItoMicroseconds(mRawHMSI, mFramerate);
         emit setValeurPivot(numericvalue);
         break;
     }
@@ -139,12 +140,12 @@ void Afficheur::removeLastDigit()
     case Unites::HMSI:
         // Format HMSI
         this->mRawHMSI.chop(1);  // Enleve le dernier caractère
-        emit setValeurPivot(Converter::convertRawHMSItoMicroseconds(mRawHMSI, this->mFrameRate));
+        emit setValeurPivot(Converter::convertRawHMSItoMicroseconds(mRawHMSI, this->mFramerate));
         break;
     case Unites::DHMSM:
         // TODO : Format D+HMSmm  (si nécéssaire - en V2)
         this->mRawHMSI.chop(1);  // Enleve le dernier caractère
-        emit setValeurPivot(Converter::convertRawHMSItoMicroseconds(mRawHMSI, this->mFrameRate));
+        emit setValeurPivot(Converter::convertRawHMSItoMicroseconds(mRawHMSI, this->mFramerate));
         break;
     default:
     {
@@ -171,11 +172,12 @@ void Afficheur::removeLastDigit()
 /*! **********************************************************************************************************
  * Retourne le framerate (utile pour les afficheurs HMSI).
  * \returns framerate utilisé pour cet afficheur (ex: 25.0)
- * ***********************************************************************************************************/
+ * ***********************************************************************************************************
 double Afficheur::getFrameRate() const
 {
-    return this->mFrameRate;
+    return this->mFramerate;
 }
+*/
 
 /*! **********************************************************************************************************
  * Indique si le HMSI a besoin d'être rectifié
@@ -229,7 +231,7 @@ bool Afficheur::isIncorrect(const QString rawHmsi)
     // On vérifie les 4 substring
     if (MM.toInt() > 59) return true;
     if (SS.toInt() > 59) return true;
-    if (II.toInt() >= ceil(mFrameRate)) return true;
+    if (II.toInt() >= ceil(mFramerate)) return true;
     return false;
 }
 
@@ -245,7 +247,7 @@ void Afficheur::setValue(const qint64 microsecs)
     switch (mUnit)
     {
     case Unites::HMSI:
-        value = Converter::microsecsToRawHMSI(microsecs, mFrameRate);
+        value = Converter::microsecsToRawHMSI(microsecs, mFramerate);
         break;
     case Unites::DHMSM:
         value = Converter::microsecsToDHMSM(microsecs);

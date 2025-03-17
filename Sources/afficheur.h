@@ -10,6 +10,7 @@ class Afficheur : public QObject
     Q_PROPERTY(QString displayValue MEMBER mDisplayValue NOTIFY displayValueChanged)
     Q_PROPERTY(QString unit MEMBER mUnitName NOTIFY unitChanged)
     Q_PROPERTY(QString hint MEMBER mHint NOTIFY hintChanged)
+    Q_PROPERTY(qreal framerate MEMBER mFramerate WRITE setFramerate NOTIFY framerateChanged)
 
 // ------------------------------------------------------------
 // Méthodes
@@ -17,8 +18,6 @@ class Afficheur : public QObject
 public:
     explicit Afficheur(Unites::Units unit, QString parentName, QObject *parent = nullptr);
 
-    Q_INVOKABLE void setFrameRate(double framerate);
-    Q_INVOKABLE double getFrameRate() const;
     Q_INVOKABLE void addDigit(QString digit);
     Q_INVOKABLE void removeLastDigit();
 
@@ -26,9 +25,11 @@ public slots:
     void setValue(const qint64 microsecs);
     void clearValue();
     void activeDisplay(QString afficheur);
+    void setFramerate(double framerate);
 
 signals:
     void displayValueChanged();         //!< Indique au QML que la valeur à afficher a changé.
+    void framerateChanged();            //!< Indique au QML que le framerate de l'afficheur HMSI a changé.
     void setValeurPivot(qint64);        //!< Envoi à l'opérande d'une nouvelle valeur pivot.
     void unitChanged();                 //!< En fait, l'unité d'un afficheur ne change jamais.
     void hintChanged();                 //!< En fait, le hint d'un afficheur ne change jamais.
@@ -50,7 +51,7 @@ private:
     QString mRawHMSI;           //!< utilisé par les afficheurs HMSI
     QString mRawNUM;            //!< utilisé par les afficheurs Numériques
     Unites::Units mUnit;        //!< Unité utilisée par cet afficheur
-    double mFrameRate;          //!< Framerate utilisé (pour les afficheurs FRAMES et HMSI)
+    double mFramerate;          //!< Framerate utilisé (pour les afficheurs FRAMES et HMSI)
     double mConversionFacteur;  //!< Nombre de microseconds par unité
 };
 

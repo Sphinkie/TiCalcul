@@ -390,11 +390,11 @@ QString Converter::microsecsToRawHMSI(qint64 microsecs, double framerate)
 qint64 Converter::toMicroseconds(QString value, double conversionFacteur)
 {
     bool flag;
-    // On enleve les espaces qui pouraient faire échouer la conversion.
+    // On enlève les espaces qui pouraient faire échouer la conversion.
+    // on convertit en double (réel) en raison des secondes.
     double numericValue = value.remove(' ').toDouble(&flag);
     if (flag){
-        qint64 microsecValue = (qint64)(numericValue * conversionFacteur);
-        // TODO voir si on utilise floor() pour être sûr de prendre la valeur entière
+        qint64 microsecValue = floor(numericValue * conversionFacteur);
         return microsecValue;
     }
     else

@@ -8,6 +8,8 @@ import "../Controllers"
 Item {
     property alias tc1: tc1
     property alias tc2: tc2
+    property alias bFramerateTc1: bFramerateTc1
+    property alias bFramerateTc2: bFramerateTc2
 
     GridLayout {
         id: zoneResults
@@ -18,7 +20,7 @@ Item {
         columns: 3
 
         // ------------------------------------------------------------
-        // 1ere ligne
+        // 1ere ligne - TC1 en HMSI
         // ------------------------------------------------------------
         FieldResult {
             id: labelTC1
@@ -30,14 +32,13 @@ Item {
         }
         FieldInput {
             id: tc1
-            //text: "..:..:..:.."
             afficheur: tc1_aff_4
             Layout.fillHeight: false
             Layout.fillWidth: true
         }
         TiButton {
             id: bFramerateTc1
-            buttonText: "25fps"
+            buttonText: tc1_aff_4.framerate + "fps"
             Layout.fillHeight: false
             Layout.fillWidth: false
         }
@@ -56,7 +57,7 @@ Item {
         // TODO : ajouter un bouton swap
 
         // ------------------------------------------------------------
-        // 2eme ligne
+        // 2eme ligne - TC2 en HMSI
         // ------------------------------------------------------------
         FieldResult {
             id: labelTC2
@@ -67,14 +68,13 @@ Item {
         }
         FieldInput {
             id: tc2
-            // text: "..:..:..:.."
             afficheur: tc2_aff_4
             Layout.fillHeight: false
             Layout.fillWidth: true
         }
         TiButton {
             id: bFramerateTc2
-            buttonText: "25fps"
+            buttonText: tc2_aff_4.framerate + "fps"
             Layout.fillHeight: false
             Layout.fillWidth: false
         }

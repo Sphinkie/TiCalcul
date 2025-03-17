@@ -54,7 +54,6 @@ qint64 Operande::valeurPivot() const
  * \brief SLOT : Reçoit et propage la nouvelle valeur pivot aux afficheurs.
  * \param newValeurPivot: Timecode en microsecondes.
  * \see Afficheur::setValue()
- * TODO remplacer le qint64 en quint64
  * ***********************************************************************************************************/
 void Operande::setValeurPivot(const qint64 newValeurPivot)
 {
@@ -83,7 +82,7 @@ void Operande::clearValeurPivot()
 /*! **********************************************************************************************************
  * \brief Enregistre les afficheurs dans le contexte QML, pour pouvoir les afficher.
  * \note Les property names seront du type "tc1_aff_1"
- * \param context: Le root context de l'application.
+ * \param context: Le rootContext de l'application.
  * ***********************************************************************************************************/
 void Operande::registerContext(QQmlContext* context)
 {
