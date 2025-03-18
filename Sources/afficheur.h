@@ -20,6 +20,7 @@ public:
 
     Q_INVOKABLE void addDigit(QString digit);
     Q_INVOKABLE void removeLastDigit();
+    Q_INVOKABLE void rectifyHMSI();
 
 public slots:
     void setValue(const qint64 microsecs);

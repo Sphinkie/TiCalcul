@@ -30,5 +30,8 @@ CalculFrameForm {
             tc2_aff_4.framerate = 25
     }
 
-    // TODO : Gestion du bouton SWAP
+    bSwap.onClicked: {
+        console.log("Swap ! ")
+        tc1_aff_4.rectifyHMSI()
+    }
 }

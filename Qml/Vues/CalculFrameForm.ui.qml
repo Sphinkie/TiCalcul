@@ -10,6 +10,7 @@ Item {
     property alias tc2: tc2
     property alias bFramerateTc1: bFramerateTc1
     property alias bFramerateTc2: bFramerateTc2
+    property alias bSwap: bSwap
 
     GridLayout {
         id: zoneResults
@@ -52,9 +53,14 @@ Item {
             Layout.fillHeight: false
             Layout.fillWidth: true
             Layout.rowSpan: 1
-            Layout.columnSpan: 3
+            Layout.columnSpan: 2
         }
-        // TODO : ajouter un bouton swap
+        TiButton {
+            id: bSwap
+            buttonText: "⇵"
+            Layout.fillHeight: false
+            Layout.fillWidth: false
+        }
 
         // ------------------------------------------------------------
         // 2eme ligne - TC2 en HMSI

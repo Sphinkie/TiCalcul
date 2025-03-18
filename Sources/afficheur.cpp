@@ -254,6 +254,38 @@ bool Afficheur::isIncorrect(const QString rawHmsi)
     return false;
 }
 
+/*! **********************************************************************************************************
+ * \brief SLOT: Actualise la variable mIsActive en cas de changement
+ * \param afficheur: Le nom (objectName) de l'afficheur sélectionné dans le QML.
+ * ***********************************************************************************************************/
+void Afficheur::activeDisplay(QString afficheur)
+{
+    // qDebug() << "activeDisplay = " << afficheur;
+    mIsActive = (afficheur == this->objectName());
+    // Quand l'afficheur passe actif, on recharge les valeurs éditables avec les valeurs en cours.
+    if (mIsActive)
+    {
+        mRawHMSI = Converter::HMSItoRawHMSI(mDisplayValue);
+        // on enlève les 0 et les espaces du début
+        static QRegularExpression regex = QRegularExpression("^[0\\s]*");
+        mRawNUM  = mDisplayValue.remove(regex);
+        qDebug() << "mRawNUM" << mRawNUM;
+    }
+}
+
+
+/*! **********************************************************************************************************
+ * \brief SLOT: Efface la valeur de l'afficheur, et ses variables privées.
+ * ***********************************************************************************************************/
+void Afficheur::clearValue()
+{
+    qDebug() << objectName() << "::clearValue()";
+    mRawHMSI.clear();
+    mRawNUM.clear();
+    mDisplayValue.clear();
+    emit displayValueChanged();
+}
+
 
 /*! **********************************************************************************************************
  * \brief SLOT. Recoit la nouvelle valeur pivot de l'opérande, pour la convertir et l'envoyer à l'affichage.
@@ -296,36 +328,6 @@ void Afficheur::setValue(const qint64 microsecs)
     this->setDisplayValue(value);
 }
 
-/*! **********************************************************************************************************
- * \brief SLOT: Efface la valeur de l'afficheur, et ses variables privées.
- * ***********************************************************************************************************/
-void Afficheur::clearValue()
-{
-    qDebug() << objectName() << "::clearValue()";
-    mRawHMSI.clear();
-    mRawNUM.clear();
-    mDisplayValue.clear();
-    emit displayValueChanged();
-}
-
-/*! **********************************************************************************************************
- * \brief SLOT: Actualise la variable mIsActive en cas de changement
- * \param afficheur: Le nom (objectName) de l'afficheur sélectionné dans le QML.
- * ***********************************************************************************************************/
-void Afficheur::activeDisplay(QString afficheur)
-{
-    // qDebug() << "activeDisplay = " << afficheur;
-    mIsActive = (afficheur == this->objectName());
-    // Quand l'afficheur passe actif, on recharge les valeurs éditables avec les valeurs en cours.
-    if (mIsActive)
-    {
-        mRawHMSI = Converter::HMSItoRawHMSI(mDisplayValue);
-        // on enlève les 0 et les espaces du début
-        static QRegularExpression regex = QRegularExpression("^[0\\s]*");
-        mRawNUM  = mDisplayValue.remove(regex);
-        qDebug() << "mRawNUM" << mRawNUM;
-    }
-}
 
 /*! **********************************************************************************************************
  * \brief Mémorise et propage la string à afficher vers le QML.
@@ -371,5 +373,37 @@ void Afficheur::setDisplayValue(const QString value)
         }
     }
     emit displayValueChanged();
+}
+
+/*! **********************************************************************************************************
+ * \brief Cette fonction remet le HMSI de façon correcte.
+ ************************************************************************************************************* */
+void Afficheur::rectifyHMSI()
+{
+    qint64 microsecValue;
+    qDebug() << this->objectName() << "rectifyHMSI";
+
+    // On met à jour l'affichage du HMSI
+    if (mUnit == Unites::HMSI)
+    {
+        if (this->mIsActive)
+        {
+            // En édition: on recalcule le HMSI à partir du RawHMSI
+            microsecValue = Converter::rawHMSItoMicroseconds(mRawHMSI, mFramerate);
+            mRawHMSI = Converter::microsecsToRawHMSI(microsecValue, mFramerate);
+            this->setDisplayValue(mRawHMSI);   // si active, il va prendre le mRawHMSI
+        }
+        else
+        {
+            // Hors édition: on recalcule le HMSI à partir du HMSI affiché
+            microsecValue = Converter::HMSItoMicroseconds(mDisplayValue, mFramerate);
+            // mais le HMSI doit être recalculé et re-affiché (juste sur cet afficheur).
+            this->setValue(microsecValue);
+        }
+    }
+    else
+    {
+        qDebug() << "Warning: rectifyHMSI received by non HMSI display" << this->objectName();
+    }
 }
 
