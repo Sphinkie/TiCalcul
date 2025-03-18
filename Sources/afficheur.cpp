@@ -19,14 +19,43 @@ Afficheur::Afficheur(Unites::Units unit, QString parentName, QObject *parent)
 
 /*! **********************************************************************************************************
  * \brief Permet de changer dynamiquement le framerate des afficheurs HMSI.
+ * \note C'est toujours l'afficheur HMSI qui reçoit ce signal
  * \param framerate: le nouveau framerate pour cet afficheur (ex: 25.0)
  * ***********************************************************************************************************/
 void Afficheur::setFramerate(double framerate)
 {
+    qint64 microsecValue;
     qDebug() << this->objectName() << "setFramerate" << framerate;
+    // On lit l'ancienne valeur
+    microsecValue = Converter::HMSItoMicroseconds(mDisplayValue, mFramerate);
+
+    // On prend en compte le nouveau framerate
     this->mFramerate = framerate;
     this->mConversionFacteur = Converter::us_PerSecond / framerate;
+    // On signale le changement de framerate au QML
     emit framerateChanged();
+
+    // On met à jour l'affichage du HMSI
+    if (mUnit == Unites::HMSI)
+    {
+        if (this->mIsActive)
+        {
+            // On actualise la valeur pivot,
+            microsecValue = Converter::rawHMSItoMicroseconds(mRawHMSI, mFramerate);
+            // On demande le raffraichissement de tous les afficheurs
+            emit setValeurPivot(microsecValue);
+        }
+        else
+        {
+            // la valeur pivot n'a pas besoin d'être modifiée (on reprend l'ancienne valeur),
+            // mais le HMSI doit être recalculé et re-affiché (juste sur cet afficheur).
+            this->setValue(microsecValue);
+        }
+    }
+    else
+    {
+        qDebug() << "Warning: setFramerate received by non HMSI display" << this->objectName();
+    }
 }
 
 /*! **********************************************************************************************************
@@ -53,7 +82,7 @@ void Afficheur::addDigit(QString digit)
         // ------------------------------------------------------------------------
         // On convertit la string en microsecondes (ValeurPivot)
         // ------------------------------------------------------------------------
-        qint64 numericvalue = Converter::convertRawHMSItoMicroseconds(mRawHMSI, mFramerate);
+        qint64 numericvalue = Converter::rawHMSItoMicroseconds(mRawHMSI, mFramerate);
         emit setValeurPivot(numericvalue);
         break;
     }
@@ -140,12 +169,12 @@ void Afficheur::removeLastDigit()
     case Unites::HMSI:
         // Format HMSI
         this->mRawHMSI.chop(1);  // Enleve le dernier caractère
-        emit setValeurPivot(Converter::convertRawHMSItoMicroseconds(mRawHMSI, this->mFramerate));
+        emit setValeurPivot(Converter::rawHMSItoMicroseconds(mRawHMSI, this->mFramerate));
         break;
     case Unites::DHMSM:
         // TODO : Format D+HMSmm  (si nécéssaire - en V2)
         this->mRawHMSI.chop(1);  // Enleve le dernier caractère
-        emit setValeurPivot(Converter::convertRawHMSItoMicroseconds(mRawHMSI, this->mFramerate));
+        emit setValeurPivot(Converter::rawHMSItoMicroseconds(mRawHMSI, this->mFramerate));
         break;
     default:
     {
@@ -168,16 +197,6 @@ void Afficheur::removeLastDigit()
     }
 }
 
-
-/*! **********************************************************************************************************
- * Retourne le framerate (utile pour les afficheurs HMSI).
- * \returns framerate utilisé pour cet afficheur (ex: 25.0)
- * ***********************************************************************************************************
-double Afficheur::getFrameRate() const
-{
-    return this->mFramerate;
-}
-*/
 
 /*! **********************************************************************************************************
  * Indique si le HMSI a besoin d'être rectifié
@@ -242,7 +261,7 @@ bool Afficheur::isIncorrect(const QString rawHmsi)
  * *********************************************************************************************************** */
 void Afficheur::setValue(const qint64 microsecs)
 {
-    // qDebug() << mUnitName << "::setValue()" << microsecs;
+    qDebug() << mUnitName << "::setValue()" << microsecs;
     QString value = "";
     switch (mUnit)
     {
@@ -311,11 +330,11 @@ void Afficheur::activeDisplay(QString afficheur)
 /*! **********************************************************************************************************
  * \brief Mémorise et propage la string à afficher vers le QML.
  * \note On distingue le cas où la cellule est active (cad en cours d'édition), ou pas.
- * \param value: La valeur exprimée dans l'unité de cet afficheur.
+ * \param value: La valeur brute exprimée dans l'unité de cet afficheur (rawHMSI ou rawNUM).
  * ***********************************************************************************************************/
 void Afficheur::setDisplayValue(const QString value)
 {
-    // qDebug() << mUnitName << "::setDisplayValue" << value << (mIsActive? "active": "passive");
+    qDebug() << mUnitName << "::setDisplayValue" << value << (mIsActive? "active": "passive");
 
     // Si le champ est en cours d'édition:
     if (mIsActive)
