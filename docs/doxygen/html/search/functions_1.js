@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['clear_0',['clear',['../class_operande.html#a78e5d567866e99f235880ba70122a5c8',1,'Operande']]],
-  ['cleardisplayvalue_1',['clearDisplayValue',['../class_afficheur.html#a1ea55697a9f4d9564f97c7f2166b8b59',1,'Afficheur']]],
+  ['clearvaleurpivot_0',['clearValeurPivot',['../class_operande.html#a0646241c7241cfa1faa2b38b74160063',1,'Operande']]],
+  ['clearvalue_1',['clearValue',['../class_afficheur.html#a614d213a452354ca50df495510bd9c8d',1,'Afficheur']]],
   ['completerawhmsiwithdots_2',['completeRawHMSIWithDots',['../class_converter.html#aa271cba436c39da2b8925267689e9ec9',1,'Converter']]],
-  ['converter_3',['Converter',['../class_converter.html#a1de81f3e06093411e5d27ce882bc010f',1,'Converter']]],
-  ['convertrawhmsitomicroseconds_4',['convertRawHMSItoMicroseconds',['../class_converter.html#ad92418cec1dea708d7268fbeeb588a02',1,'Converter']]]
+  ['connectactivedisplay_3',['connectActiveDisplay',['../class_operande.html#a628f15c5df1c19e3744fdc2a652885fb',1,'Operande']]],
+  ['converter_4',['Converter',['../class_converter.html#a1de81f3e06093411e5d27ce882bc010f',1,'Converter']]]
 ];

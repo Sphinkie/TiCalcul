@@ -109,10 +109,17 @@ Fonctions membres publiques</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Fonctions membres publiques statiques</h2></td></tr>
-<tr class="memitem:a7783ad9f7a35730a45b7c64e36f274d2" id="r_a7783ad9f7a35730a45b7c64e36f274d2"><td class="memItemLeft" align="right" valign="top">static qint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#a7783ad9f7a35730a45b7c64e36f274d2">HMSItoMicroseconds</a> (QString hmsi_string, double framerate)</td></tr>
-<tr class="separator:a7783ad9f7a35730a45b7c64e36f274d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad92418cec1dea708d7268fbeeb588a02" id="r_ad92418cec1dea708d7268fbeeb588a02"><td class="memItemLeft" align="right" valign="top">static qint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#ad92418cec1dea708d7268fbeeb588a02">convertRawHMSItoMicroseconds</a> (QString hmsi, double framerate)</td></tr>
-<tr class="separator:ad92418cec1dea708d7268fbeeb588a02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2481c5d464aa13fec577575b8f2da786" id="r_a2481c5d464aa13fec577575b8f2da786"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#a2481c5d464aa13fec577575b8f2da786">addSpaceSeparator</a> (QString value)</td></tr>
+<tr class="separator:a2481c5d464aa13fec577575b8f2da786"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dfef4a75e24809c9be9f08eaa26b131" id="r_a7dfef4a75e24809c9be9f08eaa26b131"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#a7dfef4a75e24809c9be9f08eaa26b131">HMSItoRawHMSI</a> (const QString hmsi)</td></tr>
+<tr class="memdesc:a7dfef4a75e24809c9be9f08eaa26b131"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convertit un HMSI en un RAW HMSI. Exemple: "25:48:12:..' en "254812".  <br /></td></tr>
+<tr class="separator:a7dfef4a75e24809c9be9f08eaa26b131"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cf605a464a0860d866421f2b109a3f8" id="r_a1cf605a464a0860d866421f2b109a3f8"><td class="memItemLeft" align="right" valign="top">static qint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#a1cf605a464a0860d866421f2b109a3f8">HMSItoMicroseconds</a> (QString hmsi, double framerate)</td></tr>
+<tr class="memdesc:a1cf605a464a0860d866421f2b109a3f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convertit un HMSI (même incomplet) en un nombre de micro-secondes. Exemple: "02:45:00:.." pour 2h45m en 9900000000 us.  <br /></td></tr>
+<tr class="separator:a1cf605a464a0860d866421f2b109a3f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab430fd3f3dab4e7ab14e985fd1c71894" id="r_ab430fd3f3dab4e7ab14e985fd1c71894"><td class="memItemLeft" align="right" valign="top">static qint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#ab430fd3f3dab4e7ab14e985fd1c71894">rawHMSItoMicroseconds</a> (QString raw_hmsi, double framerate)</td></tr>
+<tr class="memdesc:ab430fd3f3dab4e7ab14e985fd1c71894"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convertit un Raw HMSI (même partiel) en un nombre de micro-secondes. Exemple: "0245" pour 2h45m = 9 900 000 000 us.  <br /></td></tr>
+<tr class="separator:ab430fd3f3dab4e7ab14e985fd1c71894"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa271cba436c39da2b8925267689e9ec9" id="r_aa271cba436c39da2b8925267689e9ec9"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#aa271cba436c39da2b8925267689e9ec9">completeRawHMSIWithDots</a> (QString raw_hmsi)</td></tr>
 <tr class="separator:aa271cba436c39da2b8925267689e9ec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37fc12a03265e9200c1fd329b2a03b85" id="r_a37fc12a03265e9200c1fd329b2a03b85"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#a37fc12a03265e9200c1fd329b2a03b85">microsecsToSeconds</a> (qint64 microsecs)</td></tr>
@@ -123,20 +130,17 @@ Fonctions membres publiques statiques</h2></td></tr>
 <tr class="separator:a86dee168a90505a4c062d3e20513fa64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a109a980de80e57be6c7f9589ae58b16f" id="r_a109a980de80e57be6c7f9589ae58b16f"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#a109a980de80e57be6c7f9589ae58b16f">microseconds</a> (qint64 microsecs)</td></tr>
 <tr class="separator:a109a980de80e57be6c7f9589ae58b16f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2481c5d464aa13fec577575b8f2da786" id="r_a2481c5d464aa13fec577575b8f2da786"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#a2481c5d464aa13fec577575b8f2da786">addSpaceSeparator</a> (QString value)</td></tr>
-<tr class="separator:a2481c5d464aa13fec577575b8f2da786"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a825b25f0b8ba64537a3aaf4dbf4daf0d" id="r_a825b25f0b8ba64537a3aaf4dbf4daf0d"><td class="memItemLeft" align="right" valign="top"><a id="a825b25f0b8ba64537a3aaf4dbf4daf0d" name="a825b25f0b8ba64537a3aaf4dbf4daf0d"></a>
-static QString&#160;</td><td class="memItemRight" valign="bottom"><b>microsecsToHMSI</b> (qint64 microsecs, double framerate)</td></tr>
+<tr class="memitem:a825b25f0b8ba64537a3aaf4dbf4daf0d" id="r_a825b25f0b8ba64537a3aaf4dbf4daf0d"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#a825b25f0b8ba64537a3aaf4dbf4daf0d">microsecsToHMSI</a> (qint64 microsecs, double framerate)</td></tr>
 <tr class="separator:a825b25f0b8ba64537a3aaf4dbf4daf0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99bc2ec78dd27117f0d6c77db1d58344" id="r_a99bc2ec78dd27117f0d6c77db1d58344"><td class="memItemLeft" align="right" valign="top"><a id="a99bc2ec78dd27117f0d6c77db1d58344" name="a99bc2ec78dd27117f0d6c77db1d58344"></a>
-static QString&#160;</td><td class="memItemRight" valign="bottom"><b>microsecsToHMSM</b> (qint64 microsecs)</td></tr>
+<tr class="memitem:a99bc2ec78dd27117f0d6c77db1d58344" id="r_a99bc2ec78dd27117f0d6c77db1d58344"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#a99bc2ec78dd27117f0d6c77db1d58344">microsecsToHMSM</a> (qint64 microsecs)</td></tr>
 <tr class="separator:a99bc2ec78dd27117f0d6c77db1d58344"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a979923f4ddda391e436346c92090225e" id="r_a979923f4ddda391e436346c92090225e"><td class="memItemLeft" align="right" valign="top"><a id="a979923f4ddda391e436346c92090225e" name="a979923f4ddda391e436346c92090225e"></a>
-static QString&#160;</td><td class="memItemRight" valign="bottom"><b>microsecsToRawHMSI</b> (qint64 microsecs, double framerate)</td></tr>
+<tr class="memitem:a979923f4ddda391e436346c92090225e" id="r_a979923f4ddda391e436346c92090225e"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#a979923f4ddda391e436346c92090225e">microsecsToRawHMSI</a> (qint64 microsecs, double framerate)</td></tr>
 <tr class="separator:a979923f4ddda391e436346c92090225e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5a753f5cd009033d8a216ed4300fc73" id="r_ad5a753f5cd009033d8a216ed4300fc73"><td class="memItemLeft" align="right" valign="top"><a id="ad5a753f5cd009033d8a216ed4300fc73" name="ad5a753f5cd009033d8a216ed4300fc73"></a>
-static QString&#160;</td><td class="memItemRight" valign="bottom"><b>microsecsToDHMSM</b> (qint64 microsecs)</td></tr>
+<tr class="memitem:ad5a753f5cd009033d8a216ed4300fc73" id="r_ad5a753f5cd009033d8a216ed4300fc73"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#ad5a753f5cd009033d8a216ed4300fc73">microsecsToDHMSM</a> (qint64 microsecs)</td></tr>
 <tr class="separator:ad5a753f5cd009033d8a216ed4300fc73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec2aeef75d46d7353c98fc5a286b426a" id="r_aec2aeef75d46d7353c98fc5a286b426a"><td class="memItemLeft" align="right" valign="top">static qint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#aec2aeef75d46d7353c98fc5a286b426a">toMicroseconds</a> (QString value, double conversionFacteur)</td></tr>
+<tr class="memdesc:aec2aeef75d46d7353c98fc5a286b426a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforme une unité quelconque (string) en microsecondes (numerique).  <br /></td></tr>
+<tr class="separator:aec2aeef75d46d7353c98fc5a286b426a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab67107bcb71a3a0876607cd964b32094" id="r_ab67107bcb71a3a0876607cd964b32094"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#ab67107bcb71a3a0876607cd964b32094">setNtscFramePerSec</a> (double framerate)</td></tr>
 <tr class="separator:ab67107bcb71a3a0876607cd964b32094"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51839af9207be73f6a191bd0ea61d567" id="r_a51839af9207be73f6a191bd0ea61d567"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#a51839af9207be73f6a191bd0ea61d567">getNtscFramePerSec</a> ()</td></tr>
@@ -150,21 +154,21 @@ static const qint64&#160;</td><td class="memItemRight" valign="bottom"><b>us_Per
 <tr class="memitem:a8f0407db3de9dbdb8850251335ea2027" id="r_a8f0407db3de9dbdb8850251335ea2027"><td class="memItemLeft" align="right" valign="top"><a id="a8f0407db3de9dbdb8850251335ea2027" name="a8f0407db3de9dbdb8850251335ea2027"></a>
 static const qint64&#160;</td><td class="memItemRight" valign="bottom"><b>us_PerDay</b> = us_PerHour * 24</td></tr>
 <tr class="separator:a8f0407db3de9dbdb8850251335ea2027"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a836f528abf4c6d07ca0c78f9119769f8" id="r_a836f528abf4c6d07ca0c78f9119769f8"><td class="memItemLeft" align="right" valign="top"><a id="a836f528abf4c6d07ca0c78f9119769f8" name="a836f528abf4c6d07ca0c78f9119769f8"></a>
-static const qint32&#160;</td><td class="memItemRight" valign="bottom"><b>us_PerMinute</b> = 60000000L</td></tr>
-<tr class="separator:a836f528abf4c6d07ca0c78f9119769f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af38ea10c4f93d5c9b68c650fe7702815" id="r_af38ea10c4f93d5c9b68c650fe7702815"><td class="memItemLeft" align="right" valign="top"><a id="af38ea10c4f93d5c9b68c650fe7702815" name="af38ea10c4f93d5c9b68c650fe7702815"></a>
-static const qint32&#160;</td><td class="memItemRight" valign="bottom"><b>us_PerSecond</b> = 1000000L</td></tr>
-<tr class="separator:af38ea10c4f93d5c9b68c650fe7702815"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add4f8bfd306185b0e5c7ecf8a9372cda" id="r_add4f8bfd306185b0e5c7ecf8a9372cda"><td class="memItemLeft" align="right" valign="top"><a id="add4f8bfd306185b0e5c7ecf8a9372cda" name="add4f8bfd306185b0e5c7ecf8a9372cda"></a>
-static const qint32&#160;</td><td class="memItemRight" valign="bottom"><b>us_PerMillisec</b> = 1000L</td></tr>
-<tr class="separator:add4f8bfd306185b0e5c7ecf8a9372cda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a925455d03b333abe6b2fbdb70e782f" id="r_a2a925455d03b333abe6b2fbdb70e782f"><td class="memItemLeft" align="right" valign="top"><a id="a2a925455d03b333abe6b2fbdb70e782f" name="a2a925455d03b333abe6b2fbdb70e782f"></a>
-static const qint32&#160;</td><td class="memItemRight" valign="bottom"><b>us_PerFrame25</b> = us_PerSecond / 25</td></tr>
-<tr class="separator:a2a925455d03b333abe6b2fbdb70e782f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab90155cc689976bc5bf84b8edd0e54c7" id="r_ab90155cc689976bc5bf84b8edd0e54c7"><td class="memItemLeft" align="right" valign="top"><a id="ab90155cc689976bc5bf84b8edd0e54c7" name="ab90155cc689976bc5bf84b8edd0e54c7"></a>
-static const qint32&#160;</td><td class="memItemRight" valign="bottom"><b>us_PerFrame50</b> = us_PerSecond / 50</td></tr>
-<tr class="separator:ab90155cc689976bc5bf84b8edd0e54c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dd07663819b2a22aecab31093bbdf3a" id="r_a5dd07663819b2a22aecab31093bbdf3a"><td class="memItemLeft" align="right" valign="top"><a id="a5dd07663819b2a22aecab31093bbdf3a" name="a5dd07663819b2a22aecab31093bbdf3a"></a>
+static const qint64&#160;</td><td class="memItemRight" valign="bottom"><b>us_PerMinute</b> = 60000000</td></tr>
+<tr class="separator:a5dd07663819b2a22aecab31093bbdf3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3b232e9def5d002e03770ef63845588" id="r_ac3b232e9def5d002e03770ef63845588"><td class="memItemLeft" align="right" valign="top"><a id="ac3b232e9def5d002e03770ef63845588" name="ac3b232e9def5d002e03770ef63845588"></a>
+static const qint64&#160;</td><td class="memItemRight" valign="bottom"><b>us_PerSecond</b> = 1000000</td></tr>
+<tr class="separator:ac3b232e9def5d002e03770ef63845588"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d3f6912bc83345f15149fdd76ef5ce0" id="r_a2d3f6912bc83345f15149fdd76ef5ce0"><td class="memItemLeft" align="right" valign="top"><a id="a2d3f6912bc83345f15149fdd76ef5ce0" name="a2d3f6912bc83345f15149fdd76ef5ce0"></a>
+static const qint64&#160;</td><td class="memItemRight" valign="bottom"><b>us_PerMillisec</b> = 1000</td></tr>
+<tr class="separator:a2d3f6912bc83345f15149fdd76ef5ce0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af557e23783c54f043eff0f6ee5fb28ad" id="r_af557e23783c54f043eff0f6ee5fb28ad"><td class="memItemLeft" align="right" valign="top"><a id="af557e23783c54f043eff0f6ee5fb28ad" name="af557e23783c54f043eff0f6ee5fb28ad"></a>
+static const qint64&#160;</td><td class="memItemRight" valign="bottom"><b>us_PerFrame25</b> = us_PerSecond / 25</td></tr>
+<tr class="separator:af557e23783c54f043eff0f6ee5fb28ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8a626251a3bdac333a7f4262c1217ee" id="r_aa8a626251a3bdac333a7f4262c1217ee"><td class="memItemLeft" align="right" valign="top"><a id="aa8a626251a3bdac333a7f4262c1217ee" name="aa8a626251a3bdac333a7f4262c1217ee"></a>
+static const qint64&#160;</td><td class="memItemRight" valign="bottom"><b>us_PerFrame50</b> = us_PerSecond / 50</td></tr>
+<tr class="separator:aa8a626251a3bdac333a7f4262c1217ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85d55cfa414e8c67add5a1dd667ed65a" id="r_a85d55cfa414e8c67add5a1dd667ed65a"><td class="memItemLeft" align="right" valign="top"><a id="a85d55cfa414e8c67add5a1dd667ed65a" name="a85d55cfa414e8c67add5a1dd667ed65a"></a>
 static const double&#160;</td><td class="memItemRight" valign="bottom"><b>NtscFramePerSec</b> = 29.97</td></tr>
 <tr class="separator:a85d55cfa414e8c67add5a1dd667ed65a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -174,10 +178,10 @@ static const double&#160;</td><td class="memItemRight" valign="bottom"><b>us_Per
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
 Fonctions membres privées statiques</h2></td></tr>
-<tr class="memitem:ad80daac17168c6609196c21791aa8aab" id="r_ad80daac17168c6609196c21791aa8aab"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#ad80daac17168c6609196c21791aa8aab">adjustLengthTo3</a> (long value)</td></tr>
-<tr class="separator:ad80daac17168c6609196c21791aa8aab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb1fad2f562c975b4a5da34da44c0d36" id="r_abb1fad2f562c975b4a5da34da44c0d36"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#abb1fad2f562c975b4a5da34da44c0d36">adjustLengthTo2</a> (long value)</td></tr>
-<tr class="separator:abb1fad2f562c975b4a5da34da44c0d36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7e5ac8ff3d377c7e0f3eb771a8f3747" id="r_ac7e5ac8ff3d377c7e0f3eb771a8f3747"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#ac7e5ac8ff3d377c7e0f3eb771a8f3747">adjustLengthTo3</a> (qint64 value)</td></tr>
+<tr class="separator:ac7e5ac8ff3d377c7e0f3eb771a8f3747"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a250ba80855ce7272b5e4cfceff2d204b" id="r_a250ba80855ce7272b5e4cfceff2d204b"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#a250ba80855ce7272b5e4cfceff2d204b">adjustLengthTo2</a> (qint64 value)</td></tr>
+<tr class="separator:a250ba80855ce7272b5e4cfceff2d204b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a id="a1de81f3e06093411e5d27ce882bc010f" name="a1de81f3e06093411e5d27ce882bc010f"></a>
@@ -235,8 +239,8 @@ Fonctions membres privées statiques</h2></td></tr>
 
 </div>
 </div>
-<a id="abb1fad2f562c975b4a5da34da44c0d36" name="abb1fad2f562c975b4a5da34da44c0d36"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb1fad2f562c975b4a5da34da44c0d36">&#9670;&#160;</a></span>adjustLengthTo2()</h2>
+<a id="a250ba80855ce7272b5e4cfceff2d204b" name="a250ba80855ce7272b5e4cfceff2d204b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a250ba80855ce7272b5e4cfceff2d204b">&#9670;&#160;</a></span>adjustLengthTo2()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -247,7 +251,7 @@ Fonctions membres privées statiques</h2></td></tr>
         <tr>
           <td class="memname">QString Converter::adjustLengthTo2 </td>
           <td>(</td>
-          <td class="paramtype">long&#160;</td>
+          <td class="paramtype">qint64&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
@@ -269,8 +273,8 @@ Fonctions membres privées statiques</h2></td></tr>
 
 </div>
 </div>
-<a id="ad80daac17168c6609196c21791aa8aab" name="ad80daac17168c6609196c21791aa8aab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad80daac17168c6609196c21791aa8aab">&#9670;&#160;</a></span>adjustLengthTo3()</h2>
+<a id="ac7e5ac8ff3d377c7e0f3eb771a8f3747" name="ac7e5ac8ff3d377c7e0f3eb771a8f3747"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7e5ac8ff3d377c7e0f3eb771a8f3747">&#9670;&#160;</a></span>adjustLengthTo3()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -281,7 +285,7 @@ Fonctions membres privées statiques</h2></td></tr>
         <tr>
           <td class="memname">QString Converter::adjustLengthTo3 </td>
           <td>(</td>
-          <td class="paramtype">long&#160;</td>
+          <td class="paramtype">qint64&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
@@ -337,51 +341,6 @@ Fonctions membres privées statiques</h2></td></tr>
 
 </div>
 </div>
-<a id="ad92418cec1dea708d7268fbeeb588a02" name="ad92418cec1dea708d7268fbeeb588a02"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad92418cec1dea708d7268fbeeb588a02">&#9670;&#160;</a></span>convertRawHMSItoMicroseconds()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">qint64 Converter::convertRawHMSItoMicroseconds </td>
-          <td>(</td>
-          <td class="paramtype">QString&#160;</td>
-          <td class="paramname"><em>hmsi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>framerate</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<hr  />
-<p> Convertit un Raw HMSI en un nombre de micro-secondes. Ex: "0245" pour 2h45m. </p><dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">hmsi</td><td>: raw hmsi to convert. </td></tr>
-    <tr><td class="paramname">framerate</td><td>: the framerate used for raw hmsi </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>the value converted in microseconds. </dd></dl>
-
-</div>
-</div>
 <a id="a51839af9207be73f6a191bd0ea61d567" name="a51839af9207be73f6a191bd0ea61d567"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a51839af9207be73f6a191bd0ea61d567">&#9670;&#160;</a></span>getNtscFramePerSec()</h2>
 
@@ -409,8 +368,8 @@ Fonctions membres privées statiques</h2></td></tr>
 
 </div>
 </div>
-<a id="a7783ad9f7a35730a45b7c64e36f274d2" name="a7783ad9f7a35730a45b7c64e36f274d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7783ad9f7a35730a45b7c64e36f274d2">&#9670;&#160;</a></span>HMSItoMicroseconds()</h2>
+<a id="a1cf605a464a0860d866421f2b109a3f8" name="a1cf605a464a0860d866421f2b109a3f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cf605a464a0860d866421f2b109a3f8">&#9670;&#160;</a></span>HMSItoMicroseconds()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -422,7 +381,7 @@ Fonctions membres privées statiques</h2></td></tr>
           <td class="memname">qint64 Converter::HMSItoMicroseconds </td>
           <td>(</td>
           <td class="paramtype">QString&#160;</td>
-          <td class="paramname"><em>hmsi_string</em>, </td>
+          <td class="paramname"><em>hmsi</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -442,15 +401,53 @@ Fonctions membres privées statiques</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Convertit un HMSI (même incomplet) en un nombre de micro-secondes. Exemple: "02:45:00:.." pour 2h45m en 9900000000 us. </p>
 <hr  />
-<p> Convertit un HMSI (même incomplet) en un nombre de micro-secondes. Ex: "02:45:00:00" pour 2h45m. Attention: digitValue() renvoie -1 si ce n'est pas une valeur numérique... </p><dl class="params"><dt>Paramètres</dt><dd>
+ <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">hmsi_string</td><td>: hmsi to convert. </td></tr>
+    <tr><td class="paramname">hmsi</td><td>: HMSI string to convert. </td></tr>
     <tr><td class="paramname">framerate</td><td>: le framerate utilisé dans le hmsi </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>the value converted in microseconds. </dd></dl>
+
+</div>
+</div>
+<a id="a7dfef4a75e24809c9be9f08eaa26b131" name="a7dfef4a75e24809c9be9f08eaa26b131"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dfef4a75e24809c9be9f08eaa26b131">&#9670;&#160;</a></span>HMSItoRawHMSI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString Converter::HMSItoRawHMSI </td>
+          <td>(</td>
+          <td class="paramtype">const QString&#160;</td>
+          <td class="paramname"><em>hmsi</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convertit un HMSI en un RAW HMSI. Exemple: "25:48:12:..' en "254812". </p>
+<hr  />
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hmsi</td><td>une string HMSI avec des ":" et des ".." </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>the corresponding RAW HMSI </dd></dl>
 
 </div>
 </div>
@@ -478,13 +475,47 @@ Fonctions membres privées statiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <hr  />
-<p> On transforme une valeur numérique (ex:"1234000000") en un texte avec des espaces (ex: "1 234 000 000"). </p><dl class="params"><dt>Paramètres</dt><dd>
+<p> On transforme une valeur numérique (ex: 1234000000) en un texte (ex: "1234000000"). </p><dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">microsecs</td><td>: microsecs value to convert. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>a readable string with space separators. </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>a readable string </dd></dl>
+
+</div>
+</div>
+<a id="ad5a753f5cd009033d8a216ed4300fc73" name="ad5a753f5cd009033d8a216ed4300fc73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5a753f5cd009033d8a216ed4300fc73">&#9670;&#160;</a></span>microsecsToDHMSM()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString Converter::microsecsToDHMSM </td>
+          <td>(</td>
+          <td class="paramtype">qint64&#160;</td>
+          <td class="paramname"><em>microsecs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<hr  />
+<p> On transforme "1234000000" en "0 days 00:20:34,000". </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">microsecs</td><td>: microsecs value to convert. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>a readable HMSI value with days ("N days HH:MM:SS:II"). </dd></dl>
 
 </div>
 </div>
@@ -533,6 +564,85 @@ Fonctions membres privées statiques</h2></td></tr>
 
 </div>
 </div>
+<a id="a825b25f0b8ba64537a3aaf4dbf4daf0d" name="a825b25f0b8ba64537a3aaf4dbf4daf0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a825b25f0b8ba64537a3aaf4dbf4daf0d">&#9670;&#160;</a></span>microsecsToHMSI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString Converter::microsecsToHMSI </td>
+          <td>(</td>
+          <td class="paramtype">qint64&#160;</td>
+          <td class="paramname"><em>microsecs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>framerate</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<hr  />
+<p> On transforme "1234000000" en "00:20:34:00". </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">microsecs</td><td>: microsecs value to convert. </td></tr>
+    <tr><td class="paramname">framerate</td><td>: the framerate to use for the 2 last digits. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>a readable HMSI value (HH:MM:SS:II). </dd></dl>
+
+</div>
+</div>
+<a id="a99bc2ec78dd27117f0d6c77db1d58344" name="a99bc2ec78dd27117f0d6c77db1d58344"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99bc2ec78dd27117f0d6c77db1d58344">&#9670;&#160;</a></span>microsecsToHMSM()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString Converter::microsecsToHMSM </td>
+          <td>(</td>
+          <td class="paramtype">qint64&#160;</td>
+          <td class="paramname"><em>microsecs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<hr  />
+<p> On transforme "1234000000" en "00:20:34,000". </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">microsecs</td><td>: microsecs value to convert. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>a readable HMSm value (HH:MM:SS,mmm). </dd></dl>
+
+</div>
+</div>
 <a id="a86dee168a90505a4c062d3e20513fa64" name="a86dee168a90505a4c062d3e20513fa64"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a86dee168a90505a4c062d3e20513fa64">&#9670;&#160;</a></span>microsecsToMillis()</h2>
 
@@ -567,6 +677,51 @@ Fonctions membres privées statiques</h2></td></tr>
 
 </div>
 </div>
+<a id="a979923f4ddda391e436346c92090225e" name="a979923f4ddda391e436346c92090225e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a979923f4ddda391e436346c92090225e">&#9670;&#160;</a></span>microsecsToRawHMSI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString Converter::microsecsToRawHMSI </td>
+          <td>(</td>
+          <td class="paramtype">qint64&#160;</td>
+          <td class="paramname"><em>microsecs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>framerate</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<hr  />
+<p> On transforme 1234000000 en "00203400". </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">microsecs</td><td>: microsecs value to convert. </td></tr>
+    <tr><td class="paramname">framerate</td><td>: framerate for raw hmsi </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>a raw HMSI value ("HHMMSSII"). </dd></dl>
+
+</div>
+</div>
 <a id="a37fc12a03265e9200c1fd329b2a03b85" name="a37fc12a03265e9200c1fd329b2a03b85"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a37fc12a03265e9200c1fd329b2a03b85">&#9670;&#160;</a></span>microsecsToSeconds()</h2>
 
@@ -591,13 +746,61 @@ Fonctions membres privées statiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <hr  />
-<p> On transforme "1234000000" en "1 234". </p><dl class="params"><dt>Paramètres</dt><dd>
+<p> On transforme "1234000000" en "1234". </p><dl class="section note"><dt>Note</dt><dd>Autant que possible, on évite les divisions int/float qui introduisent des pertes de précision. </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">microsecs</td><td>: microsecs value to convert. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>the value converted in seconds. </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>the value converted in seconds, as a string. </dd></dl>
+
+</div>
+</div>
+<a id="ab430fd3f3dab4e7ab14e985fd1c71894" name="ab430fd3f3dab4e7ab14e985fd1c71894"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab430fd3f3dab4e7ab14e985fd1c71894">&#9670;&#160;</a></span>rawHMSItoMicroseconds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qint64 Converter::rawHMSItoMicroseconds </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>raw_hmsi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>framerate</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convertit un Raw HMSI (même partiel) en un nombre de micro-secondes. Exemple: "0245" pour 2h45m = 9 900 000 000 us. </p>
+<hr  />
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hmsi</td><td>: raw hmsi to convert. </td></tr>
+    <tr><td class="paramname">framerate</td><td>: the framerate used for raw hmsi </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>the value converted in microseconds. </dd></dl>
 
 </div>
 </div>
@@ -631,6 +834,54 @@ Fonctions membres privées statiques</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="aec2aeef75d46d7353c98fc5a286b426a" name="aec2aeef75d46d7353c98fc5a286b426a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec2aeef75d46d7353c98fc5a286b426a">&#9670;&#160;</a></span>toMicroseconds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qint64 Converter::toMicroseconds </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>conversionFacteur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Transforme une unité quelconque (string) en microsecondes (numerique). </p>
+<hr  />
+ <dl class="section note"><dt>Note</dt><dd>Hors HMSI. </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>un nombre d'unités (string). </td></tr>
+    <tr><td class="paramname">conversionFacteur</td><td>le facteur de conversion de cette unité. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>un nombre de microsecondes. -1 en cas d'erreur. </dd></dl>
 
 </div>
 </div>

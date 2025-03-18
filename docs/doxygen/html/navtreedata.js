@@ -30,7 +30,6 @@ var NAVTREE =
       [ "Installation of the developpement environnement", "md_docs_2compilation.html#autotoc_md2", null ],
       [ "Documentation", "md_docs_2compilation.html#autotoc_md3", null ]
     ] ],
-    [ "Liste des choses à faire", "todo.html", null ],
     [ "Classes", "annotated.html", [
       [ "Liste des classes", "annotated.html", "annotated_dup" ],
       [ "Index des classes", "classes.html", null ],

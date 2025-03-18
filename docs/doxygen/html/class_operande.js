@@ -1,9 +1,10 @@
 var class_operande =
 [
-    [ "Operande", "class_operande.html#a3de12c26069d9af1e3b5b69273013c4c", null ],
-    [ "clear", "class_operande.html#a78e5d567866e99f235880ba70122a5c8", null ],
+    [ "Operande", "class_operande.html#ac2bee8e17d97934749a0caef7ce404b6", null ],
+    [ "clearValeurPivot", "class_operande.html#a0646241c7241cfa1faa2b38b74160063", null ],
+    [ "connectActiveDisplay", "class_operande.html#a628f15c5df1c19e3744fdc2a652885fb", null ],
     [ "registerContext", "class_operande.html#a8fd5799d50aa994d23700b09a9fd74fb", null ],
-    [ "setValeurPivot", "class_operande.html#ab520957674371f6bc0fc7c0b25207a4f", null ],
+    [ "setValeurPivot", "class_operande.html#af55657234faaf41474e0af000f6da374", null ],
     [ "valeurPivot", "class_operande.html#ae3f3a7950d8382daaf3c93cc1228e575", null ],
     [ "a1", "class_operande.html#aee4c22583af3683272f29e2da113f582", null ],
     [ "a2", "class_operande.html#a3b7aaef13d72c01b24ab8ec001947597", null ],

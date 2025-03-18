@@ -7,42 +7,47 @@
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QQmlContext>}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}afficheur.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <qqmlapplicationengine.h>}}
 \DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{comment}{/*\ **********************************************************************************************************\ */}}
-\DoxyCodeLine{00014\ \textcolor{comment}{/*\ **********************************************************************************************************\ */}}
-\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }Operande\ :\ \textcolor{keyword}{public}\ QObject}
-\DoxyCodeLine{00016\ \{}
-\DoxyCodeLine{00017\ \ \ \ \ Q\_OBJECT}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{explicit}\ Operande(QString\ name,\ QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{00021\ \ \ \ \ qint64\ valeurPivot()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ registerContext(QQmlContext*\ context);}
-\DoxyCodeLine{00023\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ clear();}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \textcolor{keyword}{public}\ slots:}
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ setValeurPivot(qint64\ newValeurPivot);}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}afficheur.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{/*\ **********************************************************************************************************\ */}}
+\DoxyCodeLine{00016\ \textcolor{comment}{/*\ **********************************************************************************************************\ */}}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }Operande\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{explicit}\ Operande(\textcolor{keyword}{const}\ QString\ name,\ QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00023\ \ \ \ \ qint64\ valeurPivot()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ registerContext(QQmlContext*\ context);}
+\DoxyCodeLine{00025\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ connectActiveDisplay(QQmlApplicationEngine*\ engine);}
+\DoxyCodeLine{00026\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ clearValeurPivot();}
 \DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ signals:}
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ valeurPivotChanged(qint64);}
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ setValeurPivot(\textcolor{keyword}{const}\ qint64\ newValeurPivot);}
 \DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00032\ \ \ \ \ QString\ mName;\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00033\ \ \ \ \ qint64\ mValeurPivot;\ \ }
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{const}\ qint64\ mMaxValue\ =\ 356400000000;\ }
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00037\ \ \ \ \ Afficheur*\ a1;\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00038\ \ \ \ \ Afficheur*\ a2;\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00039\ \ \ \ \ Afficheur*\ a3;\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00040\ \ \ \ \ Afficheur*\ a4;\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00041\ \ \ \ \ Afficheur*\ a5;\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00042\ \ \ \ \ Afficheur*\ a6;\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00043\ \ \ \ \ Afficheur*\ a7;\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00044\ \ \ \ \ Afficheur*\ a8;\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00045\ \};}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ OPERANDE\_H}}
+\DoxyCodeLine{00031\ signals:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ valeurPivotChanged(qint64);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ valeurPivotCleared();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \ \ QString\ mName;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ qint64\ mValeurPivot;\ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{const}\ qint64\ mMaxValue\ =\ 356400000000;\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ Afficheur*\ a1;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00042\ \ \ \ \ Afficheur*\ a2;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00043\ \ \ \ \ Afficheur*\ a3;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ Afficheur*\ a4;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ Afficheur*\ a5;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ Afficheur*\ a6;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ Afficheur*\ a7;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ Afficheur*\ a8;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ QQmlContext*\ mContext;}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ OPERANDE\_H}}
 
 \end{DoxyCode}

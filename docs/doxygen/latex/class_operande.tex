@@ -18,31 +18,36 @@ Graphe d\textquotesingle{}héritage de Operande\+:\begin{figure}[H]
 \doxysubsubsection*{Connecteurs publics}
 \begin{DoxyCompactItemize}
 \item 
-void \textbf{ set\+Valeur\+Pivot} (qint64 new\+Valeur\+Pivot)
-\begin{DoxyCompactList}\small\item\em Reçoit et propage la nouvelle valeur pivot aux afficheurs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \textbf{ set\+Valeur\+Pivot} (const qint64 new\+Valeur\+Pivot)
+\begin{DoxyCompactList}\small\item\em SLOT \+: Reçoit et propage la nouvelle valeur pivot aux afficheurs. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Signaux}
 \begin{DoxyCompactItemize}
 \item 
 \label{class_operande_ac428c56d48cce672a5bd34b6d1949387} 
 void {\bfseries valeur\+Pivot\+Changed} (qint64)
+\item 
+\label{class_operande_aa229cf66f5d905a225ccbd073f2ccef6} 
+void {\bfseries valeur\+Pivot\+Cleared} ()
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-\textbf{ Operande} (QString name, QObject $\ast$parent=nullptr)
+\textbf{ Operande} (const QString name, QObject $\ast$parent=nullptr)
 \begin{DoxyCompactList}\small\item\em Constructeur\+: crée les 8 afficheurs de cet opérande, et les connecte pour leur envoyer un signal à chaque modification de la valeur pivot. \end{DoxyCompactList}\item 
 qint64 \textbf{ valeur\+Pivot} () const
 \begin{DoxyCompactList}\small\item\em Renvoie la valeur Pivot (en microsecondes). \end{DoxyCompactList}\item 
 void \textbf{ register\+Context} (QQml\+Context $\ast$context)
 \begin{DoxyCompactList}\small\item\em Enregistre les afficheurs dans le contexte QML, pour pouvoir les afficher. \end{DoxyCompactList}\item 
-Q\+\_\+\+INVOKABLE void \textbf{ clear} ()
-\begin{DoxyCompactList}\small\item\em Vide la valeur pivot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+Q\+\_\+\+INVOKABLE void \textbf{ connect\+Active\+Display} (QQml\+Application\+Engine $\ast$engine)
+\begin{DoxyCompactList}\small\item\em Cree des connexions entre l\textquotesingle{}objet QML "{}afficheur\+Actif"{} et tous les Afficheurs. Ainsi, lorsque l\textquotesingle{}afficheur actif change, tous les afficheurs sont informés. \end{DoxyCompactList}\item 
+Q\+\_\+\+INVOKABLE void \textbf{ clear\+Valeur\+Pivot} ()
+\begin{DoxyCompactList}\small\item\em SLOT \+: Vide la valeur pivot, et efface la valeur de tous les afficheurs. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Attributs privés}
 \begin{DoxyCompactItemize}
 \item 
 \label{class_operande_ae227137bd368c38b738f4f55937bc491} 
 QString {\bfseries m\+Name}
-\begin{DoxyCompactList}\small\item\em Vaut TC1 ou TC2. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Vaut TC1 ou TC2 ou RESULT. \end{DoxyCompactList}\item 
 \label{class_operande_a3b1ebec95f0109ff35fb9d2fe30f3f87} 
 qint64 {\bfseries m\+Valeur\+Pivot}
 \begin{DoxyCompactList}\small\item\em Valeur pivot en microsecondes. \end{DoxyCompactList}\item 
@@ -71,29 +76,33 @@ const qint64 \textbf{ m\+Max\+Value} = 356400000000
 \begin{DoxyCompactList}\small\item\em \doxyref{Afficheur}{p.}{class_afficheur} en Frames (50 fps) \end{DoxyCompactList}\item 
 \label{class_operande_ae1712f194122c4d8fa41f40429e10c4f} 
 \textbf{ Afficheur} $\ast$ {\bfseries a8}
-\begin{DoxyCompactList}\small\item\em \doxyref{Afficheur}{p.}{class_afficheur} en Frames (NTSC) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \doxyref{Afficheur}{p.}{class_afficheur} en Frames (NTSC) \end{DoxyCompactList}\item 
+\label{class_operande_a0cf31b2687282a9db8a66d256eb1458b} 
+QQml\+Context $\ast$ {\bfseries m\+Context}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
 La class \doxyref{Operande}{p.}{class_operande} gère la "{}valeur pivot"{} (cad en microsecondes) de l\textquotesingle{}opérande TC1 ou de TC2. 
 
 \doxysubsection{Documentation des constructeurs et destructeur}
-\label{class_operande_a3de12c26069d9af1e3b5b69273013c4c} 
+\label{class_operande_ac2bee8e17d97934749a0caef7ce404b6} 
 \index{Operande@{Operande}!Operande@{Operande}}
 \index{Operande@{Operande}!Operande@{Operande}}
 \doxysubsubsection{Operande()}
-{\footnotesize\ttfamily Operande\+::\+Operande (\begin{DoxyParamCaption}\item[{QString}]{name,  }\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+{\footnotesize\ttfamily Operande\+::\+Operande (\begin{DoxyParamCaption}\item[{const QString}]{name,  }\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
 Constructeur\+: crée les 8 afficheurs de cet opérande, et les connecte pour leur envoyer un signal à chaque modification de la valeur pivot. 
 
-\begin{DoxyNote}{Note}
+\DoxyHorRuler{0}
+ \begin{DoxyNote}{Note}
 L\textquotesingle{}afficheur NTSC est désactivé pour le moment. 
 \end{DoxyNote}
 
 \begin{DoxyParams}{Paramètres}
-{\em name} & Le nom de l\textquotesingle{}operande\+: "{}\+TC1"{} ou "{}\+TC2"{}. \\
+{\em name} & Le nom de l\textquotesingle{}operande\+: "{}tc1"{} ou "{}tc2"{} ou "{}result"{}. \\
 \hline
 {\em parent} & Paramètre classique pour les QObject. \\
 \hline
@@ -101,18 +110,33 @@ L\textquotesingle{}afficheur NTSC est désactivé pour le moment.
 
 
 \doxysubsection{Documentation des fonctions membres}
-\label{class_operande_a78e5d567866e99f235880ba70122a5c8} 
-\index{Operande@{Operande}!clear@{clear}}
-\index{clear@{clear}!Operande@{Operande}}
-\doxysubsubsection{clear()}
-{\footnotesize\ttfamily void Operande\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\label{class_operande_a0646241c7241cfa1faa2b38b74160063} 
+\index{Operande@{Operande}!clearValeurPivot@{clearValeurPivot}}
+\index{clearValeurPivot@{clearValeurPivot}!Operande@{Operande}}
+\doxysubsubsection{clearValeurPivot()}
+{\footnotesize\ttfamily void Operande\+::clear\+Valeur\+Pivot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Vide la valeur pivot. 
+SLOT \+: Vide la valeur pivot, et efface la valeur de tous les afficheurs. 
 
-\begin{DoxyRefDesc}{A faire}
-\item[\textbf{ A faire}]Mettre une valeur NULL \end{DoxyRefDesc}
+\DoxyHorRuler{0}
+ \label{class_operande_a628f15c5df1c19e3744fdc2a652885fb} 
+\index{Operande@{Operande}!connectActiveDisplay@{connectActiveDisplay}}
+\index{connectActiveDisplay@{connectActiveDisplay}!Operande@{Operande}}
+\doxysubsubsection{connectActiveDisplay()}
+{\footnotesize\ttfamily void Operande\+::connect\+Active\+Display (\begin{DoxyParamCaption}\item[{QQml\+Application\+Engine $\ast$}]{engine }\end{DoxyParamCaption})}
+
+
+
+Cree des connexions entre l\textquotesingle{}objet QML "{}afficheur\+Actif"{} et tous les Afficheurs. Ainsi, lorsque l\textquotesingle{}afficheur actif change, tous les afficheurs sont informés. 
+
+\DoxyHorRuler{0}
+ 
+\begin{DoxyParams}{Paramètres}
+{\em context} & Le root context de l\textquotesingle{}application. \\
+\hline
+\end{DoxyParams}
 \label{class_operande_a8fd5799d50aa994d23700b09a9fd74fb} 
 \index{Operande@{Operande}!registerContext@{registerContext}}
 \index{registerContext@{registerContext}!Operande@{Operande}}
@@ -123,26 +147,34 @@ Vide la valeur pivot.
 
 Enregistre les afficheurs dans le contexte QML, pour pouvoir les afficher. 
 
+\DoxyHorRuler{0}
+ \begin{DoxyNote}{Note}
+Les property names seront du type "{}tc1\+\_\+aff\+\_\+1"{} 
+\end{DoxyNote}
 
 \begin{DoxyParams}{Paramètres}
-{\em context} & Le root context de l\textquotesingle{}application. \\
+{\em context} & Le root\+Context de l\textquotesingle{}application. \\
 \hline
 \end{DoxyParams}
-\label{class_operande_ab520957674371f6bc0fc7c0b25207a4f} 
+\label{class_operande_af55657234faaf41474e0af000f6da374} 
 \index{Operande@{Operande}!setValeurPivot@{setValeurPivot}}
 \index{setValeurPivot@{setValeurPivot}!Operande@{Operande}}
 \doxysubsubsection{setValeurPivot}
-{\footnotesize\ttfamily void Operande\+::set\+Valeur\+Pivot (\begin{DoxyParamCaption}\item[{qint64}]{new\+Valeur\+Pivot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+{\footnotesize\ttfamily void Operande\+::set\+Valeur\+Pivot (\begin{DoxyParamCaption}\item[{const qint64}]{new\+Valeur\+Pivot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
 
-Reçoit et propage la nouvelle valeur pivot aux afficheurs. 
+SLOT \+: Reçoit et propage la nouvelle valeur pivot aux afficheurs. 
 
-
+\DoxyHorRuler{0}
+ 
 \begin{DoxyParams}{Paramètres}
-{\em new\+Valeur\+Pivot} & Timecode en microsecondes. TODO remplacer le qint64 en quint64 \\
+{\em new\+Valeur\+Pivot} & Timecode en microsecondes. \\
 \hline
 \end{DoxyParams}
+\begin{DoxySeeAlso}{Voir également}
+\doxyref{Afficheur\+::set\+Value()}{p.}{class_afficheur_a9c03eaa3071e89cadb8db8b0ce7d7271} 
+\end{DoxySeeAlso}
 \label{class_operande_ae3f3a7950d8382daaf3c93cc1228e575} 
 \index{Operande@{Operande}!valeurPivot@{valeurPivot}}
 \index{valeurPivot@{valeurPivot}!Operande@{Operande}}
@@ -153,7 +185,8 @@ Reçoit et propage la nouvelle valeur pivot aux afficheurs.
 
 Renvoie la valeur Pivot (en microsecondes). 
 
-\begin{DoxyReturn}{Renvoie}
+\DoxyHorRuler{0}
+ \begin{DoxyReturn}{Renvoie}
 the value in microseconds. 
 \end{DoxyReturn}
 
@@ -165,7 +198,7 @@ the value in microseconds.
 \doxysubsubsection{mMaxValue}
 {\footnotesize\ttfamily const qint64 Operande\+::m\+Max\+Value = 356400000000\hspace{0.3cm}{\ttfamily [private]}}
 
-Valeur pivot maximale autorisée (en microsecondes) = 99 heures. $>$ A noter que le uint32 est limité à 4.\+294.\+967.\+295. D\textquotesingle{}où l\textquotesingle{}utilisation du qint64 (long long) 
+Valeur pivot maximale autorisée (en microsecondes) = 99 heures. A noter que le uint32 est limité à 4.\+294.\+967.\+295. D\textquotesingle{}où l\textquotesingle{}utilisation du qint64 (long long) 
 
 La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
 \item 

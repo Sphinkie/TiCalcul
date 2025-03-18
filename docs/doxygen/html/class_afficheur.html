@@ -111,87 +111,118 @@ Graphe d'héritage de Afficheur:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Connecteurs publics</h2></td></tr>
-<tr class="memitem:ab6bb1428f0e05a16f71441d522747fff" id="r_ab6bb1428f0e05a16f71441d522747fff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_afficheur.html#ab6bb1428f0e05a16f71441d522747fff">setValue</a> (qint64 value)</td></tr>
-<tr class="separator:ab6bb1428f0e05a16f71441d522747fff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c03eaa3071e89cadb8db8b0ce7d7271" id="r_a9c03eaa3071e89cadb8db8b0ce7d7271"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_afficheur.html#a9c03eaa3071e89cadb8db8b0ce7d7271">setValue</a> (const qint64 microsecs)</td></tr>
+<tr class="memdesc:a9c03eaa3071e89cadb8db8b0ce7d7271"><td class="mdescLeft">&#160;</td><td class="mdescRight">SLOT. Recoit la nouvelle valeur pivot de l'opérande, pour la convertir et l'envoyer à l'affichage.  <br /></td></tr>
+<tr class="separator:a9c03eaa3071e89cadb8db8b0ce7d7271"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a614d213a452354ca50df495510bd9c8d" id="r_a614d213a452354ca50df495510bd9c8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_afficheur.html#a614d213a452354ca50df495510bd9c8d">clearValue</a> ()</td></tr>
+<tr class="memdesc:a614d213a452354ca50df495510bd9c8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">SLOT: Efface la valeur de l'afficheur, et ses variables privées.  <br /></td></tr>
+<tr class="separator:a614d213a452354ca50df495510bd9c8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e6cdc99b5f03d6db8d81451c6cf6ddc" id="r_a7e6cdc99b5f03d6db8d81451c6cf6ddc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_afficheur.html#a7e6cdc99b5f03d6db8d81451c6cf6ddc">activeDisplay</a> (QString afficheur)</td></tr>
+<tr class="memdesc:a7e6cdc99b5f03d6db8d81451c6cf6ddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">SLOT: Actualise la variable mIsActive en cas de changement.  <br /></td></tr>
+<tr class="separator:a7e6cdc99b5f03d6db8d81451c6cf6ddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae92f7473c8867d4c7afb9d74da1bbba0" id="r_ae92f7473c8867d4c7afb9d74da1bbba0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_afficheur.html#ae92f7473c8867d4c7afb9d74da1bbba0">setFramerate</a> (double framerate)</td></tr>
+<tr class="memdesc:ae92f7473c8867d4c7afb9d74da1bbba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de changer dynamiquement le framerate des afficheurs HMSI.  <br /></td></tr>
+<tr class="separator:ae92f7473c8867d4c7afb9d74da1bbba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
 Signaux</h2></td></tr>
-<tr class="memitem:ae45395415367793477d2513c3ff93c1e" id="r_ae45395415367793477d2513c3ff93c1e"><td class="memItemLeft" align="right" valign="top"><a id="ae45395415367793477d2513c3ff93c1e" name="ae45395415367793477d2513c3ff93c1e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>displayValueChanged</b> (QString)</td></tr>
-<tr class="memdesc:ae45395415367793477d2513c3ff93c1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envoi au QML d'une nouvelle valeur à afficher. <br /></td></tr>
-<tr class="separator:ae45395415367793477d2513c3ff93c1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac26061b2e9d5feaabdc9a0f8edab4421" id="r_ac26061b2e9d5feaabdc9a0f8edab4421"><td class="memItemLeft" align="right" valign="top"><a id="ac26061b2e9d5feaabdc9a0f8edab4421" name="ac26061b2e9d5feaabdc9a0f8edab4421"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>displayValueChanged</b> ()</td></tr>
+<tr class="memdesc:ac26061b2e9d5feaabdc9a0f8edab4421"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique au QML que la valeur à afficher a changé. <br /></td></tr>
+<tr class="separator:ac26061b2e9d5feaabdc9a0f8edab4421"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34f3eabe0429b5f9a3ddd7244228b3d7" id="r_a34f3eabe0429b5f9a3ddd7244228b3d7"><td class="memItemLeft" align="right" valign="top"><a id="a34f3eabe0429b5f9a3ddd7244228b3d7" name="a34f3eabe0429b5f9a3ddd7244228b3d7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>framerateChanged</b> ()</td></tr>
+<tr class="memdesc:a34f3eabe0429b5f9a3ddd7244228b3d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique au QML que le framerate de l'afficheur HMSI a changé. <br /></td></tr>
+<tr class="separator:a34f3eabe0429b5f9a3ddd7244228b3d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e46f335aef2788e724a1f8960fc7e3a" id="r_a7e46f335aef2788e724a1f8960fc7e3a"><td class="memItemLeft" align="right" valign="top"><a id="a7e46f335aef2788e724a1f8960fc7e3a" name="a7e46f335aef2788e724a1f8960fc7e3a"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setValeurPivot</b> (qint64)</td></tr>
 <tr class="memdesc:a7e46f335aef2788e724a1f8960fc7e3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envoi à l'opérande d'une nouvelle valeur pivot. <br /></td></tr>
 <tr class="separator:a7e46f335aef2788e724a1f8960fc7e3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46c9fa579ed70382ef7b7ed5e1463e19" id="r_a46c9fa579ed70382ef7b7ed5e1463e19"><td class="memItemLeft" align="right" valign="top"><a id="a46c9fa579ed70382ef7b7ed5e1463e19" name="a46c9fa579ed70382ef7b7ed5e1463e19"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>unitChanged</b> ()</td></tr>
+<tr class="memdesc:a46c9fa579ed70382ef7b7ed5e1463e19"><td class="mdescLeft">&#160;</td><td class="mdescRight">En fait, l'unité d'un afficheur ne change jamais. <br /></td></tr>
+<tr class="separator:a46c9fa579ed70382ef7b7ed5e1463e19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae77689491c2891f915645b5263d10e94" id="r_ae77689491c2891f915645b5263d10e94"><td class="memItemLeft" align="right" valign="top"><a id="ae77689491c2891f915645b5263d10e94" name="ae77689491c2891f915645b5263d10e94"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>hintChanged</b> ()</td></tr>
+<tr class="memdesc:ae77689491c2891f915645b5263d10e94"><td class="mdescLeft">&#160;</td><td class="mdescRight">En fait, le hint d'un afficheur ne change jamais. <br /></td></tr>
+<tr class="separator:ae77689491c2891f915645b5263d10e94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:a00774166e578f9dd4312c52700d0a48e" id="r_a00774166e578f9dd4312c52700d0a48e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_afficheur.html#a00774166e578f9dd4312c52700d0a48e">Afficheur</a> (Unites::Units unit, QObject *parent=nullptr)</td></tr>
-<tr class="memdesc:a00774166e578f9dd4312c52700d0a48e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <br /></td></tr>
-<tr class="separator:a00774166e578f9dd4312c52700d0a48e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8eba90a62be548ab4fd6f24a2130591" id="r_aa8eba90a62be548ab4fd6f24a2130591"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_afficheur.html#aa8eba90a62be548ab4fd6f24a2130591">setFrameRate</a> (double framerate)</td></tr>
-<tr class="memdesc:aa8eba90a62be548ab4fd6f24a2130591"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de changer dynamiquement le framerate des afficheurs HMSI.  <br /></td></tr>
-<tr class="separator:aa8eba90a62be548ab4fd6f24a2130591"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb96faf1b5a23e0dbfe79b0cc6f02e7b" id="r_afb96faf1b5a23e0dbfe79b0cc6f02e7b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_afficheur.html#afb96faf1b5a23e0dbfe79b0cc6f02e7b">Afficheur</a> (Unites::Units unit, QString parentName, QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:afb96faf1b5a23e0dbfe79b0cc6f02e7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <br /></td></tr>
+<tr class="separator:afb96faf1b5a23e0dbfe79b0cc6f02e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41a7fd306f2aca734d7d82829b7ba000" id="r_a41a7fd306f2aca734d7d82829b7ba000"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_afficheur.html#a41a7fd306f2aca734d7d82829b7ba000">addDigit</a> (QString digit)</td></tr>
-<tr class="memdesc:a41a7fd306f2aca734d7d82829b7ba000"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un digit à la fin de la chaine de caractères. La nouvelle valeur Pivot, si elle a changé.  <br /></td></tr>
+<tr class="memdesc:a41a7fd306f2aca734d7d82829b7ba000"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un digit à la fin de la chaine de caractères.  <br /></td></tr>
 <tr class="separator:a41a7fd306f2aca734d7d82829b7ba000"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a148f1edabb9e6b7e22e3219896c3696e" id="r_a148f1edabb9e6b7e22e3219896c3696e"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_afficheur.html#a148f1edabb9e6b7e22e3219896c3696e">removeLastDigit</a> ()</td></tr>
 <tr class="separator:a148f1edabb9e6b7e22e3219896c3696e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75e2fa0c216b8913f86938de9fcc68d9" id="r_a75e2fa0c216b8913f86938de9fcc68d9"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_afficheur.html#a75e2fa0c216b8913f86938de9fcc68d9">getName</a> ()</td></tr>
-<tr class="separator:a75e2fa0c216b8913f86938de9fcc68d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93fe4df4b0930bb7ff765eb4b8ced871" id="r_a93fe4df4b0930bb7ff765eb4b8ced871"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_afficheur.html#a93fe4df4b0930bb7ff765eb4b8ced871">displayValue</a> () const</td></tr>
-<tr class="separator:a93fe4df4b0930bb7ff765eb4b8ced871"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b2fe22af7c6cb03cdd7af8d4c127ad4" id="r_a6b2fe22af7c6cb03cdd7af8d4c127ad4"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_afficheur.html#a6b2fe22af7c6cb03cdd7af8d4c127ad4">getFrameRate</a> ()</td></tr>
-<tr class="separator:a6b2fe22af7c6cb03cdd7af8d4c127ad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c23afc166196f8243caeffba994b52b" id="r_a4c23afc166196f8243caeffba994b52b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_afficheur.html#a4c23afc166196f8243caeffba994b52b">length</a> ()</td></tr>
-<tr class="separator:a4c23afc166196f8243caeffba994b52b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Propriétés</h2></td></tr>
 <tr class="memitem:a267e4cc8fb819202e04465d244c4d3d8" id="r_a267e4cc8fb819202e04465d244c4d3d8"><td class="memItemLeft" align="right" valign="top"><a id="a267e4cc8fb819202e04465d244c4d3d8" name="a267e4cc8fb819202e04465d244c4d3d8"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>displayValue</b></td></tr>
 <tr class="separator:a267e4cc8fb819202e04465d244c4d3d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72ed2669f61450b79682b3e523e763fb" id="r_a72ed2669f61450b79682b3e523e763fb"><td class="memItemLeft" align="right" valign="top"><a id="a72ed2669f61450b79682b3e523e763fb" name="a72ed2669f61450b79682b3e523e763fb"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><b>unit</b></td></tr>
+<tr class="separator:a72ed2669f61450b79682b3e523e763fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae16e31443c776d555a1d840dcea7f887" id="r_ae16e31443c776d555a1d840dcea7f887"><td class="memItemLeft" align="right" valign="top"><a id="ae16e31443c776d555a1d840dcea7f887" name="ae16e31443c776d555a1d840dcea7f887"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><b>hint</b></td></tr>
+<tr class="separator:ae16e31443c776d555a1d840dcea7f887"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaed977af4435d572f5403053789154d3" id="r_aaed977af4435d572f5403053789154d3"><td class="memItemLeft" align="right" valign="top"><a id="aaed977af4435d572f5403053789154d3" name="aaed977af4435d572f5403053789154d3"></a>
+qreal&#160;</td><td class="memItemRight" valign="bottom"><b>framerate</b></td></tr>
+<tr class="separator:aaed977af4435d572f5403053789154d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Fonctions membres privées</h2></td></tr>
-<tr class="memitem:a1febcab84022b164924aa0c31a61982a" id="r_a1febcab84022b164924aa0c31a61982a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_afficheur.html#a1febcab84022b164924aa0c31a61982a">setDisplayValue</a> (QString value)</td></tr>
-<tr class="separator:a1febcab84022b164924aa0c31a61982a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ea55697a9f4d9564f97c7f2166b8b59" id="r_a1ea55697a9f4d9564f97c7f2166b8b59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_afficheur.html#a1ea55697a9f4d9564f97c7f2166b8b59">clearDisplayValue</a> ()</td></tr>
-<tr class="separator:a1ea55697a9f4d9564f97c7f2166b8b59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad454ea19d00612c44757421e77cc92a" id="r_aad454ea19d00612c44757421e77cc92a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_afficheur.html#aad454ea19d00612c44757421e77cc92a">isIncorrect</a> (QString rawHmsi)</td></tr>
-<tr class="separator:aad454ea19d00612c44757421e77cc92a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39dbe9d88fc91ee517f148ea27894f6e" id="r_a39dbe9d88fc91ee517f148ea27894f6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_afficheur.html#a39dbe9d88fc91ee517f148ea27894f6e">setDisplayValue</a> (const QString value)</td></tr>
+<tr class="memdesc:a39dbe9d88fc91ee517f148ea27894f6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mémorise et propage la string à afficher vers le QML.  <br /></td></tr>
+<tr class="separator:a39dbe9d88fc91ee517f148ea27894f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f25a47c86a919123df0cae829c8135d" id="r_a1f25a47c86a919123df0cae829c8135d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_afficheur.html#a1f25a47c86a919123df0cae829c8135d">isIncorrect</a> (const QString rawHmsi)</td></tr>
+<tr class="separator:a1f25a47c86a919123df0cae829c8135d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Attributs privés</h2></td></tr>
 <tr class="memitem:ab496c5b654c9b507ee2c744bc25e031f" id="r_ab496c5b654c9b507ee2c744bc25e031f"><td class="memItemLeft" align="right" valign="top"><a id="ab496c5b654c9b507ee2c744bc25e031f" name="ab496c5b654c9b507ee2c744bc25e031f"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>mDisplayValue</b></td></tr>
-<tr class="memdesc:ab496c5b654c9b507ee2c744bc25e031f"><td class="mdescLeft">&#160;</td><td class="mdescRight">La valeur à afficher (String) <br /></td></tr>
+<tr class="memdesc:ab496c5b654c9b507ee2c744bc25e031f"><td class="mdescLeft">&#160;</td><td class="mdescRight">QML Property: La valeur à afficher (String) <br /></td></tr>
 <tr class="separator:ab496c5b654c9b507ee2c744bc25e031f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ecde2d43572490c141f08ac1a823680" id="r_a8ecde2d43572490c141f08ac1a823680"><td class="memItemLeft" align="right" valign="top"><a id="a8ecde2d43572490c141f08ac1a823680" name="a8ecde2d43572490c141f08ac1a823680"></a>
-QString&#160;</td><td class="memItemRight" valign="bottom"><b>mName</b></td></tr>
-<tr class="memdesc:a8ecde2d43572490c141f08ac1a823680"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le nom de l'unité utilisée par cet afficheur. <br /></td></tr>
-<tr class="separator:a8ecde2d43572490c141f08ac1a823680"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a945fd9477fe9403ba093a95037e4d8b0" id="r_a945fd9477fe9403ba093a95037e4d8b0"><td class="memItemLeft" align="right" valign="top"><a id="a945fd9477fe9403ba093a95037e4d8b0" name="a945fd9477fe9403ba093a95037e4d8b0"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><b>mUnitName</b></td></tr>
+<tr class="memdesc:a945fd9477fe9403ba093a95037e4d8b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">QML Property: Le nom de l'unité utilisée par cet afficheur. <br /></td></tr>
+<tr class="separator:a945fd9477fe9403ba093a95037e4d8b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4139c64cb933d89482b4781aba6469d" id="r_ae4139c64cb933d89482b4781aba6469d"><td class="memItemLeft" align="right" valign="top"><a id="ae4139c64cb933d89482b4781aba6469d" name="ae4139c64cb933d89482b4781aba6469d"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><b>mHint</b></td></tr>
+<tr class="memdesc:ae4139c64cb933d89482b4781aba6469d"><td class="mdescLeft">&#160;</td><td class="mdescRight">QML Property: Le texte à afficher si mDisplayValue est vide. <br /></td></tr>
+<tr class="separator:ae4139c64cb933d89482b4781aba6469d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a806b2db5875a013549f766fc06cb77e4" id="r_a806b2db5875a013549f766fc06cb77e4"><td class="memItemLeft" align="right" valign="top"><a id="a806b2db5875a013549f766fc06cb77e4" name="a806b2db5875a013549f766fc06cb77e4"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>mIsActive</b> = false</td></tr>
+<tr class="memdesc:a806b2db5875a013549f766fc06cb77e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si cet afficheur est en cours d'edition. Positionné par le QML. <br /></td></tr>
+<tr class="separator:a806b2db5875a013549f766fc06cb77e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bc1ca5adae0aeb45a6ab7689def709c" id="r_a4bc1ca5adae0aeb45a6ab7689def709c"><td class="memItemLeft" align="right" valign="top"><a id="a4bc1ca5adae0aeb45a6ab7689def709c" name="a4bc1ca5adae0aeb45a6ab7689def709c"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><b>mRawHMSI</b></td></tr>
+<tr class="memdesc:a4bc1ca5adae0aeb45a6ab7689def709c"><td class="mdescLeft">&#160;</td><td class="mdescRight">utilisé par les afficheurs HMSI <br /></td></tr>
+<tr class="separator:a4bc1ca5adae0aeb45a6ab7689def709c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26a76b78ff1b299984a31368ea1a0fb3" id="r_a26a76b78ff1b299984a31368ea1a0fb3"><td class="memItemLeft" align="right" valign="top"><a id="a26a76b78ff1b299984a31368ea1a0fb3" name="a26a76b78ff1b299984a31368ea1a0fb3"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><b>mRawNUM</b></td></tr>
+<tr class="memdesc:a26a76b78ff1b299984a31368ea1a0fb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">utilisé par les afficheurs Numériques <br /></td></tr>
+<tr class="separator:a26a76b78ff1b299984a31368ea1a0fb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf62ef7d11ce13b233fd7edd33d820d1" id="r_abf62ef7d11ce13b233fd7edd33d820d1"><td class="memItemLeft" align="right" valign="top"><a id="abf62ef7d11ce13b233fd7edd33d820d1" name="abf62ef7d11ce13b233fd7edd33d820d1"></a>
 Unites::Units&#160;</td><td class="memItemRight" valign="bottom"><b>mUnit</b></td></tr>
 <tr class="memdesc:abf62ef7d11ce13b233fd7edd33d820d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unité utilisée par cet afficheur. <br /></td></tr>
 <tr class="separator:abf62ef7d11ce13b233fd7edd33d820d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f7f3675bdd84facdafcc5d12a1d2f5e" id="r_a7f7f3675bdd84facdafcc5d12a1d2f5e"><td class="memItemLeft" align="right" valign="top"><a id="a7f7f3675bdd84facdafcc5d12a1d2f5e" name="a7f7f3675bdd84facdafcc5d12a1d2f5e"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>mDecimals</b></td></tr>
-<tr class="memdesc:a7f7f3675bdd84facdafcc5d12a1d2f5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nombre de chiffres après la virgule. <br /></td></tr>
-<tr class="separator:a7f7f3675bdd84facdafcc5d12a1d2f5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57358410a9700e9a63a2a1eb2af0b275" id="r_a57358410a9700e9a63a2a1eb2af0b275"><td class="memItemLeft" align="right" valign="top"><a id="a57358410a9700e9a63a2a1eb2af0b275" name="a57358410a9700e9a63a2a1eb2af0b275"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>mFrameRate</b></td></tr>
-<tr class="memdesc:a57358410a9700e9a63a2a1eb2af0b275"><td class="mdescLeft">&#160;</td><td class="mdescRight">Framerate utilisé (pour les afficheurs FRAMES et HMSI) <br /></td></tr>
-<tr class="separator:a57358410a9700e9a63a2a1eb2af0b275"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dee6d341d437c8d40da6e7bd32c47dc" id="r_a1dee6d341d437c8d40da6e7bd32c47dc"><td class="memItemLeft" align="right" valign="top"><a id="a1dee6d341d437c8d40da6e7bd32c47dc" name="a1dee6d341d437c8d40da6e7bd32c47dc"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>mFramerate</b></td></tr>
+<tr class="memdesc:a1dee6d341d437c8d40da6e7bd32c47dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Framerate utilisé (pour les afficheurs FRAMES et HMSI) <br /></td></tr>
+<tr class="separator:a1dee6d341d437c8d40da6e7bd32c47dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa224221fbabd195c9283e3320b6987fd" id="r_aa224221fbabd195c9283e3320b6987fd"><td class="memItemLeft" align="right" valign="top"><a id="aa224221fbabd195c9283e3320b6987fd" name="aa224221fbabd195c9283e3320b6987fd"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>mConversionFacteur</b></td></tr>
 <tr class="memdesc:aa224221fbabd195c9283e3320b6987fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nombre de microseconds par unité <br /></td></tr>
 <tr class="separator:aa224221fbabd195c9283e3320b6987fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
-<a id="a00774166e578f9dd4312c52700d0a48e" name="a00774166e578f9dd4312c52700d0a48e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00774166e578f9dd4312c52700d0a48e">&#9670;&#160;</a></span>Afficheur()</h2>
+<a id="afb96faf1b5a23e0dbfe79b0cc6f02e7b" name="afb96faf1b5a23e0dbfe79b0cc6f02e7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb96faf1b5a23e0dbfe79b0cc6f02e7b">&#9670;&#160;</a></span>Afficheur()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -204,6 +235,12 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>mConversionFacteur<
           <td>(</td>
           <td class="paramtype">Unites::Units&#160;</td>
           <td class="paramname"><em>unit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>parentName</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -236,6 +273,41 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>mConversionFacteur<
 </div>
 </div>
 <h2 class="groupheader">Documentation des fonctions membres</h2>
+<a id="a7e6cdc99b5f03d6db8d81451c6cf6ddc" name="a7e6cdc99b5f03d6db8d81451c6cf6ddc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e6cdc99b5f03d6db8d81451c6cf6ddc">&#9670;&#160;</a></span>activeDisplay</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Afficheur::activeDisplay </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>afficheur</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>SLOT: Actualise la variable mIsActive en cas de changement. </p>
+<hr  />
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">afficheur</td><td>Le nom (objectName) de l'afficheur sélectionné dans le QML. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a41a7fd306f2aca734d7d82829b7ba000" name="a41a7fd306f2aca734d7d82829b7ba000"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a41a7fd306f2aca734d7d82829b7ba000">&#9670;&#160;</a></span>addDigit()</h2>
 
@@ -252,9 +324,10 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>mConversionFacteur<
       </table>
 </div><div class="memdoc">
 
-<p>Ajoute un digit à la fin de la chaine de caractères. La nouvelle valeur Pivot, si elle a changé. </p>
+<p>Ajoute un digit à la fin de la chaine de caractères. </p>
 <hr  />
- <dl class="params"><dt>Paramètres</dt><dd>
+ <dl class="section note"><dt>Note</dt><dd>Met à jour la nouvelle valeur Pivot, si elle a changé. </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">digit</td><td>Le caractère digit à ajouter. </td></tr>
   </table>
@@ -263,8 +336,8 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>mConversionFacteur<
 
 </div>
 </div>
-<a id="a1ea55697a9f4d9564f97c7f2166b8b59" name="a1ea55697a9f4d9564f97c7f2166b8b59"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ea55697a9f4d9564f97c7f2166b8b59">&#9670;&#160;</a></span>clearDisplayValue()</h2>
+<a id="a614d213a452354ca50df495510bd9c8d" name="a614d213a452354ca50df495510bd9c8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a614d213a452354ca50df495510bd9c8d">&#9670;&#160;</a></span>clearValue</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -273,7 +346,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>mConversionFacteur<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Afficheur::clearDisplayValue </td>
+          <td class="memname">void Afficheur::clearValue </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -281,74 +354,18 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>mConversionFacteur<
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>SLOT: Efface la valeur de l'afficheur, et ses variables privées. </p>
 <hr  />
-<p> Vide la chaine à afficher. </p>
-
+ 
 </div>
 </div>
-<a id="a93fe4df4b0930bb7ff765eb4b8ced871" name="a93fe4df4b0930bb7ff765eb4b8ced871"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93fe4df4b0930bb7ff765eb4b8ced871">&#9670;&#160;</a></span>displayValue()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">QString Afficheur::displayValue </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<hr  />
-<p> Renvoie le champ textuel en cours de saisie. </p><dl class="section return"><dt>Renvoie</dt><dd>the currently edited text field. </dd></dl>
-
-</div>
-</div>
-<a id="a6b2fe22af7c6cb03cdd7af8d4c127ad4" name="a6b2fe22af7c6cb03cdd7af8d4c127ad4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b2fe22af7c6cb03cdd7af8d4c127ad4">&#9670;&#160;</a></span>getFrameRate()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double Afficheur::getFrameRate </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<hr  />
-<p> Retourne le framerate (utile pour les afficheurs HMSI). </p><dl class="section return"><dt>Renvoie</dt><dd>framerate utilisé pour cet afficheur (ex: 25.0) </dd></dl>
-
-</div>
-</div>
-<a id="a75e2fa0c216b8913f86938de9fcc68d9" name="a75e2fa0c216b8913f86938de9fcc68d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75e2fa0c216b8913f86938de9fcc68d9">&#9670;&#160;</a></span>getName()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">QString Afficheur::getName </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<hr  />
-<p> Renvoie le libellé de l'unité correspondant à cet afficheur. NOT USED </p><dl class="section return"><dt>Renvoie</dt><dd>the name of the unit </dd></dl>
-
-</div>
-</div>
-<a id="aad454ea19d00612c44757421e77cc92a" name="aad454ea19d00612c44757421e77cc92a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad454ea19d00612c44757421e77cc92a">&#9670;&#160;</a></span>isIncorrect()</h2>
+<a id="a1f25a47c86a919123df0cae829c8135d" name="a1f25a47c86a919123df0cae829c8135d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f25a47c86a919123df0cae829c8135d">&#9670;&#160;</a></span>isIncorrect()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -359,7 +376,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>mConversionFacteur<
         <tr>
           <td class="memname">bool Afficheur::isIncorrect </td>
           <td>(</td>
-          <td class="paramtype">QString&#160;</td>
+          <td class="paramtype">const QString&#160;</td>
           <td class="paramname"><em>rawHmsi</em></td><td>)</td>
           <td></td>
         </tr>
@@ -381,25 +398,6 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>mConversionFacteur<
 
 </div>
 </div>
-<a id="a4c23afc166196f8243caeffba994b52b" name="a4c23afc166196f8243caeffba994b52b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c23afc166196f8243caeffba994b52b">&#9670;&#160;</a></span>length()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Afficheur::length </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<hr  />
-<p> Renvoie le nombre de digits déjà présents dans la string. </p><dl class="section return"><dt>Renvoie</dt><dd>the number of digits in the string. </dd></dl>
-
-</div>
-</div>
 <a id="a148f1edabb9e6b7e22e3219896c3696e" name="a148f1edabb9e6b7e22e3219896c3696e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a148f1edabb9e6b7e22e3219896c3696e">&#9670;&#160;</a></span>removeLastDigit()</h2>
 
@@ -415,12 +413,12 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>mConversionFacteur<
       </table>
 </div><div class="memdoc">
 <hr  />
-<p> Enlève un digit à la fin de la chaine de caractères. La nouvelle valeur pivot est envoyée à l'opérande (si elle a changé). </p>
+<p> Enlève un digit à la fin de la chaine de caractères. La nouvelle valeur pivot est envoyée à l'opérande. </p>
 
 </div>
 </div>
-<a id="a1febcab84022b164924aa0c31a61982a" name="a1febcab84022b164924aa0c31a61982a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1febcab84022b164924aa0c31a61982a">&#9670;&#160;</a></span>setDisplayValue()</h2>
+<a id="a39dbe9d88fc91ee517f148ea27894f6e" name="a39dbe9d88fc91ee517f148ea27894f6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39dbe9d88fc91ee517f148ea27894f6e">&#9670;&#160;</a></span>setDisplayValue()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -431,7 +429,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>mConversionFacteur<
         <tr>
           <td class="memname">void Afficheur::setDisplayValue </td>
           <td>(</td>
-          <td class="paramtype">QString&#160;</td>
+          <td class="paramtype">const QString&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
@@ -442,35 +440,46 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>mConversionFacteur<
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Mémorise et propage la string à afficher vers le QML. </p>
 <hr  />
-<p> Mémorise et propage la string à afficher vers le QML . </p><dl class="params"><dt>Paramètres</dt><dd>
+ <dl class="section note"><dt>Note</dt><dd>On distingue le cas où la cellule est active (cad en cours d'édition), ou pas. </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>La valeur exprimée dans l'unité de cet afficheur. </td></tr>
+    <tr><td class="paramname">value</td><td>La valeur brute exprimée dans l'unité de cet afficheur (rawHMSI ou rawNUM). </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="aa8eba90a62be548ab4fd6f24a2130591" name="aa8eba90a62be548ab4fd6f24a2130591"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8eba90a62be548ab4fd6f24a2130591">&#9670;&#160;</a></span>setFrameRate()</h2>
+<a id="ae92f7473c8867d4c7afb9d74da1bbba0" name="ae92f7473c8867d4c7afb9d74da1bbba0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae92f7473c8867d4c7afb9d74da1bbba0">&#9670;&#160;</a></span>setFramerate</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Afficheur::setFrameRate </td>
+          <td class="memname">void Afficheur::setFramerate </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>framerate</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Permet de changer dynamiquement le framerate des afficheurs HMSI. </p>
 <hr  />
- <dl class="section note"><dt>Note</dt><dd>Attention: voir aussi recalculateValeurPivot() de la classe fille. </dd></dl>
+ <dl class="section note"><dt>Note</dt><dd>C'est toujours l'afficheur HMSI qui reçoit ce signal </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">framerate</td><td>le nouveau framerate pour cet afficheur (ex: 25.0) </td></tr>
@@ -480,8 +489,8 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>mConversionFacteur<
 
 </div>
 </div>
-<a id="ab6bb1428f0e05a16f71441d522747fff" name="ab6bb1428f0e05a16f71441d522747fff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab6bb1428f0e05a16f71441d522747fff">&#9670;&#160;</a></span>setValue</h2>
+<a id="a9c03eaa3071e89cadb8db8b0ce7d7271" name="a9c03eaa3071e89cadb8db8b0ce7d7271"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c03eaa3071e89cadb8db8b0ce7d7271">&#9670;&#160;</a></span>setValue</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -492,7 +501,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>mConversionFacteur<
         <tr>
           <td class="memname">void Afficheur::setValue </td>
           <td>(</td>
-          <td class="paramtype">qint64&#160;</td>
+          <td class="paramtype">const qint64&#160;</td>
           <td class="paramname"><em>microsecs</em></td><td>)</td>
           <td></td>
         </tr>
@@ -503,10 +512,13 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>mConversionFacteur<
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>SLOT. Recoit la nouvelle valeur pivot de l'opérande, pour la convertir et l'envoyer à l'affichage. </p>
 <hr  />
-<p> SLOT. Recoit la valeur numérique à afficher. </p><dl class="params"><dt>Paramètres</dt><dd>
+ <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">microsecs</td><td>La valeur pivot en microsecondes. </td></tr>
+    <tr><td class="paramname">microsecs</td><td>La valeur pivot en microsecondes. <hr  />
+ </td></tr>
   </table>
   </dd>
 </dl>
