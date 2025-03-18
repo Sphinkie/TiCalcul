@@ -34,4 +34,12 @@ CalculFrameForm {
         console.log("Swap ! ")
         tc1_aff_4.rectifyHMSI()
     }
+
+    bRectifyTc1.onClicked: {
+        tc1_aff_4.rectifyHMSI()
+    }
+
+    bRectifyTc2.onClicked: {
+        tc2_aff_4.rectifyHMSI()
+    }
 }

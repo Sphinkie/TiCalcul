@@ -8,9 +8,11 @@ import "../Controllers"
 Item {
     property alias tc1: tc1
     property alias tc2: tc2
+    property alias bSwap: bSwap
     property alias bFramerateTc1: bFramerateTc1
     property alias bFramerateTc2: bFramerateTc2
-    property alias bSwap: bSwap
+    property alias bRectifyTc1: bRectifyTc1
+    property alias bRectifyTc2: bRectifyTc2
 
     GridLayout {
         id: zoneResults
@@ -18,7 +20,7 @@ Item {
         Layout.margins: 24
         columnSpacing: 0
         rowSpacing: 0
-        columns: 3
+        columns: 4
 
         // ------------------------------------------------------------
         // 1ere ligne - TC1 en HMSI
@@ -27,7 +29,16 @@ Item {
             id: labelTC1
             text: "TC1"
             color: Universal.altMediumHighColor
-            Layout.preferredWidth: 80
+            Layout.preferredWidth: 52
+            Layout.fillHeight: false
+            Layout.fillWidth: false
+        }
+        SquareButton {
+            id: bRectifyTc1
+            text: "\u27f3"
+            color: Universal.altMediumHighColor
+            font.pixelSize: 24
+            width: 32
             Layout.fillHeight: false
             Layout.fillWidth: false
         }
@@ -53,7 +64,7 @@ Item {
             Layout.fillHeight: false
             Layout.fillWidth: true
             Layout.rowSpan: 1
-            Layout.columnSpan: 2
+            Layout.columnSpan: 3
         }
         TiButton {
             id: bSwap
@@ -68,7 +79,16 @@ Item {
         FieldResult {
             id: labelTC2
             text: "TC2"
-            Layout.preferredWidth: 80
+            Layout.preferredWidth: 52
+            Layout.fillHeight: false
+            Layout.fillWidth: false
+        }
+        SquareButton {
+            id: bRectifyTc2
+            text: "\u27f3"
+            color: Universal.altMediumColor
+            font.pixelSize: 24
+            width: 32
             Layout.fillHeight: false
             Layout.fillWidth: false
         }
@@ -83,6 +103,7 @@ Item {
             buttonText: tc2_aff_4.framerate + "fps"
             Layout.fillHeight: false
             Layout.fillWidth: false
+            padding: 8
         }
 
         // ------------------------------------------------------------
@@ -93,6 +114,7 @@ Item {
             Layout.preferredWidth: 80
             Layout.fillHeight: false
             Layout.fillWidth: false
+            Layout.columnSpan: 2
         }
         FieldInput {
             id: result
@@ -110,7 +132,7 @@ Item {
             Layout.fillWidth: true
             Layout.fillHeight: false
             Layout.rowSpan: 1
-            Layout.columnSpan: 3
+            Layout.columnSpan: 4
             Layout.row: 7
         }
     }
