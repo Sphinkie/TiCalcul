@@ -23,7 +23,7 @@ KeyboardForm {
     keyDot.onClicked: afficheurActif.afficheur.addDigit(".")
     keyDel.onClicked: afficheurActif.afficheur.removeLastDigit()
 
-    keyPlus.onClicked: console.log(afficheurActif.afficheur.getName())
-    keyMinus.onClicked: console.log("KeyboardKey - clicked !")
-    keyComplt.onClicked: console.log("KeyboardKey Complt clicked !")
+    keyPlus.onClicked: calculateur.add()
+    keyMinus.onClicked: calculateur.substract()
+    keyComplt.onClicked: calculateur.complement()
 }

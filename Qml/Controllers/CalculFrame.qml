@@ -32,7 +32,7 @@ CalculFrameForm {
 
     bSwap.onClicked: {
         console.log("Swap ! ")
-        tc1_aff_4.rectifyHMSI()
+        calculateur.swap()
     }
 
     bRectifyTc1.onClicked: {

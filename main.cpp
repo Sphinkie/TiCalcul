@@ -25,10 +25,10 @@ int main(int argc, char* argv[])
     // --------------------------------------
     // On initialise nos classes
     // --------------------------------------
-    Operande operande_tc1("tc1");
-    Operande operande_tc2("tc2");
-    Operande operande_res("result");
-    Calculateur calculateur(&operande_tc1, &operande_tc2, &operande_res);
+    Operande operande_tc1("tc1", &app);
+    Operande operande_tc2("tc2", &app);
+    Operande operande_res("result", &app);
+    Calculateur calculateur(&operande_tc1, &operande_tc2, &operande_res, &app);
 
     // --------------------------------------
     // Initialisation du moteur:
@@ -42,6 +42,8 @@ int main(int argc, char* argv[])
     context->setContextProperty("operandeTC1", &operande_tc1);
     context->setContextProperty("operandeTC2", &operande_tc2);
     context->setContextProperty("operandeRES", &operande_res);
+    context->setContextProperty("calculateur", &calculateur);
+
     operande_tc1.registerContext(context);
     operande_tc2.registerContext(context);
     operande_res.registerContext(context);

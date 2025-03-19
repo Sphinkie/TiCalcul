@@ -13,13 +13,13 @@ Operande::Operande(const QString name, QObject *parent)
 {
     this->mName = name;
 
-    a1 = new Afficheur(Unites::SECONDS, name);
-    a2 = new Afficheur(Unites::MILLISECONDS, name);
-    a3 = new Afficheur(Unites::MICROSECONDS, name);
-    a4 = new Afficheur(Unites::HMSI, name);
-    a5 = new Afficheur(Unites::DHMSM, name);
-    a6 = new Afficheur(Unites::FRAMES_25, name);
-    a7 = new Afficheur(Unites::FRAMES_50, name);
+    a1 = new Afficheur(Unites::SECONDS, name, this);
+    a2 = new Afficheur(Unites::MILLISECONDS, name, this);
+    a3 = new Afficheur(Unites::MICROSECONDS, name, this);
+    a4 = new Afficheur(Unites::HMSI, name, this);
+    a5 = new Afficheur(Unites::DHMSM, name, this);
+    a6 = new Afficheur(Unites::FRAMES_25, name, this);
+    a7 = new Afficheur(Unites::FRAMES_50, name, this);
     //a8 = new Afficheur(Unites::FRAMES_NTSC);
 
     // On signale à l'afficheur HMSI qu'il a le focus.
