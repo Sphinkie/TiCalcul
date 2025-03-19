@@ -27,6 +27,7 @@ qt_add_qml_module(appTiCalcul
         QML_FILES Qml/Vues/KeyboardForm.ui.qml
         QML_FILES Qml/Vues/FieldInputForm.ui.qml
         QML_FILES Qml/Vues/CalculFrameForm.ui.qml
+        QML_FILES Qml/Vues/SquareButton.qml
 
         QML_FILES Qml/Controllers/Keyboard.qml
         QML_FILES Qml/Controllers/LeftFrame.qml
@@ -42,7 +43,7 @@ qt_add_qml_module(appTiCalcul
         SOURCES Sources/operande.h Sources/operande.cpp
         SOURCES Sources/afficheur.h Sources/afficheur.cpp
         SOURCES Sources/converter.h Sources/converter.cpp
-        QML_FILES Qml/Vues/SquareButton.qml
+        SOURCES Sources/calculateur.h Sources/calculateur.cpp
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

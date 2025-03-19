@@ -4,6 +4,7 @@
 #include <QIcon>
 
 #include "Sources/operande.h"
+#include "Sources/calculateur.h"
 
 /* ********************************************************************************* */
 /*!
@@ -27,6 +28,7 @@ int main(int argc, char* argv[])
     Operande operande_tc1("tc1");
     Operande operande_tc2("tc2");
     Operande operande_res("result");
+    Calculateur calculateur(&operande_tc1, &operande_tc2, &operande_res);
 
     // --------------------------------------
     // Initialisation du moteur:

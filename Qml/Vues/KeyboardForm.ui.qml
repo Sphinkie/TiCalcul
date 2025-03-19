@@ -46,7 +46,7 @@ GridLayout {
     KeyboardKeyForm {
         id: keyPlus
         buttonText: "+"
-        enabled: false
+        enabled: true
         Layout.fillWidth: true
     }
     KeyboardKeyForm {
@@ -67,7 +67,7 @@ GridLayout {
     KeyboardKeyForm {
         id: keyMinus
         buttonText: "-"
-        enabled: false
+        enabled: true
         Layout.fillWidth: true
     }
     KeyboardKeyForm {
@@ -88,7 +88,7 @@ GridLayout {
     KeyboardKeyForm {
         id: keyComplt
         buttonText: "24'C"
-        enabled: false
+        enabled: true
         Layout.fillWidth: true
     }
     KeyboardKeyForm {
