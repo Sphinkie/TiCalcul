@@ -21,13 +21,15 @@ public:
     Q_INVOKABLE void substract();
     Q_INVOKABLE void swap();
 
-signals:
-
+public slots:
+    void onValeurPivotChanged();
 
 private:
     Operande* mTC1;         //!< premier opérande.
     Operande* mTC2;         //!< second opérande.
     Operande* mResult;      //!< opérande résultat.
+    enum Operation {none, addition, soustraction, complt}
+        mOperation = none;  //!< opération en cours
 };
 
 #endif // CALCULATEUR_H

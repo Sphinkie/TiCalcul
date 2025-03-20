@@ -17,7 +17,7 @@ Item {
     GridLayout {
         id: zoneResults
         anchors.fill: parent
-        Layout.margins: 24
+        //Layout.margins: 24
         columnSpacing: 0
         rowSpacing: 0
         columns: 4
@@ -53,6 +53,9 @@ Item {
             buttonText: tc1_aff_4.framerate + "fps"
             Layout.fillHeight: false
             Layout.fillWidth: false
+            Layout.leftMargin: 8
+            backg.implicitHeight: 32
+            backg.implicitWidth: 72
         }
 
         // ------------------------------------------------------------
@@ -71,6 +74,9 @@ Item {
             buttonText: "⇵"
             Layout.fillHeight: false
             Layout.fillWidth: false
+            Layout.leftMargin: 8
+            backg.implicitHeight: 32
+            backg.implicitWidth: 72
         }
 
         // ------------------------------------------------------------
@@ -103,7 +109,9 @@ Item {
             buttonText: tc2_aff_4.framerate + "fps"
             Layout.fillHeight: false
             Layout.fillWidth: false
-            padding: 8
+            Layout.leftMargin: 8
+            backg.implicitHeight: 32
+            backg.implicitWidth: 72
         }
 
         // ------------------------------------------------------------

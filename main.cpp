@@ -37,16 +37,26 @@ int main(int argc, char* argv[])
     QQmlContext* context = engine.rootContext();
 
     // ------------------------------------------------------------
-    // On ajoute au contexte les classes qui ont des property QML
+    // On ajoute les classes qui ont des property au contexte QML
     // ------------------------------------------------------------
     context->setContextProperty("operandeTC1", &operande_tc1);
     context->setContextProperty("operandeTC2", &operande_tc2);
     context->setContextProperty("operandeRES", &operande_res);
     context->setContextProperty("calculateur", &calculateur);
 
+    // ------------------------------------------------------------
+    // Chaque operande ajoute ses afficheurs au contexte QML
+    // ------------------------------------------------------------
     operande_tc1.registerContext(context);
     operande_tc2.registerContext(context);
     operande_res.registerContext(context);
+
+    // ------------------------------------------------------------
+    // Connexions
+    // ------------------------------------------------------------
+    // Les operandes signalent au calculateur si leur valeur pivot change.
+    QObject::connect(&operande_tc1, SIGNAL(valeurPivotChanged(qint64,bool)), &calculateur, SLOT(onValeurPivotChanged()));
+    QObject::connect(&operande_tc2, SIGNAL(valeurPivotChanged(qint64,bool)), &calculateur, SLOT(onValeurPivotChanged()));
 
     // ------------------------------------------------------------
     // On ajoute le type Afficheur au contexte QML.

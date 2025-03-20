@@ -32,11 +32,11 @@ Operande::Operande(const QString name, QObject* parent)
     // Connexions pour les afficheurs instanciées
     for (it=afficheurs.begin(); it != afficheurs.end();  it++)
     {
-        // Connexions: Envoi de la valeur pivot aux afficheurs.
+        // Envoi de la valeur pivot aux afficheurs.
         QObject::connect(this, SIGNAL(valeurPivotChanged(qint64,bool)), *it, SLOT(setValue(qint64,bool)));
-        // Connexions: Signale aux afficheurs que la valeur pivot a été effacée.
+        // Signale aux afficheurs que la valeur pivot a été effacée.
         QObject::connect(this, SIGNAL(valeurPivotCleared()), *it, SLOT(clearValue()));
-        // Connexions: Réception des modifications de la valeur pivot.
+        // Réception des modifications de la valeur pivot.
         QObject::connect(*it, SIGNAL(setValeurPivot(qint64)), this, SLOT(setValeurPivot(qint64)));
     }
 }
