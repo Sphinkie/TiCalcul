@@ -26,10 +26,10 @@ public:
     Q_INVOKABLE void clearValeurPivot();
 
 public slots:
-    void setValeurPivot(const qint64 newValeurPivot);
+    void setValeurPivot(const qint64 newValeurPivot, const bool force=false);
 
 signals:
-    void valeurPivotChanged(qint64);
+    void valeurPivotChanged(qint64, bool);
     void valeurPivotCleared();
 
 private:

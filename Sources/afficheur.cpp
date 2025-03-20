@@ -290,10 +290,12 @@ void Afficheur::clearValue()
 /*! **********************************************************************************************************
  * \brief SLOT. Recoit la nouvelle valeur pivot de l'opérande, pour la convertir et l'envoyer à l'affichage.
  * \param microsecs: La valeur pivot en microsecondes.
+ * \param force: true pour forcer l'affichage de la valeur du paramètre microsecs
+ * \see signal Operande::valeurPivotChanged()
  * *********************************************************************************************************** */
-void Afficheur::setValue(const qint64 microsecs)
+void Afficheur::setValue(const qint64 microsecs, const bool force)
 {
-    qDebug() << mUnitName << "::setValue()" << microsecs;
+    qDebug() << this->objectName() << "::setValue()" << microsecs;
     QString value = "";
     switch (mUnit)
     {
@@ -325,30 +327,33 @@ void Afficheur::setValue(const qint64 microsecs)
         value="UNKNOWN UNIT";
     }
     // On mémorise et on envoie à l'affichage QML.
-    this->setDisplayValue(value);
+    this->setDisplayValue(value, force);
 }
 
 
 /*! **********************************************************************************************************
  * \brief Mémorise et propage la string à afficher vers le QML.
  * \note On distingue le cas où la cellule est active (cad en cours d'édition), ou pas.
+ *       Si la cellule est active, on ignore la valeur reçue et on continue d'afficher la
+ *       valeur brute qui est en cours d'édition.
  * \param value: La valeur brute exprimée dans l'unité de cet afficheur (rawHMSI ou rawNUM).
+ * \param force: si true, on prend en compter la valeur, meme si l'afficheur est actif.
  * ***********************************************************************************************************/
-void Afficheur::setDisplayValue(const QString value)
+void Afficheur::setDisplayValue(const QString value, const bool force)
 {
-    qDebug() << mUnitName << "::setDisplayValue" << value << (mIsActive? "active": "passive");
+    qDebug() << this->objectName() << "::setDisplayValue" << value << (mIsActive? "active": "passive");
 
-    // Si le champ est en cours d'édition:
-    if (mIsActive)
+    // Si le champ est en cours d'édition, et que l'on ne force pas l'affichage de la nouvelle valeur:
+    if (mIsActive && !force)
     {
         switch (mUnit)
         {
             case Unites::HMSI:
-                // On affiche la valeur en cours d'edition (mRawHMSi)
+                // On affiche la valeur en cours d'édition (mRawHMSi)
                 mDisplayValue = Converter::completeRawHMSIWithDots(mRawHMSI);
                 break;
             default:
-                // Pour les autres unités, on affichera la valeur en cours d'édition, avec des separateurs
+                // Pour les autres unités, on affichera la valeur en cours d'édition, avec des séparateurs
                 mDisplayValue = Converter::addSpaceSeparator(mRawNUM);
                 break;
         }
@@ -359,15 +364,15 @@ void Afficheur::setDisplayValue(const QString value)
         switch (mUnit)
         {
             case Unites::HMSI:
-                // on affiche la valeur recue (complete)
+                // on affiche la valeur recue (complète)
                 mDisplayValue = Converter::completeRawHMSIWithDots(value);
                 break;
             case Unites::DHMSM:
-                // Pour le D+HMSm, on affichera telle quelle la valeur reçue (qui est complete)
+                // Pour le D+HMSm, on affichera telle quelle la valeur reçue (qui est complète)
                 mDisplayValue = value;
                 break;
             default:
-                // Pour les autres unités, on affichera la valeur reçue, avec des separateurs
+                // Pour les autres unités, on affichera la valeur reçue, avec des séparateurs
                 mDisplayValue = Converter::addSpaceSeparator(value);
                 break;
         }

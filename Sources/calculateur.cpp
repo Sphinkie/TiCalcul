@@ -52,6 +52,6 @@ void Calculateur::swap()
 {
     qint64 temp_1 = mTC1->valeurPivot();
     qint64 temp_2 = mTC2->valeurPivot();
-    mTC1->setValeurPivot(temp_2);
-    mTC2->setValeurPivot(temp_1);
+    mTC1->setValeurPivot(temp_2, true);
+    mTC2->setValeurPivot(temp_1, true);
 }

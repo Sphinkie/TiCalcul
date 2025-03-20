@@ -7,9 +7,9 @@
  *        à chaque modification de la valeur pivot.
  * \note L'afficheur NTSC est désactivé pour le moment.
  * \param name: Le nom de l'operande: "tc1" ou "tc2" ou "result".
- * \param parent: Paramètre classique pour les QObject.
+ * \param parent: Pointeur sur QObject parent.
  * ***********************************************************************************************************/
-Operande::Operande(const QString name, QObject *parent)
+Operande::Operande(const QString name, QObject* parent)
 {
     this->mName = name;
 
@@ -33,7 +33,7 @@ Operande::Operande(const QString name, QObject *parent)
     for (it=afficheurs.begin(); it != afficheurs.end();  it++)
     {
         // Connexions: Envoi de la valeur pivot aux afficheurs.
-        QObject::connect(this, SIGNAL(valeurPivotChanged(qint64)), *it, SLOT(setValue(qint64)));
+        QObject::connect(this, SIGNAL(valeurPivotChanged(qint64,bool)), *it, SLOT(setValue(qint64,bool)));
         // Connexions: Signale aux afficheurs que la valeur pivot a été effacée.
         QObject::connect(this, SIGNAL(valeurPivotCleared()), *it, SLOT(clearValue()));
         // Connexions: Réception des modifications de la valeur pivot.
@@ -51,26 +51,29 @@ qint64 Operande::valeurPivot() const
 }
 
 /*! **********************************************************************************************************
- * \brief SLOT : Reçoit et propage la nouvelle valeur pivot aux afficheurs.
+ * \brief SLOT : Reçoit une nouvelle valeur pivot d'un Afficheur et la propage à tous les Afficheurs.
+ *               Peut aussi être positionné par le calculateur.
  * \param newValeurPivot: Timecode en microsecondes.
- * \see Afficheur::setValue()
+ * \see signal Afficheur::setValuePivot()
+ * \see signal Operande::valeurPivotChanged()
+ * \see slot Afficheur::setValue()
  * ***********************************************************************************************************/
-void Operande::setValeurPivot(const qint64 newValeurPivot)
+void Operande::setValeurPivot(const qint64 newValeurPivot, const bool force)
 {
     if (newValeurPivot > this->mMaxValue)
     {
         qDebug("ERROR: msg_max_reached: discard candidate %d ! ", newValeurPivot);
     }
-    else // if (mValeurPivot != newValeurPivot)
+    else
     {
-        qDebug("received new pivot: %d us", newValeurPivot);
+        qDebug() << mName << "received new pivot (us)" << newValeurPivot << force;
         mValeurPivot = newValeurPivot;
-        emit valeurPivotChanged(newValeurPivot);
+        emit valeurPivotChanged(newValeurPivot, force);
     }
 }
 
 /*! **********************************************************************************************************
- * \brief SLOT : Vide la valeur pivot, et efface la valeur de tous les afficheurs.
+ * \brief SLOT : Vide la valeur pivot, et efface la valeur de tous les Afficheur.
  * ***********************************************************************************************************/
 void Operande::clearValeurPivot()
 {

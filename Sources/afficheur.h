@@ -23,7 +23,7 @@ public:
     Q_INVOKABLE void rectifyHMSI();
 
 public slots:
-    void setValue(const qint64 microsecs);
+    void setValue(const qint64 microsecs, const bool force=false);  //!< Réception du signal valeurPivotChanged
     void clearValue();
     void activeDisplay(QString afficheur);
     void setFramerate(double framerate);
@@ -36,7 +36,7 @@ signals:
     void hintChanged();                 //!< En fait, le hint d'un afficheur ne change jamais.
 
 private:
-    void setDisplayValue(const QString value);
+    void setDisplayValue(const QString value, const bool force=false);
     bool isIncorrect(const QString rawHmsi);
 
 // ------------------------------------------------------------

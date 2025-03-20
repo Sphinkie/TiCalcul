@@ -284,7 +284,7 @@ QString Converter::microsecsToHMSM(qint64 microsecs)
     qint64 quotient;
     qint64 reste;
     QString hmsi = "";
-    qDebug() << "microsecsToHMSM()" << microsecs;
+    // qDebug() << "microsecsToHMSM()" << microsecs;
     if (microsecs == 0) return "00:00:00,000";
     if (microsecs < 0) {
         hmsi += "-";
