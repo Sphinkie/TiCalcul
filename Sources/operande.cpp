@@ -12,6 +12,7 @@
 Operande::Operande(const QString name, QObject* parent)
 {
     this->mName = name;
+    this->setObjectName(name);
 
     a1 = new Afficheur(Unites::SECONDS, name, this);
     a2 = new Afficheur(Unites::MILLISECONDS, name, this);
@@ -74,6 +75,7 @@ void Operande::setValeurPivot(const qint64 newValeurPivot, const bool force)
 
 /*! **********************************************************************************************************
  * \brief SLOT : Vide la valeur pivot, et efface la valeur de tous les Afficheur.
+ * \see Signal Afficheur::clearValue()
  * ***********************************************************************************************************/
 void Operande::clearValeurPivot()
 {

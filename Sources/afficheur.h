@@ -54,6 +54,7 @@ private:
     Unites::Units mUnit;        //!< Unité utilisée par cet afficheur
     double mFramerate;          //!< Framerate utilisé (pour les afficheurs FRAMES et HMSI)
     double mConversionFacteur;  //!< Nombre de microseconds par unité
+    qint64 mMaxValue;           //!< Valeur maximale supportée par cette unité (sauf HMSI)
 };
 
 #endif // AFFICHEUR_H

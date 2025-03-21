@@ -5,8 +5,9 @@
 /*! **********************************************************************************************************
  * \brief Constructeur.
  * \param unit : l'unité correspondante à cet afficheur.
+ * \param parent: QObject parent: un Operande.
  * ***********************************************************************************************************/
-Afficheur::Afficheur(Unites::Units unit, QString parentName, QObject *parent)
+Afficheur::Afficheur(Unites::Units unit, QString parentName, QObject* parent)
 {
     this->mDisplayValue = "";
     this->mUnit = unit;
@@ -14,7 +15,8 @@ Afficheur::Afficheur(Unites::Units unit, QString parentName, QObject *parent)
     this->mUnitName = Unites::name.value(unit);
     this->mFramerate = Unites::frameRate.value(unit);
     this->mConversionFacteur = Unites::usPerUnit.value(unit);
-    setObjectName(parentName + '_' + mUnitName);
+    this->mMaxValue = Unites::max.value(unit);
+    setObjectName(parent->objectName() + '_' + mUnitName);
 }
 
 /*! **********************************************************************************************************
@@ -100,7 +102,7 @@ void Afficheur::addDigit(QString digit)
         // ------------------------------------------------------------
         // Si c'est un point et qu'on est au début: on traite comme "0."
         // ------------------------------------------------------------
-        if ((digit == ".") && mRawNUM.isEmpty())      digit="0";
+        if ((digit == ".") && mRawNUM.isEmpty())  digit="0";
         // ------------------------------------------------------------
         // Si c'est un point, on n'a pas encore de chiffre derrière, on l'affiche aussitot.
         // et on ne modifiepas la valeur pivot.
@@ -118,6 +120,12 @@ void Afficheur::addDigit(QString digit)
         int pointPos = mRawNUM.indexOf('.');
         if ((pointPos > -1) && (pointPos < mRawNUM.length()-3)) return;
         // ------------------------------------------------------------------------
+        // Controle de dépassement
+        // ------------------------------------------------------------------------
+        qDebug(qPrintable("candidate check: " + mRawNUM+digit));
+        if ((mRawNUM+digit).toLongLong() > mMaxValue) return;
+        qDebug(qPrintable("passed"));
+        // ------------------------------------------------------------------------
         // On ajoute le digit à la string
         // ------------------------------------------------------------------------
         // newStringValue = mRawNUM + digit;
@@ -132,6 +140,10 @@ void Afficheur::addDigit(QString digit)
     }
     default:
         qDebug(qPrintable("addDigit: " + mRawNUM + " + " + digit));
+        // ------------------------------------------------------------------------
+        // Controle de dépassement
+        // ------------------------------------------------------------------------
+        if ((mRawNUM+digit).toLongLong() > mMaxValue) return;
         // ------------------------------------------------------------------------
         // Si c'est un zéro et qu'on est au début: on l'ignore
         // Sauf pour HMSI et SECONDS qui ont le droit de commencer par un "0"

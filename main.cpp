@@ -22,6 +22,8 @@ int main(int argc, char* argv[])
     app.setOrganizationDomain("de-lorenzo.fr");
     app.setWindowIcon(QIcon(":Images/TiCalcul.ico"));  // TopLeft icon
 
+    qDebug() <<"max qint64 on this system" << std::numeric_limits<qint64>::max();   // 9 223 372 036 854 775 807
+
     // --------------------------------------
     // On initialise nos classes
     // --------------------------------------
