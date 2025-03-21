@@ -23,10 +23,10 @@ void Calculateur::complement()
     mOperation = complt;
     qint64 value = mTC1->valeurPivot();
     // la valeur doit être positive et inférieure à 24h.
-    // TODO: sinon, on efface le résultat
-    if (value > Converter::us_PerDay) return;
-    if (value < 0) return;
-    mResult->setValeurPivot(Converter::us_PerDay - value);
+    if ((value < 0) || (value > Converter::us_PerDay))
+        mResult->clearValeurPivot();
+    else
+        mResult->setValeurPivot(Converter::us_PerDay - value);
 }
 
 /*! **********************************************************************************************************
