@@ -22,7 +22,7 @@ Afficheur::Afficheur(Unites::Units unit, QString parentName, QObject* parent)
 
 
 /*! **********************************************************************************************************
- * \brief Permet de changer dynamiquement le framerate des afficheurs HMSI.
+ * \brief SLOT: Permet de changer dynamiquement le framerate des afficheurs HMSI.
  * \note C'est toujours l'afficheur HMSI qui reçoit ce signal
  * \param framerate: le nouveau framerate pour cet afficheur (ex: 25.0)
  * ***********************************************************************************************************/
@@ -293,7 +293,7 @@ void Afficheur::activeDisplay(QString afficheur)
 
 /*! **********************************************************************************************************
  * \brief SLOT: Efface la valeur de l'afficheur, et ses variables privées.
- * \see Signal Operande::valeurPivotCleared()
+ * \see Signal valeurPivotCleared() de la classe Operande.
  * ***********************************************************************************************************/
 void Afficheur::clearValue()
 {

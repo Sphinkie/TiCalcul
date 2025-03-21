@@ -25,7 +25,7 @@ void \textbf{ clear\+Value} ()
 void \textbf{ active\+Display} (QString afficheur)
 \begin{DoxyCompactList}\small\item\em SLOT\+: Actualise la variable m\+Is\+Active en cas de changement. \end{DoxyCompactList}\item 
 void \textbf{ set\+Framerate} (double framerate)
-\begin{DoxyCompactList}\small\item\em Permet de changer dynamiquement le framerate des afficheurs HMSI. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em SLOT\+: Permet de changer dynamiquement le framerate des afficheurs HMSI. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Signaux}
 \begin{DoxyCompactItemize}
 \item 
@@ -116,7 +116,7 @@ qint64 {\bfseries m\+Max\+Value}
 La classe \doxyref{Afficheur}{p.}{class_afficheur} gère un champ numérique de l\textquotesingle{}IHM. Elle est associée à un objet QML Field\+Input et lui envoie les valeurs à afficher. Il y a un \doxyref{Afficheur}{p.}{class_afficheur} pour chaque unité\+: Secondes, Millisecondes, HMSI, etc. 
 
 \DoxyHorRuler{0}
-  
+
 
 \doxysubsection{Documentation des constructeurs et destructeur}
 \label{class_afficheur_afb96faf1b5a23e0dbfe79b0cc6f02e7b} 
@@ -190,7 +190,7 @@ SLOT\+: Efface la valeur de l\textquotesingle{}afficheur, et ses variables priv�
 
 \DoxyHorRuler{0}
  \begin{DoxySeeAlso}{Voir également}
-Signal Operande\+::valeur\+Pivot\+Cleared() 
+Signal valeur\+Pivot\+Cleared() de la classe \doxyref{Operande}{p.}{class_operande}. 
 \end{DoxySeeAlso}
 \label{class_afficheur_a1f25a47c86a919123df0cae829c8135d} 
 \index{Afficheur@{Afficheur}!isIncorrect@{isIncorrect}}
@@ -262,7 +262,7 @@ On distingue le cas où la cellule est active (cad en cours d\textquotesingle{}�
 
 
 
-Permet de changer dynamiquement le framerate des afficheurs HMSI. 
+SLOT\+: Permet de changer dynamiquement le framerate des afficheurs HMSI. 
 
 \DoxyHorRuler{0}
  \begin{DoxyNote}{Note}

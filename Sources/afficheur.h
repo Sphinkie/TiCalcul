@@ -5,6 +5,7 @@
 #include <QObject>
 
 /*! **********************************************************************************************************
+ * \class Afficheur
  * \brief La classe Afficheur gère un champ numérique de l'IHM.
  *        Elle est associée à un objet QML FieldInput et lui envoie les valeurs à afficher.
  *        Il y a un Afficheur pour chaque unité: Secondes, Millisecondes, HMSI, etc.

@@ -6,8 +6,9 @@
 #include "Operande.h"
 
 /*! **********************************************************************************************************
- * \brief La classe Calculateur est en charge de gérer les opérations entre
- *        les opérandes: addition, soustraction, complément.
+ * \class Calculateur
+ * \brief La classe Calculateur est en charge de gérer les opérations entre les opérandes:
+ *        addition, soustraction, complément.
  *************************************************************************************************************/
 
 class Calculateur : public QObject

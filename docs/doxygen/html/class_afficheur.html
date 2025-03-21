@@ -125,7 +125,7 @@ Connecteurs publics</h2></td></tr>
 <tr class="memdesc:a7e6cdc99b5f03d6db8d81451c6cf6ddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">SLOT: Actualise la variable mIsActive en cas de changement.  <br /></td></tr>
 <tr class="separator:a7e6cdc99b5f03d6db8d81451c6cf6ddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae92f7473c8867d4c7afb9d74da1bbba0" id="r_ae92f7473c8867d4c7afb9d74da1bbba0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_afficheur.html#ae92f7473c8867d4c7afb9d74da1bbba0">setFramerate</a> (double framerate)</td></tr>
-<tr class="memdesc:ae92f7473c8867d4c7afb9d74da1bbba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de changer dynamiquement le framerate des afficheurs HMSI.  <br /></td></tr>
+<tr class="memdesc:ae92f7473c8867d4c7afb9d74da1bbba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">SLOT: Permet de changer dynamiquement le framerate des afficheurs HMSI.  <br /></td></tr>
 <tr class="separator:ae92f7473c8867d4c7afb9d74da1bbba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
@@ -236,7 +236,7 @@ qint64&#160;</td><td class="memItemRight" valign="bottom"><b>mMaxValue</b></td><
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>La classe <a class="el" href="class_afficheur.html" title="La classe Afficheur gère un champ numérique de l&#39;IHM. Elle est associée à un objet QML FieldInput et ...">Afficheur</a> gère un champ numérique de l'IHM. Elle est associée à un objet QML FieldInput et lui envoie les valeurs à afficher. Il y a un <a class="el" href="class_afficheur.html" title="La classe Afficheur gère un champ numérique de l&#39;IHM. Elle est associée à un objet QML FieldInput et ...">Afficheur</a> pour chaque unité: Secondes, Millisecondes, HMSI, etc. </p>
 <hr  />
-  </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a id="afb96faf1b5a23e0dbfe79b0cc6f02e7b" name="afb96faf1b5a23e0dbfe79b0cc6f02e7b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afb96faf1b5a23e0dbfe79b0cc6f02e7b">&#9670;&#160;</a></span>Afficheur()</h2>
 
@@ -379,7 +379,7 @@ qint64&#160;</td><td class="memItemRight" valign="bottom"><b>mMaxValue</b></td><
 
 <p>SLOT: Efface la valeur de l'afficheur, et ses variables privées. </p>
 <hr  />
- <dl class="section see"><dt>Voir également</dt><dd>Signal Operande::valeurPivotCleared() </dd></dl>
+ <dl class="section see"><dt>Voir également</dt><dd>Signal valeurPivotCleared() de la classe <a class="el" href="class_operande.html" title="La class Operande gère la &quot;valeur pivot&quot; (cad en microsecondes) de l&#39;opérande TC1 ou de TC2.">Operande</a>. </dd></dl>
 
 </div>
 </div>
@@ -530,7 +530,7 @@ qint64&#160;</td><td class="memItemRight" valign="bottom"><b>mMaxValue</b></td><
 </table>
 </div><div class="memdoc">
 
-<p>Permet de changer dynamiquement le framerate des afficheurs HMSI. </p>
+<p>SLOT: Permet de changer dynamiquement le framerate des afficheurs HMSI. </p>
 <hr  />
  <dl class="section note"><dt>Note</dt><dd>C'est toujours l'afficheur HMSI qui reçoit ce signal </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>

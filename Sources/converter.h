@@ -4,13 +4,14 @@
 
 
 /*! *******************************************************************************
- * \class Classe statique contenant des fonctions de conversion de timecodes.
+ * \class Converter
+ * \brief Classe statique contenant des fonctions de conversion de timecodes.
  ********************************************************************************** */
 class Converter
 {
-    /***************************************************************************
-     * On définit quelques constantes.
-     ****************************************************************************/
+    // ***************************************************************************
+    // On définit quelques constantes.
+    // ***************************************************************************
     public:
         static const qint64 us_PerHour = 3600000000;
         static const qint64 us_PerDay = us_PerHour * 24;
@@ -24,9 +25,9 @@ class Converter
         static const inline double us_PerFrameNTSC = us_PerSecond / NtscFramePerSec;
 
 
-    /***************************************************************************
-     * Les méthodes de conversion.
-     ****************************************************************************/
+    // ***************************************************************************
+    // Les méthodes de conversion.
+    // ***************************************************************************
     public:
         Converter();
 
