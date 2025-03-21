@@ -47,7 +47,7 @@ GridLayout {
         id: keyPlus
         buttonText: "+"
         texte.font.pointSize: 28
-        enabled: true
+        enabled: tc1_aff_1.displayValue ? true : false
         Layout.fillWidth: true
     }
     KeyboardKeyForm {
@@ -69,7 +69,7 @@ GridLayout {
         id: keyMinus
         buttonText: "-"
         texte.font.pointSize: 28
-        enabled: true
+        enabled: tc1_aff_1.displayValue ? true : false
         Layout.fillWidth: true
     }
     KeyboardKeyForm {
@@ -90,7 +90,7 @@ GridLayout {
     KeyboardKeyForm {
         id: keyComplt
         buttonText: "24'C"
-        enabled: true
+        enabled: tc1_aff_1.displayValue ? true : false
         Layout.fillWidth: true
     }
     KeyboardKeyForm {
