@@ -13,6 +13,7 @@ Window {
     minimumHeight: 580
     visible: true
     title: "TiCalcul"
+    //IconImage: "qrc:/Images/TiCalcul.ico"
 
     Universal.theme: Universal.Light
     Universal.accent: Universal.Cobalt
@@ -75,5 +76,5 @@ Window {
                 Layout.columnSpan: 3
             }
         }
-    }    
+    }
 }

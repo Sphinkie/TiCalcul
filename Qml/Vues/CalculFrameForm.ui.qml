@@ -121,7 +121,7 @@ Item {
             text: "RESULT"
             Layout.preferredWidth: 80
             Layout.fillHeight: false
-            Layout.fillWidth: false
+            Layout.fillWidth: true
             Layout.columnSpan: 2
         }
         FieldInput {
@@ -131,17 +131,40 @@ Item {
             Layout.fillHeight: false
             Layout.fillWidth: true
         }
+        TiButton {
+            id: bMem
+            buttonText: "MEM"
+            Layout.fillHeight: false
+            Layout.fillWidth: false
+            Layout.leftMargin: 8
+            backg.implicitHeight: 32
+            backg.implicitWidth: 72
+        }
+
         // ------------------------------------------------------------
         // Zone vide en bas
         // ------------------------------------------------------------
+        Rectangle {
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            Layout.columnSpan: 2
+            color: "transparent"
+            Image {
+                id: imagette
+                width: 80
+                height: 80
+                fillMode: Image.PreserveAspectFit
+                source: "qrc:/Images/TiCalcul.png"
+                anchors.centerIn: parent
+            }
+        }
         Item {
             id: emptySpace
             Layout.preferredHeight: 85
             Layout.fillWidth: true
             Layout.fillHeight: false
             Layout.rowSpan: 1
-            Layout.columnSpan: 4
-            Layout.row: 7
+            Layout.columnSpan: 2
         }
     }
 }

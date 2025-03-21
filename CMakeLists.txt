@@ -4,6 +4,8 @@ project(TiCalcul VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set(CMAKE_AUTORCC ON)   # test DDL
+
 find_package(Qt6 REQUIRED COMPONENTS Quick)
 
 qt_standard_project_setup(REQUIRES 6.5)
@@ -16,18 +18,16 @@ qt_add_qml_module(appTiCalcul
     URI TiCalcul
     VERSION 1.0
         RESOURCES Resources/TiCalcul.qrc
-        RESOURCES Resources/images/TiCalcul.ico
-        RESOURCES Resources/images/TiCalcul_black.ico
 
         QML_FILES Qml/Main.qml
         QML_FILES Qml/Vues/TiButton.ui.qml
-        QML_FILES Qml/Vues/KeyboardKeyForm.ui.qml
+        QML_FILES Qml/Vues/SquareButton.qml
+        QML_FILES Qml/Vues/KeyboardForm.ui.qml
         QML_FILES Qml/Vues/LeftFrameForm.ui.qml
         QML_FILES Qml/Vues/RightFrameForm.ui.qml
-        QML_FILES Qml/Vues/KeyboardForm.ui.qml
         QML_FILES Qml/Vues/FieldInputForm.ui.qml
+        QML_FILES Qml/Vues/KeyboardKeyForm.ui.qml
         QML_FILES Qml/Vues/CalculFrameForm.ui.qml
-        QML_FILES Qml/Vues/SquareButton.qml
 
         QML_FILES Qml/Controllers/Keyboard.qml
         QML_FILES Qml/Controllers/LeftFrame.qml

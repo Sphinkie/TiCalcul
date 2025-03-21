@@ -1,4 +1,7 @@
 <RCC>
     <qresource prefix="/">
+        <file>Images/TiCalcul.ico</file>
+        <file>Images/TiCalcul_black.ico</file>
+        <file>Images/TiCalcul.png</file>
     </qresource>
 </RCC>

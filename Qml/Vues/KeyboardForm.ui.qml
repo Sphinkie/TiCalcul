@@ -46,6 +46,7 @@ GridLayout {
     KeyboardKeyForm {
         id: keyPlus
         buttonText: "+"
+        texte.font.pointSize: 28
         enabled: true
         Layout.fillWidth: true
     }
@@ -67,6 +68,7 @@ GridLayout {
     KeyboardKeyForm {
         id: keyMinus
         buttonText: "-"
+        texte.font.pointSize: 28
         enabled: true
         Layout.fillWidth: true
     }

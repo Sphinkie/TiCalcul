@@ -11,5 +11,6 @@ LeftFrameForm {
     btClear.onClicked: {
         console.log("TiButton btClear TC1 clicked ! ")
         operandeTC1.clearValeurPivot()
+        operandeRES.clearValeurPivot()
     }
 }
