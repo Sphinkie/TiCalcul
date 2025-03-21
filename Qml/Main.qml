@@ -5,6 +5,10 @@ import QtQuick.Controls.Universal
 import "./Components"
 import "./Controllers"
 
+
+/*! ***********************************************************************************
+ * \brief Fenêtre principale.
+ **************************************************************************************/
 Window {
     id: window
     width: 940
@@ -13,7 +17,6 @@ Window {
     minimumHeight: 580
     visible: true
     title: "TiCalcul"
-    //IconImage: "qrc:/Images/TiCalcul.ico"
 
     Universal.theme: Universal.Light
     Universal.accent: Universal.Cobalt

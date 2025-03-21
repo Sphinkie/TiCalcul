@@ -1,10 +1,14 @@
 import QtQuick
 import QtQuick.Controls.Universal
 
+
+/*! ***********************************************************************************
+ * \brief Petit bouton
+ **************************************************************************************/
 Button {
     id: control
     text: "Button"
-	property color color
+    property color color
 
     contentItem: Text {
         text: control.text
@@ -17,6 +21,6 @@ Button {
     background: Rectangle {
         implicitWidth: 32
         implicitHeight: 40
-		color: control.color
+        color: control.color
     }
 }

@@ -6,6 +6,10 @@ import TiCalcul
 import "../Components"
 import "../Controllers"
 
+
+/*! ***********************************************************************************
+ * \brief Panneau de droite, avec l'affichage du Timecode TC2 dans différentes unités.
+ **************************************************************************************/
 Item {
     property alias btClear: btClear
 

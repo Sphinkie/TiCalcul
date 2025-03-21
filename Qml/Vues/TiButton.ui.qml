@@ -1,9 +1,11 @@
 import QtQuick
 import QtQuick.Controls.Universal
 
-/*!
- * Le type TiButton offre des bouttons customisés au niveau des couleurs, arrondi, et police.
- */
+
+/*! ***********************************************************************************
+ * \brief Le type TiButton offre des boutons customisés au niveau des couleurs,
+ *        de l'arrondi, et de la police.
+ **************************************************************************************/
 Button {
     id: button
     property string buttonText
@@ -26,8 +28,8 @@ Button {
         id: backg
         implicitWidth: 86
         implicitHeight: 40
-        color: button.down ? Universal.foreground.lighter(1.1) : Universal.foreground
-        radius: 6		
+        color: button.down ? Universal.foreground.lighter(
+                                 1.1) : Universal.foreground
+        radius: 6
     }
-	
 }
