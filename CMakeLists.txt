@@ -4,7 +4,9 @@ project(TiCalcul VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(CMAKE_AUTORCC ON)   # test DDL
+set(CMAKE_AUTORCC ON)   # Auto use QRC resource File
+
+set(app_icon_resource_windows "${CMAKE_CURRENT_SOURCE_DIR}/Resources/appicon.rc")
 
 find_package(Qt6 REQUIRED COMPONENTS Quick)
 
@@ -12,6 +14,7 @@ qt_standard_project_setup(REQUIRES 6.5)
 
 qt_add_executable(appTiCalcul
     main.cpp
+    ${app_icon_resource_windows}
 )
 
 qt_add_qml_module(appTiCalcul
