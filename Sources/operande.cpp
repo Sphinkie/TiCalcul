@@ -1,6 +1,6 @@
+#include <QQmlEngine>
 #include "operande.h"
 
-#include <QQmlEngine>
 
 /*! **********************************************************************************************************
  * \brief Constructeur: crée les 8 afficheurs de cet opérande, et les connecte pour leur envoyer un signal
@@ -8,7 +8,7 @@
  * \note L'afficheur NTSC est désactivé pour le moment.
  * \param name: Le nom de l'operande: "tc1" ou "tc2" ou "result".
  * \param parent: Pointeur sur QObject parent.
- * ***********************************************************************************************************/
+ *************************************************************************************************************/
 Operande::Operande(const QString name, QObject* parent)
 {
     this->mName = name;
@@ -42,23 +42,25 @@ Operande::Operande(const QString name, QObject* parent)
     }
 }
 
- /*! **********************************************************************************************************
+
+/*! **********************************************************************************************************
  * \brief Renvoie la valeur Pivot (en microsecondes).
  * \returns the value in microseconds.
- * ************************************************************************************************************/
+ *************************************************************************************************************/
 qint64 Operande::valeurPivot() const
 {
     return mValeurPivot;
 }
 
+
 /*! **********************************************************************************************************
  * \brief SLOT : Reçoit une nouvelle valeur pivot d'un Afficheur et la propage à tous les Afficheurs.
  *               Peut aussi être positionné par le calculateur.
  * \param newValeurPivot: Timecode en microsecondes.
- * \see signal Afficheur::setValuePivot()
- * \see signal Operande::valeurPivotChanged()
- * \see slot Afficheur::setValue()
- * ***********************************************************************************************************/
+ * \see Signal Afficheur::setValuePivot()
+ * \see Signal Operande::valeurPivotChanged()
+ * \see Slot Afficheur::setValue()
+ *************************************************************************************************************/
 void Operande::setValeurPivot(const qint64 newValeurPivot, const bool force)
 {
     if (newValeurPivot > this->mMaxValue)
@@ -73,10 +75,11 @@ void Operande::setValeurPivot(const qint64 newValeurPivot, const bool force)
     }
 }
 
+
 /*! **********************************************************************************************************
  * \brief SLOT : Vide la valeur pivot, et efface la valeur de tous les Afficheur.
  * \see Signal Afficheur::clearValue()
- * ***********************************************************************************************************/
+ *************************************************************************************************************/
 void Operande::clearValeurPivot()
 {
     qDebug()<< mName << "::clearValeurPivot";
@@ -84,11 +87,12 @@ void Operande::clearValeurPivot()
     emit valeurPivotCleared();
 }
 
+
 /*! **********************************************************************************************************
  * \brief Enregistre les afficheurs dans le contexte QML, pour pouvoir les afficher.
  * \note Les property names seront du type "tc1_aff_1"
  * \param context: Le rootContext de l'application.
- * ***********************************************************************************************************/
+ *************************************************************************************************************/
 void Operande::registerContext(QQmlContext* context)
 {
     context->setContextProperty(mName+"_aff_1", a1);
@@ -101,11 +105,12 @@ void Operande::registerContext(QQmlContext* context)
     //context->setContextProperty(mName+"_aff_8", a8);
 }
 
+
 /*! **********************************************************************************************************
  * \brief Cree des connexions entre l'objet QML "afficheurActif" et tous les Afficheurs.
  *        Ainsi, lorsque l'afficheur actif change, tous les afficheurs sont informés.
  * \param context: Le root context de l'application.
- * ***********************************************************************************************************/
+ *************************************************************************************************************/
 void Operande::connectActiveDisplay(QQmlApplicationEngine* engine)
 {
     // On trove l'objet QML nommé "afficheurActif"

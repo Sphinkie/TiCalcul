@@ -2,6 +2,7 @@
 #include "afficheur.h"
 #include "converter.h"
 
+
 /*! **********************************************************************************************************
  * \brief Constructeur.
  * \param unit : l'unité correspondante à cet afficheur.
@@ -18,6 +19,7 @@ Afficheur::Afficheur(Unites::Units unit, QString parentName, QObject* parent)
     this->mMaxValue = Unites::max.value(unit);
     setObjectName(parent->objectName() + '_' + mUnitName);
 }
+
 
 /*! **********************************************************************************************************
  * \brief Permet de changer dynamiquement le framerate des afficheurs HMSI.
@@ -59,6 +61,7 @@ void Afficheur::setFramerate(double framerate)
         qDebug() << "Warning: setFramerate received by non HMSI display" << this->objectName();
     }
 }
+
 
 /*! **********************************************************************************************************
  * \brief Ajoute un digit à la fin de la chaine de caractères.
@@ -123,7 +126,7 @@ void Afficheur::addDigit(QString digit)
         // Controle de dépassement
         // ------------------------------------------------------------------------
         qDebug(qPrintable("candidate check: " + mRawNUM+digit));
-        if ((mRawNUM+digit).toLongLong() > mMaxValue) return;
+        if ((mRawNUM+digit).remove(' ').toLongLong() > mMaxValue) return;
         qDebug(qPrintable("passed"));
         // ------------------------------------------------------------------------
         // On ajoute le digit à la string
@@ -143,7 +146,7 @@ void Afficheur::addDigit(QString digit)
         // ------------------------------------------------------------------------
         // Controle de dépassement
         // ------------------------------------------------------------------------
-        if ((mRawNUM+digit).toLongLong() > mMaxValue) return;
+        if ((mRawNUM+digit).remove(' ').toLongLong() > mMaxValue) return;
         // ------------------------------------------------------------------------
         // Si c'est un zéro et qu'on est au début: on l'ignore
         // Sauf pour HMSI et SECONDS qui ont le droit de commencer par un "0"
@@ -167,9 +170,10 @@ void Afficheur::addDigit(QString digit)
     }
 }
 
+
 /*! **********************************************************************************************************
- * Enlève un digit à la fin de la chaine de caractères.
- * La nouvelle valeur pivot est envoyée à l'opérande.
+ * \brief Enlève un digit à la fin de la chaine de caractères.
+ *        La nouvelle valeur pivot est envoyée à l'opérande.
  * ***********************************************************************************************************/
 void Afficheur::removeLastDigit()
 {
@@ -211,17 +215,16 @@ void Afficheur::removeLastDigit()
 
 
 /*! **********************************************************************************************************
- * Indique si le HMSI a besoin d'être rectifié
- * cad si minutes > 59 ou secondes > 59 ou images > 24.
- * \param rawHmsi : un RAW HMSI du type HHMMSSII
+ * \brief Indique si le HMSI a besoin d'être rectifié, cad si minutes > 59 ou secondes > 59 ou images > 24.
+ * \param raw_hmsi : un RAW HMSI du type HHMMSSII
  * \returns true if HMSI needs to be rectified
- ***************************************************************** */
-bool Afficheur::isIncorrect(const QString rawHmsi)
+ *************************************************************************************************************/
+bool Afficheur::isIncorrect(const QString raw_hmsi)
 {
     QString MM = "00";
     QString SS = "00";
     QString II = "00";
-    int len = rawHmsi.length();
+    int len = raw_hmsi.length();
     // On décortique le rawHMSI en 4 substrings.
     switch (len)
     {
@@ -230,33 +233,33 @@ bool Afficheur::isIncorrect(const QString rawHmsi)
     case 2:
         break;
     case 3:
-        MM = rawHmsi.mid(2,1);
+        MM = raw_hmsi.mid(2,1);
         break;
     case 4:
-        MM = rawHmsi.mid(2,2);
+        MM = raw_hmsi.mid(2,2);
         break;
     case 5:
-        MM = rawHmsi.mid(2,2);
-        SS = rawHmsi.mid(4,1);
+        MM = raw_hmsi.mid(2,2);
+        SS = raw_hmsi.mid(4,1);
         break;
     case 6:
-        MM = rawHmsi.mid(2,2);
-        SS = rawHmsi.mid(4,2);
+        MM = raw_hmsi.mid(2,2);
+        SS = raw_hmsi.mid(4,2);
         break;
     case 7:
-        MM = rawHmsi.mid(2,2);
-        SS = rawHmsi.mid(4,2);
-        II = rawHmsi.mid(6,1);
+        MM = raw_hmsi.mid(2,2);
+        SS = raw_hmsi.mid(4,2);
+        II = raw_hmsi.mid(6,1);
         break;
     case 8:
-        MM = rawHmsi.mid(2,2);
-        SS = rawHmsi.mid(4,2);
-        II = rawHmsi.mid(6,2);
+        MM = raw_hmsi.mid(2,2);
+        SS = raw_hmsi.mid(4,2);
+        II = raw_hmsi.mid(6,2);
         break;
     default:
-        MM = rawHmsi.mid(2,2);
-        SS = rawHmsi.mid(4,2);
-        II = rawHmsi.mid(6,2);
+        MM = raw_hmsi.mid(2,2);
+        SS = raw_hmsi.mid(4,2);
+        II = raw_hmsi.mid(6,2);
         break;
     }
     // On vérifie les 4 substring
@@ -266,20 +269,22 @@ bool Afficheur::isIncorrect(const QString rawHmsi)
     return false;
 }
 
+
 /*! **********************************************************************************************************
- * \brief SLOT: Actualise la variable mIsActive en cas de changement
+ * \brief SLOT: Actualise la variable mIsActive en cas de changement.
+ * \see Signal QML afficheurActif::activeDisplay
  * \param afficheur: Le nom (objectName) de l'afficheur sélectionné dans le QML.
  * ***********************************************************************************************************/
 void Afficheur::activeDisplay(QString afficheur)
 {
-    // qDebug() << "activeDisplay = " << afficheur;
+    // qDebug() << this->objectName() << "::activeDisplay <- " << afficheur;
     mIsActive = (afficheur == this->objectName());
     // Quand l'afficheur passe actif, on recharge les valeurs éditables avec les valeurs en cours.
     if (mIsActive)
     {
         mRawHMSI = Converter::HMSItoRawHMSI(mDisplayValue);
-        // on enlève les 0 et les espaces du début
-        static QRegularExpression regex = QRegularExpression("^[0\\s]*");
+        // on enlève les 0 du début et tous les espaces
+        static QRegularExpression regex = QRegularExpression("^[0]*|[\\s]*");
         mRawNUM  = mDisplayValue.remove(regex);
         qDebug() << "mRawNUM" << mRawNUM;
     }
@@ -288,10 +293,11 @@ void Afficheur::activeDisplay(QString afficheur)
 
 /*! **********************************************************************************************************
  * \brief SLOT: Efface la valeur de l'afficheur, et ses variables privées.
+ * \see Signal Operande::valeurPivotCleared()
  * ***********************************************************************************************************/
 void Afficheur::clearValue()
 {
-    qDebug() << objectName() << "::clearValue()";
+    qDebug() << this->objectName() << "::clearValue()";
     mRawHMSI.clear();
     mRawNUM.clear();
     mDisplayValue.clear();
@@ -301,13 +307,13 @@ void Afficheur::clearValue()
 
 /*! **********************************************************************************************************
  * \brief SLOT. Recoit la nouvelle valeur pivot de l'opérande, pour la convertir et l'envoyer à l'affichage.
+ * \see Signal Operande::valeurPivotChanged()
  * \param microsecs: La valeur pivot en microsecondes.
  * \param force: true pour forcer l'affichage de la valeur du paramètre microsecs
- * \see signal Operande::valeurPivotChanged()
- * *********************************************************************************************************** */
+ * ***********************************************************************************************************/
 void Afficheur::setValue(const qint64 microsecs, const bool force)
 {
-    qDebug() << this->objectName() << "::setValue()" << microsecs;
+    // qDebug() << this->objectName() << "::setValue()" << microsecs;
     QString value = "";
     switch (mUnit)
     {
@@ -349,11 +355,11 @@ void Afficheur::setValue(const qint64 microsecs, const bool force)
  *       Si la cellule est active, on ignore la valeur reçue et on continue d'afficher la
  *       valeur brute qui est en cours d'édition.
  * \param value: La valeur brute exprimée dans l'unité de cet afficheur (rawHMSI ou rawNUM).
- * \param force: si true, on prend en compter la valeur, meme si l'afficheur est actif.
+ * \param force: si true, on prend en compte la valeur, meme si l'afficheur est actif.
  * ***********************************************************************************************************/
 void Afficheur::setDisplayValue(const QString value, const bool force)
 {
-    qDebug() << this->objectName() << "::setDisplayValue" << value << (mIsActive? "active": "passive");
+    // qDebug() << this->objectName() << "::setDisplayValue" << value << (mIsActive? "active": "passive");
 
     // Si le champ est en cours d'édition, et que l'on ne force pas l'affichage de la nouvelle valeur:
     if (mIsActive && !force)
@@ -392,9 +398,10 @@ void Afficheur::setDisplayValue(const QString value, const bool force)
     emit displayValueChanged();
 }
 
+
 /*! **********************************************************************************************************
  * \brief Cette fonction remet le HMSI de façon correcte.
- ************************************************************************************************************* */
+ *************************************************************************************************************/
 void Afficheur::rectifyHMSI()
 {
     qint64 microsecValue;
