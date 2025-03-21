@@ -26,16 +26,16 @@
 \DoxyCodeLine{00026\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ clearValeurPivot();}
 \DoxyCodeLine{00027\ }
 \DoxyCodeLine{00028\ \textcolor{keyword}{public}\ slots:}
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ setValeurPivot(\textcolor{keyword}{const}\ qint64\ newValeurPivot);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ setValeurPivot(\textcolor{keyword}{const}\ qint64\ newValeurPivot,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ force=\textcolor{keyword}{false});}
 \DoxyCodeLine{00030\ }
 \DoxyCodeLine{00031\ signals:}
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ valeurPivotChanged(qint64);}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ valeurPivotChanged(qint64,\ \textcolor{keywordtype}{bool});}
 \DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ valeurPivotCleared();}
 \DoxyCodeLine{00034\ }
 \DoxyCodeLine{00035\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00036\ \ \ \ \ QString\ mName;\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00037\ \ \ \ \ qint64\ mValeurPivot;\ \ }
-\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{const}\ qint64\ mMaxValue\ =\ 356400000000;\ }
+\DoxyCodeLine{00036\ \ \ \ \ QString\ mName;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ qint64\ mValeurPivot\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{const}\ qint64\ mMaxValue\ =\ 99999999999999;\ }
 \DoxyCodeLine{00040\ }
 \DoxyCodeLine{00041\ \ \ \ \ Afficheur*\ a1;\ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00042\ \ \ \ \ Afficheur*\ a2;\ \ \ \ \ \ \ \ }

@@ -1,0 +1,168 @@
+\doxysection{Référence de la classe Calculateur}
+\label{class_calculateur}\index{Calculateur@{Calculateur}}
+
+
+La classe \doxyref{Calculateur}{p.}{class_calculateur} est en charge de gérer les opérations entre les opérandes\+: addition, soustraction, complément.  
+
+
+
+
+{\ttfamily \#include $<$calculateur.\+h$>$}
+
+Graphe d\textquotesingle{}héritage de Calculateur\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_calculateur}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Connecteurs publics}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ on\+Valeur\+Pivot\+Changed} ()
+\begin{DoxyCompactList}\small\item\em Si la valeur de l\textquotesingle{}un des opérandes à changé, on actualise le resultat. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Calculateur} (\textbf{ Operande} $\ast$tc1, \textbf{ Operande} $\ast$tc2, \textbf{ Operande} $\ast$result, QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+Q\+\_\+\+INVOKABLE void \textbf{ complement} ()
+\begin{DoxyCompactList}\small\item\em Calcule le complément à 24H de TC1 et envoie le résultat à l\textquotesingle{}opérande Result. \end{DoxyCompactList}\item 
+Q\+\_\+\+INVOKABLE void \textbf{ add} ()
+\begin{DoxyCompactList}\small\item\em Calcule la somme TC1+\+TC2 et envoie le résultat à l\textquotesingle{}opérande Result. \end{DoxyCompactList}\item 
+Q\+\_\+\+INVOKABLE void \textbf{ substract} ()
+\begin{DoxyCompactList}\small\item\em Calcule la différence TC1-\/\+TC2 et envoie le résultat à l\textquotesingle{}opérande Result. \end{DoxyCompactList}\item 
+Q\+\_\+\+INVOKABLE void \textbf{ swap} ()
+\begin{DoxyCompactList}\small\item\em Echange la valeur des opérandes TC1 et TC2. \end{DoxyCompactList}\item 
+Q\+\_\+\+INVOKABLE void \textbf{ memorize} ()
+\begin{DoxyCompactList}\small\item\em Recopie la valeur du résultat dans l\textquotesingle{}opérande TC1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Types privés}
+\begin{DoxyCompactItemize}
+\item 
+\label{class_calculateur_aba883b8c77bb8a48e289bb535cdc646f} 
+enum {\bfseries Operation} \{ {\bfseries none}
+, {\bfseries addition}
+, {\bfseries soustraction}
+, {\bfseries complt}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+\label{class_calculateur_a0e64fa5dd6884257b4e43136bd812583} 
+\textbf{ Operande} $\ast$ {\bfseries m\+TC1}
+\begin{DoxyCompactList}\small\item\em premier opérande. \end{DoxyCompactList}\item 
+\label{class_calculateur_adec7e3bd4755f37b7da46c5edcd9cf09} 
+\textbf{ Operande} $\ast$ {\bfseries m\+TC2}
+\begin{DoxyCompactList}\small\item\em second opérande. \end{DoxyCompactList}\item 
+\label{class_calculateur_a76c1a08c566b0ad47c5e071f9be2d750} 
+\textbf{ Operande} $\ast$ {\bfseries m\+Result}
+\begin{DoxyCompactList}\small\item\em opérande résultat. \end{DoxyCompactList}\item 
+\label{class_calculateur_a1f5056194c7ec8b4a5e10fbba0dc7d5b} 
+enum Calculateur\+::\+Operation {\bfseries m\+Operation} = none
+\begin{DoxyCompactList}\small\item\em opération en cours \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+La classe \doxyref{Calculateur}{p.}{class_calculateur} est en charge de gérer les opérations entre les opérandes\+: addition, soustraction, complément. 
+
+\DoxyHorRuler{0}
+  
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\label{class_calculateur_a339ed32a65b673f14adfba04a13f61ad} 
+\index{Calculateur@{Calculateur}!Calculateur@{Calculateur}}
+\index{Calculateur@{Calculateur}!Calculateur@{Calculateur}}
+\doxysubsubsection{Calculateur()}
+{\footnotesize\ttfamily Calculateur\+::\+Calculateur (\begin{DoxyParamCaption}\item[{\textbf{ Operande} $\ast$}]{tc1,  }\item[{\textbf{ Operande} $\ast$}]{tc2,  }\item[{\textbf{ Operande} $\ast$}]{result,  }\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructeur. 
+
+\DoxyHorRuler{0}
+ 
+\begin{DoxyParams}{Paramètres}
+{\em tc1} & premier opérande. \\
+\hline
+{\em tc2} & second opérande. \\
+\hline
+{\em result} & opérande résultat. \\
+\hline
+{\em parent} & QObject parent. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentation des fonctions membres}
+\label{class_calculateur_a9efa12d1ac6576e38180dd28126a114c} 
+\index{Calculateur@{Calculateur}!add@{add}}
+\index{add@{add}!Calculateur@{Calculateur}}
+\doxysubsubsection{add()}
+{\footnotesize\ttfamily void Calculateur\+::add (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calcule la somme TC1+\+TC2 et envoie le résultat à l\textquotesingle{}opérande Result. 
+
+\DoxyHorRuler{0}
+  \label{class_calculateur_af4dad59c545f9c0f5986ebbd1942f9c5} 
+\index{Calculateur@{Calculateur}!complement@{complement}}
+\index{complement@{complement}!Calculateur@{Calculateur}}
+\doxysubsubsection{complement()}
+{\footnotesize\ttfamily void Calculateur\+::complement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calcule le complément à 24H de TC1 et envoie le résultat à l\textquotesingle{}opérande Result. 
+
+\DoxyHorRuler{0}
+  \label{class_calculateur_ad39dfe4d8132b5f9e240259d91542eaf} 
+\index{Calculateur@{Calculateur}!memorize@{memorize}}
+\index{memorize@{memorize}!Calculateur@{Calculateur}}
+\doxysubsubsection{memorize()}
+{\footnotesize\ttfamily void Calculateur\+::memorize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Recopie la valeur du résultat dans l\textquotesingle{}opérande TC1. 
+
+\DoxyHorRuler{0}
+  \label{class_calculateur_a05f6e0f59fe3650890941daa4f4ae375} 
+\index{Calculateur@{Calculateur}!onValeurPivotChanged@{onValeurPivotChanged}}
+\index{onValeurPivotChanged@{onValeurPivotChanged}!Calculateur@{Calculateur}}
+\doxysubsubsection{onValeurPivotChanged}
+{\footnotesize\ttfamily void Calculateur\+::on\+Valeur\+Pivot\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Si la valeur de l\textquotesingle{}un des opérandes à changé, on actualise le resultat. 
+
+\DoxyHorRuler{0}
+  \label{class_calculateur_ab347e6cf5552a16bff5b7c4a095f1207} 
+\index{Calculateur@{Calculateur}!substract@{substract}}
+\index{substract@{substract}!Calculateur@{Calculateur}}
+\doxysubsubsection{substract()}
+{\footnotesize\ttfamily void Calculateur\+::substract (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calcule la différence TC1-\/\+TC2 et envoie le résultat à l\textquotesingle{}opérande Result. 
+
+\DoxyHorRuler{0}
+  \label{class_calculateur_a39e4fd1282ec441a14f2fbc0090c58e4} 
+\index{Calculateur@{Calculateur}!swap@{swap}}
+\index{swap@{swap}!Calculateur@{Calculateur}}
+\doxysubsubsection{swap()}
+{\footnotesize\ttfamily void Calculateur\+::swap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Echange la valeur des opérandes TC1 et TC2. 
+
+\DoxyHorRuler{0}
+  
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+Sources/calculateur.\+h\item 
+Sources/calculateur.\+cpp\end{DoxyCompactItemize}

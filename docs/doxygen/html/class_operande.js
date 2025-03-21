@@ -4,7 +4,7 @@ var class_operande =
     [ "clearValeurPivot", "class_operande.html#a0646241c7241cfa1faa2b38b74160063", null ],
     [ "connectActiveDisplay", "class_operande.html#a628f15c5df1c19e3744fdc2a652885fb", null ],
     [ "registerContext", "class_operande.html#a8fd5799d50aa994d23700b09a9fd74fb", null ],
-    [ "setValeurPivot", "class_operande.html#af55657234faaf41474e0af000f6da374", null ],
+    [ "setValeurPivot", "class_operande.html#a75d4ba1eea84722966e75a02f5b6bedb", null ],
     [ "valeurPivot", "class_operande.html#ae3f3a7950d8382daaf3c93cc1228e575", null ],
     [ "a1", "class_operande.html#aee4c22583af3683272f29e2da113f582", null ],
     [ "a2", "class_operande.html#a3b7aaef13d72c01b24ab8ec001947597", null ],

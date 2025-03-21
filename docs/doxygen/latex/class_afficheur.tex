@@ -1,5 +1,14 @@
 \doxysection{Référence de la classe Afficheur}
 \label{class_afficheur}\index{Afficheur@{Afficheur}}
+
+
+La classe \doxyref{Afficheur}{p.}{class_afficheur} gère un champ numérique de l\textquotesingle{}IHM. Elle est associée à un objet QML Field\+Input et lui envoie les valeurs à afficher. Il y a un \doxyref{Afficheur}{p.}{class_afficheur} pour chaque unité\+: Secondes, Millisecondes, HMSI, etc.  
+
+
+
+
+{\ttfamily \#include $<$afficheur.\+h$>$}
+
 Graphe d\textquotesingle{}héritage de Afficheur\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,8 +18,8 @@ Graphe d\textquotesingle{}héritage de Afficheur\+:\begin{figure}[H]
 \doxysubsubsection*{Connecteurs publics}
 \begin{DoxyCompactItemize}
 \item 
-void \textbf{ set\+Value} (const qint64 microsecs)
-\begin{DoxyCompactList}\small\item\em SLOT. Recoit la nouvelle valeur pivot de l\textquotesingle{}opérande, pour la convertir et l\textquotesingle{}envoyer à l\textquotesingle{}affichage. \end{DoxyCompactList}\item 
+void \textbf{ set\+Value} (const qint64 microsecs, const bool force=false)
+\begin{DoxyCompactList}\small\item\em Réception du signal valeur\+Pivot\+Changed. \end{DoxyCompactList}\item 
 void \textbf{ clear\+Value} ()
 \begin{DoxyCompactList}\small\item\em SLOT\+: Efface la valeur de l\textquotesingle{}afficheur, et ses variables privées. \end{DoxyCompactList}\item 
 void \textbf{ active\+Display} (QString afficheur)
@@ -43,7 +52,9 @@ void {\bfseries hint\+Changed} ()
 Q\+\_\+\+INVOKABLE void \textbf{ add\+Digit} (QString digit)
 \begin{DoxyCompactList}\small\item\em Ajoute un digit à la fin de la chaine de caractères. \end{DoxyCompactList}\item 
 Q\+\_\+\+INVOKABLE void \textbf{ remove\+Last\+Digit} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Enlève un digit à la fin de la chaine de caractères. La nouvelle valeur pivot est envoyée à l\textquotesingle{}opérande. \end{DoxyCompactList}\item 
+Q\+\_\+\+INVOKABLE void \textbf{ rectify\+HMSI} ()
+\begin{DoxyCompactList}\small\item\em Cette fonction remet le HMSI de façon correcte. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Propriétés}
 \begin{DoxyCompactItemize}
 \item 
@@ -62,10 +73,10 @@ qreal {\bfseries framerate}
 \doxysubsubsection*{Fonctions membres privées}
 \begin{DoxyCompactItemize}
 \item 
-void \textbf{ set\+Display\+Value} (const QString value)
+void \textbf{ set\+Display\+Value} (const QString value, const bool force=false)
 \begin{DoxyCompactList}\small\item\em Mémorise et propage la string à afficher vers le QML. \end{DoxyCompactList}\item 
 bool \textbf{ is\+Incorrect} (const QString raw\+Hmsi)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Indique si le HMSI a besoin d\textquotesingle{}être rectifié, cad si minutes $>$ 59 ou secondes $>$ 59 ou images $>$ 24. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Attributs privés}
 \begin{DoxyCompactItemize}
 \item 
@@ -95,8 +106,17 @@ double {\bfseries m\+Framerate}
 \begin{DoxyCompactList}\small\item\em Framerate utilisé (pour les afficheurs FRAMES et HMSI) \end{DoxyCompactList}\item 
 \label{class_afficheur_aa224221fbabd195c9283e3320b6987fd} 
 double {\bfseries m\+Conversion\+Facteur}
-\begin{DoxyCompactList}\small\item\em Nombre de microseconds par unité \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Nombre de microseconds par unité \end{DoxyCompactList}\item 
+\label{class_afficheur_a46cdf28511dff1058294a7f26724f148} 
+qint64 {\bfseries m\+Max\+Value}
+\begin{DoxyCompactList}\small\item\em Valeur maximale supportée par cette unité (sauf HMSI) \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Description détaillée}
+La classe \doxyref{Afficheur}{p.}{class_afficheur} gère un champ numérique de l\textquotesingle{}IHM. Elle est associée à un objet QML Field\+Input et lui envoie les valeurs à afficher. Il y a un \doxyref{Afficheur}{p.}{class_afficheur} pour chaque unité\+: Secondes, Millisecondes, HMSI, etc. 
+
+\DoxyHorRuler{0}
+  
 
 \doxysubsection{Documentation des constructeurs et destructeur}
 \label{class_afficheur_afb96faf1b5a23e0dbfe79b0cc6f02e7b} 
@@ -114,6 +134,8 @@ Constructeur.
 \begin{DoxyParams}{Paramètres}
 {\em unit} & \+: l\textquotesingle{}unité correspondante à cet afficheur. \\
 \hline
+{\em parent} & QObject parent\+: un \doxyref{Operande}{p.}{class_operande}. \\
+\hline
 \end{DoxyParams}
 
 
@@ -129,7 +151,10 @@ Constructeur.
 SLOT\+: Actualise la variable m\+Is\+Active en cas de changement. 
 
 \DoxyHorRuler{0}
- 
+ \begin{DoxySeeAlso}{Voir également}
+Signal QML afficheur\+Actif\+::active\+Display 
+\end{DoxySeeAlso}
+
 \begin{DoxyParams}{Paramètres}
 {\em afficheur} & Le nom (object\+Name) de l\textquotesingle{}afficheur sélectionné dans le QML. \\
 \hline
@@ -164,33 +189,55 @@ Met à jour la nouvelle valeur Pivot, si elle a changé.
 SLOT\+: Efface la valeur de l\textquotesingle{}afficheur, et ses variables privées. 
 
 \DoxyHorRuler{0}
- \label{class_afficheur_a1f25a47c86a919123df0cae829c8135d} 
+ \begin{DoxySeeAlso}{Voir également}
+Signal Operande\+::valeur\+Pivot\+Cleared() 
+\end{DoxySeeAlso}
+\label{class_afficheur_a1f25a47c86a919123df0cae829c8135d} 
 \index{Afficheur@{Afficheur}!isIncorrect@{isIncorrect}}
 \index{isIncorrect@{isIncorrect}!Afficheur@{Afficheur}}
 \doxysubsubsection{isIncorrect()}
-{\footnotesize\ttfamily bool Afficheur\+::is\+Incorrect (\begin{DoxyParamCaption}\item[{const QString}]{raw\+Hmsi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily bool Afficheur\+::is\+Incorrect (\begin{DoxyParamCaption}\item[{const QString}]{raw\+\_\+hmsi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Indique si le HMSI a besoin d\textquotesingle{}être rectifié, cad si minutes $>$ 59 ou secondes $>$ 59 ou images $>$ 24. 
 
 \DoxyHorRuler{0}
- Indique si le HMSI a besoin d\textquotesingle{}être rectifié cad si minutes $>$ 59 ou secondes $>$ 59 ou images $>$ 24. 
+ 
 \begin{DoxyParams}{Paramètres}
-{\em raw\+Hmsi} & \+: un RAW HMSI du type HHMMSSII \\
+{\em raw\+\_\+hmsi} & \+: un RAW HMSI du type HHMMSSII \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
 true if HMSI needs to be rectified 
 \end{DoxyReturn}
-\label{class_afficheur_a148f1edabb9e6b7e22e3219896c3696e} 
+\label{class_afficheur_aa538add01c00a2007f4169720d2fc515} 
+\index{Afficheur@{Afficheur}!rectifyHMSI@{rectifyHMSI}}
+\index{rectifyHMSI@{rectifyHMSI}!Afficheur@{Afficheur}}
+\doxysubsubsection{rectifyHMSI()}
+{\footnotesize\ttfamily void Afficheur\+::rectify\+HMSI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cette fonction remet le HMSI de façon correcte. 
+
+\DoxyHorRuler{0}
+  \label{class_afficheur_a148f1edabb9e6b7e22e3219896c3696e} 
 \index{Afficheur@{Afficheur}!removeLastDigit@{removeLastDigit}}
 \index{removeLastDigit@{removeLastDigit}!Afficheur@{Afficheur}}
 \doxysubsubsection{removeLastDigit()}
 {\footnotesize\ttfamily void Afficheur\+::remove\+Last\+Digit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Enlève un digit à la fin de la chaine de caractères. La nouvelle valeur pivot est envoyée à l\textquotesingle{}opérande. 
+
 \DoxyHorRuler{0}
- Enlève un digit à la fin de la chaine de caractères. La nouvelle valeur pivot est envoyée à l\textquotesingle{}opérande. \label{class_afficheur_a39dbe9d88fc91ee517f148ea27894f6e} 
+ \label{class_afficheur_a0c09cb3258a60a6597954ca6258ed093} 
 \index{Afficheur@{Afficheur}!setDisplayValue@{setDisplayValue}}
 \index{setDisplayValue@{setDisplayValue}!Afficheur@{Afficheur}}
 \doxysubsubsection{setDisplayValue()}
-{\footnotesize\ttfamily void Afficheur\+::set\+Display\+Value (\begin{DoxyParamCaption}\item[{const QString}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily void Afficheur\+::set\+Display\+Value (\begin{DoxyParamCaption}\item[{const QString}]{value,  }\item[{const bool}]{force = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -198,11 +245,13 @@ Mémorise et propage la string à afficher vers le QML.
 
 \DoxyHorRuler{0}
  \begin{DoxyNote}{Note}
-On distingue le cas où la cellule est active (cad en cours d\textquotesingle{}édition), ou pas. 
+On distingue le cas où la cellule est active (cad en cours d\textquotesingle{}édition), ou pas. Si la cellule est active, on ignore la valeur reçue et on continue d\textquotesingle{}afficher la valeur brute qui est en cours d\textquotesingle{}édition. 
 \end{DoxyNote}
 
 \begin{DoxyParams}{Paramètres}
 {\em value} & La valeur brute exprimée dans l\textquotesingle{}unité de cet afficheur (raw\+HMSI ou raw\+NUM). \\
+\hline
+{\em force} & si true, on prend en compte la valeur, meme si l\textquotesingle{}afficheur est actif. \\
 \hline
 \end{DoxyParams}
 \label{class_afficheur_ae92f7473c8867d4c7afb9d74da1bbba0} 
@@ -224,21 +273,27 @@ C\textquotesingle{}est toujours l\textquotesingle{}afficheur HMSI qui reçoit ce
 {\em framerate} & le nouveau framerate pour cet afficheur (ex\+: 25.\+0) \\
 \hline
 \end{DoxyParams}
-\label{class_afficheur_a9c03eaa3071e89cadb8db8b0ce7d7271} 
+\label{class_afficheur_a513abe95feaec35ce76ca99258e94bf9} 
 \index{Afficheur@{Afficheur}!setValue@{setValue}}
 \index{setValue@{setValue}!Afficheur@{Afficheur}}
 \doxysubsubsection{setValue}
-{\footnotesize\ttfamily void Afficheur\+::set\+Value (\begin{DoxyParamCaption}\item[{const qint64}]{microsecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+{\footnotesize\ttfamily void Afficheur\+::set\+Value (\begin{DoxyParamCaption}\item[{const qint64}]{microsecs,  }\item[{const bool}]{force = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
 
-SLOT. Recoit la nouvelle valeur pivot de l\textquotesingle{}opérande, pour la convertir et l\textquotesingle{}envoyer à l\textquotesingle{}affichage. 
+Réception du signal valeur\+Pivot\+Changed. 
+
+SLOT. Recoit la nouvelle valeur pivot de l\textquotesingle{}opérande, pour la convertir et l\textquotesingle{}envoyer à l\textquotesingle{}affichage.
 
 \DoxyHorRuler{0}
- 
+ \begin{DoxySeeAlso}{Voir également}
+Signal Operande\+::valeur\+Pivot\+Changed() 
+\end{DoxySeeAlso}
+
 \begin{DoxyParams}{Paramètres}
-{\em microsecs} & La valeur pivot en microsecondes. \DoxyHorRuler{0}
- \\
+{\em microsecs} & La valeur pivot en microsecondes. \\
+\hline
+{\em force} & true pour forcer l\textquotesingle{}affichage de la valeur du paramètre microsecs \\
 \hline
 \end{DoxyParams}
 

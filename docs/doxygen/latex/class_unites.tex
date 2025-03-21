@@ -26,6 +26,8 @@ static const QMap$<$ Units, double $>$ \textbf{ frame\+Rate}
 static const QMap$<$ Units, QString $>$ \textbf{ name}
 \item 
 static const QMap$<$ Units, QString $>$ \textbf{ hint}
+\item 
+static const QMap$<$ Units, qint64 $>$ \textbf{ max}
 \end{DoxyCompactItemize}
 
 
@@ -39,9 +41,14 @@ static const QMap$<$ Units, QString $>$ \textbf{ hint}
 {\bfseries Valeur initiale \+:}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{=\ \{}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{HMSI,25.0\},\ \{DHMSM,25.0\},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_25,\ 25.0\}\ ,\ \{FRAMES\_50,\ 50.0\},\ \{FRAMES\_NTSC,\ 30.0\},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{SECONDS,1.0\},\ \{MILLISECONDS,\ 1000.0\},\ \{MICROSECONDS,\ 1000000.0\}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{HMSI,25.0\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{DHMSM,25.0\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_25,\ 25.0\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_50,\ 50.0\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_NTSC,\ 30.0\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{SECONDS,1.0\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{MILLISECONDS,\ 1000.0\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{MICROSECONDS,\ 1000000.0\}}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
@@ -54,9 +61,34 @@ static const QMap$<$ Units, QString $>$ \textbf{ hint}
 {\bfseries Valeur initiale \+:}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{=\ \{}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{HMSI,\textcolor{stringliteral}{"{}HH:MM:SS:FF"{}}\},\ \{DHMSM,\textcolor{stringliteral}{"{}HH:MM:SS,mmm"{}}\},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_25,\ \textcolor{stringliteral}{"{}FRAMES"{}}\}\ ,\ \{FRAMES\_50,\ \textcolor{stringliteral}{"{}FRAMES"{}}\},\ \{FRAMES\_NTSC,\ \textcolor{stringliteral}{"{}FRAMES"{}}\},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{SECONDS,\ \textcolor{stringliteral}{"{}SECONDS"{}}\},\ \{MILLISECONDS,\ \textcolor{stringliteral}{"{}MILLISECONDS"{}}\},\ \{MICROSECONDS,\ \textcolor{stringliteral}{"{}MICROSECONDS"{}}\}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{HMSI,\textcolor{stringliteral}{"{}HH:MM:SS:FF"{}}\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{DHMSM,\textcolor{stringliteral}{"{}HH:MM:SS,mmm"{}}\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_25,\ \textcolor{stringliteral}{"{}FRAMES"{}}\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_50,\ \textcolor{stringliteral}{"{}FRAMES"{}}\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_NTSC,\ \textcolor{stringliteral}{"{}FRAMES"{}}\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{SECONDS,\ \textcolor{stringliteral}{"{}SECONDS"{}}\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{MILLISECONDS,\ \textcolor{stringliteral}{"{}MILLISECONDS"{}}\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{MICROSECONDS,\ \textcolor{stringliteral}{"{}MICROSECONDS"{}}\}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\label{class_unites_acf3c92152cfb7fbddb9e3afe60d58703} 
+\index{Unites@{Unites}!max@{max}}
+\index{max@{max}!Unites@{Unites}}
+\doxysubsubsection{max}
+{\footnotesize\ttfamily const QMap$<$Units, qint64$>$ Unites\+::max\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+{\bfseries Valeur initiale \+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{HMSI,0\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{DHMSM,0\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_25,\ \ \ \ 2499999999\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_50,\ \ \ \ 4999999999\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_NTSC,\ \ 3999999999\},\ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{SECONDS,\ \ \ \ \ \ 99999999\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{MILLISECONDS,\ 99999999999\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{MICROSECONDS,\ 99999999999999\}}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
@@ -69,9 +101,14 @@ static const QMap$<$ Units, QString $>$ \textbf{ hint}
 {\bfseries Valeur initiale \+:}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{=\ \{}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{HMSI,\textcolor{stringliteral}{"{}HMSI"{}}\},\ \{DHMSM,\textcolor{stringliteral}{"{}DHMSM"{}}\},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_25,\ \textcolor{stringliteral}{"{}FRAMES\_25"{}}\}\ ,\ \{FRAMES\_50,\ \textcolor{stringliteral}{"{}FRAMES\_50"{}}\},\ \{FRAMES\_NTSC,\ \textcolor{stringliteral}{"{}FRAMES\_NTSC"{}}\},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{SECONDS,\ \textcolor{stringliteral}{"{}SECONDS"{}}\},\ \{MILLISECONDS,\ \textcolor{stringliteral}{"{}MILLISECONDS"{}}\},\ \{MICROSECONDS,\ \textcolor{stringliteral}{"{}MICROSECONDS"{}}\}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{HMSI,\textcolor{stringliteral}{"{}HMSI"{}}\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{DHMSM,\textcolor{stringliteral}{"{}DHMSM"{}}\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_25,\ \textcolor{stringliteral}{"{}FRAMES\_25"{}}\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_50,\ \textcolor{stringliteral}{"{}FRAMES\_50"{}}\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_NTSC,\ \textcolor{stringliteral}{"{}FRAMES\_NTSC"{}}\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{SECONDS,\ \textcolor{stringliteral}{"{}SECONDS"{}}\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{MILLISECONDS,\ \textcolor{stringliteral}{"{}MILLISECONDS"{}}\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{MICROSECONDS,\ \textcolor{stringliteral}{"{}MICROSECONDS"{}}\}}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
@@ -84,9 +121,14 @@ static const QMap$<$ Units, QString $>$ \textbf{ hint}
 {\bfseries Valeur initiale \+:}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{=\{}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{HMSI,\ Converter::us\_PerFrame25\},\ \{DHMSM,\ Converter::us\_PerFrame25\},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_25,\ Converter::us\_PerFrame25\}\ ,\ \{FRAMES\_50,Converter::us\_PerFrame50\},\ \{FRAMES\_NTSC,\ Converter::us\_PerFrameNTSC\},}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{SECONDS,\ Converter::us\_PerSecond\},\ \{MILLISECONDS,1000\},\ \{MICROSECONDS,1\}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{HMSI,\ Converter::us\_PerFrame25\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{DHMSM,\ Converter::us\_PerFrame25\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_25,\ Converter::us\_PerFrame25\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_50,Converter::us\_PerFrame50\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_NTSC,\ Converter::us\_PerFrameNTSC\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{SECONDS,\ Converter::us\_PerSecond\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{MILLISECONDS,Converter::us\_PerMillisec\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{MICROSECONDS,1\}}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}

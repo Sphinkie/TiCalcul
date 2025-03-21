@@ -24,7 +24,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="TiCalcul_black.png"/></td>
   <td id="projectalign">
    <div id="projectname">TiCalcul<span id="projectnumber">&#160;1.0</span>
    </div>
@@ -95,6 +94,7 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 
 <h3><a id="index_a" name="index_a"></a>- a -</h3><ul>
 <li>activeDisplay()&#160;:&#160;<a class="el" href="class_afficheur.html#a7e6cdc99b5f03d6db8d81451c6cf6ddc">Afficheur</a></li>
+<li>add()&#160;:&#160;<a class="el" href="class_calculateur.html#a9efa12d1ac6576e38180dd28126a114c">Calculateur</a></li>
 <li>addDigit()&#160;:&#160;<a class="el" href="class_afficheur.html#a41a7fd306f2aca734d7d82829b7ba000">Afficheur</a></li>
 <li>addSpaceSeparator()&#160;:&#160;<a class="el" href="class_converter.html#a2481c5d464aa13fec577575b8f2da786">Converter</a></li>
 <li>adjustLengthTo2()&#160;:&#160;<a class="el" href="class_converter.html#a250ba80855ce7272b5e4cfceff2d204b">Converter</a></li>
@@ -104,8 +104,10 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 
 
 <h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
+<li>Calculateur()&#160;:&#160;<a class="el" href="class_calculateur.html#a339ed32a65b673f14adfba04a13f61ad">Calculateur</a></li>
 <li>clearValeurPivot()&#160;:&#160;<a class="el" href="class_operande.html#a0646241c7241cfa1faa2b38b74160063">Operande</a></li>
 <li>clearValue()&#160;:&#160;<a class="el" href="class_afficheur.html#a614d213a452354ca50df495510bd9c8d">Afficheur</a></li>
+<li>complement()&#160;:&#160;<a class="el" href="class_calculateur.html#af4dad59c545f9c0f5986ebbd1942f9c5">Calculateur</a></li>
 <li>completeRawHMSIWithDots()&#160;:&#160;<a class="el" href="class_converter.html#aa271cba436c39da2b8925267689e9ec9">Converter</a></li>
 <li>connectActiveDisplay()&#160;:&#160;<a class="el" href="class_operande.html#a628f15c5df1c19e3744fdc2a652885fb">Operande</a></li>
 <li>Converter()&#160;:&#160;<a class="el" href="class_converter.html#a1de81f3e06093411e5d27ce882bc010f">Converter</a></li>
@@ -140,6 +142,7 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 
 
 <h3><a id="index_m" name="index_m"></a>- m -</h3><ul>
+<li>memorize()&#160;:&#160;<a class="el" href="class_calculateur.html#ad39dfe4d8132b5f9e240259d91542eaf">Calculateur</a></li>
 <li>microseconds()&#160;:&#160;<a class="el" href="class_converter.html#a109a980de80e57be6c7f9589ae58b16f">Converter</a></li>
 <li>microsecsToDHMSM()&#160;:&#160;<a class="el" href="class_converter.html#ad5a753f5cd009033d8a216ed4300fc73">Converter</a></li>
 <li>microsecsToFrames()&#160;:&#160;<a class="el" href="class_converter.html#a60aa41dfc1c8dc243c5a77b0a7b028cd">Converter</a></li>
@@ -152,23 +155,27 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 
 
 <h3><a id="index_o" name="index_o"></a>- o -</h3><ul>
+<li>onValeurPivotChanged()&#160;:&#160;<a class="el" href="class_calculateur.html#a05f6e0f59fe3650890941daa4f4ae375">Calculateur</a></li>
 <li>Operande()&#160;:&#160;<a class="el" href="class_operande.html#ac2bee8e17d97934749a0caef7ce404b6">Operande</a></li>
 </ul>
 
 
 <h3><a id="index_r" name="index_r"></a>- r -</h3><ul>
 <li>rawHMSItoMicroseconds()&#160;:&#160;<a class="el" href="class_converter.html#ab430fd3f3dab4e7ab14e985fd1c71894">Converter</a></li>
+<li>rectifyHMSI()&#160;:&#160;<a class="el" href="class_afficheur.html#aa538add01c00a2007f4169720d2fc515">Afficheur</a></li>
 <li>registerContext()&#160;:&#160;<a class="el" href="class_operande.html#a8fd5799d50aa994d23700b09a9fd74fb">Operande</a></li>
 <li>removeLastDigit()&#160;:&#160;<a class="el" href="class_afficheur.html#a148f1edabb9e6b7e22e3219896c3696e">Afficheur</a></li>
 </ul>
 
 
 <h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
-<li>setDisplayValue()&#160;:&#160;<a class="el" href="class_afficheur.html#a39dbe9d88fc91ee517f148ea27894f6e">Afficheur</a></li>
+<li>setDisplayValue()&#160;:&#160;<a class="el" href="class_afficheur.html#a0c09cb3258a60a6597954ca6258ed093">Afficheur</a></li>
 <li>setFramerate()&#160;:&#160;<a class="el" href="class_afficheur.html#ae92f7473c8867d4c7afb9d74da1bbba0">Afficheur</a></li>
 <li>setNtscFramePerSec()&#160;:&#160;<a class="el" href="class_converter.html#ab67107bcb71a3a0876607cd964b32094">Converter</a></li>
-<li>setValeurPivot()&#160;:&#160;<a class="el" href="class_afficheur.html#a7e46f335aef2788e724a1f8960fc7e3a">Afficheur</a>, <a class="el" href="class_operande.html#af55657234faaf41474e0af000f6da374">Operande</a></li>
-<li>setValue()&#160;:&#160;<a class="el" href="class_afficheur.html#a9c03eaa3071e89cadb8db8b0ce7d7271">Afficheur</a></li>
+<li>setValeurPivot()&#160;:&#160;<a class="el" href="class_afficheur.html#a7e46f335aef2788e724a1f8960fc7e3a">Afficheur</a>, <a class="el" href="class_operande.html#a75d4ba1eea84722966e75a02f5b6bedb">Operande</a></li>
+<li>setValue()&#160;:&#160;<a class="el" href="class_afficheur.html#a513abe95feaec35ce76ca99258e94bf9">Afficheur</a></li>
+<li>substract()&#160;:&#160;<a class="el" href="class_calculateur.html#ab347e6cf5552a16bff5b7c4a095f1207">Calculateur</a></li>
+<li>swap()&#160;:&#160;<a class="el" href="class_calculateur.html#a39e4fd1282ec441a14f2fbc0090c58e4">Calculateur</a></li>
 </ul>
 
 
