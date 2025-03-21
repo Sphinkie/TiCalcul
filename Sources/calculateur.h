@@ -20,6 +20,7 @@ public:
     Q_INVOKABLE void add();
     Q_INVOKABLE void substract();
     Q_INVOKABLE void swap();
+    Q_INVOKABLE void memorize();
 
 public slots:
     void onValeurPivotChanged();

@@ -8,6 +8,7 @@ import "../Controllers"
 Item {
     property alias tc1: tc1
     property alias tc2: tc2
+    property alias bMem: bMem
     property alias bSwap: bSwap
     property alias bFramerateTc1: bFramerateTc1
     property alias bFramerateTc2: bFramerateTc2
@@ -17,7 +18,6 @@ Item {
     GridLayout {
         id: zoneResults
         anchors.fill: parent
-        //Layout.margins: 24
         columnSpacing: 0
         rowSpacing: 0
         columns: 4

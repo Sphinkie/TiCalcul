@@ -12,6 +12,10 @@ CalculFrameForm {
         console.log("TC1 clicked ! ")
     }
 
+    bRectifyTc1.onClicked: {
+        tc1_aff_4.rectifyHMSI()
+    }
+
     bFramerateTc1.onClicked: {
         if (tc1_aff_4.framerate === 25)
             tc1_aff_4.framerate = 50
@@ -21,6 +25,10 @@ CalculFrameForm {
 
     tc2.onClicked: {
         console.log("TC2 clicked ! ")
+    }
+
+    bRectifyTc2.onClicked: {
+        tc2_aff_4.rectifyHMSI()
     }
 
     bFramerateTc2.onClicked: {
@@ -35,11 +43,8 @@ CalculFrameForm {
         calculateur.swap()
     }
 
-    bRectifyTc1.onClicked: {
-        tc1_aff_4.rectifyHMSI()
-    }
-
-    bRectifyTc2.onClicked: {
-        tc2_aff_4.rectifyHMSI()
+    bMem.onClicked: {
+        console.log("Memory ! ")
+        calculateur.memorize()
     }
 }

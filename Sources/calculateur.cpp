@@ -50,7 +50,7 @@ void Calculateur::substract()
 }
 
 /*! **********************************************************************************************************
- * \brief Echange la valeur des operandes TC1 et TC2.
+ * \brief Echange la valeur des opérandes TC1 et TC2.
  ************************************************************************************************************* */
 void Calculateur::swap()
 {
@@ -58,6 +58,15 @@ void Calculateur::swap()
     qint64 temp_2 = mTC2->valeurPivot();
     mTC1->setValeurPivot(temp_2, true);
     mTC2->setValeurPivot(temp_1, true);
+}
+
+/*! **********************************************************************************************************
+ * \brief Recopie la valeur du résultat dans l'opérande TC1.
+ ************************************************************************************************************* */
+void Calculateur::memorize()
+{
+    qint64 temp_1 = mResult->valeurPivot();
+    mTC1->setValeurPivot(temp_1, true);
 }
 
 /*! **********************************************************************************************************
