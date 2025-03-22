@@ -6,9 +6,9 @@
 
 /*! **********************************************************************************************************
  * \class Afficheur
- * \brief La classe Afficheur gère un champ numérique de l'IHM.
- *        Elle est associée à un objet QML FieldInput et lui envoie les valeurs à afficher.
- *        Il y a un Afficheur pour chaque unité: Secondes, Millisecondes, HMSI, etc.
+ * \brief La classe Afficheur gère un champ numérique de l'IHM QML.
+ * \details Elle est associée à un objet QML FieldInput et lui envoie les valeurs à afficher.
+ *          Il y a un Afficheur pour chaque unité: Secondes, Millisecondes, HMSI, etc.
  *************************************************************************************************************/
 
 class Afficheur : public QObject
@@ -23,7 +23,7 @@ class Afficheur : public QObject
 // Méthodes
 // ------------------------------------------------------------
 public:
-    explicit Afficheur(Unites::Units unit, QString parentName, QObject *parent = nullptr);
+    explicit Afficheur(Unites::Units unit, QObject *parent = nullptr);
 
     Q_INVOKABLE void addDigit(QString digit);
     Q_INVOKABLE void removeLastDigit();

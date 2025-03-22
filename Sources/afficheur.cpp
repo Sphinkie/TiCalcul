@@ -5,10 +5,10 @@
 
 /*! **********************************************************************************************************
  * \brief Constructeur.
- * \param unit : l'unité correspondante à cet afficheur.
- * \param parent: QObject parent: un Operande.
+ * \param unit: L'unité correspondante à cet afficheur.
+ * \param parent: QObject parent: un Operande. Son nom va servir.
  * ***********************************************************************************************************/
-Afficheur::Afficheur(Unites::Units unit, QString parentName, QObject* parent)
+Afficheur::Afficheur(Unites::Units unit, QObject* parent)
 {
     this->mDisplayValue = "";
     this->mUnit = unit;
@@ -216,7 +216,7 @@ void Afficheur::removeLastDigit()
 
 /*! **********************************************************************************************************
  * \brief Indique si le HMSI a besoin d'être rectifié, cad si minutes > 59 ou secondes > 59 ou images > 24.
- * \param raw_hmsi : un RAW HMSI du type HHMMSSII
+ * \param raw_hmsi: un RAW HMSI du type HHMMSSII
  * \returns true if HMSI needs to be rectified
  *************************************************************************************************************/
 bool Afficheur::isIncorrect(const QString raw_hmsi)
@@ -293,7 +293,7 @@ void Afficheur::activeDisplay(QString afficheur)
 
 /*! **********************************************************************************************************
  * \brief SLOT: Efface la valeur de l'afficheur, et ses variables privées.
- * \see Signal valeurPivotCleared() de la classe Operande.
+ * \see Vient du signal valeurPivotCleared() de la classe Operande.
  * ***********************************************************************************************************/
 void Afficheur::clearValue()
 {

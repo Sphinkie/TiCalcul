@@ -11,16 +11,15 @@
  *************************************************************************************************************/
 Operande::Operande(const QString name, QObject* parent)
 {
-    this->mName = name;
     this->setObjectName(name);
 
-    a1 = new Afficheur(Unites::SECONDS, name, this);
-    a2 = new Afficheur(Unites::MILLISECONDS, name, this);
-    a3 = new Afficheur(Unites::MICROSECONDS, name, this);
-    a4 = new Afficheur(Unites::HMSI, name, this);
-    a5 = new Afficheur(Unites::DHMSM, name, this);
-    a6 = new Afficheur(Unites::FRAMES_25, name, this);
-    a7 = new Afficheur(Unites::FRAMES_50, name, this);
+    a1 = new Afficheur(Unites::SECONDS, this);
+    a2 = new Afficheur(Unites::MILLISECONDS, this);
+    a3 = new Afficheur(Unites::MICROSECONDS, this);
+    a4 = new Afficheur(Unites::HMSI, this);
+    a5 = new Afficheur(Unites::DHMSM, this);
+    a6 = new Afficheur(Unites::FRAMES_25, this);
+    a7 = new Afficheur(Unites::FRAMES_50, this);
     //a8 = new Afficheur(Unites::FRAMES_NTSC);
 
     // On signale à l'afficheur HMSI qu'il a le focus.
@@ -57,9 +56,9 @@ qint64 Operande::valeurPivot() const
  * \brief SLOT : Reçoit une nouvelle valeur pivot d'un Afficheur et la propage à tous les Afficheurs.
  *               Peut aussi être positionné par le calculateur.
  * \param newValeurPivot: Timecode en microsecondes.
- * \see Signal Afficheur::setValeurPivot()
- * \see Signal Operande::valeurPivotChanged()
- * \see Slot Afficheur::setValue()
+ * \see Réception du signal Afficheur::setValeurPivot()
+ * \see Envoie le signal Operande::valeurPivotChanged() aux Afficheur.
+ * \see Le slot de réception des Afficheur est setValue()
  *************************************************************************************************************/
 void Operande::setValeurPivot(const qint64 newValeurPivot, const bool force)
 {
@@ -69,7 +68,7 @@ void Operande::setValeurPivot(const qint64 newValeurPivot, const bool force)
     }
     else
     {
-        qDebug() << mName << "received new pivot (us)" << newValeurPivot << force;
+        qDebug() << this->objectName() << "received new pivot (us)" << newValeurPivot << force;
         mValeurPivot = newValeurPivot;
         emit valeurPivotChanged(newValeurPivot, force);
     }
@@ -82,7 +81,7 @@ void Operande::setValeurPivot(const qint64 newValeurPivot, const bool force)
  *************************************************************************************************************/
 void Operande::clearValeurPivot()
 {
-    qDebug()<< mName << "::clearValeurPivot";
+    qDebug()<< this->objectName() << "::clearValeurPivot";
     mValeurPivot = 0;
     emit valeurPivotCleared();
 }
@@ -95,14 +94,14 @@ void Operande::clearValeurPivot()
  *************************************************************************************************************/
 void Operande::registerContext(QQmlContext* context)
 {
-    context->setContextProperty(mName+"_aff_1", a1);
-    context->setContextProperty(mName+"_aff_2", a2);
-    context->setContextProperty(mName+"_aff_3", a3);
-    context->setContextProperty(mName+"_aff_4", a4);
-    context->setContextProperty(mName+"_aff_5", a5);  // D+HMSmm
-    context->setContextProperty(mName+"_aff_6", a6);
-    context->setContextProperty(mName+"_aff_7", a7);
-    //context->setContextProperty(mName+"_aff_8", a8);
+    context->setContextProperty(this->objectName()+"_aff_1", a1);
+    context->setContextProperty(this->objectName()+"_aff_2", a2);
+    context->setContextProperty(this->objectName()+"_aff_3", a3);
+    context->setContextProperty(this->objectName()+"_aff_4", a4);
+    context->setContextProperty(this->objectName()+"_aff_5", a5);  // D+HMSmm
+    context->setContextProperty(this->objectName()+"_aff_6", a6);
+    context->setContextProperty(this->objectName()+"_aff_7", a7);
+    //context->setContextProperty(this->objectName()+"_aff_8", a8);
 }
 
 
