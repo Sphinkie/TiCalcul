@@ -19,13 +19,13 @@ Graphe d\textquotesingle{}héritage de Afficheur\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 void \textbf{ set\+Value} (const qint64 microsecs, const bool force=false)
-\begin{DoxyCompactList}\small\item\em Réception du signal valeur\+Pivot\+Changed. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Réception du signal valeur\+Pivot\+Changed() \end{DoxyCompactList}\item 
 void \textbf{ clear\+Value} ()
-\begin{DoxyCompactList}\small\item\em SLOT\+: Efface la valeur de l\textquotesingle{}afficheur, et ses variables privées. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Réception du signal valeur\+Pivot\+Cleared() \end{DoxyCompactList}\item 
 void \textbf{ active\+Display} (QString afficheur)
-\begin{DoxyCompactList}\small\item\em SLOT\+: Actualise la variable m\+Is\+Active en cas de changement. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Réception du nom de l\textquotesingle{}afficheur actif, en cas de changement. QML. \end{DoxyCompactList}\item 
 void \textbf{ set\+Framerate} (double framerate)
-\begin{DoxyCompactList}\small\item\em SLOT\+: Permet de changer dynamiquement le framerate des afficheurs HMSI. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Réception d\textquotesingle{}une nouvelle valeur de framerate. Concerne le HMSI. QML. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Signaux}
 \begin{DoxyCompactItemize}
 \item 
@@ -148,7 +148,9 @@ Constructeur.
 
 
 
-SLOT\+: Actualise la variable m\+Is\+Active en cas de changement. 
+Réception du nom de l\textquotesingle{}afficheur actif, en cas de changement. QML. 
+
+SLOT\+: Actualise la variable m\+Is\+Active en cas de changement.
 
 \DoxyHorRuler{0}
  \begin{DoxySeeAlso}{Voir également}
@@ -186,7 +188,9 @@ Met à jour la nouvelle valeur Pivot, si elle a changé.
 
 
 
-SLOT\+: Efface la valeur de l\textquotesingle{}afficheur, et ses variables privées. 
+Réception du signal valeur\+Pivot\+Cleared() 
+
+SLOT\+: Efface la valeur de l\textquotesingle{}afficheur, et ses variables privées.
 
 \DoxyHorRuler{0}
  \begin{DoxySeeAlso}{Voir également}
@@ -262,7 +266,9 @@ On distingue le cas où la cellule est active (cad en cours d\textquotesingle{}�
 
 
 
-SLOT\+: Permet de changer dynamiquement le framerate des afficheurs HMSI. 
+Réception d\textquotesingle{}une nouvelle valeur de framerate. Concerne le HMSI. QML. 
+
+SLOT\+: Permet de changer dynamiquement le framerate des afficheurs HMSI.
 
 \DoxyHorRuler{0}
  \begin{DoxyNote}{Note}
@@ -281,13 +287,13 @@ C\textquotesingle{}est toujours l\textquotesingle{}afficheur HMSI qui reçoit ce
 
 
 
-Réception du signal valeur\+Pivot\+Changed. 
+Réception du signal valeur\+Pivot\+Changed() 
 
 SLOT. Recoit la nouvelle valeur pivot de l\textquotesingle{}opérande, pour la convertir et l\textquotesingle{}envoyer à l\textquotesingle{}affichage.
 
 \DoxyHorRuler{0}
  \begin{DoxySeeAlso}{Voir également}
-Signal Operande\+::valeur\+Pivot\+Changed() 
+Signal \doxyref{Operande\+::valeur\+Pivot\+Changed()}{p.}{class_operande_a09bf950c21a58620d19b1c3a08a5bf14} 
 \end{DoxySeeAlso}
 
 \begin{DoxyParams}{Paramètres}

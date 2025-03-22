@@ -114,6 +114,7 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Fonctions membres publiques statiques</h2></td></tr>
 <tr class="memitem:a2481c5d464aa13fec577575b8f2da786" id="r_a2481c5d464aa13fec577575b8f2da786"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#a2481c5d464aa13fec577575b8f2da786">addSpaceSeparator</a> (QString value)</td></tr>
+<tr class="memdesc:a2481c5d464aa13fec577575b8f2da786"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute des séparateurs de milliers sur la partie entière et la partie décimale.  <br /></td></tr>
 <tr class="separator:a2481c5d464aa13fec577575b8f2da786"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7dfef4a75e24809c9be9f08eaa26b131" id="r_a7dfef4a75e24809c9be9f08eaa26b131"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#a7dfef4a75e24809c9be9f08eaa26b131">HMSItoRawHMSI</a> (const QString hmsi)</td></tr>
 <tr class="memdesc:a7dfef4a75e24809c9be9f08eaa26b131"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convertit un HMSI en un RAW HMSI. Exemple: "25:48:12:..' en "254812".  <br /></td></tr>
@@ -125,29 +126,40 @@ Fonctions membres publiques statiques</h2></td></tr>
 <tr class="memdesc:ab430fd3f3dab4e7ab14e985fd1c71894"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convertit un Raw HMSI (même partiel) en un nombre de micro-secondes. Exemple: "0245" pour 2h45m = 9 900 000 000 us.  <br /></td></tr>
 <tr class="separator:ab430fd3f3dab4e7ab14e985fd1c71894"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa271cba436c39da2b8925267689e9ec9" id="r_aa271cba436c39da2b8925267689e9ec9"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#aa271cba436c39da2b8925267689e9ec9">completeRawHMSIWithDots</a> (QString raw_hmsi)</td></tr>
+<tr class="memdesc:aa271cba436c39da2b8925267689e9ec9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforme "123" en "12:3.:..:..".  <br /></td></tr>
 <tr class="separator:aa271cba436c39da2b8925267689e9ec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37fc12a03265e9200c1fd329b2a03b85" id="r_a37fc12a03265e9200c1fd329b2a03b85"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#a37fc12a03265e9200c1fd329b2a03b85">microsecsToSeconds</a> (qint64 microsecs)</td></tr>
+<tr class="memdesc:a37fc12a03265e9200c1fd329b2a03b85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforme "1234000000" en "1234".  <br /></td></tr>
 <tr class="separator:a37fc12a03265e9200c1fd329b2a03b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60aa41dfc1c8dc243c5a77b0a7b028cd" id="r_a60aa41dfc1c8dc243c5a77b0a7b028cd"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#a60aa41dfc1c8dc243c5a77b0a7b028cd">microsecsToFrames</a> (qint64 microsecs, double framerate)</td></tr>
+<tr class="memdesc:a60aa41dfc1c8dc243c5a77b0a7b028cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convertit un nombre de microsecondes en un nombre de frames (selon un certains framerate)  <br /></td></tr>
 <tr class="separator:a60aa41dfc1c8dc243c5a77b0a7b028cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86dee168a90505a4c062d3e20513fa64" id="r_a86dee168a90505a4c062d3e20513fa64"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#a86dee168a90505a4c062d3e20513fa64">microsecsToMillis</a> (qint64 microsecs)</td></tr>
+<tr class="memdesc:a86dee168a90505a4c062d3e20513fa64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforme "1_234_000_000" en "1_1234_000".  <br /></td></tr>
 <tr class="separator:a86dee168a90505a4c062d3e20513fa64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a109a980de80e57be6c7f9589ae58b16f" id="r_a109a980de80e57be6c7f9589ae58b16f"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#a109a980de80e57be6c7f9589ae58b16f">microseconds</a> (qint64 microsecs)</td></tr>
+<tr class="memdesc:a109a980de80e57be6c7f9589ae58b16f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforme une valeur numérique (ex: 1234000000) en un texte (ex: "1234000000").  <br /></td></tr>
 <tr class="separator:a109a980de80e57be6c7f9589ae58b16f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a825b25f0b8ba64537a3aaf4dbf4daf0d" id="r_a825b25f0b8ba64537a3aaf4dbf4daf0d"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#a825b25f0b8ba64537a3aaf4dbf4daf0d">microsecsToHMSI</a> (qint64 microsecs, double framerate)</td></tr>
+<tr class="memdesc:a825b25f0b8ba64537a3aaf4dbf4daf0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforme "1234000000" en "00:20:34:00".  <br /></td></tr>
 <tr class="separator:a825b25f0b8ba64537a3aaf4dbf4daf0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99bc2ec78dd27117f0d6c77db1d58344" id="r_a99bc2ec78dd27117f0d6c77db1d58344"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#a99bc2ec78dd27117f0d6c77db1d58344">microsecsToHMSM</a> (qint64 microsecs)</td></tr>
+<tr class="memdesc:a99bc2ec78dd27117f0d6c77db1d58344"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforme "1234000000" en "00:20:34,000".  <br /></td></tr>
 <tr class="separator:a99bc2ec78dd27117f0d6c77db1d58344"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a979923f4ddda391e436346c92090225e" id="r_a979923f4ddda391e436346c92090225e"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#a979923f4ddda391e436346c92090225e">microsecsToRawHMSI</a> (qint64 microsecs, double framerate)</td></tr>
+<tr class="memdesc:a979923f4ddda391e436346c92090225e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforme 1234000000 en "00203400".  <br /></td></tr>
 <tr class="separator:a979923f4ddda391e436346c92090225e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5a753f5cd009033d8a216ed4300fc73" id="r_ad5a753f5cd009033d8a216ed4300fc73"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#ad5a753f5cd009033d8a216ed4300fc73">microsecsToDHMSM</a> (qint64 microsecs)</td></tr>
+<tr class="memdesc:ad5a753f5cd009033d8a216ed4300fc73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforme "1234000000" en "0 days 00:20:34,000".  <br /></td></tr>
 <tr class="separator:ad5a753f5cd009033d8a216ed4300fc73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec2aeef75d46d7353c98fc5a286b426a" id="r_aec2aeef75d46d7353c98fc5a286b426a"><td class="memItemLeft" align="right" valign="top">static qint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#aec2aeef75d46d7353c98fc5a286b426a">toMicroseconds</a> (QString value, double conversionFacteur)</td></tr>
 <tr class="memdesc:aec2aeef75d46d7353c98fc5a286b426a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforme une unité quelconque (string) en microsecondes (numerique).  <br /></td></tr>
 <tr class="separator:aec2aeef75d46d7353c98fc5a286b426a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab67107bcb71a3a0876607cd964b32094" id="r_ab67107bcb71a3a0876607cd964b32094"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#ab67107bcb71a3a0876607cd964b32094">setNtscFramePerSec</a> (double framerate)</td></tr>
+<tr class="memdesc:ab67107bcb71a3a0876607cd964b32094"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change le framerate du NTSC.  <br /></td></tr>
 <tr class="separator:ab67107bcb71a3a0876607cd964b32094"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51839af9207be73f6a191bd0ea61d567" id="r_a51839af9207be73f6a191bd0ea61d567"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#a51839af9207be73f6a191bd0ea61d567">getNtscFramePerSec</a> ()</td></tr>
+<tr class="memdesc:a51839af9207be73f6a191bd0ea61d567"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le framerate courant du NTSC.  <br /></td></tr>
 <tr class="separator:a51839af9207be73f6a191bd0ea61d567"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
@@ -183,8 +195,10 @@ static const double&#160;</td><td class="memItemRight" valign="bottom"><b>us_Per
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
 Fonctions membres privées statiques</h2></td></tr>
 <tr class="memitem:ac7e5ac8ff3d377c7e0f3eb771a8f3747" id="r_ac7e5ac8ff3d377c7e0f3eb771a8f3747"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#ac7e5ac8ff3d377c7e0f3eb771a8f3747">adjustLengthTo3</a> (qint64 value)</td></tr>
+<tr class="memdesc:ac7e5ac8ff3d377c7e0f3eb771a8f3747"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforme une valeur en une string de 3 chars. Complète avec des zéro, et ne garde que les 3 chiffres les plus significatifs.  <br /></td></tr>
 <tr class="separator:ac7e5ac8ff3d377c7e0f3eb771a8f3747"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a250ba80855ce7272b5e4cfceff2d204b" id="r_a250ba80855ce7272b5e4cfceff2d204b"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_converter.html#a250ba80855ce7272b5e4cfceff2d204b">adjustLengthTo2</a> (qint64 value)</td></tr>
+<tr class="memdesc:a250ba80855ce7272b5e4cfceff2d204b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforme une valeur en une string de 2 chars. Transforme 5 en "05".  <br /></td></tr>
 <tr class="separator:a250ba80855ce7272b5e4cfceff2d204b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
@@ -235,8 +249,10 @@ Fonctions membres privées statiques</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Ajoute des séparateurs de milliers sur la partie entière et la partie décimale. </p>
 <hr  />
-<p> Ajoute des séparateurs de milliers sur la partie entière et la partie décimale. </p><dl class="params"><dt>Paramètres</dt><dd>
+ <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>: a numeric value. </td></tr>
   </table>
@@ -269,8 +285,10 @@ Fonctions membres privées statiques</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Transforme une valeur en une string de 2 chars. Transforme 5 en "05". </p>
 <hr  />
-<p> Transforme une valeur en une string de 2 chars. Transforme 5 en "05". </p><dl class="params"><dt>Paramètres</dt><dd>
+ <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>: numeric value to complete. </td></tr>
   </table>
@@ -303,8 +321,11 @@ Fonctions membres privées statiques</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Transforme une valeur en une string de 3 chars. Complète avec des zéro, et ne garde que les 3 chiffres les plus significatifs. </p>
 <hr  />
-<p> Transforme une valeur en une string de 3 chars. Complète avec des zéro, et ne garde que les 3 chiffres les plus significatifs. Exemples: 25 devient "025", 4512 devient "451". </p><dl class="params"><dt>Paramètres</dt><dd>
+ <dl class="section note"><dt>Note</dt><dd>Exemples: 25 devient "025", 4512 devient "451". </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>: numeric value to complete. </td></tr>
   </table>
@@ -337,8 +358,10 @@ Fonctions membres privées statiques</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Transforme "123" en "12:3.:..:..". </p>
 <hr  />
-<p> Transforme "123" en "12:3.:..:..". </p><dl class="params"><dt>Paramètres</dt><dd>
+ <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">raw_hmsi</td><td>: raw hmsi to convert. </td></tr>
   </table>
@@ -370,8 +393,10 @@ Fonctions membres privées statiques</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Retourne le framerate courant du NTSC. </p>
 <hr  />
-<p> Retourne le framerate courant du NTSC. </p><dl class="section return"><dt>Renvoie</dt><dd>the current NTSC framerate. </dd></dl>
+ <dl class="section return"><dt>Renvoie</dt><dd>the current NTSC framerate. </dd></dl>
 
 </div>
 </div>
@@ -481,8 +506,10 @@ Fonctions membres privées statiques</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Transforme une valeur numérique (ex: 1234000000) en un texte (ex: "1234000000"). </p>
 <hr  />
-<p> On transforme une valeur numérique (ex: 1234000000) en un texte (ex: "1234000000"). </p><dl class="params"><dt>Paramètres</dt><dd>
+ <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">microsecs</td><td>: microsecs value to convert. </td></tr>
   </table>
@@ -515,8 +542,10 @@ Fonctions membres privées statiques</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Transforme "1234000000" en "0 days 00:20:34,000". </p>
 <hr  />
-<p> On transforme "1234000000" en "0 days 00:20:34,000". </p><dl class="params"><dt>Paramètres</dt><dd>
+ <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">microsecs</td><td>: microsecs value to convert. </td></tr>
   </table>
@@ -559,8 +588,11 @@ Fonctions membres privées statiques</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Convertit un nombre de microsecondes en un nombre de frames (selon un certains framerate) </p>
 <hr  />
-<p> Convertit un nombre de microsecondes en un nombre de frames (selon un certains framerate) Ex: "1_234_000_000" ms en 25fps donne "30_850" frames. Ex; "1_234_000_000" ms en 50 fps donne "61_700" frames. </p><dl class="params"><dt>Paramètres</dt><dd>
+ <dl class="section note"><dt>Note</dt><dd>Ex: "1_234_000_000" ms en 25fps donne "30_850" frames. Ex: "1_234_000_000" ms en 50 fps donne "61_700" frames. </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">microsecs</td><td>: microsecs value to convert. </td></tr>
     <tr><td class="paramname">framerate</td><td>: framerate to use for conversion (ex: 25.0) </td></tr>
@@ -604,8 +636,10 @@ Fonctions membres privées statiques</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Transforme "1234000000" en "00:20:34:00". </p>
 <hr  />
-<p> On transforme "1234000000" en "00:20:34:00". </p><dl class="params"><dt>Paramètres</dt><dd>
+ <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">microsecs</td><td>: microsecs value to convert. </td></tr>
     <tr><td class="paramname">framerate</td><td>: the framerate to use for the 2 last digits. </td></tr>
@@ -639,8 +673,10 @@ Fonctions membres privées statiques</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Transforme "1234000000" en "00:20:34,000". </p>
 <hr  />
-<p> On transforme "1234000000" en "00:20:34,000". </p><dl class="params"><dt>Paramètres</dt><dd>
+ <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">microsecs</td><td>: microsecs value to convert. </td></tr>
   </table>
@@ -673,8 +709,10 @@ Fonctions membres privées statiques</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Transforme "1_234_000_000" en "1_1234_000". </p>
 <hr  />
-<p> On transforme "1_234_000_000" en "1_1234_000". </p><dl class="params"><dt>Paramètres</dt><dd>
+ <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">microsecs</td><td>: microsecs value to convert. </td></tr>
   </table>
@@ -717,8 +755,10 @@ Fonctions membres privées statiques</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Transforme 1234000000 en "00203400". </p>
 <hr  />
-<p> On transforme 1234000000 en "00203400". </p><dl class="params"><dt>Paramètres</dt><dd>
+ <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">microsecs</td><td>: microsecs value to convert. </td></tr>
     <tr><td class="paramname">framerate</td><td>: framerate for raw hmsi </td></tr>
@@ -752,8 +792,10 @@ Fonctions membres privées statiques</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Transforme "1234000000" en "1234". </p>
 <hr  />
-<p> On transforme "1234000000" en "1234". </p><dl class="section note"><dt>Note</dt><dd>Autant que possible, on évite les divisions int/float qui introduisent des pertes de précision. </dd></dl>
+ <dl class="section note"><dt>Note</dt><dd>Autant que possible, on évite les divisions int/float qui introduisent des pertes de précision. </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">microsecs</td><td>: microsecs value to convert. </td></tr>
@@ -834,8 +876,10 @@ Fonctions membres privées statiques</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Change le framerate du NTSC. </p>
 <hr  />
-<p> Change le framerate du NTSC. </p><dl class="params"><dt>Paramètres</dt><dd>
+ <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">framerate</td><td>: the new NTSC framerate. </td></tr>
   </table>

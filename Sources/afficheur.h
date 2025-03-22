@@ -30,10 +30,10 @@ public:
     Q_INVOKABLE void rectifyHMSI();
 
 public slots:
-    void setValue(const qint64 microsecs, const bool force=false);  //!< Réception du signal valeurPivotChanged
-    void clearValue();
-    void activeDisplay(QString afficheur);
-    void setFramerate(double framerate);
+    void setValue(const qint64 microsecs, const bool force=false);  //!< Réception du signal valeurPivotChanged()
+    void clearValue();                                             //!< Réception du signal valeurPivotCleared()
+    void activeDisplay(QString afficheur);      //!< Réception du nom de l'afficheur actif, en cas de changement. QML.
+    void setFramerate(double framerate);        //!< Réception d'une nouvelle valeur de framerate. Concerne le HMSI. QML.
 
 signals:
     void displayValueChanged();         //!< Indique au QML que la valeur à afficher a changé.

@@ -6,6 +6,8 @@ var class_operande =
     [ "registerContext", "class_operande.html#a8fd5799d50aa994d23700b09a9fd74fb", null ],
     [ "setValeurPivot", "class_operande.html#a75d4ba1eea84722966e75a02f5b6bedb", null ],
     [ "valeurPivot", "class_operande.html#ae3f3a7950d8382daaf3c93cc1228e575", null ],
+    [ "valeurPivotChanged", "class_operande.html#a09bf950c21a58620d19b1c3a08a5bf14", null ],
+    [ "valeurPivotCleared", "class_operande.html#aa229cf66f5d905a225ccbd073f2ccef6", null ],
     [ "a1", "class_operande.html#aee4c22583af3683272f29e2da113f582", null ],
     [ "a2", "class_operande.html#a3b7aaef13d72c01b24ab8ec001947597", null ],
     [ "a3", "class_operande.html#a87e850c47510cc6ca5e43d31122007f4", null ],

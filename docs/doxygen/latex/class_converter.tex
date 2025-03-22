@@ -18,7 +18,7 @@ Classe statique contenant des fonctions de conversion de timecodes.
 \begin{DoxyCompactItemize}
 \item 
 static QString \textbf{ add\+Space\+Separator} (QString value)
-\item 
+\begin{DoxyCompactList}\small\item\em Ajoute des séparateurs de milliers sur la partie entière et la partie décimale. \end{DoxyCompactList}\item 
 static QString \textbf{ HMSIto\+Raw\+HMSI} (const QString hmsi)
 \begin{DoxyCompactList}\small\item\em Convertit un HMSI en un RAW HMSI. Exemple\+: "{}25\+:48\+:12\+:..\textquotesingle{} en "{}254812"{}. \end{DoxyCompactList}\item 
 static qint64 \textbf{ HMSIto\+Microseconds} (QString hmsi, double framerate)
@@ -26,29 +26,29 @@ static qint64 \textbf{ HMSIto\+Microseconds} (QString hmsi, double framerate)
 static qint64 \textbf{ raw\+HMSIto\+Microseconds} (QString raw\+\_\+hmsi, double framerate)
 \begin{DoxyCompactList}\small\item\em Convertit un Raw HMSI (même partiel) en un nombre de micro-\/secondes. Exemple\+: "{}0245"{} pour 2h45m = 9 900 000 000 us. \end{DoxyCompactList}\item 
 static QString \textbf{ complete\+Raw\+HMSIWith\+Dots} (QString raw\+\_\+hmsi)
-\item 
+\begin{DoxyCompactList}\small\item\em Transforme "{}123"{} en "{}12\+:3.\+:..\+:.."{}. \end{DoxyCompactList}\item 
 static QString \textbf{ microsecs\+To\+Seconds} (qint64 microsecs)
-\item 
+\begin{DoxyCompactList}\small\item\em Transforme "{}1234000000"{} en "{}1234"{}. \end{DoxyCompactList}\item 
 static QString \textbf{ microsecs\+To\+Frames} (qint64 microsecs, double framerate)
-\item 
+\begin{DoxyCompactList}\small\item\em Convertit un nombre de microsecondes en un nombre de frames (selon un certains framerate) \end{DoxyCompactList}\item 
 static QString \textbf{ microsecs\+To\+Millis} (qint64 microsecs)
-\item 
+\begin{DoxyCompactList}\small\item\em Transforme "{}1\+\_\+234\+\_\+000\+\_\+000"{} en "{}1\+\_\+1234\+\_\+000"{}. \end{DoxyCompactList}\item 
 static QString \textbf{ microseconds} (qint64 microsecs)
-\item 
+\begin{DoxyCompactList}\small\item\em Transforme une valeur numérique (ex\+: 1234000000) en un texte (ex\+: "{}1234000000"{}). \end{DoxyCompactList}\item 
 static QString \textbf{ microsecs\+To\+HMSI} (qint64 microsecs, double framerate)
-\item 
+\begin{DoxyCompactList}\small\item\em Transforme "{}1234000000"{} en "{}00\+:20\+:34\+:00"{}. \end{DoxyCompactList}\item 
 static QString \textbf{ microsecs\+To\+HMSM} (qint64 microsecs)
-\item 
+\begin{DoxyCompactList}\small\item\em Transforme "{}1234000000"{} en "{}00\+:20\+:34,000"{}. \end{DoxyCompactList}\item 
 static QString \textbf{ microsecs\+To\+Raw\+HMSI} (qint64 microsecs, double framerate)
-\item 
+\begin{DoxyCompactList}\small\item\em Transforme 1234000000 en "{}00203400"{}. \end{DoxyCompactList}\item 
 static QString \textbf{ microsecs\+To\+DHMSM} (qint64 microsecs)
-\item 
+\begin{DoxyCompactList}\small\item\em Transforme "{}1234000000"{} en "{}0 days 00\+:20\+:34,000"{}. \end{DoxyCompactList}\item 
 static qint64 \textbf{ to\+Microseconds} (QString value, double conversion\+Facteur)
 \begin{DoxyCompactList}\small\item\em Transforme une unité quelconque (string) en microsecondes (numerique). \end{DoxyCompactList}\item 
 static void \textbf{ set\+Ntsc\+Frame\+Per\+Sec} (double framerate)
-\item 
+\begin{DoxyCompactList}\small\item\em Change le framerate du NTSC. \end{DoxyCompactList}\item 
 static double \textbf{ get\+Ntsc\+Frame\+Per\+Sec} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Retourne le framerate courant du NTSC. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Attributs publics statiques}
 \begin{DoxyCompactItemize}
 \item 
@@ -83,9 +83,9 @@ static const double {\bfseries us\+\_\+\+Per\+Frame\+NTSC} = us\+\_\+\+Per\+Seco
 \begin{DoxyCompactItemize}
 \item 
 static QString \textbf{ adjust\+Length\+To3} (qint64 value)
-\item 
+\begin{DoxyCompactList}\small\item\em Transforme une valeur en une string de 3 chars. Complète avec des zéro, et ne garde que les 3 chiffres les plus significatifs. \end{DoxyCompactList}\item 
 static QString \textbf{ adjust\+Length\+To2} (qint64 value)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Transforme une valeur en une string de 2 chars. Transforme 5 en "{}05"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
@@ -115,8 +115,12 @@ Constructeur.
 \doxysubsubsection{addSpaceSeparator()}
 {\footnotesize\ttfamily QString Converter\+::add\+Space\+Separator (\begin{DoxyParamCaption}\item[{QString}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Ajoute des séparateurs de milliers sur la partie entière et la partie décimale. 
+
 \DoxyHorRuler{0}
- Ajoute des séparateurs de milliers sur la partie entière et la partie décimale. 
+ 
 \begin{DoxyParams}{Paramètres}
 {\em value} & \+: a numeric value. \\
 \hline
@@ -130,8 +134,12 @@ a readable string with space separators.
 \doxysubsubsection{adjustLengthTo2()}
 {\footnotesize\ttfamily QString Converter\+::adjust\+Length\+To2 (\begin{DoxyParamCaption}\item[{qint64}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
 
+
+
+Transforme une valeur en une string de 2 chars. Transforme 5 en "{}05"{}. 
+
 \DoxyHorRuler{0}
- Transforme une valeur en une string de 2 chars. Transforme 5 en "{}05"{}. 
+ 
 \begin{DoxyParams}{Paramètres}
 {\em value} & \+: numeric value to complete. \\
 \hline
@@ -145,8 +153,15 @@ the value completed with 0s (string size 2 chars).
 \doxysubsubsection{adjustLengthTo3()}
 {\footnotesize\ttfamily QString Converter\+::adjust\+Length\+To3 (\begin{DoxyParamCaption}\item[{qint64}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
 
+
+
+Transforme une valeur en une string de 3 chars. Complète avec des zéro, et ne garde que les 3 chiffres les plus significatifs. 
+
 \DoxyHorRuler{0}
- Transforme une valeur en une string de 3 chars. Complète avec des zéro, et ne garde que les 3 chiffres les plus significatifs. Exemples\+: 25 devient "{}025"{}, 4512 devient "{}451"{}. 
+ \begin{DoxyNote}{Note}
+Exemples\+: 25 devient "{}025"{}, 4512 devient "{}451"{}. 
+\end{DoxyNote}
+
 \begin{DoxyParams}{Paramètres}
 {\em value} & \+: numeric value to complete. \\
 \hline
@@ -160,8 +175,12 @@ the value completed with 0s (string size 3 chars).
 \doxysubsubsection{completeRawHMSIWithDots()}
 {\footnotesize\ttfamily QString Converter\+::complete\+Raw\+HMSIWith\+Dots (\begin{DoxyParamCaption}\item[{QString}]{raw\+\_\+hmsi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Transforme "{}123"{} en "{}12\+:3.\+:..\+:.."{}. 
+
 \DoxyHorRuler{0}
- Transforme "{}123"{} en "{}12\+:3.\+:..\+:.."{}. 
+ 
 \begin{DoxyParams}{Paramètres}
 {\em raw\+\_\+hmsi} & \+: raw hmsi to convert. \\
 \hline
@@ -175,8 +194,12 @@ the hmsi formatted with \+: and dots.
 \doxysubsubsection{getNtscFramePerSec()}
 {\footnotesize\ttfamily double Converter\+::get\+Ntsc\+Frame\+Per\+Sec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Retourne le framerate courant du NTSC. 
+
 \DoxyHorRuler{0}
- Retourne le framerate courant du NTSC. \begin{DoxyReturn}{Renvoie}
+ \begin{DoxyReturn}{Renvoie}
 the current NTSC framerate. 
 \end{DoxyReturn}
 \label{class_converter_a1cf605a464a0860d866421f2b109a3f8} 
@@ -225,8 +248,12 @@ the corresponding RAW HMSI
 \doxysubsubsection{microseconds()}
 {\footnotesize\ttfamily QString Converter\+::microseconds (\begin{DoxyParamCaption}\item[{qint64}]{microsecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Transforme une valeur numérique (ex\+: 1234000000) en un texte (ex\+: "{}1234000000"{}). 
+
 \DoxyHorRuler{0}
- On transforme une valeur numérique (ex\+: 1234000000) en un texte (ex\+: "{}1234000000"{}). 
+ 
 \begin{DoxyParams}{Paramètres}
 {\em microsecs} & \+: microsecs value to convert. \\
 \hline
@@ -240,8 +267,12 @@ a readable string
 \doxysubsubsection{microsecsToDHMSM()}
 {\footnotesize\ttfamily QString Converter\+::microsecs\+To\+DHMSM (\begin{DoxyParamCaption}\item[{qint64}]{microsecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Transforme "{}1234000000"{} en "{}0 days 00\+:20\+:34,000"{}. 
+
 \DoxyHorRuler{0}
- On transforme "{}1234000000"{} en "{}0 days 00\+:20\+:34,000"{}. 
+ 
 \begin{DoxyParams}{Paramètres}
 {\em microsecs} & \+: microsecs value to convert. \\
 \hline
@@ -255,8 +286,15 @@ a readable HMSI value with days ("{}\+N days HH\+:\+MM\+:\+SS\+:\+II"{}).
 \doxysubsubsection{microsecsToFrames()}
 {\footnotesize\ttfamily QString Converter\+::microsecs\+To\+Frames (\begin{DoxyParamCaption}\item[{qint64}]{microsecs,  }\item[{double}]{framerate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Convertit un nombre de microsecondes en un nombre de frames (selon un certains framerate) 
+
 \DoxyHorRuler{0}
- Convertit un nombre de microsecondes en un nombre de frames (selon un certains framerate) Ex\+: "{}1\+\_\+234\+\_\+000\+\_\+000"{} ms en 25fps donne "{}30\+\_\+850"{} frames. Ex; "{}1\+\_\+234\+\_\+000\+\_\+000"{} ms en 50 fps donne "{}61\+\_\+700"{} frames. 
+ \begin{DoxyNote}{Note}
+Ex\+: "{}1\+\_\+234\+\_\+000\+\_\+000"{} ms en 25fps donne "{}30\+\_\+850"{} frames. Ex\+: "{}1\+\_\+234\+\_\+000\+\_\+000"{} ms en 50 fps donne "{}61\+\_\+700"{} frames. 
+\end{DoxyNote}
+
 \begin{DoxyParams}{Paramètres}
 {\em microsecs} & \+: microsecs value to convert. \\
 \hline
@@ -272,8 +310,12 @@ the value converted in frames.
 \doxysubsubsection{microsecsToHMSI()}
 {\footnotesize\ttfamily QString Converter\+::microsecs\+To\+HMSI (\begin{DoxyParamCaption}\item[{qint64}]{microsecs,  }\item[{double}]{framerate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Transforme "{}1234000000"{} en "{}00\+:20\+:34\+:00"{}. 
+
 \DoxyHorRuler{0}
- On transforme "{}1234000000"{} en "{}00\+:20\+:34\+:00"{}. 
+ 
 \begin{DoxyParams}{Paramètres}
 {\em microsecs} & \+: microsecs value to convert. \\
 \hline
@@ -289,8 +331,12 @@ a readable HMSI value (HH\+:\+MM\+:\+SS\+:II).
 \doxysubsubsection{microsecsToHMSM()}
 {\footnotesize\ttfamily QString Converter\+::microsecs\+To\+HMSM (\begin{DoxyParamCaption}\item[{qint64}]{microsecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Transforme "{}1234000000"{} en "{}00\+:20\+:34,000"{}. 
+
 \DoxyHorRuler{0}
- On transforme "{}1234000000"{} en "{}00\+:20\+:34,000"{}. 
+ 
 \begin{DoxyParams}{Paramètres}
 {\em microsecs} & \+: microsecs value to convert. \\
 \hline
@@ -304,8 +350,12 @@ a readable HMSm value (HH\+:\+MM\+:SS,mmm).
 \doxysubsubsection{microsecsToMillis()}
 {\footnotesize\ttfamily QString Converter\+::microsecs\+To\+Millis (\begin{DoxyParamCaption}\item[{qint64}]{microsecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Transforme "{}1\+\_\+234\+\_\+000\+\_\+000"{} en "{}1\+\_\+1234\+\_\+000"{}. 
+
 \DoxyHorRuler{0}
- On transforme "{}1\+\_\+234\+\_\+000\+\_\+000"{} en "{}1\+\_\+1234\+\_\+000"{}. 
+ 
 \begin{DoxyParams}{Paramètres}
 {\em microsecs} & \+: microsecs value to convert. \\
 \hline
@@ -319,8 +369,12 @@ the value converted in milliseconds.
 \doxysubsubsection{microsecsToRawHMSI()}
 {\footnotesize\ttfamily QString Converter\+::microsecs\+To\+Raw\+HMSI (\begin{DoxyParamCaption}\item[{qint64}]{microsecs,  }\item[{double}]{framerate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Transforme 1234000000 en "{}00203400"{}. 
+
 \DoxyHorRuler{0}
- On transforme 1234000000 en "{}00203400"{}. 
+ 
 \begin{DoxyParams}{Paramètres}
 {\em microsecs} & \+: microsecs value to convert. \\
 \hline
@@ -336,8 +390,12 @@ a raw HMSI value ("{}\+HHMMSSII"{}).
 \doxysubsubsection{microsecsToSeconds()}
 {\footnotesize\ttfamily QString Converter\+::microsecs\+To\+Seconds (\begin{DoxyParamCaption}\item[{qint64}]{microsecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Transforme "{}1234000000"{} en "{}1234"{}. 
+
 \DoxyHorRuler{0}
- On transforme "{}1234000000"{} en "{}1234"{}. \begin{DoxyNote}{Note}
+ \begin{DoxyNote}{Note}
 Autant que possible, on évite les divisions int/float qui introduisent des pertes de précision. 
 \end{DoxyNote}
 
@@ -375,8 +433,12 @@ the value converted in microseconds.
 \doxysubsubsection{setNtscFramePerSec()}
 {\footnotesize\ttfamily void Converter\+::set\+Ntsc\+Frame\+Per\+Sec (\begin{DoxyParamCaption}\item[{double}]{framerate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Change le framerate du NTSC. 
+
 \DoxyHorRuler{0}
- Change le framerate du NTSC. 
+ 
 \begin{DoxyParams}{Paramètres}
 {\em framerate} & \+: the new NTSC framerate. \\
 \hline

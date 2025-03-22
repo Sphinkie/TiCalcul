@@ -3,7 +3,7 @@
 
 
 /*! **********************************************************************************************************
- * \brief Constructeur: crée les 8 afficheurs de cet opérande, et les connecte pour leur envoyer un signal
+ * \brief Constructeur: crée les 8 Afficheur de cet opérande, et les connecte pour leur envoyer un signal
  *        à chaque modification de la valeur pivot.
  * \note L'afficheur NTSC est désactivé pour le moment.
  * \param name: Le nom de l'operande: "tc1" ou "tc2" ou "result".
@@ -57,7 +57,7 @@ qint64 Operande::valeurPivot() const
  * \brief SLOT : Reçoit une nouvelle valeur pivot d'un Afficheur et la propage à tous les Afficheurs.
  *               Peut aussi être positionné par le calculateur.
  * \param newValeurPivot: Timecode en microsecondes.
- * \see Signal Afficheur::setValuePivot()
+ * \see Signal Afficheur::setValeurPivot()
  * \see Signal Operande::valeurPivotChanged()
  * \see Slot Afficheur::setValue()
  *************************************************************************************************************/
@@ -89,7 +89,7 @@ void Operande::clearValeurPivot()
 
 
 /*! **********************************************************************************************************
- * \brief Enregistre les afficheurs dans le contexte QML, pour pouvoir les afficher.
+ * \brief Enregistre les Afficheur dans le contexte QML, pour pouvoir les afficher.
  * \note Les property names seront du type "tc1_aff_1"
  * \param context: Le rootContext de l'application.
  *************************************************************************************************************/
@@ -108,14 +108,14 @@ void Operande::registerContext(QQmlContext* context)
 
 /*! **********************************************************************************************************
  * \brief Cree des connexions entre l'objet QML "afficheurActif" et tous les Afficheurs.
- *        Ainsi, lorsque l'afficheur actif change, tous les afficheurs sont informés.
- * \param context: Le root context de l'application.
+ *        Ainsi, lorsque l'Afficheur actif change, tous les afficheurs sont informés.
+ * \param engine: un pointeur sur le moteur QML.
  *************************************************************************************************************/
 void Operande::connectActiveDisplay(QQmlApplicationEngine* engine)
 {
     // On trove l'objet QML nommé "afficheurActif"
     QObject* qmlItem = engine->rootObjects().constFirst()->findChild<QObject*>("afficheurActif");
-    // On le connecet à tous les afficheurs.
+    // On le connecte à tous les afficheurs.
     QObject::connect(qmlItem, SIGNAL(activeDisplay(QString)), a1, SLOT(activeDisplay(QString)));
     QObject::connect(qmlItem, SIGNAL(activeDisplay(QString)), a2, SLOT(activeDisplay(QString)));
     QObject::connect(qmlItem, SIGNAL(activeDisplay(QString)), a3, SLOT(activeDisplay(QString)));
