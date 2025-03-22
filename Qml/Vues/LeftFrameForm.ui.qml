@@ -100,9 +100,9 @@ Item {
         }
         TiButton {
             id: btClear
-            Layout.topMargin: 4
+            Layout.topMargin: 6
             Layout.rightMargin: 0
-            Layout.leftMargin: 4
+            Layout.leftMargin: 0
             buttonText: "clear"
             Layout.fillHeight: false
             Layout.fillWidth: true

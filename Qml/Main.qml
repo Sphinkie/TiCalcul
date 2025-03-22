@@ -13,8 +13,8 @@ Window {
     id: window
     width: 940
     height: 680
-    minimumWidth: 820
-    minimumHeight: 580
+    minimumWidth: 840
+    minimumHeight: 600
     visible: true
     title: "TiCalcul"
 
@@ -41,7 +41,8 @@ Window {
         GridLayout {
             id: mainGrid
             anchors.fill: parent
-            anchors.margins: 20
+            anchors.margins: 12
+            columnSpacing: 0
             columns: 3
             rows: 2
             // ----------------------------------------------------------------

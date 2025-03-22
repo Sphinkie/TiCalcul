@@ -2,7 +2,7 @@
 \label{class_afficheur}\index{Afficheur@{Afficheur}}
 
 
-La classe \doxyref{Afficheur}{p.}{class_afficheur} gère un champ numérique de l\textquotesingle{}IHM.  
+La classe \doxyref{Afficheur}{p.}{class_afficheur} gère un champ numérique de l\textquotesingle{}IHM QML.  
 
 
 
@@ -47,7 +47,7 @@ void {\bfseries hint\+Changed} ()
 \doxysubsubsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-\textbf{ Afficheur} (Unites\+::\+Units unit, QString parent\+Name, QObject $\ast$parent=nullptr)
+\textbf{ Afficheur} (Unites\+::\+Units unit, QObject $\ast$parent=nullptr)
 \begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
 Q\+\_\+\+INVOKABLE void \textbf{ add\+Digit} (QString digit)
 \begin{DoxyCompactList}\small\item\em Ajoute un digit à la fin de la chaine de caractères. \end{DoxyCompactList}\item 
@@ -113,7 +113,7 @@ qint64 {\bfseries m\+Max\+Value}
 
 
 \doxysubsection{Description détaillée}
-La classe \doxyref{Afficheur}{p.}{class_afficheur} gère un champ numérique de l\textquotesingle{}IHM. 
+La classe \doxyref{Afficheur}{p.}{class_afficheur} gère un champ numérique de l\textquotesingle{}IHM QML. 
 
 \DoxyHorRuler{0}
 
@@ -121,11 +121,11 @@ La classe \doxyref{Afficheur}{p.}{class_afficheur} gère un champ numérique de 
 Elle est associée à un objet QML Field\+Input et lui envoie les valeurs à afficher. Il y a un \doxyref{Afficheur}{p.}{class_afficheur} pour chaque unité\+: Secondes, Millisecondes, HMSI, etc. 
 
 \doxysubsection{Documentation des constructeurs et destructeur}
-\label{class_afficheur_afb96faf1b5a23e0dbfe79b0cc6f02e7b} 
+\label{class_afficheur_a00774166e578f9dd4312c52700d0a48e} 
 \index{Afficheur@{Afficheur}!Afficheur@{Afficheur}}
 \index{Afficheur@{Afficheur}!Afficheur@{Afficheur}}
 \doxysubsubsection{Afficheur()}
-{\footnotesize\ttfamily Afficheur\+::\+Afficheur (\begin{DoxyParamCaption}\item[{Unites\+::\+Units}]{unit,  }\item[{QString}]{parent\+Name,  }\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+{\footnotesize\ttfamily Afficheur\+::\+Afficheur (\begin{DoxyParamCaption}\item[{Unites\+::\+Units}]{unit,  }\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
@@ -134,9 +134,9 @@ Constructeur.
 \DoxyHorRuler{0}
  
 \begin{DoxyParams}{Paramètres}
-{\em unit} & \+: l\textquotesingle{}unité correspondante à cet afficheur. \\
+{\em unit} & L\textquotesingle{}unité correspondante à cet afficheur. \\
 \hline
-{\em parent} & QObject parent\+: un \doxyref{Operande}{p.}{class_operande}. \\
+{\em parent} & QObject parent\+: un \doxyref{Operande}{p.}{class_operande}. Son nom va servir. \\
 \hline
 \end{DoxyParams}
 
@@ -196,7 +196,7 @@ SLOT\+: Efface la valeur de l\textquotesingle{}afficheur, et ses variables priv�
 
 \DoxyHorRuler{0}
  \begin{DoxySeeAlso}{Voir également}
-Signal valeur\+Pivot\+Cleared() de la classe \doxyref{Operande}{p.}{class_operande}. 
+Vient du signal valeur\+Pivot\+Cleared() de la classe \doxyref{Operande}{p.}{class_operande}. 
 \end{DoxySeeAlso}
 \label{class_afficheur_a1f25a47c86a919123df0cae829c8135d} 
 \index{Afficheur@{Afficheur}!isIncorrect@{isIncorrect}}
@@ -211,7 +211,7 @@ Indique si le HMSI a besoin d\textquotesingle{}être rectifié, cad si minutes $
 \DoxyHorRuler{0}
  
 \begin{DoxyParams}{Paramètres}
-{\em raw\+\_\+hmsi} & \+: un RAW HMSI du type HHMMSSII \\
+{\em raw\+\_\+hmsi} & un RAW HMSI du type HHMMSSII \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}

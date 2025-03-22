@@ -19,7 +19,7 @@ Button {
         color: "white"
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
-        font.pointSize: 15
+        font.pointSize: 14
         font.bold: false
         //font.letterSpacing: 2
     }
@@ -28,8 +28,8 @@ Button {
         id: backg
         implicitWidth: 86
         implicitHeight: 40
+        radius: 6
         color: button.down ? Universal.foreground.lighter(
                                  1.1) : Universal.foreground
-        radius: 6
     }
 }

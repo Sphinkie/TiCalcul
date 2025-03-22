@@ -20,11 +20,14 @@ Item {
         anchors.fill: parent
         columnSpacing: 0
         rowSpacing: 0
-        columns: 4
+        columns: 5
 
         // ------------------------------------------------------------
         // 1ere ligne - TC1 en HMSI
         // ------------------------------------------------------------
+        Bloc {
+            hidden: false
+        }
         FieldResult {
             id: labelTC1
             text: "TC1"
@@ -50,17 +53,19 @@ Item {
         }
         TiButton {
             id: bFramerateTc1
+            Layout.rightMargin: 8
             buttonText: tc1_aff_4.framerate + "fps"
             Layout.fillHeight: false
             Layout.fillWidth: false
-            Layout.leftMargin: 8
-            backg.implicitHeight: 32
+            Layout.leftMargin: 6
+            backg.implicitHeight: 28
             backg.implicitWidth: 72
         }
 
         // ------------------------------------------------------------
         // Operande
         // ------------------------------------------------------------
+        Bloc {}
         FieldResult {
             id: lbOperande
             text: "+"
@@ -71,20 +76,23 @@ Item {
         }
         TiButton {
             id: bSwap
+            Layout.rightMargin: 8
             buttonText: "⇵"
             Layout.fillHeight: false
             Layout.fillWidth: false
-            Layout.leftMargin: 8
-            backg.implicitHeight: 32
+            Layout.leftMargin: 6
+            backg.implicitHeight: 28
             backg.implicitWidth: 72
         }
 
         // ------------------------------------------------------------
         // 2eme ligne - TC2 en HMSI
         // ------------------------------------------------------------
+        Bloc {}
         FieldResult {
             id: labelTC2
             text: "TC2"
+            color: Universal.altMediumHighColor
             Layout.preferredWidth: 52
             Layout.fillHeight: false
             Layout.fillWidth: false
@@ -92,7 +100,7 @@ Item {
         SquareButton {
             id: bRectifyTc2
             text: "\u27f3"
-            color: Universal.altMediumColor
+            color: Universal.altMediumHighColor
             font.pixelSize: 24
             width: 32
             Layout.fillHeight: false
@@ -104,19 +112,29 @@ Item {
             Layout.fillHeight: false
             Layout.fillWidth: true
         }
-        TiButton {
-            id: bFramerateTc2
-            buttonText: tc2_aff_4.framerate + "fps"
+        Rectangle {
+            id: rectangle1
+            implicitHeight: 40
+            implicitWidth: 86
             Layout.fillHeight: false
             Layout.fillWidth: false
-            Layout.leftMargin: 8
-            backg.implicitHeight: 32
-            backg.implicitWidth: 72
+            color: Universal.altMediumHighColor
+            TiButton {
+                id: bFramerateTc2
+                anchors.left: parent.left
+                anchors.top: parent.top
+                anchors.leftMargin: 6
+                anchors.topMargin: 4
+                buttonText: tc2_aff_4.framerate + "fps"
+                backg.implicitHeight: 28
+                backg.implicitWidth: 72
+            }
         }
 
         // ------------------------------------------------------------
         // Résultat
         // ------------------------------------------------------------
+        Bloc {}
         FieldResult {
             text: "RESULT"
             Layout.preferredWidth: 80
@@ -126,25 +144,30 @@ Item {
         }
         FieldInput {
             id: result
+            bold: true
             text: "..:..:..:.."
+            enabled: false
             afficheur: result_aff_4
             Layout.fillHeight: false
             Layout.fillWidth: true
         }
         TiButton {
             id: bMem
+            Layout.rightMargin: 8
             buttonText: "MEM"
             Layout.fillHeight: false
             Layout.fillWidth: false
-            Layout.leftMargin: 8
-            backg.implicitHeight: 32
+            Layout.leftMargin: 6
+            backg.implicitHeight: 28
             backg.implicitWidth: 72
         }
 
         // ------------------------------------------------------------
         // Zone vide en bas
         // ------------------------------------------------------------
+        Bloc {}
         Rectangle {
+            id: rectangle
             Layout.fillWidth: true
             Layout.fillHeight: true
             Layout.columnSpan: 2
@@ -153,9 +176,10 @@ Item {
                 id: imagette
                 width: 80
                 height: 80
+                anchors.top: parent.top
+                anchors.topMargin: 8
                 fillMode: Image.PreserveAspectFit
                 source: "qrc:/Images/TiCalcul.png"
-                anchors.centerIn: parent
             }
         }
         Item {
@@ -165,6 +189,14 @@ Item {
             Layout.fillHeight: false
             Layout.rowSpan: 1
             Layout.columnSpan: 2
+        }
+
+        Bloc {
+            id: bloc
+        }
+
+        Bloc {
+            id: bloc1
         }
     }
 }

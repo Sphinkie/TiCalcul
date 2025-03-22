@@ -1,6 +1,6 @@
 var class_afficheur =
 [
-    [ "Afficheur", "class_afficheur.html#afb96faf1b5a23e0dbfe79b0cc6f02e7b", null ],
+    [ "Afficheur", "class_afficheur.html#a00774166e578f9dd4312c52700d0a48e", null ],
     [ "activeDisplay", "class_afficheur.html#a7e6cdc99b5f03d6db8d81451c6cf6ddc", null ],
     [ "addDigit", "class_afficheur.html#a41a7fd306f2aca734d7d82829b7ba000", null ],
     [ "clearValue", "class_afficheur.html#a614d213a452354ca50df495510bd9c8d", null ],

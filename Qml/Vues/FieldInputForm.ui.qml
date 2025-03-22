@@ -10,7 +10,7 @@ import TiCalcul
  * Cette Form est associée à un controlleur FieldInput.
  **************************************************************************** */
 Button {
-    //! Cet afficheur doit être fourni par le parent lors de la création du Field input.
+    //! Cet afficheur doit être fourni par le parent lors de la création du FieldInput.
     required property Afficheur afficheur
 
     //! Le texte affiché est la String envoyée par l'afficheur
@@ -18,15 +18,15 @@ Button {
         text: afficheur.displayValue ? afficheur.displayValue : afficheur.hint
         horizontalAlignment: Text.AlignRight
         verticalAlignment: Text.AlignVCenter
-        // rightPadding: 8 // utile ?
         font.pixelSize: 15
         font.family: "Courier"
-        font.bold: false
+        font.bold: control.bold
         color: Universal.chromeAltLowColor
     }
 
     //! La couleur de fond est blanche quand l'afficheur est sélectioné
     background: Rectangle {
+        id: bgrecctangle
         implicitWidth: 160
         implicitHeight: 40
         //color: parent.pressed ? "white" : "#c8e6ca"
