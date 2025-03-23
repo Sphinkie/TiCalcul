@@ -26,7 +26,6 @@ Button {
     background: Rectangle {
         id: rec
         color: parent.down ? Universal.chromeHighColor : Universal.chromeMediumColor
-        // border.color: Universal.accent
         implicitWidth: 100
         implicitHeight: 80
         radius: 6

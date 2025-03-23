@@ -26,4 +26,13 @@ KeyboardForm {
     keyPlus.onClicked: calculateur.add()
     keyMinus.onClicked: calculateur.substract()
     keyComplt.onClicked: calculateur.complement()
+
+    keyDot.enabled: {
+        if (afficheurActif.afficheur.unit !== "SECONDS")
+            return false
+        else if (afficheurActif.afficheur.displayValue.includes('.'))
+            return false
+        else
+            return true
+    }
 }

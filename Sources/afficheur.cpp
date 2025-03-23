@@ -105,7 +105,7 @@ void Afficheur::addDigit(QString digit)
         // ------------------------------------------------------------
         // Si c'est un point et qu'on est au début: on traite comme "0."
         // ------------------------------------------------------------
-        if ((digit == ".") && mRawNUM.isEmpty())  digit="0";
+        if ((digit == ".") && mRawNUM.isEmpty())  mRawNUM="0";
         // ------------------------------------------------------------
         // Si c'est un point, on n'a pas encore de chiffre derrière, on l'affiche aussitot.
         // et on ne modifiepas la valeur pivot.

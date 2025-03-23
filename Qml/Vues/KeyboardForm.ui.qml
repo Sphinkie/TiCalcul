@@ -109,7 +109,8 @@ GridLayout {
     KeyboardKeyForm {
         id: keyDot
         buttonText: "."
-        enabled: (afficheurActif.afficheur.unit === "SECONDS") ? true : false
+        // enabled: est défini dans le controller
+        // enabled: (afficheurActif.afficheur.unit === "SECONDS") || (tc1_aff_1.displayValue.contains('.')) ? true : false
         Layout.fillWidth: true
     }
     KeyboardKeyForm {
