@@ -50,6 +50,7 @@ Item {
             afficheur: tc1_aff_4
             Layout.fillHeight: false
             Layout.fillWidth: true
+            Layout.minimumWidth: 120 // va s'appliquer à toute la colonne
         }
         TiButton {
             id: bFramerateTc1
@@ -182,21 +183,16 @@ Item {
                 source: "qrc:/Images/TiCalcul.png"
             }
         }
-        Item {
-            id: emptySpace
+        Text {
+            id: msgArea
             Layout.preferredHeight: 85
             Layout.fillWidth: true
             Layout.fillHeight: false
+            Layout.topMargin: 8
             Layout.rowSpan: 1
             Layout.columnSpan: 2
-        }
-
-        Bloc {
-            id: bloc
-        }
-
-        Bloc {
-            id: bloc1
+            text: calculFrame.msgText
+            font.pixelSize: 12
         }
     }
 }

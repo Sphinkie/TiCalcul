@@ -11,10 +11,10 @@ import "./Controllers"
  **************************************************************************************/
 Window {
     id: window
-    width: 940
-    height: 680
-    minimumWidth: 840
-    minimumHeight: 600
+    width: 1000
+    height: 690
+    minimumWidth: 964
+    minimumHeight: 612
     visible: true
     title: "TiCalcul"
 
@@ -57,7 +57,7 @@ Window {
             // ------------------ Zone de calcul ------------------------------
             // ----------------------------------------------------------------
             CalculFrame {
-                id: calculFrame
+                //id: calculFrame
                 Layout.fillWidth: true
                 Layout.fillHeight: true
             }

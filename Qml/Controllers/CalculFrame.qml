@@ -7,6 +7,9 @@ import "../Vues"
  * \brief Controlleur pour le panel central (zone des calculs).
  * ***************************************************************** */
 CalculFrameForm {
+    id: calculFrame
+    //msgText: "fenetre: " + window.width + "x" + window.height
+    property string msgText: "ready..."
 
     tc1.onClicked: {
         console.log("TC1 clicked ! ")
