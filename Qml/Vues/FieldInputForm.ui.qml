@@ -21,7 +21,8 @@ Button {
         font.pixelSize: 15
         font.family: "Courier"
         font.bold: control.bold
-        color: Universal.chromeAltLowColor
+        color: afficheur.displayValue ? Universal.chromeAltLowColor : Universal.chromeHighColor.darker(
+                                            1.2)
     }
 
     //! La couleur de fond est blanche quand l'afficheur est sélectioné
