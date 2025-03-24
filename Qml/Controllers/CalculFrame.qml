@@ -8,30 +8,18 @@ import "../Vues"
  * ***************************************************************** */
 CalculFrameForm {
     id: calculFrame
-    //msgText: "fenetre: " + window.width + "x" + window.height
     property string msgText: "ready..."
 
-    // onOperatChanged: console.log("hop !")
 
-    // calculateur.onOperationChanged: {console.log("onOperationChanged: evalutating operateur.text")    }
-    onOperateurChanged: {
-        console.log("evalutating operateur.text")
-        if (calculateur.operation === calculateur.addition) {
-            console.log("timecode addition")
+    /* Messages:
+            msgText: "fenetre: " + window.width + "x" + window.height
             msgText = "timecode addition"
-            operateur.text = "+"
-        } else if (calculateur.operation === calculateur.soustraction) {
-            console.log("timecode soustraction")
             msgText = "timecode soustraction"
-            operateur.text = "-"
-        } else if (calculateur.operation === calculateur.complt)
-            operateur.text = "Cmplt"
-        else
-            operateur.text = ""
+            msgText = "TC1 24'H complement"
+            msgText = "ready"
+            msgText = ""
     }
-
-    operateur.text: calculateur.operat
-
+    */
     tc1.onClicked: {
         console.log("TC1 clicked ! ")
     }

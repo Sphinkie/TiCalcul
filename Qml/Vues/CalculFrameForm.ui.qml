@@ -14,7 +14,6 @@ Item {
     property alias bFramerateTc2: bFramerateTc2
     property alias bRectifyTc1: bRectifyTc1
     property alias bRectifyTc2: bRectifyTc2
-    property alias operateur:operateur
 
     GridLayout {
         id: zoneResults
@@ -68,13 +67,17 @@ Item {
         // Opérateur
         // ------------------------------------------------------------
         Bloc {}
+        Bloc {
+            Layout.fillWidth: true
+            hidden: false
+            color: Universal.altMediumColor
+        }
         FieldResult {
-            id: operateur
-            //ext: ""
+            text: calculateur.operateur
             Layout.fillHeight: false
             Layout.fillWidth: true
             Layout.rowSpan: 1
-            Layout.columnSpan: 3
+            Layout.columnSpan: 2
         }
         TiButton {
             id: bSwap
