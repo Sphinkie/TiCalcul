@@ -13,11 +13,11 @@ class Converter
     // On définit quelques constantes.
     // ***************************************************************************
     public:
-        static const qint64 us_PerHour = 3600000000;
+        static const qint64 us_PerHour = 3'600'000'000;
         static const qint64 us_PerDay = us_PerHour * 24;
-        static const qint64 us_PerMinute = 60000000;
-        static const qint64 us_PerSecond =  1000000;
-        static const qint64 us_PerMillisec =   1000;
+        static const qint64 us_PerMinute = 60'000'000;
+        static const qint64 us_PerSecond =  1'000'000;
+        static const qint64 us_PerMillisec =    1'000;
         static const qint64 us_PerFrame25 = us_PerSecond / 25;
         static const qint64 us_PerFrame50 = us_PerSecond / 50;
 
@@ -33,8 +33,8 @@ class Converter
 
         static QString addSpaceSeparator(QString value);
         static QString HMSItoRawHMSI(const QString hmsi);
-        static qint64 HMSItoMicroseconds(QString hmsi, double framerate);
-        static qint64 rawHMSItoMicroseconds(QString raw_hmsi, double framerate);
+        static qint64  HMSItoMicroseconds(QString hmsi, double framerate);
+        static qint64  rawHMSItoMicroseconds(QString raw_hmsi, double framerate);
         static QString completeRawHMSIWithDots(QString raw_hmsi);
         static QString microsecsToSeconds(qint64 microsecs);
         static QString microsecsToFrames(qint64 microsecs, double framerate);

@@ -167,7 +167,7 @@ QString Converter::completeRawHMSIWithDots(QString raw_hmsi)
 }
 
 /*! *************************************************************************
- * \brief Transforme "1234000000" en "1234".
+ * \brief Transforme 1'234'000'000 en "1234".
  * \note Autant que possible, on évite les divisions int/float qui introduisent
  *       des pertes de précision.
  * \param microsecs : microsecs value to convert.
@@ -179,8 +179,8 @@ QString Converter::microsecsToSeconds(qint64 microsecs)
     QString stringValue;
     stringValue.setNum(microsecs);
 
-    if (microsecs < 1000) return "0";
-    if (microsecs < 1000000)
+    if (microsecs < 1'000) return "0";
+    if (microsecs < 1'000'000)
     {
         stringValue.chop(3);
         return ("0." + stringValue.rightJustified(3,'0') );
@@ -196,11 +196,11 @@ QString Converter::microsecsToSeconds(qint64 microsecs)
 
 /*! *************************************************************************
  * \brief Convertit un nombre de microsecondes en un nombre de frames (selon un certains framerate)
- * \note Ex: "1_234_000_000" ms en 25fps donne "30_850" frames.
- *       Ex: "1_234_000_000" ms en 50 fps donne "61_700" frames.
+ * \note Ex: 1'234'000'000 ms en 25 fps donne "30850" frames.
+ *       Ex: 1'234'000'000 ms en 50 fps donne "61700" frames.
  * \param microsecs : microsecs value to convert.
  * \param framerate : framerate to use for conversion (ex: 25.0)
- * \return the value converted in frames.
+ * \return the value converted in frames, as a string.
  ****************************************************************************/
 QString Converter::microsecsToFrames(qint64 microsecs, double framerate)
 {
@@ -213,9 +213,9 @@ QString Converter::microsecsToFrames(qint64 microsecs, double framerate)
 }
 
 /*! **************************************************************************
- * \brief Transforme "1_234_000_000" en "1_1234_000".
+ * \brief Transforme 1'234'000'000 en "1234000".
  * \param microsecs : microsecs value to convert.
- * \return the value converted in milliseconds.
+ * \return the value converted in milliseconds, as a string.
  * ***************************************************************************/
 QString Converter::microsecsToMillis(qint64 microsecs)
 {
@@ -226,7 +226,7 @@ QString Converter::microsecsToMillis(qint64 microsecs)
 }
 
 /*! *************************************************************************
- * \brief Transforme une valeur numérique (ex: 1234000000) en un texte
+ * \brief Transforme une valeur numérique (ex: 1'234'000'000) en un texte
  *        (ex: "1234000000").
  * \param microsecs : microsecs value to convert.
  * \return a readable string
@@ -238,7 +238,7 @@ QString Converter::microseconds(qint64 microsecs)
 
 
 /*! **************************************************************************
- * \brief Transforme "1234000000" en "00:20:34:00".
+ * \brief Transforme 1'234'000'000 en "00:20:34:00".
  * \param microsecs : microsecs value to convert.
  * \param framerate : the framerate to use for the 2 last digits.
  * \return a readable HMSI value (HH:MM:SS:II).
@@ -269,13 +269,13 @@ QString Converter::microsecsToHMSI(qint64 microsecs, double framerate)
     hmsi += ":";
 
     // quotient = reste / us_PerFrame;
-    quotient = (qint64)ceil(reste / 1000000.0 * framerate);
+    quotient = (qint64)ceil(reste / 1'000'000.0 * framerate);
     hmsi += adjustLengthTo2(quotient);
     return hmsi;
 }
 
 /*! **************************************************************************
- * \brief Transforme "1234000000" en "00:20:34,000".
+ * \brief Transforme 1'234'000'000 en "00:20:34,000".
  * \param microsecs : microsecs value to convert.
  * \return a readable HMSm value (HH:MM:SS,mmm).
  * ***************************************************************************/
@@ -311,7 +311,7 @@ QString Converter::microsecsToHMSM(qint64 microsecs)
 }
 
 /*! **************************************************************************
- * \brief Transforme 1234000000 en "00203400".
+ * \brief Transforme 1'234'000'000 en "00203400".
  * \param microsecs : microsecs value to convert.
  * \param framerate : framerate for raw hmsi
  * \return a raw HMSI value ("HHMMSSII").
@@ -346,7 +346,7 @@ QString Converter::microsecsToRawHMSI(qint64 microsecs, double framerate)
 }
 
 /*! **************************************************************************
- * \brief Transforme "1234000000" en "0 days 00:20:34,000".
+ * \brief Transforme 1'234'000'000 en "0 days 00:20:34,000".
  * \param microsecs : microsecs value to convert.
  * \return a readable HMSI value with days ("N days HH:MM:SS:II").
  ***************************************************************************** */
