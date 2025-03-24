@@ -14,6 +14,7 @@ Item {
     property alias bFramerateTc2: bFramerateTc2
     property alias bRectifyTc1: bRectifyTc1
     property alias bRectifyTc2: bRectifyTc2
+    property alias operateur:operateur
 
     GridLayout {
         id: zoneResults
@@ -64,12 +65,12 @@ Item {
         }
 
         // ------------------------------------------------------------
-        // Operande
+        // Opérateur
         // ------------------------------------------------------------
         Bloc {}
         FieldResult {
-            id: lbOperande
-            text: "+"
+            id: operateur
+            //ext: ""
             Layout.fillHeight: false
             Layout.fillWidth: true
             Layout.rowSpan: 1

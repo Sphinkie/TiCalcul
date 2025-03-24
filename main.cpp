@@ -59,9 +59,11 @@ int main(int argc, char* argv[])
     // Les operandes signalent au calculateur si leur valeur pivot change.
     QObject::connect(&operande_tc1, SIGNAL(valeurPivotChanged(qint64,bool)), &calculateur, SLOT(onValeurPivotChanged()));
     QObject::connect(&operande_tc2, SIGNAL(valeurPivotChanged(qint64,bool)), &calculateur, SLOT(onValeurPivotChanged()));
+    // Le calculateur signale au QML si le type d'opéation change
+    // QObject::connect(&calculateur, SIGNAL(operationChanged()), &context, SLOT(onOperationChanged()));
 
     // ------------------------------------------------------------
-    // On ajoute le type Afficheur au contexte QML.
+    // On ajoute le type d'objet Afficheur au contexte QML.
     // ------------------------------------------------------------
     qmlRegisterType<Afficheur>("TiCalcul", 1, 0, "Afficheur");
 

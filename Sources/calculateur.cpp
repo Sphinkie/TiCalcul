@@ -21,12 +21,15 @@ Calculateur::Calculateur(Operande* tc1, Operande* tc2, Operande* result, QObject
 void Calculateur::complement()
 {
     mOperation = complt;
+    mOperateur = "complt";
     qint64 value = mTC1->valeurPivot();
     // la valeur doit être positive et inférieure à 24h.
     if ((value < 0) || (value > Converter::us_PerDay))
         mResult->clearValeurPivot();
     else
         mResult->setValeurPivot(Converter::us_PerDay - value);
+    emit operationChanged();
+    emit operatChanged();
 }
 
 /*! **********************************************************************************************************
@@ -35,9 +38,11 @@ void Calculateur::complement()
 void Calculateur::add()
 {
     mOperation = addition;
+    mOperateur = "addition";
     qint64 somme = mTC1->valeurPivot() + mTC2->valeurPivot();
     mResult->setValeurPivot(somme);
-}
+    emit operationChanged();
+    emit operatChanged();}
 
 /*! **********************************************************************************************************
  * \brief Calcule la différence TC1-TC2 et envoie le résultat à l'opérande Result.
@@ -45,9 +50,11 @@ void Calculateur::add()
 void Calculateur::substract()
 {
     mOperation = soustraction;
+    mOperateur = "soustraction";
     qint64 result = mTC1->valeurPivot() - mTC2->valeurPivot();
     mResult->setValeurPivot(result);
-}
+    emit operationChanged();
+    emit operatChanged();}
 
 /*! **********************************************************************************************************
  * \brief Echange la valeur des opérandes TC1 et TC2.
@@ -65,8 +72,12 @@ void Calculateur::swap()
  ************************************************************************************************************* */
 void Calculateur::memorize()
 {
+    mOperation = none;
+    mOperateur = "none";
     qint64 temp_1 = mResult->valeurPivot();
     mTC1->setValeurPivot(temp_1, true);
+    emit operationChanged();
+    emit operatChanged();
 }
 
 /*! **********************************************************************************************************

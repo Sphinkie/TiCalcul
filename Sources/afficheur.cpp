@@ -108,7 +108,7 @@ void Afficheur::addDigit(QString digit)
         if ((digit == ".") && mRawNUM.isEmpty())  mRawNUM="0";
         // ------------------------------------------------------------
         // Si c'est un point, on n'a pas encore de chiffre derrière, on l'affiche aussitot.
-        // et on ne modifiepas la valeur pivot.
+        // et on ne modifie pas la valeur pivot.
         // ------------------------------------------------------------
         if (digit == ".")
         {
