@@ -1,7 +1,10 @@
 var searchData=
 [
-  ['rawhmsitomicroseconds_0',['rawHMSItoMicroseconds',['../class_converter.html#ab430fd3f3dab4e7ab14e985fd1c71894',1,'Converter']]],
-  ['rectifyhmsi_1',['rectifyHMSI',['../class_afficheur.html#aa538add01c00a2007f4169720d2fc515',1,'Afficheur']]],
-  ['registercontext_2',['registerContext',['../class_operande.html#a8fd5799d50aa994d23700b09a9fd74fb',1,'Operande']]],
-  ['removelastdigit_3',['removeLastDigit',['../class_afficheur.html#a148f1edabb9e6b7e22e3219896c3696e',1,'Afficheur']]]
+  ['setdisplayvalue_0',['setDisplayValue',['../class_afficheur.html#a0c09cb3258a60a6597954ca6258ed093',1,'Afficheur']]],
+  ['setframerate_1',['setFramerate',['../class_afficheur.html#ae92f7473c8867d4c7afb9d74da1bbba0',1,'Afficheur']]],
+  ['setntscframepersec_2',['setNtscFramePerSec',['../class_converter.html#ab67107bcb71a3a0876607cd964b32094',1,'Converter']]],
+  ['setvaleurpivot_3',['setvaleurpivot',['../class_afficheur.html#a7e46f335aef2788e724a1f8960fc7e3a',1,'Afficheur::setValeurPivot()'],['../class_operande.html#a75d4ba1eea84722966e75a02f5b6bedb',1,'Operande::setValeurPivot()']]],
+  ['setvalue_4',['setValue',['../class_afficheur.html#a513abe95feaec35ce76ca99258e94bf9',1,'Afficheur']]],
+  ['substract_5',['substract',['../class_calculateur.html#ab347e6cf5552a16bff5b7c4a095f1207',1,'Calculateur']]],
+  ['swap_6',['swap',['../class_calculateur.html#a39e4fd1282ec441a14f2fbc0090c58e4',1,'Calculateur']]]
 ];

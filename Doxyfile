@@ -53,14 +53,14 @@ PROJECT_NUMBER         = 1.0
 # for a project that appears at the top of each page and should give viewer a
 # quick idea about the purpose of the project. Keep the description short.
 
-PROJECT_BRIEF          = "A tiny Timecode calculator"
+PROJECT_BRIEF          = "A tiny Timecode Calculator"
 
 # With the PROJECT_LOGO tag one can specify a logo or an icon that is included
 # in the documentation. The maximum height of the logo should not exceed 55
 # pixels and the maximum width should not exceed 200 pixels. Doxygen will copy
 # the logo to the output directory.
 
-PROJECT_LOGO           = "D:/Mes Programmes/Windows/TiCalcul/Resources/Images/TiCalcul_black.png"
+PROJECT_LOGO           = "D:/Mes Programmes/Windows/TiCalcul/docs/medias/TiCalcul_black.png"
 
 # The OUTPUT_DIRECTORY tag is used to specify the (relative or absolute) path
 # into which the generated documentation will be written. If a relative path is
@@ -944,7 +944,7 @@ WARN_LOGFILE           =
 
 INPUT                  = ./Sources
 INPUT                 += ./Qml
-INPUT                 += ./README.md
+INPUT                 += ./readme.md
 INPUT                 += ./docs/compilation.md
 
 

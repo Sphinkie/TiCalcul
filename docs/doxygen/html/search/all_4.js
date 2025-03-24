@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['frameratechanged_0',['framerateChanged',['../class_afficheur.html#a34f3eabe0429b5f9a3ddd7244228b3d7',1,'Afficheur']]]
+  ['getntscframepersec_0',['getNtscFramePerSec',['../class_converter.html#a51839af9207be73f6a191bd0ea61d567',1,'Converter']]]
 ];

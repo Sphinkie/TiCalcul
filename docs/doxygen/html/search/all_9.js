@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['of_20the_20developpement_20environnement_0',['Installation of the developpement environnement',['../md__r_e_a_d_m_e.html#autotoc_md2',1,'']]],
-  ['onvaleurpivotchanged_1',['onValeurPivotChanged',['../class_calculateur.html#a05f6e0f59fe3650890941daa4f4ae375',1,'Calculateur']]],
-  ['operande_2',['operande',['../class_operande.html',1,'Operande'],['../class_operande.html#ac2bee8e17d97934749a0caef7ce404b6',1,'Operande::Operande()']]]
+  ['rawhmsitomicroseconds_0',['rawHMSItoMicroseconds',['../class_converter.html#ab430fd3f3dab4e7ab14e985fd1c71894',1,'Converter']]],
+  ['rectifyhmsi_1',['rectifyHMSI',['../class_afficheur.html#aa538add01c00a2007f4169720d2fc515',1,'Afficheur']]],
+  ['registercontext_2',['registerContext',['../class_operande.html#a8fd5799d50aa994d23700b09a9fd74fb',1,'Operande']]],
+  ['removelastdigit_3',['removeLastDigit',['../class_afficheur.html#a148f1edabb9e6b7e22e3219896c3696e',1,'Afficheur']]]
 ];

@@ -28,21 +28,21 @@ static qint64 \textbf{ raw\+HMSIto\+Microseconds} (QString raw\+\_\+hmsi, double
 static QString \textbf{ complete\+Raw\+HMSIWith\+Dots} (QString raw\+\_\+hmsi)
 \begin{DoxyCompactList}\small\item\em Transforme "{}123"{} en "{}12\+:3.\+:..\+:.."{}. \end{DoxyCompactList}\item 
 static QString \textbf{ microsecs\+To\+Seconds} (qint64 microsecs)
-\begin{DoxyCompactList}\small\item\em Transforme "{}1234000000"{} en "{}1234"{}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Transforme 1\textquotesingle{}234\textquotesingle{}000\textquotesingle{}000 en "{}1234"{}. \end{DoxyCompactList}\item 
 static QString \textbf{ microsecs\+To\+Frames} (qint64 microsecs, double framerate)
 \begin{DoxyCompactList}\small\item\em Convertit un nombre de microsecondes en un nombre de frames (selon un certains framerate) \end{DoxyCompactList}\item 
 static QString \textbf{ microsecs\+To\+Millis} (qint64 microsecs)
-\begin{DoxyCompactList}\small\item\em Transforme "{}1\+\_\+234\+\_\+000\+\_\+000"{} en "{}1\+\_\+1234\+\_\+000"{}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Transforme 1\textquotesingle{}234\textquotesingle{}000\textquotesingle{}000 en "{}1234000"{}. \end{DoxyCompactList}\item 
 static QString \textbf{ microseconds} (qint64 microsecs)
-\begin{DoxyCompactList}\small\item\em Transforme une valeur numérique (ex\+: 1234000000) en un texte (ex\+: "{}1234000000"{}). \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Transforme une valeur numérique (ex\+: 1\textquotesingle{}234\textquotesingle{}000\textquotesingle{}000) en un texte (ex\+: "{}1234000000"{}). \end{DoxyCompactList}\item 
 static QString \textbf{ microsecs\+To\+HMSI} (qint64 microsecs, double framerate)
-\begin{DoxyCompactList}\small\item\em Transforme "{}1234000000"{} en "{}00\+:20\+:34\+:00"{}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Transforme 1\textquotesingle{}234\textquotesingle{}000\textquotesingle{}000 en "{}00\+:20\+:34\+:00"{}. \end{DoxyCompactList}\item 
 static QString \textbf{ microsecs\+To\+HMSM} (qint64 microsecs)
-\begin{DoxyCompactList}\small\item\em Transforme "{}1234000000"{} en "{}00\+:20\+:34,000"{}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Transforme 1\textquotesingle{}234\textquotesingle{}000\textquotesingle{}000 en "{}00\+:20\+:34,000"{}. \end{DoxyCompactList}\item 
 static QString \textbf{ microsecs\+To\+Raw\+HMSI} (qint64 microsecs, double framerate)
-\begin{DoxyCompactList}\small\item\em Transforme 1234000000 en "{}00203400"{}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Transforme 1\textquotesingle{}234\textquotesingle{}000\textquotesingle{}000 en "{}00203400"{}. \end{DoxyCompactList}\item 
 static QString \textbf{ microsecs\+To\+DHMSM} (qint64 microsecs)
-\begin{DoxyCompactList}\small\item\em Transforme "{}1234000000"{} en "{}0 days 00\+:20\+:34,000"{}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Transforme 1\textquotesingle{}234\textquotesingle{}000\textquotesingle{}000 en "{}0 days 00\+:20\+:34,000"{}. \end{DoxyCompactList}\item 
 static qint64 \textbf{ to\+Microseconds} (QString value, double conversion\+Facteur)
 \begin{DoxyCompactList}\small\item\em Transforme une unité quelconque (string) en microsecondes (numerique). \end{DoxyCompactList}\item 
 static void \textbf{ set\+Ntsc\+Frame\+Per\+Sec} (double framerate)
@@ -53,19 +53,19 @@ static double \textbf{ get\+Ntsc\+Frame\+Per\+Sec} ()
 \begin{DoxyCompactItemize}
 \item 
 \label{class_converter_a5de14d43d9f9592a0728bd18f0148647} 
-static const qint64 {\bfseries us\+\_\+\+Per\+Hour} = 3600000000
+static const qint64 {\bfseries us\+\_\+\+Per\+Hour} = 3\textquotesingle{}600\textquotesingle{}000\textquotesingle{}000
 \item 
 \label{class_converter_a8f0407db3de9dbdb8850251335ea2027} 
 static const qint64 {\bfseries us\+\_\+\+Per\+Day} = us\+\_\+\+Per\+Hour $\ast$ 24
 \item 
 \label{class_converter_a5dd07663819b2a22aecab31093bbdf3a} 
-static const qint64 {\bfseries us\+\_\+\+Per\+Minute} = 60000000
+static const qint64 {\bfseries us\+\_\+\+Per\+Minute} = 60\textquotesingle{}000\textquotesingle{}000
 \item 
 \label{class_converter_ac3b232e9def5d002e03770ef63845588} 
-static const qint64 {\bfseries us\+\_\+\+Per\+Second} = 1000000
+static const qint64 {\bfseries us\+\_\+\+Per\+Second} = 1\textquotesingle{}000\textquotesingle{}000
 \item 
 \label{class_converter_a2d3f6912bc83345f15149fdd76ef5ce0} 
-static const qint64 {\bfseries us\+\_\+\+Per\+Millisec} = 1000
+static const qint64 {\bfseries us\+\_\+\+Per\+Millisec} = 1\textquotesingle{}000
 \item 
 \label{class_converter_af557e23783c54f043eff0f6ee5fb28ad} 
 static const qint64 {\bfseries us\+\_\+\+Per\+Frame25} = us\+\_\+\+Per\+Second / 25
@@ -250,7 +250,7 @@ the corresponding RAW HMSI
 
 
 
-Transforme une valeur numérique (ex\+: 1234000000) en un texte (ex\+: "{}1234000000"{}). 
+Transforme une valeur numérique (ex\+: 1\textquotesingle{}234\textquotesingle{}000\textquotesingle{}000) en un texte (ex\+: "{}1234000000"{}). 
 
 \DoxyHorRuler{0}
  
@@ -269,7 +269,7 @@ a readable string
 
 
 
-Transforme "{}1234000000"{} en "{}0 days 00\+:20\+:34,000"{}. 
+Transforme 1\textquotesingle{}234\textquotesingle{}000\textquotesingle{}000 en "{}0 days 00\+:20\+:34,000"{}. 
 
 \DoxyHorRuler{0}
  
@@ -292,7 +292,7 @@ Convertit un nombre de microsecondes en un nombre de frames (selon un certains f
 
 \DoxyHorRuler{0}
  \begin{DoxyNote}{Note}
-Ex\+: "{}1\+\_\+234\+\_\+000\+\_\+000"{} ms en 25fps donne "{}30\+\_\+850"{} frames. Ex\+: "{}1\+\_\+234\+\_\+000\+\_\+000"{} ms en 50 fps donne "{}61\+\_\+700"{} frames. 
+Ex\+: 1\textquotesingle{}234\textquotesingle{}000\textquotesingle{}000 ms en 25 fps donne "{}30850"{} frames. Ex\+: 1\textquotesingle{}234\textquotesingle{}000\textquotesingle{}000 ms en 50 fps donne "{}61700"{} frames. 
 \end{DoxyNote}
 
 \begin{DoxyParams}{Paramètres}
@@ -302,7 +302,7 @@ Ex\+: "{}1\+\_\+234\+\_\+000\+\_\+000"{} ms en 25fps donne "{}30\+\_\+850"{} fra
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
-the value converted in frames. 
+the value converted in frames, as a string. 
 \end{DoxyReturn}
 \label{class_converter_a825b25f0b8ba64537a3aaf4dbf4daf0d} 
 \index{Converter@{Converter}!microsecsToHMSI@{microsecsToHMSI}}
@@ -312,7 +312,7 @@ the value converted in frames.
 
 
 
-Transforme "{}1234000000"{} en "{}00\+:20\+:34\+:00"{}. 
+Transforme 1\textquotesingle{}234\textquotesingle{}000\textquotesingle{}000 en "{}00\+:20\+:34\+:00"{}. 
 
 \DoxyHorRuler{0}
  
@@ -333,7 +333,7 @@ a readable HMSI value (HH\+:\+MM\+:\+SS\+:II).
 
 
 
-Transforme "{}1234000000"{} en "{}00\+:20\+:34,000"{}. 
+Transforme 1\textquotesingle{}234\textquotesingle{}000\textquotesingle{}000 en "{}00\+:20\+:34,000"{}. 
 
 \DoxyHorRuler{0}
  
@@ -352,7 +352,7 @@ a readable HMSm value (HH\+:\+MM\+:SS,mmm).
 
 
 
-Transforme "{}1\+\_\+234\+\_\+000\+\_\+000"{} en "{}1\+\_\+1234\+\_\+000"{}. 
+Transforme 1\textquotesingle{}234\textquotesingle{}000\textquotesingle{}000 en "{}1234000"{}. 
 
 \DoxyHorRuler{0}
  
@@ -361,7 +361,7 @@ Transforme "{}1\+\_\+234\+\_\+000\+\_\+000"{} en "{}1\+\_\+1234\+\_\+000"{}.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
-the value converted in milliseconds. 
+the value converted in milliseconds, as a string. 
 \end{DoxyReturn}
 \label{class_converter_a979923f4ddda391e436346c92090225e} 
 \index{Converter@{Converter}!microsecsToRawHMSI@{microsecsToRawHMSI}}
@@ -371,7 +371,7 @@ the value converted in milliseconds.
 
 
 
-Transforme 1234000000 en "{}00203400"{}. 
+Transforme 1\textquotesingle{}234\textquotesingle{}000\textquotesingle{}000 en "{}00203400"{}. 
 
 \DoxyHorRuler{0}
  
@@ -392,7 +392,7 @@ a raw HMSI value ("{}\+HHMMSSII"{}).
 
 
 
-Transforme "{}1234000000"{} en "{}1234"{}. 
+Transforme 1\textquotesingle{}234\textquotesingle{}000\textquotesingle{}000 en "{}1234"{}. 
 
 \DoxyHorRuler{0}
  \begin{DoxyNote}{Note}

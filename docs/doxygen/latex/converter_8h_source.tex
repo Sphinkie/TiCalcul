@@ -13,11 +13,11 @@
 \DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//\ On\ définit\ quelques\ constantes.}}
 \DoxyCodeLine{00014\ \ \ \ \ \textcolor{comment}{//\ ***************************************************************************}}
 \DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ qint64\ us\_PerHour\ =\ 3600000000;}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ qint64\ us\_PerHour\ =\ 3'600'000'000;}
 \DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ qint64\ us\_PerDay\ =\ us\_PerHour\ *\ 24;}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ qint64\ us\_PerMinute\ =\ 60000000;}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ qint64\ us\_PerSecond\ =\ \ 1000000;}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ qint64\ us\_PerMillisec\ =\ \ \ 1000;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ qint64\ us\_PerMinute\ =\ 60'000'000;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ qint64\ us\_PerSecond\ =\ \ 1'000'000;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ qint64\ us\_PerMillisec\ =\ \ \ \ 1'000;}
 \DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ qint64\ us\_PerFrame25\ =\ us\_PerSecond\ /\ 25;}
 \DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ qint64\ us\_PerFrame50\ =\ us\_PerSecond\ /\ 50;}
 \DoxyCodeLine{00023\ }
@@ -33,8 +33,8 @@
 \DoxyCodeLine{00033\ }
 \DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ QString\ addSpaceSeparator(QString\ value);}
 \DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ QString\ HMSItoRawHMSI(\textcolor{keyword}{const}\ QString\ hmsi);}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ qint64\ HMSItoMicroseconds(QString\ hmsi,\ \textcolor{keywordtype}{double}\ framerate);}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ qint64\ rawHMSItoMicroseconds(QString\ raw\_hmsi,\ \textcolor{keywordtype}{double}\ framerate);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ qint64\ \ HMSItoMicroseconds(QString\ hmsi,\ \textcolor{keywordtype}{double}\ framerate);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ qint64\ \ rawHMSItoMicroseconds(QString\ raw\_hmsi,\ \textcolor{keywordtype}{double}\ framerate);}
 \DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ QString\ completeRawHMSIWithDots(QString\ raw\_hmsi);}
 \DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ QString\ microsecsToSeconds(qint64\ microsecs);}
 \DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ QString\ microsecsToFrames(qint64\ microsecs,\ \textcolor{keywordtype}{double}\ framerate);}

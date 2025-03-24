@@ -20,6 +20,12 @@ Graphe d\textquotesingle{}héritage de Calculateur\+:\begin{figure}[H]
 \item 
 void \textbf{ on\+Valeur\+Pivot\+Changed} ()
 \begin{DoxyCompactList}\small\item\em Si la valeur de l\textquotesingle{}un des opérandes à changé, on actualise le resultat. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Signaux}
+\begin{DoxyCompactItemize}
+\item 
+\label{class_calculateur_a0871fc66d8f899c60725a8973cb35687} 
+void {\bfseries operateur\+Changed} ()
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
@@ -35,6 +41,18 @@ Q\+\_\+\+INVOKABLE void \textbf{ swap} ()
 \begin{DoxyCompactList}\small\item\em Echange la valeur des opérandes TC1 et TC2. \end{DoxyCompactList}\item 
 Q\+\_\+\+INVOKABLE void \textbf{ memorize} ()
 \begin{DoxyCompactList}\small\item\em Recopie la valeur du résultat dans l\textquotesingle{}opérande TC1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Attributs publics}
+\begin{DoxyCompactItemize}
+\item 
+\label{class_calculateur_ac0a9eb3b71c604cdd1f61e3bf47fd060} 
+QString {\bfseries m\+Operateur} = "{}"{}
+\begin{DoxyCompactList}\small\item\em opération en cours (string affichable) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Propriétés}
+\begin{DoxyCompactItemize}
+\item 
+\label{class_calculateur_a9a7a48086b760a1f4b90477dfcf1a5c7} 
+QString {\bfseries operateur}
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Types privés}
 \begin{DoxyCompactItemize}
 \item 
@@ -57,8 +75,8 @@ enum {\bfseries Operation} \{ {\bfseries none}
 \label{class_calculateur_a76c1a08c566b0ad47c5e071f9be2d750} 
 \textbf{ Operande} $\ast$ {\bfseries m\+Result}
 \begin{DoxyCompactList}\small\item\em opérande résultat. \end{DoxyCompactList}\item 
-\label{class_calculateur_a1f5056194c7ec8b4a5e10fbba0dc7d5b} 
-enum Calculateur\+::\+Operation {\bfseries m\+Operation} = none
+\label{class_calculateur_acf010d9d07febbc92418556f0a8d5ce2} 
+Operation {\bfseries m\+Operation} = none
 \begin{DoxyCompactList}\small\item\em opération en cours \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 

@@ -27,7 +27,7 @@
   <td id="projectalign">
    <div id="projectname">TiCalcul<span id="projectnumber">&#160;1.0</span>
    </div>
-   <div id="projectbrief">A tiny Timecode calculator</div>
+   <div id="projectbrief">A tiny Timecode Calculator</div>
   </td>
  </tr>
  </tbody>
@@ -92,7 +92,10 @@ $(document).ready(function(){initNavTree('class_calculateur.html',''); initResiz
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Connecteurs publics</a> &#124;
+<a href="#signals">Signaux</a> &#124;
 <a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pub-attribs">Attributs publics</a> &#124;
+<a href="#properties">Propriétés</a> &#124;
 <a href="#pri-types">Types privés</a> &#124;
 <a href="#pri-attribs">Attributs privés</a> &#124;
 <a href="class_calculateur-members.html">Liste de tous les membres</a>  </div>
@@ -117,6 +120,12 @@ Connecteurs publics</h2></td></tr>
 <tr class="memdesc:a05f6e0f59fe3650890941daa4f4ae375"><td class="mdescLeft">&#160;</td><td class="mdescRight">Si la valeur de l'un des opérandes à changé, on actualise le resultat.  <br /></td></tr>
 <tr class="separator:a05f6e0f59fe3650890941daa4f4ae375"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
+Signaux</h2></td></tr>
+<tr class="memitem:a0871fc66d8f899c60725a8973cb35687" id="r_a0871fc66d8f899c60725a8973cb35687"><td class="memItemLeft" align="right" valign="top"><a id="a0871fc66d8f899c60725a8973cb35687" name="a0871fc66d8f899c60725a8973cb35687"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>operateurChanged</b> ()</td></tr>
+<tr class="separator:a0871fc66d8f899c60725a8973cb35687"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a339ed32a65b673f14adfba04a13f61ad" id="r_a339ed32a65b673f14adfba04a13f61ad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_calculateur.html#a339ed32a65b673f14adfba04a13f61ad">Calculateur</a> (<a class="el" href="class_operande.html">Operande</a> *tc1, <a class="el" href="class_operande.html">Operande</a> *tc2, <a class="el" href="class_operande.html">Operande</a> *result, QObject *parent=nullptr)</td></tr>
@@ -137,6 +146,19 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:ad39dfe4d8132b5f9e240259d91542eaf" id="r_ad39dfe4d8132b5f9e240259d91542eaf"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_calculateur.html#ad39dfe4d8132b5f9e240259d91542eaf">memorize</a> ()</td></tr>
 <tr class="memdesc:ad39dfe4d8132b5f9e240259d91542eaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recopie la valeur du résultat dans l'opérande TC1.  <br /></td></tr>
 <tr class="separator:ad39dfe4d8132b5f9e240259d91542eaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Attributs publics</h2></td></tr>
+<tr class="memitem:ac0a9eb3b71c604cdd1f61e3bf47fd060" id="r_ac0a9eb3b71c604cdd1f61e3bf47fd060"><td class="memItemLeft" align="right" valign="top"><a id="ac0a9eb3b71c604cdd1f61e3bf47fd060" name="ac0a9eb3b71c604cdd1f61e3bf47fd060"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><b>mOperateur</b> = &quot;&quot;</td></tr>
+<tr class="memdesc:ac0a9eb3b71c604cdd1f61e3bf47fd060"><td class="mdescLeft">&#160;</td><td class="mdescRight">opération en cours (string affichable) <br /></td></tr>
+<tr class="separator:ac0a9eb3b71c604cdd1f61e3bf47fd060"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
+Propriétés</h2></td></tr>
+<tr class="memitem:a9a7a48086b760a1f4b90477dfcf1a5c7" id="r_a9a7a48086b760a1f4b90477dfcf1a5c7"><td class="memItemLeft" align="right" valign="top"><a id="a9a7a48086b760a1f4b90477dfcf1a5c7" name="a9a7a48086b760a1f4b90477dfcf1a5c7"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><b>operateur</b></td></tr>
+<tr class="separator:a9a7a48086b760a1f4b90477dfcf1a5c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
 Types privés</h2></td></tr>
@@ -161,10 +183,10 @@ Attributs privés</h2></td></tr>
 <a class="el" href="class_operande.html">Operande</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mResult</b></td></tr>
 <tr class="memdesc:a76c1a08c566b0ad47c5e071f9be2d750"><td class="mdescLeft">&#160;</td><td class="mdescRight">opérande résultat. <br /></td></tr>
 <tr class="separator:a76c1a08c566b0ad47c5e071f9be2d750"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f5056194c7ec8b4a5e10fbba0dc7d5b" id="r_a1f5056194c7ec8b4a5e10fbba0dc7d5b"><td class="memItemLeft" align="right" valign="top"><a id="a1f5056194c7ec8b4a5e10fbba0dc7d5b" name="a1f5056194c7ec8b4a5e10fbba0dc7d5b"></a>
-enum Calculateur::Operation&#160;</td><td class="memItemRight" valign="bottom"><b>mOperation</b> = none</td></tr>
-<tr class="memdesc:a1f5056194c7ec8b4a5e10fbba0dc7d5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">opération en cours <br /></td></tr>
-<tr class="separator:a1f5056194c7ec8b4a5e10fbba0dc7d5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf010d9d07febbc92418556f0a8d5ce2" id="r_acf010d9d07febbc92418556f0a8d5ce2"><td class="memItemLeft" align="right" valign="top"><a id="acf010d9d07febbc92418556f0a8d5ce2" name="acf010d9d07febbc92418556f0a8d5ce2"></a>
+Operation&#160;</td><td class="memItemRight" valign="bottom"><b>mOperation</b> = none</td></tr>
+<tr class="memdesc:acf010d9d07febbc92418556f0a8d5ce2"><td class="mdescLeft">&#160;</td><td class="mdescRight">opération en cours <br /></td></tr>
+<tr class="separator:acf010d9d07febbc92418556f0a8d5ce2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>La classe <a class="el" href="class_calculateur.html" title="La classe Calculateur est en charge de gérer les opérations entre les opérandes: addition,...">Calculateur</a> est en charge de gérer les opérations entre les opérandes: addition, soustraction, complément. </p>

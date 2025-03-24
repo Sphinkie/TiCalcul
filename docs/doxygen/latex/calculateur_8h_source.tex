@@ -12,26 +12,33 @@
 \DoxyCodeLine{00014\ \textcolor{keyword}{class\ }Calculateur\ :\ \textcolor{keyword}{public}\ QObject}
 \DoxyCodeLine{00015\ \{}
 \DoxyCodeLine{00016\ \ \ \ \ Q\_OBJECT}
-\DoxyCodeLine{00017\ }
-\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{explicit}\ Calculateur(Operande*\ tc1,\ Operande*\ tc2,\ Operande*\ result,\ QObject*\ parent\ =\ \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{00020\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ complement();}
-\DoxyCodeLine{00021\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ add();}
-\DoxyCodeLine{00022\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ substract();}
-\DoxyCodeLine{00023\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ swap();}
-\DoxyCodeLine{00024\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ memorize();}
-\DoxyCodeLine{00025\ }
-\DoxyCodeLine{00026\ \textcolor{keyword}{public}\ slots:}
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ onValeurPivotChanged();}
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00030\ \ \ \ \ Operande*\ mTC1;\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00031\ \ \ \ \ Operande*\ mTC2;\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00032\ \ \ \ \ Operande*\ mResult;\ \ \ \ \ \ }
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{enum}\ Operation\ \{none,\ addition,\ soustraction,\ complt\}}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ mOperation\ =\ none;\ \ }
-\DoxyCodeLine{00035\ \};}
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CALCULATEUR\_H}}
+\DoxyCodeLine{00017\ \ \ \ \ Q\_PROPERTY(QString\ operateur\ MEMBER\ mOperateur\ NOTIFY\ operateurChanged)}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{explicit}\ Calculateur(Operande*\ tc1,\ Operande*\ tc2,\ Operande*\ result,\ QObject*\ parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00021\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ complement();}
+\DoxyCodeLine{00022\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ add();}
+\DoxyCodeLine{00023\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ substract();}
+\DoxyCodeLine{00024\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ swap();}
+\DoxyCodeLine{00025\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ memorize();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ onValeurPivotChanged();}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ signals:}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ operateurChanged();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ QString\ mOperateur\ =\ \textcolor{stringliteral}{"{}"{}};\ \ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037\ \ \ \ \ Operande*\ mTC1;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ Operande*\ mTC2;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ Operande*\ mResult;\ \ \ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{enum}\ Operation\ \{none,\ addition,\ soustraction,\ complt\};}
+\DoxyCodeLine{00041\ \ \ \ \ Operation\ mOperation\ =\ none;\ \ }
+\DoxyCodeLine{00042\ \};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CALCULATEUR\_H}}
 
 \end{DoxyCode}
