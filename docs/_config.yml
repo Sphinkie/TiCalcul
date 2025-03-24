@@ -1,0 +1,9 @@
+theme: jekyll-theme-slate
+title: Ti Calcul
+description: A desktop application calculate video timecodes.
+show_downloads: false
+
+github:
+  zip_url: https://github.com/Sphinkie/tiCalcul/releases/latest/download/TiCalculSetup.zip
+  owner_name: David de Lorenzo
+  owner_url: https://sphinkie.github.io/
