@@ -4,16 +4,20 @@
 
 /*! **********************************************************************************************************
  * \class Operande
+ * \inmodule tiCalcul
  * \brief La class Operande gère la "valeur pivot" (cad en microsecondes) de l'opérande TC1 ou de TC2.
+ *
  *************************************************************************************************************/
 
 
 /*! **********************************************************************************************************
- * \brief Constructeur: crée les 8 Afficheur de cet opérande, et les connecte pour leur envoyer un signal
- *        à chaque modification de la valeur pivot.
- * \note L'afficheur NTSC est désactivé pour le moment.
+ * \brief Constructeur.
+ *
  * \a name: Le nom de l'operande: "tc1" ou "tc2" ou "result".
  * \a parent: Pointeur sur QObject parent.
+ * Crée les 8 Afficheur de cet opérande, et les connecte pour leur envoyer un signal
+ * à chaque modification de la valeur pivot.
+ * \note L'afficheur NTSC est désactivé pour le moment.
  *************************************************************************************************************/
 Operande::Operande(const QString name, QObject* parent)
 {
@@ -59,13 +63,16 @@ qint64 Operande::valeurPivot() const
 
 
 /*! **********************************************************************************************************
- * \brief SLOT : Reçoit une nouvelle valeur pivot d'un Afficheur et la propage à tous les Afficheurs.
- *               Peut aussi être positionné par le calculateur.
- * \a newValeurPivot: Timecode en microsecondes.
- * \note Réception du signal Afficheur::setValeurPivot()
- * \note Envoie le signal Operande::valeurPivotChanged() aux Afficheur.
- * \note Le slot de réception des Afficheur est setValue()
- *************************************************************************************************************/
+ * Ce slot recoit une nouvelle valeur pivot d'un Afficheur et la propage à tous les Afficheurs.
+ *
+ * La \a newValeurPivot est exprimées en microsecondes, et le paramètre \a force précise
+ * s'il faut la prendre en compte même si le champ est en cours d'édition.
+ *
+ * Peut aussi être positionné par le calculateur. \br
+ * Réception du signal Afficheur::setValeurPivot(). \br
+ * Envoie le signal Operande::valeurPivotChanged() aux Afficheur. \br
+ * Le slot de réception des Afficheur est setValue() \br
+ * ************************************************************************************************************/
 void Operande::setValeurPivot(const qint64 newValeurPivot, const bool force)
 {
     if (newValeurPivot > this->mMaxValue)

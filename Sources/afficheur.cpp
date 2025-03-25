@@ -4,6 +4,7 @@
 
 /*! **********************************************************************************************************
  * \class Afficheur
+ * \inmodule tiCalcul
  * \brief La classe Afficheur gère un champ numérique de l'IHM QML.
  * \details Elle est associée à un objet QML FieldInput et lui envoie les valeurs à afficher.
  *          Il y a un Afficheur pour chaque unité: Secondes, Millisecondes, HMSI, etc.
@@ -15,8 +16,8 @@
 /*! **********************************************************************************************************
  * \fn Afficheur::Afficheur()
  * \brief Constructor.
- * @param unit: L'unité correspondante à cet afficheur.
- * @param parent: QObject parent: un Operande. Son nom va servir.
+ * a unit : L'unité correspondante à cet afficheur.
+ * a parent : QObject parent: un Operande. Son nom va servir.
  * ***********************************************************************************************************/
 Afficheur::Afficheur(Unites::Units unit, QObject* parent)
 {
@@ -34,7 +35,7 @@ Afficheur::Afficheur(Unites::Units unit, QObject* parent)
 /*! **********************************************************************************************************
  * \brief SLOT: Permet de changer dynamiquement le framerate des afficheurs HMSI.
  * \note C'est toujours l'afficheur HMSI qui reçoit ce signal
- * @param framerate: le nouveau framerate pour cet afficheur (ex: 25.0)
+ * \a framerate: le nouveau framerate pour cet afficheur (ex: 25.0)
  * ***********************************************************************************************************/
 void Afficheur::setFramerate(double framerate)
 {
@@ -76,7 +77,7 @@ void Afficheur::setFramerate(double framerate)
 /*! **********************************************************************************************************
  * \brief Ajoute un digit à la fin de la chaine de caractères.
  * \note  Met à jour la nouvelle valeur Pivot, si elle a changé.
- * @param digit: Le caractère digit à ajouter.
+ * \a digit: Le caractère digit à ajouter.
  * ***********************************************************************************************************/
 void Afficheur::addDigit(QString digit)
 {
@@ -226,8 +227,8 @@ void Afficheur::removeLastDigit()
 
 /*! **********************************************************************************************************
  * \brief Indique si le HMSI a besoin d'être rectifié, cad si minutes > 59 ou secondes > 59 ou images > 24.
- * @param raw_hmsi: un RAW HMSI du type HHMMSSII
- * @returns true if HMSI needs to be rectified
+ * \a raw_hmsi: un RAW HMSI du type HHMMSSII
+ * returns true if HMSI needs to be rectified
  *************************************************************************************************************/
 bool Afficheur::isIncorrect(const QString raw_hmsi)
 {
@@ -282,8 +283,9 @@ bool Afficheur::isIncorrect(const QString raw_hmsi)
 
 /*! **********************************************************************************************************
  * \brief SLOT: Actualise la variable mIsActive en cas de changement.
- * \sa afficheurActif::activeDisplay
- * @param afficheur: Le nom (objectName) de l'afficheur sélectionné dans le QML.
+ * \a afficheur: Le nom (objectName) de l'afficheur sélectionné dans le QML.
+ *
+ * Voir aussi le signal QML activeDisplay() de l'afficheurActif.
  * ***********************************************************************************************************/
 void Afficheur::activeDisplay(QString afficheur)
 {
@@ -303,7 +305,7 @@ void Afficheur::activeDisplay(QString afficheur)
 
 /*! **********************************************************************************************************
  * \brief SLOT: Efface la valeur de l'afficheur, et ses variables privées.
- * \note Vient du signal valeurPivotCleared() de la classe Operande.
+ * Vient du signal valeurPivotCleared() de la classe Operande.
  * ***********************************************************************************************************/
 void Afficheur::clearValue()
 {
@@ -314,12 +316,15 @@ void Afficheur::clearValue()
     emit displayValueChanged();
 }
 
-
 /*! **********************************************************************************************************
- * \brief SLOT. Recoit la nouvelle valeur pivot de l'opérande, pour la convertir et l'envoyer à l'affichage.
+ * \fn void Afficheur::setValue(const qint64 microsecs, const bool force=false)
+ * \brief Ce SLOT recoit la nouvelle valeur pivot de l'opérande, pour la convertir et l'envoyer à l'affichage.
+ *
+ * La fonction reçoit \a microsecs , la nouvelle valeur pivot en microsecondes. Il la convertit dans l'unité
+ * de l'afficheur et l'envoie au QMl pour $etre affcihée. Le paramètre \a force précise s'il faut prendre en
+ * compte la valeur reçue même si le champ est en cours d'édition.
+ *
  * \sa Operande::valeurPivotChanged()
- * @param microsecs: La valeur pivot en microsecondes.
- * @param force: true pour forcer l'affichage de la valeur du paramètre microsecs
  * ***********************************************************************************************************/
 void Afficheur::setValue(const qint64 microsecs, const bool force)
 {
@@ -364,8 +369,8 @@ void Afficheur::setValue(const qint64 microsecs, const bool force)
  * \note On distingue le cas où la cellule est active (cad en cours d'édition), ou pas.
  *       Si la cellule est active, on ignore la valeur reçue et on continue d'afficher la
  *       valeur brute qui est en cours d'édition.
- * @param value: La valeur brute exprimée dans l'unité de cet afficheur (rawHMSI ou rawNUM).
- * @param force: si true, on prend en compte la valeur, meme si l'afficheur est actif.
+ * \a value: La valeur brute exprimée dans l'unité de cet afficheur (rawHMSI ou rawNUM).
+ * \a force: si true, on prend en compte la valeur, meme si l'afficheur est actif.
  * ***********************************************************************************************************/
 void Afficheur::setDisplayValue(const QString value, const bool force)
 {

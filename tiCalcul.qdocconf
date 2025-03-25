@@ -1,14 +1,31 @@
 # --------------------------------------------------------------------------------------
 # Configuration pour la génération de la QDOC
 # --------------------------------------------------------------------------------------
+
+# Variable globale: chemin des .index de Qt
+QT_INSTALL_DOCS = C:/Qt/Docs/Qt-6.6.1
+
+
+include(C:/Qt/Docs/Qt-6.6.1/global/qt-module-defaults.qdocconf)
+
+#include($QT_INSTALL_DOCS/global/qt-module-defaults.qdocconf)
+
+
+
 # For compatibility issues, include compat.qdocconf:
-#include(compat.qdocconf)
-#include(C:/Qt/Docs/Qt-6.6.0/global/compat.qdocconf)
-#include(C:/Qt/Docs/Qt-6.6.0/global/config.qdocconf)
-#include(C:/Qt/Docs/Qt-6.6.0/global/macros.qdocconf)
-#include(C:/Qt/Docs/Qt-6.6.0/global/qt-cpp-defines.qdocconf)
-#include(C:/Qt/Docs/Qt-6.6.0/global/fileextensions.qdocconf)
-#include(C:/Qt/Docs/Qt-6.6.0/global/qt-html-templates-offline.qdocconf)
+
+QT_VER = 6.8
+QT_VERSION = 6.8
+QT_VERSION_TAG = open-source
+
+include($QTDIR/doc/global/compat.qdocconf)
+include($QTDIR/doc/global/qt-cpp-defines.qdocconf)
+include($QTDIR/doc/global/fileextensions.qdocconf)
+include($QTDIR/doc/global/qt-html-templates-offline.qdocconf)
+
+include($QTDIR/doc/global/config.qdocconf)
+include($QTDIR/doc/global/macros.qdocconf)
+include($QTDIR/doc/global/qt-module-defaults.qdocconf)
 
 # --------------------------------------------------------------------------------------
 # Commande de génération dans le "command prompt avec environnement de build":
@@ -22,16 +39,19 @@
 # Voir "The Qt Help Framework": https://doc.qt.io/qt-6/qthelp-framework.html
 # Ajout du fichier ".qch" dans Qt Creator : Menu Edit > Preferences > Help > Documentation > Add.
 #
+# see also https://decovar.dev/blog/2017/05/24/documenting-qt-project-with-qdoc/
+# analyse des pb: https://doc.qt.io/qt-6/qdoc-warnings.html
+#
 # qhelpgenerator tiCalcul.qhp -o tiCalcul.qch
+# Ensuite appuyer sur F1 dan QtCreator
 # --------------------------------------------------------------------------------------
-
-# Variable globale: chemin des .index de Qt
-qt_install_docs = C:/Qt/Docs/Qt-6.6.0
 
 
 # Titre de la documentation project:
 project = tiCalcul
 description = The ultimate Timecode Calculator
+version                = 0.1
+url                    = http://cara.uai.it/
 
 # Additional include paths to QDoc when parsing C++ code for documentation comments.
 # Equivalent au -I de la ligne de commande
@@ -42,27 +62,53 @@ includepaths += ./Sources
 # voir pour le QML : https://forum.qt.io/topic/101832/linking-to-qt-offline-documentation-with-qdoc
 
 indexes += \
-    ${qt_install_docs}/qtcore/qtcore.index \
-    ${qt_install_docs}/qtdoc/qtdoc.index \
-    ${qt_install_docs}/qtquick/qtquick.index
+    ${QT_INSTALL_DOCS}/qtcore/qtcore.index \
+    ${QT_INSTALL_DOCS}/qtdoc/qtdoc.index \
+    ${QT_INSTALL_DOCS}/qtquick/qtquick.index
 
-# indexes += ${qt_install_docs}/qtlocation/qtlocation.index
-# indexes += ${qt_install_docs}/qtpositioning/qtpositioning.index
+# indexes += ${QT_INSTALL_DOCS}/qtlocation/qtlocation.index
+# indexes += ${QT_INSTALL_DOCS}/qtpositioning/qtpositioning.index
 
-depends = *
+# depends = *
 # depends = qtdoc qtcore qtquick qtlocation
+depends += qtcore qtnetwork qtopengl qtsvg qtqml qtquick qtwidgets qtdoc
 
 # File extensions (Liste prédéfinie ou liste manuelle):
 #include(fileextensions.qdocconf)
 headers.fileextensions  = "*.h *.hpp"
 sources.fileextensions  = "*.cpp *.qml *.qdoc"
 
+includepaths  +=  $QTDIR
+# C:/Qt/6.2.4/msvc2019_64 \
+# C:/Qt/6.2.4/Src
+
 # The directory where QDoc places the generated documentation.
 outputdir   = ./docs/qdoc/html
 outputformats = HTML
 
+# Vérification du paramétrage de Qhelp (Qt6.6)
+qhp = false
+
+# qhp.projects            = QtGui
+
+# qhp.QtGui.file         = qtgui.qhp
+# qhp.QtGui.namespace           = org.qt-project.qtgui.$QT_VERSION_TAG
+# qhp.QtGui.virtualFolder       = qtgui
+# qhp.QtGui.indexTitle          = Qt GUI
+# qhp.QtGui.indexRoot           =
+
+# qhp.QtGui.subprojects         = classes
+# qhp.QtGui.subprojects.classes.title = C++ Classes
+# qhp.QtGui.subprojects.classes.indexTitle = Qt GUI C++ Classes
+# qhp.QtGui.subprojects.classes.selectors = class fake:headerfile
+# qhp.QtGui.subprojects.classes.sortPages = true
+
+
+
+
+
 # The directories that contain the header files associated with the .cpp source files used in the documentation.
-headerdirs  = ./Sources
+headerdirs += ./Sources
 
 # The directories that contain the .cpp or .qdoc files used in the documentation.
 sourcedirs  = ./Sources
@@ -78,3 +124,7 @@ imagedirs   = ./docs/images
 # down documentation issues.
 #warninglimit = 0
 #warninglimit.enabled = true
+
+# pour un look dark ?
+# HTML.stylesheets       = ./docs/qdoc/html/style/offline-dark.css
+# HTML.headerstyles      = "<link rel=\"stylesheet\" type=\"text/css\" href=\"style/offline.css\"/>\n"

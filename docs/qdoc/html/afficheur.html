@@ -4,10 +4,37 @@
   <meta charset="utf-8">
 <!-- afficheur.cpp -->
   <meta name="description" content="La classe Afficheur gère un champ numérique de l'IHM QML.">
-  <title>Afficheur Class | tiCalcul</title>
+  <title>Afficheur Class | Qt 6.8 0.1</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
 </head>
 <body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="https://doc.qt.io/qt/index.html" translate="no">Qt 6.8</a></li>
 <li>Afficheur</li>
+<li id="buildversion">Qt 6.8 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
 <div class="sidebar">
 <div class="toc">
 <h3 id="toc">Contents</h3>
@@ -22,7 +49,7 @@
 <p>La classe Afficheur gère un champ numérique de l'IHM QML. <a href="#details">More...</a></p>
 <!-- @@@Afficheur -->
 <div class="table"><table class="alignedsummary" translate="no">
-<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> <span class="preprocessor">#include &lt;Afficheur&gt;</span></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">  <span class="preprocessor">#include &lt;Afficheur&gt;</span></td></tr>
 </table></div>
 <ul>
 <li><a href="afficheur-members.html">List of all members, including inherited members</a></li>
@@ -50,31 +77,39 @@
 <!-- $$$Afficheur[overload1]$$$Afficheur -->
 <h3 class="fn" translate="no" id="Afficheur"><code translate="no">[noexcept default] </code>Afficheur::<span class="name">Afficheur</span>()</h3>
 <p>**********************************************************************************************************</p>
-<p>Constructor. @param unit: L'unité correspondante à cet afficheur. @param parent: QObject parent: un Operande. Son nom va servir. **********************************************************************************************************</p>
+<p>Constructor. a unit : L'unité correspondante à cet afficheur. a parent : <a href="https://doc.qt.io/qt/qobject.html" translate="no">QObject</a> parent: un Operande. Son nom va servir. **********************************************************************************************************</p>
 <!-- @@@Afficheur -->
 <!-- $$$activeDisplay[overload1]$$$activeDisplayint -->
 <h3 class="fn" translate="no" id="activeDisplay"><span class="type">void</span> Afficheur::<span class="name">activeDisplay</span>(<span class="type">int</span> <i>afficheur</i>)</h3>
 <p>**********************************************************************************************************</p>
-<p>SLOT: Actualise la variable mIsActive en cas de changement.</p>
-<p>@param afficheur: Le nom (objectName) de l'afficheur sélectionné dans le QML. **********************************************************************************************************</p>
-<p><b>See also </b>afficheurActif::activeDisplay.</p>
+<p>SLOT: Actualise la variable mIsActive en cas de changement. <i translate="no">afficheur</i>: Le nom (objectName) de l'afficheur sélectionné dans le QML.</p>
+<p>Voir aussi le signal QML activeDisplay() de l'afficheurActif. **********************************************************************************************************</p>
 <!-- @@@activeDisplay -->
 <!-- $$$clearValue[overload1]$$$clearValue -->
 <h3 class="fn" translate="no" id="clearValue"><span class="type">void</span> Afficheur::<span class="name">clearValue</span>()</h3>
 <p>**********************************************************************************************************</p>
-<p>SLOT: Efface la valeur de l'afficheur, et ses variables privées.</p>
-<div class="admonition note">
-<p><b>Note: </b>Vient du signal valeurPivotCleared() de la classe Operande. **********************************************************************************************************</p>
-</div>
+<p>SLOT: Efface la valeur de l'afficheur, et ses variables privées. Vient du signal valeurPivotCleared() de la classe Operande. **********************************************************************************************************</p>
 <!-- @@@clearValue -->
 <!-- $$$setFramerate[overload1]$$$setFrameratedouble -->
 <h3 class="fn" translate="no" id="setFramerate"><span class="type">void</span> Afficheur::<span class="name">setFramerate</span>(<span class="type">double</span> <i>framerate</i>)</h3>
 <p>**********************************************************************************************************</p>
 <p>SLOT: Permet de changer dynamiquement le framerate des afficheurs HMSI.</p>
 <div class="admonition note">
-<p><b>Note: </b>C'est toujours l'afficheur HMSI qui reçoit ce signal @param framerate: le nouveau framerate pour cet afficheur (ex: 25.0) **********************************************************************************************************</p>
+<p><b>Note: </b>C'est toujours l'afficheur HMSI qui reçoit ce signal <i translate="no">framerate</i>: le nouveau framerate pour cet afficheur (ex: 25.0) **********************************************************************************************************</p>
 </div>
 <!-- @@@setFramerate -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2023 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are <a href="https://doc.qt.io/qt/trademarks.html">    trademarks</a> of The Qt Company Ltd. in Finland and/or other countries
+   worldwide. All other trademarks are property of their respective owners. </p>
 </div>
 </body>
 </html>

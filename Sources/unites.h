@@ -4,6 +4,11 @@
 #include<QMap>
 #include "converter.h"
 
+/*!
+   \headerfile <Unites>
+   \title Time units
+   \brief The <Unites> header file provides generic data on time units.
+*/
 
 class Unites
 {
