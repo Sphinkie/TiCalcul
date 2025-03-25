@@ -5,10 +5,6 @@
 La class \doxyref{Operande}{p.}{class_operande} gère la "{}valeur pivot"{} (cad en microsecondes) de l\textquotesingle{}opérande TC1 ou de TC2.  
 
 
-
-
-{\ttfamily \#include $<$operande.\+h$>$}
-
 Graphe d\textquotesingle{}héritage de Operande\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -19,7 +15,7 @@ Graphe d\textquotesingle{}héritage de Operande\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 void \textbf{ set\+Valeur\+Pivot} (const qint64 new\+Valeur\+Pivot, const bool force=false)
-\begin{DoxyCompactList}\small\item\em SLOT \+: Reçoit une nouvelle valeur pivot d\textquotesingle{}un \doxyref{Afficheur}{p.}{class_afficheur} et la propage à tous les Afficheurs. Peut aussi être positionné par le calculateur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em SLOT \+: Reçoit une nouvelle valeur pivot d\textquotesingle{}un \doxyref{Afficheur}{p.}{class_afficheur} et la propage à tous les Afficheurs. Peut aussi être positionné par le calculateur. {\itshape new\+Valeur\+Pivot\+:} Timecode en microsecondes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Signaux}
 \begin{DoxyCompactItemize}
 \item 
@@ -35,11 +31,11 @@ void {\bfseries valeur\+Pivot\+Cleared} ()
 \textbf{ Operande} (const QString name, QObject $\ast$parent=nullptr)
 \begin{DoxyCompactList}\small\item\em Constructeur\+: crée les 8 \doxyref{Afficheur}{p.}{class_afficheur} de cet opérande, et les connecte pour leur envoyer un signal à chaque modification de la valeur pivot. \end{DoxyCompactList}\item 
 qint64 \textbf{ valeur\+Pivot} () const
-\begin{DoxyCompactList}\small\item\em Renvoie la valeur Pivot (en microsecondes). \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Renvoie la valeur Pivot (en microsecondes). Returns the value in microseconds. \end{DoxyCompactList}\item 
 void \textbf{ register\+Context} (QQml\+Context $\ast$context)
 \begin{DoxyCompactList}\small\item\em Enregistre les \doxyref{Afficheur}{p.}{class_afficheur} dans le contexte QML, pour pouvoir les afficher. \end{DoxyCompactList}\item 
 Q\+\_\+\+INVOKABLE void \textbf{ connect\+Active\+Display} (QQml\+Application\+Engine $\ast$engine)
-\begin{DoxyCompactList}\small\item\em Cree des connexions entre l\textquotesingle{}objet QML "{}afficheur\+Actif"{} et tous les Afficheurs. Ainsi, lorsque l\textquotesingle{}\doxyref{Afficheur}{p.}{class_afficheur} actif change, tous les afficheurs sont informés. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Cree des connexions entre l\textquotesingle{}objet QML "{}afficheur\+Actif"{} et tous les Afficheurs. Ainsi, lorsque l\textquotesingle{}\doxyref{Afficheur}{p.}{class_afficheur} actif change, tous les afficheurs sont informés. {\itshape engine\+:} un pointeur sur le moteur QML. \end{DoxyCompactList}\item 
 Q\+\_\+\+INVOKABLE void \textbf{ clear\+Valeur\+Pivot} ()
 \begin{DoxyCompactList}\small\item\em SLOT \+: Vide la valeur pivot, et efface la valeur de tous les \doxyref{Afficheur}{p.}{class_afficheur}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Attributs privés}
@@ -98,15 +94,8 @@ Constructeur\+: crée les 8 \doxyref{Afficheur}{p.}{class_afficheur} de cet opé
 
 \DoxyHorRuler{0}
  \begin{DoxyNote}{Note}
-L\textquotesingle{}afficheur NTSC est désactivé pour le moment. 
+L\textquotesingle{}afficheur NTSC est désactivé pour le moment. {\itshape name\+:} Le nom de l\textquotesingle{}operande\+: "{}tc1"{} ou "{}tc2"{} ou "{}result"{}. {\itshape parent\+:} Pointeur sur QObject parent. 
 \end{DoxyNote}
-
-\begin{DoxyParams}{Paramètres}
-{\em name} & Le nom de l\textquotesingle{}operande\+: "{}tc1"{} ou "{}tc2"{} ou "{}result"{}. \\
-\hline
-{\em parent} & Pointeur sur QObject parent. \\
-\hline
-\end{DoxyParams}
 
 
 \doxysubsection{Documentation des fonctions membres}
@@ -122,7 +111,7 @@ SLOT \+: Vide la valeur pivot, et efface la valeur de tous les \doxyref{Afficheu
 
 \DoxyHorRuler{0}
  \begin{DoxySeeAlso}{Voir également}
-Signal \doxyref{Afficheur\+::clear\+Value()}{p.}{class_afficheur_a614d213a452354ca50df495510bd9c8d} 
+\doxyref{Afficheur\+::clear\+Value()}{p.}{class_afficheur_a614d213a452354ca50df495510bd9c8d} 
 \end{DoxySeeAlso}
 \label{class_operande_a628f15c5df1c19e3744fdc2a652885fb} 
 \index{Operande@{Operande}!connectActiveDisplay@{connectActiveDisplay}}
@@ -132,15 +121,10 @@ Signal \doxyref{Afficheur\+::clear\+Value()}{p.}{class_afficheur_a614d213a452354
 
 
 
-Cree des connexions entre l\textquotesingle{}objet QML "{}afficheur\+Actif"{} et tous les Afficheurs. Ainsi, lorsque l\textquotesingle{}\doxyref{Afficheur}{p.}{class_afficheur} actif change, tous les afficheurs sont informés. 
+Cree des connexions entre l\textquotesingle{}objet QML "{}afficheur\+Actif"{} et tous les Afficheurs. Ainsi, lorsque l\textquotesingle{}\doxyref{Afficheur}{p.}{class_afficheur} actif change, tous les afficheurs sont informés. {\itshape engine\+:} un pointeur sur le moteur QML. 
 
 \DoxyHorRuler{0}
- 
-\begin{DoxyParams}{Paramètres}
-{\em engine} & un pointeur sur le moteur QML. \\
-\hline
-\end{DoxyParams}
-\label{class_operande_a8fd5799d50aa994d23700b09a9fd74fb} 
+  \label{class_operande_a8fd5799d50aa994d23700b09a9fd74fb} 
 \index{Operande@{Operande}!registerContext@{registerContext}}
 \index{registerContext@{registerContext}!Operande@{Operande}}
 \doxysubsubsection{registerContext()}
@@ -152,13 +136,8 @@ Enregistre les \doxyref{Afficheur}{p.}{class_afficheur} dans le contexte QML, po
 
 \DoxyHorRuler{0}
  \begin{DoxyNote}{Note}
-Les property names seront du type "{}tc1\+\_\+aff\+\_\+1"{} 
+Les property names seront du type "{}tc1\+\_\+aff\+\_\+1"{} {\itshape context\+:} Le root\+Context de l\textquotesingle{}application. 
 \end{DoxyNote}
-
-\begin{DoxyParams}{Paramètres}
-{\em context} & Le root\+Context de l\textquotesingle{}application. \\
-\hline
-\end{DoxyParams}
 \label{class_operande_a75d4ba1eea84722966e75a02f5b6bedb} 
 \index{Operande@{Operande}!setValeurPivot@{setValeurPivot}}
 \index{setValeurPivot@{setValeurPivot}!Operande@{Operande}}
@@ -167,21 +146,16 @@ Les property names seront du type "{}tc1\+\_\+aff\+\_\+1"{}
 
 
 
-SLOT \+: Reçoit une nouvelle valeur pivot d\textquotesingle{}un \doxyref{Afficheur}{p.}{class_afficheur} et la propage à tous les Afficheurs. Peut aussi être positionné par le calculateur. 
+SLOT \+: Reçoit une nouvelle valeur pivot d\textquotesingle{}un \doxyref{Afficheur}{p.}{class_afficheur} et la propage à tous les Afficheurs. Peut aussi être positionné par le calculateur. {\itshape new\+Valeur\+Pivot\+:} Timecode en microsecondes. 
 
 \DoxyHorRuler{0}
- 
-\begin{DoxyParams}{Paramètres}
-{\em new\+Valeur\+Pivot} & Timecode en microsecondes. \\
-\hline
-\end{DoxyParams}
-\begin{DoxySeeAlso}{Voir également}
+ \begin{DoxyNote}{Note}
 Réception du signal \doxyref{Afficheur\+::set\+Valeur\+Pivot()}{p.}{class_afficheur_a7e46f335aef2788e724a1f8960fc7e3a} 
 
 Envoie le signal \doxyref{Operande\+::valeur\+Pivot\+Changed()}{p.}{class_operande_a09bf950c21a58620d19b1c3a08a5bf14} aux \doxyref{Afficheur}{p.}{class_afficheur}. 
 
 Le slot de réception des \doxyref{Afficheur}{p.}{class_afficheur} est set\+Value() 
-\end{DoxySeeAlso}
+\end{DoxyNote}
 \label{class_operande_ae3f3a7950d8382daaf3c93cc1228e575} 
 \index{Operande@{Operande}!valeurPivot@{valeurPivot}}
 \index{valeurPivot@{valeurPivot}!Operande@{Operande}}
@@ -190,13 +164,10 @@ Le slot de réception des \doxyref{Afficheur}{p.}{class_afficheur} est set\+Valu
 
 
 
-Renvoie la valeur Pivot (en microsecondes). 
+Renvoie la valeur Pivot (en microsecondes). Returns the value in microseconds. 
 
 \DoxyHorRuler{0}
- \begin{DoxyReturn}{Renvoie}
-the value in microseconds. 
-\end{DoxyReturn}
-
+  
 
 \doxysubsection{Documentation des données membres}
 \label{class_operande_a70e3f32a53ef431ef6d7f9ba89ee84c9} 

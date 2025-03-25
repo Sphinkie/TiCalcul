@@ -4,13 +4,6 @@
 #include "unites.h"
 #include <QObject>
 
-/*! **********************************************************************************************************
- * \class Afficheur
- * \brief La classe Afficheur gère un champ numérique de l'IHM QML.
- * \details Elle est associée à un objet QML FieldInput et lui envoie les valeurs à afficher.
- *          Il y a un Afficheur pour chaque unité: Secondes, Millisecondes, HMSI, etc.
- *************************************************************************************************************/
-
 class Afficheur : public QObject
 {
     Q_OBJECT

@@ -9,82 +9,82 @@
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}converter.h"{}}}
 \DoxyCodeLine{00006\ }
 \DoxyCodeLine{00007\ }
-\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }Unites}
-\DoxyCodeLine{00015\ \{}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Liste\ des\ énumérés}}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ Units}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ HMSI,}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ DHMSM,}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ FRAMES\_25,}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ FRAMES\_50,}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ FRAMES\_NTSC,}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ SECONDS,}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ MILLISECONDS,}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ MICROSECONDS}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ Unites();}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{inline}\ QMap<Units,\ qint32>\ usPerUnit\ =\{}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \{HMSI,\ \ \ \ \ \ \ \ \ Converter::us\_PerFrame25\},}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \{DHMSM,\ \ \ \ \ \ \ \ Converter::us\_PerFrame25\},}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_25,\ \ \ \ Converter::us\_PerFrame25\},}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_50,\ \ \ \ Converter::us\_PerFrame50\},}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_NTSC,\ \ Converter::us\_PerFrameNTSC\},}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \{SECONDS,\ \ \ \ \ \ Converter::us\_PerSecond\},}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \{MILLISECONDS,\ Converter::us\_PerMillisec\},}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \{MICROSECONDS,\ 1\}}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00044\ }
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{inline}\ QMap<Units,\ double>\ frameRate\ =\ \{}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \{HMSI,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 25.0\},}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \{DHMSM,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 25.0\},}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_25,\ \ \ \ \ \ \ \ \ \ \ 25.0\},}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_50,\ \ \ \ \ \ \ \ \ \ \ 50.0\},}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_NTSC,\ \ \ \ \ \ \ \ \ 30.0\},}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \{SECONDS,\ \ \ \ \ \ \ \ \ \ \ \ \ \ 1.0\},}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \{MILLISECONDS,\ \ \ \ \ 1'000.0\},}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \{MICROSECONDS,\ 1'000'000.0\}}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{inline}\ QMap<Units,\ QString>\ name\ =\ \{}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \{HMSI,\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}HMSI"{}}\},}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \{DHMSM,\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}DHMSM"{}}\},}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_25,\ \ \ \ \textcolor{stringliteral}{"{}FRAMES\_25"{}}\},}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_50,\ \ \ \ \textcolor{stringliteral}{"{}FRAMES\_50"{}}\},}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_NTSC,\ \ \textcolor{stringliteral}{"{}FRAMES\_NTSC"{}}\},}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \{SECONDS,\ \ \ \ \ \ \textcolor{stringliteral}{"{}SECONDS"{}}\},}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \{MILLISECONDS,\ \textcolor{stringliteral}{"{}MILLISECONDS"{}}\},}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \{MICROSECONDS,\ \textcolor{stringliteral}{"{}MICROSECONDS"{}}\}}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00066\ }
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{inline}\ QMap<Units,\ QString>\ hint\ =\ \{}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \{HMSI,\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}HH:MM:SS:FF"{}}\},}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \{DHMSM,\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}HH:MM:SS,mmm"{}}\},}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_25,\ \ \ \ \textcolor{stringliteral}{"{}FRAMES"{}}\},}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_50,\ \ \ \ \textcolor{stringliteral}{"{}FRAMES"{}}\},}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_NTSC,\ \ \textcolor{stringliteral}{"{}FRAMES"{}}\},}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \{SECONDS,\ \ \ \ \ \ \textcolor{stringliteral}{"{}SECONDS"{}}\},}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \{MILLISECONDS,\ \textcolor{stringliteral}{"{}MILLISECONDS"{}}\},}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \{MICROSECONDS,\ \textcolor{stringliteral}{"{}MICROSECONDS"{}}\}}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00077\ }
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{inline}\ QMap<Units,\ qint64>\ max\ =\ \{}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \{HMSI,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\},}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \{DHMSM,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\},}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_25,\ \ \ \ \ \ \ \ \ 2'499'999'999\},}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_50,\ \ \ \ \ \ \ \ \ 4'999'999'999\},}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_NTSC,\ \ \ \ \ \ \ 3'999'999'999\},\ \ \textcolor{comment}{//\ TBC}}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \{SECONDS,\ \ \ \ \ \ \ \ \ \ \ \ \ \ 99'999'999\},}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \{MILLISECONDS,\ \ \ \ \ 99'999'999'999\},}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \{MICROSECONDS,\ 99'999'999'999'999\}}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00088\ \};}
-\DoxyCodeLine{00089\ }
-\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UNITES\_H}}
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }Unites}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Liste\ des\ énumérés}}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ Units}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ HMSI,}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ DHMSM,}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ FRAMES\_25,}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ FRAMES\_50,}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ FRAMES\_NTSC,}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ SECONDS,}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ MILLISECONDS,}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ MICROSECONDS}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ Unites();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{inline}\ QMap<Units,\ qint32>\ usPerUnit\ =\{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \{HMSI,\ \ \ \ \ \ \ \ \ Converter::us\_PerFrame25\},}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \{DHMSM,\ \ \ \ \ \ \ \ Converter::us\_PerFrame25\},}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_25,\ \ \ \ Converter::us\_PerFrame25\},}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_50,\ \ \ \ Converter::us\_PerFrame50\},}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_NTSC,\ \ Converter::us\_PerFrameNTSC\},}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \{SECONDS,\ \ \ \ \ \ Converter::us\_PerSecond\},}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \{MILLISECONDS,\ Converter::us\_PerMillisec\},}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \{MICROSECONDS,\ 1\}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{inline}\ QMap<Units,\ double>\ frameRate\ =\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \{HMSI,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 25.0\},}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \{DHMSM,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 25.0\},}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_25,\ \ \ \ \ \ \ \ \ \ \ 25.0\},}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_50,\ \ \ \ \ \ \ \ \ \ \ 50.0\},}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_NTSC,\ \ \ \ \ \ \ \ \ 30.0\},}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \{SECONDS,\ \ \ \ \ \ \ \ \ \ \ \ \ \ 1.0\},}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \{MILLISECONDS,\ \ \ \ \ 1'000.0\},}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \{MICROSECONDS,\ 1'000'000.0\}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{inline}\ QMap<Units,\ QString>\ name\ =\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \{HMSI,\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}HMSI"{}}\},}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \{DHMSM,\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}DHMSM"{}}\},}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_25,\ \ \ \ \textcolor{stringliteral}{"{}FRAMES\_25"{}}\},}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_50,\ \ \ \ \textcolor{stringliteral}{"{}FRAMES\_50"{}}\},}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_NTSC,\ \ \textcolor{stringliteral}{"{}FRAMES\_NTSC"{}}\},}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \{SECONDS,\ \ \ \ \ \ \textcolor{stringliteral}{"{}SECONDS"{}}\},}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \{MILLISECONDS,\ \textcolor{stringliteral}{"{}MILLISECONDS"{}}\},}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \{MICROSECONDS,\ \textcolor{stringliteral}{"{}MICROSECONDS"{}}\}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{inline}\ QMap<Units,\ QString>\ hint\ =\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \{HMSI,\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}HH:MM:SS:FF"{}}\},}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \{DHMSM,\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}HH:MM:SS,mmm"{}}\},}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_25,\ \ \ \ \textcolor{stringliteral}{"{}FRAMES"{}}\},}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_50,\ \ \ \ \textcolor{stringliteral}{"{}FRAMES"{}}\},}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_NTSC,\ \ \textcolor{stringliteral}{"{}FRAMES"{}}\},}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \{SECONDS,\ \ \ \ \ \ \textcolor{stringliteral}{"{}SECONDS"{}}\},}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \{MILLISECONDS,\ \textcolor{stringliteral}{"{}MILLISECONDS"{}}\},}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \{MICROSECONDS,\ \textcolor{stringliteral}{"{}MICROSECONDS"{}}\}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{inline}\ QMap<Units,\ qint64>\ max\ =\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \{HMSI,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\},}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \{DHMSM,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\},}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_25,\ \ \ \ \ \ \ \ \ 2'499'999'999\},}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_50,\ \ \ \ \ \ \ \ \ 4'999'999'999\},}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \{FRAMES\_NTSC,\ \ \ \ \ \ \ 3'999'999'999\},\ \ \textcolor{comment}{//\ TBC}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \{SECONDS,\ \ \ \ \ \ \ \ \ \ \ \ \ \ 99'999'999\},}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \{MILLISECONDS,\ \ \ \ \ 99'999'999'999\},}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \{MICROSECONDS,\ 99'999'999'999'999\}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00082\ \};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UNITES\_H}}
 
 \end{DoxyCode}

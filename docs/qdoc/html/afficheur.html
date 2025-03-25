@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- afficheur.cpp -->
+  <meta name="description" content="La classe Afficheur gère un champ numérique de l'IHM QML.">
+  <title>Afficheur Class | tiCalcul</title>
+</head>
+<body>
+<li>Afficheur</li>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title" translate="no">Afficheur Class</h1>
+<!-- $$$Afficheur-brief -->
+<p>La classe Afficheur gère un champ numérique de l'IHM QML. <a href="#details">More...</a></p>
+<!-- @@@Afficheur -->
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> <span class="preprocessor">#include &lt;Afficheur&gt;</span></td></tr>
+</table></div>
+<ul>
+<li><a href="afficheur-members.html">List of all members, including inherited members</a></li>
+</ul>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="afficheur.html#Afficheur" translate="no">Afficheur</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="afficheur.html#activeDisplay" translate="no">activeDisplay</a></b>(int <i>afficheur</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="afficheur.html#clearValue" translate="no">clearValue</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="afficheur.html#setFramerate" translate="no">setFramerate</a></b>(double <i>framerate</i>)</td></tr>
+</table></div>
+<!-- $$$Afficheur-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>**********************************************************************************************************</p>
+<details>
+<summary>Elle</summary>
+<p>est associée à un objet QML FieldInput et lui envoie les valeurs à afficher. Il y a un Afficheur pour chaque unité: Secondes, Millisecondes, HMSI, etc.</p>
+</details>
+<p>***********************************************************************************************************</p>
+</div>
+<!-- @@@Afficheur -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$Afficheur[overload1]$$$Afficheur -->
+<h3 class="fn" translate="no" id="Afficheur"><code translate="no">[noexcept default] </code>Afficheur::<span class="name">Afficheur</span>()</h3>
+<p>**********************************************************************************************************</p>
+<p>Constructor. @param unit: L'unité correspondante à cet afficheur. @param parent: QObject parent: un Operande. Son nom va servir. **********************************************************************************************************</p>
+<!-- @@@Afficheur -->
+<!-- $$$activeDisplay[overload1]$$$activeDisplayint -->
+<h3 class="fn" translate="no" id="activeDisplay"><span class="type">void</span> Afficheur::<span class="name">activeDisplay</span>(<span class="type">int</span> <i>afficheur</i>)</h3>
+<p>**********************************************************************************************************</p>
+<p>SLOT: Actualise la variable mIsActive en cas de changement.</p>
+<p>@param afficheur: Le nom (objectName) de l'afficheur sélectionné dans le QML. **********************************************************************************************************</p>
+<p><b>See also </b>afficheurActif::activeDisplay.</p>
+<!-- @@@activeDisplay -->
+<!-- $$$clearValue[overload1]$$$clearValue -->
+<h3 class="fn" translate="no" id="clearValue"><span class="type">void</span> Afficheur::<span class="name">clearValue</span>()</h3>
+<p>**********************************************************************************************************</p>
+<p>SLOT: Efface la valeur de l'afficheur, et ses variables privées.</p>
+<div class="admonition note">
+<p><b>Note: </b>Vient du signal valeurPivotCleared() de la classe Operande. **********************************************************************************************************</p>
+</div>
+<!-- @@@clearValue -->
+<!-- $$$setFramerate[overload1]$$$setFrameratedouble -->
+<h3 class="fn" translate="no" id="setFramerate"><span class="type">void</span> Afficheur::<span class="name">setFramerate</span>(<span class="type">double</span> <i>framerate</i>)</h3>
+<p>**********************************************************************************************************</p>
+<p>SLOT: Permet de changer dynamiquement le framerate des afficheurs HMSI.</p>
+<div class="admonition note">
+<p><b>Note: </b>C'est toujours l'afficheur HMSI qui reçoit ce signal @param framerate: le nouveau framerate pour cet afficheur (ex: 25.0) **********************************************************************************************************</p>
+</div>
+<!-- @@@setFramerate -->
+</div>
+</body>
+</html>

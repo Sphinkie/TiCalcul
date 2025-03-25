@@ -1,12 +1,20 @@
 #include "calculateur.h"
 
+/*! **********************************************************************************************************
+ * \class Calculateur
+ * \brief La classe Calculateur est en charge de gérer les opérations entre les opérandes:
+ *        addition, soustraction, complément.
+ *************************************************************************************************************/
+
+
 
 /*! **********************************************************************************************************
+ * \fn Calculateur::Calculateur()
  * \brief Constructeur.
- * \param tc1: premier opérande.
- * \param tc2: second opérande.
- * \param result: opérande résultat.
- * \param parent: QObject parent.
+ * @param tc1: premier opérande.
+ * @param tc2: second opérande.
+ * @param result: opérande résultat.
+ * @param parent: QObject parent.
  ************************************************************************************************************* */
 Calculateur::Calculateur(Operande* tc1, Operande* tc2, Operande* result, QObject* parent)
 {
@@ -79,6 +87,7 @@ void Calculateur::memorize()
 }
 
 /*! **********************************************************************************************************
+ * \fn Calculateur::onValeurPivotChanged()
  * \brief Si la valeur de l'un des opérandes à changé, on actualise le resultat.
  ************************************************************************************************************* */
 void Calculateur::onValeurPivotChanged()

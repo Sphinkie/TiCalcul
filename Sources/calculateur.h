@@ -2,14 +2,8 @@
 #define CALCULATEUR_H
 
 #include <QObject>
-
 #include "Operande.h"
 
-/*! **********************************************************************************************************
- * \class Calculateur
- * \brief La classe Calculateur est en charge de gérer les opérations entre les opérandes:
- *        addition, soustraction, complément.
- *************************************************************************************************************/
 
 class Calculateur : public QObject
 {

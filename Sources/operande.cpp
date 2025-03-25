@@ -3,11 +3,17 @@
 
 
 /*! **********************************************************************************************************
+ * \class Operande
+ * \brief La class Operande gère la "valeur pivot" (cad en microsecondes) de l'opérande TC1 ou de TC2.
+ *************************************************************************************************************/
+
+
+/*! **********************************************************************************************************
  * \brief Constructeur: crée les 8 Afficheur de cet opérande, et les connecte pour leur envoyer un signal
  *        à chaque modification de la valeur pivot.
  * \note L'afficheur NTSC est désactivé pour le moment.
- * \param name: Le nom de l'operande: "tc1" ou "tc2" ou "result".
- * \param parent: Pointeur sur QObject parent.
+ * \a name: Le nom de l'operande: "tc1" ou "tc2" ou "result".
+ * \a parent: Pointeur sur QObject parent.
  *************************************************************************************************************/
 Operande::Operande(const QString name, QObject* parent)
 {
@@ -44,7 +50,7 @@ Operande::Operande(const QString name, QObject* parent)
 
 /*! **********************************************************************************************************
  * \brief Renvoie la valeur Pivot (en microsecondes).
- * \returns the value in microseconds.
+ * Returns the value in microseconds.
  *************************************************************************************************************/
 qint64 Operande::valeurPivot() const
 {
@@ -55,10 +61,10 @@ qint64 Operande::valeurPivot() const
 /*! **********************************************************************************************************
  * \brief SLOT : Reçoit une nouvelle valeur pivot d'un Afficheur et la propage à tous les Afficheurs.
  *               Peut aussi être positionné par le calculateur.
- * \param newValeurPivot: Timecode en microsecondes.
- * \see Réception du signal Afficheur::setValeurPivot()
- * \see Envoie le signal Operande::valeurPivotChanged() aux Afficheur.
- * \see Le slot de réception des Afficheur est setValue()
+ * \a newValeurPivot: Timecode en microsecondes.
+ * \note Réception du signal Afficheur::setValeurPivot()
+ * \note Envoie le signal Operande::valeurPivotChanged() aux Afficheur.
+ * \note Le slot de réception des Afficheur est setValue()
  *************************************************************************************************************/
 void Operande::setValeurPivot(const qint64 newValeurPivot, const bool force)
 {
@@ -77,7 +83,7 @@ void Operande::setValeurPivot(const qint64 newValeurPivot, const bool force)
 
 /*! **********************************************************************************************************
  * \brief SLOT : Vide la valeur pivot, et efface la valeur de tous les Afficheur.
- * \see Signal Afficheur::clearValue()
+ * \sa Afficheur::clearValue()
  *************************************************************************************************************/
 void Operande::clearValeurPivot()
 {
@@ -90,7 +96,7 @@ void Operande::clearValeurPivot()
 /*! **********************************************************************************************************
  * \brief Enregistre les Afficheur dans le contexte QML, pour pouvoir les afficher.
  * \note Les property names seront du type "tc1_aff_1"
- * \param context: Le rootContext de l'application.
+ * \a context: Le rootContext de l'application.
  *************************************************************************************************************/
 void Operande::registerContext(QQmlContext* context)
 {
@@ -108,7 +114,7 @@ void Operande::registerContext(QQmlContext* context)
 /*! **********************************************************************************************************
  * \brief Cree des connexions entre l'objet QML "afficheurActif" et tous les Afficheurs.
  *        Ainsi, lorsque l'Afficheur actif change, tous les afficheurs sont informés.
- * \param engine: un pointeur sur le moteur QML.
+ * \a engine: un pointeur sur le moteur QML.
  *************************************************************************************************************/
 void Operande::connectActiveDisplay(QQmlApplicationEngine* engine)
 {

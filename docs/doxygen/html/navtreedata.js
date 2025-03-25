@@ -25,12 +25,15 @@
 var NAVTREE =
 [
   [ "TiCalcul", "index.html", [
-    [ "TiCalcul", "md_readme.html", null ],
+    [ "TiCalcul", "md_readme.html", [
+      [ "Windows", "md_readme.html#autotoc_md1", null ],
+      [ "Android", "md_readme.html#autotoc_md2", null ]
+    ] ],
     [ "Dev Corner", "md_docs_2compilation.html", [
-      [ "Developpement", "md_docs_2compilation.html#autotoc_md2", null ],
-      [ "Compilation", "md_docs_2compilation.html#autotoc_md3", null ],
-      [ "Documentation", "md_docs_2compilation.html#autotoc_md4", null ],
-      [ "About me", "md_docs_2compilation.html#autotoc_md5", null ]
+      [ "Developpement", "md_docs_2compilation.html#autotoc_md4", null ],
+      [ "Compilation", "md_docs_2compilation.html#autotoc_md5", null ],
+      [ "Documentation", "md_docs_2compilation.html#autotoc_md6", null ],
+      [ "About me", "md_docs_2compilation.html#autotoc_md7", null ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Liste des classes", "annotated.html", "annotated_dup" ],

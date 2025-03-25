@@ -2,15 +2,16 @@
 # Configuration pour la génération de la QDOC
 # --------------------------------------------------------------------------------------
 # For compatibility issues, include compat.qdocconf:
-include(C:/Qt/Docs/Qt-6.6.0/global/compat.qdocconf)
+#include(compat.qdocconf)
+#include(C:/Qt/Docs/Qt-6.6.0/global/compat.qdocconf)
 #include(C:/Qt/Docs/Qt-6.6.0/global/config.qdocconf)
 #include(C:/Qt/Docs/Qt-6.6.0/global/macros.qdocconf)
-include(C:/Qt/Docs/Qt-6.6.0/global/qt-cpp-defines.qdocconf)
-include(C:/Qt/Docs/Qt-6.6.0/global/fileextensions.qdocconf)
-include(C:/Qt/Docs/Qt-6.6.0/global/qt-html-templates-offline.qdocconf)
+#include(C:/Qt/Docs/Qt-6.6.0/global/qt-cpp-defines.qdocconf)
+#include(C:/Qt/Docs/Qt-6.6.0/global/fileextensions.qdocconf)
+#include(C:/Qt/Docs/Qt-6.6.0/global/qt-html-templates-offline.qdocconf)
 
 # --------------------------------------------------------------------------------------
-# Commande de génération dans le "command prompt avec evironneemnt de build":
+# Commande de génération dans le "command prompt avec environnement de build":
 # qdoc tiCalcul.qdocconf
 #
 # Commande de génération avec traces de debug:
@@ -34,19 +35,19 @@ description = The ultimate Timecode Calculator
 
 # Additional include paths to QDoc when parsing C++ code for documentation comments.
 # Equivalent au -I de la ligne de commande
-includepaths += ./cpp
+includepaths += ./Sources
 
 # defines += QT_GUI_LIB
-
 
 # voir pour le QML : https://forum.qt.io/topic/101832/linking-to-qt-offline-documentation-with-qdoc
 
 indexes += \
     ${qt_install_docs}/qtcore/qtcore.index \
     ${qt_install_docs}/qtdoc/qtdoc.index \
-    ${qt_install_docs}/qtquick/qtquick.index \
-    ${qt_install_docs}/qtlocation/qtlocation.index \
-    ${qt_install_docs}/qtpositioning/qtpositioning.index
+    ${qt_install_docs}/qtquick/qtquick.index
+
+# indexes += ${qt_install_docs}/qtlocation/qtlocation.index
+# indexes += ${qt_install_docs}/qtpositioning/qtpositioning.index
 
 depends = *
 # depends = qtdoc qtcore qtquick qtlocation
@@ -57,20 +58,20 @@ headers.fileextensions  = "*.h *.hpp"
 sources.fileextensions  = "*.cpp *.qml *.qdoc"
 
 # The directory where QDoc places the generated documentation.
-outputdir   = ../docs/qdoc/html
+outputdir   = ./docs/qdoc/html
 outputformats = HTML
 
 # The directories that contain the header files associated with the .cpp source files used in the documentation.
-headerdirs  = .
+headerdirs  = ./Sources
 
 # The directories that contain the .cpp or .qdoc files used in the documentation.
-sourcedirs  = .
+sourcedirs  = ./Sources
 
 # The directories that contain the source code of the example files.
-exampledirs = ./examples
+exampledirs = ./docs/examples
 
 # The directories that contain images used in the documentation.
-imagedirs   = ./doc/images
+imagedirs   = ./docs/images
 
 # Set a warning limit. QDoc will exit with a non-zero exit code if it generates
 # documentation warnings during the documentation build. Useful for tracking

@@ -9,10 +9,6 @@
 
 
 
-/*! **********************************************************************************************************
- * \class Operande
- * \brief La class Operande gère la "valeur pivot" (cad en microsecondes) de l'opérande TC1 ou de TC2.
- *************************************************************************************************************/
 class Operande : public QObject
 {
     Q_OBJECT

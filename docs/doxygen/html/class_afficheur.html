@@ -104,8 +104,6 @@ $(document).ready(function(){initNavTree('class_afficheur.html',''); initResizab
 
 <p>La classe <a class="el" href="class_afficheur.html" title="La classe Afficheur gère un champ numérique de l&#39;IHM QML.">Afficheur</a> gère un champ numérique de l'IHM QML.  
  <a href="class_afficheur.html#details">Plus de détails...</a></p>
-
-<p><code>#include &lt;<a class="el" href="afficheur_8h_source.html">afficheur.h</a>&gt;</code></p>
 <div class="dynheader">
 Graphe d'héritage de Afficheur:</div>
 <div class="dyncontent">
@@ -236,7 +234,7 @@ qint64&#160;</td><td class="memItemRight" valign="bottom"><b>mMaxValue</b></td><
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>La classe <a class="el" href="class_afficheur.html" title="La classe Afficheur gère un champ numérique de l&#39;IHM QML.">Afficheur</a> gère un champ numérique de l'IHM QML. </p>
 <hr  />
-<p>Elle est associée à un objet QML FieldInput et lui envoie les valeurs à afficher. Il y a un <a class="el" href="class_afficheur.html" title="La classe Afficheur gère un champ numérique de l&#39;IHM QML.">Afficheur</a> pour chaque unité: Secondes, Millisecondes, HMSI, etc. </p>
+<p>Elle est associée à un objet QML FieldInput et lui envoie les valeurs à afficher. Il y a un <a class="el" href="class_afficheur.html" title="La classe Afficheur gère un champ numérique de l&#39;IHM QML.">Afficheur</a> pour chaque unité: Secondes, Millisecondes, HMSI, etc. \endetails </p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a id="a00774166e578f9dd4312c52700d0a48e" name="a00774166e578f9dd4312c52700d0a48e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a00774166e578f9dd4312c52700d0a48e">&#9670;&#160;</a></span>Afficheur()</h2>
@@ -312,7 +310,7 @@ qint64&#160;</td><td class="memItemRight" valign="bottom"><b>mMaxValue</b></td><
 <p>Réception du nom de l'afficheur actif, en cas de changement. QML. </p>
 <p>SLOT: Actualise la variable mIsActive en cas de changement.</p>
 <hr  />
- <dl class="section see"><dt>Voir également</dt><dd>Signal QML afficheurActif::activeDisplay </dd></dl>
+ <dl class="section see"><dt>Voir également</dt><dd>afficheurActif::activeDisplay </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">afficheur</td><td>Le nom (objectName) de l'afficheur sélectionné dans le QML. </td></tr>
@@ -376,7 +374,7 @@ qint64&#160;</td><td class="memItemRight" valign="bottom"><b>mMaxValue</b></td><
 <p>Réception du signal valeurPivotCleared() </p>
 <p>SLOT: Efface la valeur de l'afficheur, et ses variables privées.</p>
 <hr  />
- <dl class="section see"><dt>Voir également</dt><dd>Vient du signal valeurPivotCleared() de la classe <a class="el" href="class_operande.html" title="La class Operande gère la &quot;valeur pivot&quot; (cad en microsecondes) de l&#39;opérande TC1 ou de TC2.">Operande</a>. </dd></dl>
+ <dl class="section note"><dt>Note</dt><dd>Vient du signal valeurPivotCleared() de la classe <a class="el" href="class_operande.html" title="La class Operande gère la &quot;valeur pivot&quot; (cad en microsecondes) de l&#39;opérande TC1 ou de TC2.">Operande</a>. </dd></dl>
 
 </div>
 </div>
@@ -577,7 +575,7 @@ qint64&#160;</td><td class="memItemRight" valign="bottom"><b>mMaxValue</b></td><
 <p>Réception du signal valeurPivotChanged() </p>
 <p>SLOT. Recoit la nouvelle valeur pivot de l'opérande, pour la convertir et l'envoyer à l'affichage.</p>
 <hr  />
- <dl class="section see"><dt>Voir également</dt><dd>Signal <a class="el" href="class_operande.html#a09bf950c21a58620d19b1c3a08a5bf14" title="Signal indiquant que la valeur pivot a été modifiée.">Operande::valeurPivotChanged()</a> </dd></dl>
+ <dl class="section see"><dt>Voir également</dt><dd><a class="el" href="class_operande.html#a09bf950c21a58620d19b1c3a08a5bf14" title="Signal indiquant que la valeur pivot a été modifiée.">Operande::valeurPivotChanged()</a> </dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">microsecs</td><td>La valeur pivot en microsecondes. </td></tr>

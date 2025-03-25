@@ -8,59 +8,59 @@
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}unites.h"{}}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QObject>}}
 \DoxyCodeLine{00006\ }
-\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }Afficheur\ :\ \textcolor{keyword}{public}\ QObject}
-\DoxyCodeLine{00015\ \{}
-\DoxyCodeLine{00016\ \ \ \ \ Q\_OBJECT}
-\DoxyCodeLine{00017\ \ \ \ \ Q\_PROPERTY(QString\ displayValue\ MEMBER\ mDisplayValue\ NOTIFY\ displayValueChanged)}
-\DoxyCodeLine{00018\ \ \ \ \ Q\_PROPERTY(QString\ unit\ MEMBER\ mUnitName\ NOTIFY\ unitChanged)}
-\DoxyCodeLine{00019\ \ \ \ \ Q\_PROPERTY(QString\ hint\ MEMBER\ mHint\ NOTIFY\ hintChanged)}
-\DoxyCodeLine{00020\ \ \ \ \ Q\_PROPERTY(qreal\ framerate\ MEMBER\ mFramerate\ WRITE\ setFramerate\ NOTIFY\ framerateChanged)}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00023\ \textcolor{comment}{//\ Méthodes}}
-\DoxyCodeLine{00024\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{explicit}\ Afficheur(Unites::Units\ unit,\ QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ addDigit(QString\ digit);}
-\DoxyCodeLine{00029\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ removeLastDigit();}
-\DoxyCodeLine{00030\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ rectifyHMSI();}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \textcolor{keyword}{public}\ slots:}
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ setValue(\textcolor{keyword}{const}\ qint64\ microsecs,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ force=\textcolor{keyword}{false});\ \ }
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ clearValue();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ activeDisplay(QString\ afficheur);\ \ \ \ \ \ }
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ setFramerate(\textcolor{keywordtype}{double}\ framerate);\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }Afficheur\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00010\ \ \ \ \ Q\_PROPERTY(QString\ displayValue\ MEMBER\ mDisplayValue\ NOTIFY\ displayValueChanged)}
+\DoxyCodeLine{00011\ \ \ \ \ Q\_PROPERTY(QString\ unit\ MEMBER\ mUnitName\ NOTIFY\ unitChanged)}
+\DoxyCodeLine{00012\ \ \ \ \ Q\_PROPERTY(QString\ hint\ MEMBER\ mHint\ NOTIFY\ hintChanged)}
+\DoxyCodeLine{00013\ \ \ \ \ Q\_PROPERTY(qreal\ framerate\ MEMBER\ mFramerate\ WRITE\ setFramerate\ NOTIFY\ framerateChanged)}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ Méthodes}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{explicit}\ Afficheur(Unites::Units\ unit,\ QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ addDigit(QString\ digit);}
+\DoxyCodeLine{00022\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ removeLastDigit();}
+\DoxyCodeLine{00023\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ rectifyHMSI();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ setValue(\textcolor{keyword}{const}\ qint64\ microsecs,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ force=\textcolor{keyword}{false});\ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ clearValue();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ activeDisplay(QString\ afficheur);\ \ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ setFramerate(\textcolor{keywordtype}{double}\ framerate);\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ signals:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ displayValueChanged();\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ framerateChanged();\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ setValeurPivot(qint64);\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ unitChanged();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ hintChanged();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ signals:}
-\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ displayValueChanged();\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ framerateChanged();\ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ setValeurPivot(qint64);\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ unitChanged();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ hintChanged();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ setDisplayValue(\textcolor{keyword}{const}\ QString\ value,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ force=\textcolor{keyword}{false});}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ isIncorrect(\textcolor{keyword}{const}\ QString\ rawHmsi);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00043\ \textcolor{comment}{//\ Variables\ membres}}
+\DoxyCodeLine{00044\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
 \DoxyCodeLine{00045\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ setDisplayValue(\textcolor{keyword}{const}\ QString\ value,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ force=\textcolor{keyword}{false});}
-\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ isIncorrect(\textcolor{keyword}{const}\ QString\ rawHmsi);}
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00049\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00050\ \textcolor{comment}{//\ Variables\ membres}}
-\DoxyCodeLine{00051\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00052\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00053\ \ \ \ \ QString\ mDisplayValue;\ \ \ \ \ \ }
-\DoxyCodeLine{00054\ \ \ \ \ QString\ mUnitName;\ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00055\ \ \ \ \ QString\ mHint;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00056\ }
-\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{bool}\ mIsActive\ =\ \textcolor{keyword}{false};\ \ \ \ \ }
-\DoxyCodeLine{00058\ }
-\DoxyCodeLine{00059\ \ \ \ \ QString\ mRawHMSI;\ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00060\ \ \ \ \ QString\ mRawNUM;\ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00061\ \ \ \ \ Unites::Units\ mUnit;\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{double}\ mFramerate;\ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{double}\ mConversionFacteur;\ \ }
-\DoxyCodeLine{00064\ \ \ \ \ qint64\ mMaxValue;\ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00065\ \};}
-\DoxyCodeLine{00066\ }
-\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ AFFICHEUR\_H}}
+\DoxyCodeLine{00046\ \ \ \ \ QString\ mDisplayValue;\ \ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ QString\ mUnitName;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ QString\ mHint;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{bool}\ mIsActive\ =\ \textcolor{keyword}{false};\ \ \ \ \ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ QString\ mRawHMSI;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ QString\ mRawNUM;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ Unites::Units\ mUnit;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{double}\ mFramerate;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{double}\ mConversionFacteur;\ \ }
+\DoxyCodeLine{00057\ \ \ \ \ qint64\ mMaxValue;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ AFFICHEUR\_H}}
 
 \end{DoxyCode}
