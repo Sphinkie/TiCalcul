@@ -3,22 +3,21 @@
 
 /* ********************************************************************************************************** */
 /* ********************************************************************************************************** */
- /*!
+/*!
  * \class Calculateur
  * \inmodule TiCalcul
  * \brief La classe Calculateur gère les opérations entre les opérandes: addition, soustraction, complément.
  *
- * \sa Operande
+ * Le calculateur fait intervenir deux \l Operande TC et TC2, et une operation pour obtenir un \l Operande
+ * Résultat.
  **/
 
 
-
-
- /* ********************************************************************************************************** */
+/* ********************************************************************************************************** */
 /* ********************************************************************************************************** */
 /*!
  * \fn Calculateur::Calculateur()
- * \brief Constructeur. Les paramètres sont des \l Operande.
+ * \brief Constructeur: les paramètres sont les \l Operande à traiter.
  *
  * \a tc1: premier opérande. \br
  * \a tc2: second opérande. \br

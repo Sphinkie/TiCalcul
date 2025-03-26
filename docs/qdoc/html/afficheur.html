@@ -82,7 +82,9 @@
 <!-- $$$Afficheur-description -->
 <div class="descr">
 <h2 id="details">Detailed Description</h2>
-<p>Elle est associée à un objet QML FieldInput et lui envoie les valeurs à afficher. Il y a un <b>Afficheur</b> pour chaque unité: Secondes, Millisecondes, HMSI, etc.</p>
+<p>Elle est associée à un objet QML FieldInput et lui envoie les valeurs à afficher. Il y a un Afficheur pour chaque unité: Secondes, Millisecondes, HMSI, etc. <br />
+ Tous les afficheurs sont liés à un <a href="operande.html" translate="no">Operande</a>. <br />
+ Chaque Afficheur exprime cet Operande dans une des <a href="unites.html" translate="no">Unites</a> définie lors de sa construction.</p>
 </div>
 <!-- @@@Afficheur -->
 <div class="func">
@@ -120,8 +122,9 @@
 </div><!-- @@@removeLastDigit -->
 <!-- $$$setFramerate -->
 <h3 class="fn" translate="no" id="setFramerate"><code translate="no">[slot] </code><span class="type">void</span> Afficheur::<span class="name">setFramerate</span>(<span class="type">double</span> <i>framerate</i>)</h3>
-<p>SLOT: Permet de changer dynamiquement le framerate des afficheurs HMSI. C'est toujours l'afficheur HMSI qui reçoit ce signal. <br />
- <i translate="no">framerate</i>: le nouveau framerate pour cet afficheur (ex: 25.0)</p>
+<p>Ce SLOT permet de changer dynamiquement le frameRate des afficheurs HMSI.</p>
+<p>Note: C'est toujours l'afficheur HMSI qui reçoit ce signal. <br />
+ <i translate="no">framerate</i>: le nouveau frame rate pour cet afficheur (ex: 25.0).</p>
 <div class="admonition note"><p><b>Note: </b>Setter function for property framerate. </p>
 </div><!-- @@@setFramerate -->
 <!-- $$$setValue[overload1]$$$setValueconstqint64constbool -->

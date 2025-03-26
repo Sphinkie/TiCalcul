@@ -11,7 +11,9 @@
  * \brief La classe Afficheur gère un champ numérique de l'IHM QML.
  *
  * Elle est associée à un objet QML FieldInput et lui envoie les valeurs à afficher.
- * Il y a un \b Afficheur pour chaque unité: Secondes, Millisecondes, HMSI, etc.
+ * Il y a un Afficheur pour chaque unité: Secondes, Millisecondes, HMSI, etc. \br
+ * Tous les afficheurs sont liés à un \l Operande. \br
+ * Chaque Afficheur exprime cet Operande dans une des \l Unites définie lors de sa construction.
  */
 
 
@@ -39,9 +41,10 @@ Afficheur::Afficheur(Unites::Units unit, QObject* parent)
 /* ********************************************************************************************************** */
 /* ********************************************************************************************************** */
 /*!
- * \brief SLOT: Permet de changer dynamiquement le framerate des afficheurs HMSI.
- * C'est toujours l'afficheur HMSI qui reçoit ce signal. \br
- * \a framerate: le nouveau framerate pour cet afficheur (ex: 25.0)
+ * \brief Ce SLOT permet de changer dynamiquement le frameRate des afficheurs HMSI.
+ *
+ * Note: C'est toujours l'afficheur HMSI qui reçoit ce signal. \br
+ * \a framerate: le nouveau frame rate pour cet afficheur (ex: 25.0).
  */
 void Afficheur::setFramerate(double framerate)
 {

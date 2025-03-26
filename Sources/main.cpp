@@ -12,24 +12,27 @@
 /*!
     \module TiCalcul
     \title TiCalcul
-    \brief Les classes C++.
+    \brief The ultimate timecode Calculator.
 
-    The ultimate Timecode Calculator.
+    TiCalcul convertit, additionne et soustrait des timecodes, en particulier en millisecondes
+    et en images, ce qui est spécialement utile dans les métiers de la vidéo.
+
+    Logiciel gratuit et sans publicité.
+
+    TiCalcul est developpé en C++ et en QML (avec le framework Qt version 6). \br
+
+    Site de documentation pour:
     \list
         \li Les classes C++
         \li les scripts QML
     \endlist
 
     \startpage TiCalcul
-
-    TiCalcul est developpé en C++ et en QML (avec le framework Qt version 6). \br
-    Il lit et écrit les tags EXIF et IPTC des photos JPEG avec \l{https://exiftool.org}{exifTool}. \br
-    Il accède aux cartes géographiques via les modules QtLocation et QtPositioning.
 */
+
 /* ********************************************************************************* */
-
-
-
+/* Programme principal                                                               */
+/* ********************************************************************************* */
 /*!
  * \fn int main(int argc, char* argv[])
  *
