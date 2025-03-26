@@ -4,7 +4,7 @@
   <meta charset="utf-8">
 <!-- calculateur.cpp -->
   <meta name="description" content="La classe Calculateur gère les opérations entre les opérandes: addition, soustraction, complément.">
-  <title>Calculateur Class | Qt 6.8 0.1</title>
+  <title>Calculateur Class | Qt 6.8 1.0</title>
   <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
   <script type="text/javascript">
     document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
@@ -27,6 +27,7 @@
         <div class="navigationbar">
         <ul>
 <li><a href="https://doc.qt.io/qt/index.html" translate="no">Qt 6.8</a></li>
+<li><a href="ticalcul-module.html" translate="no">TiCalcul</a></li>
 <li>Calculateur</li>
 <li id="buildversion">Qt 6.8 Reference Documentation</li>
     </ul>
@@ -40,6 +41,8 @@
 <h3 id="toc">Contents</h3>
 <ul>
 <li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#public-slots">Public Slots</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
 <li class="level1"><a href="#details">Detailed Description</a></li>
 </ul>
 </div>
@@ -50,13 +53,27 @@
 <!-- @@@Calculateur -->
 <div class="table"><table class="alignedsummary" translate="no">
 <tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">  <span class="preprocessor">#include &lt;Calculateur&gt;</span></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="https://doc.qt.io/qt/qobject.html" translate="no">QObject</a></td></tr>
 </table></div>
 <ul>
 <li><a href="calculateur-members.html">List of all members, including inherited members</a></li>
 </ul>
 <h2 id="public-functions">Public Functions</h2>
 <div class="table"><table class="alignedsummary" translate="no">
-<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="calculateur.html#Calculateur" translate="no">Calculateur</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="calculateur.html#Calculateur-1" translate="no">Calculateur</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="calculateur.html#add" translate="no">add</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="calculateur.html#complement" translate="no">complement</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="calculateur.html#memorize" translate="no">memorize</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="calculateur.html#substract" translate="no">substract</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="calculateur.html#swap" translate="no">swap</a></b>()</td></tr>
+</table></div>
+<h2 id="public-slots">Public Slots</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="calculateur.html#onValeurPivotChanged" translate="no">onValeurPivotChanged</a></b>()</td></tr>
+</table></div>
+<h2 id="signals">Signals</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="calculateur.html#operateur-prop" translate="no">operateurChanged</a></b>()</td></tr>
 </table></div>
 <!-- $$$Calculateur-description -->
 <div class="descr">
@@ -67,11 +84,46 @@
 <!-- @@@Calculateur -->
 <div class="func">
 <h2>Member Function Documentation</h2>
-<!-- $$$Calculateur[overload1]$$$Calculateur -->
-<h3 class="fn" translate="no" id="Calculateur"><code translate="no">[noexcept default] </code>Calculateur::<span class="name">Calculateur</span>()</h3>
+<!-- $$$Calculateur$$$Calculateur -->
+<h3 class="fn" translate="no" id="Calculateur-1"><code translate="no">[default] </code>Calculateur::<span class="name">Calculateur</span>()</h3>
 <p>**********************************************************************************************************</p>
 <p>Constructeur. param tc1: premier opérande. param tc2: second opérande. param result: opérande résultat. param parent: <a href="https://doc.qt.io/qt/qobject.html" translate="no">QObject</a> parent. ************************************************************************************************************</p>
 <!-- @@@Calculateur -->
+<!-- $$$add[overload1]$$$add -->
+<h3 class="fn" translate="no" id="add"><code translate="no">[invokable] </code><span class="type">void</span> Calculateur::<span class="name">add</span>()</h3>
+<p>**********************************************************************************************************</p>
+<p>Calcule la somme TC1+TC2 et envoie le résultat à l'opérande Result. ************************************************************************************************************</p>
+<div class="admonition note"><p><b>Note: </b>This function can be invoked via the meta-object system and from QML. See <a href="https://doc.qt.io/qt/qobject.html#Q_INVOKABLE" translate="no">Q_INVOKABLE</a>.</p>
+</div><!-- @@@add -->
+<!-- $$$complement[overload1]$$$complement -->
+<h3 class="fn" translate="no" id="complement"><code translate="no">[invokable] </code><span class="type">void</span> Calculateur::<span class="name">complement</span>()</h3>
+<p>**********************************************************************************************************</p>
+<p>Calcule le complément à 24H de TC1 et envoie le résultat à l'opérande Result. ************************************************************************************************************</p>
+<div class="admonition note"><p><b>Note: </b>This function can be invoked via the meta-object system and from QML. See <a href="https://doc.qt.io/qt/qobject.html#Q_INVOKABLE" translate="no">Q_INVOKABLE</a>.</p>
+</div><!-- @@@complement -->
+<!-- $$$memorize[overload1]$$$memorize -->
+<h3 class="fn" translate="no" id="memorize"><code translate="no">[invokable] </code><span class="type">void</span> Calculateur::<span class="name">memorize</span>()</h3>
+<p>**********************************************************************************************************</p>
+<p>Recopie la valeur du résultat dans l'opérande TC1. ************************************************************************************************************</p>
+<div class="admonition note"><p><b>Note: </b>This function can be invoked via the meta-object system and from QML. See <a href="https://doc.qt.io/qt/qobject.html#Q_INVOKABLE" translate="no">Q_INVOKABLE</a>.</p>
+</div><!-- @@@memorize -->
+<!-- $$$onValeurPivotChanged[overload1]$$$onValeurPivotChanged -->
+<h3 class="fn" translate="no" id="onValeurPivotChanged"><code translate="no">[slot] </code><span class="type">void</span> Calculateur::<span class="name">onValeurPivotChanged</span>()</h3>
+<p>**********************************************************************************************************</p>
+<p>Si la valeur de l'un des opérandes à changé, on actualise le resultat. ************************************************************************************************************</p>
+<!-- @@@onValeurPivotChanged -->
+<!-- $$$substract[overload1]$$$substract -->
+<h3 class="fn" translate="no" id="substract"><code translate="no">[invokable] </code><span class="type">void</span> Calculateur::<span class="name">substract</span>()</h3>
+<p>**********************************************************************************************************</p>
+<p>Calcule la différence TC1-TC2 et envoie le résultat à l'opérande Result. ************************************************************************************************************</p>
+<div class="admonition note"><p><b>Note: </b>This function can be invoked via the meta-object system and from QML. See <a href="https://doc.qt.io/qt/qobject.html#Q_INVOKABLE" translate="no">Q_INVOKABLE</a>.</p>
+</div><!-- @@@substract -->
+<!-- $$$swap[overload1]$$$swap -->
+<h3 class="fn" translate="no" id="swap"><code translate="no">[invokable] </code><span class="type">void</span> Calculateur::<span class="name">swap</span>()</h3>
+<p>**********************************************************************************************************</p>
+<p>Echange la valeur des opérandes TC1 et TC2. ************************************************************************************************************</p>
+<div class="admonition note"><p><b>Note: </b>This function can be invoked via the meta-object system and from QML. See <a href="https://doc.qt.io/qt/qobject.html#Q_INVOKABLE" translate="no">Q_INVOKABLE</a>.</p>
+</div><!-- @@@swap -->
 </div>
         </div>
        </div>

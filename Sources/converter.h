@@ -1,5 +1,7 @@
 #ifndef CONVERTER_H
 #define CONVERTER_H
+
+
 #include <QObject>
 
 
@@ -28,7 +30,7 @@ class Converter
         Converter();
 
         static QString addSpaceSeparator(QString value);
-        static QString HMSItoRawHMSI(const QString hmsi);
+        static QString HMSItoRawHMSI(QString hmsi);
         static qint64  HMSItoMicroseconds(QString hmsi, double framerate);
         static qint64  rawHMSItoMicroseconds(QString raw_hmsi, double framerate);
         static QString completeRawHMSIWithDots(QString raw_hmsi);

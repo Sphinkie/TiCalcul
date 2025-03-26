@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Controls.Universal
 
 
-/*! ***********************************************************************************
+/* ***********************************************************************************
  * \brief Le type TiButton offre des boutons customisés au niveau des couleurs,
  *        de l'arrondi, et de la police.
  **************************************************************************************/

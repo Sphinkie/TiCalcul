@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
 <!-- converter.cpp -->
-  <meta name="description" content="La classe Converter est une classe statique contenant des fonctions de conversion de timecodes.">
-  <title>List of All Members for Converter | Qt 6.8 0.1</title>
+  <meta name="description" content="La classe Converter propose des fonctions de conversion de timecodes.">
+  <title>List of All Members for Converter | Qt 6.8 1.0</title>
   <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
   <script type="text/javascript">
     document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
@@ -27,6 +27,7 @@
         <div class="navigationbar">
         <ul>
 <li><a href="https://doc.qt.io/qt/index.html" translate="no">Qt 6.8</a></li>
+<li><a href="ticalcul-module.html" translate="no">TiCalcul</a></li>
 <li>Converter</li>
 <li id="buildversion">Qt 6.8 Reference Documentation</li>
     </ul>
@@ -41,22 +42,23 @@
 <div class="table"><table class="propsummary" translate="no">
 <tr><td class="topAlign"><ul>
 <li class="fn" translate="no"><span class="name"><b><a href="converter.html#Converter" translate="no">Converter</a></b></span>()</li>
-<li class="fn" translate="no"><span class="name"><b><a href="converter.html#HMSItoMicroseconds" translate="no">HMSItoMicroseconds</a></b></span>(int, double) : int</li>
-<li class="fn" translate="no"><span class="name"><b><a href="converter.html#addSpaceSeparator" translate="no">addSpaceSeparator</a></b></span>(int) : int</li>
-<li class="fn" translate="no"><span class="name"><b><a href="converter.html#completeRawHMSIWithDots" translate="no">completeRawHMSIWithDots</a></b></span>(int) : int</li>
+<li class="fn" translate="no"><span class="name"><b><a href="converter.html#HMSItoMicroseconds" translate="no">HMSItoMicroseconds</a></b></span>(QString, double) : qint64</li>
+<li class="fn" translate="no"><span class="name"><b><a href="converter.html#HMSItoRawHMSI" translate="no">HMSItoRawHMSI</a></b></span>(QString) : QString</li>
+<li class="fn" translate="no"><span class="name"><b><a href="converter.html#addSpaceSeparator" translate="no">addSpaceSeparator</a></b></span>(QString) : QString</li>
+<li class="fn" translate="no"><span class="name"><b><a href="converter.html#completeRawHMSIWithDots" translate="no">completeRawHMSIWithDots</a></b></span>(QString) : QString</li>
 <li class="fn" translate="no"><span class="name"><b><a href="converter.html#getNtscFramePerSec" translate="no">getNtscFramePerSec</a></b></span>() : double</li>
-<li class="fn" translate="no"><span class="name"><b><a href="converter.html#microseconds" translate="no">microseconds</a></b></span>(int) : int</li>
-<li class="fn" translate="no"><span class="name"><b><a href="converter.html#microsecsToDHMSM" translate="no">microsecsToDHMSM</a></b></span>(int) : int</li>
-<li class="fn" translate="no"><span class="name"><b><a href="converter.html#microsecsToFrames" translate="no">microsecsToFrames</a></b></span>(int, double) : int</li>
+<li class="fn" translate="no"><span class="name"><b><a href="converter.html#microseconds" translate="no">microseconds</a></b></span>(qint64) : QString</li>
+<li class="fn" translate="no"><span class="name"><b><a href="converter.html#microsecsToDHMSM" translate="no">microsecsToDHMSM</a></b></span>(qint64) : QString</li>
+<li class="fn" translate="no"><span class="name"><b><a href="converter.html#microsecsToFrames" translate="no">microsecsToFrames</a></b></span>(qint64, double) : QString</li>
 </ul></td><td class="topAlign"><ul>
-<li class="fn" translate="no"><span class="name"><b><a href="converter.html#microsecsToHMSI" translate="no">microsecsToHMSI</a></b></span>(int, double) : int</li>
-<li class="fn" translate="no"><span class="name"><b><a href="converter.html#microsecsToHMSM" translate="no">microsecsToHMSM</a></b></span>(int) : int</li>
-<li class="fn" translate="no"><span class="name"><b><a href="converter.html#microsecsToMillis" translate="no">microsecsToMillis</a></b></span>(int) : int</li>
-<li class="fn" translate="no"><span class="name"><b><a href="converter.html#microsecsToRawHMSI" translate="no">microsecsToRawHMSI</a></b></span>(int, double) : int</li>
-<li class="fn" translate="no"><span class="name"><b><a href="converter.html#microsecsToSeconds" translate="no">microsecsToSeconds</a></b></span>(int) : int</li>
-<li class="fn" translate="no"><span class="name"><b><a href="converter.html#rawHMSItoMicroseconds" translate="no">rawHMSItoMicroseconds</a></b></span>(int, double) : int</li>
+<li class="fn" translate="no"><span class="name"><b><a href="converter.html#microsecsToHMSI" translate="no">microsecsToHMSI</a></b></span>(qint64, double) : QString</li>
+<li class="fn" translate="no"><span class="name"><b><a href="converter.html#microsecsToHMSM" translate="no">microsecsToHMSM</a></b></span>(qint64) : QString</li>
+<li class="fn" translate="no"><span class="name"><b><a href="converter.html#microsecsToMillis" translate="no">microsecsToMillis</a></b></span>(qint64) : QString</li>
+<li class="fn" translate="no"><span class="name"><b><a href="converter.html#microsecsToRawHMSI" translate="no">microsecsToRawHMSI</a></b></span>(qint64, double) : QString</li>
+<li class="fn" translate="no"><span class="name"><b><a href="converter.html#microsecsToSeconds" translate="no">microsecsToSeconds</a></b></span>(qint64) : QString</li>
+<li class="fn" translate="no"><span class="name"><b><a href="converter.html#rawHMSItoMicroseconds" translate="no">rawHMSItoMicroseconds</a></b></span>(QString, double) : qint64</li>
 <li class="fn" translate="no"><span class="name"><b><a href="converter.html#setNtscFramePerSec" translate="no">setNtscFramePerSec</a></b></span>(double)</li>
-<li class="fn" translate="no"><span class="name"><b><a href="converter.html#toMicroseconds" translate="no">toMicroseconds</a></b></span>(int, double) : int</li>
+<li class="fn" translate="no"><span class="name"><b><a href="converter.html#toMicroseconds" translate="no">toMicroseconds</a></b></span>(QString, double) : qint64</li>
 </ul>
 </td></tr>
 </table></div>

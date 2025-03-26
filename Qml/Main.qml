@@ -6,7 +6,7 @@ import "./Components"
 import "./Controllers"
 
 
-/*! ***********************************************************************************
+/* ***********************************************************************************
  * \brief Fenêtre principale.
  **************************************************************************************/
 Window {
@@ -18,7 +18,7 @@ Window {
     visible: true
     title: "TiCalcul"
 
-    Universal.theme: Universal.Light      // Dark
+    Universal.theme: Universal.Light // Dark
     Universal.accent: Universal.Cobalt
     Universal.foreground: Universal.Amber // Couleur forcée des boutons. Par défaut, ils sont en background foncé.
     Universal.background: Universal.Green // Couleur de fond

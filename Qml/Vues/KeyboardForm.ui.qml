@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 
 
-/*! *****************************************************************
+/* *****************************************************************
  * \brief Le KeyboardForm est un ensemble de 18 boutons de type KeyboardKey.
  *        Cette Form est attachée à un controleur Keyboard qui gère
  *        les actions suite à un appui sur un bouton.

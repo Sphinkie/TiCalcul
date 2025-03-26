@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
 <!-- converter.cpp -->
-  <meta name="description" content="La classe Converter est une classe statique contenant des fonctions de conversion de timecodes.">
-  <title>Converter Class | Qt 6.8 0.1</title>
+  <meta name="description" content="La classe Converter propose des fonctions de conversion de timecodes.">
+  <title>Converter Class | Qt 6.8 1.0</title>
   <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
   <script type="text/javascript">
     document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
@@ -27,6 +27,7 @@
         <div class="navigationbar">
         <ul>
 <li><a href="https://doc.qt.io/qt/index.html" translate="no">Qt 6.8</a></li>
+<li><a href="ticalcul-module.html" translate="no">TiCalcul</a></li>
 <li>Converter</li>
 <li id="buildversion">Qt 6.8 Reference Documentation</li>
     </ul>
@@ -47,7 +48,7 @@
 <div class="sidebar-content" id="sidebar-content"></div></div>
 <h1 class="title" translate="no">Converter Class</h1>
 <!-- $$$Converter-brief -->
-<p>La classe Converter est une classe statique contenant des fonctions de conversion de timecodes. <a href="#details">More...</a></p>
+<p>La classe Converter propose des fonctions de conversion de timecodes. <a href="#details">More...</a></p>
 <!-- @@@Converter -->
 <div class="table"><table class="alignedsummary" translate="no">
 <tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">  <span class="preprocessor">#include &lt;Converter&gt;</span></td></tr>
@@ -61,25 +62,27 @@
 </table></div>
 <h2 id="static-public-members">Static Public Members</h2>
 <div class="table"><table class="alignedsummary" translate="no">
-<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="converter.html#HMSItoMicroseconds" translate="no">HMSItoMicroseconds</a></b>(int, double)</td></tr>
-<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="converter.html#addSpaceSeparator" translate="no">addSpaceSeparator</a></b>(int)</td></tr>
-<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="converter.html#completeRawHMSIWithDots" translate="no">completeRawHMSIWithDots</a></b>(int)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qint64 </td><td class="memItemRight bottomAlign"><b><a href="converter.html#HMSItoMicroseconds" translate="no">HMSItoMicroseconds</a></b>(QString <i>hmsi</i>, double <i>framerate</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="converter.html#HMSItoRawHMSI" translate="no">HMSItoRawHMSI</a></b>(QString <i>hmsi</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="converter.html#addSpaceSeparator" translate="no">addSpaceSeparator</a></b>(QString <i>value</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="converter.html#completeRawHMSIWithDots" translate="no">completeRawHMSIWithDots</a></b>(QString <i>raw_hmsi</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> double </td><td class="memItemRight bottomAlign"><b><a href="converter.html#getNtscFramePerSec" translate="no">getNtscFramePerSec</a></b>()</td></tr>
-<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="converter.html#microseconds" translate="no">microseconds</a></b>(int)</td></tr>
-<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="converter.html#microsecsToDHMSM" translate="no">microsecsToDHMSM</a></b>(int)</td></tr>
-<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="converter.html#microsecsToFrames" translate="no">microsecsToFrames</a></b>(int, double)</td></tr>
-<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="converter.html#microsecsToHMSI" translate="no">microsecsToHMSI</a></b>(int, double)</td></tr>
-<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="converter.html#microsecsToHMSM" translate="no">microsecsToHMSM</a></b>(int)</td></tr>
-<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="converter.html#microsecsToMillis" translate="no">microsecsToMillis</a></b>(int)</td></tr>
-<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="converter.html#microsecsToRawHMSI" translate="no">microsecsToRawHMSI</a></b>(int, double)</td></tr>
-<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="converter.html#microsecsToSeconds" translate="no">microsecsToSeconds</a></b>(int)</td></tr>
-<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="converter.html#rawHMSItoMicroseconds" translate="no">rawHMSItoMicroseconds</a></b>(int, double)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="converter.html#microseconds" translate="no">microseconds</a></b>(qint64 <i>microsecs</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="converter.html#microsecsToDHMSM" translate="no">microsecsToDHMSM</a></b>(qint64 <i>microsecs</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="converter.html#microsecsToFrames" translate="no">microsecsToFrames</a></b>(qint64 <i>microsecs</i>, double <i>framerate</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="converter.html#microsecsToHMSI" translate="no">microsecsToHMSI</a></b>(qint64 <i>microsecs</i>, double <i>framerate</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="converter.html#microsecsToHMSM" translate="no">microsecsToHMSM</a></b>(qint64 <i>microsecs</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="converter.html#microsecsToMillis" translate="no">microsecsToMillis</a></b>(qint64 <i>microsecs</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="converter.html#microsecsToRawHMSI" translate="no">microsecsToRawHMSI</a></b>(qint64 <i>microsecs</i>, double <i>framerate</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="converter.html#microsecsToSeconds" translate="no">microsecsToSeconds</a></b>(qint64 <i>microsecs</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qint64 </td><td class="memItemRight bottomAlign"><b><a href="converter.html#rawHMSItoMicroseconds" translate="no">rawHMSItoMicroseconds</a></b>(QString <i>raw_hmsi</i>, double <i>framerate</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="converter.html#setNtscFramePerSec" translate="no">setNtscFramePerSec</a></b>(double <i>framerate</i>)</td></tr>
-<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="converter.html#toMicroseconds" translate="no">toMicroseconds</a></b>(int, double)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qint64 </td><td class="memItemRight bottomAlign"><b><a href="converter.html#toMicroseconds" translate="no">toMicroseconds</a></b>(QString <i>value</i>, double <i>conversionFacteur</i>)</td></tr>
 </table></div>
 <!-- $$$Converter-description -->
 <div class="descr">
 <h2 id="details">Detailed Description</h2>
+<p>La classe Converter est une classe statique contenant des fonctions de conversion de timecodes.</p>
 </div>
 <!-- @@@Converter -->
 <div class="func">
@@ -88,88 +91,114 @@
 <h3 class="fn" translate="no" id="Converter">Converter::<span class="name">Converter</span>()</h3>
 <p>Constructeur.</p>
 <!-- @@@Converter -->
-<!-- $$$HMSItoMicroseconds[overload1]$$$HMSItoMicrosecondsintdouble -->
-<h3 class="fn" translate="no" id="HMSItoMicroseconds"><code translate="no">[static] </code><span class="type">int</span> Converter::<span class="name">HMSItoMicroseconds</span>(<span class="type">int</span>, <span class="type">double</span>)</h3>
+<!-- $$$HMSItoMicroseconds[overload1]$$$HMSItoMicrosecondsQStringdouble -->
+<h3 class="fn" translate="no" id="HMSItoMicroseconds"><code translate="no">[static] </code><span class="type"><a href="https://doc.qt.io/qt/qttypes.html#qint64-typedef" translate="no">qint64</a></span> Converter::<span class="name">HMSItoMicroseconds</span>(<span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> <i>hmsi</i>, <span class="type">double</span> <i>framerate</i>)</h3>
 <p>Convertit un HMSI (même incomplet) en un nombre de micro-secondes.</p>
 <p>This function returns the value converted in microseconds. <br />
- Exemple: &quot;02:45:00:..&quot; pour 2h45m en 9900000000 us. <br />
- hmsi : HMSI string to convert. <br />
- framerate : le framerate utilisé dans le hmsi. <br />
-</p>
+ <b>Exemple</b>: &quot;02:45:00:..&quot; pour 2h45m en 9900000000 us.</p>
+<p><i translate="no">hmsi</i>: HMSI string to convert. <br />
+ <i translate="no">framerate</i>: le framerate utilisé dans le hmsi.</p>
 <!-- @@@HMSItoMicroseconds -->
-<!-- $$$addSpaceSeparator[overload1]$$$addSpaceSeparatorint -->
-<h3 class="fn" translate="no" id="addSpaceSeparator"><code translate="no">[static] </code><span class="type">int</span> Converter::<span class="name">addSpaceSeparator</span>(<span class="type">int</span>)</h3>
+<!-- $$$HMSItoRawHMSI[overload1]$$$HMSItoRawHMSIQString -->
+<h3 class="fn" translate="no" id="HMSItoRawHMSI"><code translate="no">[static] </code><span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> Converter::<span class="name">HMSItoRawHMSI</span>(<span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> <i>hmsi</i>)</h3>
+<p>Convertit un HMSI en un RAW HMSI (Exemple: &quot;25:48:12:..' en &quot;254812&quot;).</p>
+<p>Returns the corresponding RAW HMSI.</p>
+<p><i translate="no">hmsi</i>: une string HMSI avec des &quot;:&quot; et des &quot;..&quot;.</p>
+<!-- @@@HMSItoRawHMSI -->
+<!-- $$$addSpaceSeparator[overload1]$$$addSpaceSeparatorQString -->
+<h3 class="fn" translate="no" id="addSpaceSeparator"><code translate="no">[static] </code><span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> Converter::<span class="name">addSpaceSeparator</span>(<span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> <i>value</i>)</h3>
 <p>Ajoute des séparateurs de milliers sur la partie entière et la partie décimale.</p>
-<p>value : a numeric value. <br />
- Returns a readable string with space separators.</p>
+<p>Returns a readable string with space separators.</p>
+<p><i translate="no">value</i>: a numeric value.</p>
 <!-- @@@addSpaceSeparator -->
-<!-- $$$completeRawHMSIWithDots[overload1]$$$completeRawHMSIWithDotsint -->
-<h3 class="fn" translate="no" id="completeRawHMSIWithDots"><code translate="no">[static] </code><span class="type">int</span> Converter::<span class="name">completeRawHMSIWithDots</span>(<span class="type">int</span>)</h3>
-<p>Transforme &quot;123&quot; en &quot;12:3.:..:..&quot;.</p>
-<p>raw_hmsi : raw hmsi to convert. <br />
- Returns the hmsi formatted with : and dots.</p>
+<!-- $$$completeRawHMSIWithDots[overload1]$$$completeRawHMSIWithDotsQString -->
+<h3 class="fn" translate="no" id="completeRawHMSIWithDots"><code translate="no">[static] </code><span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> Converter::<span class="name">completeRawHMSIWithDots</span>(<span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> <i>raw_hmsi</i>)</h3>
+<p>Returns the hmsi formatted with : and dots.</p>
+<p><b>Exemple</b>: Transforme &quot;123&quot; en &quot;12:3.:..:..&quot;.</p>
+<p><i translate="no">raw_hmsi</i>: raw hmsi to convert.</p>
 <!-- @@@completeRawHMSIWithDots -->
 <!-- $$$getNtscFramePerSec[overload1]$$$getNtscFramePerSec -->
 <h3 class="fn" translate="no" id="getNtscFramePerSec"><code translate="no">[static] </code><span class="type">double</span> Converter::<span class="name">getNtscFramePerSec</span>()</h3>
-<p>Retourne le framerate courant du NTSC. @return the current NTSC framerate.</p>
+<p>Returns the current NTSC framerate.</p>
 <!-- @@@getNtscFramePerSec -->
-<!-- $$$microseconds[overload1]$$$microsecondsint -->
-<h3 class="fn" translate="no" id="microseconds"><code translate="no">[static] </code><span class="type">int</span> Converter::<span class="name">microseconds</span>(<span class="type">int</span>)</h3>
-<p>Transforme une valeur numérique (ex: 1'234'000'000) en un texte (ex: &quot;1234000000&quot;). @param microsecs : microsecs value to convert. @return a readable string</p>
+<!-- $$$microseconds[overload1]$$$microsecondsqint64 -->
+<h3 class="fn" translate="no" id="microseconds"><code translate="no">[static] </code><span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> Converter::<span class="name">microseconds</span>(<span class="type"><a href="https://doc.qt.io/qt/qttypes.html#qint64-typedef" translate="no">qint64</a></span> <i>microsecs</i>)</h3>
+<p>Transforme une valeur numérique en un texte (readable string).</p>
+<p><b>Example</b>: 1'234'000'000 en &quot;1234000000&quot;.</p>
+<p><i translate="no">microsecs</i> : microsecs value to convert.</p>
 <!-- @@@microseconds -->
-<!-- $$$microsecsToDHMSM[overload1]$$$microsecsToDHMSMint -->
-<h3 class="fn" translate="no" id="microsecsToDHMSM"><code translate="no">[static] </code><span class="type">int</span> Converter::<span class="name">microsecsToDHMSM</span>(<span class="type">int</span>)</h3>
-<p>Transforme 1'234'000'000 en &quot;0 days 00:20:34,000&quot;. param microsecs : microsecs value to convert. Returns a readable HMSI value with days (&quot;N days HH:MM:SS:II&quot;).</p>
+<!-- $$$microsecsToDHMSM[overload1]$$$microsecsToDHMSMqint64 -->
+<h3 class="fn" translate="no" id="microsecsToDHMSM"><code translate="no">[static] </code><span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> Converter::<span class="name">microsecsToDHMSM</span>(<span class="type"><a href="https://doc.qt.io/qt/qttypes.html#qint64-typedef" translate="no">qint64</a></span> <i>microsecs</i>)</h3>
+<p>Returns a readable HMSI value with days (&quot;N days HH:MM:SS:II&quot;).</p>
+<p><b>Exemple</b>: Transforme 1'234'000'000 en &quot;0 days 00:20:34,000&quot;.</p>
+<p><i translate="no">microsecs</i> : microsecs value to convert.</p>
 <!-- @@@microsecsToDHMSM -->
-<!-- $$$microsecsToFrames[overload1]$$$microsecsToFramesintdouble -->
-<h3 class="fn" translate="no" id="microsecsToFrames"><code translate="no">[static] </code><span class="type">int</span> Converter::<span class="name">microsecsToFrames</span>(<span class="type">int</span>, <span class="type">double</span>)</h3>
+<!-- $$$microsecsToFrames[overload1]$$$microsecsToFramesqint64double -->
+<h3 class="fn" translate="no" id="microsecsToFrames"><code translate="no">[static] </code><span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> Converter::<span class="name">microsecsToFrames</span>(<span class="type"><a href="https://doc.qt.io/qt/qttypes.html#qint64-typedef" translate="no">qint64</a></span> <i>microsecs</i>, <span class="type">double</span> <i>framerate</i>)</h3>
 <p>Convertit un nombre de microsecondes en un nombre de frames (selon un certains framerate)</p>
-<div class="admonition note">
-<p><b>Note: </b>Ex: 1'234'000'000 ms en 25 fps donne &quot;30850&quot; frames. Ex: 1'234'000'000 ms en 50 fps donne &quot;61700&quot; frames. @param microsecs : microsecs value to convert. @param framerate : framerate to use for conversion (ex: 25.0) @return the value converted in frames, as a string.</p>
-</div>
+<p>Returns the <i translate="no">microsecs</i> value converted in frames, as a string. <br />
+ <b>Exemple</b>: 1'234'000'000 ms en 25 fps donne &quot;30850&quot; frames. <br />
+ <b>Exemple</b>: 1'234'000'000 ms en 50 fps donne &quot;61700&quot; frames.</p>
+<p><i translate="no">microsecs</i>: microsecs value to convert. <br />
+ <i translate="no">framerate</i>: framerate to use for conversion (ex: 25.0). <br />
+</p>
 <!-- @@@microsecsToFrames -->
-<!-- $$$microsecsToHMSI[overload1]$$$microsecsToHMSIintdouble -->
-<h3 class="fn" translate="no" id="microsecsToHMSI"><code translate="no">[static] </code><span class="type">int</span> Converter::<span class="name">microsecsToHMSI</span>(<span class="type">int</span>, <span class="type">double</span>)</h3>
-<p>Transforme 1'234'000'000 en &quot;00:20:34:00&quot;. param microsecs : microsecs value to convert. param framerate : the framerate to use for the 2 last digits. Returns a readable HMSI value (HH:MM:SS:II).</p>
+<!-- $$$microsecsToHMSI[overload1]$$$microsecsToHMSIqint64double -->
+<h3 class="fn" translate="no" id="microsecsToHMSI"><code translate="no">[static] </code><span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> Converter::<span class="name">microsecsToHMSI</span>(<span class="type"><a href="https://doc.qt.io/qt/qttypes.html#qint64-typedef" translate="no">qint64</a></span> <i>microsecs</i>, <span class="type">double</span> <i>framerate</i>)</h3>
+<p>Returns a readable HMSI value (HH:MM:SS:II).</p>
+<p><b>Exemple</b>: Transforme 1'234'000'000 en &quot;00:20:34:00&quot;.</p>
+<p><i translate="no">microsecs</i> : microsecs value to convert. <br />
+ <i translate="no">framerate</i> : the framerate to use for the 2 last digits. <br />
+</p>
 <!-- @@@microsecsToHMSI -->
-<!-- $$$microsecsToHMSM[overload1]$$$microsecsToHMSMint -->
-<h3 class="fn" translate="no" id="microsecsToHMSM"><code translate="no">[static] </code><span class="type">int</span> Converter::<span class="name">microsecsToHMSM</span>(<span class="type">int</span>)</h3>
-<p>Transforme 1'234'000'000 en &quot;00:20:34,000&quot;. @param microsecs : microsecs value to convert. @return a readable HMSm value (HH:MM:SS,mmm).</p>
+<!-- $$$microsecsToHMSM[overload1]$$$microsecsToHMSMqint64 -->
+<h3 class="fn" translate="no" id="microsecsToHMSM"><code translate="no">[static] </code><span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> Converter::<span class="name">microsecsToHMSM</span>(<span class="type"><a href="https://doc.qt.io/qt/qttypes.html#qint64-typedef" translate="no">qint64</a></span> <i>microsecs</i>)</h3>
+<p>Returns a readable HMSm value (HH:MM:SS,mmm).</p>
+<p><b>Exemple</b>: Transforme 1'234'000'000 en &quot;00:20:34,000&quot;.</p>
+<p><i translate="no">microsecs</i> : microsecs value to convert.</p>
 <!-- @@@microsecsToHMSM -->
-<!-- $$$microsecsToMillis[overload1]$$$microsecsToMillisint -->
-<h3 class="fn" translate="no" id="microsecsToMillis"><code translate="no">[static] </code><span class="type">int</span> Converter::<span class="name">microsecsToMillis</span>(<span class="type">int</span>)</h3>
-<p>Transforme 1'234'000'000 en &quot;1234000&quot;. @param microsecs : microsecs value to convert. @return the value converted in milliseconds, as a string.</p>
+<!-- $$$microsecsToMillis[overload1]$$$microsecsToMillisqint64 -->
+<h3 class="fn" translate="no" id="microsecsToMillis"><code translate="no">[static] </code><span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> Converter::<span class="name">microsecsToMillis</span>(<span class="type"><a href="https://doc.qt.io/qt/qttypes.html#qint64-typedef" translate="no">qint64</a></span> <i>microsecs</i>)</h3>
+<p>Returns the value converted in milliseconds, as a string.</p>
+<p><b>Exemple</b>: Transforme 1'234'000'000 en &quot;1234000&quot;.</p>
+<p><i translate="no">microsecs</i> : microsecs value to convert.</p>
 <!-- @@@microsecsToMillis -->
-<!-- $$$microsecsToRawHMSI[overload1]$$$microsecsToRawHMSIintdouble -->
-<h3 class="fn" translate="no" id="microsecsToRawHMSI"><code translate="no">[static] </code><span class="type">int</span> Converter::<span class="name">microsecsToRawHMSI</span>(<span class="type">int</span>, <span class="type">double</span>)</h3>
-<p>Transforme 1'234'000'000 en &quot;00203400&quot;. param microsecs : microsecs value to convert. param framerate : framerate for raw hmsi Returns a raw HMSI value (&quot;HHMMSSII&quot;).</p>
+<!-- $$$microsecsToRawHMSI[overload1]$$$microsecsToRawHMSIqint64double -->
+<h3 class="fn" translate="no" id="microsecsToRawHMSI"><code translate="no">[static] </code><span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> Converter::<span class="name">microsecsToRawHMSI</span>(<span class="type"><a href="https://doc.qt.io/qt/qttypes.html#qint64-typedef" translate="no">qint64</a></span> <i>microsecs</i>, <span class="type">double</span> <i>framerate</i>)</h3>
+<p>Returns a raw HMSI value (&quot;HHMMSSII&quot;).</p>
+<p>Le premier paramètre <i translate="no">microsecs</i> est la valeur à convertir en microsecondes. <br />
+ Le second paramètre <i translate="no">framerate</i> est le framerate à utiliser pour le raw hmsi. <br />
+ <b>Exemple</b>: Transforme 1'234'000'000 en &quot;00203400&quot;.</p>
 <!-- @@@microsecsToRawHMSI -->
-<!-- $$$microsecsToSeconds[overload1]$$$microsecsToSecondsint -->
-<h3 class="fn" translate="no" id="microsecsToSeconds"><code translate="no">[static] </code><span class="type">int</span> Converter::<span class="name">microsecsToSeconds</span>(<span class="type">int</span>)</h3>
-<p>*************************************************************************</p>
-<p>Transforme 1'234'000'000 en &quot;1234&quot;.</p>
-<div class="admonition note">
-<p><b>Note: </b>Autant que possible, on évite les divisions int/float qui introduisent des pertes de précision. @param microsecs : microsecs value to convert. @return the value converted in seconds, as a string.</p>
-</div>
+<!-- $$$microsecsToSeconds[overload1]$$$microsecsToSecondsqint64 -->
+<h3 class="fn" translate="no" id="microsecsToSeconds"><code translate="no">[static] </code><span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> Converter::<span class="name">microsecsToSeconds</span>(<span class="type"><a href="https://doc.qt.io/qt/qttypes.html#qint64-typedef" translate="no">qint64</a></span> <i>microsecs</i>)</h3>
+<p>Transforme 1'234'000'000 en &quot;1234&quot; and returns the value converted in seconds, as a string.</p>
+<p><b>Note</b>: Autant que possible, on évite les divisions int/float qui introduisent des pertes de précision.</p>
+<p><i translate="no">microsecs</i>: microsecs value to convert.</p>
 <!-- @@@microsecsToSeconds -->
-<!-- $$$rawHMSItoMicroseconds[overload1]$$$rawHMSItoMicrosecondsintdouble -->
-<h3 class="fn" translate="no" id="rawHMSItoMicroseconds"><code translate="no">[static] </code><span class="type">int</span> Converter::<span class="name">rawHMSItoMicroseconds</span>(<span class="type">int</span>, <span class="type">double</span>)</h3>
+<!-- $$$rawHMSItoMicroseconds[overload1]$$$rawHMSItoMicrosecondsQStringdouble -->
+<h3 class="fn" translate="no" id="rawHMSItoMicroseconds"><code translate="no">[static] </code><span class="type"><a href="https://doc.qt.io/qt/qttypes.html#qint64-typedef" translate="no">qint64</a></span> Converter::<span class="name">rawHMSItoMicroseconds</span>(<span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> <i>raw_hmsi</i>, <span class="type">double</span> <i>framerate</i>)</h3>
 <p>Convertit un Raw HMSI (même partiel) en un nombre de micro-secondes.</p>
 <p>Returns the value converted in microseconds. <br />
- Exemple: &quot;0245&quot; pour 2h45m = 9 900 000 000 us. <br />
- hmsi : raw hmsi to convert. <br />
- framerate : the framerate used for raw hmsi. <br />
+ <b>Exemple</b>: &quot;0245&quot; pour 2h45m = 9 900 000 000 us.</p>
+<p><i translate="no">raw_hmsi</i>: raw hmsi to convert. <br />
+ <i translate="no">framerate</i>: the framerate used for raw hmsi. <br />
 </p>
 <!-- @@@rawHMSItoMicroseconds -->
 <!-- $$$setNtscFramePerSec[overload1]$$$setNtscFramePerSecdouble -->
 <h3 class="fn" translate="no" id="setNtscFramePerSec"><code translate="no">[static] </code><span class="type">void</span> Converter::<span class="name">setNtscFramePerSec</span>(<span class="type">double</span> <i>framerate</i>)</h3>
-<p>Change le framerate du NTSC. <i translate="no">framerate</i> : the new NTSC framerate.</p>
+<p>Change le framerate du NTSC.</p>
+<p><i translate="no">framerate</i>: the new NTSC framerate.</p>
 <!-- @@@setNtscFramePerSec -->
-<!-- $$$toMicroseconds[overload1]$$$toMicrosecondsintdouble -->
-<h3 class="fn" translate="no" id="toMicroseconds"><code translate="no">[static] </code><span class="type">int</span> Converter::<span class="name">toMicroseconds</span>(<span class="type">int</span>, <span class="type">double</span>)</h3>
+<!-- $$$toMicroseconds[overload1]$$$toMicrosecondsQStringdouble -->
+<h3 class="fn" translate="no" id="toMicroseconds"><code translate="no">[static] </code><span class="type"><a href="https://doc.qt.io/qt/qttypes.html#qint64-typedef" translate="no">qint64</a></span> Converter::<span class="name">toMicroseconds</span>(<span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> <i>value</i>, <span class="type">double</span> <i>conversionFacteur</i>)</h3>
 <p>Transforme une unité quelconque (string) en microsecondes (numerique).</p>
+<p>Retourne un nombre de microsecondes. Retourne -1 en cas d'erreur.</p>
+<p><i translate="no">value</i>: un nombre d'unités (string). <br />
+ <i translate="no">conversionFacteur</i>: le facteur de conversion de cette unité. <br />
+</p>
 <div class="admonition note">
-<p><b>Note: </b>Hors HMSI. param value: un nombre d'unités (string). param conversionFacteur: le facteur de conversion de cette unité. Retourne un nombre de microsecondes. -1 en cas d'erreur.</p>
+<p><b>Note: </b>Hors HMSI.</p>
 </div>
 <!-- @@@toMicroseconds -->
 </div>

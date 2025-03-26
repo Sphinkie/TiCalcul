@@ -2,6 +2,7 @@
 #define CALCULATEUR_H
 
 #include <QObject>
+
 #include "Operande.h"
 
 

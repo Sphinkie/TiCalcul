@@ -3,29 +3,25 @@
 # --------------------------------------------------------------------------------------
 
 # Variable globale: chemin des .index de Qt
-QT_INSTALL_DOCS = C:/Qt/Docs/Qt-6.6.1
-
-
-include(C:/Qt/Docs/Qt-6.6.1/global/qt-module-defaults.qdocconf)
-
-#include($QT_INSTALL_DOCS/global/qt-module-defaults.qdocconf)
-
-
-
-# For compatibility issues, include compat.qdocconf:
+qt_install_docs = C:/Qt/Docs/Qt-6.6.1
+# QT_INSTALL_DOCS=C:/Qt/Docs/Qt-6.6.1
 
 QT_VER = 6.8
 QT_VERSION = 6.8
 QT_VERSION_TAG = open-source
 
-include($QTDIR/doc/global/compat.qdocconf)
-include($QTDIR/doc/global/qt-cpp-defines.qdocconf)
-include($QTDIR/doc/global/fileextensions.qdocconf)
-include($QTDIR/doc/global/qt-html-templates-offline.qdocconf)
 
-include($QTDIR/doc/global/config.qdocconf)
-include($QTDIR/doc/global/macros.qdocconf)
-include($QTDIR/doc/global/qt-module-defaults.qdocconf)
+# For compatibility issues, include compat.qdocconf:
+include(C:/Qt/Docs/Qt-6.6.1/global/qt-module-defaults.qdocconf)
+#include($qt_install_docs/global/qt-module-defaults.qdocconf)
+
+include($qt_install_docs/global/compat.qdocconf)
+include($qt_install_docs/global/qt-cpp-defines.qdocconf)
+include($qt_install_docs/global/fileextensions.qdocconf)
+include($qt_install_docs/global/qt-html-templates-offline.qdocconf)
+include($qt_install_docs/global/config.qdocconf)
+include($qt_install_docs/global/macros.qdocconf)
+include($qt_install_docs/global/qt-module-defaults.qdocconf)
 
 # --------------------------------------------------------------------------------------
 # Commande de génération dans le "command prompt avec environnement de build":
@@ -34,58 +30,84 @@ include($QTDIR/doc/global/qt-module-defaults.qdocconf)
 # Commande de génération avec traces de debug:
 # C:\Qt\6.6.0\mingw_64\bin\qdoc -debug tiCalcul.qdocconf
 #
-# Génération du fichier help ".qch":
-# La documentation HTML doit être générée au préalable.
-# Voir "The Qt Help Framework": https://doc.qt.io/qt-6/qthelp-framework.html
-# Ajout du fichier ".qch" dans Qt Creator : Menu Edit > Preferences > Help > Documentation > Add.
+# voir pour le QML : https://forum.qt.io/topic/101832/linking-to-qt-offline-documentation-with-qdoc
 #
 # see also https://decovar.dev/blog/2017/05/24/documenting-qt-project-with-qdoc/
 # analyse des pb: https://doc.qt.io/qt-6/qdoc-warnings.html
 #
-# qhelpgenerator tiCalcul.qhp -o tiCalcul.qch
-# Ensuite appuyer sur F1 dan QtCreator
+# Variables du QDOC conf : https://doc.qt.io/qt-6/22-qdoc-configuration-generalvariables.html
+# QDONC conf minimu = https://doc.qt.io/qt-6/21-1-minimum-qdocconf.html
+# un exemple réel: https://doc.qt.io/qt-6/21-2-qtgui-qdocconf.html
 # --------------------------------------------------------------------------------------
 
-
 # Titre de la documentation project:
-project = tiCalcul
+project     = tiCalcul
 description = The ultimate Timecode Calculator
-version                = 0.1
-url                    = http://cara.uai.it/
+version     = 1.0
+url         = https://sphinkie.github.io/TiCalcul
 
+# --------------------------------------------------------------------------------------
+# INCLUDES
+# --------------------------------------------------------------------------------------
 # Additional include paths to QDoc when parsing C++ code for documentation comments.
-# Equivalent au -I de la ligne de commande
 includepaths += ./Sources
+includepaths += ${qt_install_docs}
 
-# defines += QT_GUI_LIB
+#
+# An easy way to see where those special variables point to is to run qmake -query
+# For me:
 
-# voir pour le QML : https://forum.qt.io/topic/101832/linking-to-qt-offline-documentation-with-qdoc
+#   QT_INSTALL_HEADERS=C:/Qt/6.6.1/msvc2019_64/include
+#   QT_INSTALL_DOCS=C:/Qt/Docs/Qt-6.6.1
 
+# Supprime les erreurs dues aux macro Q_OBJECT et QçINVOKABLE et permet davoir les qQtype
+includepaths += $QTDIR/include
+includepaths += $QTDIR/include/QtCore \
+                $QTDIR/include/QtGui \
+                $QTDIR/include/QtQuick
+
+
+
+# --------------------------------------------------------------------------------------
+# The defines variable specifies the C++ preprocessor symbols that QDoc will recognize and respond to.
+# --------------------------------------------------------------------------------------
+defines += QT_GUI_LIB
+
+# --------------------------------------------------------------------------------------
+# INDEX
+# --------------------------------------------------------------------------------------
 indexes += \
-    ${QT_INSTALL_DOCS}/qtcore/qtcore.index \
-    ${QT_INSTALL_DOCS}/qtdoc/qtdoc.index \
-    ${QT_INSTALL_DOCS}/qtquick/qtquick.index
+    ${qt_install_docs}/qtcore/qtcore.index \
+    ${qt_install_docs}/qtquick/qtquick.index \
+    ${qt_install_docs}/qtdoc/qtdoc.index \
+    ${qt_install_docs}/qtqml/qtqml.index \
+    ${qt_install_docs}/qtgui/qtgui.index \
+    ${qt_install_docs}/qtquickcontrols/qtquickcontrols.index \
+    ${qt_install_docs}/qtqmlcore/qtqmlcore.index
 
-# indexes += ${QT_INSTALL_DOCS}/qtlocation/qtlocation.index
-# indexes += ${QT_INSTALL_DOCS}/qtpositioning/qtpositioning.index
+# A ajouter selon les besoins:
+# indexes += ${qt_install_docs}/qtlocation/qtlocation.index
+# indexes += ${qt_install_docs}/qtpositioning/qtpositioning.index
 
+
+# --------------------------------------------------------------------------------------
+# DEPENDANCES - Liste d'index files
+# --------------------------------------------------------------------------------------
+# The depends variable defines a list of other documentation projects that this project depends on
+# for resolving link targets for type inheritance and anything else the documentation needs to link to.
+# --------------------------------------------------------------------------------------
+# The depends command accepts also a special value of '*'.
+# This instructs QDoc to load all index files found in specified index directories; that is, "depends on everything".
+# --------------------------------------------------------------------------------------
 # depends = *
-# depends = qtdoc qtcore qtquick qtlocation
-depends += qtcore qtnetwork qtopengl qtsvg qtqml qtquick qtwidgets qtdoc
+depends = qtcore qtquick qtdoc qtml qtqmlcore qtgui qtquickcontrols
+# depends += qtlocation qtnetwork
+# depends += qtcore qtopengl qtsvg qtqml qtquick qtwidgets qtdoc
+# depends += ticalcul
 
-# File extensions (Liste prédéfinie ou liste manuelle):
-#include(fileextensions.qdocconf)
-headers.fileextensions  = "*.h *.hpp"
-sources.fileextensions  = "*.cpp *.qml *.qdoc"
-
-includepaths  +=  $QTDIR
-# C:/Qt/6.2.4/msvc2019_64 \
-# C:/Qt/6.2.4/Src
-
-# The directory where QDoc places the generated documentation.
-outputdir   = ./docs/qdoc/html
-outputformats = HTML
-
+# --------------------------------------------------------------------------------------
+# QHELP
+# --------------------------------------------------------------------------------------
 # Vérification du paramétrage de Qhelp (Qt6.6)
 qhp = false
 
@@ -104,11 +126,21 @@ qhp = false
 # qhp.QtGui.subprojects.classes.sortPages = true
 
 
+# --------------------------------------------------------------------------------------
+# File extensions (Liste prédéfinie ou liste manuelle):
+# --------------------------------------------------------------------------------------
+#include(fileextensions.qdocconf)
+headers.fileextensions  = "*.h *.hpp"
+sources.fileextensions  = "*.cpp *.qml *.qdoc"
 
 
+# The directory where QDoc places the generated documentation.
+outputdir   = ./docs/qdoc/html
+outputformats = HTML
 
 # The directories that contain the header files associated with the .cpp source files used in the documentation.
 headerdirs += ./Sources
+# headerdirs += $QTDIR/include/QtCore
 
 # The directories that contain the .cpp or .qdoc files used in the documentation.
 sourcedirs  = ./Sources

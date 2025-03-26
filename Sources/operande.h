@@ -14,7 +14,7 @@ class Operande : public QObject
     Q_OBJECT
 
 public:
-    explicit Operande(const QString name, QObject *parent = nullptr);
+    explicit Operande(QString name, QObject *parent = nullptr);
     qint64 valeurPivot() const;
     void registerContext(QQmlContext* context);
     Q_INVOKABLE void connectActiveDisplay(QQmlApplicationEngine* engine);

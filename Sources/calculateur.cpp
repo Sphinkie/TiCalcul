@@ -2,7 +2,7 @@
 
 /*! **********************************************************************************************************
  * \class Calculateur
- * \inmodule tiCalcul
+ * \inmodule TiCalcul
  * \brief La classe Calculateur gère les opérations entre les opérandes: addition, soustraction, complément.
  *
  *************************************************************************************************************/

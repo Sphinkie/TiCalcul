@@ -3,7 +3,7 @@ import QtQuick.Controls.Universal
 import TiCalcul
 
 
-/*! *************************************************************************
+/* *************************************************************************
  * Le FieldInputForm est associé à un objet C++ Afficheur.
  * Il affiche une valeur (string) qui est une propriété partagée de l'objet.
  * Il hérite d'un Button car un click permet de le sélectionner.

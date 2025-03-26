@@ -7,12 +7,39 @@
 #include "Sources/calculateur.h"
 
 /* ********************************************************************************* */
+/* Entête pour la QDOC                                                               */
+/* ********************************************************************************* */
 /*!
- * \brief Programme principal
- * \param argc (argument count): nombre +1 de paramètres de argv
- * \param argv (argument vector)
- * \return 0 si sortie normale, -1 sinon.
- * ******************************************************************************** */
+    \module TiCalcul
+    \title TiCalcul
+    \brief Les classes C++.
+
+    The ultimate Timecode Calculator.
+    \list
+        \li Les classes C++
+        \li les scripts QML
+    \endlist
+
+    \startpage TiCalcul
+
+    TiCalcul est developpé en C++ et en QML (avec le framework Qt version 6). \br
+    Il lit et écrit les tags EXIF et IPTC des photos JPEG avec \l{https://exiftool.org}{exifTool}. \br
+    Il accède aux cartes géographiques via les modules QtLocation et QtPositioning.
+*/
+/* ********************************************************************************* */
+
+
+
+/*!
+ * \fn int main(int argc, char* argv[])
+ *
+ * \brief Programme principal.
+ *
+ * Retourne 0 si sortie normale, -1 sinon.
+ *
+ * \a argc (argument count): nombre +1 de paramètres de argv. \br
+ * \a argv (argument vector). \br
+ **/
 int main(int argc, char* argv[])
 {
     QGuiApplication app(argc, argv);

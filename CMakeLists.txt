@@ -13,7 +13,7 @@ find_package(Qt6 REQUIRED COMPONENTS Quick)
 qt_standard_project_setup(REQUIRES 6.5)
 
 qt_add_executable(appTiCalcul
-    main.cpp
+    Sources/main.cpp
     ${app_icon_resource_windows}
 )
 
@@ -21,6 +21,7 @@ qt_add_qml_module(appTiCalcul
     URI TiCalcul
     VERSION 1.0
         RESOURCES Resources/TiCalcul.qrc
+        RESOURCES TiCalcul.qdocconf
 
         QML_FILES Qml/Main.qml
         QML_FILES Qml/Vues/TiButton.ui.qml
@@ -43,6 +44,7 @@ qt_add_qml_module(appTiCalcul
         QML_FILES Qml/Components/FieldResult.qml
         QML_FILES Qml/Components/ActiveDisplay.qml
 
+        # SOURCES Sources/main.cpp
         SOURCES Sources/unites.h Sources/unites.cpp
         SOURCES Sources/operande.h Sources/operande.cpp
         SOURCES Sources/afficheur.h Sources/afficheur.cpp

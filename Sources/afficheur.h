@@ -1,8 +1,8 @@
 #ifndef AFFICHEUR_H
 #define AFFICHEUR_H
 
-#include "unites.h"
 #include <QObject>
+#include "unites.h"
 
 class Afficheur : public QObject
 {
