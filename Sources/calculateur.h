@@ -18,6 +18,7 @@ public:
     Q_INVOKABLE void substract();
     Q_INVOKABLE void swap();
     Q_INVOKABLE void memorize();
+    Q_INVOKABLE void clear();
 
 public slots:
     void onValeurPivotChanged();
@@ -26,14 +27,14 @@ signals:
     void operateurChanged();
 
 public:
-    QString mOperateur = "";  //!< opération en cours (string affichable)
+    QString mOperateur = "";      // opération en cours (string affichable)
 
 private:
-    Operande* mTC1;         //!< premier opérande.
-    Operande* mTC2;         //!< second opérande.
-    Operande* mResult;      //!< opérande résultat.
+    Operande* mTC1;               // premier opérande.
+    Operande* mTC2;               // second opérande.
+    Operande* mResult;            // opérande résultat.
     enum Operation {none, addition, soustraction, complt};
-    Operation mOperation = none;  //!< opération en cours
+    Operation mOperation = none;  // opération en cours
 };
 
 #endif // CALCULATEUR_H

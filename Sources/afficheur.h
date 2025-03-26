@@ -12,9 +12,9 @@ class Afficheur : public QObject
     Q_PROPERTY(QString hint MEMBER mHint NOTIFY hintChanged)
     Q_PROPERTY(qreal framerate MEMBER mFramerate WRITE setFramerate NOTIFY framerateChanged)
 
-// ------------------------------------------------------------
+// ------------------------------------------------------------------------------------------
 // Méthodes
-// ------------------------------------------------------------
+// ------------------------------------------------------------------------------------------
 public:
     explicit Afficheur(Unites::Units unit, QObject *parent = nullptr);
 
@@ -23,38 +23,38 @@ public:
     Q_INVOKABLE void rectifyHMSI();
 
 public slots:
-    void setValue(const qint64 microsecs, const bool force=false);  //!< Réception du signal valeurPivotChanged()
-    void clearValue();                                             //!< Réception du signal valeurPivotCleared()
-    void activeDisplay(QString afficheur);      //!< Réception du nom de l'afficheur actif, en cas de changement. QML.
-    void setFramerate(double framerate);        //!< Réception d'une nouvelle valeur de framerate. Concerne le HMSI. QML.
+    void setValue(const qint64 microsecs, const bool force=false);  // Réception du signal valeurPivotChanged()
+    void clearValue();                                             // Réception du signal valeurPivotCleared()
+    void activeDisplay(QString afficheur);      // Réception du nom de l'afficheur actif, en cas de changement. QML.
+    void setFramerate(double framerate);        // Réception d'une nouvelle valeur de framerate. Concerne le HMSI. QML.
 
 signals:
-    void displayValueChanged();         //!< Indique au QML que la valeur à afficher a changé.
-    void framerateChanged();            //!< Indique au QML que le framerate de l'afficheur HMSI a changé.
-    void setValeurPivot(qint64);        //!< Envoi à l'opérande d'une nouvelle valeur pivot.
-    void unitChanged();                 //!< En fait, l'unité d'un afficheur ne change jamais.
-    void hintChanged();                 //!< En fait, le hint d'un afficheur ne change jamais.
+    void displayValueChanged();         // Indique au QML que la valeur à afficher a changé.
+    void framerateChanged();            // Indique au QML que le framerate de l'afficheur HMSI a changé.
+    void setValeurPivot(qint64);        // Envoi à l'opérande d'une nouvelle valeur pivot.
+    void unitChanged();                 // En fait, l'unité d'un afficheur ne change jamais.
+    void hintChanged();                 // En fait, le hint d'un afficheur ne change jamais.
 
 private:
     void setDisplayValue(const QString value, const bool force=false);
     bool isIncorrect(const QString rawHmsi);
 
-// ------------------------------------------------------------
+// ------------------------------------------------------------------------------------------
 // Variables membres
-// ------------------------------------------------------------
+// ------------------------------------------------------------------------------------------
 private:
-    QString mDisplayValue;      //!< QML Property: La valeur à afficher (String)
-    QString mUnitName;          //!< QML Property: Le nom de l'unité utilisée par cet afficheur
-    QString mHint;              //!< QML Property: Le texte à afficher si mDisplayValue est vide.
+    QString mDisplayValue;      // QML Property: La valeur à afficher (String)
+    QString mUnitName;          // QML Property: Le nom de l'unité utilisée par cet afficheur
+    QString mHint;              // QML Property: Le texte à afficher si mDisplayValue est vide.
 
-    bool mIsActive = false;     //!< Indique si cet afficheur est en cours d'edition. Positionné par le QML.
+    bool mIsActive = false;     // Indique si cet afficheur est en cours d'edition. Positionné par le QML.
 
-    QString mRawHMSI;           //!< utilisé par les afficheurs HMSI
-    QString mRawNUM;            //!< utilisé par les afficheurs Numériques
-    Unites::Units mUnit;        //!< Unité utilisée par cet afficheur
-    double mFramerate;          //!< Framerate utilisé (pour les afficheurs FRAMES et HMSI)
-    double mConversionFacteur;  //!< Nombre de microseconds par unité
-    qint64 mMaxValue;           //!< Valeur maximale supportée par cette unité (sauf HMSI)
+    QString mRawHMSI;           // utilisé par les afficheurs HMSI
+    QString mRawNUM;            // utilisé par les afficheurs Numériques
+    Unites::Units mUnit;        // Unité utilisée par cet afficheur
+    double mFramerate;          // Framerate utilisé (pour les afficheurs FRAMES et HMSI)
+    double mConversionFacteur;  // Nombre de microseconds par unité
+    qint64 mMaxValue;           // Valeur maximale supportée par cette unité (sauf HMSI)
 };
 
 #endif // AFFICHEUR_H

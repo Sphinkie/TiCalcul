@@ -8,9 +8,11 @@ import "../Vues"
  * ***************************************************************** */
 LeftFrameForm {
 
+    // Clic sur le bouton CLEAR TC1
     btClear.onClicked: {
-        console.log("TiButton btClear TC1 clicked ! ")
+        console.log("Button btClear TC1 clicked ! ")
         operandeTC1.clearValeurPivot()
         operandeRES.clearValeurPivot()
+        calculateur.clear()
     }
 }
