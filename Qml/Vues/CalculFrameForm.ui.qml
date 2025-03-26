@@ -92,12 +92,14 @@ Item {
 
         // ------------------------------------------------------------
         // 2eme ligne - TC2 en HMSI
+        // On masque la ligne si l'opérateur est le complément à 24h
         // ------------------------------------------------------------
         Bloc {}
         FieldResult {
             id: labelTC2
             text: "TC2"
             color: Universal.altMediumHighColor
+            opacity: calculateur.operateur === "Cmplt" ? 0 : 100
             Layout.preferredWidth: 52
             Layout.fillHeight: false
             Layout.fillWidth: false
@@ -106,6 +108,7 @@ Item {
             id: bRectifyTc2
             text: "\u27f3"
             color: Universal.altMediumHighColor
+            opacity: calculateur.operateur === "Cmplt" ? 0 : 100
             font.pixelSize: 24
             width: 32
             Layout.fillHeight: false
@@ -114,11 +117,13 @@ Item {
         FieldInput {
             id: tc2
             afficheur: tc2_aff_4
+            opacity: calculateur.operateur === "Cmplt" ? 0 : 100
             Layout.fillHeight: false
             Layout.fillWidth: true
         }
         Rectangle {
             id: rectangle1
+            opacity: calculateur.operateur === "Cmplt" ? 0 : 100
             implicitHeight: 40
             implicitWidth: 86
             Layout.fillHeight: false
