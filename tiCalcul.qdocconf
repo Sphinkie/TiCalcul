@@ -1,50 +1,28 @@
 # --------------------------------------------------------------------------------------
 # Configuration pour la génération de la QDOC
 # --------------------------------------------------------------------------------------
+# Commande de génération dans le "command prompt avec environnement de build":
+# qdoc tiCalcul.qdocconf
+# --------------------------------------------------------------------------------------
 
 # Variable globale: chemin des .index de Qt
 qt_install_docs = C:/Qt/Docs/Qt-6.6.1
-# QT_INSTALL_DOCS=C:/Qt/Docs/Qt-6.6.1
 
+# --------------------------------------------------------------------------------------
+# INCLUDES
+# --------------------------------------------------------------------------------------
 QT_VER = 6.8
 QT_VERSION = 6.8
 QT_VERSION_TAG = open-source
 
-
-# For compatibility issues, include compat.qdocconf:
-include(C:/Qt/Docs/Qt-6.6.1/global/qt-module-defaults.qdocconf)
-#include($qt_install_docs/global/qt-module-defaults.qdocconf)
-
+include($qt_install_docs/global/qt-module-defaults.qdocconf)
 include($qt_install_docs/global/compat.qdocconf)
 include($qt_install_docs/global/qt-cpp-defines.qdocconf)
 include($qt_install_docs/global/fileextensions.qdocconf)
 include($qt_install_docs/global/qt-html-templates-offline.qdocconf)
 include($qt_install_docs/global/config.qdocconf)
 include($qt_install_docs/global/macros.qdocconf)
-include($qt_install_docs/global/qt-module-defaults.qdocconf)
 
-# --------------------------------------------------------------------------------------
-# Commande de génération dans le "command prompt avec environnement de build":
-# qdoc tiCalcul.qdocconf
-#
-# Commande de génération avec traces de debug:
-# C:\Qt\6.6.0\mingw_64\bin\qdoc -debug tiCalcul.qdocconf
-#
-# voir pour le QML : https://forum.qt.io/topic/101832/linking-to-qt-offline-documentation-with-qdoc
-#
-# see also https://decovar.dev/blog/2017/05/24/documenting-qt-project-with-qdoc/
-# analyse des pb: https://doc.qt.io/qt-6/qdoc-warnings.html
-#
-# Variables du QDOC conf : https://doc.qt.io/qt-6/22-qdoc-configuration-generalvariables.html
-# QDONC conf minimu = https://doc.qt.io/qt-6/21-1-minimum-qdocconf.html
-# un exemple réel: https://doc.qt.io/qt-6/21-2-qtgui-qdocconf.html
-# --------------------------------------------------------------------------------------
-
-# Titre de la documentation project:
-project     = tiCalcul
-description = The ultimate Timecode Calculator
-version     = 1.0
-url         = https://sphinkie.github.io/TiCalcul
 
 # --------------------------------------------------------------------------------------
 # INCLUDES
@@ -53,25 +31,18 @@ url         = https://sphinkie.github.io/TiCalcul
 includepaths += ./Sources
 includepaths += ${qt_install_docs}
 
-#
-# An easy way to see where those special variables point to is to run qmake -query
-# For me:
-
-#   QT_INSTALL_HEADERS=C:/Qt/6.6.1/msvc2019_64/include
-#   QT_INSTALL_DOCS=C:/Qt/Docs/Qt-6.6.1
-
-# Supprime les erreurs dues aux macro Q_OBJECT et QçINVOKABLE et permet davoir les qQtype
+# Supprime les erreurs dues aux macros Q_OBJECT et Q_INVOKABLE et permet d'avoir les Qtypes.
 includepaths += $QTDIR/include
 includepaths += $QTDIR/include/QtCore \
                 $QTDIR/include/QtGui \
                 $QTDIR/include/QtQuick
 
 
-
 # --------------------------------------------------------------------------------------
-# The defines variable specifies the C++ preprocessor symbols that QDoc will recognize and respond to.
+# The defines variable specifies the C++ preprocessor symbols that QDoc will recognize.
 # --------------------------------------------------------------------------------------
 defines += QT_GUI_LIB
+
 
 # --------------------------------------------------------------------------------------
 # INDEX
@@ -85,25 +56,12 @@ indexes += \
     ${qt_install_docs}/qtquickcontrols/qtquickcontrols.index \
     ${qt_install_docs}/qtqmlcore/qtqmlcore.index
 
-# A ajouter selon les besoins:
-# indexes += ${qt_install_docs}/qtlocation/qtlocation.index
-# indexes += ${qt_install_docs}/qtpositioning/qtpositioning.index
-
 
 # --------------------------------------------------------------------------------------
-# DEPENDANCES - Liste d'index files
+# DEPENDANCES - Dépend de tous les index listés
 # --------------------------------------------------------------------------------------
-# The depends variable defines a list of other documentation projects that this project depends on
-# for resolving link targets for type inheritance and anything else the documentation needs to link to.
-# --------------------------------------------------------------------------------------
-# The depends command accepts also a special value of '*'.
-# This instructs QDoc to load all index files found in specified index directories; that is, "depends on everything".
-# --------------------------------------------------------------------------------------
-# depends = *
-depends = qtcore qtquick qtdoc qtml qtqmlcore qtgui qtquickcontrols
-# depends += qtlocation qtnetwork
-# depends += qtcore qtopengl qtsvg qtqml qtquick qtwidgets qtdoc
-# depends += ticalcul
+depends = *
+
 
 # --------------------------------------------------------------------------------------
 # QHELP
@@ -127,36 +85,28 @@ qhp = false
 
 
 # --------------------------------------------------------------------------------------
-# File extensions (Liste prédéfinie ou liste manuelle):
+# DEBUG
 # --------------------------------------------------------------------------------------
-#include(fileextensions.qdocconf)
-headers.fileextensions  = "*.h *.hpp"
-sources.fileextensions  = "*.cpp *.qml *.qdoc"
+# Set a warning limit.
+# warninglimit = 5
+# warninglimit.enabled = true
 
 
+# --------------------------------------------------------------------------------------
+# PROJET
+# --------------------------------------------------------------------------------------
+project     = tiCalcul
+description = The ultimate Timecode Calculator
+version     = 1.0
+url         = https://sphinkie.github.io/TiCalcul
 # The directory where QDoc places the generated documentation.
-outputdir   = ./docs/qdoc/html
+outputdir     = ./docs/qdoc/html
 outputformats = HTML
-
 # The directories that contain the header files associated with the .cpp source files used in the documentation.
 headerdirs += ./Sources
-# headerdirs += $QTDIR/include/QtCore
-
 # The directories that contain the .cpp or .qdoc files used in the documentation.
 sourcedirs  = ./Sources
-
 # The directories that contain the source code of the example files.
 exampledirs = ./docs/examples
-
 # The directories that contain images used in the documentation.
 imagedirs   = ./docs/images
-
-# Set a warning limit. QDoc will exit with a non-zero exit code if it generates
-# documentation warnings during the documentation build. Useful for tracking
-# down documentation issues.
-#warninglimit = 0
-#warninglimit.enabled = true
-
-# pour un look dark ?
-# HTML.stylesheets       = ./docs/qdoc/html/style/offline-dark.css
-# HTML.headerstyles      = "<link rel=\"stylesheet\" type=\"text/css\" href=\"style/offline.css\"/>\n"

@@ -11,11 +11,11 @@
 /* ********************************************************************************* */
 /*!
     \module TiCalcul
-    \title TiCalcul
+    \title Timecode Calculator
     \brief The ultimate timecode Calculator.
 
-    TiCalcul convertit, additionne et soustrait des timecodes, en particulier en millisecondes
-    et en images, ce qui est spécialement utile dans les métiers de la vidéo.
+    \b {TiCalcul convertit, additionne et soustrait des timecodes, en particulier en millisecondes
+    et en images, ce qui est spécialement utile dans les métiers de la vidéo.}
 
     Logiciel gratuit et sans publicité.
 
@@ -27,22 +27,17 @@
         \li les scripts QML
     \endlist
 
-    \startpage TiCalcul
+    \image ../images/screenshot.jpg {Ecran principal de l'application}
+    \startpage Timecode Calculator
 */
 
-/* ********************************************************************************* */
-/* Programme principal                                                               */
-/* ********************************************************************************* */
-/*!
- * \fn int main(int argc, char* argv[])
- *
- * \brief Programme principal.
- *
+/* *********************************************************************************
+ * Programme principal
+ * *********************************************************************************
  * Retourne 0 si sortie normale, -1 sinon.
- *
- * \a argc (argument count): nombre +1 de paramètres de argv. \br
- * \a argv (argument vector). \br
- **/
+ * argc: (argument count). Nombre +1 de paramètres de argv.
+ * argv: (argument vector).
+ ***********************************************************************************/
 int main(int argc, char* argv[])
 {
     QGuiApplication app(argc, argv);

@@ -126,6 +126,6 @@
             <function name="valeurPivot" fullname="Operande::valeurPivot" href="operande.html#valeurPivot" status="active" access="public" location="operande.h" filepath="D:/Mes Programmes/Windows/TiCalcul/Sources/operande.h" lineno="18" documented="true" meta="plain" const="true" type="qint64" brief="Renvoie la valeur Pivot (en microsecondes)" signature="qint64 valeurPivot() const"/>
         </class>
         <class name="Unites" href="unites.html" status="active" access="public" location="unites.h" filepath="D:/Mes Programmes/Windows/TiCalcul/Sources/unites.h" lineno="7" documented="true" module="TiCalcul" brief="Enumérés des différentes unités gérées par l'application"/>
-        <module name="TiCalcul" href="ticalcul-module.html" status="active" documented="true" seen="true" title="TiCalcul" brief="Ultimate timecode Calculator"/>
+        <module name="TiCalcul" href="ticalcul-module.html" status="active" documented="true" seen="true" title="Timecode Calculator" brief="Ultimate timecode Calculator"/>
     </namespace>
 </INDEX>
