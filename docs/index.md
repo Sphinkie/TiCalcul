@@ -31,4 +31,4 @@ Then, just run the **TiPhotoLocatorSetup.exe** to install the program.
 
 Developpers can access to doxygen documentation [here](https://sphinkie.github.io/TiCalcul/doxygen/html/index.html).
 
-The Qdoc documentation is also available [here](https://sphinkie.github.io/TiCalcul/qdoc/html/TiCalcul-module.html)
+The Qdoc documentation is also available [here](https://sphinkie.github.io/TiCalcul/qdoc/html/ticalcul-module.html)
