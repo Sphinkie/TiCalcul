@@ -4,7 +4,7 @@
 
 **TiCalcul** is a free and Ad-free video timecode calculator.
 
-![Screenshot](medias/screenshot.jpg)
+![Screenshot](./images/screenshot.jpg)
 
 ## Features
 
@@ -16,7 +16,7 @@ With TiCalcul, you can:
 * use a keyboard or a touch-screen
 * switch to darkmode
 
-![Screenshot](media/DarkMode.png)
+![Screenshot](./images/DarkMode.png)
 
 ## Installation
 
@@ -31,3 +31,4 @@ Then, just run the **TiPhotoLocatorSetup.exe** to install the program.
 
 Developpers can access to doxygen documentation [here](https://sphinkie.github.io/TiCalcul/doxygen/html/index.html).
 
+The Qdoc documentation is also available [here](https://sphinkie.github.io/TiCalcul/qdoc/html/TiCalcul-module.html)
