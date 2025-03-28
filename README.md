@@ -6,7 +6,7 @@ TiCalcul est une **calculatrice de timecodes** pour Windows.
 
 ![screenshot](./docs/images/screenshot.jpg)
 
-[Acceder au site de l'application](https://sphinkie@github.io/TiCalcul)
+[Acceder au site de l'application](https://sphinkie.github.io/TiCalcul)
 
 ## Android
 
