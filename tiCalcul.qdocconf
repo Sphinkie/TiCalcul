@@ -88,8 +88,8 @@ qhp = false
 # DEBUG
 # --------------------------------------------------------------------------------------
 # Set a warning limit.
-# warninglimit = 5
-# warninglimit.enabled = true
+warninglimit = 50
+warninglimit.enabled = true
 
 
 # --------------------------------------------------------------------------------------
@@ -97,15 +97,16 @@ qhp = false
 # --------------------------------------------------------------------------------------
 project     = tiCalcul
 description = The ultimate Timecode Calculator
-version     = 1.0
 url         = https://sphinkie.github.io/TiCalcul
-# The directory where QDoc places the generated documentation.
+
+# The directory of the generated documentation.
 outputdir     = ./docs/qdoc/html
 outputformats = HTML
 # The directories that contain the header files associated with the .cpp source files used in the documentation.
 headerdirs += ./Sources
 # The directories that contain the .cpp or .qdoc files used in the documentation.
 sourcedirs  = ./Sources
+sources = ./main.cpp
 # The directories that contain the source code of the example files.
 exampledirs = ./docs/examples
 # The directories that contain images used in the documentation.
