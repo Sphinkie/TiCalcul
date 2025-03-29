@@ -13,7 +13,7 @@
  * Elle est associée à un objet QML FieldInput et lui envoie les valeurs à afficher.
  * Il y a un Afficheur pour chaque unité: Secondes, Millisecondes, HMSI, etc. \br
  * Tous les afficheurs sont liés à un \l Operande. \br
- * Chaque Afficheur exprime cet Operande dans une des \l Unites définie lors de sa construction.
+ * Chaque Afficheur exprime cet \l Operande dans une des \l Unites définie lors de sa construction.
  */
 
 
@@ -87,8 +87,9 @@ void Afficheur::setFramerate(double framerate)
 /* ********************************************************************************************************** */
 /*!
  * \brief Ajoute un digit à la fin de la chaine de caractères.
- * Met à jour la nouvelle valeur Pivot, si elle a changé.
  *
+ * Met à jour la nouvelle valeur Pivot, si elle a changé.
+ * La nouvelle valeur pivot est envoyée à l'opérande, par le signal setValeurPivot(). \br
  * \a digit: Le caractère digit à ajouter.
  */
 void Afficheur::addDigit(QString digit)
@@ -198,7 +199,8 @@ void Afficheur::addDigit(QString digit)
 /* ********************************************************************************************************** */
 /*!
  * \brief Enlève un digit à la fin de la chaine de caractères.
- *        La nouvelle valeur pivot est envoyée à l'opérande.
+ *
+ * La nouvelle valeur pivot est envoyée à l'opérande, par le signal setValeurPivot().
  */
 void Afficheur::removeLastDigit()
 {
@@ -243,6 +245,7 @@ void Afficheur::removeLastDigit()
 /* ********************************************************************************************************** */
 /*!
  * \brief Indique si le HMSI a besoin d'être rectifié, cad si minutes > 59 ou secondes > 59 ou images > 24.
+ *
  * \a raw_hmsi: un RAW HMSI du type HHMMSSII. \br
  * Returns true if HMSI needs to be rectified.
  */
@@ -301,9 +304,9 @@ bool Afficheur::isIncorrect(const QString raw_hmsi)
 /* ********************************************************************************************************** */
 /*!
  * \brief SLOT: Actualise la variable mIsActive en cas de changement.
- * \a afficheur: Le nom (objectName) de l'afficheur sélectionné dans le QML.
  *
- * Voir aussi le signal QML activeDisplay() de l'afficheurActif.
+ * Voir aussi le signal QML activeDisplay() de l'afficheurActif. \br
+ * \a afficheur: Le nom (objectName) de l'afficheur sélectionné dans le QML.
  **/
 void Afficheur::activeDisplay(QString afficheur)
 {

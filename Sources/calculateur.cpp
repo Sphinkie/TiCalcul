@@ -54,7 +54,7 @@ void Calculateur::complement()
 /* ********************************************************************************************************** */
 /* ********************************************************************************************************** */
 /*!
- * \brief Calcule la somme TC1+TC2 et envoie le résultat à l'opérande Result.
+ * \brief Calcule la somme TC1+TC2 et envoie le résultat à l'opérande Result, grace au signal operateurChanged.
  **/
 void Calculateur::add()
 {
@@ -69,7 +69,7 @@ void Calculateur::add()
 /* ********************************************************************************************************** */
 /* ********************************************************************************************************** */
 /*!
- * \brief Calcule la différence TC1-TC2 et envoie le résultat à l'opérande Result.
+ * \brief Calcule la différence TC1-TC2 et envoie le résultat à l'opérande Result grace au signal operateurChanged..
  **/
 void Calculateur::substract()
 {
@@ -98,7 +98,7 @@ void Calculateur::swap()
 /* ********************************************************************************************************** */
 /* ********************************************************************************************************** */
 /*!
- * \brief Recopie la valeur du résultat dans l'opérande TC1.
+ * \brief Recopie la valeur du résultat dans l'opérande TC1, et envoie un signal operateurChanged..
  **/
 void Calculateur::memorize()
 {

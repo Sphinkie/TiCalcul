@@ -96,7 +96,7 @@ warninglimit.enabled = true
 # PROJET
 # --------------------------------------------------------------------------------------
 project     = TiCalcul
-moduleheader= TiCalcul 
+moduleheader= TiCalcul
 description = The ultimate Timecode Calculator
 url         = https://sphinkie.github.io/TiCalcul
 

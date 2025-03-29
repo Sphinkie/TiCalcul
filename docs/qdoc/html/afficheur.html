@@ -4,7 +4,7 @@
   <meta charset="utf-8">
 <!-- afficheur.cpp -->
   <meta name="description" content="La classe Afficheur gère un champ numérique de l'IHM QML.">
-  <title>Afficheur Class | Qt 6.8 1.0</title>
+  <title>Afficheur Class | Qt 6.8</title>
   <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
   <script type="text/javascript">
     document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
@@ -84,7 +84,7 @@
 <h2 id="details">Detailed Description</h2>
 <p>Elle est associée à un objet QML FieldInput et lui envoie les valeurs à afficher. Il y a un Afficheur pour chaque unité: Secondes, Millisecondes, HMSI, etc. <br />
  Tous les afficheurs sont liés à un <a href="operande.html" translate="no">Operande</a>. <br />
- Chaque Afficheur exprime cet Operande dans une des <a href="unites.html" translate="no">Unites</a> définie lors de sa construction.</p>
+ Chaque Afficheur exprime cet <a href="operande.html" translate="no">Operande</a> dans une des <a href="unites.html" translate="no">Unites</a> définie lors de sa construction.</p>
 </div>
 <!-- @@@Afficheur -->
 <div class="func">
@@ -97,13 +97,15 @@
 <!-- @@@Afficheur -->
 <!-- $$$activeDisplay[overload1]$$$activeDisplayQString -->
 <h3 class="fn" translate="no" id="activeDisplay"><code translate="no">[slot] </code><span class="type">void</span> Afficheur::<span class="name">activeDisplay</span>(<span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> <i>afficheur</i>)</h3>
-<p>SLOT: Actualise la variable mIsActive en cas de changement. <i translate="no">afficheur</i>: Le nom (objectName) de l'afficheur sélectionné dans le QML.</p>
-<p>Voir aussi le signal QML activeDisplay() de l'afficheurActif.</p>
+<p>SLOT: Actualise la variable mIsActive en cas de changement.</p>
+<p>Voir aussi le signal QML activeDisplay() de l'afficheurActif. <br />
+ <i translate="no">afficheur</i>: Le nom (objectName) de l'afficheur sélectionné dans le QML.</p>
 <!-- @@@activeDisplay -->
 <!-- $$$addDigit[overload1]$$$addDigitQString -->
 <h3 class="fn" translate="no" id="addDigit"><code translate="no">[invokable] </code><span class="type">void</span> Afficheur::<span class="name">addDigit</span>(<span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> <i>digit</i>)</h3>
-<p>Ajoute un digit à la fin de la chaine de caractères. Met à jour la nouvelle valeur Pivot, si elle a changé.</p>
-<p><i translate="no">digit</i>: Le caractère digit à ajouter.</p>
+<p>Ajoute un digit à la fin de la chaine de caractères.</p>
+<p>Met à jour la nouvelle valeur Pivot, si elle a changé. La nouvelle valeur pivot est envoyée à l'opérande, par le signal setValeurPivot(). <br />
+ <i translate="no">digit</i>: Le caractère digit à ajouter.</p>
 <div class="admonition note"><p><b>Note: </b>This function can be invoked via the meta-object system and from QML. See <a href="https://doc.qt.io/qt/qobject.html#Q_INVOKABLE" translate="no">Q_INVOKABLE</a>.</p>
 </div><!-- @@@addDigit -->
 <!-- $$$clearValue[overload1]$$$clearValue -->
@@ -117,7 +119,8 @@
 </div><!-- @@@rectifyHMSI -->
 <!-- $$$removeLastDigit[overload1]$$$removeLastDigit -->
 <h3 class="fn" translate="no" id="removeLastDigit"><code translate="no">[invokable] </code><span class="type">void</span> Afficheur::<span class="name">removeLastDigit</span>()</h3>
-<p>Enlève un digit à la fin de la chaine de caractères. La nouvelle valeur pivot est envoyée à l'opérande.</p>
+<p>Enlève un digit à la fin de la chaine de caractères.</p>
+<p>La nouvelle valeur pivot est envoyée à l'opérande, par le signal setValeurPivot().</p>
 <div class="admonition note"><p><b>Note: </b>This function can be invoked via the meta-object system and from QML. See <a href="https://doc.qt.io/qt/qobject.html#Q_INVOKABLE" translate="no">Q_INVOKABLE</a>.</p>
 </div><!-- @@@removeLastDigit -->
 <!-- $$$setFramerate -->
