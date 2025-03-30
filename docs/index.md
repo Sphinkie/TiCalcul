@@ -4,7 +4,7 @@
 
 **TiCalcul** is a free and Ad-free video timecode calculator.
 
-![Screenshot](./images/screenshot.jpg)
+![Screenshot](./images/screenshot.png)
 
 ## Features
 

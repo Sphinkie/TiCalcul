@@ -8,7 +8,7 @@ import "../Vues"
  * ***************************************************************** */
 CalculFrameForm {
     id: calculFrame
-    property string msgText: "ready..."
+    property string msgText: ""
 
 
     /* Messages:
