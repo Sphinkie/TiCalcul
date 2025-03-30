@@ -28,16 +28,25 @@ Window {
     // ----------------------------------------------------------------
     Rectangle {
         id: pagePrincipale
-
         anchors.top: parent.top
         anchors.fill: parent
         color: Universal.background
-        // ----------------------------------------------------------------
+        // ------------------------------------------------------------
         ActiveDisplay {
             id: afficheurActif
             objectName: "afficheurActif"
             signal activeDisplay(string afficheur)
         }
+        // ------------------------------------------------------------
+        // Gestionnaire de clavier.
+        // On initialise le focus dessus.
+        // ------------------------------------------------------------
+        PhysicalKeyboard {
+            id: physicalKeyboard
+            focus: true
+        }
+
+        // ------------------------------------------------------------
         GridLayout {
             id: mainGrid
             anchors.fill: parent

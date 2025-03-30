@@ -6,8 +6,12 @@ import "../Vues"
  * Le Keyboard est composé d'un ensemble de boutons KeyboardKey.
  * Le controleur détermine l'action déclenchée par chaque bouton, en
  * appelant une méthode C++ de l'afficheur actif.
+ * Si des touches clavier sont recues lorsque le bouton a le focus,
+ * on les forwarde au gestionnaire de clavier.
  ***************************************************************************** */
 KeyboardForm {
+
+    Keys.forwardTo: [physicalKeyboard]
 
     key0.onClicked: afficheurActif.afficheur.addDigit("0")
     key1.onClicked: afficheurActif.afficheur.addDigit("1")

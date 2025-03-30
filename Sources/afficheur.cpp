@@ -44,7 +44,7 @@ Afficheur::Afficheur(Unites::Units unit, QObject* parent)
  * \brief Ce SLOT permet de changer dynamiquement le frameRate des afficheurs HMSI.
  *
  * Note: C'est toujours l'afficheur HMSI qui reçoit ce signal. \br
- * \a framerate: le nouveau frame rate pour cet afficheur (ex: 25.0).
+ * \a framerate: le nouveau framerate pour cet afficheur (ex: 25.0).
  */
 void Afficheur::setFramerate(double framerate)
 {

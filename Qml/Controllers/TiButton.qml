@@ -1,21 +1,15 @@
 import QtQuick
-import TiCalcul
 
 import "../Vues"
 
 
 /* ********************************************************************************
- * \brief Mémorise l'afficheur actif, lors d'un click sur un afficheur FieldInput.
+ * \brief : Petit bouton arrondi. Le clic est géré par le parent.
  * Si des touches clavier sont recues lorsque le bouton a le focus,
  * on les forwarde au gestionnaire de clavier.
  ***********************************************************************************/
-FieldInputForm {
+TiButtonForm {
     id: control
-    property bool bold: false
 
     Keys.forwardTo: [physicalKeyboard]
-
-    onClicked: {
-        afficheurActif.afficheur = afficheur
-    }
 }
