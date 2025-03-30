@@ -63,6 +63,7 @@
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="operande.html#clearValeurPivot" translate="no">clearValeurPivot</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="operande.html#connectActiveDisplay" translate="no">connectActiveDisplay</a></b>(int *<i>engine</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="operande.html#registerContext" translate="no">registerContext</a></b>(int *<i>context</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="operande.html#setPartner" translate="no">setPartner</a></b>(Operande *<i>partner</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> qint64 </td><td class="memItemRight bottomAlign"><b><a href="operande.html#valeurPivot" translate="no">valeurPivot</a></b>() const</td></tr>
 </table></div>
 <h2 id="public-slots">Public Slots</h2>
@@ -104,6 +105,10 @@
 <p><b>Note</b> Les property names seront du type &quot;tc1_aff_1&quot;. <br />
  <i translate="no">context</i>: Le rootContext de l'application.</p>
 <!-- @@@registerContext -->
+<!-- $$$setPartner[overload1]$$$setPartnerOperande* -->
+<h3 class="fn" translate="no" id="setPartner"><span class="type">void</span> Operande::<span class="name">setPartner</span>(<span class="type"><a href="operande.html#Operande" translate="no">Operande</a></span> *<i>partner</i>)</h3>
+<p>La fonction setPartner recoit un pointeur sur l'objet Operande partenaire <i translate="no">partner</i> (=TC2), et crée un &quot;apairage&quot; entre chacun de ses afficheurs et les afficheurs de l'operande partenaire TC2.</p>
+<!-- @@@setPartner -->
 <!-- $$$setValeurPivot[overload1]$$$setValeurPivotconstqint64constbool -->
 <h3 class="fn" translate="no" id="setValeurPivot"><code translate="no">[slot] </code><span class="type">void</span> Operande::<span class="name">setValeurPivot</span>(const <span class="type"><a href="https://doc.qt.io/qt/qttypes.html#qint64-typedef" translate="no">qint64</a></span> <i>newValeurPivot</i>, const <span class="type">bool</span> <i>force</i> = false)</h3>
 <p>Ce slot recoit une nouvelle valeur pivot d'un Afficheur et la propage à tous les Afficheurs.</p>

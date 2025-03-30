@@ -27,7 +27,7 @@
         \li les scripts QML
     \endlist
 
-    \image ../images/screenshot.jpg {Ecran principal de l'application}
+    \image screenshot.png {Ecran principal de l'application}
     \startpage Timecode Calculator
 */
 

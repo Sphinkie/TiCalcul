@@ -62,6 +62,7 @@
 <div class="table"><table class="alignedsummary" translate="no">
 <tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="afficheur.html#Afficheur" translate="no">Afficheur</a></b>(Unites::Units <i>unit</i>, QObject *<i>parent</i> = nullptr)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="afficheur.html#addDigit" translate="no">addDigit</a></b>(QString <i>digit</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="afficheur.html#findPartner" translate="no">findPartner</a></b>(QString <i>partnername</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="afficheur.html#rectifyHMSI" translate="no">rectifyHMSI</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="afficheur.html#removeLastDigit" translate="no">removeLastDigit</a></b>()</td></tr>
 </table></div>
@@ -77,6 +78,7 @@
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="afficheur.html#displayValue-prop" translate="no">displayValueChanged</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="afficheur.html#framerate-prop" translate="no">framerateChanged</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="afficheur.html#hint-prop" translate="no">hintChanged</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="afficheur.html#partner-prop" translate="no">partnerChanged</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="afficheur.html#unit-prop" translate="no">unitChanged</a></b>()</td></tr>
 </table></div>
 <!-- $$$Afficheur-description -->
@@ -92,6 +94,7 @@
 <!-- $$$Afficheur[overload1]$$$AfficheurUnites::UnitsQObject* -->
 <h3 class="fn" translate="no" id="Afficheur"><code translate="no">[explicit] </code>Afficheur::<span class="name">Afficheur</span>(<span class="type">Unites::Units</span> <i>unit</i>, <span class="type"><a href="https://doc.qt.io/qt/qobject.html#QObject" translate="no">QObject</a></span> *<i>parent</i> = nullptr)</h3>
 <p>Constructor.</p>
+<p>On initialise toutes les property de cet afficheur.</p>
 <p><i translate="no">unit</i> : L'unité correspondante à cet afficheur. <br />
  <i translate="no">parent</i> : <a href="https://doc.qt.io/qt/qobject.html" translate="no">QObject</a> parent: un <a href="operande.html" translate="no">Operande</a>. Son nom va servir.</p>
 <!-- @@@Afficheur -->
@@ -112,6 +115,10 @@
 <h3 class="fn" translate="no" id="clearValue"><code translate="no">[slot] </code><span class="type">void</span> Afficheur::<span class="name">clearValue</span>()</h3>
 <p>SLOT: Efface la valeur de l'afficheur, et ses variables privées. Vient du signal valeurPivotCleared() de la classe Operande.</p>
 <!-- @@@clearValue -->
+<!-- $$$findPartner[overload1]$$$findPartnerQString -->
+<h3 class="fn" translate="no" id="findPartner"><span class="type">void</span> Afficheur::<span class="name">findPartner</span>(<span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> <i>partnername</i>)</h3>
+<p>La fonction findPartner trouve et mémorise l'afficheur partenaire, c'est-à-dire l'afficheur équivalent de l'autre opérande, dont le nom est transmis dans le paramètre <i translate="no">partnername</i>.</p>
+<!-- @@@findPartner -->
 <!-- $$$rectifyHMSI[overload1]$$$rectifyHMSI -->
 <h3 class="fn" translate="no" id="rectifyHMSI"><code translate="no">[invokable] </code><span class="type">void</span> Afficheur::<span class="name">rectifyHMSI</span>()</h3>
 <p>Cette fonction remet le HMSI de façon correcte.</p>
@@ -127,7 +134,7 @@
 <h3 class="fn" translate="no" id="setFramerate"><code translate="no">[slot] </code><span class="type">void</span> Afficheur::<span class="name">setFramerate</span>(<span class="type">double</span> <i>framerate</i>)</h3>
 <p>Ce SLOT permet de changer dynamiquement le frameRate des afficheurs HMSI.</p>
 <p>Note: C'est toujours l'afficheur HMSI qui reçoit ce signal. <br />
- Paramètre framerate: le nouveau frame rate pour cet afficheur (ex: 25.0).</p>
+ <i translate="no">framerate</i>: le nouveau framerate pour cet afficheur (ex: 25.0).</p>
 <div class="admonition note"><p><b>Note: </b>Setter function for property framerate. </p>
 </div><!-- @@@setFramerate -->
 <!-- $$$setValue[overload1]$$$setValueconstqint64constbool -->

@@ -78,3 +78,17 @@ install(TARGETS appTiCalcul
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
+
+# Steps for WinDeployQt
+#
+#SET(BIN_DBG ${CMAKE_CURRENT_BINARY_DIR}/Debug)
+#SET(BIN_REL ${CMAKE_CURRENT_BINARY_DIR}/Release)
+#
+#ADD_CUSTOM_COMMAND(
+#  TARGET appTiCalcul
+#  POST_BUILD
+#  COMMAND
+#    CD $<$<CONFIG:Debug>:${BIN_DBG}>$<$<CONFIG:Release>:${BIN_REL}> &&
+#    ${WINDEPLOYQT_EXECUTABLE} --pdb appTiCalcul.exe
+#       --verbose 1 --dir . --plugindir plugins --compiler-runtime
+#    )
