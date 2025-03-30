@@ -23,7 +23,7 @@
  * \a name: Le nom de l'operande: "tc1" ou "tc2" ou "result". \br
  * \a parent: Pointeur sur QObject parent. \br
  */
-Operande::Operande(QString name, QObject *parent)
+Operande::Operande(QString name, QObject *parent): QObject(parent)
 {
     this->setObjectName(name);
 
@@ -129,6 +129,23 @@ void Operande::registerContext(QQmlContext* context)
     //context->setContextProperty(this->objectName()+"_aff_8", a8);
 }
 
+/*************************************************************************************************************/
+/*************************************************************************************************************/
+/*!
+ * \brief La fonction setPartner recoit un pointeur sur l'objet Operande partenaire \a partner (=TC2), et crée  un
+ * "apairage" entre chacun de ses afficheurs et les afficheurs de l'operande partenaire TC2.
+ */
+void Operande::setPartner(Operande *partner)
+{
+    a1->findPartner(partner->objectName());
+    a2->findPartner(partner->objectName());
+    a3->findPartner(partner->objectName());
+    a4->findPartner(partner->objectName());
+    a5->findPartner(partner->objectName());
+    a6->findPartner(partner->objectName());
+    a7->findPartner(partner->objectName());
+}
+
 
 /*************************************************************************************************************/
 /*************************************************************************************************************/
@@ -141,7 +158,7 @@ void Operande::registerContext(QQmlContext* context)
  */
 void Operande::connectActiveDisplay(QQmlApplicationEngine* engine)
 {
-    // On trove l'objet QML nommé "afficheurActif"
+    // On trouve l'objet QML nommé "afficheurActif"
     QObject* qmlItem = engine->rootObjects().constFirst()->findChild<QObject*>("afficheurActif");
     // On le connecte à tous les afficheurs.
     QObject::connect(qmlItem, SIGNAL(activeDisplay(QString)), a1, SLOT(activeDisplay(QString)));

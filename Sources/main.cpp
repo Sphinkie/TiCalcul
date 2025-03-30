@@ -79,18 +79,19 @@ int main(int argc, char* argv[])
     operande_res.registerContext(context);
 
     // ------------------------------------------------------------
+    // On ajoute le type d'objet Afficheur au contexte QML.
+    // ------------------------------------------------------------
+    qmlRegisterType<Afficheur>("TiCalcul", 1, 0, "Afficheur");
+
+    // ------------------------------------------------------------
     // Connexions
     // ------------------------------------------------------------
     // Les operandes signalent au calculateur si leur valeur pivot change.
     QObject::connect(&operande_tc1, SIGNAL(valeurPivotChanged(qint64,bool)), &calculateur, SLOT(onValeurPivotChanged()));
     QObject::connect(&operande_tc2, SIGNAL(valeurPivotChanged(qint64,bool)), &calculateur, SLOT(onValeurPivotChanged()));
-    // Le calculateur signale au QML si le type d'opéation change
-    // QObject::connect(&calculateur, SIGNAL(operationChanged()), &context, SLOT(onOperationChanged()));
 
-    // ------------------------------------------------------------
-    // On ajoute le type d'objet Afficheur au contexte QML.
-    // ------------------------------------------------------------
-    qmlRegisterType<Afficheur>("TiCalcul", 1, 0, "Afficheur");
+    // Etablit les "apairages" entre les afficheurs de TC1 et de TC2.
+    operande_tc1.setPartner(&operande_tc2);
 
     // --------------------------------------
     // Connexion des signaux

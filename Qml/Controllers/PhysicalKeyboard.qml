@@ -23,20 +23,29 @@ Item {
     // Autres touches
     Keys.onDeletePressed: event => afficheurActif.afficheur.removeLastDigit()
     Keys.onPressed: event => {
-                        if (event.key === Qt.Key_Plus)
-                        calculateur.add()
-                        if (event.key === Qt.Key_Minus)
-                        calculateur.substract()
-                        if (event.key === Qt.Key_Period)
-                        afficheurActif.afficheur.addDigit(".")
-                        if (event.key === Qt.Key_Backspace)
-                        afficheurActif.afficheur.removeLastDigit()
+                        if (event.key === Qt.Key_Plus) {
+                            calculateur.add()
+                            // Si on était sur TC1, on passe sur TC2.
+                            afficheurActif.afficheur = afficheurActif.afficheur.partner
+                        }
+
+                        if (event.key === Qt.Key_Minus) {
+                            calculateur.substract()
+                            // Si on était sur TC1, on passe sur TC2.
+                            afficheurActif.afficheur = afficheurActif.afficheur.partner
+                        }
+                        if (event.key === Qt.Key_Period) {
+                            afficheurActif.afficheur.addDigit(".")
+                        }
+                        if (event.key === Qt.Key_Backspace) {
+                            afficheurActif.afficheur.removeLastDigit()
+                        }
                         event.accepted = true
                     }
-    //  Testeur :
 
 
     /*
+    //  Testeur de touches:
     Keys.onPressed: event => {
                         console.log(event.key)
                         event.accepted = true

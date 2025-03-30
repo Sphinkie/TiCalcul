@@ -7,7 +7,9 @@
 class Afficheur : public QObject
 {
     Q_OBJECT
+
     Q_PROPERTY(QString displayValue MEMBER mDisplayValue NOTIFY displayValueChanged)
+    Q_PROPERTY(Afficheur* partner MEMBER mPartner NOTIFY partnerChanged)
     Q_PROPERTY(QString unit MEMBER mUnitName NOTIFY unitChanged)
     Q_PROPERTY(QString hint MEMBER mHint NOTIFY hintChanged)
     Q_PROPERTY(qreal framerate MEMBER mFramerate WRITE setFramerate NOTIFY framerateChanged)
@@ -17,6 +19,7 @@ class Afficheur : public QObject
 // ------------------------------------------------------------------------------------------
 public:
     explicit Afficheur(Unites::Units unit, QObject *parent = nullptr);
+    void findPartner(QString partnername);
 
     Q_INVOKABLE void addDigit(QString digit);
     Q_INVOKABLE void removeLastDigit();
@@ -34,6 +37,7 @@ signals:
     void setValeurPivot(qint64);        // Envoi à l'opérande d'une nouvelle valeur pivot.
     void unitChanged();                 // En fait, l'unité d'un afficheur ne change jamais.
     void hintChanged();                 // En fait, le hint d'un afficheur ne change jamais.
+    void partnerChanged();              // En fait, le partenaire d'un afficheur ne change jamais.
 
 private:
     void setDisplayValue(const QString value, const bool force=false);
@@ -46,6 +50,7 @@ private:
     QString mDisplayValue;      // QML Property: La valeur à afficher (String)
     QString mUnitName;          // QML Property: Le nom de l'unité utilisée par cet afficheur
     QString mHint;              // QML Property: Le texte à afficher si mDisplayValue est vide.
+    Afficheur* mPartner;        // QML Property: L'afficheur équivalent de l'autre opérande.
 
     bool mIsActive = false;     // Indique si cet afficheur est en cours d'edition. Positionné par le QML.
 

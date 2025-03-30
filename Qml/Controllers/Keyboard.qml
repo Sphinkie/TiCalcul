@@ -27,9 +27,19 @@ KeyboardForm {
     keyDot.onClicked: afficheurActif.afficheur.addDigit(".")
     keyDel.onClicked: afficheurActif.afficheur.removeLastDigit()
 
-    keyPlus.onClicked: calculateur.add()
-    keyMinus.onClicked: calculateur.substract()
     keyComplt.onClicked: calculateur.complement()
+
+    keyMinus.onClicked: {
+        calculateur.substract()
+        // Si on était sur TC1, on passe sur TC2.
+        afficheurActif.afficheur = afficheurActif.afficheur.partner
+    }
+
+    keyPlus.onClicked: {
+        calculateur.add()
+        // Si on était sur TC1, on passe sur TC2.
+        afficheurActif.afficheur = afficheurActif.afficheur.partner
+    }
 
     keyDot.enabled: {
         if (afficheurActif.afficheur.unit !== "SECONDS")

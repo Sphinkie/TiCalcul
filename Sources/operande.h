@@ -17,6 +17,7 @@ public:
     explicit Operande(QString name, QObject *parent = nullptr);
     qint64 valeurPivot() const;
     void registerContext(QQmlContext* context);
+    void setPartner(Operande* partner);
     Q_INVOKABLE void connectActiveDisplay(QQmlApplicationEngine* engine);
     Q_INVOKABLE void clearValeurPivot();
 

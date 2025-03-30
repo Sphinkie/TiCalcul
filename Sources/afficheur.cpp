@@ -22,10 +22,12 @@
 /*!
  * \brief Constructor.
  *
+ * On initialise toutes les property de cet afficheur.
+ *
  * \a unit : L'unité correspondante à cet afficheur. \br
  * \a parent : QObject parent: un \l Operande. Son nom va servir.
  */
-Afficheur::Afficheur(Unites::Units unit, QObject* parent)
+Afficheur::Afficheur(Unites::Units unit, QObject* parent): QObject(parent)
 {
     this->mDisplayValue = "";
     this->mUnit = unit;
@@ -34,7 +36,24 @@ Afficheur::Afficheur(Unites::Units unit, QObject* parent)
     this->mFramerate = Unites::frameRate.value(unit);
     this->mConversionFacteur = Unites::usPerUnit.value(unit);
     this->mMaxValue = Unites::max.value(unit);
+    this->mPartner = this;
     setObjectName(parent->objectName() + '_' + mUnitName);
+
+}
+
+/*************************************************************************************************************/
+/*************************************************************************************************************/
+/*!
+ * \brief La fonction findPartner trouve et mémorise l'afficheur partenaire, c'est-à-dire l'afficheur
+ * équivalent de l'autre opérande, dont le nom est transmis dans le paramètre \a partnername.
+ */
+void Afficheur::findPartner(QString partnername)
+{
+
+    QString partner = partnername + "_" + mUnitName;
+    QObject* root = this->parent()->parent();
+    mPartner = root->findChild<Afficheur*>(partner);
+    emit partnerChanged();
 }
 
 
