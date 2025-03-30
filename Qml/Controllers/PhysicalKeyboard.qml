@@ -28,7 +28,6 @@ Item {
                             // Si on était sur TC1, on passe sur TC2.
                             afficheurActif.afficheur = afficheurActif.afficheur.partner
                         }
-
                         if (event.key === Qt.Key_Minus) {
                             calculateur.substract()
                             // Si on était sur TC1, on passe sur TC2.

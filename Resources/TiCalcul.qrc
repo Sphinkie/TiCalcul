@@ -3,5 +3,8 @@
         <file>Images/TiCalcul.ico</file>
         <file>Images/TiCalcul_black.ico</file>
         <file>Images/TiCalcul.png</file>
+        <file>Images/settings_amb.png</file>
+        <file>Images/settings.png</file>
+        <file>Images/settings_ora.png</file>
     </qresource>
 </RCC>

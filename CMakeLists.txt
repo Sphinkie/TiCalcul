@@ -52,6 +52,9 @@ qt_add_qml_module(appTiCalcul
         SOURCES Sources/calculateur.h Sources/calculateur.cpp
         QML_FILES Qml/Controllers/PhysicalKeyboard.qml
         QML_FILES Qml/Controllers/TiButton.qml
+        QML_FILES Qml/Controllers/TopBar.qml
+        QML_FILES Qml/Vues/TopBarForm.ui.qml
+        QML_FILES Qml/Controllers/AboutPopup.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

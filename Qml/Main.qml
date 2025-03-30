@@ -53,7 +53,16 @@ Window {
             anchors.margins: 12
             columnSpacing: 0
             columns: 3
-            rows: 2
+            //rows: 3
+            // ----------------------------------------------------------------
+            // ------------------ Top bar -------------------------------------
+            // ----------------------------------------------------------------
+            TopBar {
+                id: topbar
+                Layout.fillHeight: false
+                Layout.fillWidth: true
+                Layout.columnSpan: 3
+            }
             // ----------------------------------------------------------------
             // ------------------ Timecode TC 1 dans différentes unités -------
             // ----------------------------------------------------------------
@@ -89,5 +98,9 @@ Window {
                 Layout.columnSpan: 3
             }
         }
+    }
+
+    AboutPopup {
+        id: aboutPopup
     }
 }
