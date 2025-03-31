@@ -67,21 +67,22 @@ depends = *
 # QHELP
 # --------------------------------------------------------------------------------------
 # Vérification du paramétrage de Qhelp (Qt6.6)
-qhp = false
+qhp = true
 
-# qhp.projects            = QtGui
+qhp.projects            = TiCalcul
 
-# qhp.QtGui.file          = qtgui.qhp
-# qhp.QtGui.namespace     = org.qt-project.qtgui.$QT_VERSION_TAG
-# qhp.QtGui.virtualFolder = qtgui
-# qhp.QtGui.indexTitle    = Qt GUI
-# qhp.QtGui.indexRoot     =
+qhp.TiCalcul.file          = TiCalcul.qhp
+qhp.TiCalcul.namespace     = sphinkie.ticalcul
+# org.qt-project.qtgui.$QT_VERSION_TAG
+qhp.TiCalcul.virtualFolder   = ticalcul
+qhp.TiCalcul.indexTitle    = Ti Calcul
+qhp.TiCalcul.indexRoot     =
 
-# qhp.QtGui.subprojects         = classes
-# qhp.QtGui.subprojects.classes.title = C++ Classes
-# qhp.QtGui.subprojects.classes.indexTitle = Qt GUI C++ Classes
-# qhp.QtGui.subprojects.classes.selectors = class fake:headerfile
-# qhp.QtGui.subprojects.classes.sortPages = true
+qhp.TiCalcul.subprojects         = classes
+qhp.TiCalcul.subprojects.classes.title = C++ Classes
+qhp.TiCalcul.subprojects.classes.indexTitle = TI CALCUL C++ Classes
+qhp.TiCalcul.subprojects.classes.selectors = class fake:headerfile
+qhp.TiCalcul.subprojects.classes.sortPages = true
 
 
 # --------------------------------------------------------------------------------------
@@ -99,6 +100,7 @@ project     = TiCalcul
 moduleheader= TiCalcul
 description = The ultimate Timecode Calculator
 url         = https://sphinkie.github.io/TiCalcul
+#naturallanguage = fr-fr
 
 # The directory of the generated documentation.
 outputdir     = ./docs/qdoc/html

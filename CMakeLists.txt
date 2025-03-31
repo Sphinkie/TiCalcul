@@ -13,7 +13,7 @@ find_package(Qt6 REQUIRED COMPONENTS Quick)
 qt_standard_project_setup(REQUIRES 6.5)
 
 qt_add_executable(appTiCalcul
-    Sources/main.cpp
+
     ${app_icon_resource_windows}
 )
 
@@ -32,29 +32,29 @@ qt_add_qml_module(appTiCalcul
         QML_FILES Qml/Vues/FieldInputForm.ui.qml
         QML_FILES Qml/Vues/KeyboardKeyForm.ui.qml
         QML_FILES Qml/Vues/CalculFrameForm.ui.qml
+        QML_FILES Qml/Vues/TopBarForm.ui.qml
+        QML_FILES Qml/Controllers/AboutPopup.qml
 
         QML_FILES Qml/Controllers/Keyboard.qml
         QML_FILES Qml/Controllers/LeftFrame.qml
         QML_FILES Qml/Controllers/FieldInput.qml
         QML_FILES Qml/Controllers/RightFrame.qml
         QML_FILES Qml/Controllers/CalculFrame.qml
+        QML_FILES Qml/Controllers/PhysicalKeyboard.qml
+        QML_FILES Qml/Controllers/TiButton.qml
+        QML_FILES Qml/Controllers/TopBar.qml
 
         QML_FILES Qml/Components/Bloc.qml
         QML_FILES Qml/Components/FieldLabel.qml
         QML_FILES Qml/Components/FieldResult.qml
         QML_FILES Qml/Components/ActiveDisplay.qml
 
-        # SOURCES Sources/main.cpp
+        SOURCES main.cpp
         SOURCES Sources/unites.h Sources/unites.cpp
         SOURCES Sources/operande.h Sources/operande.cpp
         SOURCES Sources/afficheur.h Sources/afficheur.cpp
         SOURCES Sources/converter.h Sources/converter.cpp
         SOURCES Sources/calculateur.h Sources/calculateur.cpp
-        QML_FILES Qml/Controllers/PhysicalKeyboard.qml
-        QML_FILES Qml/Controllers/TiButton.qml
-        QML_FILES Qml/Controllers/TopBar.qml
-        QML_FILES Qml/Vues/TopBarForm.ui.qml
-        QML_FILES Qml/Controllers/AboutPopup.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

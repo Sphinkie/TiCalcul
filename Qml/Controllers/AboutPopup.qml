@@ -7,7 +7,7 @@ Popup {
     height: 100
     modal: true
     focus: true
-    opacity: 0.7
+    opacity: 0.8
 
     x: 760
     y: 56

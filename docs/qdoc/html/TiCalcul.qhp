@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QtHelpProject version="1.0">
+    <namespace>sphinkie.ticalcul</namespace>
+    <virtualFolder>ticalcul</virtualFolder>
+    <metaData name="version" value=""/>
+    <filterSection>
+        <toc>
+            <section ref="index.html" title="Ti Calcul">
+                <section ref="" title="C++ Classes">
+                    <section ref="afficheur.html" title="Afficheur Class Reference">
+                        <section ref="afficheur-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="calculateur.html" title="Calculateur Class Reference">
+                        <section ref="calculateur-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="converter.html" title="Converter Class Reference">
+                        <section ref="converter-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="operande.html" title="Operande Class Reference">
+                        <section ref="operande-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="unites.html" title="Unites Class Reference"/>
+                </section>
+            </section>
+        </toc>
+        <keywords>
+            <keyword name="Afficheur" id="Afficheur" ref="afficheur.html"/>
+            <keyword name="Calculateur" id="Calculateur" ref="calculateur.html"/>
+            <keyword name="Converter" id="Converter" ref="converter.html"/>
+            <keyword name="HMSItoMicroseconds" id="Converter::HMSItoMicroseconds" ref="converter.html#HMSItoMicroseconds"/>
+            <keyword name="HMSItoRawHMSI" id="Converter::HMSItoRawHMSI" ref="converter.html#HMSItoRawHMSI"/>
+            <keyword name="Operande" id="Operande" ref="operande.html"/>
+            <keyword name="Timecode Calculator" id="Timecode Calculator" ref="ticalcul-module.html"/>
+            <keyword name="Unites" id="Unites" ref="unites.html"/>
+            <keyword name="activeDisplay" id="Afficheur::activeDisplay" ref="afficheur.html#activeDisplay"/>
+            <keyword name="add" id="Calculateur::add" ref="calculateur.html#add"/>
+            <keyword name="addDigit" id="Afficheur::addDigit" ref="afficheur.html#addDigit"/>
+            <keyword name="addSpaceSeparator" id="Converter::addSpaceSeparator" ref="converter.html#addSpaceSeparator"/>
+            <keyword name="clear" id="Calculateur::clear" ref="calculateur.html#clear"/>
+            <keyword name="clearValeurPivot" id="Operande::clearValeurPivot" ref="operande.html#clearValeurPivot"/>
+            <keyword name="clearValue" id="Afficheur::clearValue" ref="afficheur.html#clearValue"/>
+            <keyword name="complement" id="Calculateur::complement" ref="calculateur.html#complement"/>
+            <keyword name="completeRawHMSIWithDots" id="Converter::completeRawHMSIWithDots" ref="converter.html#completeRawHMSIWithDots"/>
+            <keyword name="connectActiveDisplay" id="Operande::connectActiveDisplay" ref="operande.html#connectActiveDisplay"/>
+            <keyword name="displayValueChanged" id="Afficheur::displayValueChanged" ref="afficheur.html#displayValue-prop"/>
+            <keyword name="findPartner" id="Afficheur::findPartner" ref="afficheur.html#findPartner"/>
+            <keyword name="framerateChanged" id="Afficheur::framerateChanged" ref="afficheur.html#framerate-prop"/>
+            <keyword name="getNtscFramePerSec" id="Converter::getNtscFramePerSec" ref="converter.html#getNtscFramePerSec"/>
+            <keyword name="hintChanged" id="Afficheur::hintChanged" ref="afficheur.html#hint-prop"/>
+            <keyword name="memorize" id="Calculateur::memorize" ref="calculateur.html#memorize"/>
+            <keyword name="microseconds" id="Converter::microseconds" ref="converter.html#microseconds"/>
+            <keyword name="microsecsToDHMSM" id="Converter::microsecsToDHMSM" ref="converter.html#microsecsToDHMSM"/>
+            <keyword name="microsecsToFrames" id="Converter::microsecsToFrames" ref="converter.html#microsecsToFrames"/>
+            <keyword name="microsecsToHMSI" id="Converter::microsecsToHMSI" ref="converter.html#microsecsToHMSI"/>
+            <keyword name="microsecsToHMSM" id="Converter::microsecsToHMSM" ref="converter.html#microsecsToHMSM"/>
+            <keyword name="microsecsToMillis" id="Converter::microsecsToMillis" ref="converter.html#microsecsToMillis"/>
+            <keyword name="microsecsToRawHMSI" id="Converter::microsecsToRawHMSI" ref="converter.html#microsecsToRawHMSI"/>
+            <keyword name="microsecsToSeconds" id="Converter::microsecsToSeconds" ref="converter.html#microsecsToSeconds"/>
+            <keyword name="onValeurPivotChanged" id="Calculateur::onValeurPivotChanged" ref="calculateur.html#onValeurPivotChanged"/>
+            <keyword name="operateurChanged" id="Calculateur::operateurChanged" ref="calculateur.html#operateur-prop"/>
+            <keyword name="partnerChanged" id="Afficheur::partnerChanged" ref="afficheur.html#partner-prop"/>
+            <keyword name="rawHMSItoMicroseconds" id="Converter::rawHMSItoMicroseconds" ref="converter.html#rawHMSItoMicroseconds"/>
+            <keyword name="rectifyHMSI" id="Afficheur::rectifyHMSI" ref="afficheur.html#rectifyHMSI"/>
+            <keyword name="registerContext" id="Operande::registerContext" ref="operande.html#registerContext"/>
+            <keyword name="removeLastDigit" id="Afficheur::removeLastDigit" ref="afficheur.html#removeLastDigit"/>
+            <keyword name="setFramerate" id="Afficheur::setFramerate" ref="afficheur.html#setFramerate"/>
+            <keyword name="setNtscFramePerSec" id="Converter::setNtscFramePerSec" ref="converter.html#setNtscFramePerSec"/>
+            <keyword name="setPartner" id="Operande::setPartner" ref="operande.html#setPartner"/>
+            <keyword name="setValeurPivot" id="Operande::setValeurPivot" ref="operande.html#setValeurPivot"/>
+            <keyword name="setValue" id="Afficheur::setValue" ref="afficheur.html#setValue"/>
+            <keyword name="substract" id="Calculateur::substract" ref="calculateur.html#substract"/>
+            <keyword name="swap" id="Calculateur::swap" ref="calculateur.html#swap"/>
+            <keyword name="toMicroseconds" id="Converter::toMicroseconds" ref="converter.html#toMicroseconds"/>
+            <keyword name="unitChanged" id="Afficheur::unitChanged" ref="afficheur.html#unit-prop"/>
+            <keyword name="valeurPivot" id="Operande::valeurPivot" ref="operande.html#valeurPivot"/>
+        </keywords>
+        <files>
+            <file>afficheur-members.html</file>
+            <file>afficheur.html</file>
+            <file>calculateur-members.html</file>
+            <file>calculateur.html</file>
+            <file>converter-members.html</file>
+            <file>converter.html</file>
+            <file>images/arrow_bc.png</file>
+            <file>images/bgrContent.png</file>
+            <file>images/btn_next.png</file>
+            <file>images/btn_prev.png</file>
+            <file>images/bullet_dn.png</file>
+            <file>images/bullet_sq.png</file>
+            <file>images/home.png</file>
+            <file>images/ico_note.png</file>
+            <file>images/ico_note_attention.png</file>
+            <file>images/ico_out.png</file>
+            <file>images/logo.png</file>
+            <file>images/screenshot.png</file>
+            <file>operande-members.html</file>
+            <file>operande.html</file>
+            <file>style/offline-dark.css</file>
+            <file>style/offline-simple.css</file>
+            <file>style/offline.css</file>
+            <file>style/tech_preview.svg</file>
+            <file>ticalcul-module.html</file>
+            <file>unites.html</file>
+        </files>
+    </filterSection>
+</QtHelpProject>
