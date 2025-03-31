@@ -20,12 +20,12 @@ With TiCalcul, you can:
 
 ## Installation
 
-**Available soon !**
+**Available Now !**
 
 Get the latest release of the software by clicking [here: "latest release"](https://github.com/Sphinkie/TiCalcul/releases/latest/download/TiCalculSetup.zip)
 
 Download the **TiCalculSetup.zip** file, and unzip it in a folder on your computer.
-Then, just run the **TiPhotoLocatorSetup.exe** to install the program.
+Then, just run the **TiCalculSetup.exe** to install the program.
 
 ## Developper corner
 
