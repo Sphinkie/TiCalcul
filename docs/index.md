@@ -4,6 +4,10 @@
 
 **TiCalcul** is a free and Ad-free video timecode calculator.
 
+**Available Now !**
+
+Get the latest release of the software by clicking [here: "latest release"](https://github.com/Sphinkie/TiCalcul/releases/latest/download/TiCalculSetup.exe)
+
 ![Screenshot](./images/screenshot.png)
 
 ## Features
@@ -20,12 +24,9 @@ With TiCalcul, you can:
 
 ## Installation
 
-**Available Now !**
+Get the latest release of the software by clicking [here: "latest release"](https://github.com/Sphinkie/TiCalcul/releases/latest/download/TiCalculSetup.exe)
 
-Get the latest release of the software by clicking [here: "latest release"](https://github.com/Sphinkie/TiCalcul/releases/latest/download/TiCalculSetup.zip)
-
-Download the **TiCalculSetup.zip** file, and unzip it in a folder on your computer.
-Then, just run the **TiCalculSetup.exe** to install the program.
+Download the **TiCalculSetup.exe** file, and just runit to install the program.
 
 ## Developper corner
 
