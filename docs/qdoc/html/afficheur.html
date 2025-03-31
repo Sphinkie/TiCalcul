@@ -70,7 +70,7 @@
 <div class="table"><table class="alignedsummary" translate="no">
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="afficheur.html#activeDisplay" translate="no">activeDisplay</a></b>(QString <i>afficheur</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="afficheur.html#clearValue" translate="no">clearValue</a></b>()</td></tr>
-<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="afficheur.html#setFramerate" translate="no">setFramerate</a></b>(double <i>framerate</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="afficheur.html#setFramerate" translate="no">setFramerate</a></b>(double <i>new_framerate</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="afficheur.html#setValue" translate="no">setValue</a></b>(const qint64 <i>microsecs</i>, const bool <i>force</i> = false)</td></tr>
 </table></div>
 <h2 id="signals">Signals</h2>
@@ -131,17 +131,16 @@
 <div class="admonition note"><p><b>Note: </b>This function can be invoked via the meta-object system and from QML. See <a href="https://doc.qt.io/qt/qobject.html#Q_INVOKABLE" translate="no">Q_INVOKABLE</a>.</p>
 </div><!-- @@@removeLastDigit -->
 <!-- $$$setFramerate -->
-<h3 class="fn" translate="no" id="setFramerate"><code translate="no">[slot] </code><span class="type">void</span> Afficheur::<span class="name">setFramerate</span>(<span class="type">double</span> <i>framerate</i>)</h3>
+<h3 class="fn" translate="no" id="setFramerate"><code translate="no">[slot] </code><span class="type">void</span> Afficheur::<span class="name">setFramerate</span>(<span class="type">double</span> <i>new_framerate</i>)</h3>
 <p>Ce SLOT permet de changer dynamiquement le frameRate des afficheurs HMSI.</p>
 <p>Note: C'est toujours l'afficheur HMSI qui reçoit ce signal. <br />
- <i translate="no">framerate</i>: le nouveau framerate pour cet afficheur (ex: 25.0).</p>
+ <i translate="no">new_framerate</i>: le nouveau framerate pour cet afficheur (ex: 25.0).</p>
 <div class="admonition note"><p><b>Note: </b>Setter function for property framerate. </p>
 </div><!-- @@@setFramerate -->
 <!-- $$$setValue[overload1]$$$setValueconstqint64constbool -->
 <h3 class="fn" translate="no" id="setValue"><code translate="no">[slot] </code><span class="type">void</span> Afficheur::<span class="name">setValue</span>(const <span class="type"><a href="https://doc.qt.io/qt/qttypes.html#qint64-typedef" translate="no">qint64</a></span> <i>microsecs</i>, const <span class="type">bool</span> <i>force</i> = false)</h3>
 <p>Ce <b>slot</b> recoit la nouvelle valeur pivot de l'opérande, pour la convertir et l'envoyer à l'affichage.</p>
-<p>La fonction reçoit <i translate="no">microsecs</i> , la nouvelle valeur pivot, en microsecondes. Elle la convertit dans l'unité de l' <a href="afficheur.html" translate="no">Afficheur</a> et l'envoie au QMl pour être affichée. Le paramètre <i translate="no">force</i> précise s'il faut prendre en compte la valeur reçue même si le champ est en cours d'édition.</p>
-<p><b>See also </b>valeurPivotChanged().</p>
+<p>La fonction reçoit <i translate="no">microsecs</i> , la nouvelle valeur pivot, en microsecondes. Elle la convertit dans l'unité de l' <a href="afficheur.html" translate="no">Afficheur</a> et l'envoie au QMl pour être affichée. Le paramètre <i translate="no">force</i> précise s'il faut prendre en compte la valeur reçue même si le champ est en cours d'édition. Voir le signal Operande::valeurPivotChanged()</p>
 <!-- @@@setValue -->
 </div>
         </div>

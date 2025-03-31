@@ -63,18 +63,18 @@ void Afficheur::findPartner(QString partnername)
  * \brief Ce SLOT permet de changer dynamiquement le frameRate des afficheurs HMSI.
  *
  * Note: C'est toujours l'afficheur HMSI qui reçoit ce signal. \br
- * \a framerate: le nouveau framerate pour cet afficheur (ex: 25.0).
+ * \a new_framerate: le nouveau framerate pour cet afficheur (ex: 25.0).
  */
-void Afficheur::setFramerate(double framerate)
+void Afficheur::setFramerate(double new_framerate)
 {
     qint64 microsecValue;
-    qDebug() << this->objectName() << "setFramerate" << framerate;
+    qDebug() << this->objectName() << "setFramerate" << new_framerate;
     // On lit l'ancienne valeur
     microsecValue = Converter::HMSItoMicroseconds(mDisplayValue, mFramerate);
 
     // On prend en compte le nouveau framerate
-    this->mFramerate = framerate;
-    this->mConversionFacteur = Converter::us_PerSecond / framerate;
+    this->mFramerate = new_framerate;
+    this->mConversionFacteur = Converter::us_PerSecond / new_framerate;
     // On signale le changement de framerate au QML
     emit framerateChanged();
 
@@ -97,7 +97,7 @@ void Afficheur::setFramerate(double framerate)
     }
     else
     {
-        qDebug() << "Warning: setFramerate received by non HMSI display" << this->objectName();
+        qWarning() << "Warning: setFramerate received by non HMSI display" << this->objectName();
     }
 }
 
@@ -251,7 +251,7 @@ void Afficheur::removeLastDigit()
             emit setValeurPivot(microsecValue);
         }
         else {
-            qDebug(qPrintable("ERROR: removeLastDigit: converting '" + mRawNUM + "' to numeric failed. Replace with 0"));
+            qWarning(qPrintable("ERROR: removeLastDigit: converting '" + mRawNUM + "' to numeric failed. Replace with 0"));
             emit setValeurPivot(0);
         }
         break;
@@ -338,7 +338,7 @@ void Afficheur::activeDisplay(QString afficheur)
         // on enlève les 0 du début et tous les espaces
         static QRegularExpression regex = QRegularExpression("^[0]*|[\\s]*");
         mRawNUM  = mDisplayValue.remove(regex);
-        qDebug() << "mRawNUM" << mRawNUM;
+        //qDebug() << "mRawNUM" << mRawNUM;
     }
 }
 
@@ -351,7 +351,7 @@ void Afficheur::activeDisplay(QString afficheur)
  **/
 void Afficheur::clearValue()
 {
-    qDebug() << this->objectName() << "::clearValue()";
+    // qDebug() << this->objectName() << "::clearValue()";
     mRawHMSI.clear();
     mRawNUM.clear();
     mDisplayValue.clear();
@@ -368,8 +368,7 @@ void Afficheur::clearValue()
  * La fonction reçoit \a microsecs , la nouvelle valeur pivot, en microsecondes.
  * Elle la convertit dans l'unité de l' \l Afficheur et l'envoie au QMl pour être affichée.
  * Le paramètre \a force précise s'il faut prendre en compte la valeur reçue même si le champ est en cours d'édition.
- *
- * \sa valeurPivotChanged()
+ * Voir le signal Operande::valeurPivotChanged()
  **/
 void Afficheur::setValue(const qint64 microsecs, const bool force)
 {
@@ -491,7 +490,7 @@ void Afficheur::rectifyHMSI()
     }
     else
     {
-        qDebug() << "Warning: rectifyHMSI received by non HMSI display" << this->objectName();
+        qWarning() << "Warning: rectifyHMSI received by non HMSI display" << this->objectName();
     }
 }
 

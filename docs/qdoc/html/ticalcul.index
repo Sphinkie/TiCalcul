@@ -30,8 +30,8 @@
                 <parameter type="const QString" name="value" default=""/>
                 <parameter type="const bool" name="force" default="false"/>
             </function>
-            <function name="setFramerate" fullname="Afficheur::setFramerate" href="afficheur.html#setFramerate" status="active" access="public" location="afficheur.h" filepath="D:/Mes Programmes/Windows/TiCalcul/Sources/afficheur.h" lineno="32" documented="true" meta="slot" associated-property="framerate" type="void" brief="Ce SLOT permet de changer dynamiquement le frameRate des afficheurs HMSI" signature="void setFramerate(double framerate)">
-                <parameter type="double" name="framerate" default=""/>
+            <function name="setFramerate" fullname="Afficheur::setFramerate" href="afficheur.html#setFramerate" status="active" access="public" location="afficheur.h" filepath="D:/Mes Programmes/Windows/TiCalcul/Sources/afficheur.h" lineno="32" documented="true" meta="slot" associated-property="framerate" type="void" brief="Ce SLOT permet de changer dynamiquement le frameRate des afficheurs HMSI" signature="void setFramerate(double new_framerate)">
+                <parameter type="double" name="new_framerate" default=""/>
             </function>
             <function name="setValue" fullname="Afficheur::setValue" href="afficheur.html#setValue" status="active" access="public" location="afficheur.h" filepath="D:/Mes Programmes/Windows/TiCalcul/Sources/afficheur.h" lineno="29" documented="true" meta="slot" type="void" brief="Ce slot recoit la nouvelle valeur pivot de l'opérande, pour la convertir et l'envoyer à l'affichage" signature="void setValue(const qint64 microsecs, const bool force)">
                 <parameter type="const qint64" name="microsecs" default=""/>
@@ -40,7 +40,12 @@
             <function name="unitChanged" fullname="Afficheur::unitChanged" href="afficheur.html#unit-prop" status="active" access="public" location="afficheur.h" filepath="D:/Mes Programmes/Windows/TiCalcul/Sources/afficheur.h" lineno="38" meta="signal" associated-property="unit" type="void" signature="void unitChanged()"/>
         </class>
         <class name="Calculateur" href="calculateur.html" status="active" access="public" location="calculateur.h" filepath="D:/Mes Programmes/Windows/TiCalcul/Sources/calculateur.h" lineno="9" documented="true" bases="QObject" module="TiCalcul" brief="La classe Calculateur gère les opérations entre les opérandes: addition, soustraction, complément">
-            <function name="Calculateur" fullname="Calculateur::Calculateur" href="calculateur.html#Calculateur-1" status="active" access="public" documented="true" meta="constructor" overload="true" overload-number="1" brief="Constructeur: les paramètres sont les Operande à traiter" signature="Calculateur()"/>
+            <function name="Calculateur" fullname="Calculateur::Calculateur" href="calculateur.html#Calculateur" status="active" access="public" location="calculateur.h" filepath="D:/Mes Programmes/Windows/TiCalcul/Sources/calculateur.h" lineno="15" documented="true" meta="constructor" explicit="true" brief="Constructeur: les paramètres sont les Operande à traiter" signature="Calculateur(Operande *tc1, Operande *tc2, Operande *result, QObject *parent)">
+                <parameter type="Operande *" name="tc1" default=""/>
+                <parameter type="Operande *" name="tc2" default=""/>
+                <parameter type="Operande *" name="result" default=""/>
+                <parameter type="QObject *" name="parent" default="nullptr"/>
+            </function>
             <function name="add" fullname="Calculateur::add" href="calculateur.html#add" status="active" access="public" location="calculateur.h" filepath="D:/Mes Programmes/Windows/TiCalcul/Sources/calculateur.h" lineno="17" documented="true" meta="plain" type="void" brief="Calcule la somme TC1+TC2 et envoie le résultat à l'opérande Result, grace au signal operateurChanged" signature="void add()"/>
             <function name="clear" fullname="Calculateur::clear" href="calculateur.html#clear" status="active" access="public" location="calculateur.h" filepath="D:/Mes Programmes/Windows/TiCalcul/Sources/calculateur.h" lineno="21" documented="true" meta="plain" type="void" brief="Efface l'opérateur en cours" signature="void clear()"/>
             <function name="complement" fullname="Calculateur::complement" href="calculateur.html#complement" status="active" access="public" location="calculateur.h" filepath="D:/Mes Programmes/Windows/TiCalcul/Sources/calculateur.h" lineno="16" documented="true" meta="plain" type="void" brief="Calcule le complément à 24H de TC1 et envoie le résultat à l'opérande Result" signature="void complement()"/>
