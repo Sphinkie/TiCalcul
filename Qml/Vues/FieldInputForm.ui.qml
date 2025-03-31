@@ -22,8 +22,10 @@ Button {
         font.family: "Courier"
         font.bold: control.bold
         // text color
-        color: afficheur.displayValue ? Universal.chromeAltLowColor : Universal.chromeHighColor.darker(
-                                            1.2)
+        color: afficheur.correct ? (afficheur.displayValue ? Universal.chromeAltLowColor // Couleur normale
+                                                           : Universal.chromeHighColor.darker(
+                                                                 1.2)) // couleur des hints
+                                 : Universal.accent // couleur si incorrect
     }
 
     // La couleur de fond est blanche quand l'afficheur est sélectioné
@@ -38,6 +40,6 @@ Button {
                                                  : Universal.altMediumHighColor) // si non-focus : vert pale
                               : Universal.altMediumColor // si disable : vert moyen
         border.color: Universal.baseLowColor
-        border.width: (afficheurActif.afficheur === afficheur) ? 1 : 0
+        border.width: (afficheurActif.afficheur === afficheur) ? 2 : 0
     }
 }

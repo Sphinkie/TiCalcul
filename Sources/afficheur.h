@@ -12,6 +12,7 @@ class Afficheur : public QObject
     Q_PROPERTY(Afficheur* partner MEMBER mPartner NOTIFY partnerChanged)
     Q_PROPERTY(QString unit MEMBER mUnitName NOTIFY unitChanged)
     Q_PROPERTY(QString hint MEMBER mHint NOTIFY hintChanged)
+    Q_PROPERTY(bool correct MEMBER mCorrect NOTIFY correctChanged)
     Q_PROPERTY(qreal framerate MEMBER mFramerate WRITE setFramerate NOTIFY framerateChanged)
 
 // ------------------------------------------------------------------------------------------
@@ -37,11 +38,12 @@ signals:
     void setValeurPivot(qint64);        // Envoi à l'opérande d'une nouvelle valeur pivot.
     void unitChanged();                 // En fait, l'unité d'un afficheur ne change jamais.
     void hintChanged();                 // En fait, le hint d'un afficheur ne change jamais.
+    void correctChanged();              // Indique que l'afficheur (HMSI) est devenu incorrect (ou correct).
     void partnerChanged();              // En fait, le partenaire d'un afficheur ne change jamais.
 
 private:
     void setDisplayValue(const QString value, const bool force=false);
-    bool isIncorrect(const QString rawHmsi);
+    bool isCorrect(const QString rawHmsi);
 
 // ------------------------------------------------------------------------------------------
 // Variables membres
@@ -51,6 +53,7 @@ private:
     QString mUnitName;          // QML Property: Le nom de l'unité utilisée par cet afficheur
     QString mHint;              // QML Property: Le texte à afficher si mDisplayValue est vide.
     Afficheur* mPartner;        // QML Property: L'afficheur équivalent de l'autre opérande.
+    bool mCorrect;              // QML Property: False si le format du HMSI est incorrect.
 
     bool mIsActive = false;     // Indique si cet afficheur est en cours d'edition. Positionné par le QML.
 

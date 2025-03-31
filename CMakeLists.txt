@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(TiCalcul VERSION 0.1 LANGUAGES CXX)
+project(TiCalcul VERSION 2.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -19,7 +19,7 @@ qt_add_executable(appTiCalcul
 
 qt_add_qml_module(appTiCalcul
     URI TiCalcul
-    VERSION 1.0
+    VERSION 2.0
         RESOURCES Resources/TiCalcul.qrc
         RESOURCES TiCalcul.qdocconf
 

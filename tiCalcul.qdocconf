@@ -2,7 +2,7 @@
 # Configuration pour la génération de la QDOC
 # --------------------------------------------------------------------------------------
 # Commande de génération dans le "command prompt avec environnement de build":
-# qdoc tiCalcul.qdocconf
+#    qdoc tiCalcul.qdocconf
 # --------------------------------------------------------------------------------------
 
 # Variable globale: chemin des .index de Qt

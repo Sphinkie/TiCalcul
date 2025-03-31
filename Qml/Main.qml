@@ -19,7 +19,7 @@ Window {
     title: "TiCalcul"
 
     Universal.theme: Universal.Light // Dark
-    Universal.accent: Universal.Cobalt
+    Universal.accent: Universal.Orange // Pour les HMSI incorrects
     Universal.foreground: Universal.Amber // Couleur forcée des boutons. Par défaut, ils sont en background foncé.
     Universal.background: Universal.Green // Couleur de fond
 

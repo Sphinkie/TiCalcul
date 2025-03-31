@@ -20,9 +20,7 @@
 /* ********************************************************************************************************** */
 /* ********************************************************************************************************** */
 /*!
- * \brief Constructor.
- *
- * On initialise toutes les property de cet afficheur.
+ * \brief Constructeur: On initialise toutes les property de cet afficheur.
  *
  * \a unit : L'unité correspondante à cet afficheur. \br
  * \a parent : QObject parent: un \l Operande. Son nom va servir.
@@ -37,6 +35,7 @@ Afficheur::Afficheur(Unites::Units unit, QObject* parent): QObject(parent)
     this->mConversionFacteur = Unites::usPerUnit.value(unit);
     this->mMaxValue = Unites::max.value(unit);
     this->mPartner = this;
+    this->mCorrect = true;
     setObjectName(parent->objectName() + '_' + mUnitName);
 
 }
@@ -263,12 +262,12 @@ void Afficheur::removeLastDigit()
 /* ********************************************************************************************************** */
 /* ********************************************************************************************************** */
 /*!
- * \brief Indique si le HMSI a besoin d'être rectifié, cad si minutes > 59 ou secondes > 59 ou images > 24.
+ * \brief Indique si le HMSI a besoin d'être rectifié.
  *
- * \a raw_hmsi: un RAW HMSI du type HHMMSSII. \br
- * Returns true if HMSI needs to be rectified.
+ * Si minutes>59 ou secondes>59 ou images>24, alors le \a raw_hmsi (de type HHMMSSII) a besoin d'être rectifié,
+ * et la focntion retourne \c True.
  */
-bool Afficheur::isIncorrect(const QString raw_hmsi)
+bool Afficheur::isCorrect(const QString raw_hmsi)
 {
     QString MM = "00";
     QString SS = "00";
@@ -312,11 +311,12 @@ bool Afficheur::isIncorrect(const QString raw_hmsi)
         break;
     }
     // On vérifie les 4 substring
-    if (MM.toInt() > 59) return true;
-    if (SS.toInt() > 59) return true;
-    if (II.toInt() >= ceil(mFramerate)) return true;
-    return false;
+    if (MM.toInt() > 59) return false;
+    if (SS.toInt() > 59) return false;
+    if (II.toInt() >= ceil(mFramerate)) return false;
+    return true;
 }
+
 
 
 /* ********************************************************************************************************** */
@@ -347,7 +347,8 @@ void Afficheur::activeDisplay(QString afficheur)
 /* ********************************************************************************************************** */
 /*!
  * \brief SLOT: Efface la valeur de l'afficheur, et ses variables privées.
- * Vient du signal valeurPivotCleared() de la classe Operande.
+ *
+ * Vient du signal Operande::valeurPivotCleared().
  **/
 void Afficheur::clearValue()
 {
@@ -355,7 +356,9 @@ void Afficheur::clearValue()
     mRawHMSI.clear();
     mRawNUM.clear();
     mDisplayValue.clear();
+    mCorrect = true;
     emit displayValueChanged();
+    emit correctChanged();
 }
 
 
@@ -430,6 +433,8 @@ void Afficheur::setDisplayValue(const QString value, const bool force)
             case Unites::HMSI:
                 // On affiche la valeur en cours d'édition (mRawHMSi)
                 mDisplayValue = Converter::completeRawHMSIWithDots(mRawHMSI);
+                mCorrect = isCorrect(mRawHMSI);
+                emit correctChanged();
                 break;
             default:
                 // Pour les autres unités, on affichera la valeur en cours d'édition, avec des séparateurs
@@ -445,6 +450,8 @@ void Afficheur::setDisplayValue(const QString value, const bool force)
             case Unites::HMSI:
                 // on affiche la valeur recue (complète)
                 mDisplayValue = Converter::completeRawHMSIWithDots(value);
+                mCorrect = isCorrect(value);
+                emit correctChanged();
                 break;
             case Unites::DHMSM:
                 // Pour le D+HMSm, on affichera telle quelle la valeur reçue (qui est complète)
@@ -486,6 +493,8 @@ void Afficheur::rectifyHMSI()
             microsecValue = Converter::HMSItoMicroseconds(mDisplayValue, mFramerate);
             // mais le HMSI doit être recalculé et re-affiché (juste sur cet afficheur).
             this->setValue(microsecValue);
+            mCorrect = true;
+            emit correctChanged();
         }
     }
     else
