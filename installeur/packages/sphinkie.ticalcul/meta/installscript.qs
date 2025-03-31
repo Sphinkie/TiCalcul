@@ -73,6 +73,6 @@ Component.prototype.dynamicPageEntered = function ()
     var pageWidget = gui.pageWidgetByObjectName("DynamicPage");
     if (pageWidget != null) {
         console.log("Setting the widgets label text.");
-        pageWidget.m_pageLabel.text = "<b>TiCalcul</b> is a desktop application for Windows, for calculating timecodes.<br/> It manages operations, such as <i>addition</i>, <i>soustraction</i>, <i>24'H complement</i>.";
+        pageWidget.m_pageLabel.text = "<b>TiCalcul</b> is a desktop application for Windows, for calculating timecodes.<br/> It manages operations, such as <i>addition</i>, <i>subtraction</i>, <i>24'H complement</i>.";
     }
 }

@@ -37,7 +37,6 @@ Afficheur::Afficheur(Unites::Units unit, QObject* parent): QObject(parent)
     this->mPartner = this;
     this->mCorrect = true;
     setObjectName(parent->objectName() + '_' + mUnitName);
-
 }
 
 /*************************************************************************************************************/
