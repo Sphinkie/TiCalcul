@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package>
+    <DisplayName>TiCalcul</DisplayName>
+    <Description>TiCalcul is a desktop application to process timecode calculations.</Description>
+    <Version>1.0</Version>
+    <ReleaseDate>2025-04-01</ReleaseDate>
+    <Licenses>
+        <License name="LGPL License" file="license.txt" />
+    </Licenses>
+    <Default>script</Default>
+    <Script>installscript.qs</Script>
+    <UserInterfaces>
+        <UserInterface>page.ui</UserInterface>
+    </UserInterfaces>
+</Package>

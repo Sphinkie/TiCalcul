@@ -3,6 +3,10 @@
 /build
 /build*
 /Generated
+/installeur/packages/sphinkie.*/data*
+/installeur/*.exe
+/installeur/*.zip
+*/data*
 *.bkp
 *.user
 *.txt.user

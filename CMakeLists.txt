@@ -24,25 +24,25 @@ qt_add_qml_module(appTiCalcul
         RESOURCES TiCalcul.qdocconf
 
         QML_FILES Qml/Main.qml
+        QML_FILES Qml/Vues/TopBarForm.ui.qml
         QML_FILES Qml/Vues/TiButtonForm.ui.qml
         QML_FILES Qml/Vues/SquareButton.ui.qml
         QML_FILES Qml/Vues/KeyboardForm.ui.qml
         QML_FILES Qml/Vues/LeftFrameForm.ui.qml
         QML_FILES Qml/Vues/RightFrameForm.ui.qml
         QML_FILES Qml/Vues/FieldInputForm.ui.qml
+        QML_FILES Qml/Controllers/AboutPopup.qml
         QML_FILES Qml/Vues/KeyboardKeyForm.ui.qml
         QML_FILES Qml/Vues/CalculFrameForm.ui.qml
-        QML_FILES Qml/Vues/TopBarForm.ui.qml
-        QML_FILES Qml/Controllers/AboutPopup.qml
 
+        QML_FILES Qml/Controllers/TopBar.qml
+        QML_FILES Qml/Controllers/TiButton.qml
         QML_FILES Qml/Controllers/Keyboard.qml
         QML_FILES Qml/Controllers/LeftFrame.qml
         QML_FILES Qml/Controllers/FieldInput.qml
         QML_FILES Qml/Controllers/RightFrame.qml
         QML_FILES Qml/Controllers/CalculFrame.qml
         QML_FILES Qml/Controllers/PhysicalKeyboard.qml
-        QML_FILES Qml/Controllers/TiButton.qml
-        QML_FILES Qml/Controllers/TopBar.qml
 
         QML_FILES Qml/Components/Bloc.qml
         QML_FILES Qml/Components/FieldLabel.qml

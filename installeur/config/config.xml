@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Installer>
+	<Name>TiCalcul</Name>
+	<Version>1.0</Version>
+	<Title>TiCalcul: the ultimate timecode calculator.</Title>
+	<Publisher>Sphinkie</Publisher>
+	<StartMenuDir>TiCalcul</StartMenuDir>
+	<TargetDir>@ApplicationsDir@/TiCalcul</TargetDir>
+    <!--ProductImages>
+        <ProductImage>
+            <Image>Built_with_Qt_logo.png</Image>
+            <Url>https://www.qt.io/</Url>
+		</ProductImage>
+    </ProductImages-->
+</Installer>
