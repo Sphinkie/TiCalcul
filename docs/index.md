@@ -6,7 +6,7 @@
 
 **Available Now !**
 
-Get the latest release of the software by clicking [here: "latest release"](https://github.com/Sphinkie/TiCalcul/releases/latest/download/TiCalculSetup.exe)
+Get the latest release of the software by [clicking here: "latest release"](https://github.com/Sphinkie/TiCalcul/releases/latest/download/TiCalculSetup.exe)
 
 ![Screenshot](./images/screenshot.png)
 
@@ -24,9 +24,9 @@ With TiCalcul, you can:
 
 ## Installation
 
-Get the latest release of the software by clicking [here: "latest release"](https://github.com/Sphinkie/TiCalcul/releases/latest/download/TiCalculSetup.exe)
+Get the latest release of the software by [clicking here](https://github.com/Sphinkie/TiCalcul/releases/latest/download/TiCalculSetup.exe)
 
-Download the **TiCalculSetup.exe** file, and just runit to install the program.
+Download the **TiCalculSetup.exe** file, and just run it to install the program.
 
 ## Developper corner
 
