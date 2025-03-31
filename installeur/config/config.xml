@@ -3,13 +3,17 @@
 	<Name>TiCalcul</Name>
 	<Version>1.0</Version>
 	<Title>TiCalcul: the ultimate timecode calculator.</Title>
-	<Publisher>Sphinkie</Publisher>
+	<Publisher>David de Lorenzo</Publisher>
 	<StartMenuDir>TiCalcul</StartMenuDir>
 	<TargetDir>@ApplicationsDir@/TiCalcul</TargetDir>
-    <!--ProductImages>
+    <ProductImages>
         <ProductImage>
-            <Image>Built_with_Qt_logo.png</Image>
+            <Image>screenshot.png</Image>
+            <Url>https://sphinkie.github.io/TiCalcul/</Url>
+		</ProductImage>
+        <ProductImage>
+            <Image>Built_with_Qt.png</Image>
             <Url>https://www.qt.io/</Url>
 		</ProductImage>
-    </ProductImages-->
+    </ProductImages>
 </Installer>

@@ -29,9 +29,11 @@
 function Component()
 {
     // constructor
+	/* pas de page dynamique 
     component.loaded.connect(this, Component.prototype.loaded);
     if (!installer.addWizardPage(component, "Page", QInstaller.TargetDirectory))
         console.log("Could not add the dynamic page.");
+	*/
 }
 
 Component.prototype.isDefault = function()
@@ -45,6 +47,13 @@ Component.prototype.createOperations = function()
     try {
         // call the base create operations function
         component.createOperations();
+		
+	//if (systemInfo.productType === "windows") {
+		// Ajoute un raccourcis au start menu ... a vérifier
+        component.addOperation("CreateShortcut", "@TargetDir@/README.txt", "@StartMenuDir@/README.lnk",
+            "workingDirectory=@TargetDir@", "iconPath=%SystemRoot%/system32/SHELL32.dll",
+            "iconId=2", "description=Open README file");
+		
     } catch (e) {
         console.log(e);
     }
