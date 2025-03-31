@@ -4,7 +4,7 @@
 
 TiCalcul est une **calculatrice de timecodes** pour Windows.  
 
-![screenshot](./docs/images/screenshot.jpg)
+![screenshot](./docs/images/screenshot.png)
 
 [Acceder au site de l'application](https://sphinkie.github.io/TiCalcul)
 
