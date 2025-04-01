@@ -1,12 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package>
-    <DisplayName>TiCalcul</DisplayName>
-    <Description>TiCalcul is a desktop timecode calculator.</Description>
-    <Version>1.0</Version>
-    <ReleaseDate>2025-04-01</ReleaseDate>
-    <Licenses>
-        <License name="LGPL License" file="license.txt" />
-    </Licenses>
-    <Default>true</Default>
-    <Script>installscript.qs</Script>
+	<DisplayName>TiCalcul</DisplayName>
+	<Description>TiCalcul is a desktop timecode calculator.</Description>
+	<Version>2.0</Version>
+	<ReleaseDate>2025-04-01</ReleaseDate>
+	<Licenses>
+		<License name="LGPL License" file="license.txt"/>
+	</Licenses>
+	<Default>true</Default>
+	<!-- <Script>installscript.qs</Script> -->
+	<Operations>
+		<Operation name="CreateShortcut">
+			<Argument>@TargetDir@/AppTiCalcul.exe</Argument>
+			<Argument>@StartMenuDir@/TiCalcul.lnk</Argument>
+			<Argument>workingDirectory=@TargetDir@</Argument>
+			<!-- <Argument>iconPath=%SystemRoot%/system32/SHELL32.dll</Argument> -->
+			<Argument>description=The Ultimate Timecode Calculator</Argument>		
+		</Operation>
+		<Operation name="CreateShortcut">
+			<Argument>@TargetDir@/AppTiCalcul.exe</Argument>
+			<Argument>@DesktopDir@/TiCalcul.lnk</Argument>
+			<Argument>workingDirectory=@TargetDir@</Argument>
+			<Argument>description=The Ultimate Timecode Calculator</Argument>		
+		</Operation>
+	</Operations>
 </Package>

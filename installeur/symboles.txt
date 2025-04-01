@@ -1,0 +1,11 @@
+
+
+@TargetDir@
+
+@HomeDir@
+@RootDir@
+https://doc.qt.io/qtinstallerframework/scripting.html#predefined-variables
+
+@DesktopDir@
+@StartMenuDir@
+
