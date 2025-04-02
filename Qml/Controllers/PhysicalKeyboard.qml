@@ -23,23 +23,33 @@ Item {
     // Autres touches
     Keys.onDeletePressed: event => afficheurActif.afficheur.removeLastDigit()
     Keys.onPressed: event => {
+
+                        if (event.key === Qt.Key_K) // spy
+                        {
+                            //console.log(displaytext)
+                            event.accepted = true
+                        }
+
                         if (event.key === Qt.Key_Plus) {
                             calculateur.add()
                             // Si on était sur TC1, on passe sur TC2.
                             afficheurActif.afficheur = afficheurActif.afficheur.partner
+                            event.accepted = true
                         }
                         if (event.key === Qt.Key_Minus) {
                             calculateur.substract()
                             // Si on était sur TC1, on passe sur TC2.
                             afficheurActif.afficheur = afficheurActif.afficheur.partner
+                            event.accepted = true
                         }
                         if (event.key === Qt.Key_Period) {
                             afficheurActif.afficheur.addDigit(".")
+                            event.accepted = true
                         }
                         if (event.key === Qt.Key_Backspace) {
                             afficheurActif.afficheur.removeLastDigit()
+                            event.accepted = true
                         }
-                        event.accepted = true
                     }
 
 

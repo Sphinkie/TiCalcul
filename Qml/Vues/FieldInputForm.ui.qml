@@ -12,9 +12,11 @@ import TiCalcul
 Button {
     //! Cet afficheur doit être fourni par le parent lors de la création du FieldInput.
     required property Afficheur afficheur
+    property alias displaytext: btText.text
 
     // Le texte affiché est la String envoyée par l'afficheur
     contentItem: Text {
+        id: btText
         text: afficheur.displayValue ? afficheur.displayValue : afficheur.hint
         horizontalAlignment: Text.AlignRight
         verticalAlignment: Text.AlignVCenter
@@ -30,7 +32,7 @@ Button {
 
     // La couleur de fond est blanche quand l'afficheur est sélectioné
     background: Rectangle {
-        id: bgrecctangle
+        id: btBackground
         implicitWidth: 160
         implicitHeight: 40
         // color: parent.pressed ? "white" : "green"
