@@ -26,10 +26,29 @@ Item {
 
                         if (event.key === Qt.Key_K) // spy
                         {
-                            //console.log(displaytext)
+                            console.log(tampon.text)
                             event.accepted = true
                         }
-
+                        if ((event.key === Qt.Key_C)
+                            && (event.modifiers & Qt.ControlModifier)) {
+                            // on copie de Afficheur vers le tampon
+                            tampon.text = afficheurActif.afficheur.copy()
+                            // puis du tampon vers le clipboard Windows
+                            tampon.selectAll()
+                            tampon.copy()
+                            console.log("Ctrl+C")
+                            event.accepted = true
+                        }
+                        if ((event.key === Qt.Key_V)
+                            && (event.modifiers & Qt.ControlModifier)) {
+                            // on copie du clipboard vers le tampon
+                            tampon.clear()
+                            tampon.paste()
+                            // puis du tampon vers l'afficheur
+                            afficheurActif.afficheur.paste(tampon.text)
+                            console.log("Ctrl+V")
+                            event.accepted = true
+                        }
                         if (event.key === Qt.Key_Plus) {
                             calculateur.add()
                             // Si on était sur TC1, on passe sur TC2.
@@ -60,4 +79,10 @@ Item {
                         event.accepted = true
                     }
     */
+
+    // Zone tampon vers le clipboard
+    TextEdit {
+        id: tampon
+        visible: false
+    }
 }

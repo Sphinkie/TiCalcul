@@ -25,6 +25,8 @@ public:
     Q_INVOKABLE void addDigit(QString digit);
     Q_INVOKABLE void removeLastDigit();
     Q_INVOKABLE void rectifyHMSI();
+    Q_INVOKABLE void paste(QString value);
+    Q_INVOKABLE QString copy();
 
 public slots:
     void setValue(const qint64 microsecs, const bool force=false);  // Réception du signal valeurPivotChanged()

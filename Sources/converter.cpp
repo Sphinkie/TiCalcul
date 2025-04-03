@@ -35,7 +35,7 @@ Converter::Converter()
  * \a hmsi: HMSI string to convert. \br
  * \a framerate: le framerate utilisé dans le hmsi.
  */
-qint64 Converter::HMSItoMicroseconds(QString hmsi, double framerate)
+qint64 Converter::HMSItoMicroseconds(const QString hmsi, const double framerate)
 {
     QString rawHMSI = HMSItoRawHMSI(hmsi);
     qint64 microsecs = rawHMSItoMicroseconds(rawHMSI, framerate);
@@ -46,15 +46,32 @@ qint64 Converter::HMSItoMicroseconds(QString hmsi, double framerate)
 /* ********************************************************************************************************** */
 /* ********************************************************************************************************** */
 /*!
- * \brief Convertit un HMSI en un RAW HMSI (Exemple: "25:48:12:..' en "254812").
+ * \brief Convertit \a hmsi (une string HMSI avec des ":" et des "..") en un RAW HMSI.
  *
- * Returns the corresponding RAW HMSI.
- *
- * \a hmsi: une string HMSI avec des ":" et des "..".
+ * \b Exemple: `25:48:12:..` est convertit en "254812"
  */
 QString Converter::HMSItoRawHMSI(QString hmsi)
 {
     return hmsi.remove(':').remove('.');
+}
+
+/* ********************************************************************************************************** */
+/* ********************************************************************************************************** */
+/*!
+ * \brief Convertit \a raw_hmsi (une string RAW HMSI meme incomplète) en un HMSI propre.
+ *
+ * \b Exemple: `254812` est convertit en "25:48:12:00"
+ */
+QString Converter::rawHMSItoHMSI(const QString raw_hmsi)
+{
+    // si la longueur est inférieure à 8 digits, on complète avec des 0
+    QString hmsi = raw_hmsi.leftJustified(8,'0',false);
+    int l = hmsi.length();
+    // On rajoute les séparateurs ":"
+    hmsi.insert(l-2,':');
+    hmsi.insert(l-4,':');
+    hmsi.insert(l-6,':');
+    return hmsi;
 }
 
 

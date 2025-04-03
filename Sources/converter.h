@@ -30,10 +30,11 @@ class Converter
         Converter();
 
         static QString addSpaceSeparator(QString value);
-        static QString HMSItoRawHMSI(QString hmsi);
-        static qint64  HMSItoMicroseconds(QString hmsi, double framerate);
-        static qint64  rawHMSItoMicroseconds(QString raw_hmsi, double framerate);
         static QString completeRawHMSIWithDots(QString raw_hmsi);
+        static QString HMSItoRawHMSI(QString hmsi);
+        static QString rawHMSItoHMSI(const QString raw_hmsi);
+        static qint64  HMSItoMicroseconds(const QString hmsi, const double framerate);
+        static qint64  rawHMSItoMicroseconds(QString raw_hmsi, double framerate);
         static QString microsecsToSeconds(qint64 microsecs);
         static QString microsecsToFrames(qint64 microsecs, double framerate);
         static QString microsecsToMillis(qint64 microsecs);

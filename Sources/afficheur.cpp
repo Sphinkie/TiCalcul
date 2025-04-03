@@ -16,7 +16,6 @@
  * Chaque Afficheur exprime cet \l Operande dans une des \l Unites définie lors de sa construction.
  */
 
-
 /* ********************************************************************************************************** */
 /* ********************************************************************************************************** */
 /*!
@@ -231,11 +230,6 @@ void Afficheur::removeLastDigit()
         this->mRawHMSI.chop(1);  // Enleve le dernier caractère
         emit setValeurPivot(Converter::rawHMSItoMicroseconds(mRawHMSI, this->mFramerate));
         break;
-    case Unites::DHMSM:
-        // TODO : Format D+HMSmm  (si nécéssaire - en V2)
-        this->mRawHMSI.chop(1);  // Enleve le dernier caractère
-        emit setValeurPivot(Converter::rawHMSItoMicroseconds(mRawHMSI, this->mFramerate));
-        break;
     default:
     {
         // Autres units: on applique simplement le facteur de convertion
@@ -328,7 +322,7 @@ bool Afficheur::isCorrect(const QString raw_hmsi)
  **/
 void Afficheur::activeDisplay(QString afficheur)
 {
-    // qDebug() << this->objectName() << "::activeDisplay <- " << afficheur;
+    qDebug() << this->objectName() << "::activeDisplay <- " << afficheur;
     mIsActive = (afficheur == this->objectName());
     // Quand l'afficheur passe actif, on recharge les valeurs éditables avec les valeurs en cours.
     if (mIsActive)
@@ -337,7 +331,7 @@ void Afficheur::activeDisplay(QString afficheur)
         // on enlève les 0 du début et tous les espaces
         static QRegularExpression regex = QRegularExpression("^[0]*|[\\s]*");
         mRawNUM  = mDisplayValue.remove(regex);
-        //qDebug() << "mRawNUM" << mRawNUM;
+        qDebug() << "mRawNUM" << mRawNUM;
     }
 }
 
@@ -345,13 +339,12 @@ void Afficheur::activeDisplay(QString afficheur)
 /* ********************************************************************************************************** */
 /* ********************************************************************************************************** */
 /*!
- * \brief SLOT: Efface la valeur de l'afficheur, et ses variables privées.
- *
- * Vient du signal Operande::valeurPivotCleared().
+ * \brief Le \b slot clearValue() reçoit le signal Operande::valeurPivotCleared() et efface la valeur de
+ *        l'afficheur, ainsi que ses variables privées.
  **/
 void Afficheur::clearValue()
 {
-    // qDebug() << this->objectName() << "::clearValue()";
+    qDebug() << this->objectName() << "::clearValue()";
     mRawHMSI.clear();
     mRawNUM.clear();
     mDisplayValue.clear();
@@ -367,14 +360,14 @@ void Afficheur::clearValue()
  * \fn void Afficheur::setValue(const qint64 microsecs, const bool force=false)
  * \brief Ce \b slot recoit la nouvelle valeur pivot de l'opérande, pour la convertir et l'envoyer à l'affichage.
  *
- * La fonction reçoit \a microsecs , la nouvelle valeur pivot, en microsecondes.
+ * La fonction setValue() reçoit \a microsecs , la nouvelle valeur pivot, en microsecondes.
  * Elle la convertit dans l'unité de l' \l Afficheur et l'envoie au QMl pour être affichée.
  * Le paramètre \a force précise s'il faut prendre en compte la valeur reçue même si le champ est en cours d'édition.
  * Voir le signal Operande::valeurPivotChanged()
  **/
 void Afficheur::setValue(const qint64 microsecs, const bool force)
 {
-    // qDebug() << this->objectName() << "::setValue()" << microsecs;
+    qDebug() << this->objectName() << "::setValue()" << microsecs;
     QString value = "";
     switch (mUnit)
     {
@@ -422,7 +415,7 @@ void Afficheur::setValue(const qint64 microsecs, const bool force)
  **/
 void Afficheur::setDisplayValue(const QString value, const bool force)
 {
-    // qDebug() << this->objectName() << "::setDisplayValue" << value << (mIsActive? "active": "passive");
+    qDebug() << this->objectName() << "::setDisplayValue" << value << (mIsActive? "active": "passive");
 
     // Si le champ est en cours d'édition, et que l'on ne force pas l'affichage de la nouvelle valeur:
     if (mIsActive && !force)
@@ -469,7 +462,7 @@ void Afficheur::setDisplayValue(const QString value, const bool force)
 /* ********************************************************************************************************** */
 /* ********************************************************************************************************** */
 /*!
- * \brief Cette fonction remet le HMSI de façon correcte.
+ * \brief La fonction rectifyHMSI() remet le HMSI de façon correcte.
  **/
 void Afficheur::rectifyHMSI()
 {
@@ -499,6 +492,86 @@ void Afficheur::rectifyHMSI()
     else
     {
         qWarning() << "Warning: rectifyHMSI received by non HMSI display" << this->objectName();
+    }
+}
+
+
+/* ********************************************************************************************************** */
+/* ********************************************************************************************************** */
+/*!
+ * \brief La fonction copy() renvoie la valeur brute de l'afficheur, pour être utilisée dans le presse-papier
+ *        de Windows, lors d'un copier/coller.
+ */
+QString Afficheur::copy()
+{
+    if (mUnit == Unites::HMSI)
+    {
+        // on retourne le RAW_HMSI propre
+        return Converter::rawHMSItoHMSI(mRawHMSI);
+    }
+    else
+    {
+        return mRawNUM;
+    }
+}
+
+/* ********************************************************************************************************** */
+/* ********************************************************************************************************** */
+/*!
+ * \brief La fonction paste() rentre dans l'afficheur, la \value reçue (venant du presse-papier
+ *        de Windows, lors d'un copier/coller).
+ *
+ * Si la valeur est trop grande (99H pour les HMSI) on ignore le paste.
+ */
+void Afficheur::paste(QString value)
+{
+    static QRegularExpression anyNondigit = QRegularExpression("\\D");
+    static QRegularExpression anyNonDigitPointComma = QRegularExpression("[^\\d\\.,]");
+
+    if (mUnit == Unites::HMSI)
+    {
+        // On enleve les caractères parasites
+        QString filtered = value.remove(anyNondigit);
+        // Controle de dépassement: 8 DIGITS MAX
+        if (filtered.size() > 8) return;
+        // Si OK, on convertit la string en microsecondes
+        mRawHMSI = filtered;
+        qint64 microsecValue = Converter::rawHMSItoMicroseconds(mRawHMSI, mFramerate);
+        // On diffuse la nouvelle ValeurPivot
+        emit setValeurPivot(microsecValue);
+    }
+    else if (mUnit == Unites::SECONDS)
+    {
+        // on enleve les caractères parasites
+        QString filtered = value.remove(anyNonDigitPointComma);
+        // On accepte les virgules mais on les remplace par un point
+        filtered.replace(',','.');
+        // On ne garde que le premier point
+        while (filtered.count('.') > 1)
+            {
+                int n = filtered.indexOf('.');
+                filtered.removeAt(n);
+            }
+        // Controle de dépassement
+        if (filtered.toLongLong() > mMaxValue) return;
+        // Si OK, on convertit la string en microsecondes
+        mRawNUM = filtered;
+        qint64 microsecValue = Converter::toMicroseconds(mRawNUM, mConversionFacteur);
+        // On diffuse la nouvelle ValeurPivot
+        emit setValeurPivot(microsecValue);
+    }
+    else
+    {
+        // on enleve les caractères parasites
+        QString filtered = value.remove(anyNondigit);
+        // Controle de dépassement
+        if (filtered.toLongLong() > mMaxValue) return;
+        // Si OK, on convertit la string en microsecondes
+        mRawNUM = filtered;
+        // On convertit la string en microsecondes
+        qint64 microsecValue = Converter::toMicroseconds(mRawNUM, mConversionFacteur);
+        // On diffuse la nouvelle ValeurPivot
+        emit setValeurPivot(microsecValue);
     }
 }
 

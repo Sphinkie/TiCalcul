@@ -1,11 +1,13 @@
 
+Quelques valeurs:
 
 @TargetDir@
-
 @HomeDir@
 @RootDir@
-https://doc.qt.io/qtinstallerframework/scripting.html#predefined-variables
-
 @DesktopDir@
 @StartMenuDir@
+
+Toutes lea valeurs sont ici:
+
+https://doc.qt.io/qtinstallerframework/scripting.html#predefined-variables
 
