@@ -42,6 +42,8 @@
             <keyword name="complement" id="Calculateur::complement" ref="calculateur.html#complement"/>
             <keyword name="completeRawHMSIWithDots" id="Converter::completeRawHMSIWithDots" ref="converter.html#completeRawHMSIWithDots"/>
             <keyword name="connectActiveDisplay" id="Operande::connectActiveDisplay" ref="operande.html#connectActiveDisplay"/>
+            <keyword name="copy" id="Afficheur::copy" ref="afficheur.html#copy"/>
+            <keyword name="correctChanged" id="Afficheur::correctChanged" ref="afficheur.html#correct-prop"/>
             <keyword name="displayValueChanged" id="Afficheur::displayValueChanged" ref="afficheur.html#displayValue-prop"/>
             <keyword name="findPartner" id="Afficheur::findPartner" ref="afficheur.html#findPartner"/>
             <keyword name="framerateChanged" id="Afficheur::framerateChanged" ref="afficheur.html#framerate-prop"/>
@@ -59,6 +61,8 @@
             <keyword name="onValeurPivotChanged" id="Calculateur::onValeurPivotChanged" ref="calculateur.html#onValeurPivotChanged"/>
             <keyword name="operateurChanged" id="Calculateur::operateurChanged" ref="calculateur.html#operateur-prop"/>
             <keyword name="partnerChanged" id="Afficheur::partnerChanged" ref="afficheur.html#partner-prop"/>
+            <keyword name="paste" id="Afficheur::paste" ref="afficheur.html#paste"/>
+            <keyword name="rawHMSItoHMSI" id="Converter::rawHMSItoHMSI" ref="converter.html#rawHMSItoHMSI"/>
             <keyword name="rawHMSItoMicroseconds" id="Converter::rawHMSItoMicroseconds" ref="converter.html#rawHMSItoMicroseconds"/>
             <keyword name="rectifyHMSI" id="Afficheur::rectifyHMSI" ref="afficheur.html#rectifyHMSI"/>
             <keyword name="registerContext" id="Operande::registerContext" ref="operande.html#registerContext"/>

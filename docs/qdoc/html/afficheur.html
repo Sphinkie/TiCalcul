@@ -62,7 +62,9 @@
 <div class="table"><table class="alignedsummary" translate="no">
 <tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="afficheur.html#Afficheur" translate="no">Afficheur</a></b>(Unites::Units <i>unit</i>, QObject *<i>parent</i> = nullptr)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="afficheur.html#addDigit" translate="no">addDigit</a></b>(QString <i>digit</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="afficheur.html#copy" translate="no">copy</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="afficheur.html#findPartner" translate="no">findPartner</a></b>(QString <i>partnername</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="afficheur.html#paste" translate="no">paste</a></b>(QString <i>value</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="afficheur.html#rectifyHMSI" translate="no">rectifyHMSI</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="afficheur.html#removeLastDigit" translate="no">removeLastDigit</a></b>()</td></tr>
 </table></div>
@@ -75,6 +77,7 @@
 </table></div>
 <h2 id="signals">Signals</h2>
 <div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="afficheur.html#correct-prop" translate="no">correctChanged</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="afficheur.html#displayValue-prop" translate="no">displayValueChanged</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="afficheur.html#framerate-prop" translate="no">framerateChanged</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="afficheur.html#hint-prop" translate="no">hintChanged</a></b>()</td></tr>
@@ -93,8 +96,7 @@
 <h2>Member Function Documentation</h2>
 <!-- $$$Afficheur[overload1]$$$AfficheurUnites::UnitsQObject* -->
 <h3 class="fn" translate="no" id="Afficheur"><code translate="no">[explicit] </code>Afficheur::<span class="name">Afficheur</span>(<span class="type">Unites::Units</span> <i>unit</i>, <span class="type"><a href="https://doc.qt.io/qt/qobject.html#QObject" translate="no">QObject</a></span> *<i>parent</i> = nullptr)</h3>
-<p>Constructor.</p>
-<p>On initialise toutes les property de cet afficheur.</p>
+<p>Constructeur: On initialise toutes les property de cet afficheur.</p>
 <p><i translate="no">unit</i> : L'unité correspondante à cet afficheur. <br />
  <i translate="no">parent</i> : <a href="https://doc.qt.io/qt/qobject.html" translate="no">QObject</a> parent: un <a href="operande.html" translate="no">Operande</a>. Son nom va servir.</p>
 <!-- @@@Afficheur -->
@@ -113,15 +115,29 @@
 </div><!-- @@@addDigit -->
 <!-- $$$clearValue[overload1]$$$clearValue -->
 <h3 class="fn" translate="no" id="clearValue"><code translate="no">[slot] </code><span class="type">void</span> Afficheur::<span class="name">clearValue</span>()</h3>
-<p>SLOT: Efface la valeur de l'afficheur, et ses variables privées. Vient du signal valeurPivotCleared() de la classe Operande.</p>
+<p>Le <b>slot</b> clearValue() reçoit le signal Operande::valeurPivotCleared() et efface la valeur de l'afficheur, ainsi que ses variables privées.</p>
 <!-- @@@clearValue -->
+<!-- $$$copy[overload1]$$$copy -->
+<h3 class="fn" translate="no" id="copy"><code translate="no">[invokable] </code><span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> Afficheur::<span class="name">copy</span>()</h3>
+<p>La fonction copy() renvoie la valeur brute de l'afficheur, pour être utilisée dans le presse-papier de Windows, lors d'un copier/coller.</p>
+<div class="admonition note"><p><b>Note: </b>This function can be invoked via the meta-object system and from QML. See <a href="https://doc.qt.io/qt/qobject.html#Q_INVOKABLE" translate="no">Q_INVOKABLE</a>.</p>
+</div><!-- @@@copy -->
 <!-- $$$findPartner[overload1]$$$findPartnerQString -->
 <h3 class="fn" translate="no" id="findPartner"><span class="type">void</span> Afficheur::<span class="name">findPartner</span>(<span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> <i>partnername</i>)</h3>
 <p>La fonction findPartner trouve et mémorise l'afficheur partenaire, c'est-à-dire l'afficheur équivalent de l'autre opérande, dont le nom est transmis dans le paramètre <i translate="no">partnername</i>.</p>
 <!-- @@@findPartner -->
+<!-- $$$paste[overload1]$$$pasteQString -->
+<h3 class="fn" translate="no" id="paste"><code translate="no">[invokable] </code><span class="type">void</span> Afficheur::<span class="name">paste</span>(<span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> <i>value</i>)</h3>
+<p>La fonction paste() rentre dans l'afficheur, la</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code translate="no">reçue</code></td><td class="topAlign">(venant du presse-papier de Windows, lors d'un copier/coller).</td></tr>
+</table></div>
+<p>Si la valeur est trop grande (99H pour les HMSI) on ignore le paste.</p>
+<div class="admonition note"><p><b>Note: </b>This function can be invoked via the meta-object system and from QML. See <a href="https://doc.qt.io/qt/qobject.html#Q_INVOKABLE" translate="no">Q_INVOKABLE</a>.</p>
+</div><!-- @@@paste -->
 <!-- $$$rectifyHMSI[overload1]$$$rectifyHMSI -->
 <h3 class="fn" translate="no" id="rectifyHMSI"><code translate="no">[invokable] </code><span class="type">void</span> Afficheur::<span class="name">rectifyHMSI</span>()</h3>
-<p>Cette fonction remet le HMSI de façon correcte.</p>
+<p>La fonction rectifyHMSI() remet le HMSI de façon correcte.</p>
 <div class="admonition note"><p><b>Note: </b>This function can be invoked via the meta-object system and from QML. See <a href="https://doc.qt.io/qt/qobject.html#Q_INVOKABLE" translate="no">Q_INVOKABLE</a>.</p>
 </div><!-- @@@rectifyHMSI -->
 <!-- $$$removeLastDigit[overload1]$$$removeLastDigit -->
@@ -140,7 +156,7 @@
 <!-- $$$setValue[overload1]$$$setValueconstqint64constbool -->
 <h3 class="fn" translate="no" id="setValue"><code translate="no">[slot] </code><span class="type">void</span> Afficheur::<span class="name">setValue</span>(const <span class="type"><a href="https://doc.qt.io/qt/qttypes.html#qint64-typedef" translate="no">qint64</a></span> <i>microsecs</i>, const <span class="type">bool</span> <i>force</i> = false)</h3>
 <p>Ce <b>slot</b> recoit la nouvelle valeur pivot de l'opérande, pour la convertir et l'envoyer à l'affichage.</p>
-<p>La fonction reçoit <i translate="no">microsecs</i> , la nouvelle valeur pivot, en microsecondes. Elle la convertit dans l'unité de l' <a href="afficheur.html" translate="no">Afficheur</a> et l'envoie au QMl pour être affichée. Le paramètre <i translate="no">force</i> précise s'il faut prendre en compte la valeur reçue même si le champ est en cours d'édition. Voir le signal Operande::valeurPivotChanged()</p>
+<p>La fonction setValue() reçoit <i translate="no">microsecs</i> , la nouvelle valeur pivot, en microsecondes. Elle la convertit dans l'unité de l' <a href="afficheur.html" translate="no">Afficheur</a> et l'envoie au QMl pour être affichée. Le paramètre <i translate="no">force</i> précise s'il faut prendre en compte la valeur reçue même si le champ est en cours d'édition. Voir le signal Operande::valeurPivotChanged()</p>
 <!-- @@@setValue -->
 </div>
         </div>
