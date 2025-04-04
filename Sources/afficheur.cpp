@@ -53,6 +53,22 @@ void Afficheur::findPartner(QString partnername)
     emit partnerChanged();
 }
 
+/*************************************************************************************************************/
+/*************************************************************************************************************/
+/*!
+ * \brief Afficheur::setNavigation mémorise les Afficheurs qui entourent l'afficheur courant.
+ *
+ * Les paramètres \a N, \a S, \a E et \a W sont les Afficheurs situés respectivement au Nord, Sud, Est, Ouest.
+ */
+void Afficheur::setNavigation(Afficheur *N, Afficheur *S, Afficheur *E, Afficheur *W)
+{
+    // Navigration
+    this->mUp = N;
+    this->mDown = S;
+    this->mRight = E;
+    this->mLeft = W;
+}
+
 
 /* ********************************************************************************************************** */
 /* ********************************************************************************************************** */

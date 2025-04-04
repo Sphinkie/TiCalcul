@@ -14,11 +14,11 @@ Item {
     Keys.onDigit9Pressed: event => afficheurActif.afficheur.addDigit("9")
     Keys.onDigit0Pressed: event => afficheurActif.afficheur.addDigit("0")
 
-    // TODO : Mouvements
-    Keys.onRightPressed: event => console.log("move Right")
-    Keys.onDownPressed: event => console.log("move Down")
-    Keys.onLeftPressed: event => console.log("move Left")
-    Keys.onUpPressed: event => console.log("move Up")
+    // Mouvements
+    Keys.onRightPressed: event => afficheurActif.afficheur = afficheurActif.afficheur.right
+    Keys.onDownPressed: event => afficheurActif.afficheur = afficheurActif.afficheur.down
+    Keys.onLeftPressed: event => afficheurActif.afficheur = afficheurActif.afficheur.left
+    Keys.onUpPressed: event => afficheurActif.afficheur = afficheurActif.afficheur.up
 
     // Autres touches
     Keys.onDeletePressed: event => afficheurActif.afficheur.removeLastDigit()

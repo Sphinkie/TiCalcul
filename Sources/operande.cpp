@@ -26,7 +26,6 @@
 Operande::Operande(QString name, QObject *parent): QObject(parent)
 {
     this->setObjectName(name);
-
     a1 = new Afficheur(Unites::SECONDS, this);
     a2 = new Afficheur(Unites::MILLISECONDS, this);
     a3 = new Afficheur(Unites::MICROSECONDS, this);
@@ -35,6 +34,32 @@ Operande::Operande(QString name, QObject *parent): QObject(parent)
     a6 = new Afficheur(Unites::FRAMES_25, this);
     a7 = new Afficheur(Unites::FRAMES_50, this);
     //a8 = new Afficheur(Unites::FRAMES_NTSC);
+
+    // Navigation : N S E W
+    if (name == "tc1") {
+        a1->setNavigation(a1,a2,a4,a1);  // HMSI à droite
+        a2->setNavigation(a1,a3,a2,a2);
+        a3->setNavigation(a2,a6,a3,a3);
+        a6->setNavigation(a3,a7,a6,a6);
+        a7->setNavigation(a6,a7,a7,a7);
+        a4->setNavigation(a4,a4,a4,a1);   // SECONDS à gauche
+    }
+    else if (name == "tc2") {
+        a1->setNavigation(a1,a2,a1,a1);
+        a2->setNavigation(a1,a3,a2,a2);
+        a3->setNavigation(a2,a6,a3,a4);   // HMSI à gauche
+        a6->setNavigation(a3,a7,a6,a6);
+        a7->setNavigation(a6,a7,a7,a7);
+        a4->setNavigation(a4,a4,a3,a4);   // MICROSECS à droite
+    }
+    else {                                // Pas de mouvement pour les autres
+        a1->setNavigation(a1,a1,a1,a1);
+        a2->setNavigation(a2,a2,a2,a2);
+        a3->setNavigation(a3,a3,a3,a3);
+        a6->setNavigation(a6,a6,a6,a6);
+        a7->setNavigation(a7,a7,a7,a7);
+        a4->setNavigation(a4,a4,a4,a4);
+    }
 
     // On signale à l'afficheur HMSI qu'il a le focus.
     // (Ce serait mieux via le QML, mais il semble instancié trop tot).

@@ -68,6 +68,7 @@
             <keyword name="registerContext" id="Operande::registerContext" ref="operande.html#registerContext"/>
             <keyword name="removeLastDigit" id="Afficheur::removeLastDigit" ref="afficheur.html#removeLastDigit"/>
             <keyword name="setFramerate" id="Afficheur::setFramerate" ref="afficheur.html#setFramerate"/>
+            <keyword name="setNavigation" id="Afficheur::setNavigation" ref="afficheur.html#setNavigation"/>
             <keyword name="setNtscFramePerSec" id="Converter::setNtscFramePerSec" ref="converter.html#setNtscFramePerSec"/>
             <keyword name="setPartner" id="Operande::setPartner" ref="operande.html#setPartner"/>
             <keyword name="setValeurPivot" id="Operande::setValeurPivot" ref="operande.html#setValeurPivot"/>
