@@ -4,7 +4,7 @@
   <meta charset="utf-8">
 <!-- afficheur.cpp -->
   <meta name="description" content="La classe Afficheur gère un champ numérique de l'IHM QML.">
-  <title>Afficheur Class | Qt 6.8</title>
+  <title>Afficheur Class | Home</title>
   <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
   <script type="text/javascript">
     document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
@@ -26,7 +26,7 @@
     <div class="main-rounded">
         <div class="navigationbar">
         <ul>
-<li><a href="https://doc.qt.io/qt/index.html" translate="no">Qt 6.8</a></li>
+<li><a href="https://sphinkie.github.io/TiCalcul" translate="no">Home</a></li>
 <li><a href="ticalcul-module.html" translate="no">TiCalcul</a></li>
 <li>Afficheur</li>
 <li id="buildversion">Qt 6.8 Reference Documentation</li>
@@ -102,9 +102,8 @@
 <!-- @@@Afficheur -->
 <!-- $$$activeDisplay[overload1]$$$activeDisplayQString -->
 <h3 class="fn" translate="no" id="activeDisplay"><code translate="no">[slot] </code><span class="type">void</span> Afficheur::<span class="name">activeDisplay</span>(<span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> <i>afficheur</i>)</h3>
-<p>SLOT: Actualise la variable mIsActive en cas de changement.</p>
-<p>Voir aussi le signal QML activeDisplay() de l'afficheurActif. <br />
- <i translate="no">afficheur</i>: Le nom (objectName) de l'afficheur sélectionné dans le QML.</p>
+<p>SLOT: Actualise la variable mIsActive en cas de changement de l'afficheur sélectionné dans le QML.</p>
+<p>Le nom <i translate="no">afficheur</i> est l'objectName du nouvel Afficheur actif. Voir aussi le signal QML activeDisplay() de l'afficheurActif.</p>
 <!-- @@@activeDisplay -->
 <!-- $$$addDigit[overload1]$$$addDigitQString -->
 <h3 class="fn" translate="no" id="addDigit"><code translate="no">[invokable] </code><span class="type">void</span> Afficheur::<span class="name">addDigit</span>(<span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> <i>digit</i>)</h3>
@@ -119,7 +118,7 @@
 <!-- @@@clearValue -->
 <!-- $$$copy[overload1]$$$copy -->
 <h3 class="fn" translate="no" id="copy"><code translate="no">[invokable] </code><span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> Afficheur::<span class="name">copy</span>()</h3>
-<p>La fonction copy() renvoie la valeur brute de l'afficheur, pour être utilisée dans le presse-papier de Windows, lors d'un copier/coller.</p>
+<p>La fonction Afficheur::copy() renvoie la valeur brute de l'afficheur, pour être utilisée dans le presse-papier de Windows, lors d'un copier/coller.</p>
 <div class="admonition note"><p><b>Note: </b>This function can be invoked via the meta-object system and from QML. See <a href="https://doc.qt.io/qt/qobject.html#Q_INVOKABLE" translate="no">Q_INVOKABLE</a>.</p>
 </div><!-- @@@copy -->
 <!-- $$$findPartner[overload1]$$$findPartnerQString -->
@@ -128,10 +127,7 @@
 <!-- @@@findPartner -->
 <!-- $$$paste[overload1]$$$pasteQString -->
 <h3 class="fn" translate="no" id="paste"><code translate="no">[invokable] </code><span class="type">void</span> Afficheur::<span class="name">paste</span>(<span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> <i>value</i>)</h3>
-<p>La fonction paste() rentre dans l'afficheur, la</p>
-<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
-<tr><td class="topAlign"><code translate="no">reçue</code></td><td class="topAlign">(venant du presse-papier de Windows, lors d'un copier/coller).</td></tr>
-</table></div>
+<p>La fonction paste() rentre la valeur <i translate="no">value</i> reçue, venant du presse-papier de Windows, lors d'un copier/coller, dans l'afficheur.</p>
 <p>Si la valeur est trop grande (99H pour les HMSI) on ignore le paste.</p>
 <div class="admonition note"><p><b>Note: </b>This function can be invoked via the meta-object system and from QML. See <a href="https://doc.qt.io/qt/qobject.html#Q_INVOKABLE" translate="no">Q_INVOKABLE</a>.</p>
 </div><!-- @@@paste -->

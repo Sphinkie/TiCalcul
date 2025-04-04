@@ -315,10 +315,10 @@ bool Afficheur::isCorrect(const QString raw_hmsi)
 /* ********************************************************************************************************** */
 /* ********************************************************************************************************** */
 /*!
- * \brief SLOT: Actualise la variable mIsActive en cas de changement.
+ * \brief SLOT: Actualise la variable mIsActive en cas de changement de l'afficheur sélectionné dans le QML.
  *
- * Voir aussi le signal QML activeDisplay() de l'afficheurActif. \br
- * \a afficheur: Le nom (objectName) de l'afficheur sélectionné dans le QML.
+ * Le nom \a afficheur est l'objectName du nouvel Afficheur actif.
+ * Voir aussi le signal QML activeDisplay() de l'afficheurActif.
  **/
 void Afficheur::activeDisplay(QString afficheur)
 {
@@ -499,7 +499,7 @@ void Afficheur::rectifyHMSI()
 /* ********************************************************************************************************** */
 /* ********************************************************************************************************** */
 /*!
- * \brief La fonction copy() renvoie la valeur brute de l'afficheur, pour être utilisée dans le presse-papier
+ * \brief La fonction Afficheur::copy() renvoie la valeur brute de l'afficheur, pour être utilisée dans le presse-papier
  *        de Windows, lors d'un copier/coller.
  */
 QString Afficheur::copy()
@@ -518,8 +518,8 @@ QString Afficheur::copy()
 /* ********************************************************************************************************** */
 /* ********************************************************************************************************** */
 /*!
- * \brief La fonction paste() rentre dans l'afficheur, la \value reçue (venant du presse-papier
- *        de Windows, lors d'un copier/coller).
+ * \brief La fonction \l paste() rentre la valeur \a value reçue, venant du presse-papier
+ *        de Windows, lors d'un copier/coller, dans l'afficheur.
  *
  * Si la valeur est trop grande (99H pour les HMSI) on ignore le paste.
  */

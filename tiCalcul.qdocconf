@@ -6,7 +6,7 @@
 # --------------------------------------------------------------------------------------
 
 # Variable globale: chemin des .index de Qt
-qt_install_docs = C:/Qt/Docs/Qt-6.6.1
+# qt_install_docs = C:/Qt/Docs/Qt-6.6.1   Ne sert à rien ici: il faut la déclarer dans QTCreator
 
 # --------------------------------------------------------------------------------------
 # INCLUDES
@@ -83,6 +83,12 @@ qhp.TiCalcul.subprojects.classes.title      = C++ Classes
 qhp.TiCalcul.subprojects.classes.indexTitle = TI CALCUL C++ Classes
 qhp.TiCalcul.subprojects.classes.selectors  = class fake:headerfile
 qhp.TiCalcul.subprojects.classes.sortPages  = true
+
+# --------------------------------------------------------------------------------------
+# Navigation
+# --------------------------------------------------------------------------------------
+navigation.homepage = https://sphinkie.github.io/TiCalcul
+navigation.hometitle = "Home"
 
 
 # --------------------------------------------------------------------------------------
