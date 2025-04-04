@@ -12,12 +12,12 @@ find_package(Qt6 REQUIRED COMPONENTS Quick)
 
 qt_standard_project_setup(REQUIRES 6.5)
 
-qt_add_executable(appTiCalcul
+qt_add_executable(tiCalcul
 
     ${app_icon_resource_windows}
 )
 
-qt_add_qml_module(appTiCalcul
+qt_add_qml_module(tiCalcul
     URI TiCalcul
     VERSION 2.0
         RESOURCES Resources/TiCalcul.qrc
@@ -63,20 +63,20 @@ add_definitions(-DQT_NO_DEBUG_OUTPUT)
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
 # explicit, fixed bundle identifier manually though.
-set_target_properties(appTiCalcul PROPERTIES
-#    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.appTiCalcul
+set_target_properties(tiCalcul PROPERTIES
+#    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.tiCalcul
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
     MACOSX_BUNDLE TRUE
     WIN32_EXECUTABLE TRUE
 )
 
-target_link_libraries(appTiCalcul
+target_link_libraries(tiCalcul
     PRIVATE Qt6::Quick
 )
 
 include(GNUInstallDirs)
-install(TARGETS appTiCalcul
+install(TARGETS tiCalcul
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
@@ -88,10 +88,10 @@ install(TARGETS appTiCalcul
 #SET(BIN_REL ${CMAKE_CURRENT_BINARY_DIR}/Release)
 #
 #ADD_CUSTOM_COMMAND(
-#  TARGET appTiCalcul
+#  TARGET tiCalcul
 #  POST_BUILD
 #  COMMAND
 #    CD $<$<CONFIG:Debug>:${BIN_DBG}>$<$<CONFIG:Release>:${BIN_REL}> &&
-#    ${WINDEPLOYQT_EXECUTABLE} --pdb appTiCalcul.exe
+#    ${WINDEPLOYQT_EXECUTABLE} --pdb tiCalcul.exe
 #       --verbose 1 --dir . --plugindir plugins --compiler-runtime
 #    )
