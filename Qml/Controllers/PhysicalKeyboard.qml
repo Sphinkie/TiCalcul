@@ -19,6 +19,7 @@ Item {
     Keys.onDownPressed: event => afficheurActif.afficheur = afficheurActif.afficheur.down
     Keys.onLeftPressed: event => afficheurActif.afficheur = afficheurActif.afficheur.left
     Keys.onUpPressed: event => afficheurActif.afficheur = afficheurActif.afficheur.up
+    Keys.onTabPressed: event => afficheurActif.afficheur = afficheurActif.afficheur.partner
 
     // Autres touches
     Keys.onDeletePressed: event => afficheurActif.afficheur.removeLastDigit()

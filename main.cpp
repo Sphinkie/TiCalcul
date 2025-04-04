@@ -92,6 +92,7 @@ int main(int argc, char* argv[])
 
     // Etablit les "apairages" entre les afficheurs de TC1 et de TC2.
     operande_tc1.setPartner(&operande_tc2);
+    operande_tc2.setPartner(&operande_tc1);
 
     // --------------------------------------
     // Connexion des signaux
