@@ -3,13 +3,12 @@ import QtQuick
 import "../Vues"
 
 /* ********************************************************************************************************** */
-/* ********************************************************************************************************** */
 
 
 /*!
-  \qmltype LeftFrame
+  \qmltype RightFrame
   \inqmlmodule QTiCalcul
-  \inherits LeftFrameForm
+  \inherits RightFrameForm
   \brief Controlleur pour le panel de droite.
  */
 RightFrameForm {

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(TiCalcul VERSION 2.0 LANGUAGES CXX)
+project(Q_TiCalcul VERSION 2.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -8,17 +8,16 @@ set(CMAKE_AUTORCC ON)   # Auto use QRC resource File
 
 set(app_icon_resource_windows "${CMAKE_CURRENT_SOURCE_DIR}/Resources/appicon.rc")
 
-find_package(Qt6 REQUIRED COMPONENTS Quick)
+find_package(Qt6 REQUIRED COMPONENTS Quick Core Qml)   # modif recommandée par https://doc.qt.io/qt-6/qt6-port-to-qt-add-qml-module.html
 
 qt_standard_project_setup(REQUIRES 6.5)
 
 qt_add_executable(tiCalcul
-
     ${app_icon_resource_windows}
 )
 
 qt_add_qml_module(tiCalcul
-    URI TiCalcul
+    URI Q_TiCalcul
     VERSION 2.0
         RESOURCES Resources/TiCalcul.qrc
         RESOURCES TiCalcul.qdocconf
@@ -31,7 +30,6 @@ qt_add_qml_module(tiCalcul
         QML_FILES Qml/Vues/LeftFrameForm.ui.qml
         QML_FILES Qml/Vues/RightFrameForm.ui.qml
         QML_FILES Qml/Vues/FieldInputForm.ui.qml
-        QML_FILES Qml/Controllers/AboutPopup.qml
         QML_FILES Qml/Vues/KeyboardKeyForm.ui.qml
         QML_FILES Qml/Vues/CalculFrameForm.ui.qml
 
@@ -39,6 +37,7 @@ qt_add_qml_module(tiCalcul
         QML_FILES Qml/Controllers/TiButton.qml
         QML_FILES Qml/Controllers/Keyboard.qml
         QML_FILES Qml/Controllers/LeftFrame.qml
+        QML_FILES Qml/Controllers/AboutPopup.qml
         QML_FILES Qml/Controllers/FieldInput.qml
         QML_FILES Qml/Controllers/RightFrame.qml
         QML_FILES Qml/Controllers/CalculFrame.qml

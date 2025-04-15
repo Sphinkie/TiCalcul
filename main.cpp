@@ -19,13 +19,8 @@
 
     Logiciel gratuit et sans publicité.
 
-    TiCalcul est developpé en C++ et en QML (avec le framework Qt version 6). \br
-
-    Site de documentation pour:
-    \list
-        \li Les classes C++
-        \li les scripts QML
-    \endlist
+    TiCalcul est developpé en C++ et en QML (avec le framework Qt version 6).
+    Cette documentation décrit les classes C++ et les \l {TiCalcul QML Module}{les types QML}.
 
     \image screenshot.png {Ecran principal de l'application}
     \startpage Timecode Calculator

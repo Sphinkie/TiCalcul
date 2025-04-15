@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- tiCalcul.qdoc -->
+  <meta name="description" content="Les types QML pour TiCalcul.">
+  <title>TiCalcul QML Module | Home</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="https://sphinkie.github.io/TiCalcul" translate="no">Home</a></li>
+<li>TiCalcul QML Module</li>
+<li id="buildversion">Qt 6.8 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title" translate="no">TiCalcul QML Module</h1>
+<!-- $$$QTiCalcul-description -->
+<div class="descr" id="details">
+<p>Description des types QML définis pour <a href="ticalcul-module.html" translate="no">TiCalcul</a>. <br />
+ La description des <a href="ticalcul-module.html" translate="no">classes C++ se trouve sur cette page</a>.</p>
+<p class="centerAlign"><img src="images/TiCalcul-QML-hierarchy.drawio.png" alt="" /></p><p><b>Liste des Types QML :</b></p>
+</div>
+<!-- @@@QTiCalcul -->
+<div class="table"><table class="annotated">
+<tr class="odd topAlign"><td class="tblName" translate="no"><p><a href="qml-qticalcul-aboutpopup.html">AboutPopup</a></p></td><td class="tblDescr"><p>Ce popup affiche l'Auteur, l'Année et le Numéro de version de l'application</p></td></tr>
+<tr class="even topAlign"><td class="tblName" translate="no"><p><a href="qml-qticalcul-activedisplay.html">ActiveDisplay</a></p></td><td class="tblDescr"><p>Mémorise l'afficheur actif</p></td></tr>
+<tr class="odd topAlign"><td class="tblName" translate="no"><p><a href="qml-qticalcul-bloc.html">Bloc</a></p></td><td class="tblDescr"><p>Un petit rectangle, visible ou non à l'écran, pour remplir un espace</p></td></tr>
+<tr class="even topAlign"><td class="tblName" translate="no"><p><a href="qml-qticalcul-calculframe.html">CalculFrame</a></p></td><td class="tblDescr"><p>Controlleur pour le panel central (zone des calculs)</p></td></tr>
+<tr class="odd topAlign"><td class="tblName" translate="no"><p><a href="qml-qticalcul-calculframeform.html">CalculFrameForm</a></p></td><td class="tblDescr"><p>Affiche les Operande en HMSI ainsi que le résultat du calcul, une imagette et un éventuel message</p></td></tr>
+<tr class="even topAlign"><td class="tblName" translate="no"><p><a href="qml-qticalcul-fieldinput.html">FieldInput</a></p></td><td class="tblDescr"><p>Mémorise l'afficheur actif, lors d'un click sur un afficheur FieldInput</p></td></tr>
+<tr class="odd topAlign"><td class="tblName" translate="no"><p><a href="qml-qticalcul-fieldinputform.html">FieldInputForm</a></p></td><td class="tblDescr"><p>Le FieldInputForm est associé à un objet C++ Afficheur</p></td></tr>
+<tr class="even topAlign"><td class="tblName" translate="no"><p><a href="qml-qticalcul-fieldlabel.html">FieldLabel</a></p></td><td class="tblDescr"><p>Affiche un libellé à coté de chaque afficheur QTiCalcul::FieldInput. Il faut fournir la property text</p></td></tr>
+<tr class="odd topAlign"><td class="tblName" translate="no"><p><a href="qml-qticalcul-fieldresult.html">FieldResult</a></p></td><td class="tblDescr"><p>Gère un champ numérique de l'IHM</p></td></tr>
+<tr class="even topAlign"><td class="tblName" translate="no"><p><a href="qml-qticalcul-keyboard.html">Keyboard</a></p></td><td class="tblDescr"><p>Le Keyboard est composé d'un ensemble de boutons KeyboardKey</p></td></tr>
+<tr class="odd topAlign"><td class="tblName" translate="no"><p><a href="qml-qticalcul-keyboardform.html">KeyboardForm</a></p></td><td class="tblDescr"><p>Le KeyboardForm est un ensemble de 18 boutons de type KeyboardKeyForm</p></td></tr>
+<tr class="even topAlign"><td class="tblName" translate="no"><p><a href="qml-qticalcul-keyboardkeyform.html">KeyboardKeyForm</a></p></td><td class="tblDescr"><p>Fournit un bouton customisé pour les touches du clavier virtuel</p></td></tr>
+<tr class="odd topAlign"><td class="tblName" translate="no"><p><a href="qml-qticalcul-leftframe.html">LeftFrame</a></p></td><td class="tblDescr"><p>Controlleur pour le panel de gauche</p></td></tr>
+<tr class="even topAlign"><td class="tblName" translate="no"><p><a href="qml-qticalcul-leftframeform.html">LeftFrameForm</a></p></td><td class="tblDescr"><p>Panneau de gauche, avec l'affichage du Timecode TC1 dans différentes unités</p></td></tr>
+<tr class="odd topAlign"><td class="tblName" translate="no"><p><a href="qml-qticalcul-main.html">Main</a></p></td><td class="tblDescr"><p>Fenêtre principale</p></td></tr>
+<tr class="even topAlign"><td class="tblName" translate="no"><p><a href="qml-qticalcul-physicalkeyboard.html">PhysicalKeyboard</a></p></td><td class="tblDescr"><p>Gestion des touches du clavier</p></td></tr>
+<tr class="odd topAlign"><td class="tblName" translate="no"><p><a href="qml-qticalcul-rightframe.html">RightFrame</a></p></td><td class="tblDescr"><p>Controlleur pour le panel de droite</p></td></tr>
+<tr class="even topAlign"><td class="tblName" translate="no"><p><a href="qml-qticalcul-rightframeform.html">RightFrameForm</a></p></td><td class="tblDescr"><p>Panneau de droite, avec l'affichage du Timecode TC2 dans différentes unités</p></td></tr>
+<tr class="odd topAlign"><td class="tblName" translate="no"><p><a href="qml-qticalcul-squarebutton.html">SquareButton</a></p></td><td class="tblDescr"><p>Petit bouton carré. Fournit le texte et la couleur</p></td></tr>
+<tr class="even topAlign"><td class="tblName" translate="no"><p><a href="qml-qticalcul-tibutton.html">TiButton</a></p></td><td class="tblDescr"><p>Petit bouton arrondi</p></td></tr>
+<tr class="odd topAlign"><td class="tblName" translate="no"><p><a href="qml-qticalcul-topbar.html">TopBar</a></p></td><td class="tblDescr"><p>Controller pour la barre du haut, qui contient le bouton pour AboutPopup</p></td></tr>
+</table></div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2023 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are <a href="https://doc.qt.io/qt/trademarks.html">    trademarks</a> of The Qt Company Ltd. in Finland and/or other countries
+   worldwide. All other trademarks are property of their respective owners. </p>
+</div>
+</body>
+</html>

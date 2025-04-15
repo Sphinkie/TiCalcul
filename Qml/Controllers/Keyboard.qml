@@ -1,14 +1,19 @@
 import QtQuick
 import "../Vues"
 
+/* ********************************************************************************************************** */
 
-/* **************************************************************************
- * Le Keyboard est composé d'un ensemble de boutons KeyboardKey.
- * Le controleur détermine l'action déclenchée par chaque bouton, en
- * appelant une méthode C++ de l'afficheur actif.
- * Si des touches clavier sont recues lorsque le bouton a le focus,
- * on les forwarde au gestionnaire de clavier.
- ***************************************************************************** */
+
+/*!
+  \qmltype Keyboard
+  \inqmlmodule QTiCalcul
+  \brief Le Keyboard est composé d'un ensemble de boutons KeyboardKey.
+
+  Le controleur détermine l'action déclenchée par chaque bouton, en
+  appelant une méthode C++ de l'afficheur actif.
+  Si des touches clavier sont reçues lorsque le bouton a le focus,
+  on les forwarde au gestionnaire de clavier.
+ */
 KeyboardForm {
 
     Keys.forwardTo: [physicalKeyboard]

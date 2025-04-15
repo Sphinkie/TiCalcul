@@ -2,11 +2,16 @@ import QtQuick
 import QtQuick.Layouts
 
 
-/* *****************************************************************
- * \brief Le KeyboardForm est un ensemble de 18 boutons de type KeyboardKey.
- *        Cette Form est attachée à un controleur Keyboard qui gère
- *        les actions suite à un appui sur un bouton.
- * ******************************************************************* */
+/* *********************************************************************************** */
+
+/*!
+  \qmltype KeyboardForm
+  \inqmlmodule QTiCalcul
+  \brief Le KeyboardForm est un ensemble de 18 boutons de type KeyboardKeyForm.
+  
+  Cette Form est attachée à un controleur \l Keyboard qui gère les actions suite à un appui sur un bouton.
+  \sa Keyboard, KeyboardKeyForm
+*/
 GridLayout {
     property alias key0: key0
     property alias key1: key1

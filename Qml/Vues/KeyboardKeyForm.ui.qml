@@ -1,15 +1,22 @@
 import QtQuick
 import QtQuick.Controls.Universal
 
+/* *********************************************************************************** */
 
-/* ****************************************************************************************
- * Le type KeyboardKeyForm fournit un bouton customisé pour les touches du clavier virtuel.
- * Les clickes sur les bourton sont gérés par le controlleur parent Keyboard.
- ****************************************************************************************** */
+/*!
+  \qmltype KeyboardKeyForm
+  \inqmlmodule QTiCalcul
+  \brief fournit un bouton customisé pour les touches du clavier virtuel.
+  
+  Les clics sur les boutons sont gérés par le controleur parent \l Keyboard.
+  \sa Keyboard
+*/
 Button {
     id: button
-    property string buttonText
     property alias texte: texte
+	
+	/*! \qmlproperty string KeyboardKeyForm::buttonText */
+    property string buttonText
 
     display: AbstractButton.TextOnly
 

@@ -1,0 +1,12 @@
+ /*!
+  \qmlmodule QTiCalcul
+  \title TiCalcul QML Module
+  \brief Les types QML pour TiCalcul.
+  
+  Description des types QML définis pour TiCalcul. \br
+  La description des \l {TiCalcul}{classes C++ se trouve sur cette page}.
+  
+  \image TiCalcul-QML-hierarchy.drawio.png
+  
+  \b {Liste des Types QML :}
+*/

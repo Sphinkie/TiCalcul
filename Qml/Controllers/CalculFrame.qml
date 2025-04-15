@@ -2,12 +2,22 @@ import QtQuick
 import TiCalcul
 import "../Vues"
 
+/* ********************************************************************************************************** */
 
-/* *****************************************************************
- * \brief Controlleur pour le panel central (zone des calculs).
- * ***************************************************************** */
+
+/*!
+  \qmltype CalculFrame
+  \inqmlmodule QTiCalcul
+  \inherits CalculFrameForm
+  \brief  Controlleur pour le panel central (zone des calculs).
+ */
 CalculFrameForm {
     id: calculFrame
+
+
+    /*! \qmlproperty string CalculFrame::msgText
+        Petit message pouvant être affiché à coté du picto.
+     */
     property string msgText: ""
 
 
@@ -18,10 +28,9 @@ CalculFrameForm {
             msgText = "TC1 24'H complement"
             msgText = "ready"
             msgText = ""
-    }
     */
     tc1.onClicked: {
-        console.log("TC1 clicked ! ")
+        console.debug("TC1 clicked ! ")
     }
 
     bRectifyTc1.onClicked: {
@@ -36,7 +45,7 @@ CalculFrameForm {
     }
 
     tc2.onClicked: {
-        console.log("TC2 clicked ! ")
+        console.debug("TC2 clicked ! ")
     }
 
     bRectifyTc2.onClicked: {
@@ -51,12 +60,12 @@ CalculFrameForm {
     }
 
     bSwap.onClicked: {
-        console.log("Swap ! ")
+        console.debug("Swap ! ")
         calculateur.swap()
     }
 
     bMem.onClicked: {
-        console.log("Memory ! ")
+        console.debug("Memory ! ")
         calculateur.memorize()
     }
 }

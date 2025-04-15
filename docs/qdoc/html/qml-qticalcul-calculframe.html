@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-<!-- ActiveDisplay.qml -->
-  <meta name="description" content="Mémorise l'afficheur actif.">
-  <title>ActiveDisplay QML Type | Home</title>
+<!-- CalculFrame.qml -->
+  <meta name="description" content="Controlleur pour le panel central (zone des calculs).">
+  <title>CalculFrame QML Type | Home</title>
   <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
   <script type="text/javascript">
     document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
@@ -27,7 +27,8 @@
         <div class="navigationbar">
         <ul>
 <li><a href="https://sphinkie.github.io/TiCalcul" translate="no">Home</a></li>
-<li>ActiveDisplay</li>
+<li><a href="qticalcul-qmlmodule.html" translate="no">QTiCalcul</a></li>
+<li>CalculFrame</li>
 <li id="buildversion">Qt 6.8 Reference Documentation</li>
     </ul>
     </div>
@@ -44,33 +45,32 @@
 </ul>
 </div>
 <div class="sidebar-content" id="sidebar-content"></div></div>
-<h1 class="title" translate="no">ActiveDisplay QML Type</h1>
-<!-- $$$ActiveDisplay-brief -->
-<p>Mémorise l'afficheur actif. <a href="#details">More...</a></p>
-<!-- @@@ActiveDisplay -->
+<h1 class="title" translate="no">CalculFrame QML Type</h1>
+<!-- $$$CalculFrame-brief -->
+<p>Controlleur pour le panel central (zone des calculs). <a href="#details">More...</a></p>
+<!-- @@@CalculFrame -->
 <div class="table"><table class="alignedsummary" translate="no">
-<tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <p><a href="https://doc.qt.io/qt/qml-qtquick-item.html" translate="no">Item</a></p>
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import QTiCalcul</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <p><a href="qml-qticalcul-calculframeform.html" translate="no">CalculFrameForm</a></p>
 </td></tr></table></div><ul>
-<li><a href="qml-activedisplay-members.html">List of all members, including inherited members</a></li>
+<li><a href="qml-qticalcul-calculframe-members.html">List of all members, including inherited members</a></li>
 </ul>
 <h2 id="properties">Properties</h2>
 <ul>
-<li class="fn" translate="no"><b><a href="qml-activedisplay.html#afficheur-prop" translate="no">afficheur</a></b> : Afficheur</li>
+<li class="fn" translate="no"><b><a href="qml-qticalcul-calculframe.html#msgText-prop" translate="no">msgText</a></b> : string</li>
 </ul>
-<!-- $$$ActiveDisplay-description -->
+<!-- $$$CalculFrame-description -->
 <h2 id="details">Detailed Description</h2>
-<p>Il est commun pour TC1 et TC2, car un seul display est éditable à la fois.</p>
-<p>L'afficheur actif va recevoir les touches cliquées du clavier. Au niveau apparence, l'afficheur actif a une couleur de background plus claire que les autres. On change d'afficheur actif en cliquant sur un autre afficheur (cad un autre FieldInput).</p>
-<!-- @@@ActiveDisplay -->
+<!-- @@@CalculFrame -->
 <h2>Property Documentation</h2>
-<!-- $$$afficheur -->
+<!-- $$$msgText -->
 <div class="qmlitem"><div class="qmlproto" translate="no">
 <div class="table"><table class="qmlname">
-<tr valign="top" class="odd" id="afficheur-prop">
+<tr valign="top" class="odd" id="msgText-prop">
 <td class="tblQmlPropNode"><p>
-<span class="name">afficheur</span> : <span class="type">Afficheur</span></p></td></tr>
+<span class="name">msgText</span> : <span class="type"><a href="https://doc.qt.io/qt/qml-string.html" translate="no">string</a></span></p></td></tr>
 </table></div></div>
-<div class="qmldoc"></div></div><!-- @@@afficheur -->
+<div class="qmldoc"><p>Petit message pouvant être affiché à coté du picto.</p>
+</div></div><!-- @@@msgText -->
 <br/>
         </div>
        </div>

@@ -5,6 +5,15 @@ import QtQuick.Controls.Universal
 import "../Components"
 import "../Controllers"
 
+/* *********************************************************************************** */
+
+/*!
+  \qmltype CalculFrameForm
+  \inqmlmodule QTiCalcul
+  \brief Affiche les \l Operande en HMSI ainsi que le résultat du calcul, une imagette et un éventuel message.
+  
+  \sa Bloc, FieldResult, SquareButton, FieldInput, TiButton
+*/
 Item {
     property alias tc1: tc1
     property alias tc2: tc2

@@ -1,10 +1,13 @@
 import QtQuick
 import QtQuick.Controls.Universal
 
+/* *********************************************************************************** */
 
-/* ***********************************************************************************
- * \brief Petit bouton
- **************************************************************************************/
+/*!
+  \qmltype SquareButton
+  \inqmlmodule QTiCalcul
+  \brief Petit bouton carré. Fournit le texte et la couleur.    
+*/
 Button {
     id: control
     text: "Button"

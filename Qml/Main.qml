@@ -7,19 +7,15 @@ import "./Controllers"
 
 
 /*!
-    \qmlmodule QTiCalcul
- */
-
-
-/*!
   \qmltype Main
   \inqmlmodule QTiCalcul
   \inherits Window
   \brief Fenêtre principale.
 
-  La fenêtre principale contient 3 zones: QTiCalcul::LeftFrame, CalculFrame and RightFrame
+  La fenêtre principale contient 3 zones: LeftFrame, CalculFrame et RightFrame. Au dessus, se trouve la TopBar avec le bouton pour faire apparaitre le AboutPopup. En dessous, on a le clavier numérique \l Keyboard.
 
   \image TiCalcul-QML-hierarchy.drawio.png
+  \sa ActiveDisplay, PhysicalKeyboard, Keyboard
  */
 Window {
     id: window

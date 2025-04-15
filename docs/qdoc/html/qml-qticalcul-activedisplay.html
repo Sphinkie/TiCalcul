@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- ActiveDisplay.qml -->
+  <meta name="description" content="Mémorise l'afficheur actif.">
+  <title>ActiveDisplay QML Type | Home</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="https://sphinkie.github.io/TiCalcul" translate="no">Home</a></li>
+<li><a href="qticalcul-qmlmodule.html" translate="no">QTiCalcul</a></li>
+<li>ActiveDisplay</li>
+<li id="buildversion">Qt 6.8 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title" translate="no">ActiveDisplay QML Type</h1>
+<!-- $$$ActiveDisplay-brief -->
+<p>Mémorise l'afficheur actif. <a href="#details">More...</a></p>
+<!-- @@@ActiveDisplay -->
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import QTiCalcul</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <p><a href="https://doc.qt.io/qt/qml-qtquick-item.html" translate="no">Item</a></p>
+</td></tr></table></div><ul>
+<li><a href="qml-qticalcul-activedisplay-members.html">List of all members, including inherited members</a></li>
+</ul>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn" translate="no"><b><a href="qml-qticalcul-activedisplay.html#afficheur-prop" translate="no">afficheur</a></b> : Afficheur</li>
+</ul>
+<!-- $$$ActiveDisplay-description -->
+<h2 id="details">Detailed Description</h2>
+<p>Il est commun pour TC1 et TC2, car un seul display est éditable à la fois.</p>
+<p>L'afficheur actif va recevoir les touches cliquées du clavier. Au niveau apparence, l'afficheur actif a une couleur de background plus claire que les autres. On change d'afficheur actif en cliquant sur un autre afficheur (cad un autre <a href="qml-qticalcul-fieldinput.html" translate="no">FieldInput</a>).</p>
+<!-- @@@ActiveDisplay -->
+<h2>Property Documentation</h2>
+<!-- $$$afficheur -->
+<div class="qmlitem"><div class="qmlproto" translate="no">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="afficheur-prop">
+<td class="tblQmlPropNode"><p>
+<span class="name">afficheur</span> : <span class="type">Afficheur</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"></div></div><!-- @@@afficheur -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2023 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are <a href="https://doc.qt.io/qt/trademarks.html">    trademarks</a> of The Qt Company Ltd. in Finland and/or other countries
+   worldwide. All other trademarks are property of their respective owners. </p>
+</div>
+</body>
+</html>

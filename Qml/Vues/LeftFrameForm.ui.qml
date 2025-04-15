@@ -7,13 +7,13 @@ import "../Components"
 import "../Controllers"
 
 /* *********************************************************************************** */
-/* *********************************************************************************** */
 
 /*!
   \qmltype LeftFrameForm
   \inqmlmodule QTiCalcul
-  \inherits Item
   \brief Panneau de gauche, avec l'affichage du Timecode TC1 dans différentes unités.
+  
+  \sa FieldLabel, FieldInput, TiButton, RightFrameForm
 */
 Item {
     property alias btClear: btClear

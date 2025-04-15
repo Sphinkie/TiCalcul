@@ -2,15 +2,20 @@ import QtQuick
 import QtQuick.Controls.Universal
 import TiCalcul
 
+/* *********************************************************************************** */
 
-/* *************************************************************************
- * Le FieldInputForm est associé à un objet C++ Afficheur.
- * Il affiche une valeur (string) qui est une propriété partagée de l'objet.
- * Il hérite d'un Button car un click permet de le sélectionner.
- * Cette Form est associée à un controlleur FieldInput.
- **************************************************************************** */
+/*!
+  \qmltype FieldInputForm
+  \inqmlmodule QTiCalcul
+  \brief Le FieldInputForm est associé à un objet C++ \l Afficheur.
+  
+  Affiche une valeur (\c string) qui est une propriété partagée de l'objet. \br
+  Il hérite d'un \l Button car un click permet de le sélectionner. \br
+  Cette Form est associée à un controleur FieldInput.
+  \sa Afficheur, ActiveDisplay
+*/
 Button {
-    //! Cet afficheur doit être fourni par le parent lors de la création du FieldInput.
+    /*! Cet \l Afficheur doit être fourni par le parent lors de la création du FieldInput. */
     required property Afficheur afficheur
     property alias displaytext: btText.text
 

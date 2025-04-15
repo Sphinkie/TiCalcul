@@ -1,6 +1,22 @@
 import QtQuick
 
-// Gestion des touches du clavier
+/* ********************************************************************************************************** */
+
+
+/*!
+  \qmltype PhysicalKeyboard
+  \inqmlmodule QTiCalcul
+  \brief Gestion des touches du clavier.
+
+  Les touches gérées sont les touches du pavé numérique (\c 0 à \c 9),
+  les flèches pour se déplacer entre des afficheurs d'un même opérande,
+  \c Tab pour passer d'un opérateur à l'autre,
+  \c Plus et \c Moins pour les opérations.
+
+  On gère aussi le \c point, \c delete, \c Ctrl-C et \c Ctrl-V.
+
+  La touche \c k (spy) pour voir le contenu du tampon.
+ */
 Item {
 
     Keys.onDigit1Pressed: event => afficheurActif.afficheur.addDigit("1")
