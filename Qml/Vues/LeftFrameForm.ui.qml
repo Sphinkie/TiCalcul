@@ -6,10 +6,15 @@ import TiCalcul
 import "../Components"
 import "../Controllers"
 
+/* *********************************************************************************** */
+/* *********************************************************************************** */
 
-/* ***********************************************************************************
- * \brief Panneau de gauche, avec l'affichage du Timecode TC1 dans différentes unités.
- **************************************************************************************/
+/*!
+  \qmltype LeftFrameForm
+  \inqmlmodule QTiCalcul
+  \inherits Item
+  \brief Panneau de gauche, avec l'affichage du Timecode TC1 dans différentes unités.
+*/
 Item {
     property alias btClear: btClear
 

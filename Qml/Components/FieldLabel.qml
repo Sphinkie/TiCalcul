@@ -1,10 +1,15 @@
 import QtQuick
 import QtQuick.Controls.Universal
 
+/* ********************************************************************************************************** */
 
-/* ********************************************************************************
- * \brief Affiche un libellé à coté de chaque afficheur FieldInput.
- ***********************************************************************************/
+
+/*!
+  \qmltype FieldLabel
+  \inqmlmodule QTiCalcul
+  \inherits Label
+  \brief Affiche un libellé à coté de chaque afficheur QTiCalcul::FieldInput. Il faut fournir la property \c text.
+ */
 Label {
     id: label
     text: "label"

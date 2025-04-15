@@ -1,16 +1,16 @@
 @echo Run me in Qt Creator terminal .. "run environnement"
 
-windeployqt --release --dir .\installeur\packages\sphinkie.ticalcul\data   .\build\Desktop_Qt_6_6_1_MSVC2019_64bit-Release\tiCalcul.exe
+windeployqt --release --qmldir .\Qml --dir .\installeur\packages\sphinkie.ticalcul\data   .\build\Desktop_Qt_6_6_1_MSVC2019_64bit-Release\tiCalcul.exe
 
+@echo Copie de l'executable
 copy .\build\Desktop_Qt_6_6_1_MSVC2019_64bit-Release\TiCalcul.exe .\installeur\packages\sphinkie.ticalcul\data   
 
 
 @echo.
-@echo Il manque l'exe 
 @echo Il manque des dependances: Qt6QmlWorkerScript.dll + Qt6QuickControls2.dll + Qt6QuickControls2Impl.dll + Qt6QuickLayouts.dll + Qt6QuickShapes.dll + Qt6QuickTemplates2.dll
 @echo Il manque qml/QtQml et qml/QtQuick
 @echo.
-@echo Mettre le VCredist dans le repertoire de l'autre package
+@echo Mettre le VCredist.exe dans le package com.microsoft.vcredist.
 @echo.
 
 @echo OFF

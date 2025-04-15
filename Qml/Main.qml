@@ -6,9 +6,21 @@ import "./Components"
 import "./Controllers"
 
 
-/* ***********************************************************************************
- * \brief Fenêtre principale.
- **************************************************************************************/
+/*!
+    \qmlmodule QTiCalcul
+ */
+
+
+/*!
+  \qmltype Main
+  \inqmlmodule QTiCalcul
+  \inherits Window
+  \brief Fenêtre principale.
+
+  La fenêtre principale contient 3 zones: QTiCalcul::LeftFrame, CalculFrame and RightFrame
+
+  \image TiCalcul-QML-hierarchy.drawio.png
+ */
 Window {
     id: window
     width: 1000

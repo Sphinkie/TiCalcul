@@ -1,11 +1,15 @@
 import QtQuick
 import QtQuick.Controls.Universal
 
+/* ********************************************************************************************************** */
 
-/*! Popup ABOUT
- *
- * Ce popup affiche l'Auteur, l'année et le numéro de version.
- * Le numéro de version est aussi dans : \c CMakeLists.txt + \c Config.xml + \c Package.xml + \c Doxyfile
+
+/*!
+  \qmltype AboutPopup
+  \inqmlmodule QTiCalcul
+  \brief Ce popup affiche l'Auteur, l'Année et le Numéro de version de l'application.
+
+  \note Le Numéro de Version est aussi dans les fichiers: \c CMakeLists.txt et \c Config.xml et \c Package.xml et \c Doxyfile.
  */
 Popup {
     id: popup

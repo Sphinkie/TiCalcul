@@ -92,9 +92,8 @@ navigation.hometitle = "Home"
 
 
 # --------------------------------------------------------------------------------------
-# DEBUG
-# --------------------------------------------------------------------------------------
 # Set a warning limit.
+# --------------------------------------------------------------------------------------
 warninglimit = 50
 warninglimit.enabled = true
 
@@ -114,7 +113,7 @@ outputformats = HTML
 # The directories that contain the header files associated with the .cpp source files used in the documentation.
 headerdirs += ./Sources
 # The directories that contain the .cpp or .qdoc files used in the documentation.
-sourcedirs  = ./Sources
+sourcedirs  = ./Sources ./Qml
 sources = ./main.cpp
 # The directories that contain the source code of the example files.
 exampledirs = ./docs/examples

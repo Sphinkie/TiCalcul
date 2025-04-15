@@ -2,6 +2,10 @@
 <!DOCTYPE QDOCINDEX>
 <INDEX url="https://sphinkie.github.io/TiCalcul" title="The ultimate Timecode Calculator" version="" project="TiCalcul">
     <namespace name="" status="active" access="public" module="ticalcul">
+        <qmlclass name="AboutPopup" qml-base-type="QtQuick.Controls::Popup" href="qml-aboutpopup.html" status="active" access="public" documented="true" title="AboutPopup" fulltitle="AboutPopup" subtitle="" brief="Ce popup affiche l'Auteur, l'Année et le Numéro de version de l'application"/>
+        <qmlclass name="ActiveDisplay" qml-base-type="QtQuick::Item" href="qml-activedisplay.html" status="active" access="public" documented="true" title="ActiveDisplay" fulltitle="ActiveDisplay" subtitle="" brief="Mémorise l'afficheur actif">
+            <qmlproperty name="afficheur" fullname="ActiveDisplay::afficheur" href="qml-activedisplay.html#afficheur-prop" status="active" access="public" documented="true" type="Afficheur" attached="false" writable="true"/>
+        </qmlclass>
         <class name="Afficheur" href="afficheur.html" status="active" access="public" location="afficheur.h" filepath="D:/Mes Programmes/Windows/TiCalcul/Sources/afficheur.h" lineno="7" documented="true" bases="QObject" module="TiCalcul" brief="La classe Afficheur gère un champ numérique de l'IHM QML">
             <function name="Afficheur" fullname="Afficheur::Afficheur" href="afficheur.html#Afficheur" status="active" access="public" location="afficheur.h" filepath="D:/Mes Programmes/Windows/TiCalcul/Sources/afficheur.h" lineno="26" documented="true" meta="constructor" explicit="true" brief="Constructeur: On initialise toutes les property de cet afficheur" signature="Afficheur(Unites::Units unit, QObject *parent)">
                 <parameter type="Unites::Units" name="unit" default=""/>
@@ -50,6 +54,9 @@
             </function>
             <function name="unitChanged" fullname="Afficheur::unitChanged" href="afficheur.html#unit-prop" status="active" access="public" location="afficheur.h" filepath="D:/Mes Programmes/Windows/TiCalcul/Sources/afficheur.h" lineno="46" meta="signal" associated-property="unit" type="void" signature="void unitChanged()"/>
         </class>
+        <qmlclass name="Bloc" qml-base-type="QtQuick::Rectangle" href="qml-bloc.html" status="active" access="public" documented="true" title="Bloc" fulltitle="Bloc" subtitle="" brief="Un petit rectangle, visible ou non à l'écran, pour remplir un espace">
+            <qmlproperty name="hidden" fullname="Bloc::hidden" href="qml-bloc.html#hidden-prop" status="active" access="public" documented="true" type="bool" attached="false" writable="true"/>
+        </qmlclass>
         <class name="Calculateur" href="calculateur.html" status="active" access="public" location="calculateur.h" filepath="D:/Mes Programmes/Windows/TiCalcul/Sources/calculateur.h" lineno="9" documented="true" bases="QObject" module="TiCalcul" brief="La classe Calculateur gère les opérations entre les opérandes: addition, soustraction, complément">
             <function name="Calculateur" fullname="Calculateur::Calculateur" href="calculateur.html#Calculateur" status="active" access="public" location="calculateur.h" filepath="D:/Mes Programmes/Windows/TiCalcul/Sources/calculateur.h" lineno="15" documented="true" meta="constructor" explicit="true" brief="Constructeur: les paramètres sont les Operande à traiter" signature="Calculateur(Operande *tc1, Operande *tc2, Operande *result, QObject *parent)">
                 <parameter type="Operande *" name="tc1" default=""/>
@@ -130,6 +137,11 @@
                 <parameter type="double" name="conversionFacteur" default=""/>
             </function>
         </class>
+        <qmlclass name="FieldLabel" qml-base-type="QtQuick.Controls::Label" href="qml-fieldlabel.html" status="active" access="public" documented="true" title="FieldLabel" fulltitle="FieldLabel" subtitle="" brief="Affiche un libellé à coté de chaque afficheur QTiCalcul::FieldInput. Il faut fournir la property text"/>
+        <qmlclass name="FieldResult" qml-base-type="QtQuick::Item" href="qml-fieldresult.html" status="active" access="public" documented="true" title="FieldResult" fulltitle="FieldResult" subtitle="" brief="Gère un champ numérique de l'IHM"/>
+        <qmlclass name="LeftFrame" qml-base-type="::LeftFrameForm" href="qml-leftframe.html" status="active" access="public" documented="true" title="LeftFrame" fulltitle="LeftFrame" subtitle="" brief="Controlleur pour le panel de gauche"/>
+        <qmlclass name="LeftFrameForm" qml-base-type="QtQuick::Item" href="qml-leftframeform.html" status="active" access="public" documented="true" title="LeftFrameForm" fulltitle="LeftFrameForm" subtitle="" brief="Panneau de gauche, avec l'affichage du Timecode TC1 dans différentes unités"/>
+        <qmlclass name="Main" qml-base-type="QtQuick::Window" href="qml-main.html" status="active" access="public" documented="true" title="Main" fulltitle="Main" subtitle="" brief="Fenêtre principale"/>
         <class name="Operande" href="operande.html" status="active" access="public" location="operande.h" filepath="D:/Mes Programmes/Windows/TiCalcul/Sources/operande.h" lineno="12" documented="true" bases="QObject" module="TiCalcul" brief="La class Operande gère la &quot;valeur pivot&quot; (cad en microsecondes) de l'opérande TC1 ou de TC2">
             <function name="Operande" fullname="Operande::Operande" href="operande.html#Operande" status="active" access="public" location="operande.h" filepath="D:/Mes Programmes/Windows/TiCalcul/Sources/operande.h" lineno="17" documented="true" meta="constructor" explicit="true" brief="Constructeur. Crée les 8 Afficheur de cet opérande, et les connecte pour leur envoyer un signal à chaque modification de la valeur pivot" signature="Operande(QString name, QObject *parent)">
                 <parameter type="QString" name="name" default=""/>
@@ -151,7 +163,10 @@
             </function>
             <function name="valeurPivot" fullname="Operande::valeurPivot" href="operande.html#valeurPivot" status="active" access="public" location="operande.h" filepath="D:/Mes Programmes/Windows/TiCalcul/Sources/operande.h" lineno="18" documented="true" meta="plain" const="true" type="qint64" brief="Renvoie la valeur Pivot (en microsecondes)" signature="qint64 valeurPivot() const"/>
         </class>
+        <qmlclass name="RightFrame" qml-base-type="::RightFrameForm" href="qml-rightframe.html" status="active" access="public" documented="true" title="RightFrame" fulltitle="RightFrame" subtitle="" brief="Controlleur pour le panel de droite"/>
+        <qmlclass name="RightFrameForm" qml-base-type="QtQuick::Item" href="qml-rightframeform.html" status="active" access="public" documented="true" title="RightFrameForm" fulltitle="RightFrameForm" subtitle="" brief="Panneau de droite, avec l'affichage du Timecode TC2 dans différentes unités"/>
         <class name="Unites" href="unites.html" status="active" access="public" location="unites.h" filepath="D:/Mes Programmes/Windows/TiCalcul/Sources/unites.h" lineno="7" documented="true" module="TiCalcul" brief="Enumérés des différentes unités gérées par l'application"/>
         <module name="TiCalcul" href="ticalcul-module.html" status="active" documented="true" seen="true" title="Timecode Calculator" brief="Ultimate timecode Calculator"/>
+        <qmlmodule name="QTiCalcul" href="qticalcul-qmlmodule.html" status="internal" seen="false" title=""/>
     </namespace>
 </INDEX>
