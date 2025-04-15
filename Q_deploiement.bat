@@ -2,10 +2,14 @@
 
 windeployqt --release --dir .\installeur\packages\sphinkie.ticalcul\data   .\build\Desktop_Qt_6_6_1_MSVC2019_64bit-Release\tiCalcul.exe
 
+copy .\build\Desktop_Qt_6_6_1_MSVC2019_64bit-Release\TiCalcul.exe .\installeur\packages\sphinkie.ticalcul\data   
 
+
+@echo.
 @echo Il manque l'exe 
-@echo Il manque des dépendances: Qt6QmlWorkerScript.dll + Qt6QuickControls2.dll + Qt6QuickControls2Impl.dll + Qt6QuickLayouts.dll + Qt6QuickShapes.dll + Qt6QuickTemplates2.dll
+@echo Il manque des dependances: Qt6QmlWorkerScript.dll + Qt6QuickControls2.dll + Qt6QuickControls2Impl.dll + Qt6QuickLayouts.dll + Qt6QuickShapes.dll + Qt6QuickTemplates2.dll
 @echo Il manque qml/QtQml et qml/QtQuick
+@echo.
 @echo Mettre le VCredist dans le repertoire de l'autre package
 @echo.
 
@@ -24,5 +28,8 @@ REM  [files]                   Binaries or directory containing the binary
 REM 
 REM EXEMPLE:
 REM   windeployqt --pdb tiCalcul.exe --verbose 1 --dir . --plugindir plugins --compiler-runtime
+
+
+
 
 
