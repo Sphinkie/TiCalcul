@@ -15,6 +15,7 @@
 /*************************************************************************************************************/
 /*************************************************************************************************************/
 /*!
+ * \fn Operande::Operande(QString name, QObject *parent): QObject(parent)
  * \brief Constructeur.
  * Crée les 8 Afficheur de cet opérande, et les connecte pour leur envoyer un signal
  * à chaque modification de la valeur pivot.
@@ -84,6 +85,7 @@ Operande::Operande(QString name, QObject *parent): QObject(parent)
 /*************************************************************************************************************/
 /*************************************************************************************************************/
 /*!
+ * \fn qint64 Operande::valeurPivot() const
  * \brief Renvoie la valeur Pivot (en microsecondes).
  */
 qint64 Operande::valeurPivot() const
@@ -95,7 +97,8 @@ qint64 Operande::valeurPivot() const
 /*************************************************************************************************************/
 /*************************************************************************************************************/
 /*!
- * Ce slot recoit une nouvelle valeur pivot d'un Afficheur et la propage à tous les Afficheurs.
+ * \fn void Operande::setValeurPivot(const qint64 newValeurPivot, const bool force)
+ * \brief Ce slot recoit une nouvelle valeur pivot d'un Afficheur et la propage à tous les Afficheurs.
  *
  * La \a newValeurPivot est exprimées en microsecondes, et le paramètre \a force précise
  * s'il faut la prendre en compte même si le champ est en cours d'édition.
@@ -123,6 +126,7 @@ void Operande::setValeurPivot(const qint64 newValeurPivot, const bool force)
 /*************************************************************************************************************/
 /*************************************************************************************************************/
 /*!
+ * \fn void Operande::clearValeurPivot()
  * \brief SLOT : Vide la valeur pivot, et efface la valeur de tous les Afficheur.
  * \sa Afficheur::clearValue()
  */
@@ -137,6 +141,7 @@ void Operande::clearValeurPivot()
 /*************************************************************************************************************/
 /*************************************************************************************************************/
 /*!
+ * \fn void Operande::registerContext(QQmlContext* context)
  * \brief Enregistre les Afficheur dans le contexte QML, pour pouvoir les afficher.
  *
  * \b Note Les property names seront du type "tc1_aff_1". \br
@@ -157,10 +162,11 @@ void Operande::registerContext(QQmlContext* context)
 /*************************************************************************************************************/
 /*************************************************************************************************************/
 /*!
+ * \fn void Operande::setPartner(Operande* partner)
  * \brief La fonction setPartner recoit un pointeur sur l'objet Operande partenaire \a partner (=TC2), et crée  un
  * "apairage" entre chacun de ses afficheurs et les afficheurs de l'operande partenaire TC2.
  */
-void Operande::setPartner(Operande *partner)
+void Operande::setPartner(Operande* partner)
 {
     a1->findPartner(partner->objectName());
     a2->findPartner(partner->objectName());
@@ -175,6 +181,7 @@ void Operande::setPartner(Operande *partner)
 /*************************************************************************************************************/
 /*************************************************************************************************************/
 /*!
+ * \fn void Operande::connectActiveDisplay(QQmlApplicationEngine* engine)
  * \brief Cette fonction crée des connexions slot-signal.
  *
  * Cree des connexions entre l'objet QML "afficheurActif" et tous les Afficheurs.

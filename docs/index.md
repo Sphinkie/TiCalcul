@@ -6,7 +6,7 @@
 
 **Available Now !**
 
-Get the latest release of the software by [clicking here: "latest release"](https://github.com/Sphinkie/TiCalcul/releases/latest/download/TiCalculSetup.exe)
+Get the latest release of the software by [clicking here](https://github.com/Sphinkie/TiCalcul/releases/latest/download/TiCalculSetup.exe)
 
 ![Screenshot](./images/screenshot.png)
 
@@ -30,6 +30,8 @@ Download the **TiCalculSetup.exe** file, and just run it to install the program.
 
 ## Developper corner
 
-Developpers can access to doxygen documentation [here](https://sphinkie.github.io/TiCalcul/doxygen/html/index.html).
+Developpers can access to TiCalcul 2.0 *Qdoc* documentation [here](https://sphinkie.github.io/TiCalcul/qdoc/html/ticalcul-module.html).
 
-The Qdoc documentation is also available [here](https://sphinkie.github.io/TiCalcul/qdoc/html/ticalcul-module.html)
+TiCalcul 1.0 *Doxygen* documentation is also available [here](https://sphinkie.github.io/TiCalcul/doxygen/html/index.html).
+
+

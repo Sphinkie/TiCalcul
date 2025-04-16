@@ -16,9 +16,6 @@
                     <section ref="converter.html" title="Converter Class Reference">
                         <section ref="converter-members.html" title="List of all members"/>
                     </section>
-                    <section ref="operande.html" title="Operande Class Reference">
-                        <section ref="operande-members.html" title="List of all members"/>
-                    </section>
                     <section ref="unites.html" title="Unites Class Reference"/>
                 </section>
             </section>
@@ -59,7 +56,6 @@
             <keyword name="LeftFrameForm" id="QML.QTiCalcul.LeftFrameForm" ref="qml-qticalcul-leftframeform.html"/>
             <keyword name="Main" id="QML.Main" ref="qml-qticalcul-main.html"/>
             <keyword name="Main" id="QML.QTiCalcul.Main" ref="qml-qticalcul-main.html"/>
-            <keyword name="Operande" id="Operande" ref="operande.html"/>
             <keyword name="PhysicalKeyboard" id="QML.PhysicalKeyboard" ref="qml-qticalcul-physicalkeyboard.html"/>
             <keyword name="PhysicalKeyboard" id="QML.QTiCalcul.PhysicalKeyboard" ref="qml-qticalcul-physicalkeyboard.html"/>
             <keyword name="QTiCalcul" id="QML.QTiCalcul" ref="qticalcul-qmlmodule.html"/>
@@ -83,11 +79,9 @@
             <keyword name="afficheur" id="FieldInputForm::afficheur" ref="qml-qticalcul-fieldinputform.html#afficheur-prop"/>
             <keyword name="buttonText" id="KeyboardKeyForm::buttonText" ref="qml-qticalcul-keyboardkeyform.html#buttonText-prop"/>
             <keyword name="clear" id="Calculateur::clear" ref="calculateur.html#clear"/>
-            <keyword name="clearValeurPivot" id="Operande::clearValeurPivot" ref="operande.html#clearValeurPivot"/>
             <keyword name="clearValue" id="Afficheur::clearValue" ref="afficheur.html#clearValue"/>
             <keyword name="complement" id="Calculateur::complement" ref="calculateur.html#complement"/>
             <keyword name="completeRawHMSIWithDots" id="Converter::completeRawHMSIWithDots" ref="converter.html#completeRawHMSIWithDots"/>
-            <keyword name="connectActiveDisplay" id="Operande::connectActiveDisplay" ref="operande.html#connectActiveDisplay"/>
             <keyword name="copy" id="Afficheur::copy" ref="afficheur.html#copy"/>
             <keyword name="correctChanged" id="Afficheur::correctChanged" ref="afficheur.html#correct-prop"/>
             <keyword name="displayValueChanged" id="Afficheur::displayValueChanged" ref="afficheur.html#displayValue-prop"/>
@@ -113,19 +107,15 @@
             <keyword name="rawHMSItoHMSI" id="Converter::rawHMSItoHMSI" ref="converter.html#rawHMSItoHMSI"/>
             <keyword name="rawHMSItoMicroseconds" id="Converter::rawHMSItoMicroseconds" ref="converter.html#rawHMSItoMicroseconds"/>
             <keyword name="rectifyHMSI" id="Afficheur::rectifyHMSI" ref="afficheur.html#rectifyHMSI"/>
-            <keyword name="registerContext" id="Operande::registerContext" ref="operande.html#registerContext"/>
             <keyword name="removeLastDigit" id="Afficheur::removeLastDigit" ref="afficheur.html#removeLastDigit"/>
             <keyword name="setFramerate" id="Afficheur::setFramerate" ref="afficheur.html#setFramerate"/>
             <keyword name="setNavigation" id="Afficheur::setNavigation" ref="afficheur.html#setNavigation"/>
             <keyword name="setNtscFramePerSec" id="Converter::setNtscFramePerSec" ref="converter.html#setNtscFramePerSec"/>
-            <keyword name="setPartner" id="Operande::setPartner" ref="operande.html#setPartner"/>
-            <keyword name="setValeurPivot" id="Operande::setValeurPivot" ref="operande.html#setValeurPivot"/>
             <keyword name="setValue" id="Afficheur::setValue" ref="afficheur.html#setValue"/>
             <keyword name="substract" id="Calculateur::substract" ref="calculateur.html#substract"/>
             <keyword name="swap" id="Calculateur::swap" ref="calculateur.html#swap"/>
             <keyword name="toMicroseconds" id="Converter::toMicroseconds" ref="converter.html#toMicroseconds"/>
             <keyword name="unitChanged" id="Afficheur::unitChanged" ref="afficheur.html#unit-prop"/>
-            <keyword name="valeurPivot" id="Operande::valeurPivot" ref="operande.html#valeurPivot"/>
         </keywords>
         <files>
             <file>afficheur-members.html</file>
@@ -142,13 +132,9 @@
             <file>images/bullet_dn.png</file>
             <file>images/bullet_sq.png</file>
             <file>images/home.png</file>
-            <file>images/ico_note.png</file>
-            <file>images/ico_note_attention.png</file>
             <file>images/ico_out.png</file>
             <file>images/logo.png</file>
             <file>images/screenshot.png</file>
-            <file>operande-members.html</file>
-            <file>operande.html</file>
             <file>qml-qticalcul-aboutpopup-members.html</file>
             <file>qml-qticalcul-aboutpopup.html</file>
             <file>qml-qticalcul-activedisplay-members.html</file>

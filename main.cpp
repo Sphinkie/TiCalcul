@@ -100,7 +100,7 @@ int main(int argc, char* argv[])
 
     // --------------------------------------
     // Démarrage du moteur.
-    // Load "Main.qml" from the module "TCcalcul".
+    // Load "Main.qml" from the module "TCcalcul". (Nom du projet Qt)
     // --------------------------------------
     engine.loadFromModule("TiCalcul", "Main");
 

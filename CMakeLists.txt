@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(Q_TiCalcul VERSION 2.0 LANGUAGES CXX)
+project(TiCalcul VERSION 2.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -8,7 +8,7 @@ set(CMAKE_AUTORCC ON)   # Auto use QRC resource File
 
 set(app_icon_resource_windows "${CMAKE_CURRENT_SOURCE_DIR}/Resources/appicon.rc")
 
-find_package(Qt6 REQUIRED COMPONENTS Quick Core Qml)   # modif recommandée par https://doc.qt.io/qt-6/qt6-port-to-qt-add-qml-module.html
+find_package(Qt6 REQUIRED COMPONENTS Quick)   # modif recommandée par https://doc.qt.io/qt-6/qt6-port-to-qt-add-qml-module.html  :  Core Qml
 
 qt_standard_project_setup(REQUIRES 6.5)
 
@@ -17,8 +17,8 @@ qt_add_executable(tiCalcul
 )
 
 qt_add_qml_module(tiCalcul
-    URI Q_TiCalcul
-    VERSION 2.0
+    URI TiCalcul
+    VERSION 2.1
         RESOURCES Resources/TiCalcul.qrc
         RESOURCES TiCalcul.qdocconf
 
@@ -50,8 +50,8 @@ qt_add_qml_module(tiCalcul
 
         SOURCES main.cpp
         SOURCES Sources/unites.h Sources/unites.cpp
-        SOURCES Sources/operande.h Sources/operande.cpp
         SOURCES Sources/afficheur.h Sources/afficheur.cpp
+        SOURCES Sources/operande.h Sources/operande.cpp
         SOURCES Sources/converter.h Sources/converter.cpp
         SOURCES Sources/calculateur.h Sources/calculateur.cpp
 )

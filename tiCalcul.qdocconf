@@ -2,7 +2,7 @@
 # Configuration pour la génération de la QDOC
 # --------------------------------------------------------------------------------------
 # Commande de génération dans le "command prompt avec environnement de build":
-#    qdoc tiCalcul.qdocconf
+#    qdoc ticalcul.qdocconf
 # --------------------------------------------------------------------------------------
 
 # Variable globale: chemin des .index de Qt
@@ -11,8 +11,8 @@
 # --------------------------------------------------------------------------------------
 # INCLUDES
 # --------------------------------------------------------------------------------------
-QT_VER = 6.8
-QT_VERSION = 6.8
+QT_VER = 6.9
+QT_VERSION = 6.9
 QT_VERSION_TAG = open-source
 
 include($qt_install_docs/global/qt-module-defaults.qdocconf)
@@ -66,12 +66,12 @@ depends = *
 # --------------------------------------------------------------------------------------
 # QHELP
 # --------------------------------------------------------------------------------------
-# Vérification du paramétrage de Qhelp (Qt6.6)
+# Vérification du paramétrage de Qhelp
 qhp = true
 
 qhp.projects            = TiCalcul
 
-qhp.TiCalcul.file          = TiCalcul.qhp
+qhp.TiCalcul.file          = ticalcul.qhp
 qhp.TiCalcul.namespace     = sphinkie.ticalcul
 qhp.TiCalcul.virtualFolder = ticalcul
 qhp.TiCalcul.indexTitle    = Ti Calcul
@@ -80,7 +80,7 @@ qhp.TiCalcul.indexRoot     =
 qhp.TiCalcul.subprojects   = classes
 
 qhp.TiCalcul.subprojects.classes.title      = C++ Classes
-qhp.TiCalcul.subprojects.classes.indexTitle = TI CALCUL C++ Classes
+#qhp.TiCalcul.subprojects.classes.indexTitle = Ti Calcul C++ Classes
 qhp.TiCalcul.subprojects.classes.selectors  = class fake:headerfile
 qhp.TiCalcul.subprojects.classes.sortPages  = true
 
@@ -102,7 +102,7 @@ warninglimit.enabled = true
 # PROJET
 # --------------------------------------------------------------------------------------
 project     = TiCalcul
-moduleheader= TiCalcul
+moduleheader= QTiCalcul
 description = The ultimate Timecode Calculator
 url         = https://sphinkie.github.io/TiCalcul
 #naturallanguage = fr-fr

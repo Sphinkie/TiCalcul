@@ -3,10 +3,8 @@
 
 #include <QObject>
 #include <QQmlContext>
-#include <qqmlapplicationengine.h>
-
+#include <QQmlApplicationEngine.h>
 #include "afficheur.h"
-
 
 
 class Operande : public QObject

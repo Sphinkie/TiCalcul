@@ -2,7 +2,7 @@
 <Package>
 	<DisplayName>TiCalcul</DisplayName>
 	<Description>TiCalcul is a desktop timecode calculator.</Description>
-	<Version>2.0</Version>
+	<Version>2.1</Version>
 	<ReleaseDate>2025-04-04</ReleaseDate>
 	<Licenses>
 		<License name="LGPL License" file="license.txt"/>
