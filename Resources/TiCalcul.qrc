@@ -6,5 +6,7 @@
         <file>Images/settings_amb.png</file>
         <file>Images/settings.png</file>
         <file>Images/settings_ora.png</file>
+        <file>Fonts/Ericsson_GA628.ttf</file>
+        <file>Fonts/Vectroid.otf</file>
     </qresource>
 </RCC>

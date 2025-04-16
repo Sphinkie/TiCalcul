@@ -26,7 +26,7 @@ Window {
   minimumWidth: 964
   minimumHeight: 612
   visible: true
-  title: "TiCalcul"
+  title: "TiCalcul... by David"
 
   Universal.background: Universal.Green // Couleur de fond.
   Universal.foreground: Universal.Amber // On utilise cette couleur pour les boutons. (Par défaut, ils seraient en background foncé).
@@ -63,15 +63,16 @@ Window {
       anchors.margins: 12
       columnSpacing: 0
       columns: 3
-      //rows: 3
+
       // ----------------------------------------------------------------
       // ------------------ Top bar -------------------------------------
       // ----------------------------------------------------------------
       TopBar {
         id: topbar
-        Layout.fillHeight: false
         Layout.fillWidth: true
+        Layout.fillHeight: false
         Layout.columnSpan: 3
+        height: 32
       }
       // ----------------------------------------------------------------
       // ------------------ Timecode TC 1 dans différentes unités -------
@@ -85,7 +86,7 @@ Window {
       // ------------------ Zone de calcul ------------------------------
       // ----------------------------------------------------------------
       CalculFrame {
-        //id: calculFrame
+        id: calculFrame
         Layout.fillWidth: true
         Layout.fillHeight: true
       }
