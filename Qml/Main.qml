@@ -22,9 +22,9 @@ import "./Controllers"
 Window {
   id: window
   width: 1000
-  height: 690
+  height: 720
   minimumWidth: 964
-  minimumHeight: 612
+  minimumHeight: 652
   visible: true
   title: "TiCalcul... by David"
 
@@ -62,6 +62,7 @@ Window {
       anchors.fill: parent
       anchors.margins: 12
       columnSpacing: 0
+      rowSpacing: 0
       columns: 3
 
       // ----------------------------------------------------------------
@@ -72,6 +73,7 @@ Window {
         Layout.fillWidth: true
         Layout.fillHeight: false
         Layout.columnSpan: 3
+        Layout.bottomMargin: 4
         height: 32
       }
       // ----------------------------------------------------------------
@@ -99,12 +101,23 @@ Window {
         Layout.fillHeight: true
       }
       // ----------------------------------------------------------------
+      // ------------------ Middle bar ----------------------------------
+      // ----------------------------------------------------------------
+      MiddleBar {
+        id: middlebar
+        Layout.fillWidth: true
+        Layout.fillHeight: false
+        Layout.columnSpan: 3
+        height: 32
+      }
+      // ----------------------------------------------------------------
       // ------------------ Clavier -------------------------------------
       // ----------------------------------------------------------------
       Keyboard {
+        id: keyboard
         Layout.fillHeight: true
         Layout.fillWidth: true
-        Layout.topMargin: 20
+        //Layout.topMargin: 20
         Layout.rowSpan: 1
         Layout.columnSpan: 3
       }

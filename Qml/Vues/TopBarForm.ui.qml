@@ -10,8 +10,6 @@ import QtQuick.Controls 2.15
  */
 RowLayout {
   property alias btAbout: btAbout
-  // implicitWidth: 800
-  //width: 800
   spacing: 0
 
   // ----------------------------------------------------------------
@@ -38,7 +36,7 @@ RowLayout {
     id: btAbout
     Layout.alignment: Qt.AlignRight | Qt.AlignBottom
     display: AbstractButton.IconOnly
-    icon.source: "qrc:/Images/settings_amb.png"
+    icon.source: "qrc:/Images/settings.png"
     icon.height: 28
     icon.width: 28
 
