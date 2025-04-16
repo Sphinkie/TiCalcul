@@ -56,6 +56,10 @@
             <keyword name="LeftFrameForm" id="QML.QTiCalcul.LeftFrameForm" ref="qml-qticalcul-leftframeform.html"/>
             <keyword name="Main" id="QML.Main" ref="qml-qticalcul-main.html"/>
             <keyword name="Main" id="QML.QTiCalcul.Main" ref="qml-qticalcul-main.html"/>
+            <keyword name="MiddleBar" id="QML.MiddleBar" ref="qml-qticalcul-middlebar.html"/>
+            <keyword name="MiddleBar" id="QML.QTiCalcul.MiddleBar" ref="qml-qticalcul-middlebar.html"/>
+            <keyword name="MiddleBarForm" id="QML.MiddleBarForm" ref="qml-qticalcul-middlebarform.html"/>
+            <keyword name="MiddleBarForm" id="QML.QTiCalcul.MiddleBarForm" ref="qml-qticalcul-middlebarform.html"/>
             <keyword name="PhysicalKeyboard" id="QML.PhysicalKeyboard" ref="qml-qticalcul-physicalkeyboard.html"/>
             <keyword name="PhysicalKeyboard" id="QML.QTiCalcul.PhysicalKeyboard" ref="qml-qticalcul-physicalkeyboard.html"/>
             <keyword name="QTiCalcul" id="QML.QTiCalcul" ref="qticalcul-qmlmodule.html"/>
@@ -70,6 +74,8 @@
             <keyword name="Timecode Calculator" id="Timecode Calculator" ref="ticalcul-module.html"/>
             <keyword name="TopBar" id="QML.TopBar" ref="qml-qticalcul-topbar.html"/>
             <keyword name="TopBar" id="QML.QTiCalcul.TopBar" ref="qml-qticalcul-topbar.html"/>
+            <keyword name="TopBarForm" id="QML.TopBarForm" ref="qml-qticalcul-topbarform.html"/>
+            <keyword name="TopBarForm" id="QML.QTiCalcul.TopBarForm" ref="qml-qticalcul-topbarform.html"/>
             <keyword name="Unites" id="Unites" ref="unites.html"/>
             <keyword name="activeDisplay" id="Afficheur::activeDisplay" ref="afficheur.html#activeDisplay"/>
             <keyword name="add" id="Calculateur::add" ref="calculateur.html#add"/>
@@ -77,6 +83,7 @@
             <keyword name="addSpaceSeparator" id="Converter::addSpaceSeparator" ref="converter.html#addSpaceSeparator"/>
             <keyword name="afficheur" id="ActiveDisplay::afficheur" ref="qml-qticalcul-activedisplay.html#afficheur-prop"/>
             <keyword name="afficheur" id="FieldInputForm::afficheur" ref="qml-qticalcul-fieldinputform.html#afficheur-prop"/>
+            <keyword name="btHideKb" id="MiddleBarForm::btHideKb" ref="qml-qticalcul-middlebarform.html#btHideKb-prop"/>
             <keyword name="buttonText" id="KeyboardKeyForm::buttonText" ref="qml-qticalcul-keyboardkeyform.html#buttonText-prop"/>
             <keyword name="clear" id="Calculateur::clear" ref="calculateur.html#clear"/>
             <keyword name="clearValue" id="Afficheur::clearValue" ref="afficheur.html#clearValue"/>
@@ -165,6 +172,10 @@
             <file>qml-qticalcul-leftframeform.html</file>
             <file>qml-qticalcul-main-members.html</file>
             <file>qml-qticalcul-main.html</file>
+            <file>qml-qticalcul-middlebar-members.html</file>
+            <file>qml-qticalcul-middlebar.html</file>
+            <file>qml-qticalcul-middlebarform-members.html</file>
+            <file>qml-qticalcul-middlebarform.html</file>
             <file>qml-qticalcul-physicalkeyboard-members.html</file>
             <file>qml-qticalcul-physicalkeyboard.html</file>
             <file>qml-qticalcul-rightframe-members.html</file>
@@ -177,6 +188,8 @@
             <file>qml-qticalcul-tibutton.html</file>
             <file>qml-qticalcul-topbar-members.html</file>
             <file>qml-qticalcul-topbar.html</file>
+            <file>qml-qticalcul-topbarform-members.html</file>
+            <file>qml-qticalcul-topbarform.html</file>
             <file>qticalcul-qmlmodule.html</file>
             <file>style/offline-dark.css</file>
             <file>style/offline-simple.css</file>
