@@ -8,13 +8,11 @@
 		<License name="LGPL License" file="license.txt"/>
 	</Licenses>
 	<Default>true</Default>
-	<!-- <Script>installscript.qs</Script> -->
 	<Operations>
 		<Operation name="CreateShortcut">
 			<Argument>@TargetDir@/tiCalcul.exe</Argument>
 			<Argument>@StartMenuDir@/TiCalcul.lnk</Argument>
 			<Argument>workingDirectory=@TargetDir@</Argument>
-			<!-- <Argument>iconPath=%SystemRoot%/system32/SHELL32.dll</Argument> -->
 			<Argument>description=The Ultimate Timecode Calculator</Argument>		
 		</Operation>
 		<Operation name="CreateShortcut">

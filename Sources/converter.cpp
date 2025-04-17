@@ -2,6 +2,7 @@
 #include <qdebug.h>
 
 
+/* ********************************************************************************************************** */
 /*!
  * \class Converter
  * \inmodule TiCalcul
@@ -44,7 +45,6 @@ qint64 Converter::HMSItoMicroseconds(const QString hmsi, const double framerate)
 
 
 /* ********************************************************************************************************** */
-/* ********************************************************************************************************** */
 /*!
  * \brief Convertit \a hmsi (une string HMSI avec des ":" et des "..") en un RAW HMSI.
  *
@@ -55,16 +55,17 @@ QString Converter::HMSItoRawHMSI(QString hmsi)
     return hmsi.remove(':').remove('.');
 }
 
-/* ********************************************************************************************************** */
+
 /* ********************************************************************************************************** */
 /*!
- * \brief Convertit \a raw_hmsi (une string RAW HMSI meme incomplète) en un HMSI propre.
+ * \brief Convertit \a raw_hmsi (une string RAW HMSI même incomplète) en un HMSI propre.
  *
+ * Gère les Raw HMSI > 99h. \br
  * \b Exemple: `254812` est convertit en "25:48:12:00"
  */
 QString Converter::rawHMSItoHMSI(const QString raw_hmsi)
 {
-    // si la longueur est inférieure à 8 digits, on complète avec des 0
+    // Si la longueur est inférieure à 8 digits, on complète avec des 0
     QString hmsi = raw_hmsi.leftJustified(8,'0',false);
     int l = hmsi.length();
     // On rajoute les séparateurs ":"
@@ -81,19 +82,24 @@ QString Converter::rawHMSItoHMSI(const QString raw_hmsi)
  *
  * Returns the value converted in microseconds. \br
  * \b Exemple:  "0245" pour 2h45m = 9 900 000 000 us.
+ * Gère les Raw HMSI > 99h.
  *
  * \a raw_hmsi: raw hmsi to convert. \br
- * \a framerate: the framerate used for raw hmsi. \br
+ * \a framerate: the framerate used for raw hmsi.
  */
 qint64 Converter::rawHMSItoMicroseconds(QString raw_hmsi, double framerate)
 {
     qint64 microsecs;
-    QString hmsi_num = raw_hmsi.leftJustified(8,'0');   // on complete avec des "0"
-    qDebug(qPrintable("filled RawHMSI: " + hmsi_num));
-    microsecs = hmsi_num.left(2).toInt() * us_PerHour;                  // [0..1] hours
-    microsecs += hmsi_num.mid(2, 2).toInt() * us_PerMinute;             // [2..3] minutes
-    microsecs += hmsi_num.mid(4, 2).toInt() * us_PerSecond;             // [4..5] seconds
-    microsecs += hmsi_num.mid(6, 2).toInt() * (us_PerSecond/framerate); // [6..7] frames
+    QString filled_raw_hmsi = raw_hmsi.leftJustified(8,'0');   // on complete avec des "0"
+    qDebug() << "rawHMSItoMicroseconds" << filled_raw_hmsi;
+    // Note: Normalement, ici, le RawHmsi ne peut pas être plus long que 8, mais on gère ce cas quand même.
+    microsecs  = filled_raw_hmsi.last(2).toInt() * (us_PerSecond/framerate); // Les 2 digits les plus à droite sont des frames
+    filled_raw_hmsi.chop(2);
+    microsecs += filled_raw_hmsi.last(2).toInt() * us_PerSecond;             // Les 2 digits suivants sont des secondes
+    filled_raw_hmsi.chop(2);
+    microsecs += filled_raw_hmsi.last(2).toInt() * us_PerMinute;             // Les 2 digits suivants sont des minutes
+    filled_raw_hmsi.chop(2);
+    microsecs += filled_raw_hmsi.toInt() * us_PerHour;                       // les digits restants sont des heures
     return microsecs;
 }
 
@@ -193,11 +199,13 @@ QString Converter::adjustLengthTo2(qint64 value)
         return str_value;
 }
 
+
 /* ********************************************************************************************************** */
 /*!
- * \brief Returns the hmsi formatted with : and dots.
+ * \brief Returns the Raw HMSI formatted with : and dots.
  *
- * \b Exemple: Transforme "123" en "12:3.:..:..".
+ * \b Exemple: Transforme "123" en "12:3.:..:..". \br
+ * Gère les Raw HMSI > 99h.
  *
  * \a raw_hmsi: raw hmsi to convert.
  */
@@ -205,27 +213,36 @@ QString Converter::completeRawHMSIWithDots(QString raw_hmsi)
 {
     QString hmsi = "..:..:..:..";
     int len = raw_hmsi.length();
-    if (len > 0)
-        hmsi[0] = raw_hmsi.at(0);
-    if (len > 1)
-        hmsi[1] = raw_hmsi.at(1);
-    if (len > 2)
-        hmsi[3] = raw_hmsi.at(2);
-    if (len > 3)
-        hmsi[4] = raw_hmsi.at(3);
-    if (len > 4)
-        hmsi[6] = raw_hmsi.at(4);
-    if (len > 5)
-        hmsi[7] = raw_hmsi.at(5);
-    if (len > 6)
-        hmsi[9] = raw_hmsi.at(6);
-    if (len > 7)
-        hmsi[10] = raw_hmsi.at(7);
+    if (len > 8)
+    {
+        // cas > 99h : on construit la string hmsi à partir de la fin
+        hmsi = raw_hmsi.last(2);  // frames
+        hmsi.prepend(':');
+        raw_hmsi.chop(2);
+        hmsi.prepend(raw_hmsi.last(2));  // seconds
+        hmsi.prepend(':');
+        raw_hmsi.chop(2);
+        hmsi.prepend(raw_hmsi.last(2));  // minutes
+        hmsi.prepend(':');
+        raw_hmsi.chop(2);
+        hmsi.prepend(raw_hmsi);  // heures
+    }
+    else
+    {
+        // Cas < 99h
+        if (len > 0)        hmsi[0] = raw_hmsi.at(0);
+        if (len > 1)        hmsi[1] = raw_hmsi.at(1);
+        if (len > 2)        hmsi[3] = raw_hmsi.at(2);
+        if (len > 3)        hmsi[4] = raw_hmsi.at(3);
+        if (len > 4)        hmsi[6] = raw_hmsi.at(4);
+        if (len > 5)        hmsi[7] = raw_hmsi.at(5);
+        if (len > 6)        hmsi[9] = raw_hmsi.at(6);
+        if (len > 7)        hmsi[10] = raw_hmsi.at(7);
+    }
     return hmsi;
 }
 
 
-/* ********************************************************************************************************** */
 /* ********************************************************************************************************** */
 /*!
  * \brief Transforme 1'234'000'000 en "1234" and returns the value converted in seconds, as a string.
@@ -258,14 +275,14 @@ QString Converter::microsecsToSeconds(qint64 microsecs)
 
 /* ********************************************************************************************************** */
 /*!
- * \brief Convertit un nombre de microsecondes en un nombre de frames (selon un certains framerate)
+ * \brief Convertit un nombre de microsecondes en un nombre de frames (selon un certain framerate).
  *
  * Returns the \a microsecs value converted in frames, as a string. \br
  * \b Exemple: 1'234'000'000 ms en 25 fps donne "30850" frames. \br
  * \b Exemple: 1'234'000'000 ms en 50 fps donne "61700" frames.
  *
  * \a microsecs: microsecs value to convert. \br
- * \a framerate: framerate to use for conversion (ex: 25.0). \br
+ * \a framerate: framerate to use for conversion (ex: 25.0).
  */
 QString Converter::microsecsToFrames(qint64 microsecs, double framerate)
 {
@@ -316,7 +333,7 @@ QString Converter::microseconds(qint64 microsecs)
  * \b Exemple: Transforme 1'234'000'000 en "00:20:34:00".
  *
  * \a microsecs : microsecs value to convert. \br
- * \a framerate : the framerate to use for the 2 last digits. \br
+ * \a framerate : the framerate to use for the 2 last digits.
  */
 QString Converter::microsecsToHMSI(qint64 microsecs, double framerate)
 {

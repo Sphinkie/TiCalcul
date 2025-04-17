@@ -2,7 +2,7 @@
 #include "afficheur.h"
 #include "converter.h"
 
-/* ********************************************************************************************************** */
+
 /* ********************************************************************************************************** */
 /*!
  * \class Afficheur
@@ -16,7 +16,7 @@
  * Chaque Afficheur exprime cet \l Operande dans une des \l Unites définie lors de sa construction.
  */
 
-/* ********************************************************************************************************** */
+
 /* ********************************************************************************************************** */
 /*!
  * \brief Constructeur: On initialise toutes les property de cet afficheur.
@@ -38,7 +38,7 @@ Afficheur::Afficheur(Unites::Units unit, QObject* parent): QObject(parent)
     setObjectName(parent->objectName() + '_' + mUnitName);
 }
 
-/*************************************************************************************************************/
+
 /*************************************************************************************************************/
 /*!
  * \brief La fonction findPartner trouve et mémorise l'afficheur partenaire, c'est-à-dire l'afficheur
@@ -53,7 +53,7 @@ void Afficheur::findPartner(QString partnername)
     emit partnerChanged();
 }
 
-/*************************************************************************************************************/
+
 /*************************************************************************************************************/
 /*!
  * \brief Afficheur::setNavigation mémorise les Afficheurs qui entourent l'afficheur courant.
@@ -70,7 +70,6 @@ void Afficheur::setNavigation(Afficheur *N, Afficheur *S, Afficheur *E, Afficheu
 }
 
 
-/* ********************************************************************************************************** */
 /* ********************************************************************************************************** */
 /*!
  * \brief Ce SLOT permet de changer dynamiquement le frameRate des afficheurs HMSI.
@@ -115,7 +114,6 @@ void Afficheur::setFramerate(double new_framerate)
 }
 
 
-/* ********************************************************************************************************** */
 /* ********************************************************************************************************** */
 /*!
  * \brief Ajoute un digit à la fin de la chaine de caractères.
@@ -228,7 +226,6 @@ void Afficheur::addDigit(QString digit)
 
 
 /* ********************************************************************************************************** */
-/* ********************************************************************************************************** */
 /*!
  * \brief Enlève un digit à la fin de la chaine de caractères.
  *
@@ -269,12 +266,12 @@ void Afficheur::removeLastDigit()
 
 
 /* ********************************************************************************************************** */
-/* ********************************************************************************************************** */
 /*!
  * \brief Indique si le HMSI a besoin d'être rectifié.
  *
  * Si minutes>59 ou secondes>59 ou images>24, alors le \a raw_hmsi (de type HHMMSSII) a besoin d'être rectifié,
- * et la focntion retourne \c True.
+ * et la fonction retourne \c True. \br
+ * Gère le cas > 99h.
  */
 bool Afficheur::isCorrect(const QString raw_hmsi)
 {
@@ -282,44 +279,44 @@ bool Afficheur::isCorrect(const QString raw_hmsi)
     QString SS = "00";
     QString II = "00";
     int len = raw_hmsi.length();
-    // On décortique le rawHMSI en 4 substrings.
+    // On décortique le rawHMSI en 3 substrings.
     switch (len)
     {
     case 0:
-    case 1:
-    case 2:
+    case 1:  // H
+    case 2:  // HH
         break;
-    case 3:
-        MM = raw_hmsi.mid(2,1);
+    case 3:  // HHM
+        MM = raw_hmsi.last(1);
         break;
-    case 4:
+    case 4:  // HHMM
+        MM = raw_hmsi.last(2);
+        break;
+    case 5:  // HHMMS
         MM = raw_hmsi.mid(2,2);
+        SS = raw_hmsi.last(1);
         break;
-    case 5:
+    case 6:  // HHMMSS
         MM = raw_hmsi.mid(2,2);
-        SS = raw_hmsi.mid(4,1);
+        SS = raw_hmsi.last(2);
         break;
-    case 6:
-        MM = raw_hmsi.mid(2,2);
-        SS = raw_hmsi.mid(4,2);
-        break;
-    case 7:
-        MM = raw_hmsi.mid(2,2);
-        SS = raw_hmsi.mid(4,2);
-        II = raw_hmsi.mid(6,1);
-        break;
-    case 8:
+    case 7:  // HHMMSSI
         MM = raw_hmsi.mid(2,2);
         SS = raw_hmsi.mid(4,2);
-        II = raw_hmsi.mid(6,2);
+        II = raw_hmsi.last(1);
         break;
-    default:
+    case 8:  // HHMMSSII
         MM = raw_hmsi.mid(2,2);
         SS = raw_hmsi.mid(4,2);
-        II = raw_hmsi.mid(6,2);
+        II = raw_hmsi.last(2);
+        break;
+    default:  // HH..HHMMSSII  (>99h)
+        MM = raw_hmsi.mid(len-6,2);
+        SS = raw_hmsi.mid(len-4,2);
+        II = raw_hmsi.last(2);
         break;
     }
-    // On vérifie les 4 substring
+    // On vérifie les 3 substring
     if (MM.toInt() > 59) return false;
     if (SS.toInt() > 59) return false;
     if (II.toInt() >= ceil(mFramerate)) return false;
@@ -327,8 +324,6 @@ bool Afficheur::isCorrect(const QString raw_hmsi)
 }
 
 
-
-/* ********************************************************************************************************** */
 /* ********************************************************************************************************** */
 /*!
  * \brief SLOT: Actualise la variable mIsActive en cas de changement de l'afficheur sélectionné dans le QML.
@@ -352,7 +347,6 @@ void Afficheur::activeDisplay(QString afficheur)
 }
 
 
-/* ********************************************************************************************************** */
 /* ********************************************************************************************************** */
 /*!
  * \brief Le \b slot clearValue() reçoit le signal Operande::valeurPivotCleared() et efface la valeur de
@@ -420,7 +414,6 @@ void Afficheur::setValue(const qint64 microsecs, const bool force)
 
 
 /* ********************************************************************************************************** */
-/* ********************************************************************************************************** */
 /*!
  * \brief Mémorise et propage la string à afficher vers le QML.
  * \note On distingue le cas où la cellule est active (cad en cours d'édition), ou pas.
@@ -476,7 +469,6 @@ void Afficheur::setDisplayValue(const QString value, const bool force)
 
 
 /* ********************************************************************************************************** */
-/* ********************************************************************************************************** */
 /*!
  * \brief La fonction rectifyHMSI() remet le HMSI de façon correcte.
  **/
@@ -513,7 +505,6 @@ void Afficheur::rectifyHMSI()
 
 
 /* ********************************************************************************************************** */
-/* ********************************************************************************************************** */
 /*!
  * \brief La fonction Afficheur::copy() renvoie la valeur brute de l'afficheur, pour être utilisée dans le presse-papier
  *        de Windows, lors d'un copier/coller.
@@ -531,7 +522,7 @@ QString Afficheur::copy()
     }
 }
 
-/* ********************************************************************************************************** */
+
 /* ********************************************************************************************************** */
 /*!
  * \brief La fonction \l paste() rentre la valeur \a value reçue, venant du presse-papier
