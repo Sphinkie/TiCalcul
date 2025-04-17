@@ -2,17 +2,16 @@
 #include "operande.h"
 
 
-/*************************************************************************************************************/
+
 /*************************************************************************************************************/
 /*!
  * \class Operande
  * \inmodule TiCalcul
  * \brief La class Operande gère la "valeur pivot" (cad en microsecondes) de l'opérande TC1 ou de TC2.
- *
  */
 
 
-/*************************************************************************************************************/
+
 /*************************************************************************************************************/
 /*!
  * \fn Operande::Operande(QString name, QObject *parent): QObject(parent)
@@ -123,7 +122,7 @@ void Operande::setValeurPivot(const qint64 newValeurPivot, const bool force)
 }
 
 
-/*************************************************************************************************************/
+
 /*************************************************************************************************************/
 /*!
  * \fn void Operande::clearValeurPivot()
@@ -138,7 +137,7 @@ void Operande::clearValeurPivot()
 }
 
 
-/*************************************************************************************************************/
+
 /*************************************************************************************************************/
 /*!
  * \fn void Operande::registerContext(QQmlContext* context)
@@ -201,3 +200,4 @@ void Operande::connectActiveDisplay(QQmlApplicationEngine* engine)
     QObject::connect(qmlItem, SIGNAL(activeDisplay(QString)), a6, SLOT(activeDisplay(QString)));
     QObject::connect(qmlItem, SIGNAL(activeDisplay(QString)), a7, SLOT(activeDisplay(QString)));
 }
+

@@ -582,3 +582,54 @@ void Afficheur::paste(QString value)
     }
 }
 
+
+
+/*!
+    \property Afficheur::displayValue
+    \brief La valeur à afficher dans la GUI.
+*/
+
+/*!
+    \property Afficheur::framerate
+    \brief Le framerate de cet afficheur (pour les HMSI)
+*/
+
+/*!
+    \property Afficheur::unit
+    \brief Le nom de l'unité utilisée par cet afficheur
+*/
+
+/*!
+    \property Afficheur::hint
+    \brief Le texte à afficher si mDisplayValue est vide.
+*/
+
+/*!
+    \property Afficheur::correct
+    \brief Indique que l'afficheur (HMSI) est devenu incorrect (ou correct).
+*/
+
+/*!
+    \property Afficheur::partner
+    \brief L'afficheur équivalent de l'autre opérande..
+*/
+
+/*!
+    \property Afficheur::up
+    \brief Afficheur Nord situé au dessus.
+*/
+
+/*!
+    \property Afficheur::down
+    \brief Afficheur Sud situé au dessous.
+*/
+
+/*!
+    \property Afficheur::right
+    \brief Afficheur Est situé à droite.
+*/
+
+/*!
+    \property Afficheur::left
+    \brief Afficheur West situé à Gauche.
+*/

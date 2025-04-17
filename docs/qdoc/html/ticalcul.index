@@ -53,6 +53,29 @@
                 <parameter type="const bool" name="force" default="false"/>
             </function>
             <function name="unitChanged" fullname="Afficheur::unitChanged" href="afficheur.html#unit-prop" status="active" access="public" location="afficheur.h" meta="signal" associated-property="unit" type="void" signature="void unitChanged()"/>
+            <property name="correct" fullname="Afficheur::correct" href="afficheur.html#correct-prop" status="active" access="public" location="afficheur.h" documented="true" brief="Indique que l'afficheur (HMSI) est devenu incorrect (ou correct)">
+                <notifier name="correctChanged"/>
+            </property>
+            <property name="displayValue" fullname="Afficheur::displayValue" href="afficheur.html#displayValue-prop" status="active" access="public" location="afficheur.h" documented="true" brief="La valeur à afficher dans la GUI">
+                <notifier name="displayValueChanged"/>
+            </property>
+            <property name="down" fullname="Afficheur::down" href="afficheur.html#down-prop" status="active" access="public" location="afficheur.h" documented="true" brief="Afficheur Sud situé au dessous"/>
+            <property name="framerate" fullname="Afficheur::framerate" href="afficheur.html#framerate-prop" status="active" access="public" location="afficheur.h" documented="true" brief="Le framerate de cet afficheur (pour les HMSI)">
+                <setter name="setFramerate"/>
+                <notifier name="framerateChanged"/>
+            </property>
+            <property name="hint" fullname="Afficheur::hint" href="afficheur.html#hint-prop" status="active" access="public" location="afficheur.h" documented="true" brief="Le texte à afficher si mDisplayValue est vide">
+                <notifier name="hintChanged"/>
+            </property>
+            <property name="left" fullname="Afficheur::left" href="afficheur.html#left-prop" status="active" access="public" location="afficheur.h" documented="true" brief="Afficheur West situé à Gauche"/>
+            <property name="partner" fullname="Afficheur::partner" href="afficheur.html#partner-prop" status="active" access="public" location="afficheur.h" documented="true" brief="L'afficheur équivalent de l'autre opérande.">
+                <notifier name="partnerChanged"/>
+            </property>
+            <property name="right" fullname="Afficheur::right" href="afficheur.html#right-prop" status="active" access="public" location="afficheur.h" documented="true" brief="Afficheur Est situé à droite"/>
+            <property name="unit" fullname="Afficheur::unit" href="afficheur.html#unit-prop" status="active" access="public" location="afficheur.h" documented="true" brief="Le nom de l'unité utilisée par cet afficheur">
+                <notifier name="unitChanged"/>
+            </property>
+            <property name="up" fullname="Afficheur::up" href="afficheur.html#up-prop" status="active" access="public" location="afficheur.h" documented="true" brief="Afficheur Nord situé au dessus"/>
         </class>
         <qmlclass name="Bloc" qml-module-name="QTiCalcul" qml-base-type="QtQuick::Rectangle" fullname="QTiCalcul.Bloc" href="qml-qticalcul-bloc.html" status="active" access="public" location="Bloc.qml" documented="true" title="Bloc" fulltitle="Bloc" subtitle="" brief="Un petit rectangle, visible ou non à l'écran, pour remplir un espace">
             <qmlproperty name="hidden" fullname="QTiCalcul.Bloc.hidden" href="qml-qticalcul-bloc.html#hidden-prop" status="active" access="public" location="Bloc.qml" documented="true" type="bool" attached="false" writable="true"/>
@@ -76,6 +99,9 @@
             <function name="operateurChanged" fullname="Calculateur::operateurChanged" href="calculateur.html#operateur-prop" status="active" access="public" location="calculateur.h" meta="signal" associated-property="operateur" type="void" signature="void operateurChanged()"/>
             <function name="substract" fullname="Calculateur::substract" href="calculateur.html#substract" status="active" access="public" location="calculateur.h" documented="true" meta="plain" type="void" brief="Calcule la différence TC1-TC2 et envoie le résultat à l'opérande Result grace au signal operateurChanged." signature="void substract()"/>
             <function name="swap" fullname="Calculateur::swap" href="calculateur.html#swap" status="active" access="public" location="calculateur.h" documented="true" meta="plain" type="void" brief="Echange la valeur des opérandes TC1 et TC2" signature="void swap()"/>
+            <property name="operateur" fullname="Calculateur::operateur" href="calculateur.html#operateur-prop" status="active" access="public" location="calculateur.h" documented="true" brief="Opération en cours (string affichable). Par défaut: None">
+                <notifier name="operateurChanged"/>
+            </property>
         </class>
         <class name="Converter" href="converter.html" status="active" access="public" location="converter.h" documented="true" module="TiCalcul" brief="La classe Converter propose des fonctions de conversion de timecodes">
             <function name="Converter" fullname="Converter::Converter" href="converter.html#Converter" status="active" access="public" location="converter.h" documented="true" meta="constructor" brief="Constructeur" signature="Converter()"/>
@@ -95,7 +121,7 @@
             <function name="adjustLengthTo3" fullname="Converter::adjustLengthTo3" href="converter.html#adjustLengthTo3" status="active" access="private" location="converter.h" documented="true" meta="plain" static="true" type="QString" brief="Transforme une valeur en une string de 3 chars" signature="QString adjustLengthTo3(qint64 value)">
                 <parameter type="qint64" name="value" default=""/>
             </function>
-            <function name="completeRawHMSIWithDots" fullname="Converter::completeRawHMSIWithDots" href="converter.html#completeRawHMSIWithDots" status="active" access="public" location="converter.h" documented="true" meta="plain" static="true" type="QString" brief="Returns the hmsi formatted with : and dots" signature="QString completeRawHMSIWithDots(QString raw_hmsi)">
+            <function name="completeRawHMSIWithDots" fullname="Converter::completeRawHMSIWithDots" href="converter.html#completeRawHMSIWithDots" status="active" access="public" location="converter.h" documented="true" meta="plain" static="true" type="QString" brief="Returns the Raw HMSI formatted with : and dots" signature="QString completeRawHMSIWithDots(QString raw_hmsi)">
                 <parameter type="QString" name="raw_hmsi" default=""/>
             </function>
             <function name="getNtscFramePerSec" fullname="Converter::getNtscFramePerSec" href="converter.html#getNtscFramePerSec" status="active" access="public" location="converter.h" documented="true" meta="plain" static="true" type="double" brief="Returns the current NTSC framerate" signature="double getNtscFramePerSec()"/>
@@ -105,7 +131,7 @@
             <function name="microsecsToDHMSM" fullname="Converter::microsecsToDHMSM" href="converter.html#microsecsToDHMSM" status="active" access="public" location="converter.h" documented="true" meta="plain" static="true" type="QString" brief="Returns a readable HMSI value with days (&quot;N days HH:MM:SS:II&quot;)" signature="QString microsecsToDHMSM(qint64 microsecs)">
                 <parameter type="qint64" name="microsecs" default=""/>
             </function>
-            <function name="microsecsToFrames" fullname="Converter::microsecsToFrames" href="converter.html#microsecsToFrames" status="active" access="public" location="converter.h" documented="true" meta="plain" static="true" type="QString" brief="Convertit un nombre de microsecondes en un nombre de frames (selon un certains framerate)" signature="QString microsecsToFrames(qint64 microsecs, double framerate)">
+            <function name="microsecsToFrames" fullname="Converter::microsecsToFrames" href="converter.html#microsecsToFrames" status="active" access="public" location="converter.h" documented="true" meta="plain" static="true" type="QString" brief="Convertit un nombre de microsecondes en un nombre de frames (selon un certain framerate)" signature="QString microsecsToFrames(qint64 microsecs, double framerate)">
                 <parameter type="qint64" name="microsecs" default=""/>
                 <parameter type="double" name="framerate" default=""/>
             </function>
@@ -126,7 +152,7 @@
             <function name="microsecsToSeconds" fullname="Converter::microsecsToSeconds" href="converter.html#microsecsToSeconds" status="active" access="public" location="converter.h" documented="true" meta="plain" static="true" type="QString" brief="Transforme 1'234'000'000 en &quot;1234&quot; and returns the value converted in seconds, as a string" signature="QString microsecsToSeconds(qint64 microsecs)">
                 <parameter type="qint64" name="microsecs" default=""/>
             </function>
-            <function name="rawHMSItoHMSI" fullname="Converter::rawHMSItoHMSI" href="converter.html#rawHMSItoHMSI" status="active" access="public" location="converter.h" documented="true" meta="plain" static="true" type="QString" brief="Convertit raw_hmsi (une string RAW HMSI meme incomplète) en un HMSI propre" signature="QString rawHMSItoHMSI(const QString raw_hmsi)">
+            <function name="rawHMSItoHMSI" fullname="Converter::rawHMSItoHMSI" href="converter.html#rawHMSItoHMSI" status="active" access="public" location="converter.h" documented="true" meta="plain" static="true" type="QString" brief="Convertit raw_hmsi (une string RAW HMSI même incomplète) en un HMSI propre" signature="QString rawHMSItoHMSI(const QString raw_hmsi)">
                 <parameter type="const QString" name="raw_hmsi" default=""/>
             </function>
             <function name="rawHMSItoMicroseconds" fullname="Converter::rawHMSItoMicroseconds" href="converter.html#rawHMSItoMicroseconds" status="active" access="public" location="converter.h" documented="true" meta="plain" static="true" type="qint64" brief="Convertit un Raw HMSI (même partiel) en un nombre de micro-secondes" signature="qint64 rawHMSItoMicroseconds(QString raw_hmsi, double framerate)">

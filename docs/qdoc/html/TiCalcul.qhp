@@ -90,13 +90,19 @@
             <keyword name="complement" id="Calculateur::complement" ref="calculateur.html#complement"/>
             <keyword name="completeRawHMSIWithDots" id="Converter::completeRawHMSIWithDots" ref="converter.html#completeRawHMSIWithDots"/>
             <keyword name="copy" id="Afficheur::copy" ref="afficheur.html#copy"/>
+            <keyword name="correct" id="Afficheur::correct" ref="afficheur.html#correct-prop"/>
             <keyword name="correctChanged" id="Afficheur::correctChanged" ref="afficheur.html#correct-prop"/>
+            <keyword name="displayValue" id="Afficheur::displayValue" ref="afficheur.html#displayValue-prop"/>
             <keyword name="displayValueChanged" id="Afficheur::displayValueChanged" ref="afficheur.html#displayValue-prop"/>
+            <keyword name="down" id="Afficheur::down" ref="afficheur.html#down-prop"/>
             <keyword name="findPartner" id="Afficheur::findPartner" ref="afficheur.html#findPartner"/>
+            <keyword name="framerate" id="Afficheur::framerate" ref="afficheur.html#framerate-prop"/>
             <keyword name="framerateChanged" id="Afficheur::framerateChanged" ref="afficheur.html#framerate-prop"/>
             <keyword name="getNtscFramePerSec" id="Converter::getNtscFramePerSec" ref="converter.html#getNtscFramePerSec"/>
             <keyword name="hidden" id="Bloc::hidden" ref="qml-qticalcul-bloc.html#hidden-prop"/>
+            <keyword name="hint" id="Afficheur::hint" ref="afficheur.html#hint-prop"/>
             <keyword name="hintChanged" id="Afficheur::hintChanged" ref="afficheur.html#hint-prop"/>
+            <keyword name="left" id="Afficheur::left" ref="afficheur.html#left-prop"/>
             <keyword name="memorize" id="Calculateur::memorize" ref="calculateur.html#memorize"/>
             <keyword name="microseconds" id="Converter::microseconds" ref="converter.html#microseconds"/>
             <keyword name="microsecsToDHMSM" id="Converter::microsecsToDHMSM" ref="converter.html#microsecsToDHMSM"/>
@@ -108,13 +114,16 @@
             <keyword name="microsecsToSeconds" id="Converter::microsecsToSeconds" ref="converter.html#microsecsToSeconds"/>
             <keyword name="msgText" id="CalculFrame::msgText" ref="qml-qticalcul-calculframe.html#msgText-prop"/>
             <keyword name="onValeurPivotChanged" id="Calculateur::onValeurPivotChanged" ref="calculateur.html#onValeurPivotChanged"/>
+            <keyword name="operateur" id="Calculateur::operateur" ref="calculateur.html#operateur-prop"/>
             <keyword name="operateurChanged" id="Calculateur::operateurChanged" ref="calculateur.html#operateur-prop"/>
+            <keyword name="partner" id="Afficheur::partner" ref="afficheur.html#partner-prop"/>
             <keyword name="partnerChanged" id="Afficheur::partnerChanged" ref="afficheur.html#partner-prop"/>
             <keyword name="paste" id="Afficheur::paste" ref="afficheur.html#paste"/>
             <keyword name="rawHMSItoHMSI" id="Converter::rawHMSItoHMSI" ref="converter.html#rawHMSItoHMSI"/>
             <keyword name="rawHMSItoMicroseconds" id="Converter::rawHMSItoMicroseconds" ref="converter.html#rawHMSItoMicroseconds"/>
             <keyword name="rectifyHMSI" id="Afficheur::rectifyHMSI" ref="afficheur.html#rectifyHMSI"/>
             <keyword name="removeLastDigit" id="Afficheur::removeLastDigit" ref="afficheur.html#removeLastDigit"/>
+            <keyword name="right" id="Afficheur::right" ref="afficheur.html#right-prop"/>
             <keyword name="setFramerate" id="Afficheur::setFramerate" ref="afficheur.html#setFramerate"/>
             <keyword name="setNavigation" id="Afficheur::setNavigation" ref="afficheur.html#setNavigation"/>
             <keyword name="setNtscFramePerSec" id="Converter::setNtscFramePerSec" ref="converter.html#setNtscFramePerSec"/>
@@ -122,7 +131,9 @@
             <keyword name="substract" id="Calculateur::substract" ref="calculateur.html#substract"/>
             <keyword name="swap" id="Calculateur::swap" ref="calculateur.html#swap"/>
             <keyword name="toMicroseconds" id="Converter::toMicroseconds" ref="converter.html#toMicroseconds"/>
+            <keyword name="unit" id="Afficheur::unit" ref="afficheur.html#unit-prop"/>
             <keyword name="unitChanged" id="Afficheur::unitChanged" ref="afficheur.html#unit-prop"/>
+            <keyword name="up" id="Afficheur::up" ref="afficheur.html#up-prop"/>
         </keywords>
         <files>
             <file>afficheur-members.html</file>

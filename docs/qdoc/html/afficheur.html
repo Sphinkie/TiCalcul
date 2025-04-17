@@ -40,6 +40,7 @@
 <div class="toc">
 <h3 id="toc">Contents</h3>
 <ul>
+<li class="level1"><a href="#properties">Properties</a></li>
 <li class="level1"><a href="#public-functions">Public Functions</a></li>
 <li class="level1"><a href="#public-slots">Public Slots</a></li>
 <li class="level1"><a href="#signals">Signals</a></li>
@@ -58,6 +59,23 @@
 <ul>
 <li><a href="afficheur-members.html">List of all members, including inherited members</a></li>
 </ul>
+<h2 id="properties">Properties</h2>
+<div class="table"><table class="propsummary" translate="no">
+<tr><td class="topAlign"><ul>
+<li class="fn" translate="no"><b><a href="afficheur.html#correct-prop" translate="no">correct</a></b> : const bool</li>
+<li class="fn" translate="no"><b><a href="afficheur.html#displayValue-prop" translate="no">displayValue</a></b> : const QString</li>
+<li class="fn" translate="no"><b><a href="afficheur.html#down-prop" translate="no">down</a></b> : const Afficheur*</li>
+<li class="fn" translate="no"><b><a href="afficheur.html#framerate-prop" translate="no">framerate</a></b> : qreal</li>
+<li class="fn" translate="no"><b><a href="afficheur.html#hint-prop" translate="no">hint</a></b> : const QString</li>
+</ul></td><td class="topAlign"><ul>
+<li class="fn" translate="no"><b><a href="afficheur.html#left-prop" translate="no">left</a></b> : const Afficheur*</li>
+<li class="fn" translate="no"><b><a href="afficheur.html#partner-prop" translate="no">partner</a></b> : const Afficheur*</li>
+<li class="fn" translate="no"><b><a href="afficheur.html#right-prop" translate="no">right</a></b> : const Afficheur*</li>
+<li class="fn" translate="no"><b><a href="afficheur.html#unit-prop" translate="no">unit</a></b> : const QString</li>
+<li class="fn" translate="no"><b><a href="afficheur.html#up-prop" translate="no">up</a></b> : const Afficheur*</li>
+</ul>
+</td></tr>
+</table></div>
 <h2 id="public-functions">Public Functions</h2>
 <div class="table"><table class="alignedsummary" translate="no">
 <tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="afficheur.html#Afficheur" translate="no">Afficheur</a></b>(Unites::Units <i>unit</i>, QObject *<i>parent</i> = nullptr)</td></tr>
@@ -93,6 +111,77 @@
  Chaque Afficheur exprime cet Operande dans une des <a href="unites.html" translate="no">Unites</a> définie lors de sa construction.</p>
 </div>
 <!-- @@@Afficheur -->
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$correct-prop$$$correctChanged -->
+<h3 class="fn" translate="no" id="correct-prop"><span class="name">correct</span> : const <span class="type">bool</span></h3>
+<p>Indique que l'afficheur (HMSI) est devenu incorrect (ou correct).</p>
+<p><b>Notifier signal:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>correctChanged</b></span>()</td></tr>
+</table></div>
+<!-- @@@correct -->
+<!-- $$$displayValue-prop$$$displayValueChanged -->
+<h3 class="fn" translate="no" id="displayValue-prop"><span class="name">displayValue</span> : const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span></h3>
+<p>La valeur à afficher dans la GUI.</p>
+<p><b>Notifier signal:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>displayValueChanged</b></span>()</td></tr>
+</table></div>
+<!-- @@@displayValue -->
+<!-- $$$down-prop -->
+<h3 class="fn" translate="no" id="down-prop"><span class="name">down</span> : const <span class="type"><a href="afficheur.html#Afficheur" translate="no">Afficheur</a></span>*</h3>
+<p>Afficheur Sud situé au dessous.</p>
+<!-- @@@down -->
+<!-- $$$framerate-prop$$$setFrameratedouble$$$framerateChanged -->
+<h3 class="fn" translate="no" id="framerate-prop"><span class="name">framerate</span> : <span class="type"><a href="https://doc.qt.io/qt/qttypes.html#qreal-typedef" translate="no">qreal</a></span></h3>
+<p>Le framerate de cet afficheur (pour les HMSI)</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="afficheur.html#setFramerate" translate="no">setFramerate</a></b></span>(double <i>new_framerate</i>)</td></tr>
+</table></div>
+<p><b>Notifier signal:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>framerateChanged</b></span>()</td></tr>
+</table></div>
+<!-- @@@framerate -->
+<!-- $$$hint-prop$$$hintChanged -->
+<h3 class="fn" translate="no" id="hint-prop"><span class="name">hint</span> : const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span></h3>
+<p>Le texte à afficher si mDisplayValue est vide.</p>
+<p><b>Notifier signal:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>hintChanged</b></span>()</td></tr>
+</table></div>
+<!-- @@@hint -->
+<!-- $$$left-prop -->
+<h3 class="fn" translate="no" id="left-prop"><span class="name">left</span> : const <span class="type"><a href="afficheur.html#Afficheur" translate="no">Afficheur</a></span>*</h3>
+<p>Afficheur West situé à Gauche.</p>
+<!-- @@@left -->
+<!-- $$$partner-prop$$$partnerChanged -->
+<h3 class="fn" translate="no" id="partner-prop"><span class="name">partner</span> : const <span class="type"><a href="afficheur.html#Afficheur" translate="no">Afficheur</a></span>*</h3>
+<p>L'afficheur équivalent de l'autre opérande..</p>
+<p><b>Notifier signal:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>partnerChanged</b></span>()</td></tr>
+</table></div>
+<!-- @@@partner -->
+<!-- $$$right-prop -->
+<h3 class="fn" translate="no" id="right-prop"><span class="name">right</span> : const <span class="type"><a href="afficheur.html#Afficheur" translate="no">Afficheur</a></span>*</h3>
+<p>Afficheur Est situé à droite.</p>
+<!-- @@@right -->
+<!-- $$$unit-prop$$$unitChanged -->
+<h3 class="fn" translate="no" id="unit-prop"><span class="name">unit</span> : const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span></h3>
+<p>Le nom de l'unité utilisée par cet afficheur</p>
+<p><b>Notifier signal:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>unitChanged</b></span>()</td></tr>
+</table></div>
+<!-- @@@unit -->
+<!-- $$$up-prop -->
+<h3 class="fn" translate="no" id="up-prop"><span class="name">up</span> : const <span class="type"><a href="afficheur.html#Afficheur" translate="no">Afficheur</a></span>*</h3>
+<p>Afficheur Nord situé au dessus.</p>
+<!-- @@@up -->
+</div>
 <div class="func">
 <h2>Member Function Documentation</h2>
 <!-- $$$Afficheur[overload1]$$$AfficheurUnites::UnitsQObject* -->
@@ -148,7 +237,7 @@
 <p>Ce SLOT permet de changer dynamiquement le frameRate des afficheurs HMSI.</p>
 <p>Note: C'est toujours l'afficheur HMSI qui reçoit ce signal. <br />
  <i translate="no">new_framerate</i>: le nouveau framerate pour cet afficheur (ex: 25.0).</p>
-<div class="admonition note"><p><b>Note: </b>Setter function for property framerate. </p>
+<div class="admonition note"><p><b>Note: </b>Setter function for property <a href="afficheur.html#framerate-prop" translate="no">framerate</a>. </p>
 </div><!-- @@@setFramerate -->
 <!-- $$$setNavigation[overload1]$$$setNavigationAfficheur*Afficheur*Afficheur*Afficheur* -->
 <h3 class="fn" translate="no" id="setNavigation"><span class="type">void</span> Afficheur::<span class="name">setNavigation</span>(<span class="type"><a href="afficheur.html#Afficheur" translate="no">Afficheur</a></span> *<i>N</i>, <span class="type"><a href="afficheur.html#Afficheur" translate="no">Afficheur</a></span> *<i>S</i>, <span class="type"><a href="afficheur.html#Afficheur" translate="no">Afficheur</a></span> *<i>E</i>, <span class="type"><a href="afficheur.html#Afficheur" translate="no">Afficheur</a></span> *<i>W</i>)</h3>

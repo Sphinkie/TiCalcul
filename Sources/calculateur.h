@@ -27,14 +27,14 @@ signals:
     void operateurChanged();
 
 public:
-    QString mOperateur = "";      // opération en cours (string affichable)
+    QString mOperateur = "";      // Opération en cours (string affichable)
 
 private:
-    Operande* mTC1;               // premier opérande.
-    Operande* mTC2;               // second opérande.
-    Operande* mResult;            // opérande résultat.
+    Operande* mTC1;               // Premier opérande.
+    Operande* mTC2;               // Second opérande.
+    Operande* mResult;            // Opérande résultat.
     enum Operation {none, addition, soustraction, complt};
-    Operation mOperation = none;  // opération en cours
+    Operation mOperation = none;  // Opération en cours
 };
 
 #endif // CALCULATEUR_H
