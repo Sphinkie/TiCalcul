@@ -1,0 +1,90 @@
+
+// ------------------------------------------------------------------------------------------
+// Description des Properties pour la Qdoc
+// ------------------------------------------------------------------------------------------
+
+
+/*!
+    \property Afficheur::displayValue
+    \brief La valeur du timecode à afficher par le QML, dans l'unité de l'afficheur.
+*/
+
+/*!
+    \property Afficheur::framerate
+    \brief Le framerate de cet afficheur (pour les HMSI)
+*/
+
+/*!
+    \property Afficheur::unit
+    \brief Le nom de l'unité utilisée par cet afficheur
+*/
+
+/*!
+    \property Afficheur::hint
+    \brief Le texte à afficher si mDisplayValue est vide.
+*/
+
+/*!
+    \property Afficheur::correct
+    \brief Indique que l'afficheur (HMSI) est devenu incorrect (ou correct).
+*/
+
+/*!
+    \property Afficheur::partner
+    \brief L'afficheur équivalent de l'autre opérande..
+*/
+
+/*!
+    \property Afficheur::up
+    \brief Afficheur Nord situé au dessus.
+*/
+
+/*!
+    \property Afficheur::down
+    \brief Afficheur Sud situé au dessous.
+*/
+
+/*!
+    \property Afficheur::right
+    \brief Afficheur Est situé à droite.
+*/
+
+/*!
+    \property Afficheur::left
+    \brief Afficheur West situé à Gauche.
+*/
+
+// ------------------------------------------------------------------------------------------
+// Description des Variables pour la Qdoc
+// ------------------------------------------------------------------------------------------
+
+/*!
+  \variable Afficheur::mIsActive
+  \brief Indique si cet afficheur est en cours d'édition. Positionné par le QML.
+ */
+
+/*!
+  \variable Afficheur::mRawHMSI
+  \brief Valeur brute, utilisée par les afficheurs HMSI.
+ */
+
+/*!
+  \variable Afficheur::mRawNUM
+  \brief Valeur brute, utilisé par les afficheurs Numériques.
+ */
+
+/*!
+  \variable Afficheur::mUnit
+  \brief Unité utilisée par cet afficheur.
+ */
+
+/*!
+  \variable Afficheur::mConversionFacteur
+  \brief Nombre de microseconds par unité.
+ */
+
+/*!
+  \variable Afficheur::mMaxValue
+  \brief Valeur maximale supportée par cette unité (sauf HMSI).
+ */
+

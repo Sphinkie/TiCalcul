@@ -1,18 +1,19 @@
 #include <QQmlEngine>
 #include "operande.h"
 
-
-
-/*************************************************************************************************************/
+/* *********************************************************************************************************** */
 /*!
- * \class Operande
- * \inmodule TiCalcul
- * \brief La class Operande gère la "valeur pivot" (cad en microsecondes) de l'opérande TC1 ou de TC2.
+  \class Operande
+  \inmodule TiCalcul
+  \brief Cette classe gère la "valeur pivot" (cad en microsecondes) de l'opérande TC1 ou de TC2 ou du Résultat.
+  
+  Chaque opérande possède 8 afficheurs: un dans chaque unité.
  */
 
+ 
 
 
-/*************************************************************************************************************/
+/* ********************************************************************************************************** **/
 /*!
  * \fn Operande::Operande(QString name, QObject *parent): QObject(parent)
  * \brief Constructeur.
@@ -21,9 +22,9 @@
  * \note L'afficheur NTSC est désactivé pour le moment.
  *
  * \a name: Le nom de l'operande: "tc1" ou "tc2" ou "result". \br
- * \a parent: Pointeur sur QObject parent. \br
+ * \a parent: Pointeur sur QObject parent.
  */
-Operande::Operande(QString name, QObject *parent): QObject(parent)
+Operande::Operande(QString name, QObject* parent) : QObject(parent)
 {
     this->setObjectName(name);
     a1 = new Afficheur(Unites::SECONDS, this);

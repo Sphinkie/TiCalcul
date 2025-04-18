@@ -15,7 +15,7 @@ class Operande : public QObject
 // Méthodes
 // ------------------------------------------------------------------------------------------
 public:
-    explicit Operande(QString name, QObject *parent = nullptr);
+    explicit Operande(QString name, QObject* parent = nullptr);
 
     qint64 valeurPivot() const;
     void registerContext(QQmlContext* context);
@@ -32,9 +32,9 @@ signals:
     void valeurPivotCleared();               // Signal indiquant que la valeur pivot a été effacée.
 
 private:
-    qint64 mValeurPivot = 0;                  // Valeur pivot en microsecondes
-    const qint64 mMaxValue = 99999999999999;  // Valeur pivot maximale autorisée (99 999 999 999 999 microsecondes) soit environ 1000 jours.
-                                              // A noter que le uint32 est limité à 4.294.967.295. D'où l'utilisation du qint64 (long long)
+    qint64 mValeurPivot = 0;                      // Valeur pivot en microsecondes
+    const qint64 mMaxValue = 99'999'999'999'999;  // Valeur pivot maximale autorisée (99 999 999 999 999 microsecondes) soit environ 1000 jours.
+                                                  // A noter que le uint32 est limité à 4.294.967.295. D'où l'utilisation du qint64 (long long)
 
     Afficheur* a1;         // Afficheur en secondes
     Afficheur* a2;         // Afficheur en millisecondes
@@ -45,6 +45,7 @@ private:
     Afficheur* a7;         // Afficheur en Frames (50 fps)
     Afficheur* a8;         // Afficheur en Frames (NTSC)
     QQmlContext* mContext;
+	
 };
 
 #endif // OPERANDE_H

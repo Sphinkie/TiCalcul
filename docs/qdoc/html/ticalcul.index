@@ -56,7 +56,7 @@
             <property name="correct" fullname="Afficheur::correct" href="afficheur.html#correct-prop" status="active" access="public" location="afficheur.h" documented="true" brief="Indique que l'afficheur (HMSI) est devenu incorrect (ou correct)">
                 <notifier name="correctChanged"/>
             </property>
-            <property name="displayValue" fullname="Afficheur::displayValue" href="afficheur.html#displayValue-prop" status="active" access="public" location="afficheur.h" documented="true" brief="La valeur à afficher dans la GUI">
+            <property name="displayValue" fullname="Afficheur::displayValue" href="afficheur.html#displayValue-prop" status="active" access="public" location="afficheur.h" documented="true" brief="La valeur du timecode à afficher par le QML, dans l'unité de l'afficheur">
                 <notifier name="displayValueChanged"/>
             </property>
             <property name="down" fullname="Afficheur::down" href="afficheur.html#down-prop" status="active" access="public" location="afficheur.h" documented="true" brief="Afficheur Sud situé au dessous"/>
@@ -76,6 +76,12 @@
                 <notifier name="unitChanged"/>
             </property>
             <property name="up" fullname="Afficheur::up" href="afficheur.html#up-prop" status="active" access="public" location="afficheur.h" documented="true" brief="Afficheur Nord situé au dessus"/>
+            <variable name="mConversionFacteur" fullname="Afficheur::mConversionFacteur" href="afficheur.html#mConversionFacteur-var" status="active" access="private" location="afficheur.h" documented="true" type="double" static="false" brief="Nombre de microseconds par unité"/>
+            <variable name="mIsActive" fullname="Afficheur::mIsActive" href="afficheur.html#mIsActive-var" status="active" access="private" location="afficheur.h" documented="true" type="bool" static="false" brief="Indique si cet afficheur est en cours d'édition. Positionné par le QML"/>
+            <variable name="mMaxValue" fullname="Afficheur::mMaxValue" href="afficheur.html#mMaxValue-var" status="active" access="private" location="afficheur.h" documented="true" type="qint64" static="false" brief="Valeur maximale supportée par cette unité (sauf HMSI)"/>
+            <variable name="mRawHMSI" fullname="Afficheur::mRawHMSI" href="afficheur.html#mRawHMSI-var" status="active" access="private" location="afficheur.h" documented="true" type="QString" static="false" brief="Valeur brute, utilisée par les afficheurs HMSI"/>
+            <variable name="mRawNUM" fullname="Afficheur::mRawNUM" href="afficheur.html#mRawNUM-var" status="active" access="private" location="afficheur.h" documented="true" type="QString" static="false" brief="Valeur brute, utilisé par les afficheurs Numériques"/>
+            <variable name="mUnit" fullname="Afficheur::mUnit" href="afficheur.html#mUnit-var" status="active" access="private" location="afficheur.h" documented="true" type="Unites::Units" static="false" brief="Unité utilisée par cet afficheur"/>
         </class>
         <qmlclass name="Bloc" qml-module-name="QTiCalcul" qml-base-type="QtQuick::Rectangle" fullname="QTiCalcul.Bloc" href="qml-qticalcul-bloc.html" status="active" access="public" location="Bloc.qml" documented="true" title="Bloc" fulltitle="Bloc" subtitle="" brief="Un petit rectangle, visible ou non à l'écran, pour remplir un espace">
             <qmlproperty name="hidden" fullname="QTiCalcul.Bloc.hidden" href="qml-qticalcul-bloc.html#hidden-prop" status="active" access="public" location="Bloc.qml" documented="true" type="bool" attached="false" writable="true"/>
@@ -192,7 +198,13 @@
         <qmlclass name="TiButton" qml-module-name="QTiCalcul" qml-base-type="::TiButtonForm" fullname="QTiCalcul.TiButton" href="qml-qticalcul-tibutton.html" status="active" access="public" location="TiButton.qml" documented="true" title="TiButton" fulltitle="TiButton" subtitle="" brief="Petit bouton arrondi"/>
         <qmlclass name="TopBar" qml-module-name="QTiCalcul" qml-base-type="QTiCalcul::TopBarForm" fullname="QTiCalcul.TopBar" href="qml-qticalcul-topbar.html" status="active" access="public" location="TopBar.qml" documented="true" title="TopBar" fulltitle="TopBar" subtitle="" brief="Controleur pour la barre du haut, qui contient le bouton pour AboutPopup"/>
         <qmlclass name="TopBarForm" qml-module-name="QTiCalcul" qml-base-type="QtQuick.Layouts::RowLayout" fullname="QTiCalcul.TopBarForm" href="qml-qticalcul-topbarform.html" status="active" access="public" location="TopBarForm.ui.qml" documented="true" title="TopBarForm" fulltitle="TopBarForm" subtitle="" brief="Bandeau supérieur avec le nom de l'application, et le bouton pour AboutPopup"/>
-        <class name="Unites" href="unites.html" status="active" access="public" location="unites.h" documented="true" module="TiCalcul" brief="Enumérés des différentes unités gérées par l'application"/>
+        <class name="Unites" href="unites.html" status="active" access="public" location="unites.h" documented="true" module="TiCalcul" brief="Enumérés des différentes unités gérées par l'application">
+            <variable name="frameRate" fullname="Unites::frameRate" href="unites.html#frameRate-var" status="active" access="public" location="unites.h" documented="true" type="const QMap&lt;Unites::Units, double&gt;" static="true" brief="Nombre d'unités par seconde"/>
+            <variable name="hint" fullname="Unites::hint" href="unites.html#hint-var" status="active" access="public" location="unites.h" documented="true" type="const QMap&lt;Unites::Units, QString&gt;" static="true" brief="Texte affiché en grisé dans l'afficheur QML, quand il n'y a pas de valeur"/>
+            <variable name="max" fullname="Unites::max" href="unites.html#max-var" status="active" access="public" location="unites.h" documented="true" type="const QMap&lt;Unites::Units, qint64&gt;" static="true" brief="Valeur numérique maximale supportée par cette unité (plus ou moins 1000 jours)"/>
+            <variable name="name" fullname="Unites::name" href="unites.html#name-var" status="active" access="public" location="unites.h" documented="true" type="const QMap&lt;Unites::Units, QString&gt;" static="true" brief="Nom de l'unité, utilisé par la reconnaissance logicielle entre C++ et QML"/>
+            <variable name="usPerUnit" fullname="Unites::usPerUnit" href="unites.html#usPerUnit-var" status="active" access="public" location="unites.h" documented="true" type="const QMap&lt;Unites::Units, qint32&gt;" static="true" brief="Nombre de microsecondes par unité"/>
+        </class>
         <module name="TiCalcul" href="ticalcul-module.html" status="active" documented="true" seen="true" title="Timecode Calculator" brief="Ultimate timecode Calculator"/>
         <qmlmodule name="QTiCalcul" qml-module-name="QTiCalcul" href="qticalcul-qmlmodule.html" status="active" location="tiCalcul.qdoc" documented="true" seen="true" title="TiCalcul QML Module" brief="Les types QML pour TiCalcul"/>
     </namespace>

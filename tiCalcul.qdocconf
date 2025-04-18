@@ -1,12 +1,12 @@
 # --------------------------------------------------------------------------------------
 # Configuration pour la génération de la QDOC
 # --------------------------------------------------------------------------------------
-# Commande de génération dans le "command prompt avec environnement de build":
+# Commande de génération dans le "command prompt avec environnement de run":
 #    qdoc ticalcul.qdocconf
 # --------------------------------------------------------------------------------------
 
 # Variable globale: chemin des .index de Qt
-# qt_install_docs = C:/Qt/Docs/Qt-6.6.1   Ne sert à rien ici: il faut la déclarer dans QTCreator
+# qt_install_docs = C:/Qt/Docs/Qt-6.9.0   Ne sert à rien ici: il faut la déclarer dans QTCreator
 
 # --------------------------------------------------------------------------------------
 # INCLUDES
@@ -80,7 +80,7 @@ qhp.TiCalcul.indexRoot     =
 qhp.TiCalcul.subprojects   = classes
 
 qhp.TiCalcul.subprojects.classes.title      = C++ Classes
-#qhp.TiCalcul.subprojects.classes.indexTitle = Ti Calcul C++ Classes
+# qhp.TiCalcul.subprojects.classes.indexTitle = Ti Calcul C++ Classes
 qhp.TiCalcul.subprojects.classes.selectors  = class fake:headerfile
 qhp.TiCalcul.subprojects.classes.sortPages  = true
 

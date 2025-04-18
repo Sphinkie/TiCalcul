@@ -23,7 +23,8 @@ Button {
     contentItem: Text {
         id: texte
         text: buttonText
-        color: parent.enabled ? "black" : Universal.chromeDisabledHighColor
+		// Coumleur du texte. 
+        color: parent.enabled ? Universal.chromeAltLowColor : Universal.chromeDisabledHighColor
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         font.pointSize: 16

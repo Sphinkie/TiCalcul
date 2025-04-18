@@ -1,7 +1,7 @@
 #ifndef UNITES_H
 #define UNITES_H
 
-#include<QMap>
+#include <QMap>
 #include "converter.h"
 
 class Unites
@@ -24,7 +24,7 @@ class Unites
     public:
         Unites();
 
-        static const inline QMap<Units, qint32> usPerUnit ={
+        static const inline QMap<Units, qint32> usPerUnit = {
             {HMSI,         Converter::us_PerFrame25},
             {DHMSM,        Converter::us_PerFrame25},
             {FRAMES_25,    Converter::us_PerFrame25},
