@@ -10,7 +10,7 @@ import QtQuick.Controls.Universal
   \brief Ce popup affiche l'Auteur, l'Année et le Numéro de version de l'application.
 
   Le popup contient aussi le switch pour change de mode clair ou sombre. \br
-  \note Le Numéro de Version est aussi dans les fichiers: \c CMakeLists.txt et \c Config.xml et \c Package.xml et \c Doxyfile.
+  \note Le Numéro de Version est aussi dans les fichiers: \c CMakeLists.txt et \c Config.xml et \c Package.xml (et \c Doxyfile).
  */
 Popup {
   id: popup
@@ -35,11 +35,8 @@ Popup {
     Switch {
       id: darkmode
       text: "Dark mode"
-      checked: false
-      onCheckedChanged: {
-        console.log("mode")
-        window.Universal.theme = checked ? Universal.Dark : Universal.Light
-      }
+      checked: false // Etat initial
+      onClicked: window.Universal.theme = checked ? Universal.Dark : Universal.Light
     }
 
     Text {
