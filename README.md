@@ -10,7 +10,7 @@ TiCalcul est une **calculatrice de timecodes** pour Windows.
 
 ## Android
 
-La version Android, **TcCalcul**, n'est plus disponible sur le *Playstore* de Google depuis 2024, mais son *APK* est téléchargeable sur [le site de TcCalcul](https://sphinkie.github.io/TiCalcul).
+La version Android, **TcCalcul**, n'est plus disponible sur le *Playstore* de Google depuis 2024, mais son *APK* est [téléchargeable ici](https://github.com/Sphinkie/TiCalcul/releases/latest/download/TiCalcul.apk).
 
 
 

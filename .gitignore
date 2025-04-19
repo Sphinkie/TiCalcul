@@ -6,6 +6,7 @@
 /installeur/packages/sphinkie.*/data*
 /installeur/*.exe
 /installeur/*.zip
+/installeur/*.apk
 *.bkp
 *.user
 *.txt.user
