@@ -30,8 +30,7 @@ Download the **TiCalculSetup.exe** file, and just run it to install the program.
 
 ## Developper corner
 
-Developpers can access to TiCalcul 2.0 *Qdoc* documentation [here](https://sphinkie.github.io/TiCalcul/qdoc/html/ticalcul-module.html).
+Developpers can access to TiCalcul 2.3 *Qdoc* documentation [here](https://sphinkie.github.io/TiCalcul/qdoc/html/ticalcul-module.html).
 
-TiCalcul 1.0 *Doxygen* documentation is also available [here](https://sphinkie.github.io/TiCalcul/doxygen/html/index.html).
 
 
