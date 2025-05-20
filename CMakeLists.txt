@@ -18,7 +18,7 @@ qt_add_executable(tiCalcul
 
 qt_add_qml_module(tiCalcul
     URI TiCalcul
-    VERSION 2.2
+    VERSION 2.3
         RESOURCES Resources/TiCalcul.qrc
         RESOURCES TiCalcul.qdocconf
 

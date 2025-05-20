@@ -18,6 +18,7 @@ class Afficheur : public QObject
     Q_PROPERTY(const Afficheur* down MEMBER mDown)
     Q_PROPERTY(const Afficheur* right MEMBER mRight)
     Q_PROPERTY(const Afficheur* left MEMBER mLeft)
+    Q_PROPERTY(const QObject* parent MEMBER mParent)
 
 // ------------------------------------------------------------------------------------------
 // Méthodes
@@ -66,6 +67,7 @@ private:
     const Afficheur* mDown;           // QML Property: Afficheur S situé au dessous.
     const Afficheur* mRight;          // QML Property: Afficheur E situé à droite.
     const Afficheur* mLeft;           // QML Property: Afficheur W situé à Gauche.
+    const QObject* mParent;           // QML Property: Operande parent.
 
     bool mIsActive = false;     // Indique si cet afficheur est en cours d'édition. Positionné par le QML.
 

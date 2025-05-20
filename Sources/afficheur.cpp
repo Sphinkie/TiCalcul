@@ -35,6 +35,7 @@ Afficheur::Afficheur(Unites::Units unit, QObject* parent): QObject(parent)
     this->mMaxValue = Unites::max.value(unit);
     this->mPartner = this;
     this->mCorrect = true;
+    this->mParent = parent;
     setObjectName(parent->objectName() + '_' + mUnitName);
 }
 

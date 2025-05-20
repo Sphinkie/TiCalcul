@@ -41,7 +41,7 @@ Popup {
 
     Text {
       padding: 8
-      text: "<b>Ti Calcul</b> <br/>The ultimate timecode calculator <br/>Version 2.2  <br/>Ecrit par <b>David de Lorenzo</b> <br/>2025"
+      text: "<b>Ti Calcul</b> <br/>The ultimate timecode calculator <br/>Version 2.3  <br/>Ecrit par <b>David de Lorenzo</b> <br/>2025"
       // color: Universal.foreground
     }
   }
