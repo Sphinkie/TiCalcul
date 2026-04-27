@@ -8,3 +8,5 @@ copy .\build\Desktop_Qt_6_9_0_MSVC2022_64bit-Release\TiCalcul.exe .\installeur\p
 @echo 2: Deploiment des librairies
 windeployqt --release --no-translations --qmldir .\Qml  .\installeur\packages\sphinkie.ticalcul\data
 
+@REM : exclure les formats rares
+@REM --exclude-plugins qtga,qwbmp,qico,qicns,qpdf,qsvg,qsvgicon
